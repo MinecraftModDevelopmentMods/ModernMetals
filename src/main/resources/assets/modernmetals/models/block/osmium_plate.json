@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/osmium_plate",
+        "side": "modernmetals:blocks/osmium_plate",
+        "bottom": "modernmetals:blocks/osmium_plate"
+    }
+}

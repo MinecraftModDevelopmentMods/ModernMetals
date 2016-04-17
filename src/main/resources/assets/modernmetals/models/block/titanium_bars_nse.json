@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/bars_nse",
+    "textures": {
+        "particle": "modernmetals:blocks/titanium_bars",
+        "bars": "modernmetals:blocks/titanium_bars",
+        "edge": "modernmetals:blocks/titanium_bars"
+    }
+}

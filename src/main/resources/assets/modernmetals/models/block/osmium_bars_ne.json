@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/bars_ne",
+    "textures": {
+        "particle": "modernmetals:blocks/osmium_bars",
+        "bars": "modernmetals:blocks/osmium_bars",
+        "edge": "modernmetals:blocks/osmium_bars"
+    }
+}

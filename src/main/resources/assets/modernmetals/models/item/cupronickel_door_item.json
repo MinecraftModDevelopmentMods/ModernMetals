@@ -1,0 +1,7 @@
+{
+    "parent": "basemetals:item/door_item",
+    "textures": {
+        "bottom": "modernmetals:blocks/cupronickel_door_lower",
+        "top": "modernmetals:blocks/cupronickel_door_upper"
+    }
+}

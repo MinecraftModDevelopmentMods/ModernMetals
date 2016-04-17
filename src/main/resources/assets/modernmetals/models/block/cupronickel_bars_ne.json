@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/bars_ne",
+    "textures": {
+        "particle": "modernmetals:blocks/cupronickel_bars",
+        "bars": "modernmetals:blocks/cupronickel_bars",
+        "edge": "modernmetals:blocks/cupronickel_bars"
+    }
+}

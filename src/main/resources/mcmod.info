@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ModernMetals",
+  "name": "Modern Metals",
+  "description": "Modern Metals Addon",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["cyb3rkat"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
