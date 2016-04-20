@@ -46,10 +46,9 @@ minecraft {
 
 dependencies {
     compile files(
-        'libs/PowerAdvantage_1.9.0-API-2.0.3.jar',
         'libs/BaseMetals_1.9-API-2.1.1.jar',
+        'libs/PowerAdvantage_1.9.0-API-2.0.4.jar',
     )
-
 }
 
 processResources
