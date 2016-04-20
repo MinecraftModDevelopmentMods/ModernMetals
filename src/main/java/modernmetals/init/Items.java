@@ -114,6 +114,42 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item aluminumbrass_rod;
 	public static Item aluminumbrass_gear;
 
+	public static Item cadmium_axe;
+	public static Item cadmium_blend;
+	public static Item cadmium_boots;
+	public static Item cadmium_chestplate;
+	public static Item cadmium_crackhammer;
+	public static Item cadmium_door;
+	public static Item cadmium_helmet;
+	public static Item cadmium_hoe;
+	public static Item cadmium_ingot;
+	public static Item cadmium_leggings;
+	public static Item cadmium_nugget;
+	public static Item cadmium_pickaxe;
+	public static Item cadmium_powder;
+	public static Item cadmium_shovel;
+	public static Item cadmium_sword;
+	public static Item cadmium_rod;
+	public static Item cadmium_gear;
+
+	public static Item chromium_axe;
+	public static Item chromium_blend;
+	public static Item chromium_boots;
+	public static Item chromium_chestplate;
+	public static Item chromium_crackhammer;
+	public static Item chromium_door;
+	public static Item chromium_helmet;
+	public static Item chromium_hoe;
+	public static Item chromium_ingot;
+	public static Item chromium_leggings;
+	public static Item chromium_nugget;
+	public static Item chromium_pickaxe;
+	public static Item chromium_powder;
+	public static Item chromium_shovel;
+	public static Item chromium_sword;
+	public static Item chromium_rod;
+	public static Item chromium_gear;
+
 /*
 	public static Item cupronickel_axe;
 	public static Item cupronickel_blend;
@@ -134,6 +170,42 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item cupronickel_gear;
 */
 
+	public static Item iridium_axe;
+	public static Item iridium_blend;
+	public static Item iridium_boots;
+	public static Item iridium_chestplate;
+	public static Item iridium_crackhammer;
+	public static Item iridium_door;
+	public static Item iridium_helmet;
+	public static Item iridium_hoe;
+	public static Item iridium_ingot;
+	public static Item iridium_leggings;
+	public static Item iridium_nugget;
+	public static Item iridium_pickaxe;
+	public static Item iridium_powder;
+	public static Item iridium_shovel;
+	public static Item iridium_sword;
+	public static Item iridium_rod;
+	public static Item iridium_gear;
+
+	public static Item lithium_axe;
+	public static Item lithium_blend;
+	public static Item lithium_boots;
+	public static Item lithium_chestplate;
+	public static Item lithium_crackhammer;
+	public static Item lithium_door;
+	public static Item lithium_helmet;
+	public static Item lithium_hoe;
+	public static Item lithium_ingot;
+	public static Item lithium_leggings;
+	public static Item lithium_nugget;
+	public static Item lithium_pickaxe;
+	public static Item lithium_powder;
+	public static Item lithium_shovel;
+	public static Item lithium_sword;
+	public static Item lithium_rod;
+	public static Item lithium_gear;
+
 	public static Item magnesium_axe;
 //	public static Item magnesium_blend;
 	public static Item magnesium_boots;
@@ -152,6 +224,42 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item magnesium_rod;
 	public static Item magnesium_gear;
 
+	public static Item manganese_axe;
+	public static Item manganese_blend;
+	public static Item manganese_boots;
+	public static Item manganese_chestplate;
+	public static Item manganese_crackhammer;
+	public static Item manganese_door;
+	public static Item manganese_helmet;
+	public static Item manganese_hoe;
+	public static Item manganese_ingot;
+	public static Item manganese_leggings;
+	public static Item manganese_nugget;
+	public static Item manganese_pickaxe;
+	public static Item manganese_powder;
+	public static Item manganese_shovel;
+	public static Item manganese_sword;
+	public static Item manganese_rod;
+	public static Item manganese_gear;
+
+	public static Item niter_axe;
+	public static Item niter_blend;
+	public static Item niter_boots;
+	public static Item niter_chestplate;
+	public static Item niter_crackhammer;
+	public static Item niter_door;
+	public static Item niter_helmet;
+	public static Item niter_hoe;
+	public static Item niter_ingot;
+	public static Item niter_leggings;
+	public static Item niter_nugget;
+	public static Item niter_pickaxe;
+	public static Item niter_powder;
+	public static Item niter_shovel;
+	public static Item niter_sword;
+	public static Item niter_rod;
+	public static Item niter_gear;
+
 	public static Item osmium_axe;
 //	public static Item osmium_blend;
 	public static Item osmium_boots;
@@ -169,6 +277,24 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item osmium_sword;
 	public static Item osmium_rod;
 	public static Item osmium_gear;
+
+	public static Item phospherous_axe;
+	public static Item phospherous_blend;
+	public static Item phospherous_boots;
+	public static Item phospherous_chestplate;
+	public static Item phospherous_crackhammer;
+	public static Item phospherous_door;
+	public static Item phospherous_helmet;
+	public static Item phospherous_hoe;
+	public static Item phospherous_ingot;
+	public static Item phospherous_leggings;
+	public static Item phospherous_nugget;
+	public static Item phospherous_pickaxe;
+	public static Item phospherous_powder;
+	public static Item phospherous_shovel;
+	public static Item phospherous_sword;
+	public static Item phospherous_rod;
+	public static Item phospherous_gear;
 
 /*
 	public static Item platinum_axe;
@@ -189,6 +315,24 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item platinum_rod;
 	public static Item platinum_gear;
 */
+	public static Item plutonium_axe;
+	public static Item plutonium_blend;
+	public static Item plutonium_boots;
+	public static Item plutonium_chestplate;
+	public static Item plutonium_crackhammer;
+	public static Item plutonium_door;
+	public static Item plutonium_helmet;
+	public static Item plutonium_hoe;
+	public static Item plutonium_ingot;
+	public static Item plutonium_leggings;
+	public static Item plutonium_nugget;
+	public static Item plutonium_pickaxe;
+	public static Item plutonium_powder;
+	public static Item plutonium_shovel;
+	public static Item plutonium_sword;
+	public static Item plutonium_rod;
+	public static Item plutonium_gear;
+
 	public static Item rutile_axe;
 //	public static Item rutile_blend;
 	public static Item rutile_boots;
@@ -206,6 +350,60 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item rutile_sword;
 	public static Item rutile_rod;
 	public static Item rutile_gear;
+
+	public static Item silicon_axe;
+	public static Item silicon_blend;
+	public static Item silicon_boots;
+	public static Item silicon_chestplate;
+	public static Item silicon_crackhammer;
+	public static Item silicon_door;
+	public static Item silicon_helmet;
+	public static Item silicon_hoe;
+	public static Item silicon_ingot;
+	public static Item silicon_leggings;
+	public static Item silicon_nugget;
+	public static Item silicon_pickaxe;
+	public static Item silicon_powder;
+	public static Item silicon_shovel;
+	public static Item silicon_sword;
+	public static Item silicon_rod;
+	public static Item silicon_gear;
+
+	public static Item sulfur_axe;
+	public static Item sulfur_blend;
+	public static Item sulfur_boots;
+	public static Item sulfur_chestplate;
+	public static Item sulfur_crackhammer;
+	public static Item sulfur_door;
+	public static Item sulfur_helmet;
+	public static Item sulfur_hoe;
+	public static Item sulfur_ingot;
+	public static Item sulfur_leggings;
+	public static Item sulfur_nugget;
+	public static Item sulfur_pickaxe;
+	public static Item sulfur_powder;
+	public static Item sulfur_shovel;
+	public static Item sulfur_sword;
+	public static Item sulfur_rod;
+	public static Item sulfur_gear;
+
+	public static Item tantalum_axe;
+	public static Item tantalum_blend;
+	public static Item tantalum_boots;
+	public static Item tantalum_chestplate;
+	public static Item tantalum_crackhammer;
+	public static Item tantalum_door;
+	public static Item tantalum_helmet;
+	public static Item tantalum_hoe;
+	public static Item tantalum_ingot;
+	public static Item tantalum_leggings;
+	public static Item tantalum_nugget;
+	public static Item tantalum_pickaxe;
+	public static Item tantalum_powder;
+	public static Item tantalum_shovel;
+	public static Item tantalum_sword;
+	public static Item tantalum_rod;
+	public static Item tantalum_gear;
 
 	public static Item titanium_axe;
 	public static Item titanium_blend;
@@ -261,6 +459,24 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item uranium_rod;
 	public static Item uranium_gear;
 
+	public static Item zirconium_axe;
+	public static Item zirconium_blend;
+	public static Item zirconium_boots;
+	public static Item zirconium_chestplate;
+	public static Item zirconium_crackhammer;
+	public static Item zirconium_door;
+	public static Item zirconium_helmet;
+	public static Item zirconium_hoe;
+	public static Item zirconium_ingot;
+	public static Item zirconium_leggings;
+	public static Item zirconium_nugget;
+	public static Item zirconium_pickaxe;
+	public static Item zirconium_powder;
+	public static Item zirconium_shovel;
+	public static Item zirconium_sword;
+	public static Item zirconium_rod;
+	public static Item zirconium_gear;
+
 	/**
 	 * Gets the inventory item corresponding to a given door block
 	 * @param b The door block
@@ -291,6 +507,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		aluminum_powder = create_powder(Materials.aluminum);
 		aluminum_shovel = create_shovel(Materials.aluminum);
 		aluminum_sword = create_sword(Materials.aluminum);
+		aluminum_rod = create_rod(Materials.aluminum);
+		aluminum_gear = create_gear(Materials.aluminum);
 
 		aluminumbrass_axe = create_axe(Materials.aluminumbrass);
 		aluminumbrass_blend = create_blend(Materials.aluminumbrass);
@@ -307,6 +525,44 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		aluminumbrass_powder = create_powder(Materials.aluminumbrass);
 		aluminumbrass_shovel = create_shovel(Materials.aluminumbrass);
 		aluminumbrass_sword = create_sword(Materials.aluminumbrass);
+		aluminumbrass_rod = create_rod(Materials.aluminumbrass);
+		aluminumbrass_gear = create_gear(Materials.aluminumbrass);
+
+		cadmium_axe = create_axe(Materials.cadmium);
+		cadmium_blend = create_blend(Materials.cadmium);
+		cadmium_boots = create_boots(Materials.cadmium);
+		cadmium_chestplate = create_chestplate(Materials.cadmium);
+		cadmium_crackhammer = create_crackhammer(Materials.cadmium);
+		cadmium_door = create_door(Materials.cadmium, Blocks.cadmium_door);
+		cadmium_helmet = create_helmet(Materials.cadmium);
+		cadmium_hoe = create_hoe(Materials.cadmium);
+		cadmium_ingot = create_ingot(Materials.cadmium);
+		cadmium_leggings = create_leggings(Materials.cadmium);
+		cadmium_nugget = create_nugget(Materials.cadmium);
+		cadmium_pickaxe = create_pickaxe(Materials.cadmium);
+		cadmium_powder = create_powder(Materials.cadmium);
+		cadmium_shovel = create_shovel(Materials.cadmium);
+		cadmium_sword = create_sword(Materials.cadmium);
+		cadmium_rod = create_rod(Materials.cadmium);
+		cadmium_gear = create_gear(Materials.cadmium);
+
+		chromium_axe = create_axe(Materials.chromium);
+		chromium_blend = create_blend(Materials.chromium);
+		chromium_boots = create_boots(Materials.chromium);
+		chromium_chestplate = create_chestplate(Materials.chromium);
+		chromium_crackhammer = create_crackhammer(Materials.chromium);
+		chromium_door = create_door(Materials.chromium, Blocks.chromium_door);
+		chromium_helmet = create_helmet(Materials.chromium);
+		chromium_hoe = create_hoe(Materials.chromium);
+		chromium_ingot = create_ingot(Materials.chromium);
+		chromium_leggings = create_leggings(Materials.chromium);
+		chromium_nugget = create_nugget(Materials.chromium);
+		chromium_pickaxe = create_pickaxe(Materials.chromium);
+		chromium_powder = create_powder(Materials.chromium);
+		chromium_shovel = create_shovel(Materials.chromium);
+		chromium_sword = create_sword(Materials.chromium);
+		chromium_rod = create_rod(Materials.chromium);
+		chromium_gear = create_gear(Materials.chromium);
 
 /*
 		cupronickel_axe = create_axe(Materials.cupronickel);
@@ -324,7 +580,45 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		cupronickel_powder = create_powder(Materials.cupronickel);
 		cupronickel_shovel = create_shovel(Materials.cupronickel);
 		cupronickel_sword = create_sword(Materials.cupronickel);
+		cupronickel_rod = create_rod(Materials.cupronickel);
+		cupronickel_gear = create_gear(Materials.cupronickel);
 */
+
+		iridium_axe = create_axe(Materials.iridium);
+		iridium_blend = create_blend(Materials.iridium);
+		iridium_boots = create_boots(Materials.iridium);
+		iridium_chestplate = create_chestplate(Materials.iridium);
+		iridium_crackhammer = create_crackhammer(Materials.iridium);
+		iridium_door = create_door(Materials.iridium, Blocks.iridium_door);
+		iridium_helmet = create_helmet(Materials.iridium);
+		iridium_hoe = create_hoe(Materials.iridium);
+		iridium_ingot = create_ingot(Materials.iridium);
+		iridium_leggings = create_leggings(Materials.iridium);
+		iridium_nugget = create_nugget(Materials.iridium);
+		iridium_pickaxe = create_pickaxe(Materials.iridium);
+		iridium_powder = create_powder(Materials.iridium);
+		iridium_shovel = create_shovel(Materials.iridium);
+		iridium_sword = create_sword(Materials.iridium);
+		iridium_rod = create_rod(Materials.iridium);
+		iridium_gear = create_gear(Materials.iridium);
+
+		lithium_axe = create_axe(Materials.lithium);
+		lithium_blend = create_blend(Materials.lithium);
+		lithium_boots = create_boots(Materials.lithium);
+		lithium_chestplate = create_chestplate(Materials.lithium);
+		lithium_crackhammer = create_crackhammer(Materials.lithium);
+		lithium_door = create_door(Materials.lithium, Blocks.lithium_door);
+		lithium_helmet = create_helmet(Materials.lithium);
+		lithium_hoe = create_hoe(Materials.lithium);
+		lithium_ingot = create_ingot(Materials.lithium);
+		lithium_leggings = create_leggings(Materials.lithium);
+		lithium_nugget = create_nugget(Materials.lithium);
+		lithium_pickaxe = create_pickaxe(Materials.lithium);
+		lithium_powder = create_powder(Materials.lithium);
+		lithium_shovel = create_shovel(Materials.lithium);
+		lithium_sword = create_sword(Materials.lithium);
+		lithium_rod = create_rod(Materials.lithium);
+		lithium_gear = create_gear(Materials.lithium);
 
 		magnesium_axe = create_axe(Materials.magnesium);
 //		magnesium_blend = create_blend(Materials.magnesium);
@@ -341,6 +635,44 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		magnesium_powder = create_powder(Materials.magnesium);
 		magnesium_shovel = create_shovel(Materials.magnesium);
 		magnesium_sword = create_sword(Materials.magnesium);
+		magnesium_rod = create_rod(Materials.magnesium);
+		magnesium_gear = create_gear(Materials.magnesium);
+
+		manganese_axe = create_axe(Materials.manganese);
+		manganese_blend = create_blend(Materials.manganese);
+		manganese_boots = create_boots(Materials.manganese);
+		manganese_chestplate = create_chestplate(Materials.manganese);
+		manganese_crackhammer = create_crackhammer(Materials.manganese);
+		manganese_door = create_door(Materials.manganese, Blocks.manganese_door);
+		manganese_helmet = create_helmet(Materials.manganese);
+		manganese_hoe = create_hoe(Materials.manganese);
+		manganese_ingot = create_ingot(Materials.manganese);
+		manganese_leggings = create_leggings(Materials.manganese);
+		manganese_nugget = create_nugget(Materials.manganese);
+		manganese_pickaxe = create_pickaxe(Materials.manganese);
+		manganese_powder = create_powder(Materials.manganese);
+		manganese_shovel = create_shovel(Materials.manganese);
+		manganese_sword = create_sword(Materials.manganese);
+		manganese_rod = create_rod(Materials.manganese);
+		manganese_gear = create_gear(Materials.manganese);
+
+		niter_axe = create_axe(Materials.niter);
+		niter_blend = create_blend(Materials.niter);
+		niter_boots = create_boots(Materials.niter);
+		niter_chestplate = create_chestplate(Materials.niter);
+		niter_crackhammer = create_crackhammer(Materials.niter);
+		niter_door = create_door(Materials.niter, Blocks.niter_door);
+		niter_helmet = create_helmet(Materials.niter);
+		niter_hoe = create_hoe(Materials.niter);
+		niter_ingot = create_ingot(Materials.niter);
+		niter_leggings = create_leggings(Materials.niter);
+		niter_nugget = create_nugget(Materials.niter);
+		niter_pickaxe = create_pickaxe(Materials.niter);
+		niter_powder = create_powder(Materials.niter);
+		niter_shovel = create_shovel(Materials.niter);
+		niter_sword = create_sword(Materials.niter);
+		niter_rod = create_rod(Materials.niter);
+		niter_gear = create_gear(Materials.niter);
 
 		osmium_axe = create_axe(Materials.osmium);
 //		osmium_blend = create_blend(Materials.osmium);
@@ -357,6 +689,26 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		osmium_powder = create_powder(Materials.osmium);
 		osmium_shovel = create_shovel(Materials.osmium);
 		osmium_sword = create_sword(Materials.osmium);
+		osmium_rod = create_rod(Materials.osmium);
+		osmium_gear = create_gear(Materials.osmium);
+
+		phospherous_axe = create_axe(Materials.phospherous);
+		phospherous_blend = create_blend(Materials.phospherous);
+		phospherous_boots = create_boots(Materials.phospherous);
+		phospherous_chestplate = create_chestplate(Materials.phospherous);
+		phospherous_crackhammer = create_crackhammer(Materials.phospherous);
+		phospherous_door = create_door(Materials.phospherous, Blocks.phospherous_door);
+		phospherous_helmet = create_helmet(Materials.phospherous);
+		phospherous_hoe = create_hoe(Materials.phospherous);
+		phospherous_ingot = create_ingot(Materials.phospherous);
+		phospherous_leggings = create_leggings(Materials.phospherous);
+		phospherous_nugget = create_nugget(Materials.phospherous);
+		phospherous_pickaxe = create_pickaxe(Materials.phospherous);
+		phospherous_powder = create_powder(Materials.phospherous);
+		phospherous_shovel = create_shovel(Materials.phospherous);
+		phospherous_sword = create_sword(Materials.phospherous);
+		phospherous_rod = create_rod(Materials.phospherous);
+		phospherous_gear = create_gear(Materials.phospherous);
 
 /*
 		platinum_axe = create_axe(Materials.platinum);
@@ -374,7 +726,27 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		platinum_powder = create_powder(Materials.platinum);
 		platinum_shovel = create_shovel(Materials.platinum);
 		platinum_sword = create_sword(Materials.platinum);
+		platinum_rod = create_rod(Materials.platinum);
+		platinum_gear = create_gear(Materials.platinum);
 */
+
+		plutonium_axe = create_axe(Materials.plutonium);
+		plutonium_blend = create_blend(Materials.plutonium);
+		plutonium_boots = create_boots(Materials.plutonium);
+		plutonium_chestplate = create_chestplate(Materials.plutonium);
+		plutonium_crackhammer = create_crackhammer(Materials.plutonium);
+		plutonium_door = create_door(Materials.plutonium, Blocks.plutonium_door);
+		plutonium_helmet = create_helmet(Materials.plutonium);
+		plutonium_hoe = create_hoe(Materials.plutonium);
+		plutonium_ingot = create_ingot(Materials.plutonium);
+		plutonium_leggings = create_leggings(Materials.plutonium);
+		plutonium_nugget = create_nugget(Materials.plutonium);
+		plutonium_pickaxe = create_pickaxe(Materials.plutonium);
+		plutonium_powder = create_powder(Materials.plutonium);
+		plutonium_shovel = create_shovel(Materials.plutonium);
+		plutonium_sword = create_sword(Materials.plutonium);
+		plutonium_rod = create_rod(Materials.plutonium);
+		plutonium_gear = create_gear(Materials.plutonium);
 
 		rutile_axe = create_axe(Materials.rutile);
 //		rutile_blend = create_blend(Materials.rutile);
@@ -391,6 +763,62 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		rutile_powder = create_powder(Materials.rutile);
 		rutile_shovel = create_shovel(Materials.rutile);
 		rutile_sword = create_sword(Materials.rutile);
+		rutile_rod = create_rod(Materials.rutile);
+		rutile_gear = create_gear(Materials.rutile);
+
+		silicon_axe = create_axe(Materials.silicon);
+		silicon_blend = create_blend(Materials.silicon);
+		silicon_boots = create_boots(Materials.silicon);
+		silicon_chestplate = create_chestplate(Materials.silicon);
+		silicon_crackhammer = create_crackhammer(Materials.silicon);
+		silicon_door = create_door(Materials.silicon, Blocks.silicon_door);
+		silicon_helmet = create_helmet(Materials.silicon);
+		silicon_hoe = create_hoe(Materials.silicon);
+		silicon_ingot = create_ingot(Materials.silicon);
+		silicon_leggings = create_leggings(Materials.silicon);
+		silicon_nugget = create_nugget(Materials.silicon);
+		silicon_pickaxe = create_pickaxe(Materials.silicon);
+		silicon_powder = create_powder(Materials.silicon);
+		silicon_shovel = create_shovel(Materials.silicon);
+		silicon_sword = create_sword(Materials.silicon);
+		silicon_rod = create_rod(Materials.silicon);
+		silicon_gear = create_gear(Materials.silicon);
+
+		sulfur_axe = create_axe(Materials.sulfur);
+		sulfur_blend = create_blend(Materials.sulfur);
+		sulfur_boots = create_boots(Materials.sulfur);
+		sulfur_chestplate = create_chestplate(Materials.sulfur);
+		sulfur_crackhammer = create_crackhammer(Materials.sulfur);
+		sulfur_door = create_door(Materials.sulfur, Blocks.sulfur_door);
+		sulfur_helmet = create_helmet(Materials.sulfur);
+		sulfur_hoe = create_hoe(Materials.sulfur);
+		sulfur_ingot = create_ingot(Materials.sulfur);
+		sulfur_leggings = create_leggings(Materials.sulfur);
+		sulfur_nugget = create_nugget(Materials.sulfur);
+		sulfur_pickaxe = create_pickaxe(Materials.sulfur);
+		sulfur_powder = create_powder(Materials.sulfur);
+		sulfur_shovel = create_shovel(Materials.sulfur);
+		sulfur_sword = create_sword(Materials.sulfur);
+		sulfur_rod = create_rod(Materials.sulfur);
+		sulfur_gear = create_gear(Materials.sulfur);
+
+		tantalum_axe = create_axe(Materials.tantalum);
+		tantalum_blend = create_blend(Materials.tantalum);
+		tantalum_boots = create_boots(Materials.tantalum);
+		tantalum_chestplate = create_chestplate(Materials.tantalum);
+		tantalum_crackhammer = create_crackhammer(Materials.tantalum);
+		tantalum_door = create_door(Materials.tantalum, Blocks.tantalum_door);
+		tantalum_helmet = create_helmet(Materials.tantalum);
+		tantalum_hoe = create_hoe(Materials.tantalum);
+		tantalum_ingot = create_ingot(Materials.tantalum);
+		tantalum_leggings = create_leggings(Materials.tantalum);
+		tantalum_nugget = create_nugget(Materials.tantalum);
+		tantalum_pickaxe = create_pickaxe(Materials.tantalum);
+		tantalum_powder = create_powder(Materials.tantalum);
+		tantalum_shovel = create_shovel(Materials.tantalum);
+		tantalum_sword = create_sword(Materials.tantalum);
+		tantalum_rod = create_rod(Materials.tantalum);
+		tantalum_gear = create_gear(Materials.tantalum);
 
 		titanium_axe = create_axe(Materials.titanium);
 		titanium_blend = create_blend(Materials.titanium);
@@ -407,6 +835,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		titanium_powder = create_powder(Materials.titanium);
 		titanium_shovel = create_shovel(Materials.titanium);
 		titanium_sword = create_sword(Materials.titanium);
+		titanium_rod = create_rod(Materials.titanium);
+		titanium_gear = create_gear(Materials.titanium);
 
 		tungsten_axe = create_axe(Materials.tungsten);
 //		tungsten_blend = create_blend(Materials.tungsten);
@@ -423,6 +853,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		tungsten_powder = create_powder(Materials.tungsten);
 		tungsten_shovel = create_shovel(Materials.tungsten);
 		tungsten_sword = create_sword(Materials.tungsten);
+		tungsten_rod = create_rod(Materials.tungsten);
+		tungsten_gear = create_gear(Materials.tungsten);
 
 		uranium_axe = create_axe(Materials.uranium);
 //		uranium_blend = create_blend(Materials.uranium);
@@ -439,6 +871,26 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		uranium_powder = create_powder(Materials.uranium);
 		uranium_shovel = create_shovel(Materials.uranium);
 		uranium_sword = create_sword(Materials.uranium);
+		uranium_rod = create_rod(Materials.uranium);
+		uranium_gear = create_gear(Materials.uranium);
+
+		zirconium_axe = create_axe(Materials.zirconium);
+		zirconium_blend = create_blend(Materials.zirconium);
+		zirconium_boots = create_boots(Materials.zirconium);
+		zirconium_chestplate = create_chestplate(Materials.zirconium);
+		zirconium_crackhammer = create_crackhammer(Materials.zirconium);
+		zirconium_door = create_door(Materials.zirconium, Blocks.zirconium_door);
+		zirconium_helmet = create_helmet(Materials.zirconium);
+		zirconium_hoe = create_hoe(Materials.zirconium);
+		zirconium_ingot = create_ingot(Materials.zirconium);
+		zirconium_leggings = create_leggings(Materials.zirconium);
+		zirconium_nugget = create_nugget(Materials.zirconium);
+		zirconium_pickaxe = create_pickaxe(Materials.zirconium);
+		zirconium_powder = create_powder(Materials.zirconium);
+		zirconium_shovel = create_shovel(Materials.zirconium);
+		zirconium_sword = create_sword(Materials.zirconium);
+		zirconium_rod = create_rod(Materials.zirconium);
+		zirconium_gear = create_gear(Materials.zirconium);
 
 		for(Item i : itemRegistry.keySet()){
 			allItems.put(itemRegistry.get(i), i);
