@@ -22,8 +22,8 @@ public class Achievements extends cyano.basemetals.init.Achievements {
 		AchievementPage.registerAchievementPage(page);
 
 		aluminumbrass_maker = makeAchievement("aluminumbrass_maker",metallurgy,0,0,Items.aluminumbrass_ingot);
-		cupronickel_maker = makeAchievement("cupronickel_maker",metallurgy,0,1,Items.cupronickel_ingot);
-		titanium_maker = makeAchievement("titanium_maker",metallurgy,0,2,Items.titanium_ingot);
+//		cupronickel_maker = makeAchievement("cupronickel_maker",metallurgy,0,1,Items.cupronickel_ingot);
+		titanium_maker = makeAchievement("titanium_maker",metallurgy,0,1,Items.titanium_ingot);
 
 		initDone = true;
 	}

@@ -52,6 +52,8 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			Item powder = modernmetals.init.Items.getItemByName(baseName+"powder");
 			Item shovel = modernmetals.init.Items.getItemByName(baseName+"shovel");
 			Item sword = modernmetals.init.Items.getItemByName(baseName+"sword");
+			Item rod = cyano.basemetals.init.Items.getItemByName(baseName+"rod");
+			Item gear = cyano.basemetals.init.Items.getItemByName(baseName+"gear");
 			Block bars = modernmetals.init.Blocks.getBlockByName(baseName+"bars");
 			Block block = modernmetals.init.Blocks.getBlockByName(baseName+"block");
 			Block plate = modernmetals.init.Blocks.getBlockByName(baseName+"plate");
@@ -93,6 +95,15 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,16), "xxx","xxx",'x',"ingot"+oreDictName));
 				OreDictionary.registerOre("bars", bars);
 			}
+			if(ingot != null && rod != null){
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(rod,4), "x","x",'x',"ingot"+oreDictName));
+			}
+			if(rod != null && bars != null){
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,4), "xxx",'x',"rod"+oreDictName));
+			}
+			if(rod != null && ingot != null && gear != null){
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(gear,4), " x ","x/x"," x ",'x',"ingot"+oreDictName,'/',"rod"+oreDictName));
+			}
 			if(ingot != null && door != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx","xx","xx",'x',"ingot"+oreDictName));
 				OreDictionary.registerOre("door", door);
@@ -120,7 +131,10 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		
 		// alloy blends
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_blend,2), "dustAluminum","dustBrass"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.cupronickel_blend,2), "dustCopper","dustNickel"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.cupronickel_blend,3), "dustCopper","dustCopper","dustNickel"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_blend,2), "dustRutile","dustMagnesium"));
+		
+		// new recipes using rods and gears
+//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.lever,1), "x","y",'x',"rod",'y', "cobblestone"));
 	}
 }

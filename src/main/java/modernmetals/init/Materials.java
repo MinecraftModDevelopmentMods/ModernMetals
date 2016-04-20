@@ -30,10 +30,10 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 		// mod metals
 		aluminum = addMaterial("aluminum",8,8,4.5,0.3);
 		aluminumbrass = addMaterial("aluminumbrass",8,8,4.5,0.3);
-		cupronickel = addMaterial("cupronickel",8,8,4.5,0.3);
+//		cupronickel = addMaterial("cupronickel",6,6,6,0.2);
 		magnesium = addMaterial("magnesium",8,8,4.5,0.3);
 		osmium = addMaterial("osmium",8,8,4.5,0.3);
-		platinum = addMaterial("platinum",8,8,4.5,0.3);
+//		platinum = addMaterial("platinum",3,5,12,0.01);
 		rutile = addMaterial("rutile",8,8,4.5,0.3);
 		titanium = addMaterial("titanium",8,8,4.5,0.3);
 		tungsten = addMaterial("tungsten",8,8,4.5,0.3);

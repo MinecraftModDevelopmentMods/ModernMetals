@@ -93,6 +93,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item aluminum_powder;
 	public static Item aluminum_shovel;
 	public static Item aluminum_sword;
+	public static Item aluminum_rod;
+	public static Item aluminum_gear;
 
 	public static Item aluminumbrass_axe;
 	public static Item aluminumbrass_blend;
@@ -109,7 +111,10 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item aluminumbrass_powder;
 	public static Item aluminumbrass_shovel;
 	public static Item aluminumbrass_sword;
+	public static Item aluminumbrass_rod;
+	public static Item aluminumbrass_gear;
 
+/*
 	public static Item cupronickel_axe;
 	public static Item cupronickel_blend;
 	public static Item cupronickel_boots;
@@ -125,6 +130,9 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item cupronickel_powder;
 	public static Item cupronickel_shovel;
 	public static Item cupronickel_sword;
+	public static Item cupronickel_rod;
+	public static Item cupronickel_gear;
+*/
 
 	public static Item magnesium_axe;
 //	public static Item magnesium_blend;
@@ -141,6 +149,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item magnesium_powder;
 	public static Item magnesium_shovel;
 	public static Item magnesium_sword;
+	public static Item magnesium_rod;
+	public static Item magnesium_gear;
 
 	public static Item osmium_axe;
 //	public static Item osmium_blend;
@@ -157,7 +167,10 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item osmium_powder;
 	public static Item osmium_shovel;
 	public static Item osmium_sword;
+	public static Item osmium_rod;
+	public static Item osmium_gear;
 
+/*
 	public static Item platinum_axe;
 //	public static Item platinum_blend;
 	public static Item platinum_boots;
@@ -173,7 +186,9 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item platinum_powder;
 	public static Item platinum_shovel;
 	public static Item platinum_sword;
-
+	public static Item platinum_rod;
+	public static Item platinum_gear;
+*/
 	public static Item rutile_axe;
 //	public static Item rutile_blend;
 	public static Item rutile_boots;
@@ -189,6 +204,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item rutile_powder;
 	public static Item rutile_shovel;
 	public static Item rutile_sword;
+	public static Item rutile_rod;
+	public static Item rutile_gear;
 
 	public static Item titanium_axe;
 	public static Item titanium_blend;
@@ -205,6 +222,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item titanium_powder;
 	public static Item titanium_shovel;
 	public static Item titanium_sword;
+	public static Item titanium_rod;
+	public static Item titanium_gear;
 
 	public static Item tungsten_axe;
 //	public static Item tungsten_blend;
@@ -221,6 +240,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item tungsten_powder;
 	public static Item tungsten_shovel;
 	public static Item tungsten_sword;
+	public static Item tungsten_rod;
+	public static Item tungsten_gear;
 
 	public static Item uranium_axe;
 //	public static Item uranium_blend;
@@ -237,6 +258,8 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item uranium_powder;
 	public static Item uranium_shovel;
 	public static Item uranium_sword;
+	public static Item uranium_rod;
+	public static Item uranium_gear;
 
 	/**
 	 * Gets the inventory item corresponding to a given door block
@@ -285,6 +308,7 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		aluminumbrass_shovel = create_shovel(Materials.aluminumbrass);
 		aluminumbrass_sword = create_sword(Materials.aluminumbrass);
 
+/*
 		cupronickel_axe = create_axe(Materials.cupronickel);
 		cupronickel_blend = create_blend(Materials.cupronickel);
 		cupronickel_boots = create_boots(Materials.cupronickel);
@@ -300,6 +324,7 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		cupronickel_powder = create_powder(Materials.cupronickel);
 		cupronickel_shovel = create_shovel(Materials.cupronickel);
 		cupronickel_sword = create_sword(Materials.cupronickel);
+*/
 
 		magnesium_axe = create_axe(Materials.magnesium);
 //		magnesium_blend = create_blend(Materials.magnesium);
@@ -333,6 +358,7 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		osmium_shovel = create_shovel(Materials.osmium);
 		osmium_sword = create_sword(Materials.osmium);
 
+/*
 		platinum_axe = create_axe(Materials.platinum);
 //		platinum_blend = create_blend(Materials.platinum);
 		platinum_boots = create_boots(Materials.platinum);
@@ -348,6 +374,7 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		platinum_powder = create_powder(Materials.platinum);
 		platinum_shovel = create_shovel(Materials.platinum);
 		platinum_sword = create_sword(Materials.platinum);
+*/
 
 		rutile_axe = create_axe(Materials.rutile);
 //		rutile_blend = create_blend(Materials.rutile);
@@ -512,7 +539,35 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
-	
+
+
+	private static Item create_rod(MetalMaterial m){
+		String n = "rod";
+		Item i = new Item();
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
+		String regName = m.getName()+"_"+n;
+		registerItem(i, regName, m);
+		i.setCreativeTab(ItemGroups.tab_items);
+		OreDictionary.registerOre("stick"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("rod"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("rod",i);
+		return i;
+	}
+
+
+	private static Item create_gear(MetalMaterial m){
+		String n = "gear";
+		Item i = new Item();
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
+		String regName = m.getName()+"_"+n;
+		registerItem(i, regName, m);
+		i.setCreativeTab(ItemGroups.tab_items);
+		OreDictionary.registerOre("gear"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("gear",i);
+		if(m.hardness >= 7.0F)OreDictionary.registerOre("sprocket",i);
+		return i;
+	}	
+
 	private static Item create_axe(MetalMaterial m){
 		String n = "axe";
 		Item i = new ItemMetalAxe(m);

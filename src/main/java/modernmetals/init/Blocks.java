@@ -1,8 +1,5 @@
 package modernmetals.init;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import modernmetals.ModernMetals;
 import cyano.basemetals.blocks.*;
 
@@ -20,6 +17,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class initializes all blocks in Modern Metals and provides some utility 
@@ -200,6 +200,21 @@ public abstract class Blocks {
 		initDone = true;
 	}
 
+	private static Block addBlock(Block block, String name){
+//		block.setRegistryName(ModernMetals.MODID+":"+name);
+		block.setRegistryName(ModernMetals.MODID, name);
+//		block.setUnlocalizedName(block.getRegistryName().toString());
+		block.setUnlocalizedName(ModernMetals.MODID+"."+ name);
+//		GameRegistry.registerBlock(block, name);
+		GameRegistry.register(block); 
+
+		ItemBlock blockItem = new ItemBlock(block);
+		blockItem.setRegistryName(ModernMetals.MODID, name);
+		GameRegistry.register(blockItem);
+
+		allBlocks.put(name, block);
+		return block;
+	}
 	private static Block createPlate(MetalMaterial metal) {
 		Block block = new BlockMetalPlate(metal);
 //		block.setRegistryName(ModernMetals.MODID+":"+metal.getName()+"_plate");
