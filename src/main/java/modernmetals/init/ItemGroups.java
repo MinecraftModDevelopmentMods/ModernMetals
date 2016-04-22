@@ -1,8 +1,7 @@
 package modernmetals.init;
 
 import net.minecraft.creativetab.CreativeTabs;
-//import net.minecraft.item.Item;
-//import net.minecraft.item.ItemBlock;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cyano.basemetals.init.FunctionalCreativeTab;
 import modernmetals.ModernMetals;
@@ -20,7 +19,7 @@ public class ItemGroups extends cyano.basemetals.init.ItemGroups {
 	public static CreativeTabs tab_items;
 	public static CreativeTabs tab_tools;
 
-//	private static Item blockItem;
+	private static Item blockItem;
 //	private static Item itemItem;
 //	private static Item toolItem;
 	
@@ -29,11 +28,11 @@ public class ItemGroups extends cyano.basemetals.init.ItemGroups {
 		if(initDone) return;
 		
 		// placeholder's
-//		blockItem = modernmetals.init.Items.aluminum_crackhammer;
+		blockItem = Items.aluminum_crackhammer;
 //		itemItem = net.minecraft.init.Items.iron_ingot;
 //		toolItem = net.minecraft.init.Items.iron_ingot;
 
-		tab_blocks = new FunctionalCreativeTab( ModernMetals.MODID.concat(".blocks"),
+		tab_blocks = new FunctionalCreativeTab( ModernMetals.MODID.concat(".blocks"), false,
 				()->Items.aluminum_crackhammer, 
 				(ItemStack a,ItemStack b)->{
 					int delta = Items.getSortingValue(a)-Items.getSortingValue(b);
@@ -50,3 +49,4 @@ public class ItemGroups extends cyano.basemetals.init.ItemGroups {
 	}
 
 }
+

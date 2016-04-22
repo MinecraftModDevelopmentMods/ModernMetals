@@ -3,8 +3,6 @@ package modernmetals.init;
 import modernmetals.ModernMetals;
 import cyano.basemetals.blocks.*;
 
-import modernmetals.init.ItemGroups;
-import modernmetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
@@ -31,7 +29,7 @@ public abstract class Blocks {
 //	private static Map<Block,String> blockRegistry = new HashMap<>();
 	private static final Map<String,Block> allBlocks = new HashMap<>();
 //	private static Map<MetalMaterial,List<Block>> blocksByMetal = new HashMap<>();
-
+	
 	/**
 	 * Gets an block by its name. The name is the name as it is registered in 
 	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
@@ -42,108 +40,91 @@ public abstract class Blocks {
 	public static Block getBlockByName(String name) {
 		return allBlocks.get(name);
 	}
-
+	
 	public static Block aluminum_bars;
 	public static Block aluminum_block;
 	public static Block aluminum_plate;
 	public static BlockDoor aluminum_door;
 	public static Block aluminum_ore;
 	public static Block aluminum_trapdoor;
-
+	
 	public static Block aluminumbrass_bars;
 	public static Block aluminumbrass_block;
 	public static Block aluminumbrass_plate;
 	public static BlockDoor aluminumbrass_door;
 //	public static Block aluminumbrass_ore;
 	public static Block aluminumbrass_trapdoor;
-
+	
 	public static Block cadmium_bars;
 	public static Block cadmium_block;
 	public static Block cadmium_plate;
 	public static BlockDoor cadmium_door;
 	public static Block cadmium_ore;
 	public static Block cadmium_trapdoor;
-
+	
 	public static Block chromium_bars;
 	public static Block chromium_block;
 	public static Block chromium_plate;
 	public static BlockDoor chromium_door;
 	public static Block chromium_ore;
 	public static Block chromium_trapdoor;
-/*
-	public static Block cupronickel_bars;
-	public static Block cupronickel_block;
-	public static Block cupronickel_plate;
-	public static BlockDoor cupronickel_door;
-//	public static Block cupronickel_ore;
-	public static Block cupronickel_trapdoor;
-*/
-
+		
 	public static Block iridium_bars;
 	public static Block iridium_block;
 	public static Block iridium_plate;
 	public static BlockDoor iridium_door;
 	public static Block iridium_ore;
 	public static Block iridium_trapdoor;
-
+	
 	public static Block lithium_bars;
 	public static Block lithium_block;
 	public static Block lithium_plate;
 	public static BlockDoor lithium_door;
 	public static Block lithium_ore;
 	public static Block lithium_trapdoor;
-
+	
 	public static Block magnesium_bars;
 	public static Block magnesium_block;
 	public static Block magnesium_plate;
 	public static BlockDoor magnesium_door;
 	public static Block magnesium_ore;
 	public static Block magnesium_trapdoor;
-
+	
 	public static Block manganese_bars;
 	public static Block manganese_block;
 	public static Block manganese_plate;
 	public static BlockDoor manganese_door;
 	public static Block manganese_ore;
 	public static Block manganese_trapdoor;
-
+	
 	public static Block niter_bars;
 	public static Block niter_block;
 	public static Block niter_plate;
 	public static BlockDoor niter_door;
 	public static Block niter_ore;
 	public static Block niter_trapdoor;
-
+	
 	public static Block osmium_bars;
 	public static Block osmium_block;
 	public static Block osmium_plate;
 	public static BlockDoor osmium_door;
 	public static Block osmium_ore;
 	public static Block osmium_trapdoor;
-
+	
 	public static Block phospherous_bars;
 	public static Block phospherous_block;
 	public static Block phospherous_plate;
 	public static BlockDoor phospherous_door;
 	public static Block phospherous_ore;
 	public static Block phospherous_trapdoor;
-
-/*
-	public static Block platinum_bars;
-	public static Block platinum_block;
-	public static Block platinum_plate;
-	public static BlockDoor platinum_door;
-	public static Block platinum_ore;
-	public static Block platinum_trapdoor;
-*/
-
+		
 	public static Block plutonium_bars;
 	public static Block plutonium_block;
 	public static Block plutonium_plate;
 	public static BlockDoor plutonium_door;
 	public static Block plutonium_ore;
 	public static Block plutonium_trapdoor;
-
+	
 	public static Block rutile_bars;
 	public static Block rutile_block;
 	public static Block rutile_plate;
@@ -157,28 +138,28 @@ public abstract class Blocks {
 	public static BlockDoor silicon_door;
 	public static Block silicon_ore;
 	public static Block silicon_trapdoor;
-
+	
 	public static Block sulfur_bars;
 	public static Block sulfur_block;
 	public static Block sulfur_plate;
 	public static BlockDoor sulfur_door;
 	public static Block sulfur_ore;
 	public static Block sulfur_trapdoor;
-
+	
 	public static Block tantalum_bars;
 	public static Block tantalum_block;
 	public static Block tantalum_plate;
 	public static BlockDoor tantalum_door;
 	public static Block tantalum_ore;
 	public static Block tantalum_trapdoor;
-
+	
 	public static Block titanium_bars;
 	public static Block titanium_block;
 	public static Block titanium_plate;
 	public static BlockDoor titanium_door;
 	public static Block titanium_ore;
 	public static Block titanium_trapdoor;
-
+	
 	public static Block tungsten_bars;
 	public static Block tungsten_block;
 	public static Block tungsten_plate;
@@ -192,22 +173,22 @@ public abstract class Blocks {
 	public static BlockDoor uranium_door;
 	public static Block uranium_ore;
 	public static Block uranium_trapdoor;
-
+	
 	public static Block zirconium_bars;
 	public static Block zirconium_block;
 	public static Block zirconium_plate;
 	public static BlockDoor zirconium_door;
 	public static Block zirconium_ore;
 	public static Block zirconium_trapdoor;
-
+	
 	private static boolean initDone = false;
 	public static void init(){
 		if(initDone)return;
-
+		
 		modernmetals.init.Materials.init();
 		modernmetals.init.ItemGroups.init();
 
-		
+
 		aluminum_block = createBlock(Materials.aluminum);
 		aluminum_plate = createPlate(Materials.aluminum);
 		aluminum_ore = createOre(Materials.aluminum);
@@ -236,14 +217,6 @@ public abstract class Blocks {
 		chromium_door = createDoor(Materials.chromium);
 		chromium_trapdoor = createTrapDoor(Materials.chromium);
 
-		/*
-		cupronickel_block = createBlock(Materials.cupronickel);
-		cupronickel_plate = createPlate(Materials.cupronickel);
-//		cupronickel_ore = createOre(Materials.cupronickel);
-		cupronickel_bars = createBars(Materials.cupronickel);
-		cupronickel_door = createDoor(Materials.cupronickel);
-		cupronickel_trapdoor = createTrapDoor(Materials.cupronickel);
-*/
 		iridium_block = createBlock(Materials.iridium);
 		iridium_plate = createPlate(Materials.iridium);
 		iridium_ore = createOre(Materials.iridium);
@@ -292,15 +265,6 @@ public abstract class Blocks {
 		phospherous_bars = createBars(Materials.phospherous);
 		phospherous_door = createDoor(Materials.phospherous);
 		phospherous_trapdoor = createTrapDoor(Materials.phospherous);
-
-/*
-		platinum_block = createBlock(Materials.platinum);
-		platinum_plate = createPlate(Materials.platinum);
-		platinum_ore = createOre(Materials.platinum);
-		platinum_bars = createBars(Materials.platinum);
-		platinum_door = createDoor(Materials.platinum);
-		platinum_trapdoor = createTrapDoor(Materials.platinum);
-*/
 
 		plutonium_block = createBlock(Materials.plutonium);
 		plutonium_plate = createPlate(Materials.plutonium);
@@ -375,124 +339,58 @@ public abstract class Blocks {
 	}
 
 	private static Block addBlock(Block block, String name){
-//		block.setRegistryName(ModernMetals.MODID+":"+name);
 		block.setRegistryName(ModernMetals.MODID, name);
-//		block.setUnlocalizedName(block.getRegistryName().toString());
 		block.setUnlocalizedName(ModernMetals.MODID+"."+ name);
-//		GameRegistry.registerBlock(block, name);
-		GameRegistry.register(block); 
-
-		ItemBlock blockItem = new ItemBlock(block);
-		blockItem.setRegistryName(ModernMetals.MODID, name);
-		GameRegistry.register(blockItem);
-
+		GameRegistry.register(block);
+		
+		ItemBlock itemBlock = new ItemBlock(block);
+		itemBlock.setRegistryName(ModernMetals.MODID, name);
+		GameRegistry.register(itemBlock);
+		
 		allBlocks.put(name, block);
 		return block;
 	}
+
 	private static Block createPlate(MetalMaterial metal) {
-		Block block = new BlockMetalPlate(metal);
-//		block.setRegistryName(ModernMetals.MODID+":"+metal.getName()+"_plate");
-		block.setRegistryName(ModernMetals.MODID, metal.getName()+"_plate");
-//		block.setUnlocalizedName(block.getRegistryName().toString());
-		block.setUnlocalizedName(ModernMetals.MODID+"."+metal.getName()+"_plate");
-//		GameRegistry.registerBlock(block, metal.getName()+"_plate");
-		GameRegistry.register(block); 
-
-		ItemBlock blockItem = new ItemBlock(block);
-		blockItem.setRegistryName(ModernMetals.MODID, metal.getName()+"_plate");
-		GameRegistry.register(blockItem);
-
-		allBlocks.put(metal.getName()+"_plate", block);
-		return block;
+		return addBlock(new BlockMetalPlate(metal),metal.getName()+"_plate");
 	}
 
 	private static Block createBars(MetalMaterial metal){
-		Block block = new BlockMetalBars(metal);
-//		block.setRegistryName(ModernMetals.MODID+":"+metal.getName()+"_bars");
-		block.setRegistryName(ModernMetals.MODID, metal.getName()+"_bars");
-		block.setUnlocalizedName(ModernMetals.MODID+"."+metal.getName()+"_bars");
-//		GameRegistry.registerBlock(block, metal.getName()+"_bars");
-		GameRegistry.register(block); 
-
-		ItemBlock blockItem = new ItemBlock(block);
-		blockItem.setRegistryName(ModernMetals.MODID, metal.getName()+"_bars");
-		GameRegistry.register(blockItem);
-
-		allBlocks.put(metal.getName()+"_bars", block);
-		return block;
+		return addBlock(new BlockMetalBars(metal),metal.getName()+"_bars");
 	}
+
 	private static Block createBlock(MetalMaterial metal){
 		return createBlock(metal,false);
 	}
+
 	private static Block createBlock(MetalMaterial metal, boolean glow){
-		Block block = new BlockMetalBlock(metal,glow);
-//		block.setRegistryName(ModernMetals.MODID+":"+metal.getName()+"_block");
-		block.setRegistryName(ModernMetals.MODID, metal.getName()+"_block");
-		block.setUnlocalizedName(ModernMetals.MODID+"."+metal.getName()+"_block");
-//		GameRegistry.registerBlock(block, metal.getName()+"_block");
-		GameRegistry.register(block); 
-
-		ItemBlock blockItem = new ItemBlock(block);
-		blockItem.setRegistryName(ModernMetals.MODID, metal.getName()+"_block");
-		GameRegistry.register(blockItem);
-
-		allBlocks.put(metal.getName()+"_block", block);
-		return block;
+		return addBlock(new BlockMetalBlock(metal,glow),metal.getName()+"_block");
 	}
+
 	private static Block createOre(MetalMaterial metal){
-		Block block = new BlockMetalOre(metal);
-//		block.setRegistryName(ModernMetals.MODID+":"+metal.getName()+"_ore");
-		block.setRegistryName(ModernMetals.MODID, metal.getName()+"_ore");
-		block.setUnlocalizedName(ModernMetals.MODID+"."+metal.getName()+"_ore");
-//		GameRegistry.registerBlock(block, metal.getName()+"_ore");
-		GameRegistry.register(block); 
-
-		ItemBlock blockItem = new ItemBlock(block);
-		blockItem.setRegistryName(ModernMetals.MODID, metal.getName()+"_ore");
-		GameRegistry.register(blockItem);
-
-		allBlocks.put(metal.getName()+"_ore", block);
-		return block;
+		return addBlock(new BlockMetalOre(metal),metal.getName()+"_ore");
 	}
-	private static BlockDoor createDoor(MetalMaterial metal){
-		BlockDoor block = new BlockMetalDoor(metal);
-//		block.setRegistryName(ModernMetals.MODID+":"+metal.getName()+"_door");
-		block.setRegistryName(ModernMetals.MODID, metal.getName()+"_door");
-		block.setUnlocalizedName(ModernMetals.MODID+"."+metal.getName()+"_door");
-		GameRegistry.register(block); 
 
-		ItemBlock blockItem = new ItemBlock(block);
-		blockItem.setRegistryName(ModernMetals.MODID, metal.getName()+"_door");
-		GameRegistry.register(blockItem);
+	private static BlockDoor createDoor(MetalMaterial metal){
+		String name = metal.getName()+"_door";
+		BlockDoor block = new BlockMetalDoor(metal);
+		block.setRegistryName(ModernMetals.MODID, name);
+		block.setUnlocalizedName(ModernMetals.MODID+"."+name);
+		GameRegistry.register(block);
+		
+		ItemBlock itemBlock = new ItemBlock(block);
+		itemBlock.setRegistryName(ModernMetals.MODID, name);
+		GameRegistry.register(itemBlock);
 		
 		allBlocks.put(metal.getName()+"_door", block);
 		return block;
-/*
-		String n = "door";
-		Block block = new BlockMetalDoor(metal);
-		String regName = metal.getName()+"_"+n;
-		registerBlock(block, regName, metal);
-		return block;
-*/
 	}
 
 	private static Block createTrapDoor(MetalMaterial metal){
-		Block block = new BlockMetalTrapDoor(metal);
-//		block.setRegistryName(ModernMetals.MODID+":"+metal.getName()+"_trapdoor");
-		block.setRegistryName(ModernMetals.MODID, metal.getName()+"_trapdoor");
-		block.setUnlocalizedName(ModernMetals.MODID+"."+metal.getName()+"_trapdoor");
-//		GameRegistry.registerBlock(block, metal.getName()+"_trapdoor");
-		GameRegistry.register(block); 
-
-		ItemBlock blockItem = new ItemBlock(block);
-		blockItem.setRegistryName(ModernMetals.MODID, metal.getName()+"_trapdoor");
-		GameRegistry.register(blockItem);
-
-		allBlocks.put(metal.getName()+"_trapdoor", block);
-		return block;
+		return addBlock(new BlockMetalTrapDoor(metal),metal.getName()+"_trapdoor");
 	}
-
 	
+
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event){
 		for(String name : allBlocks.keySet()){
