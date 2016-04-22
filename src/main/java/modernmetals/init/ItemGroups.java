@@ -8,8 +8,7 @@ import modernmetals.ModernMetals;
 import modernmetals.init.Items;
 
 /**
- * This class initializes all item groups in Modern Metals and provides some utility 
- * methods for looking up item groups. 
+ * This class initializes all item groups in Modern Metals.
  * @author DrCyano
  *
  */
@@ -29,11 +28,11 @@ public class ItemGroups extends cyano.basemetals.init.ItemGroups {
 		
 		// placeholder's
 		blockItem = Items.aluminum_crackhammer;
-//		itemItem = net.minecraft.init.Items.iron_ingot;
-//		toolItem = net.minecraft.init.Items.iron_ingot;
+//		itemItem = Items.aluminum_crackhammer;
+//		toolItem = Items.aluminum_crackhammer;
 
 		tab_blocks = new FunctionalCreativeTab( ModernMetals.MODID.concat(".blocks"), false,
-				()->Items.aluminum_crackhammer, 
+				()->blockItem, //s.aluminum_crackhammer, 
 				(ItemStack a,ItemStack b)->{
 					int delta = Items.getSortingValue(a)-Items.getSortingValue(b);
 					if(delta == 0) return a.getItem().getUnlocalizedName().compareToIgnoreCase(b.getItem().getUnlocalizedName());

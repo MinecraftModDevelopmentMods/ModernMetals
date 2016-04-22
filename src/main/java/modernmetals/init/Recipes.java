@@ -52,8 +52,8 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			Item powder = modernmetals.init.Items.getItemByName(baseName+"powder");
 			Item shovel = modernmetals.init.Items.getItemByName(baseName+"shovel");
 			Item sword = modernmetals.init.Items.getItemByName(baseName+"sword");
-			Item rod = cyano.basemetals.init.Items.getItemByName(baseName+"rod");
-			Item gear = cyano.basemetals.init.Items.getItemByName(baseName+"gear");
+			Item rod = modernmetals.init.Items.getItemByName(baseName+"rod");
+			Item gear = modernmetals.init.Items.getItemByName(baseName+"gear");
 			Block bars = modernmetals.init.Blocks.getBlockByName(baseName+"bars");
 			Block block = modernmetals.init.Blocks.getBlockByName(baseName+"block");
 			Block plate = modernmetals.init.Blocks.getBlockByName(baseName+"plate");
@@ -97,12 +97,21 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			}
 			if(ingot != null && rod != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(rod,4), "x","x",'x',"ingot"+oreDictName));
+				OreDictionary.registerOre("stick"+oreDictName,rod);
+				OreDictionary.registerOre("rod"+oreDictName,rod);
+				OreDictionary.registerOre("rod",rod);
+			}
+			if(nugget != null && rod != null){
+				GameRegistry.addSmelting(rod, new ItemStack(nugget,4), 0);
 			}
 			if(rod != null && bars != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,4), "xxx",'x',"rod"+oreDictName));
 			}
 			if(rod != null && ingot != null && gear != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(gear,4), " x ","x/x"," x ",'x',"ingot"+oreDictName,'/',"rod"+oreDictName));
+				OreDictionary.registerOre("gear"+oreDictName,gear);
+				OreDictionary.registerOre("gear",gear);
+				if(metal == Materials.steel)OreDictionary.registerOre("sprocket",gear);
 			}
 			if(ingot != null && door != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx","xx","xx",'x',"ingot"+oreDictName));
@@ -131,7 +140,6 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		
 		// alloy blends
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_blend,2), "dustAluminum","dustBrass"));
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.cupronickel_blend,3), "dustCopper","dustCopper","dustNickel"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_blend,2), "dustRutile","dustMagnesium"));
 		
 		// new recipes using rods and gears

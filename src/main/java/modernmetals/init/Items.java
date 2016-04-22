@@ -1,7 +1,6 @@
 package modernmetals.init;
 
 import modernmetals.ModernMetals;
-import cyano.basemetals.BaseMetals;
 import cyano.basemetals.blocks.*;
 import cyano.basemetals.items.*;
 import cyano.basemetals.material.IMetalObject;
@@ -10,21 +9,19 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fluids.UniversalBucket;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+//import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-import modernmetals.init.ItemGroups;
-import modernmetals.init.Blocks;
-import modernmetals.init.Materials;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
+//import modernmetals.init.ItemGroups;
+//import modernmetals.init.Blocks;
+//import modernmetals.init.Materials;
 
 import java.util.*;
 
@@ -34,23 +31,22 @@ import java.util.*;
  * @author DrCyano
  *
  */
-public abstract class Items { // extends cyano.basemetals.init.Items {
-	
+public abstract class Items {
+
 	private static Map<Item,String> itemRegistry = new HashMap<>();
 	private static Map<String,Item> allItems = new HashMap<>();
 	private static Map<MetalMaterial,List<Item>> itemsByMetal = new HashMap<>();
-
+	
 	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
+	
+	
 
-	
-	
-	@SuppressWarnings("rawtypes")
 	private static Map<Class,Integer> classSortingValues = new HashMap<>();
 	private static Map<MetalMaterial,Integer> materialSortingValues = new HashMap<>();
 	/**
 	 * Gets an item by its name. The name is the name as it is registered in 
 	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
-	 * registered name plus the prefix "basemetals.")
+	 * registered name plus the prefix "modernmetals.")
 	 * @param name The name of the item in question
 	 * @return The item matching that name, or null if there isn't one
 	 */
@@ -59,9 +55,9 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	}
 	/**
 	 * This is the reverse of the getItemByName(...) method, returning the 
-	 * registered name of an item instance (Base Metals items only).
+	 * registered name of an item instance (Modern Metals items only).
 	 * @param i The item in question
-	 * @return The name of the item, or null if the item is not a Base Metals 
+	 * @return The name of the item, or null if the item is not a Modern Metals 
 	 * item.
 	 */
 	public static String getNameOfItem(Item i){
@@ -75,9 +71,9 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		return Collections.unmodifiableMap(itemsByMetal);
 	}
 
-	public static UniversalBucket universal_bucket;
+//	public static UniversalBucket universal_bucket;
 	// TODO: metal arrows or crossbow & bolts
-
+	
 	public static Item aluminum_axe;
 //	public static Item aluminum_blend;
 	public static Item aluminum_boots;
@@ -149,26 +145,6 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item chromium_sword;
 	public static Item chromium_rod;
 	public static Item chromium_gear;
-
-/*
-	public static Item cupronickel_axe;
-	public static Item cupronickel_blend;
-	public static Item cupronickel_boots;
-	public static Item cupronickel_chestplate;
-	public static Item cupronickel_crackhammer;
-	public static Item cupronickel_door;
-	public static Item cupronickel_helmet;
-	public static Item cupronickel_hoe;
-	public static Item cupronickel_ingot;
-	public static Item cupronickel_leggings;
-	public static Item cupronickel_nugget;
-	public static Item cupronickel_pickaxe;
-	public static Item cupronickel_powder;
-	public static Item cupronickel_shovel;
-	public static Item cupronickel_sword;
-	public static Item cupronickel_rod;
-	public static Item cupronickel_gear;
-*/
 
 	public static Item iridium_axe;
 	public static Item iridium_blend;
@@ -296,25 +272,6 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 	public static Item phospherous_rod;
 	public static Item phospherous_gear;
 
-/*
-	public static Item platinum_axe;
-//	public static Item platinum_blend;
-	public static Item platinum_boots;
-	public static Item platinum_chestplate;
-	public static Item platinum_crackhammer;
-	public static Item platinum_door;
-	public static Item platinum_helmet;
-	public static Item platinum_hoe;
-	public static Item platinum_ingot;
-	public static Item platinum_leggings;
-	public static Item platinum_nugget;
-	public static Item platinum_pickaxe;
-	public static Item platinum_powder;
-	public static Item platinum_shovel;
-	public static Item platinum_sword;
-	public static Item platinum_rod;
-	public static Item platinum_gear;
-*/
 	public static Item plutonium_axe;
 	public static Item plutonium_blend;
 	public static Item plutonium_boots;
@@ -564,26 +521,6 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		chromium_rod = create_rod(Materials.chromium);
 		chromium_gear = create_gear(Materials.chromium);
 
-/*
-		cupronickel_axe = create_axe(Materials.cupronickel);
-		cupronickel_blend = create_blend(Materials.cupronickel);
-		cupronickel_boots = create_boots(Materials.cupronickel);
-		cupronickel_chestplate = create_chestplate(Materials.cupronickel);
-		cupronickel_crackhammer = create_crackhammer(Materials.cupronickel);
-		cupronickel_door = create_door(Materials.cupronickel, Blocks.cupronickel_door);
-		cupronickel_helmet = create_helmet(Materials.cupronickel);
-		cupronickel_hoe = create_hoe(Materials.cupronickel);
-		cupronickel_ingot = create_ingot(Materials.cupronickel);
-		cupronickel_leggings = create_leggings(Materials.cupronickel);
-		cupronickel_nugget = create_nugget(Materials.cupronickel);
-		cupronickel_pickaxe = create_pickaxe(Materials.cupronickel);
-		cupronickel_powder = create_powder(Materials.cupronickel);
-		cupronickel_shovel = create_shovel(Materials.cupronickel);
-		cupronickel_sword = create_sword(Materials.cupronickel);
-		cupronickel_rod = create_rod(Materials.cupronickel);
-		cupronickel_gear = create_gear(Materials.cupronickel);
-*/
-
 		iridium_axe = create_axe(Materials.iridium);
 		iridium_blend = create_blend(Materials.iridium);
 		iridium_boots = create_boots(Materials.iridium);
@@ -709,26 +646,6 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		phospherous_sword = create_sword(Materials.phospherous);
 		phospherous_rod = create_rod(Materials.phospherous);
 		phospherous_gear = create_gear(Materials.phospherous);
-
-/*
-		platinum_axe = create_axe(Materials.platinum);
-//		platinum_blend = create_blend(Materials.platinum);
-		platinum_boots = create_boots(Materials.platinum);
-		platinum_chestplate = create_chestplate(Materials.platinum);
-		platinum_crackhammer = create_crackhammer(Materials.platinum);
-		platinum_door = create_door(Materials.platinum, Blocks.platinum_door);
-		platinum_helmet = create_helmet(Materials.platinum);
-		platinum_hoe = create_hoe(Materials.platinum);
-		platinum_ingot = create_ingot(Materials.platinum);
-		platinum_leggings = create_leggings(Materials.platinum);
-		platinum_nugget = create_nugget(Materials.platinum);
-		platinum_pickaxe = create_pickaxe(Materials.platinum);
-		platinum_powder = create_powder(Materials.platinum);
-		platinum_shovel = create_shovel(Materials.platinum);
-		platinum_sword = create_sword(Materials.platinum);
-		platinum_rod = create_rod(Materials.platinum);
-		platinum_gear = create_gear(Materials.platinum);
-*/
 
 		plutonium_axe = create_axe(Materials.plutonium);
 		plutonium_blend = create_blend(Materials.plutonium);
@@ -917,6 +834,7 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		classSortingValues.put(ItemMetalHoe.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalSword.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalArmor.class, ++ss * 10000);
+		classSortingValues.put(GenericMetalItem.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
 
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
@@ -929,202 +847,95 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		initDone = true;
 	}
 
-	
-	
-	private static Item registerItem(Item i, String regName, MetalMaterial m){
-//		i.setRegistryName(ModernMetals.MODID+":"+regName);
-		i.setRegistryName(ModernMetals.MODID, regName);
-		GameRegistry.register(i); 
-		itemRegistry.put(i, regName);
-		if(m != null){
-			itemsByMetal.computeIfAbsent(m, (MetalMaterial g)->new ArrayList<>());
-			itemsByMetal.get(m).add(i);
+
+
+	private static Item registerItem(Item item, String name, MetalMaterial metal, CreativeTabs tab){
+		item.setRegistryName(ModernMetals.MODID, name);
+		item.setUnlocalizedName(ModernMetals.MODID+"."+name);
+		GameRegistry.register(item); 
+		itemRegistry.put(item, name);
+		if(tab != null){
+			item.setCreativeTab(tab);
 		}
-		return i;
-	}
-
-	private static Item init(Item i, String n, CreativeTabs tab){
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n);
-		String regName = n;
-		registerItem(i, regName, null);
-		i.setCreativeTab(tab);
-		return i;
-	}
-
-	
-	private static Item create_ingot(MetalMaterial m){
-		String n = "ingot";
-		Item i = new ItemMetalIngot(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_items);
-		return i;
+		if(metal != null){
+			itemsByMetal.computeIfAbsent(metal, (MetalMaterial g)->new ArrayList<>());
+			itemsByMetal.get(metal).add(item);
+		}
+		return item;
 	}
 	
-	private static Item create_nugget(MetalMaterial m){
-		String n = "nugget";
-		Item i = new ItemMetalNugget(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_items);
-		return i;
+	
+	private static Item create_ingot(MetalMaterial metal){
+		return registerItem(new ItemMetalIngot(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
 	}
 	
-	private static Item create_powder(MetalMaterial m){
-		String n = "powder";
-		Item i = new ItemMetalPowder(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_items);
-		return i;
+	private static Item create_nugget(MetalMaterial metal){
+		return registerItem(new ItemMetalNugget(metal), metal.getName()+"_"+"nugget", metal, ItemGroups.tab_items);
 	}
 	
-	private static Item create_blend(MetalMaterial m){
-		String n = "blend";
-		Item i = new ItemMetalBlend(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_items);
-		return i;
-	}
-
-
-	private static Item create_rod(MetalMaterial m){
-		String n = "rod";
-		Item i = new Item();
-		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_items);
-		OreDictionary.registerOre("stick"+m.getCapitalizedName(),i);
-		OreDictionary.registerOre("rod"+m.getCapitalizedName(),i);
-		OreDictionary.registerOre("rod",i);
-		return i;
-	}
-
-
-	private static Item create_gear(MetalMaterial m){
-		String n = "gear";
-		Item i = new Item();
-		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_items);
-		OreDictionary.registerOre("gear"+m.getCapitalizedName(),i);
-		OreDictionary.registerOre("gear",i);
-		if(m.hardness >= 7.0F)OreDictionary.registerOre("sprocket",i);
-		return i;
-	}	
-
-	private static Item create_axe(MetalMaterial m){
-		String n = "axe";
-		Item i = new ItemMetalAxe(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
-	}
-
-	private static Item create_crackhammer(MetalMaterial m){
-		String n = "crackhammer";
-		Item i = new ItemMetalCrackHammer(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
+	private static Item create_powder(MetalMaterial metal){
+		return registerItem(new ItemMetalPowder(metal), metal.getName()+"_"+"powder", metal, ItemGroups.tab_items);
 	}
 	
-	private static Item create_hoe(MetalMaterial m){
-		String n = "hoe";
-		Item i = new ItemMetalHoe(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
-	}
-	
-	private static Item create_pickaxe(MetalMaterial m){
-		String n = "pickaxe";
-		Item i = new ItemMetalPickaxe(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
-	}
-	
-	private static Item create_shovel(MetalMaterial m){
-		String n = "shovel";
-		Item i = new ItemMetalShovel(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
-	}
-	
-	private static Item create_sword(MetalMaterial m){
-		String n = "sword";
-		Item i = new ItemMetalSword(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
+	private static Item create_blend(MetalMaterial metal){
+		return registerItem(new ItemMetalBlend(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
 	}
 
-	private static Item create_helmet(MetalMaterial m){
-		String n = "helmet";
-		Item i = ItemMetalArmor.createHelmet(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
+
+	private static Item create_rod(MetalMaterial metal){
+		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"rod", metal, ItemGroups.tab_items);
 	}
-	private static Item create_chestplate(MetalMaterial m){
-		String n = "chestplate";
-		Item i = ItemMetalArmor.createChestplate(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
+
+
+	private static Item create_gear(MetalMaterial metal){
+		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"gear", metal, ItemGroups.tab_items);
 	}
-	private static Item create_leggings(MetalMaterial m){
-		String n = "leggings";
-		Item i = ItemMetalArmor.createLeggings(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
+	
+	private static Item create_axe(MetalMaterial metal){
+		return registerItem(new ItemMetalAxe(metal), metal.getName()+"_"+"axe", metal, ItemGroups.tab_tools);
 	}
-	private static Item create_boots(MetalMaterial m){
-		String n = "boots";
-		Item i = ItemMetalArmor.createBoots(m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n;
-		registerItem(i, regName, m);
-		i.setCreativeTab(ItemGroups.tab_tools);
-		return i;
+
+	private static Item create_crackhammer(MetalMaterial metal){
+		return registerItem(new ItemMetalCrackHammer(metal), metal.getName()+"_"+"crackhammer", metal, ItemGroups.tab_tools);
 	}
-	private static Item create_door(MetalMaterial m,BlockDoor door){
-		String n = "door";
-		Item i = new ItemMetalDoor(door,m);
-		i.setUnlocalizedName(ModernMetals.MODID+"."+m.getName()+"_"+n);
-		String regName = m.getName()+"_"+n+"_item";
-		registerItem(i, regName, m);
-		doorMap.put(door, i);
-		i.setCreativeTab(ItemGroups.tab_blocks);
-		return i;
+	
+	private static Item create_hoe(MetalMaterial metal){
+		return registerItem(new ItemMetalHoe(metal), metal.getName()+"_"+"hoe", metal, ItemGroups.tab_tools);
+	}
+	
+	private static Item create_pickaxe(MetalMaterial metal){
+		return registerItem(new ItemMetalPickaxe(metal), metal.getName()+"_"+"pickaxe", metal, ItemGroups.tab_tools);
+	}
+	
+	private static Item create_shovel(MetalMaterial metal){
+		return registerItem(new ItemMetalShovel(metal), metal.getName()+"_"+"shovel", metal, ItemGroups.tab_tools);
+	}
+	
+	private static Item create_sword(MetalMaterial metal){
+		return registerItem(new ItemMetalSword(metal), metal.getName()+"_"+"sword", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_helmet(MetalMaterial metal){
+		return registerItem(ItemMetalArmor.createHelmet(metal), metal.getName()+"_"+"helmet", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_chestplate(MetalMaterial metal){
+		return registerItem(ItemMetalArmor.createChestplate(metal), metal.getName()+"_"+"chestplate", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_leggings(MetalMaterial metal){
+		return registerItem(ItemMetalArmor.createLeggings(metal), metal.getName()+"_"+"leggings", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_boots(MetalMaterial metal){
+		return registerItem(ItemMetalArmor.createBoots(metal), metal.getName()+"_"+"boots", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_door(MetalMaterial metal,BlockDoor door){
+		Item item = new ItemMetalDoor(door,metal);
+		registerItem(item, metal.getName()+"_"+"door"+"_"+"item", metal, ItemGroups.tab_blocks);
+		doorMap.put(door, item);
+		return item;
 	}
 
 	public static int getSortingValue(ItemStack a){
@@ -1132,18 +943,18 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		int metalVal = 9900;
 		if(a.getItem() instanceof ItemBlock && ((ItemBlock)a.getItem()).getBlock() instanceof IMetalObject){
 			classVal = classSortingValues.computeIfAbsent(((ItemBlock)a.getItem()).getBlock().getClass(),
-					(@SuppressWarnings("rawtypes") Class c)->990000);
+					(Class c)->990000);
 			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)((ItemBlock)a.getItem()).getBlock()).getMetalMaterial(),
 					(MetalMaterial m)->9900);
 		} else if(a.getItem() instanceof IMetalObject){
 			classVal = classSortingValues.computeIfAbsent(a.getItem().getClass(),
-					(@SuppressWarnings("rawtypes") Class c)->990000);
+					(Class c)->990000);
 			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)a.getItem()).getMetalMaterial(),
 					(MetalMaterial m)->9900);
 		}
 		return classVal + metalVal + (a.getMetadata() % 100);
 	}
-
+	
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event){
 		for(Item i : itemRegistry.keySet()){
@@ -1163,5 +974,4 @@ public abstract class Items { // extends cyano.basemetals.init.Items {
 		},universal_bucket);
 */
 	}
-
 }
