@@ -3,6 +3,8 @@ package modernmetals.init;
 import modernmetals.ModernMetals;
 import cyano.basemetals.blocks.*;
 import cyano.basemetals.items.*;
+//import modernmetals.blocks.*;
+import modernmetals.items.*;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
@@ -72,7 +74,6 @@ public abstract class Items {
 	}
 
 //	public static UniversalBucket universal_bucket;
-	// TODO: metal arrows or crossbow & bolts
 	
 	public static Item aluminum_axe;
 //	public static Item aluminum_blend;
@@ -91,6 +92,14 @@ public abstract class Items {
 	public static Item aluminum_sword;
 	public static Item aluminum_rod;
 	public static Item aluminum_gear;
+
+	public static Item aluminum_arrow;
+	public static Item aluminum_bow;
+	public static Item aluminum_bolt;
+	public static Item aluminum_crossbow;
+	public static Item aluminum_shears;
+	public static Item aluminum_smallblend;
+	public static Item aluminum_smallpowder;
 
 	public static Item aluminumbrass_axe;
 	public static Item aluminumbrass_blend;
@@ -467,6 +476,14 @@ public abstract class Items {
 		aluminum_rod = create_rod(Materials.aluminum);
 		aluminum_gear = create_gear(Materials.aluminum);
 
+		aluminum_arrow = create_arrow(Materials.aluminum);
+		aluminum_bow = create_bow(Materials.aluminum);
+		aluminum_bolt = create_bolt(Materials.aluminum);
+		aluminum_crossbow = create_crossbow(Materials.aluminum);
+		aluminum_shears = create_shears(Materials.aluminum);
+		aluminum_smallblend = create_smallblend(Materials.aluminum);
+		aluminum_smallpowder = create_smallpowder(Materials.aluminum);
+
 		aluminumbrass_axe = create_axe(Materials.aluminumbrass);
 		aluminumbrass_blend = create_blend(Materials.aluminumbrass);
 		aluminumbrass_boots = create_boots(Materials.aluminumbrass);
@@ -835,6 +852,13 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalSword.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalArmor.class, ++ss * 10000);
 		classSortingValues.put(GenericMetalItem.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalArrow.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalBolt.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalBow.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalCrossbow.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalShears.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalSmallBlend.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalSmallPowder.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
 
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
@@ -929,6 +953,34 @@ public abstract class Items {
 
 	private static Item create_boots(MetalMaterial metal){
 		return registerItem(ItemMetalArmor.createBoots(metal), metal.getName()+"_"+"boots", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_arrow(MetalMaterial metal){
+		return registerItem(new ItemMetalArrow(metal), metal.getName()+"_"+"arrow", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_bolt(MetalMaterial metal){
+		return registerItem(new ItemMetalBolt(metal), metal.getName()+"_"+"bolt", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_bow(MetalMaterial metal){
+		return registerItem(new ItemMetalBow(metal), metal.getName()+"_"+"bow", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_crossbow(MetalMaterial metal){
+		return registerItem(new ItemMetalCrossbow(metal), metal.getName()+"_"+"crossbow", metal, ItemGroups.tab_tools);
+	}
+
+	private static Item create_shears(MetalMaterial metal){
+		return registerItem(new ItemMetalShears(metal), metal.getName()+"_"+"shears", metal, ItemGroups.tab_tools);
+	}
+	
+	private static Item create_smallblend(MetalMaterial metal){
+		return registerItem(new ItemMetalSmallBlend(metal), metal.getName()+"_"+"smallblend", metal, ItemGroups.tab_items);
+	}
+
+	private static Item create_smallpowder(MetalMaterial metal){
+		return registerItem(new ItemMetalSmallPowder(metal), metal.getName()+"_"+"smallpowder", metal, ItemGroups.tab_items);
 	}
 
 	private static Item create_door(MetalMaterial metal,BlockDoor door){

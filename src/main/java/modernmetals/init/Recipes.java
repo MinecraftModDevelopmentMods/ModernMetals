@@ -60,7 +60,14 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			Block ore = modernmetals.init.Blocks.getBlockByName(baseName+"ore");
 			Block trapdoor = modernmetals.init.Blocks.getBlockByName(baseName+"trapdoor");
 			
-			
+			Item arrow = modernmetals.init.Items.getItemByName(baseName+"arrow");
+			Item bow = modernmetals.init.Items.getItemByName(baseName+"bow");
+			Item bolt = modernmetals.init.Items.getItemByName(baseName+"bolt");
+			Item crossbow = modernmetals.init.Items.getItemByName(baseName+"crossbow");
+			Item shears = modernmetals.init.Items.getItemByName(baseName+"shears");
+			Item smallblend = modernmetals.init.Items.getItemByName(baseName+"smallblend");
+			Item smallpowder = modernmetals.init.Items.getItemByName(baseName+"smallpowder");
+
 			// NOTE: smelting XP is based on output item, not input item
 			// ingot-related recipes 
 			if(ore != null && powder != null){
@@ -121,6 +128,13 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trapdoor), "xx","xx",'x',"ingot"+oreDictName));
 				OreDictionary.registerOre("trapdoor", trapdoor);
 			}
+
+			if(blend != null && smallblend != null){
+				// TODO
+			}
+			if(powder != null && smallpowder != null){
+				// TODO
+			}
 			
 			// armor and tools
 			if(ingot != null && boots != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(boots), "x x","x x",'x',"ingot"+oreDictName));
@@ -135,7 +149,13 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe), "xxx"," / "," / ",'x',"ingot"+oreDictName,'/',"stickWood"));
 			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), "x","/","/",'x',"ingot"+oreDictName,'/',"stickWood"));
 			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword),   "x","x","/",'x',"ingot"+oreDictName,'/',"stickWood"));
-			
+//			if(ingot != null && shears != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shears), "x "," x","ingot"+oreDictName));
+
+			// TODO: Bows and Crossbows
+			//if(rod != null && arrow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(arrow), "x x","x x",'x',"rod"+oreDictName));
+			//if(rod != null && bow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bow), "x x","x x",'x',"rod"+oreDictName));
+			//if(rod != null && crossbow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crossbow), "x x","x x",'x',"rod"+oreDictName));
+			//if(rod != null && bolt != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bolt), "x x","x x",'x',"rod"+oreDictName));
 		}
 		
 		// alloy blends
