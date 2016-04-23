@@ -11,7 +11,7 @@ public class ItemMetalCrossbow extends net.minecraft.item.ItemBow implements IOr
 	public ItemMetalCrossbow(MetalMaterial metal){
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "dust"+metal.getCapitalizedName();
+		this.oreDict = "crossbow"+metal.getCapitalizedName();
 	}
 
 	public String getOreDictionaryName(){

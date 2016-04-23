@@ -12,7 +12,7 @@ public class ItemMetalArrow extends net.minecraft.item.ItemArrow implements IOre
 	public ItemMetalArrow(MetalMaterial metal){
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "dust"+metal.getCapitalizedName();
+		this.oreDict = "arrow"+metal.getCapitalizedName();
 	}
 
 	public String getOreDictionaryName(){

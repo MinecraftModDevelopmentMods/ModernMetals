@@ -12,7 +12,7 @@ public class ItemMetalSmallPowder  extends net.minecraft.item.Item implements IO
 	public ItemMetalSmallPowder(MetalMaterial metal){
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "dust"+metal.getCapitalizedName();
+		this.oreDict = "smalldust"+metal.getCapitalizedName();
 	}
 	
 	public String getOreDictionaryName(){

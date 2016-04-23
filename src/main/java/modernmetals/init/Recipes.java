@@ -130,10 +130,17 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			}
 
 			if(blend != null && smallblend != null){
-				// TODO
+				// TODO - why the hell doesn't this work?
+				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(smallblend,9), new ItemStack(blend)));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blend), "xxx","xxx","xxx",'x',new ItemStack(smallblend)));
+				GameRegistry.addSmelting(smallblend, new ItemStack(nugget,1), metal.getOreSmeltXP());
 			}
 			if(powder != null && smallpowder != null){
-				// TODO
+				// TODO - small powder to powder recipe doesn't use oredict
+				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(smallpowder,9), new ItemStack(powder)));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(powder), "xxx","xxx","xxx",'x',new ItemStack(smallpowder)));
+				GameRegistry.addSmelting(smallpowder, new ItemStack(nugget,1), metal.getOreSmeltXP());
+				CrusherRecipeRegistry.addNewCrusherRecipe("nugget"+oreDictName,new ItemStack(smallpowder,1));
 			}
 			
 			// armor and tools
@@ -149,13 +156,13 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe), "xxx"," / "," / ",'x',"ingot"+oreDictName,'/',"stickWood"));
 			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), "x","/","/",'x',"ingot"+oreDictName,'/',"stickWood"));
 			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword),   "x","x","/",'x',"ingot"+oreDictName,'/',"stickWood"));
-//			if(ingot != null && shears != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shears), "x "," x","ingot"+oreDictName));
+			if(ingot != null && shears != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shears), " x","x ",'x',"ingot"+oreDictName));
 
 			// TODO: Bows and Crossbows
-			//if(rod != null && arrow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(arrow), "x x","x x",'x',"rod"+oreDictName));
-			//if(rod != null && bow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bow), "x x","x x",'x',"rod"+oreDictName));
+			if(rod != null && arrow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(arrow),   "x",  "y",  "z",'x',"nugget"+oreDictName,'y',"rod"+oreDictName,'z',"feather"));
+			if(rod != null && bow != null)   GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bow),     " xy","x y"," xy",'x',"rod"+oreDictName,'y',"string"));
 			//if(rod != null && crossbow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crossbow), "x x","x x",'x',"rod"+oreDictName));
-			//if(rod != null && bolt != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bolt), "x x","x x",'x',"rod"+oreDictName));
+			if(rod != null && bolt != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bolt), "x","x","y",'x',"rod"+oreDictName,'y',"feather"));
 		}
 		
 		// alloy blends

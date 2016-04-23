@@ -11,7 +11,7 @@ public class ItemMetalBow extends net.minecraft.item.ItemBow implements IOreDict
 	public ItemMetalBow(MetalMaterial metal){
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "dust"+metal.getCapitalizedName();
+		this.oreDict = "bow"+metal.getCapitalizedName();
 	}
 
 	public String getOreDictionaryName(){

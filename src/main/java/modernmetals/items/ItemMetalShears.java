@@ -11,7 +11,7 @@ public class ItemMetalShears extends net.minecraft.item.ItemShears implements IO
 	public ItemMetalShears(MetalMaterial metal){
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "dust"+metal.getCapitalizedName();
+		this.oreDict = "shears"+metal.getCapitalizedName();
 	}
 
 	public String getOreDictionaryName(){
