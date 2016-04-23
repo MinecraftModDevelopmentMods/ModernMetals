@@ -1364,11 +1364,11 @@ public abstract class Items {
 	}
 
 	private static Item create_fishingrod(MetalMaterial metal){
-		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"fishingrod", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalHorseArmor(metal), metal.getName()+"_"+"fishingrod", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_horsearmor(MetalMaterial metal){
-		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"horsearmor", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalFishingRod(metal), metal.getName()+"_"+"horsearmor", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_smallpowder(MetalMaterial metal){

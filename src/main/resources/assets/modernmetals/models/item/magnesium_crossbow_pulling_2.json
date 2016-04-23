@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/magnesium_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/magnesium_crossbow_pulling_2"
+    }
+}

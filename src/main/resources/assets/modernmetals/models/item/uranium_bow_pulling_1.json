@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/uranium_bow",
+    "textures": {
+        "layer0": "modernmetals:items/uranium_bow_pulling_1"
+    }
+}

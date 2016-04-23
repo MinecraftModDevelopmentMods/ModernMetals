@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/silicon_plate",
+        "side": "modernmetals:blocks/silicon_plate",
+        "bottom": "modernmetals:blocks/silicon_plate"
+    }
+}

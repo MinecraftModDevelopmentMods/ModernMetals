@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/manganese_plate",
+        "side": "modernmetals:blocks/manganese_plate",
+        "bottom": "modernmetals:blocks/manganese_plate"
+    }
+}

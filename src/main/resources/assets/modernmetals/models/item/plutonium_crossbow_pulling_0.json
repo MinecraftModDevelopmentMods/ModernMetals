@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/plutonium_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/plutonium_crossbow_pulling_0"
+    }
+}

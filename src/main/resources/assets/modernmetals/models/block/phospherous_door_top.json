@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top",
+    "textures": {
+        "bottom": "modernmetals:blocks/phospherous_door_lower",
+        "top": "modernmetals:blocks/phospherous_door_upper"
+    }
+}

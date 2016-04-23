@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/phospherous_bow",
+    "textures": {
+        "layer0": "modernmetals:items/phospherous_bow_pulling_0"
+    }
+}

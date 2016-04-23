@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "modernmetals:blocks/tantalum_door_lower",
+        "top": "modernmetals:blocks/tantalum_door_upper"
+    }
+}

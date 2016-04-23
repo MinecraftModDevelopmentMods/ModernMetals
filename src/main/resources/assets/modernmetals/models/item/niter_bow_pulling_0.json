@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/niter_bow",
+    "textures": {
+        "layer0": "modernmetals:items/niter_bow_pulling_0"
+    }
+}

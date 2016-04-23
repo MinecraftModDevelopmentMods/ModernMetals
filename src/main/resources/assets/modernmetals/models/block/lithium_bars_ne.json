@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/bars_ne",
+    "textures": {
+        "particle": "modernmetals:blocks/lithium_bars",
+        "bars": "modernmetals:blocks/lithium_bars",
+        "edge": "modernmetals:blocks/lithium_bars"
+    }
+}

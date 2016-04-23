@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/rutile_bow",
+    "textures": {
+        "layer0": "modernmetals:items/rutile_bow_pulling_1"
+    }
+}

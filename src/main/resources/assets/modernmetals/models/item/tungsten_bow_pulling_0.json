@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/tungsten_bow",
+    "textures": {
+        "layer0": "modernmetals:items/tungsten_bow_pulling_0"
+    }
+}

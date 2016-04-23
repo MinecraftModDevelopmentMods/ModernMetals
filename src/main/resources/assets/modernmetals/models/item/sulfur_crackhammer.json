@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+    "textures": {
+        "layer0": "modernmetals:items/sulfur_crackhammer"
+    }
+}

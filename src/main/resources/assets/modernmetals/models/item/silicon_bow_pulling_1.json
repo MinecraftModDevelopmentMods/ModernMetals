@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/silicon_bow",
+    "textures": {
+        "layer0": "modernmetals:items/silicon_bow_pulling_1"
+    }
+}

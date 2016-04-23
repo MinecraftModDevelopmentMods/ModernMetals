@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=down":  { "model": "modernmetals:lithium_plate", "x": 90  },
+        "facing=up":    { "model": "modernmetals:lithium_plate", "x": 270 },
+        "facing=north": { "model": "modernmetals:lithium_plate"           },
+        "facing=south": { "model": "modernmetals:lithium_plate", "y": 180 },
+        "facing=west":  { "model": "modernmetals:lithium_plate", "y": 270 },
+        "facing=east":  { "model": "modernmetals:lithium_plate", "y": 90  }
+    }
+}

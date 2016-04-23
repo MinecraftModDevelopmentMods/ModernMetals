@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/osmium_bow",
+    "textures": {
+        "layer0": "modernmetals:items/osmium_bow_pulling_2"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "modernmetals:blocks/sulfur_door_lower",
+        "top": "modernmetals:blocks/sulfur_door_upper"
+    }
+}

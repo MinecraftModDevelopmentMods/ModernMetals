@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/phospherous_plate",
+        "side": "modernmetals:blocks/phospherous_plate",
+        "bottom": "modernmetals:blocks/phospherous_plate"
+    }
+}

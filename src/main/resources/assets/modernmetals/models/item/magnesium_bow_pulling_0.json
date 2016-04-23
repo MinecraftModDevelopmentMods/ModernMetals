@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/magnesium_bow",
+    "textures": {
+        "layer0": "modernmetals:items/magnesium_bow_pulling_0"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/titanium_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/titanium_crossbow_pulling_2"
+    }
+}

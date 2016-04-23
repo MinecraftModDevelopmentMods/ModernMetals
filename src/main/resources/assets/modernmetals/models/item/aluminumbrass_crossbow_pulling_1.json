@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/aluminumbrass_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/aluminumbrass_crossbow_pulling_1"
+    }
+}

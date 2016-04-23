@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/sulfur_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/sulfur_crossbow_pulling_2"
+    }
+}

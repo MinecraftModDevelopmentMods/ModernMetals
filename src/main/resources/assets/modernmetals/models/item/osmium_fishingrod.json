@@ -1,0 +1,14 @@
+{
+    "parent": "item/handheld_rod",
+    "textures": {
+        "layer0": "modernmetals:items/osmium_fishingrod_uncast"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "cast": 1
+            },
+            "model": "modernmetals:item/osmium_fishingrod_cast"
+        }
+    ]
+}

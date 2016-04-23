@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/lithium_plate",
+        "side": "modernmetals:blocks/lithium_plate",
+        "bottom": "modernmetals:blocks/lithium_plate"
+    }
+}

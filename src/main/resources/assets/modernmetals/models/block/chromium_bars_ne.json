@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/bars_ne",
+    "textures": {
+        "particle": "modernmetals:blocks/chromium_bars",
+        "bars": "modernmetals:blocks/chromium_bars",
+        "edge": "modernmetals:blocks/chromium_bars"
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=down":  { "model": "modernmetals:silicon_plate", "x": 90  },
+        "facing=up":    { "model": "modernmetals:silicon_plate", "x": 270 },
+        "facing=north": { "model": "modernmetals:silicon_plate"           },
+        "facing=south": { "model": "modernmetals:silicon_plate", "y": 180 },
+        "facing=west":  { "model": "modernmetals:silicon_plate", "y": 270 },
+        "facing=east":  { "model": "modernmetals:silicon_plate", "y": 90  }
+    }
+}

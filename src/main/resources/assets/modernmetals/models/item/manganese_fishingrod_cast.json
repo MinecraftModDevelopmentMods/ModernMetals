@@ -1,0 +1,6 @@
+{
+    "parent": "item/fishing_rod",
+    "textures": {
+        "layer0": "modernmetals:items/manganese_fishingrod_cast"
+    }
+}

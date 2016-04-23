@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/niter_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/niter_crossbow_pulling_1"
+    }
+}

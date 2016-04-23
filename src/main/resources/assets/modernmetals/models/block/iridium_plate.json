@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/iridium_plate",
+        "side": "modernmetals:blocks/iridium_plate",
+        "bottom": "modernmetals:blocks/iridium_plate"
+    }
+}
