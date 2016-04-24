@@ -43,6 +43,7 @@ public abstract class Items {
 	
 	
 
+	@SuppressWarnings("rawtypes")
 	private static Map<Class,Integer> classSortingValues = new HashMap<>();
 	private static Map<MetalMaterial,Integer> materialSortingValues = new HashMap<>();
 	/**
@@ -93,17 +94,16 @@ public abstract class Items {
 	public static Item aluminum_rod;
 	public static Item aluminum_gear;
 
-/*
-	public static Item aluminum_arrow;
-	public static Item aluminum_bow;
-	public static Item aluminum_bolt;
-	public static Item aluminum_crossbow;
-	public static Item aluminum_fishingrod;
-	public static Item aluminum_horsearmor;
-	public static Item aluminum_shears;
-	public static Item aluminum_smallblend;
-	public static Item aluminum_smallpowder;
-*/
+
+//	public static Item aluminum_arrow;
+//	public static Item aluminum_bow;
+//	public static Item aluminum_bolt;
+//	public static Item aluminum_crossbow;
+//	public static Item aluminum_fishingrod;
+//	public static Item aluminum_horsearmor;
+//	public static Item aluminum_shears;
+//	public static Item aluminum_smallblend;
+//	public static Item aluminum_smallpowder;
 
 	public static Item aluminumbrass_axe;
 	public static Item aluminumbrass_blend;
@@ -707,17 +707,16 @@ public abstract class Items {
 		aluminum_rod = create_rod(Materials.aluminum);
 		aluminum_gear = create_gear(Materials.aluminum);
 
-/*
-		aluminum_arrow = create_arrow(Materials.aluminum);
-		aluminum_bow = create_bow(Materials.aluminum);
-		aluminum_bolt = create_bolt(Materials.aluminum);
-		aluminum_crossbow = create_crossbow(Materials.aluminum);
-		aluminum_fishingrod = create_fishingrod(Materials.aluminum);
-		aluminum_horsearmor = create_horsearmor(Materials.aluminum);
-		aluminum_shears = create_shears(Materials.aluminum);
-		aluminum_smallblend = create_smallblend(Materials.aluminum);
-		aluminum_smallpowder = create_smallpowder(Materials.aluminum);
-*/
+
+//		aluminum_arrow = create_arrow(Materials.aluminum);
+//		aluminum_bow = create_bow(Materials.aluminum);
+//		aluminum_bolt = create_bolt(Materials.aluminum);
+//		aluminum_crossbow = create_crossbow(Materials.aluminum);
+//		aluminum_fishingrod = create_fishingrod(Materials.aluminum);
+//		aluminum_horsearmor = create_horsearmor(Materials.aluminum);
+//		aluminum_shears = create_shears(Materials.aluminum);
+//		aluminum_smallblend = create_smallblend(Materials.aluminum);
+//		aluminum_smallpowder = create_smallpowder(Materials.aluminum);
 
 		aluminumbrass_axe = create_axe(Materials.aluminumbrass);
 		aluminumbrass_blend = create_blend(Materials.aluminumbrass);
@@ -1441,11 +1440,11 @@ public abstract class Items {
 	}
 
 	private static Item create_fishingrod(MetalMaterial metal){
-		return registerItem(new ItemMetalHorseArmor(metal), metal.getName()+"_"+"fishingrod", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalFishingRod(metal), metal.getName()+"_"+"fishingrod", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_horsearmor(MetalMaterial metal){
-		return registerItem(new ItemMetalFishingRod(metal), metal.getName()+"_"+"horsearmor", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalHorseArmor(metal), metal.getName()+"_"+"horsearmor", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_smallpowder(MetalMaterial metal){
@@ -1460,6 +1459,7 @@ public abstract class Items {
 		return item;
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static int getSortingValue(ItemStack a){
 		int classVal = 990000;
 		int metalVal = 9900;
