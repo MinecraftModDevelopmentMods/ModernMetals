@@ -76,13 +76,15 @@ public abstract class Blocks {
 	public static Block iridium_ore;
 	public static Block iridium_trapdoor;
 	
+/*
 	public static Block lithium_bars;
 	public static Block lithium_block;
 	public static Block lithium_plate;
 	public static BlockDoor lithium_door;
 	public static Block lithium_ore;
 	public static Block lithium_trapdoor;
-	
+*/
+
 	public static Block magnesium_bars;
 	public static Block magnesium_block;
 	public static Block magnesium_plate;
@@ -97,13 +99,15 @@ public abstract class Blocks {
 	public static Block manganese_ore;
 	public static Block manganese_trapdoor;
 	
+/*
 	public static Block niter_bars;
 	public static Block niter_block;
 	public static Block niter_plate;
 	public static BlockDoor niter_door;
 	public static Block niter_ore;
 	public static Block niter_trapdoor;
-	
+*/
+
 	public static Block osmium_bars;
 	public static Block osmium_block;
 	public static Block osmium_plate;
@@ -111,13 +115,15 @@ public abstract class Blocks {
 	public static Block osmium_ore;
 	public static Block osmium_trapdoor;
 	
+/*
 	public static Block phospherous_bars;
 	public static Block phospherous_block;
 	public static Block phospherous_plate;
 	public static BlockDoor phospherous_door;
 	public static Block phospherous_ore;
 	public static Block phospherous_trapdoor;
-		
+*/
+
 	public static Block plutonium_bars;
 	public static Block plutonium_block;
 	public static Block plutonium_plate;
@@ -131,7 +137,8 @@ public abstract class Blocks {
 	public static BlockDoor rutile_door;
 	public static Block rutile_ore;
 	public static Block rutile_trapdoor;
-	
+
+/*
 	public static Block silicon_bars;
 	public static Block silicon_block;
 	public static Block silicon_plate;
@@ -145,7 +152,8 @@ public abstract class Blocks {
 	public static BlockDoor sulfur_door;
 	public static Block sulfur_ore;
 	public static Block sulfur_trapdoor;
-	
+*/
+
 	public static Block tantalum_bars;
 	public static Block tantalum_block;
 	public static Block tantalum_plate;
@@ -224,12 +232,14 @@ public abstract class Blocks {
 		iridium_door = createDoor(Materials.iridium);
 		iridium_trapdoor = createTrapDoor(Materials.iridium);
 
+/*
 		lithium_block = createBlock(Materials.lithium);
 		lithium_plate = createPlate(Materials.lithium);
 		lithium_ore = createOre(Materials.lithium);
 		lithium_bars = createBars(Materials.lithium);
 		lithium_door = createDoor(Materials.lithium);
 		lithium_trapdoor = createTrapDoor(Materials.lithium);
+*/
 
 		magnesium_block = createBlock(Materials.magnesium);
 		magnesium_plate = createPlate(Materials.magnesium);
@@ -245,12 +255,14 @@ public abstract class Blocks {
 		manganese_door = createDoor(Materials.manganese);
 		manganese_trapdoor = createTrapDoor(Materials.manganese);
 
+/*
 		niter_block = createBlock(Materials.niter);
 		niter_plate = createPlate(Materials.niter);
 		niter_ore = createOre(Materials.niter);
 		niter_bars = createBars(Materials.niter);
 		niter_door = createDoor(Materials.niter);
 		niter_trapdoor = createTrapDoor(Materials.niter);
+*/
 
 		osmium_block = createBlock(Materials.osmium);
 		osmium_plate = createPlate(Materials.osmium);
@@ -259,12 +271,14 @@ public abstract class Blocks {
 		osmium_door = createDoor(Materials.osmium);
 		osmium_trapdoor = createTrapDoor(Materials.osmium);
 
+/*
 		phospherous_block = createBlock(Materials.phospherous);
 		phospherous_plate = createPlate(Materials.phospherous);
 		phospherous_ore = createOre(Materials.phospherous);
 		phospherous_bars = createBars(Materials.phospherous);
 		phospherous_door = createDoor(Materials.phospherous);
 		phospherous_trapdoor = createTrapDoor(Materials.phospherous);
+*/
 
 		plutonium_block = createBlock(Materials.plutonium);
 		plutonium_plate = createPlate(Materials.plutonium);
@@ -280,6 +294,7 @@ public abstract class Blocks {
 		rutile_door = createDoor(Materials.rutile);
 		rutile_trapdoor = createTrapDoor(Materials.rutile);
 
+/*
 		silicon_block = createBlock(Materials.silicon);
 		silicon_plate = createPlate(Materials.silicon);
 		silicon_ore = createOre(Materials.silicon);
@@ -293,6 +308,7 @@ public abstract class Blocks {
 		sulfur_bars = createBars(Materials.sulfur);
 		sulfur_door = createDoor(Materials.sulfur);
 		sulfur_trapdoor = createTrapDoor(Materials.sulfur);
+*/
 
 		tantalum_block = createBlock(Materials.tantalum);
 		tantalum_plate = createPlate(Materials.tantalum);
