@@ -1,12 +1,8 @@
 language: java
-sudo: false
-cache:
-  directories:
-    - $HOME/.gradle
 notifications:
   email: false
 jdk:
   - oraclejdk8
+script: ./gradlew setupCIWorkspace build --refresh-dependencies
 before_install:
   - chmod a+x gradlew
-script: gradlew clean check
