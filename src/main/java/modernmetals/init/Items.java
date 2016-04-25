@@ -89,7 +89,10 @@ public abstract class Items {
 	public static Item aluminum_nugget;
 	public static Item aluminum_pickaxe;
 	public static Item aluminum_powder;
+	public static Item aluminum_shears;
 	public static Item aluminum_shovel;
+//	public static Item aluminum_smallblend;
+	public static Item aluminum_smallpowder;
 	public static Item aluminum_sword;
 	public static Item aluminum_rod;
 	public static Item aluminum_gear;
@@ -101,9 +104,6 @@ public abstract class Items {
 //	public static Item aluminum_crossbow;
 //	public static Item aluminum_fishingrod;
 //	public static Item aluminum_horsearmor;
-//	public static Item aluminum_shears;
-//	public static Item aluminum_smallblend;
-//	public static Item aluminum_smallpowder;
 
 	public static Item aluminumbrass_axe;
 	public static Item aluminumbrass_blend;
@@ -118,7 +118,10 @@ public abstract class Items {
 	public static Item aluminumbrass_nugget;
 	public static Item aluminumbrass_pickaxe;
 	public static Item aluminumbrass_powder;
+	public static Item aluminumbrass_shears;
 	public static Item aluminumbrass_shovel;
+	public static Item aluminumbrass_smallblend;
+	public static Item aluminumbrass_smallpowder;
 	public static Item aluminumbrass_sword;
 	public static Item aluminumbrass_rod;
 	public static Item aluminumbrass_gear;
@@ -130,9 +133,6 @@ public abstract class Items {
 	public static Item aluminumbrass_crossbow;
 	public static Item aluminumbrass_fishingrod;
 	public static Item aluminumbrass_horsearmor;
-	public static Item aluminumbrass_shears;
-	public static Item aluminumbrass_smallblend;
-	public static Item aluminumbrass_smallpowder;
 */
 
 	public static Item cadmium_axe;
@@ -148,7 +148,10 @@ public abstract class Items {
 	public static Item cadmium_nugget;
 	public static Item cadmium_pickaxe;
 	public static Item cadmium_powder;
+	public static Item cadmium_shears;
 	public static Item cadmium_shovel;
+//	public static Item cadmium_smallblend;
+	public static Item cadmium_smallpowder;
 	public static Item cadmium_sword;
 	public static Item cadmium_rod;
 	public static Item cadmium_gear;
@@ -160,9 +163,6 @@ public abstract class Items {
 	public static Item cadmium_crossbow;
 	public static Item cadmium_fishingrod;
 	public static Item cadmium_horsearmor;
-	public static Item cadmium_shears;
-	public static Item cadmium_smallblend;
-	public static Item cadmium_smallpowder;
 */
 
 	public static Item chromium_axe;
@@ -178,7 +178,10 @@ public abstract class Items {
 	public static Item chromium_nugget;
 	public static Item chromium_pickaxe;
 	public static Item chromium_powder;
+	public static Item chromium_shears;
 	public static Item chromium_shovel;
+//	public static Item chromium_smallblend;
+	public static Item chromium_smallpowder;
 	public static Item chromium_sword;
 	public static Item chromium_rod;
 	public static Item chromium_gear;
@@ -190,9 +193,6 @@ public abstract class Items {
 	public static Item chromium_crossbow;
 	public static Item chromium_fishingrod;
 	public static Item chromium_horsearmor;
-	public static Item chromium_shears;
-	public static Item chromium_smallblend;
-	public static Item chromium_smallpowder;
 */
 
 	public static Item iridium_axe;
@@ -208,7 +208,10 @@ public abstract class Items {
 	public static Item iridium_nugget;
 	public static Item iridium_pickaxe;
 	public static Item iridium_powder;
+	public static Item iridium_shears;
 	public static Item iridium_shovel;
+//	public static Item iridium_smallblend;
+	public static Item iridium_smallpowder;
 	public static Item iridium_sword;
 	public static Item iridium_rod;
 	public static Item iridium_gear;
@@ -220,9 +223,6 @@ public abstract class Items {
 	public static Item iridium_crossbow;
 	public static Item iridium_fishingrod;
 	public static Item iridium_horsearmor;
-	public static Item iridium_shears;
-	public static Item iridium_smallblend;
-	public static Item iridium_smallpowder;
 */
 
 /*
@@ -239,7 +239,10 @@ public abstract class Items {
 	public static Item lithium_nugget;
 	public static Item lithium_pickaxe;
 	public static Item lithium_powder;
+	public static Item lithium_shears;
 	public static Item lithium_shovel;
+	public static Item lithium_smallblend;
+	public static Item lithium_smallpowder;
 	public static Item lithium_sword;
 	public static Item lithium_rod;
 	public static Item lithium_gear;
@@ -250,9 +253,6 @@ public abstract class Items {
 	public static Item lithium_crossbow;
 	public static Item lithium_fishingrod;
 	public static Item lithium_horsearmor;
-	public static Item lithium_shears;
-	public static Item lithium_smallblend;
-	public static Item lithium_smallpowder;
 */
 
 	public static Item magnesium_axe;
@@ -268,7 +268,10 @@ public abstract class Items {
 	public static Item magnesium_nugget;
 	public static Item magnesium_pickaxe;
 	public static Item magnesium_powder;
+	public static Item magnesium_shears;
 	public static Item magnesium_shovel;
+//	public static Item magnesium_smallblend;
+	public static Item magnesium_smallpowder;
 	public static Item magnesium_sword;
 	public static Item magnesium_rod;
 	public static Item magnesium_gear;
@@ -280,9 +283,6 @@ public abstract class Items {
 	public static Item magnesium_crossbow;
 	public static Item magnesium_fishingrod;
 	public static Item magnesium_horsearmor;
-	public static Item magnesium_shears;
-	public static Item magnesium_smallblend;
-	public static Item magnesium_smallpowder;
 */
 
 	public static Item manganese_axe;
@@ -298,7 +298,10 @@ public abstract class Items {
 	public static Item manganese_nugget;
 	public static Item manganese_pickaxe;
 	public static Item manganese_powder;
+	public static Item manganese_shears;
 	public static Item manganese_shovel;
+//	public static Item manganese_smallblend;
+	public static Item manganese_smallpowder;
 	public static Item manganese_sword;
 	public static Item manganese_rod;
 	public static Item manganese_gear;
@@ -310,9 +313,6 @@ public abstract class Items {
 	public static Item manganese_crossbow;
 	public static Item manganese_fishingrod;
 	public static Item manganese_horsearmor;
-	public static Item manganese_shears;
-	public static Item manganese_smallblend;
-	public static Item manganese_smallpowder;
 */
 
 /*
@@ -329,7 +329,10 @@ public abstract class Items {
 	public static Item niter_nugget;
 	public static Item niter_pickaxe;
 	public static Item niter_powder;
+	public static Item niter_shears;
 	public static Item niter_shovel;
+	public static Item niter_smallblend;
+	public static Item niter_smallpowder;
 	public static Item niter_sword;
 	public static Item niter_rod;
 	public static Item niter_gear;
@@ -340,9 +343,6 @@ public abstract class Items {
 	public static Item niter_crossbow;
 	public static Item niter_fishingrod;
 	public static Item niter_horsearmor;
-	public static Item niter_shears;
-	public static Item niter_smallblend;
-	public static Item niter_smallpowder;
 */
 
 	public static Item osmium_axe;
@@ -358,7 +358,10 @@ public abstract class Items {
 	public static Item osmium_nugget;
 	public static Item osmium_pickaxe;
 	public static Item osmium_powder;
+	public static Item osmium_shears;
 	public static Item osmium_shovel;
+//	public static Item osmium_smallblend;
+	public static Item osmium_smallpowder;
 	public static Item osmium_sword;
 	public static Item osmium_rod;
 	public static Item osmium_gear;
@@ -370,9 +373,6 @@ public abstract class Items {
 	public static Item osmium_crossbow;
 	public static Item osmium_fishingrod;
 	public static Item osmium_horsearmor;
-	public static Item osmium_shears;
-	public static Item osmium_smallblend;
-	public static Item osmium_smallpowder;
 */
 
 /*
@@ -389,7 +389,10 @@ public abstract class Items {
 	public static Item phospherous_nugget;
 	public static Item phospherous_pickaxe;
 	public static Item phospherous_powder;
+	public static Item phospherous_shears;
 	public static Item phospherous_shovel;
+	public static Item phospherous_smallblend;
+	public static Item phospherous_smallpowder;
 	public static Item phospherous_sword;
 	public static Item phospherous_rod;
 	public static Item phospherous_gear;
@@ -400,9 +403,6 @@ public abstract class Items {
 	public static Item phospherous_crossbow;
 	public static Item phospherous_fishingrod;
 	public static Item phospherous_horsearmor;
-	public static Item phospherous_shears;
-	public static Item phospherous_smallblend;
-	public static Item phospherous_smallpowder;
 */
 	public static Item plutonium_axe;
 //	public static Item plutonium_blend;
@@ -417,7 +417,10 @@ public abstract class Items {
 	public static Item plutonium_nugget;
 	public static Item plutonium_pickaxe;
 	public static Item plutonium_powder;
+	public static Item plutonium_shears;
 	public static Item plutonium_shovel;
+//	public static Item plutonium_smallblend;
+	public static Item plutonium_smallpowder;
 	public static Item plutonium_sword;
 	public static Item plutonium_rod;
 	public static Item plutonium_gear;
@@ -429,9 +432,6 @@ public abstract class Items {
 	public static Item plutonium_crossbow;
 	public static Item plutonium_fishingrod;
 	public static Item plutonium_horsearmor;
-	public static Item plutonium_shears;
-	public static Item plutonium_smallblend;
-	public static Item plutonium_smallpowder;
 */
 
 	public static Item rutile_axe;
@@ -447,7 +447,10 @@ public abstract class Items {
 	public static Item rutile_nugget;
 	public static Item rutile_pickaxe;
 	public static Item rutile_powder;
+	public static Item rutile_shears;
 	public static Item rutile_shovel;
+//	public static Item rutile_smallblend;
+	public static Item rutile_smallpowder;
 	public static Item rutile_sword;
 	public static Item rutile_rod;
 	public static Item rutile_gear;
@@ -459,9 +462,6 @@ public abstract class Items {
 	public static Item rutile_crossbow;
 	public static Item rutile_fishingrod;
 	public static Item rutile_horsearmor;
-	public static Item rutile_shears;
-	public static Item rutile_smallblend;
-	public static Item rutile_smallpowder;
 */
 
 /*
@@ -478,7 +478,10 @@ public abstract class Items {
 	public static Item silicon_nugget;
 	public static Item silicon_pickaxe;
 	public static Item silicon_powder;
+	public static Item silicon_shears;
 	public static Item silicon_shovel;
+	public static Item silicon_smallblend;
+	public static Item silicon_smallpowder;
 	public static Item silicon_sword;
 	public static Item silicon_rod;
 	public static Item silicon_gear;
@@ -489,9 +492,6 @@ public abstract class Items {
 	public static Item silicon_crossbow;
 	public static Item silicon_fishingrod;
 	public static Item silicon_horsearmor;
-	public static Item silicon_shears;
-	public static Item silicon_smallblend;
-	public static Item silicon_smallpowder;
 */
 
 /*
@@ -508,7 +508,10 @@ public abstract class Items {
 	public static Item sulfur_nugget;
 	public static Item sulfur_pickaxe;
 	public static Item sulfur_powder;
+	public static Item sulfur_shears;
 	public static Item sulfur_shovel;
+	public static Item sulfur_smallblend;
+	public static Item sulfur_smallpowder;
 	public static Item sulfur_sword;
 	public static Item sulfur_rod;
 	public static Item sulfur_gear;
@@ -519,9 +522,6 @@ public abstract class Items {
 	public static Item sulfur_crossbow;
 	public static Item sulfur_fishingrod;
 	public static Item sulfur_horsearmor;
-	public static Item sulfur_shears;
-	public static Item sulfur_smallblend;
-	public static Item sulfur_smallpowder;
 */
 
 	public static Item tantalum_axe;
@@ -537,7 +537,10 @@ public abstract class Items {
 	public static Item tantalum_nugget;
 	public static Item tantalum_pickaxe;
 	public static Item tantalum_powder;
+	public static Item tantalum_shears;
 	public static Item tantalum_shovel;
+//	public static Item tantalum_smallblend;
+	public static Item tantalum_smallpowder;
 	public static Item tantalum_sword;
 	public static Item tantalum_rod;
 	public static Item tantalum_gear;
@@ -549,9 +552,6 @@ public abstract class Items {
 	public static Item tantalum_crossbow;
 	public static Item tantalum_fishingrod;
 	public static Item tantalum_horsearmor;
-	public static Item tantalum_shears;
-	public static Item tantalum_smallblend;
-	public static Item tantalum_smallpowder;
 */
 
 	public static Item titanium_axe;
@@ -567,7 +567,10 @@ public abstract class Items {
 	public static Item titanium_nugget;
 	public static Item titanium_pickaxe;
 	public static Item titanium_powder;
+	public static Item titanium_shears;
 	public static Item titanium_shovel;
+	public static Item titanium_smallblend;
+	public static Item titanium_smallpowder;
 	public static Item titanium_sword;
 	public static Item titanium_rod;
 	public static Item titanium_gear;
@@ -579,9 +582,6 @@ public abstract class Items {
 	public static Item titanium_crossbow;
 	public static Item titanium_fishingrod;
 	public static Item titanium_horsearmor;
-	public static Item titanium_shears;
-	public static Item titanium_smallblend;
-	public static Item titanium_smallpowder;
 */
 
 	public static Item tungsten_axe;
@@ -597,7 +597,10 @@ public abstract class Items {
 	public static Item tungsten_nugget;
 	public static Item tungsten_pickaxe;
 	public static Item tungsten_powder;
+	public static Item tungsten_shears;
 	public static Item tungsten_shovel;
+//	public static Item tungsten_smallblend;
+	public static Item tungsten_smallpowder;
 	public static Item tungsten_sword;
 	public static Item tungsten_rod;
 	public static Item tungsten_gear;
@@ -609,9 +612,6 @@ public abstract class Items {
 	public static Item tungsten_crossbow;
 	public static Item tungsten_fishingrod;
 	public static Item tungsten_horsearmor;
-	public static Item tungsten_shears;
-	public static Item tungsten_smallblend;
-	public static Item tungsten_smallpowder;
 */
 
 	public static Item uranium_axe;
@@ -627,7 +627,10 @@ public abstract class Items {
 	public static Item uranium_nugget;
 	public static Item uranium_pickaxe;
 	public static Item uranium_powder;
+	public static Item uranium_shears;
 	public static Item uranium_shovel;
+//	public static Item uranium_smallblend;
+	public static Item uranium_smallpowder;
 	public static Item uranium_sword;
 	public static Item uranium_rod;
 	public static Item uranium_gear;
@@ -639,9 +642,6 @@ public abstract class Items {
 	public static Item uranium_crossbow;
 	public static Item uranium_fishingrod;
 	public static Item uranium_horsearmor;
-	public static Item uranium_shears;
-	public static Item uranium_smallblend;
-	public static Item uranium_smallpowder;
 */
 
 	public static Item zirconium_axe;
@@ -657,7 +657,10 @@ public abstract class Items {
 	public static Item zirconium_nugget;
 	public static Item zirconium_pickaxe;
 	public static Item zirconium_powder;
+	public static Item zirconium_shears;
 	public static Item zirconium_shovel;
+//	public static Item zirconium_smallblend;
+	public static Item zirconium_smallpowder;
 	public static Item zirconium_sword;
 	public static Item zirconium_rod;
 	public static Item zirconium_gear;
@@ -669,9 +672,6 @@ public abstract class Items {
 	public static Item zirconium_crossbow;
 	public static Item zirconium_fishingrod;
 	public static Item zirconium_horsearmor;
-	public static Item zirconium_shears;
-	public static Item zirconium_smallblend;
-	public static Item zirconium_smallpowder;
 */
 
 	/**
@@ -702,7 +702,10 @@ public abstract class Items {
 		aluminum_nugget = create_nugget(Materials.aluminum);
 		aluminum_pickaxe = create_pickaxe(Materials.aluminum);
 		aluminum_powder = create_powder(Materials.aluminum);
+		aluminum_shears = create_shears(Materials.aluminum);
 		aluminum_shovel = create_shovel(Materials.aluminum);
+//		aluminum_smallblend = create_smallblend(Materials.aluminum);
+		aluminum_smallpowder = create_smallpowder(Materials.aluminum);
 		aluminum_sword = create_sword(Materials.aluminum);
 		aluminum_rod = create_rod(Materials.aluminum);
 		aluminum_gear = create_gear(Materials.aluminum);
@@ -714,9 +717,6 @@ public abstract class Items {
 //		aluminum_crossbow = create_crossbow(Materials.aluminum);
 //		aluminum_fishingrod = create_fishingrod(Materials.aluminum);
 //		aluminum_horsearmor = create_horsearmor(Materials.aluminum);
-//		aluminum_shears = create_shears(Materials.aluminum);
-//		aluminum_smallblend = create_smallblend(Materials.aluminum);
-//		aluminum_smallpowder = create_smallpowder(Materials.aluminum);
 
 		aluminumbrass_axe = create_axe(Materials.aluminumbrass);
 		aluminumbrass_blend = create_blend(Materials.aluminumbrass);
@@ -731,7 +731,10 @@ public abstract class Items {
 		aluminumbrass_nugget = create_nugget(Materials.aluminumbrass);
 		aluminumbrass_pickaxe = create_pickaxe(Materials.aluminumbrass);
 		aluminumbrass_powder = create_powder(Materials.aluminumbrass);
+		aluminumbrass_shears = create_shears(Materials.aluminumbrass);
 		aluminumbrass_shovel = create_shovel(Materials.aluminumbrass);
+		aluminumbrass_smallblend = create_smallblend(Materials.aluminumbrass);
+		aluminumbrass_smallpowder = create_smallpowder(Materials.aluminumbrass);
 		aluminumbrass_sword = create_sword(Materials.aluminumbrass);
 		aluminumbrass_rod = create_rod(Materials.aluminumbrass);
 		aluminumbrass_gear = create_gear(Materials.aluminumbrass);
@@ -743,9 +746,6 @@ public abstract class Items {
 		aluminumbrass_crossbow = create_crossbow(Materials.aluminumbrass);
 		aluminumbrass_fishingrod = create_fishingrod(Materials.aluminumbrass);
 		aluminumbrass_horsearmor = create_horsearmor(Materials.aluminumbrass);
-		aluminumbrass_shears = create_shears(Materials.aluminumbrass);
-		aluminumbrass_smallblend = create_smallblend(Materials.aluminumbrass);
-		aluminumbrass_smallpowder = create_smallpowder(Materials.aluminumbrass);
 */
 
 		cadmium_axe = create_axe(Materials.cadmium);
@@ -761,7 +761,10 @@ public abstract class Items {
 		cadmium_nugget = create_nugget(Materials.cadmium);
 		cadmium_pickaxe = create_pickaxe(Materials.cadmium);
 		cadmium_powder = create_powder(Materials.cadmium);
+		cadmium_shears = create_shears(Materials.cadmium);
 		cadmium_shovel = create_shovel(Materials.cadmium);
+//		cadmium_smallblend = create_smallblend(Materials.cadmium);
+		cadmium_smallpowder = create_smallpowder(Materials.cadmium);
 		cadmium_sword = create_sword(Materials.cadmium);
 		cadmium_rod = create_rod(Materials.cadmium);
 		cadmium_gear = create_gear(Materials.cadmium);
@@ -773,9 +776,6 @@ public abstract class Items {
 		cadmium_crossbow = create_crossbow(Materials.cadmium);
 		cadmium_fishingrod = create_fishingrod(Materials.cadmium);
 		cadmium_horsearmor = create_horsearmor(Materials.cadmium);
-		cadmium_shears = create_shears(Materials.cadmium);
-		cadmium_smallblend = create_smallblend(Materials.cadmium);
-		cadmium_smallpowder = create_smallpowder(Materials.cadmium);
 */
 
 		chromium_axe = create_axe(Materials.chromium);
@@ -791,7 +791,10 @@ public abstract class Items {
 		chromium_nugget = create_nugget(Materials.chromium);
 		chromium_pickaxe = create_pickaxe(Materials.chromium);
 		chromium_powder = create_powder(Materials.chromium);
+		chromium_shears = create_shears(Materials.chromium);
 		chromium_shovel = create_shovel(Materials.chromium);
+//		chromium_smallblend = create_smallblend(Materials.chromium);
+		chromium_smallpowder = create_smallpowder(Materials.chromium);
 		chromium_sword = create_sword(Materials.chromium);
 		chromium_rod = create_rod(Materials.chromium);
 		chromium_gear = create_gear(Materials.chromium);
@@ -803,9 +806,6 @@ public abstract class Items {
 		chromium_crossbow = create_crossbow(Materials.chromium);
 		chromium_fishingrod = create_fishingrod(Materials.chromium);
 		chromium_horsearmor = create_horsearmor(Materials.chromium);
-		chromium_shears = create_shears(Materials.chromium);
-		chromium_smallblend = create_smallblend(Materials.chromium);
-		chromium_smallpowder = create_smallpowder(Materials.chromium);
 */
 
 		iridium_axe = create_axe(Materials.iridium);
@@ -821,7 +821,10 @@ public abstract class Items {
 		iridium_nugget = create_nugget(Materials.iridium);
 		iridium_pickaxe = create_pickaxe(Materials.iridium);
 		iridium_powder = create_powder(Materials.iridium);
+		iridium_shears = create_shears(Materials.iridium);
 		iridium_shovel = create_shovel(Materials.iridium);
+//		iridium_smallblend = create_smallblend(Materials.iridium);
+		iridium_smallpowder = create_smallpowder(Materials.iridium);
 		iridium_sword = create_sword(Materials.iridium);
 		iridium_rod = create_rod(Materials.iridium);
 		iridium_gear = create_gear(Materials.iridium);
@@ -833,9 +836,6 @@ public abstract class Items {
 		iridium_crossbow = create_crossbow(Materials.iridium);
 		iridium_fishingrod = create_fishingrod(Materials.iridium);
 		iridium_horsearmor = create_horsearmor(Materials.iridium);
-		iridium_shears = create_shears(Materials.iridium);
-		iridium_smallblend = create_smallblend(Materials.iridium);
-		iridium_smallpowder = create_smallpowder(Materials.iridium);
 */
 
 /*
@@ -852,7 +852,10 @@ public abstract class Items {
 		lithium_nugget = create_nugget(Materials.lithium);
 		lithium_pickaxe = create_pickaxe(Materials.lithium);
 		lithium_powder = create_powder(Materials.lithium);
+		lithium_shears = create_shears(Materials.lithium);
 		lithium_shovel = create_shovel(Materials.lithium);
+		lithium_smallblend = create_smallblend(Materials.lithium);
+		lithium_smallpowder = create_smallpowder(Materials.lithium);
 		lithium_sword = create_sword(Materials.lithium);
 		lithium_rod = create_rod(Materials.lithium);
 		lithium_gear = create_gear(Materials.lithium);
@@ -863,9 +866,6 @@ public abstract class Items {
 		lithium_crossbow = create_crossbow(Materials.lithium);
 		lithium_fishingrod = create_fishingrod(Materials.lithium);
 		lithium_horsearmor = create_horsearmor(Materials.lithium);
-		lithium_shears = create_shears(Materials.lithium);
-		lithium_smallblend = create_smallblend(Materials.lithium);
-		lithium_smallpowder = create_smallpowder(Materials.lithium);
 */
 
 		magnesium_axe = create_axe(Materials.magnesium);
@@ -881,7 +881,10 @@ public abstract class Items {
 		magnesium_nugget = create_nugget(Materials.magnesium);
 		magnesium_pickaxe = create_pickaxe(Materials.magnesium);
 		magnesium_powder = create_powder(Materials.magnesium);
+		magnesium_shears = create_shears(Materials.magnesium);
 		magnesium_shovel = create_shovel(Materials.magnesium);
+//		magnesium_smallblend = create_smallblend(Materials.magnesium);
+		magnesium_smallpowder = create_smallpowder(Materials.magnesium);
 		magnesium_sword = create_sword(Materials.magnesium);
 		magnesium_rod = create_rod(Materials.magnesium);
 		magnesium_gear = create_gear(Materials.magnesium);
@@ -893,9 +896,6 @@ public abstract class Items {
 		magnesium_crossbow = create_crossbow(Materials.magnesium);
 		magnesium_fishingrod = create_fishingrod(Materials.magnesium);
 		magnesium_horsearmor = create_horsearmor(Materials.magnesium);
-		magnesium_shears = create_shears(Materials.magnesium);
-		magnesium_smallblend = create_smallblend(Materials.magnesium);
-		magnesium_smallpowder = create_smallpowder(Materials.magnesium);
 */
 
 		manganese_axe = create_axe(Materials.manganese);
@@ -911,7 +911,10 @@ public abstract class Items {
 		manganese_nugget = create_nugget(Materials.manganese);
 		manganese_pickaxe = create_pickaxe(Materials.manganese);
 		manganese_powder = create_powder(Materials.manganese);
+		manganese_shears = create_shears(Materials.manganese);
 		manganese_shovel = create_shovel(Materials.manganese);
+//		manganese_smallblend = create_smallblend(Materials.manganese);
+		manganese_smallpowder = create_smallpowder(Materials.manganese);
 		manganese_sword = create_sword(Materials.manganese);
 		manganese_rod = create_rod(Materials.manganese);
 		manganese_gear = create_gear(Materials.manganese);
@@ -923,9 +926,6 @@ public abstract class Items {
 		manganese_crossbow = create_crossbow(Materials.manganese);
 		manganese_fishingrod = create_fishingrod(Materials.manganese);
 		manganese_horsearmor = create_horsearmor(Materials.manganese);
-		manganese_shears = create_shears(Materials.manganese);
-		manganese_smallblend = create_smallblend(Materials.manganese);
-		manganese_smallpowder = create_smallpowder(Materials.manganese);
 */
 
 /*
@@ -942,7 +942,10 @@ public abstract class Items {
 		niter_nugget = create_nugget(Materials.niter);
 		niter_pickaxe = create_pickaxe(Materials.niter);
 		niter_powder = create_powder(Materials.niter);
+		niter_shears = create_shears(Materials.niter);
 		niter_shovel = create_shovel(Materials.niter);
+		niter_smallblend = create_smallblend(Materials.niter);
+		niter_smallpowder = create_smallpowder(Materials.niter);
 		niter_sword = create_sword(Materials.niter);
 		niter_rod = create_rod(Materials.niter);
 		niter_gear = create_gear(Materials.niter);
@@ -953,9 +956,6 @@ public abstract class Items {
 		niter_crossbow = create_crossbow(Materials.niter);
 		niter_fishingrod = create_fishingrod(Materials.niter);
 		niter_horsearmor = create_horsearmor(Materials.niter);
-		niter_shears = create_shears(Materials.niter);
-		niter_smallblend = create_smallblend(Materials.niter);
-		niter_smallpowder = create_smallpowder(Materials.niter);
 */
 
 		osmium_axe = create_axe(Materials.osmium);
@@ -971,7 +971,10 @@ public abstract class Items {
 		osmium_nugget = create_nugget(Materials.osmium);
 		osmium_pickaxe = create_pickaxe(Materials.osmium);
 		osmium_powder = create_powder(Materials.osmium);
+		osmium_shears = create_shears(Materials.osmium);
 		osmium_shovel = create_shovel(Materials.osmium);
+//		osmium_smallblend = create_smallblend(Materials.osmium);
+		osmium_smallpowder = create_smallpowder(Materials.osmium);
 		osmium_sword = create_sword(Materials.osmium);
 		osmium_rod = create_rod(Materials.osmium);
 		osmium_gear = create_gear(Materials.osmium);
@@ -983,9 +986,6 @@ public abstract class Items {
 		osmium_crossbow = create_crossbow(Materials.osmium);
 		osmium_fishingrod = create_fishingrod(Materials.osmium);
 		osmium_horsearmor = create_horsearmor(Materials.osmium);
-		osmium_shears = create_shears(Materials.osmium);
-		osmium_smallblend = create_smallblend(Materials.osmium);
-		osmium_smallpowder = create_smallpowder(Materials.osmium);
 */
 
 /*
@@ -1002,7 +1002,10 @@ public abstract class Items {
 		phospherous_nugget = create_nugget(Materials.phospherous);
 		phospherous_pickaxe = create_pickaxe(Materials.phospherous);
 		phospherous_powder = create_powder(Materials.phospherous);
+		phospherous_shears = create_shears(Materials.phospherous);
 		phospherous_shovel = create_shovel(Materials.phospherous);
+		phospherous_smallblend = create_smallblend(Materials.phospherous);
+		phospherous_smallpowder = create_smallpowder(Materials.phospherous);
 		phospherous_sword = create_sword(Materials.phospherous);
 		phospherous_rod = create_rod(Materials.phospherous);
 		phospherous_gear = create_gear(Materials.phospherous);
@@ -1013,9 +1016,6 @@ public abstract class Items {
 		phospherous_crossbow = create_crossbow(Materials.phospherous);
 		phospherous_fishingrod = create_fishingrod(Materials.phospherous);
 		phospherous_horsearmor = create_horsearmor(Materials.phospherous);
-		phospherous_shears = create_shears(Materials.phospherous);
-		phospherous_smallblend = create_smallblend(Materials.phospherous);
-		phospherous_smallpowder = create_smallpowder(Materials.phospherous);
 */
 
 		plutonium_axe = create_axe(Materials.plutonium);
@@ -1031,7 +1031,10 @@ public abstract class Items {
 		plutonium_nugget = create_nugget(Materials.plutonium);
 		plutonium_pickaxe = create_pickaxe(Materials.plutonium);
 		plutonium_powder = create_powder(Materials.plutonium);
+		plutonium_shears = create_shears(Materials.plutonium);
 		plutonium_shovel = create_shovel(Materials.plutonium);
+//		plutonium_smallblend = create_smallblend(Materials.plutonium);
+		plutonium_smallpowder = create_smallpowder(Materials.plutonium);
 		plutonium_sword = create_sword(Materials.plutonium);
 		plutonium_rod = create_rod(Materials.plutonium);
 		plutonium_gear = create_gear(Materials.plutonium);
@@ -1043,9 +1046,6 @@ public abstract class Items {
 		plutonium_crossbow = create_crossbow(Materials.plutonium);
 		plutonium_fishingrod = create_fishingrod(Materials.plutonium);
 		plutonium_horsearmor = create_horsearmor(Materials.plutonium);
-		plutonium_shears = create_shears(Materials.plutonium);
-		plutonium_smallblend = create_smallblend(Materials.plutonium);
-		plutonium_smallpowder = create_smallpowder(Materials.plutonium);
 */
 
 		rutile_axe = create_axe(Materials.rutile);
@@ -1061,7 +1061,10 @@ public abstract class Items {
 		rutile_nugget = create_nugget(Materials.rutile);
 		rutile_pickaxe = create_pickaxe(Materials.rutile);
 		rutile_powder = create_powder(Materials.rutile);
+		rutile_shears = create_shears(Materials.rutile);
 		rutile_shovel = create_shovel(Materials.rutile);
+//		rutile_smallblend = create_smallblend(Materials.rutile);
+		rutile_smallpowder = create_smallpowder(Materials.rutile);
 		rutile_sword = create_sword(Materials.rutile);
 		rutile_rod = create_rod(Materials.rutile);
 		rutile_gear = create_gear(Materials.rutile);
@@ -1073,9 +1076,6 @@ public abstract class Items {
 		rutile_crossbow = create_crossbow(Materials.rutile);
 		rutile_fishingrod = create_fishingrod(Materials.rutile);
 		rutile_horsearmor = create_horsearmor(Materials.rutile);
-		rutile_shears = create_shears(Materials.rutile);
-		rutile_smallblend = create_smallblend(Materials.rutile);
-		rutile_smallpowder = create_smallpowder(Materials.rutile);
 */
 
 /*
@@ -1092,7 +1092,10 @@ public abstract class Items {
 		silicon_nugget = create_nugget(Materials.silicon);
 		silicon_pickaxe = create_pickaxe(Materials.silicon);
 		silicon_powder = create_powder(Materials.silicon);
+		silicon_shears = create_shears(Materials.silicon);
 		silicon_shovel = create_shovel(Materials.silicon);
+		silicon_smallblend = create_smallblend(Materials.silicon);
+		silicon_smallpowder = create_smallpowder(Materials.silicon);
 		silicon_sword = create_sword(Materials.silicon);
 		silicon_rod = create_rod(Materials.silicon);
 		silicon_gear = create_gear(Materials.silicon);
@@ -1103,9 +1106,6 @@ public abstract class Items {
 		silicon_crossbow = create_crossbow(Materials.silicon);
 		silicon_fishingrod = create_fishingrod(Materials.silicon);
 		silicon_horsearmor = create_horsearmor(Materials.silicon);
-		silicon_shears = create_shears(Materials.silicon);
-		silicon_smallblend = create_smallblend(Materials.silicon);
-		silicon_smallpowder = create_smallpowder(Materials.silicon);
 
 		sulfur_axe = create_axe(Materials.sulfur);
 		sulfur_blend = create_blend(Materials.sulfur);
@@ -1120,7 +1120,10 @@ public abstract class Items {
 		sulfur_nugget = create_nugget(Materials.sulfur);
 		sulfur_pickaxe = create_pickaxe(Materials.sulfur);
 		sulfur_powder = create_powder(Materials.sulfur);
+		sulfur_shears = create_shears(Materials.sulfur);
 		sulfur_shovel = create_shovel(Materials.sulfur);
+		sulfur_smallblend = create_smallblend(Materials.sulfur);
+		sulfur_smallpowder = create_smallpowder(Materials.sulfur);
 		sulfur_sword = create_sword(Materials.sulfur);
 		sulfur_rod = create_rod(Materials.sulfur);
 		sulfur_gear = create_gear(Materials.sulfur);
@@ -1131,9 +1134,6 @@ public abstract class Items {
 		sulfur_crossbow = create_crossbow(Materials.sulfur);
 		sulfur_fishingrod = create_fishingrod(Materials.sulfur);
 		sulfur_horsearmor = create_horsearmor(Materials.sulfur);
-		sulfur_shears = create_shears(Materials.sulfur);
-		sulfur_smallblend = create_smallblend(Materials.sulfur);
-		sulfur_smallpowder = create_smallpowder(Materials.sulfur);
 */
 
 		tantalum_axe = create_axe(Materials.tantalum);
@@ -1149,7 +1149,10 @@ public abstract class Items {
 		tantalum_nugget = create_nugget(Materials.tantalum);
 		tantalum_pickaxe = create_pickaxe(Materials.tantalum);
 		tantalum_powder = create_powder(Materials.tantalum);
+		tantalum_shears = create_shears(Materials.tantalum);
 		tantalum_shovel = create_shovel(Materials.tantalum);
+//		tantalum_smallblend = create_smallblend(Materials.tantalum);
+		tantalum_smallpowder = create_smallpowder(Materials.tantalum);
 		tantalum_sword = create_sword(Materials.tantalum);
 		tantalum_rod = create_rod(Materials.tantalum);
 		tantalum_gear = create_gear(Materials.tantalum);
@@ -1161,9 +1164,6 @@ public abstract class Items {
 		tantalum_crossbow = create_crossbow(Materials.tantalum);
 		tantalum_fishingrod = create_fishingrod(Materials.tantalum);
 		tantalum_horsearmor = create_horsearmor(Materials.tantalum);
-		tantalum_shears = create_shears(Materials.tantalum);
-		tantalum_smallblend = create_smallblend(Materials.tantalum);
-		tantalum_smallpowder = create_smallpowder(Materials.tantalum);
 */
 
 		titanium_axe = create_axe(Materials.titanium);
@@ -1179,7 +1179,10 @@ public abstract class Items {
 		titanium_nugget = create_nugget(Materials.titanium);
 		titanium_pickaxe = create_pickaxe(Materials.titanium);
 		titanium_powder = create_powder(Materials.titanium);
+		titanium_shears = create_shears(Materials.titanium);
 		titanium_shovel = create_shovel(Materials.titanium);
+		titanium_smallblend = create_smallblend(Materials.titanium);
+		titanium_smallpowder = create_smallpowder(Materials.titanium);
 		titanium_sword = create_sword(Materials.titanium);
 		titanium_rod = create_rod(Materials.titanium);
 		titanium_gear = create_gear(Materials.titanium);
@@ -1191,9 +1194,6 @@ public abstract class Items {
 		titanium_crossbow = create_crossbow(Materials.titanium);
 		titanium_fishingrod = create_fishingrod(Materials.titanium);
 		titanium_horsearmor = create_horsearmor(Materials.titanium);
-		titanium_shears = create_shears(Materials.titanium);
-		titanium_smallblend = create_smallblend(Materials.titanium);
-		titanium_smallpowder = create_smallpowder(Materials.titanium);
 */
 
 		tungsten_axe = create_axe(Materials.tungsten);
@@ -1209,7 +1209,10 @@ public abstract class Items {
 		tungsten_nugget = create_nugget(Materials.tungsten);
 		tungsten_pickaxe = create_pickaxe(Materials.tungsten);
 		tungsten_powder = create_powder(Materials.tungsten);
+		tungsten_shears = create_shears(Materials.tungsten);
 		tungsten_shovel = create_shovel(Materials.tungsten);
+//		tungsten_smallblend = create_smallblend(Materials.tungsten);
+		tungsten_smallpowder = create_smallpowder(Materials.tungsten);
 		tungsten_sword = create_sword(Materials.tungsten);
 		tungsten_rod = create_rod(Materials.tungsten);
 		tungsten_gear = create_gear(Materials.tungsten);
@@ -1221,9 +1224,6 @@ public abstract class Items {
 		tungsten_crossbow = create_crossbow(Materials.tungsten);
 		tungsten_fishingrod = create_fishingrod(Materials.tungsten);
 		tungsten_horsearmor = create_horsearmor(Materials.tungsten);
-		tungsten_shears = create_shears(Materials.tungsten);
-		tungsten_smallblend = create_smallblend(Materials.tungsten);
-		tungsten_smallpowder = create_smallpowder(Materials.tungsten);
 */
 
 		uranium_axe = create_axe(Materials.uranium);
@@ -1239,7 +1239,10 @@ public abstract class Items {
 		uranium_nugget = create_nugget(Materials.uranium);
 		uranium_pickaxe = create_pickaxe(Materials.uranium);
 		uranium_powder = create_powder(Materials.uranium);
+		uranium_shears = create_shears(Materials.uranium);
 		uranium_shovel = create_shovel(Materials.uranium);
+//		uranium_smallblend = create_smallblend(Materials.uranium);
+		uranium_smallpowder = create_smallpowder(Materials.uranium);
 		uranium_sword = create_sword(Materials.uranium);
 		uranium_rod = create_rod(Materials.uranium);
 		uranium_gear = create_gear(Materials.uranium);
@@ -1251,9 +1254,6 @@ public abstract class Items {
 		uranium_crossbow = create_crossbow(Materials.uranium);
 		uranium_fishingrod = create_fishingrod(Materials.uranium);
 		uranium_horsearmor = create_horsearmor(Materials.uranium);
-		uranium_shears = create_shears(Materials.uranium);
-		uranium_smallblend = create_smallblend(Materials.uranium);
-		uranium_smallpowder = create_smallpowder(Materials.uranium);
 */
 
 		zirconium_axe = create_axe(Materials.zirconium);
@@ -1269,7 +1269,10 @@ public abstract class Items {
 		zirconium_nugget = create_nugget(Materials.zirconium);
 		zirconium_pickaxe = create_pickaxe(Materials.zirconium);
 		zirconium_powder = create_powder(Materials.zirconium);
+		zirconium_shears = create_shears(Materials.zirconium);
 		zirconium_shovel = create_shovel(Materials.zirconium);
+//		zirconium_smallblend = create_smallblend(Materials.zirconium);
+		zirconium_smallpowder = create_smallpowder(Materials.zirconium);
 		zirconium_sword = create_sword(Materials.zirconium);
 		zirconium_rod = create_rod(Materials.zirconium);
 		zirconium_gear = create_gear(Materials.zirconium);
@@ -1281,9 +1284,6 @@ public abstract class Items {
 		zirconium_crossbow = create_crossbow(Materials.zirconium);
 		zirconium_fishingrod = create_fishingrod(Materials.zirconium);
 		zirconium_horsearmor = create_horsearmor(Materials.zirconium);
-		zirconium_shears = create_shears(Materials.zirconium);
-		zirconium_smallblend = create_smallblend(Materials.zirconium);
-		zirconium_smallpowder = create_smallpowder(Materials.zirconium);
 */
 
 		for(Item i : itemRegistry.keySet()){
