@@ -77,7 +77,7 @@ processResources
 
 curseforge {
 	project {
-		apiKey = project.curseforge_apiKey
+		apiKey = ''
 		id = '244357'
 		changelog = file('CHANGELOG.txt')
 		releaseType = 'alpha'
