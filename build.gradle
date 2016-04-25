@@ -75,6 +75,21 @@ processResources
     }
 }
 
+task apiJar(type: Jar) {
+  classifier = 'apiClasses'
+  from apiClasses
+}
+
+task javadocJar(type: Jar) {
+  classifier = 'javadoc'
+  from javadoc
+}
+
+artifacts {
+//  archives apiJar
+  archives javadocJar
+}
+
 curseforge {
 	project {
 		apiKey = ''
@@ -87,7 +102,8 @@ curseforge {
 				requiredLibrary 'base-metals'
 				optionalLibrary 'additional-loot-tables'
 			}
-			
+		addArtifact sourceJar
+		addArtifact javadocJar
 		}
 	}
 }
