@@ -82,7 +82,7 @@ curseforge {
 		changelog = file('CHANGELOG.txt')
 		releaseType = 'alpha'
 		mainArtifact(jar) {
-			displayName = "Modern Metals version: $project.version"
+			displayName = "Modern Metals $project.version"
 			relations {
 				requiredLibrary 'base-metals'
 				optionalLibrary 'additional-loot-tables'
