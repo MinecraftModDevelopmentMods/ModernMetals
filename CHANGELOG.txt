@@ -1,6 +1,3 @@
-1) Add CurseGradle (makes my life easier)
-2) Make ores more common (atleast until I decide on balance)
-2) Added textures for Small Powders
-3) Added textures for Small Blends
-4) Added textures for Shears
-5) Pre-Added textures for molten fluids
+1) Disabled Recipes for Fishing Rod, Crossbow, Horse Armor & Bolts (They're all pretty buggy currently)
+2) Enabled Bows & Arrows (Textures arn't 100% and there are issues, but they're not major ones)
+3) Added Remaining Textures

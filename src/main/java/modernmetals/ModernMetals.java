@@ -34,7 +34,7 @@ public class ModernMetals
     public static ModernMetals INSTANCE = null;
     public static final String MODID = "modernmetals";
     public static final String NAME = "Modern Metals";
-    public static final String VERSION = "0.9.1";
+    public static final String VERSION = "0.9.2";
 
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
