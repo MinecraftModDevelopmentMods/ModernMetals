@@ -6,7 +6,6 @@ import cyano.basemetals.init.Materials;
 import cyano.basemetals.items.MetalToolEffects;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
-import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,13 +19,12 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class ItemMetalFishingRod extends ItemFishingRod implements IOreDictionaryEntry, IMetalObject {
+public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject {
 
 	private final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
-	private final String oreDict;
 
 	public ItemMetalFishingRod(MetalMaterial m){
 		this.metal = m;
@@ -46,11 +44,6 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IOreDictionar
                 return entityIn == null ? 0.0F : (entityIn.getHeldItemMainhand() == stack && entityIn instanceof EntityPlayer && ((EntityPlayer)entityIn).fishEntity != null ? 1.0F : 0.0F);
             }
         });
-		this.oreDict = "fishingrod"+metal.getCapitalizedName();
-	}
-
-	public String getOreDictionaryName(){
-		return oreDict;
 	}
 
 	// TODO: Test this
@@ -75,6 +68,7 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IOreDictionar
 		return metal.getName();
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
 		super.addInformation(stack,player,list,b);

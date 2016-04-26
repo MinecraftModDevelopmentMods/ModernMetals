@@ -7,7 +7,6 @@ import java.util.List;
 import modernmetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
-import net.minecraft.init.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;

@@ -4,9 +4,7 @@ import java.util.List;
 
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.items.MetalToolEffects;
-import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
-import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,13 +12,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class ItemMetalShears extends net.minecraft.item.ItemShears implements IOreDictionaryEntry {
+public class ItemMetalShears extends net.minecraft.item.ItemShears {
 
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
-	private final String oreDict;
 	public ItemMetalShears(MetalMaterial metal){
 		this.metal = metal;
         this.setMaxDamage(metal.getToolDurability());
@@ -31,11 +28,6 @@ public class ItemMetalShears extends net.minecraft.item.ItemShears implements IO
 		} else {
 			regenerates = false;
 		}
-		this.oreDict = "shears"+metal.getCapitalizedName();
-	}
-
-	public String getOreDictionaryName(){
-		return oreDict;
 	}
 
 	// TODO: Test this
@@ -60,6 +52,7 @@ public class ItemMetalShears extends net.minecraft.item.ItemShears implements IO
 		return metal.getName();
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
 		super.addInformation(stack,player,list,b);

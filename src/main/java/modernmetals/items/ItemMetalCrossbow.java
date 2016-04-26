@@ -5,7 +5,6 @@ import java.util.List;
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.items.MetalToolEffects;
 import cyano.basemetals.material.MetalMaterial;
-import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,13 +12,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class ItemMetalCrossbow extends net.minecraft.item.ItemBow implements IOreDictionaryEntry {
+public class ItemMetalCrossbow extends net.minecraft.item.Item {
 
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
-	private final String oreDict;
 
 	public ItemMetalCrossbow(MetalMaterial metal){
 		this.metal = metal;
@@ -31,11 +29,6 @@ public class ItemMetalCrossbow extends net.minecraft.item.ItemBow implements IOr
 		} else {
 			regenerates = false;
 		}
-		this.oreDict = "crossbow"+metal.getCapitalizedName();
-	}
-
-	public String getOreDictionaryName(){
-		return oreDict;
 	}
 
 	// TODO: Test this
@@ -60,6 +53,7 @@ public class ItemMetalCrossbow extends net.minecraft.item.ItemBow implements IOr
 		return metal.getName();
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
 		super.addInformation(stack,player,list,b);
