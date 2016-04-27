@@ -108,6 +108,7 @@ curseforge {
 				requiredLibrary 'base-metals'
 			}
 		addArtifact sourceJar
+		addArtifact deobfJar
 		addArtifact javadocJar
 		}
 	}
