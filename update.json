@@ -9,12 +9,12 @@
     "1.7.2-latest": "0.0.0",
     "1.6.4-latest": "0.0.0",
     "1.9-recommended": "0.9.2.1",
-    "1.8.9-latest": "0.10.0",
-    "1.8.8-latest": "0.0.0",
-    "1.8-latest": "0.0.0",
-    "1.7.10-latest": "0.0.0",
-    "1.7.2-latest": "0.0.0",
-    "1.6.4-latest": "0.0.0"
+    "1.8.9-recommended": "0.10.0",
+    "1.8.8-recommended": "0.0.0",
+    "1.8-recommended": "0.0.0",
+    "1.7.10-recommended": "0.0.0",
+    "1.7.2-recommended": "0.0.0",
+    "1.6.4-recommended": "0.0.0"
   },
   "1.9": {
     "0.9.2.1": "Alpha Release 0.9.2.1",
