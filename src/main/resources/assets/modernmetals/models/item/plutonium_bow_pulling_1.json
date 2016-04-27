@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/plutonium_bow",
-    "textures": {
-        "layer0": "modernmetals:items/plutonium_bow_pulling_1"
-    }
-}

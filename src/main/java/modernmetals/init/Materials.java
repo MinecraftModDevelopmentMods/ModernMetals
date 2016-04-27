@@ -15,19 +15,12 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	public static MetalMaterial aluminumbrass;
 	public static MetalMaterial cadmium;
 	public static MetalMaterial chromium;
-	public static MetalMaterial cupronickel;
 	public static MetalMaterial iridium;
-	public static MetalMaterial lithium;
 	public static MetalMaterial magnesium;
 	public static MetalMaterial manganese;
 	public static MetalMaterial osmium;
-	public static MetalMaterial niter;
-	public static MetalMaterial phospherous;
-	public static MetalMaterial platinum;
 	public static MetalMaterial plutonium;
 	public static MetalMaterial rutile;
-	public static MetalMaterial silicon;
-	public static MetalMaterial sulfur;
 	public static MetalMaterial tantalum;
 	public static MetalMaterial titanium;
 	public static MetalMaterial tungsten;
@@ -39,32 +32,27 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 		if(initDone)return;
 		
 		// mod metals
-		aluminum = addMaterial("aluminum",8,8,4.5);
-		aluminumbrass = addMaterial("aluminumbrass",8,8,4.5);
-		cadmium = addMaterial("cadmium",8,8,4.5);
-		chromium = addMaterial("chromium",8,8,4.5);
-		iridium = addMaterial("iridium",8,8,4.5);
-		lithium = addMaterial("lithium",8,8,4.5);
-		magnesium = addMaterial("magnesium",8,8,4.5);
-		manganese = addMaterial("manganese",8,8,4.5);
-		niter = addMaterial("niter",8,8,4.5);
-		osmium = addMaterial("osmium",8,8,4.5);
-		phospherous = addMaterial("phospherous",8,8,4.5);
-		plutonium = addMaterial("plutonium",8,8,4.5);
-		rutile = addMaterial("rutile",8,8,4.5);
-		silicon = addMaterial("silicon",8,8,4.5);
-		sulfur = addMaterial("sulfur",8,8,4.5);
-		tantalum = addMaterial("tantalum",8,8,4.5);
-		titanium = addMaterial("titanium",8,8,4.5);
-		tungsten = addMaterial("tungsten",8,8,4.5);
-		uranium = addMaterial("uranium",8,8,4.5);
-		zirconium = addMaterial("zirconium",8,8,4.5);
+		aluminum = addMaterial("aluminum",8,8,4.5,0.3);
+		aluminumbrass = addMaterial("aluminumbrass",8,8,4.5,0.3);
+		cadmium = addMaterial("cadmium",8,8,4.5,0.3);
+		chromium = addMaterial("chromium",8,8,4.5,0.3);
+		iridium = addMaterial("iridium",8,8,4.5,0.3);
+		magnesium = addMaterial("magnesium",8,8,4.5,0.3);
+		manganese = addMaterial("manganese",8,8,4.5,0.3);
+		osmium = addMaterial("osmium",8,8,4.5,0.3);
+		plutonium = addMaterial("plutonium",8,8,4.5,0.3);
+		rutile = addMaterial("rutile",8,8,4.5,0.3);
+		tantalum = addMaterial("tantalum",8,8,4.5,0.3);
+		titanium = addMaterial("titanium",8,8,4.5,0.3);
+		tungsten = addMaterial("tungsten",8,8,4.5,0.3);
+		uranium = addMaterial("uranium",8,8,4.5,0.3);
+		zirconium = addMaterial("zirconium",8,8,4.5,0.3);
 
 		initDone = true;
 	}
 
-	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic){
-		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic);
+	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic, double rarity){
+		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic,(int)(Math.max(50*rarity,1)));
 		registerMaterial(name, m);
 		return m;
 	}

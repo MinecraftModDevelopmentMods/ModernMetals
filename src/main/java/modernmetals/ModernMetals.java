@@ -1,29 +1,36 @@
 package modernmetals;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
-import org.apache.logging.log4j.Level;
-
-import modernmetals.data.AdditionalLootTables;
-import modernmetals.data.DataConstants;
+import cyano.basemetals.data.DataConstants;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+
+/**
+ * This is the entry point for this mod. If you are writing your own mod that 
+ * uses this mod, the classes of interest to you are the init classes (classes 
+ * in package cyano.basemetals.init) and the CrusherRecipeRegistry class (in 
+ * package cyano.basemetals.registry). Note that you should add 
+ * 'dependencies = "required-after:basemetals"' to your &#64;Mod annotation 
+ * (e.g. <br> 
+ * &#64;Mod(modid = "moremetals", name="More Metals!", version = "1.2.3", dependencies = "required-after:basemetals")
+ * <br>)
+ * @author DrCyano
+ *
+ */
 @Mod(
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
@@ -34,7 +41,7 @@ public class ModernMetals
     public static ModernMetals INSTANCE = null;
     public static final String MODID = "modernmetals";
     public static final String NAME = "Modern Metals";
-    public static final String VERSION = "0.9.2.1";
+    public static final String VERSION = "0.10.0";
 
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -73,35 +80,6 @@ public class ModernMetals
 		
 		
 		
-		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(),"additional-loot-tables");
-		Path myLootFolder = ALTPath.resolve(MODID);
-		if(Files.notExists(myLootFolder)){
-			try{
-				Files.createDirectories(myLootFolder.resolve("chests"));
-				Files.write(myLootFolder.resolve("chests").resolve("abandoned_mineshaft.json"),
-						Arrays.asList(         AdditionalLootTables.abandoned_mineshaft));
-				Files.write(myLootFolder.resolve("chests").resolve("desert_pyramid.json"),
-						Arrays.asList(         AdditionalLootTables.desert_pyramid));
-				Files.write(myLootFolder.resolve("chests").resolve("end_city_treasure.json"),
-						Arrays.asList(         AdditionalLootTables.end_city_treasure));
-				Files.write(myLootFolder.resolve("chests").resolve("jungle_temple.json"),
-						Arrays.asList(         AdditionalLootTables.jungle_temple));
-				Files.write(myLootFolder.resolve("chests").resolve("nether_bridge.json"),
-						Arrays.asList(         AdditionalLootTables.nether_bridge));
-				Files.write(myLootFolder.resolve("chests").resolve("simple_dungeon.json"),
-						Arrays.asList(         AdditionalLootTables.simple_dungeon));
-				Files.write(myLootFolder.resolve("chests").resolve("spawn_bonus_chest.json"),
-						Arrays.asList(         AdditionalLootTables.spawn_bonus_chest));
-				Files.write(myLootFolder.resolve("chests").resolve("stronghold_corridor.json"),
-						Arrays.asList(         AdditionalLootTables.stronghold_corridor));
-				Files.write(myLootFolder.resolve("chests").resolve("stronghold_crossing.json"),
-						Arrays.asList(         AdditionalLootTables.stronghold_crossing));
-				Files.write(myLootFolder.resolve("chests").resolve("village_blacksmith.json"),
-						Arrays.asList(         AdditionalLootTables.village_blacksmith));
-			} catch(IOException ex){
-				FMLLog.log(Level.ERROR,ex,"%s: Failed to extract additional loot tables",MODID);
-			}
-		}
 
 		if(event.getSide() == Side.CLIENT){
 			clientPreInit(event);

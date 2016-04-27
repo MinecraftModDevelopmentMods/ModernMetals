@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/cadmium_bow",
-    "textures": {
-        "layer0": "modernmetals:items/cadmium_bow_pulling_2"
-    }
-}

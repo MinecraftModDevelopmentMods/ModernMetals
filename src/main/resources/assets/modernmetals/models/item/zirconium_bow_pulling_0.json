@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/zirconium_bow",
-    "textures": {
-        "layer0": "modernmetals:items/zirconium_bow_pulling_0"
-    }
-}

@@ -8,7 +8,6 @@ import modernmetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -61,16 +60,6 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			Block ore = modernmetals.init.Blocks.getBlockByName(baseName+"ore");
 			Block trapdoor = modernmetals.init.Blocks.getBlockByName(baseName+"trapdoor");
 			
-			Item arrow = modernmetals.init.Items.getItemByName(baseName+"arrow");
-			Item bow = modernmetals.init.Items.getItemByName(baseName+"bow");
-			Item bolt = modernmetals.init.Items.getItemByName(baseName+"bolt");
-			Item crossbow = modernmetals.init.Items.getItemByName(baseName+"crossbow");
-			Item shears = modernmetals.init.Items.getItemByName(baseName+"shears");
-			Item smallblend = modernmetals.init.Items.getItemByName(baseName+"smallblend");
-			Item smallpowder = modernmetals.init.Items.getItemByName(baseName+"smallpowder");
-			Item fishingrod = modernmetals.init.Items.getItemByName(baseName+"fishingrod");
-			Item horsearmor = modernmetals.init.Items.getItemByName(baseName+"horsearmor");
-
 			// NOTE: smelting XP is based on output item, not input item
 			// ingot-related recipes 
 			if(ore != null && powder != null){
@@ -131,20 +120,6 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trapdoor), "xx","xx",'x',"ingot"+oreDictName));
 				OreDictionary.registerOre("trapdoor", trapdoor);
 			}
-
-			if(blend != null && smallblend != null){
-				// TODO - why the hell doesn't this work?
-				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(smallblend,9), new ItemStack(blend)));
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blend), "xxx","xxx","xxx",'x',new ItemStack(smallblend)));
-				GameRegistry.addSmelting(smallblend, new ItemStack(nugget,1), metal.getOreSmeltXP());
-			}
-			if(powder != null && smallpowder != null){
-				// TODO - small powder to powder recipe doesn't use oredict
-				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(smallpowder,9), new ItemStack(powder)));
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(powder), "xxx","xxx","xxx",'x',new ItemStack(smallpowder)));
-				GameRegistry.addSmelting(smallpowder, new ItemStack(nugget,1), metal.getOreSmeltXP());
-				CrusherRecipeRegistry.addNewCrusherRecipe("nugget"+oreDictName,new ItemStack(smallpowder,1));
-			}
 			
 			// armor and tools
 			if(ingot != null && boots != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(boots), "x x", "x x", 'x', "ingot"+oreDictName));
@@ -159,15 +134,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe), "xxx", " / ", " / ", 'x', "ingot"+oreDictName, '/', "stickWood"));
 			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), "x", "/", "/", 'x', "ingot"+oreDictName, '/', "stickWood"));
 			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword), "x", "x" , "/", 'x', "ingot"+oreDictName, '/', "stickWood"));
-			if(ingot != null && shears != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shears), " x", "x " , 'x', "ingot"+oreDictName));
-//			if(rod != null && fishingrod != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(fishingrod), "  x", " xy", "x y", 'x', "rod"+oreDictName, 'y', Items.STRING));
-//			if(ingot != null && horsearmor != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(horsearmor), "  x", "xyx", "xxx", 'x', "ingot"+oreDictName, 'y', Blocks.WOOL));
 
-			// Bows and Crossbows
-			if(rod != null && arrow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(arrow), "x", "y", "z", 'x', "nugget"+oreDictName, 'y', "rod"+oreDictName,'z' ,Items.FEATHER));
-			if(rod != null && bow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bow), " xy", "x y", " xy", 'x', "rod"+oreDictName, 'y', Items.STRING));
-//			if(rod != null && gear != null && crossbow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crossbow), "zxx", " yx", "x z", 'x', "rod"+oreDictName, 'y', "gear"+oreDictName, 'z', Items.STRING));
-//			if(rod != null && bolt != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bolt), "x", "x", "y", 'x', "rod"+oreDictName, 'y', Items.FEATHER));
 		}
 		
 		// alloy blends

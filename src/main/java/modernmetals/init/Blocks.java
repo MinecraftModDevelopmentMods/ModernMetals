@@ -8,8 +8,7 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -52,7 +51,6 @@ public abstract class Blocks {
 	public static Block aluminumbrass_block;
 	public static Block aluminumbrass_plate;
 	public static BlockDoor aluminumbrass_door;
-//	public static Block aluminumbrass_ore;
 	public static Block aluminumbrass_trapdoor;
 	
 	public static Block cadmium_bars;
@@ -76,15 +74,6 @@ public abstract class Blocks {
 	public static Block iridium_ore;
 	public static Block iridium_trapdoor;
 	
-/*
-	public static Block lithium_bars;
-	public static Block lithium_block;
-	public static Block lithium_plate;
-	public static BlockDoor lithium_door;
-	public static Block lithium_ore;
-	public static Block lithium_trapdoor;
-*/
-
 	public static Block magnesium_bars;
 	public static Block magnesium_block;
 	public static Block magnesium_plate;
@@ -99,15 +88,6 @@ public abstract class Blocks {
 	public static Block manganese_ore;
 	public static Block manganese_trapdoor;
 	
-/*
-	public static Block niter_bars;
-	public static Block niter_block;
-	public static Block niter_plate;
-	public static BlockDoor niter_door;
-	public static Block niter_ore;
-	public static Block niter_trapdoor;
-*/
-
 	public static Block osmium_bars;
 	public static Block osmium_block;
 	public static Block osmium_plate;
@@ -115,15 +95,6 @@ public abstract class Blocks {
 	public static Block osmium_ore;
 	public static Block osmium_trapdoor;
 	
-/*
-	public static Block phospherous_bars;
-	public static Block phospherous_block;
-	public static Block phospherous_plate;
-	public static BlockDoor phospherous_door;
-	public static Block phospherous_ore;
-	public static Block phospherous_trapdoor;
-*/
-
 	public static Block plutonium_bars;
 	public static Block plutonium_block;
 	public static Block plutonium_plate;
@@ -137,22 +108,6 @@ public abstract class Blocks {
 	public static BlockDoor rutile_door;
 	public static Block rutile_ore;
 	public static Block rutile_trapdoor;
-
-/*
-	public static Block silicon_bars;
-	public static Block silicon_block;
-	public static Block silicon_plate;
-	public static BlockDoor silicon_door;
-	public static Block silicon_ore;
-	public static Block silicon_trapdoor;
-	
-	public static Block sulfur_bars;
-	public static Block sulfur_block;
-	public static Block sulfur_plate;
-	public static BlockDoor sulfur_door;
-	public static Block sulfur_ore;
-	public static Block sulfur_trapdoor;
-*/
 
 	public static Block tantalum_bars;
 	public static Block tantalum_block;
@@ -206,7 +161,6 @@ public abstract class Blocks {
 
 		aluminumbrass_block = createBlock(Materials.aluminumbrass);
 		aluminumbrass_plate = createPlate(Materials.aluminumbrass);
-//		aluminumbrass_ore = createOre(Materials.aluminumbrass);
 		aluminumbrass_bars = createBars(Materials.aluminumbrass);
 		aluminumbrass_door = createDoor(Materials.aluminumbrass);
 		aluminumbrass_trapdoor = createTrapDoor(Materials.aluminumbrass);
@@ -232,15 +186,6 @@ public abstract class Blocks {
 		iridium_door = createDoor(Materials.iridium);
 		iridium_trapdoor = createTrapDoor(Materials.iridium);
 
-/*
-		lithium_block = createBlock(Materials.lithium);
-		lithium_plate = createPlate(Materials.lithium);
-		lithium_ore = createOre(Materials.lithium);
-		lithium_bars = createBars(Materials.lithium);
-		lithium_door = createDoor(Materials.lithium);
-		lithium_trapdoor = createTrapDoor(Materials.lithium);
-*/
-
 		magnesium_block = createBlock(Materials.magnesium);
 		magnesium_plate = createPlate(Materials.magnesium);
 		magnesium_ore = createOre(Materials.magnesium);
@@ -255,30 +200,12 @@ public abstract class Blocks {
 		manganese_door = createDoor(Materials.manganese);
 		manganese_trapdoor = createTrapDoor(Materials.manganese);
 
-/*
-		niter_block = createBlock(Materials.niter);
-		niter_plate = createPlate(Materials.niter);
-		niter_ore = createOre(Materials.niter);
-		niter_bars = createBars(Materials.niter);
-		niter_door = createDoor(Materials.niter);
-		niter_trapdoor = createTrapDoor(Materials.niter);
-*/
-
 		osmium_block = createBlock(Materials.osmium);
 		osmium_plate = createPlate(Materials.osmium);
 		osmium_ore = createOre(Materials.osmium);
 		osmium_bars = createBars(Materials.osmium);
 		osmium_door = createDoor(Materials.osmium);
 		osmium_trapdoor = createTrapDoor(Materials.osmium);
-
-/*
-		phospherous_block = createBlock(Materials.phospherous);
-		phospherous_plate = createPlate(Materials.phospherous);
-		phospherous_ore = createOre(Materials.phospherous);
-		phospherous_bars = createBars(Materials.phospherous);
-		phospherous_door = createDoor(Materials.phospherous);
-		phospherous_trapdoor = createTrapDoor(Materials.phospherous);
-*/
 
 		plutonium_block = createBlock(Materials.plutonium);
 		plutonium_plate = createPlate(Materials.plutonium);
@@ -293,22 +220,6 @@ public abstract class Blocks {
 		rutile_bars = createBars(Materials.rutile);
 		rutile_door = createDoor(Materials.rutile);
 		rutile_trapdoor = createTrapDoor(Materials.rutile);
-
-/*
-		silicon_block = createBlock(Materials.silicon);
-		silicon_plate = createPlate(Materials.silicon);
-		silicon_ore = createOre(Materials.silicon);
-		silicon_bars = createBars(Materials.silicon);
-		silicon_door = createDoor(Materials.silicon);
-		silicon_trapdoor = createTrapDoor(Materials.silicon);
-
-		sulfur_block = createBlock(Materials.sulfur);
-		sulfur_plate = createPlate(Materials.sulfur);
-		sulfur_ore = createOre(Materials.sulfur);
-		sulfur_bars = createBars(Materials.sulfur);
-		sulfur_door = createDoor(Materials.sulfur);
-		sulfur_trapdoor = createTrapDoor(Materials.sulfur);
-*/
 
 		tantalum_block = createBlock(Materials.tantalum);
 		tantalum_plate = createPlate(Materials.tantalum);
@@ -357,11 +268,7 @@ public abstract class Blocks {
 	private static Block addBlock(Block block, String name){
 		block.setRegistryName(ModernMetals.MODID, name);
 		block.setUnlocalizedName(ModernMetals.MODID+"."+ name);
-		GameRegistry.register(block);
-		
-		ItemBlock itemBlock = new ItemBlock(block);
-		itemBlock.setRegistryName(ModernMetals.MODID, name);
-		GameRegistry.register(itemBlock);
+		GameRegistry.registerBlock(block, name);
 		
 		allBlocks.put(name, block);
 		return block;
@@ -392,12 +299,8 @@ public abstract class Blocks {
 		BlockDoor block = new BlockMetalDoor(metal);
 		block.setRegistryName(ModernMetals.MODID, name);
 		block.setUnlocalizedName(ModernMetals.MODID+"."+name);
-		GameRegistry.register(block);
-		
-		ItemBlock itemBlock = new ItemBlock(block);
-		itemBlock.setRegistryName(ModernMetals.MODID, name);
-		GameRegistry.register(itemBlock);
-		
+		GameRegistry.registerBlock(block, name);
+				
 		allBlocks.put(metal.getName()+"_door", block);
 		return block;
 	}

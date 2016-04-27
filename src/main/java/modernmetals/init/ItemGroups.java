@@ -31,7 +31,7 @@ public class ItemGroups extends cyano.basemetals.init.ItemGroups {
 //		itemItem = Items.aluminum_crackhammer;
 //		toolItem = Items.aluminum_crackhammer;
 
-		tab_blocks = new FunctionalCreativeTab( ModernMetals.MODID.concat(".blocks"), false,
+		tab_blocks = new FunctionalCreativeTab( ModernMetals.MODID.concat(".blocks"),
 				()->Items.aluminum_crackhammer, 
 				(ItemStack a,ItemStack b)->{
 					int delta = Items.getSortingValue(a)-Items.getSortingValue(b);
