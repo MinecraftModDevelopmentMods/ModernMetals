@@ -101,7 +101,7 @@ curseforge {
 		apiKey = ''
 		id = '244357'
 		changelog = file('CHANGELOG.txt')
-		releaseType = 'alpha'
+		releaseType = 'beta'
 		mainArtifact(jar) {
 			displayName = "Modern Metals $project.version"
 			relations {
@@ -109,6 +109,7 @@ curseforge {
 				optionalLibrary 'additional-loot-tables'
 			}
 		addArtifact sourceJar
+		addArtifact deobfJar
 		addArtifact javadocJar
 		}
 	}
