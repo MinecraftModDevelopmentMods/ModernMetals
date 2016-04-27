@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/niter_plate",
-        "side": "modernmetals:blocks/niter_plate",
-        "bottom": "modernmetals:blocks/niter_plate"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/sulfur_plate",
-        "side": "modernmetals:blocks/sulfur_plate",
-        "bottom": "modernmetals:blocks/sulfur_plate"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_ne",
-    "textures": {
-        "particle": "modernmetals:blocks/niter_bars",
-        "bars": "modernmetals:blocks/niter_bars",
-        "edge": "modernmetals:blocks/niter_bars"
-    }
-}

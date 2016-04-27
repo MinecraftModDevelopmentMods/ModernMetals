@@ -106,7 +106,6 @@ curseforge {
 			displayName = "Modern Metals $project.version"
 			relations {
 				requiredLibrary 'base-metals'
-				optionalLibrary 'additional-loot-tables'
 			}
 		addArtifact sourceJar
 		addArtifact javadocJar

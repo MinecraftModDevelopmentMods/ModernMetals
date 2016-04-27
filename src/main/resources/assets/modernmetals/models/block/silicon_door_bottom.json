@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_bottom",
-    "textures": {
-        "bottom": "modernmetals:blocks/silicon_door_lower",
-        "top": "modernmetals:blocks/silicon_door_upper"
-    }
-}
