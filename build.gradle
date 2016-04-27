@@ -39,7 +39,7 @@ allprojects {
 
 version = "0.10.0"
 group= "modernmetals" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "ModernMetals"
+archivesBaseName = "ModernMetals_1.8.9"
 
 minecraft {
     version = "1.8.9-11.15.1.1722"
