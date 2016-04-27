@@ -1,1 +1,3 @@
-1) Quick fix for bolts being useable as arrows.
+1) Added update checker
+2) hard depend on correct versions of forge and basemetals
+3) Fix bug in orespawn causing load error
