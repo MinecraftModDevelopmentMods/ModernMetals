@@ -101,7 +101,7 @@ curseforge {
 		apiKey = ''
 		id = '244357'
 		changelog = file('CHANGELOG.txt')
-		releaseType = 'beta'
+		releaseType = 'release'
 		mainArtifact(jar) {
 			displayName = "Modern Metals $project.version"
 			relations {
