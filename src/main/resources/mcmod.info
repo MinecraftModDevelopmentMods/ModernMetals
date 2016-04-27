@@ -1,14 +1,14 @@
 [
 {
-  "modid": "ModernMetals",
+  "modid": "modernmetals",
   "name": "Modern Metals",
   "description": "Modern Metals Addon",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "http://minecraft.curseforge.com/projects/modern-metals",
   "updateUrl": "",
   "authorList": ["cyb3rkat"],
-  "credits": "",
+  "credits": "DrCyano (aka Cyanobacterium)",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
