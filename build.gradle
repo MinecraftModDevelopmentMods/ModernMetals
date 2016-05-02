@@ -37,7 +37,7 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-version = "0.10.0"
+version = "0.10.1"
 group= "modernmetals" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ModernMetals_1.8.9"
 
