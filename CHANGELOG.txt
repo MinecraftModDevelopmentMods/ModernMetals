@@ -1,3 +1,4 @@
-1) Backport to 1.8.9
+1. Fix armor when rendered on player.
+2. Fix bug in orespawn causing load error
 
 This version does NOT include Arrows, Bows, Crossbows, Bolts, Gears, Horse Armors, Rods or small piles.
