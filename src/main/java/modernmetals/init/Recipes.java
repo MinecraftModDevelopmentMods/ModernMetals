@@ -5,10 +5,11 @@ import java.util.List;
 
 
 import modernmetals.init.Materials;
+import modernmetals.init.Items;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.init.Items;
+//import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -164,8 +165,8 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 //			if(ingot != null && horsearmor != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(horsearmor), "  x", "xyx", "xxx", 'x', "ingot"+oreDictName, 'y', Blocks.WOOL));
 
 			// Bows and Crossbows
-			if(rod != null && arrow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(arrow), "x", "y", "z", 'x', "nugget"+oreDictName, 'y', "rod"+oreDictName,'z' ,Items.FEATHER));
-			if(rod != null && bow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bow), " xy", "x y", " xy", 'x', "rod"+oreDictName, 'y', Items.STRING));
+			if(rod != null && arrow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(arrow), "x", "y", "z", 'x', "nugget"+oreDictName, 'y', "rod"+oreDictName,'z' ,net.minecraft.init.Items.FEATHER));
+			if(rod != null && bow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bow), " xy", "x y", " xy", 'x', "rod"+oreDictName, 'y', net.minecraft.init.Items.STRING));
 //			if(rod != null && gear != null && crossbow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crossbow), "zxx", " yx", "x z", 'x', "rod"+oreDictName, 'y', "gear"+oreDictName, 'z', Items.STRING));
 //			if(rod != null && bolt != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bolt), "x", "x", "y", 'x', "rod"+oreDictName, 'y', Items.FEATHER));
 		}
@@ -176,5 +177,48 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		
 		// new recipes using rods and gears
 //		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.lever,1), "x","y",'x',"rod",'y', "cobblestone"));
+
+		// Some people refer to it as Aluminium
+		OreDictionary.registerOre("oreAluminium", Blocks.aluminum_ore);
+		OreDictionary.registerOre("blockAluminium", Blocks.aluminum_block);
+		OreDictionary.registerOre("plateAluminium", Blocks.aluminum_plate);
+		OreDictionary.registerOre("barsAluminium", Blocks.aluminum_bars);
+		OreDictionary.registerOre("doorAluminium", Blocks.aluminum_door);
+		OreDictionary.registerOre("trapdoorAluminium", Blocks.aluminum_trapdoor);
+		OreDictionary.registerOre("ingotAluminium", Items.aluminum_ingot);
+		OreDictionary.registerOre("nuggetAluminium", Items.aluminum_nugget);
+		OreDictionary.registerOre("dustAluminium", Items.aluminum_powder);
+		OreDictionary.registerOre("gearAluminium", Items.aluminum_gear);
+		OreDictionary.registerOre("rodAluminium", Items.aluminum_rod);
+
+		// Some people refer to it as Aluminium
+		OreDictionary.registerOre("blockAluminiumbrass", Blocks.aluminumbrass_block);
+		OreDictionary.registerOre("plateAluminiumbrass", Blocks.aluminumbrass_plate);
+		OreDictionary.registerOre("barsAluminiumbrass", Blocks.aluminumbrass_bars);
+		OreDictionary.registerOre("doorAluminiumbrass", Blocks.aluminumbrass_door);
+		OreDictionary.registerOre("trapdoorAluminiumbrass", Blocks.aluminumbrass_trapdoor);
+		OreDictionary.registerOre("dustAluminiumbrass", Items.aluminumbrass_blend);
+		OreDictionary.registerOre("ingotAluminiumbrass", Items.aluminumbrass_ingot);
+		OreDictionary.registerOre("nuggetAluminiumbrass", Items.aluminumbrass_nugget);
+		OreDictionary.registerOre("dustAluminiumbrass", Items.aluminumbrass_powder);
+		OreDictionary.registerOre("gearAluminiumbrass", Items.aluminumbrass_gear);
+		OreDictionary.registerOre("rodAluminiumbrass", Items.aluminumbrass_rod);
+
+		// Make Tinkers Construct happy
+		OreDictionary.registerOre("blockAlubrass", Blocks.aluminumbrass_block);
+		OreDictionary.registerOre("plateAlubrass", Blocks.aluminumbrass_plate);
+		OreDictionary.registerOre("barsAlurass", Blocks.aluminumbrass_bars);
+		OreDictionary.registerOre("doorAlubrass", Blocks.aluminumbrass_door);
+		OreDictionary.registerOre("trapdoorAlubrass", Blocks.aluminumbrass_trapdoor);
+		OreDictionary.registerOre("dustAlubrass", Items.aluminumbrass_blend);
+		OreDictionary.registerOre("ingotAlubrass", Items.aluminumbrass_ingot);
+		OreDictionary.registerOre("nuggetAlubrass", Items.aluminumbrass_nugget);
+		OreDictionary.registerOre("dustAlubrass", Items.aluminumbrass_powder);
+		OreDictionary.registerOre("gearAlubrass", Items.aluminumbrass_gear);
+		OreDictionary.registerOre("rodAlubrass", Items.aluminumbrass_rod);
+		
+
+
+
 	}
 }
