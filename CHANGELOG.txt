@@ -1,1 +1,6 @@
-1. Fix armor when rendered on player.
+1. Fix armor when rendered on player.1. Ores now spawn less commonly
+2. Fixed Achievements
+3. Doors now drop item when broken.
+4. No more duplicate door items.
+5. Added Galvanized Steel
+6. Added Stainless Steel
