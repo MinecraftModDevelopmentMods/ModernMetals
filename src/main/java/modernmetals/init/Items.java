@@ -15,6 +15,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 //import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -184,6 +185,33 @@ public abstract class Items {
 	public static Item chromium_rod;
 	public static Item chromium_gear;
 
+	public static Item galvanizedsteel_arrow;
+	public static Item galvanizedsteel_axe;
+	public static Item galvanizedsteel_blend;
+	public static Item galvanizedsteel_boots;
+	public static Item galvanizedsteel_bolt;
+	public static Item galvanizedsteel_bow;
+	public static Item galvanizedsteel_chestplate;
+	public static Item galvanizedsteel_crackhammer;
+	public static Item galvanizedsteel_crossbow;
+	public static Item galvanizedsteel_door;
+	public static Item galvanizedsteel_fishingrod;
+	public static Item galvanizedsteel_helmet;
+	public static Item galvanizedsteel_hoe;
+	public static Item galvanizedsteel_horsearmor;
+	public static Item galvanizedsteel_ingot;
+	public static Item galvanizedsteel_leggings;
+	public static Item galvanizedsteel_nugget;
+	public static Item galvanizedsteel_pickaxe;
+	public static Item galvanizedsteel_powder;
+	public static Item galvanizedsteel_shears;
+	public static Item galvanizedsteel_shovel;
+	public static Item galvanizedsteel_smallblend;
+	public static Item galvanizedsteel_smallpowder;
+	public static Item galvanizedsteel_sword;
+	public static Item galvanizedsteel_rod;
+	public static Item galvanizedsteel_gear;
+
 	public static Item iridium_arrow;
 	public static Item iridium_axe;
 //	public static Item iridium_blend;
@@ -293,6 +321,33 @@ public abstract class Items {
 	public static Item manganese_sword;
 	public static Item manganese_rod;
 	public static Item manganese_gear;
+
+	public static Item nichrome_arrow;
+	public static Item nichrome_axe;
+	public static Item nichrome_blend;
+	public static Item nichrome_boots;
+	public static Item nichrome_bolt;
+	public static Item nichrome_bow;
+	public static Item nichrome_chestplate;
+	public static Item nichrome_crackhammer;
+	public static Item nichrome_crossbow;
+	public static Item nichrome_door;
+	public static Item nichrome_fishingrod;
+	public static Item nichrome_helmet;
+	public static Item nichrome_hoe;
+	public static Item nichrome_horsearmor;
+	public static Item nichrome_ingot;
+	public static Item nichrome_leggings;
+	public static Item nichrome_nugget;
+	public static Item nichrome_pickaxe;
+	public static Item nichrome_powder;
+	public static Item nichrome_shears;
+	public static Item nichrome_shovel;
+	public static Item nichrome_smallblend;
+	public static Item nichrome_smallpowder;
+	public static Item nichrome_sword;
+	public static Item nichrome_rod;
+	public static Item nichrome_gear;
 
 /*
 	public static Item niter_arrow;
@@ -460,6 +515,33 @@ public abstract class Items {
 	public static Item silicon_rod;
 	public static Item silicon_gear;
 */
+
+	public static Item stainlesssteel_arrow;
+	public static Item stainlesssteel_axe;
+	public static Item stainlesssteel_blend;
+	public static Item stainlesssteel_boots;
+	public static Item stainlesssteel_bolt;
+	public static Item stainlesssteel_bow;
+	public static Item stainlesssteel_chestplate;
+	public static Item stainlesssteel_crackhammer;
+	public static Item stainlesssteel_crossbow;
+	public static Item stainlesssteel_door;
+	public static Item stainlesssteel_fishingrod;
+	public static Item stainlesssteel_helmet;
+	public static Item stainlesssteel_hoe;
+	public static Item stainlesssteel_horsearmor;
+	public static Item stainlesssteel_ingot;
+	public static Item stainlesssteel_leggings;
+	public static Item stainlesssteel_nugget;
+	public static Item stainlesssteel_pickaxe;
+	public static Item stainlesssteel_powder;
+	public static Item stainlesssteel_shears;
+	public static Item stainlesssteel_shovel;
+	public static Item stainlesssteel_smallblend;
+	public static Item stainlesssteel_smallpowder;
+	public static Item stainlesssteel_sword;
+	public static Item stainlesssteel_rod;
+	public static Item stainlesssteel_gear;
 
 /*
 	public static Item sulfur_arrow;
@@ -748,6 +830,32 @@ public abstract class Items {
 		chromium_rod = create_rod(Materials.chromium);
 		chromium_gear = create_gear(Materials.chromium);
 
+		galvanizedsteel_arrow = create_arrow(Materials.galvanizedsteel);
+		galvanizedsteel_axe = create_axe(Materials.galvanizedsteel);
+		galvanizedsteel_blend = create_blend(Materials.galvanizedsteel);
+		galvanizedsteel_boots = create_boots(Materials.galvanizedsteel);
+		galvanizedsteel_bolt = create_bolt(Materials.galvanizedsteel);
+		galvanizedsteel_bow = create_bow(Materials.galvanizedsteel);
+		galvanizedsteel_chestplate = create_chestplate(Materials.galvanizedsteel);
+		galvanizedsteel_crackhammer = create_crackhammer(Materials.galvanizedsteel);
+		galvanizedsteel_crossbow = create_crossbow(Materials.galvanizedsteel);
+		galvanizedsteel_door = create_door(Materials.galvanizedsteel, Blocks.galvanizedsteel_door);
+		galvanizedsteel_fishingrod = create_fishingrod(Materials.galvanizedsteel);
+		galvanizedsteel_helmet = create_helmet(Materials.galvanizedsteel);
+		galvanizedsteel_hoe = create_hoe(Materials.galvanizedsteel);
+		galvanizedsteel_horsearmor = create_horsearmor(Materials.galvanizedsteel);
+		galvanizedsteel_ingot = create_ingot(Materials.galvanizedsteel);
+		galvanizedsteel_leggings = create_leggings(Materials.galvanizedsteel);
+		galvanizedsteel_nugget = create_nugget(Materials.galvanizedsteel);
+		galvanizedsteel_pickaxe = create_pickaxe(Materials.galvanizedsteel);
+		galvanizedsteel_powder = create_powder(Materials.galvanizedsteel);
+		galvanizedsteel_shears = create_shears(Materials.galvanizedsteel);
+		galvanizedsteel_shovel = create_shovel(Materials.galvanizedsteel);
+		galvanizedsteel_smallblend = create_smallblend(Materials.galvanizedsteel);
+		galvanizedsteel_smallpowder = create_smallpowder(Materials.galvanizedsteel);
+		galvanizedsteel_sword = create_sword(Materials.galvanizedsteel);
+		galvanizedsteel_rod = create_rod(Materials.galvanizedsteel);
+		galvanizedsteel_gear = create_gear(Materials.galvanizedsteel);
 
 		iridium_arrow = create_arrow(Materials.iridium);
 		iridium_axe = create_axe(Materials.iridium);
@@ -858,6 +966,33 @@ public abstract class Items {
 		manganese_sword = create_sword(Materials.manganese);
 		manganese_rod = create_rod(Materials.manganese);
 		manganese_gear = create_gear(Materials.manganese);
+
+		nichrome_arrow = create_arrow(Materials.nichrome);
+		nichrome_axe = create_axe(Materials.nichrome);
+		nichrome_blend = create_blend(Materials.nichrome);
+		nichrome_boots = create_boots(Materials.nichrome);
+		nichrome_bolt = create_bolt(Materials.nichrome);
+		nichrome_bow = create_bow(Materials.nichrome);
+		nichrome_chestplate = create_chestplate(Materials.nichrome);
+		nichrome_crackhammer = create_crackhammer(Materials.nichrome);
+		nichrome_crossbow = create_crossbow(Materials.nichrome);
+		nichrome_door = create_door(Materials.nichrome, Blocks.nichrome_door);
+		nichrome_fishingrod = create_fishingrod(Materials.nichrome);
+		nichrome_helmet = create_helmet(Materials.nichrome);
+		nichrome_hoe = create_hoe(Materials.nichrome);
+		nichrome_horsearmor = create_horsearmor(Materials.nichrome);
+		nichrome_ingot = create_ingot(Materials.nichrome);
+		nichrome_leggings = create_leggings(Materials.nichrome);
+		nichrome_nugget = create_nugget(Materials.nichrome);
+		nichrome_pickaxe = create_pickaxe(Materials.nichrome);
+		nichrome_powder = create_powder(Materials.nichrome);
+		nichrome_shears = create_shears(Materials.nichrome);
+		nichrome_shovel = create_shovel(Materials.nichrome);
+		nichrome_smallblend = create_smallblend(Materials.nichrome);
+		nichrome_smallpowder = create_smallpowder(Materials.nichrome);
+		nichrome_sword = create_sword(Materials.nichrome);
+		nichrome_rod = create_rod(Materials.nichrome);
+		nichrome_gear = create_gear(Materials.nichrome);
 
 /*
 		niter_arrow = create_arrow(Materials.niter);
@@ -1026,6 +1161,33 @@ public abstract class Items {
 		silicon_rod = create_rod(Materials.silicon);
 		silicon_gear = create_gear(Materials.silicon);
 */
+
+		stainlesssteel_arrow = create_arrow(Materials.stainlesssteel);
+		stainlesssteel_axe = create_axe(Materials.stainlesssteel);
+		stainlesssteel_blend = create_blend(Materials.stainlesssteel);
+		stainlesssteel_boots = create_boots(Materials.stainlesssteel);
+		stainlesssteel_bolt = create_bolt(Materials.stainlesssteel);
+		stainlesssteel_bow = create_bow(Materials.stainlesssteel);
+		stainlesssteel_chestplate = create_chestplate(Materials.stainlesssteel);
+		stainlesssteel_crackhammer = create_crackhammer(Materials.stainlesssteel);
+		stainlesssteel_crossbow = create_crossbow(Materials.stainlesssteel);
+		stainlesssteel_door = create_door(Materials.stainlesssteel, Blocks.stainlesssteel_door);
+		stainlesssteel_fishingrod = create_fishingrod(Materials.stainlesssteel);
+		stainlesssteel_helmet = create_helmet(Materials.stainlesssteel);
+		stainlesssteel_hoe = create_hoe(Materials.stainlesssteel);
+		stainlesssteel_horsearmor = create_horsearmor(Materials.stainlesssteel);
+		stainlesssteel_ingot = create_ingot(Materials.stainlesssteel);
+		stainlesssteel_leggings = create_leggings(Materials.stainlesssteel);
+		stainlesssteel_nugget = create_nugget(Materials.stainlesssteel);
+		stainlesssteel_pickaxe = create_pickaxe(Materials.stainlesssteel);
+		stainlesssteel_powder = create_powder(Materials.stainlesssteel);
+		stainlesssteel_shears = create_shears(Materials.stainlesssteel);
+		stainlesssteel_shovel = create_shovel(Materials.stainlesssteel);
+		stainlesssteel_smallblend = create_smallblend(Materials.stainlesssteel);
+		stainlesssteel_smallpowder = create_smallpowder(Materials.stainlesssteel);
+		stainlesssteel_sword = create_sword(Materials.stainlesssteel);
+		stainlesssteel_rod = create_rod(Materials.stainlesssteel);
+		stainlesssteel_gear = create_gear(Materials.stainlesssteel);
 
 /*
 		sulfur_arrow = create_arrow(Materials.sulfur);
@@ -1205,10 +1367,10 @@ public abstract class Items {
 		classSortingValues.put(BlockMetalDoor.class, ++ss * 10000);
 		classSortingValues.put(BlockMetalTrapDoor.class, ++ss * 10000);
 		classSortingValues.put(InteractiveFluidBlock.class, ++ss * 10000);
-		classSortingValues.put(ItemMetalIngot.class, ++ss * 10000);
+		classSortingValues.put(modernmetals.items.ItemMetalIngot.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalNugget.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalPowder.class, ++ss * 10000);
-		classSortingValues.put(ItemMetalBlend.class, classSortingValues.get(ItemMetalPowder.class));
+		classSortingValues.put(modernmetals.items.ItemMetalBlend.class, classSortingValues.get(ItemMetalPowder.class));
 		classSortingValues.put(ItemMetalCrackHammer.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalPickaxe.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalShovel.class, ++ss * 10000);
@@ -1239,8 +1401,9 @@ public abstract class Items {
 
 
 	private static Item registerItem(Item item, String name, MetalMaterial metal, CreativeTabs tab){
-		item.setRegistryName(ModernMetals.MODID, name);
-		item.setUnlocalizedName(ModernMetals.MODID+"."+name);
+		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
+		item.setRegistryName(location);
+		item.setUnlocalizedName(location.toString());
 		GameRegistry.register(item); 
 		itemRegistry.put(item, name);
 		if(tab != null){
@@ -1255,7 +1418,7 @@ public abstract class Items {
 	
 	
 	private static Item create_ingot(MetalMaterial metal){
-		return registerItem(new ItemMetalIngot(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
+		return registerItem(new modernmetals.items.ItemMetalIngot(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
 	}
 	
 	private static Item create_nugget(MetalMaterial metal){
@@ -1267,7 +1430,7 @@ public abstract class Items {
 	}
 	
 	private static Item create_blend(MetalMaterial metal){
-		return registerItem(new ItemMetalBlend(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
+		return registerItem(new modernmetals.items.ItemMetalBlend(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
 	}
 
 
@@ -1320,6 +1483,10 @@ public abstract class Items {
 		return registerItem(ItemMetalArmor.createBoots(metal), metal.getName()+"_"+"boots", metal, ItemGroups.tab_tools);
 	}
 
+	private static Item create_horsearmor(MetalMaterial metal){
+		return registerItem(new ItemMetalHorseArmor(metal), metal.getName()+"_"+"horsearmor", metal, ItemGroups.tab_tools);
+	}
+
 	private static Item create_arrow(MetalMaterial metal){
 		return registerItem(new ItemMetalArrow(metal), metal.getName()+"_"+"arrow", metal, ItemGroups.tab_tools);
 	}
@@ -1348,18 +1515,15 @@ public abstract class Items {
 		return registerItem(new ItemMetalFishingRod(metal), metal.getName()+"_"+"fishingrod", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_horsearmor(MetalMaterial metal){
-		return registerItem(new ItemMetalHorseArmor(metal), metal.getName()+"_"+"horsearmor", metal, ItemGroups.tab_tools);
-	}
-
 	private static Item create_smallpowder(MetalMaterial metal){
 		return registerItem(new ItemMetalSmallPowder(metal), metal.getName()+"_"+"smallpowder", metal, ItemGroups.tab_items);
 	}
 
-	private static Item create_door(MetalMaterial metal,BlockDoor door){
-		Item item = new ItemMetalDoor(door,metal);
-		registerItem(item, metal.getName()+"_"+"door"+"_"+"item", metal, ItemGroups.tab_blocks);
-		item.setUnlocalizedName(ModernMetals.MODID+"."+metal.getName()+"_"+"door"); // Dirty Hack to set name right
+	private static Item create_door(MetalMaterial metal, BlockDoor door){
+		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName()+"_"+"door");
+		Item item = new ItemMetalDoor(door, metal);
+		registerItem(item, location.getResourcePath().toString()+"_"+"item", metal, ItemGroups.tab_blocks);
+		item.setUnlocalizedName(location.toString()); // Hack to set name right
 		doorMap.put(door, item);
 		return item;
 	}
@@ -1387,7 +1551,7 @@ public abstract class Items {
 		for(Item i : itemRegistry.keySet()){
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 			.register(i, 0, 
-				new ModelResourceLocation(ModernMetals.MODID+":"+itemRegistry.get(i), "inventory"));
+				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, itemRegistry.get(i)), "inventory"));
 		}
 
 		// colorize universal bucket

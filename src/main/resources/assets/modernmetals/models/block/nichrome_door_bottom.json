@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "modernmetals:blocks/nichrome_door_lower",
+        "top": "modernmetals:blocks/nichrome_door_upper"
+    }
+}

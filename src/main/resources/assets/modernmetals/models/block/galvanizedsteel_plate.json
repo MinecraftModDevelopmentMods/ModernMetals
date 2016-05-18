@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/galvanizedsteel_plate",
+        "side": "modernmetals:blocks/galvanizedsteel_plate",
+        "bottom": "modernmetals:blocks/galvanizedsteel_plate"
+    }
+}

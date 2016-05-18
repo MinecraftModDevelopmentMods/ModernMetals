@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "modernmetals:blocks/stainlesssteel_door_lower",
+        "top": "modernmetals:blocks/stainlesssteel_door_upper"
+    }
+}

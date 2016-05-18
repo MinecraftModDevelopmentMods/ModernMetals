@@ -35,7 +35,6 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		List<MetalMaterial> exceptions = Arrays.asList(Materials.vanilla_iron,Materials.vanilla_gold,Materials.vanilla_diamond,Materials.vanilla_stone,Materials.vanilla_wood,Materials.copper,Materials.silver,Materials.tin,Materials.lead,Materials.nickel,Materials.bronze,Materials.brass,Materials.steel,Materials.invar,Materials.electrum,Materials.coldiron,Materials.mithril,Materials.adamantine,Materials.starsteel,Materials.zinc,Materials.aquarium);
 
 		for(MetalMaterial metal : Materials.getAllMetals()){
-
 			if(exceptions.contains(metal))continue;
 			String baseName = metal.getName()+"_";
 			String oreDictName = metal.getCapitalizedName();
@@ -153,10 +152,10 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			if(ingot != null && chestplate != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(chestplate), "x x", "xxx", "xxx", 'x', "ingot"+oreDictName));
 			if(ingot != null && leggings != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(leggings), "xxx", "x x", "x x", 'x', "ingot"+oreDictName));
 			if(ingot != null && axe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe), "xx", "x/", " /", 'x', "ingot"+oreDictName,'/', "stickWood"));
-			if(ingot != null && axe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe), "xx", "/x", "/ ", 'x', "ingot"+oreDictName,'/', "stickWood"));
+//			if(ingot != null && axe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe), "xx", "/x", "/ ", 'x', "ingot"+oreDictName,'/', "stickWood"));
 			if(block != null && crackhammer != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crackhammer), "x", "/", "/" , 'x', "block"+oreDictName, '/', "stickWood"));
 			if(ingot != null && hoe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe), "xx", " /" , " /", 'x', "ingot"+oreDictName, '/', "stickWood"));
-			if(ingot != null && hoe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe), "xx", "/ " , "/ ", 'x', "ingot"+oreDictName, '/', "stickWood"));
+//			if(ingot != null && hoe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe), "xx", "/ " , "/ ", 'x', "ingot"+oreDictName, '/', "stickWood"));
 			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe), "xxx", " / ", " / ", 'x', "ingot"+oreDictName, '/', "stickWood"));
 			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), "x", "/", "/", 'x', "ingot"+oreDictName, '/', "stickWood"));
 			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword), "x", "x" , "/", 'x', "ingot"+oreDictName, '/', "stickWood"));
@@ -172,11 +171,18 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		}
 		
 		// alloy blends
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_blend,2), "dustAluminum","dustBrass"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_blend,2), "dustRutile","dustMagnesium"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_blend,2), "dustAluminum", "dustBrass"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanised_steel_blend,2), "dustAluminum", "dustBrass"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.nichrome_blend,2), "dustAluminum", "dustBrass"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainless_steel_blend,2), "dustAluminum", "dustBrass"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_blend,2), "dustRutile", "dustMagnesium"));
 		
-		// new recipes using rods and gears
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.lever,1), "x","y",'x',"rod",'y', "cobblestone"));
+		// small alloy blends
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_smallblend,2), "smalldustAluminum", "smalldustBrass"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanised_steel_smallblend,2), "smalldustAluminum", "smalldustBrass"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.nichrome_smallblend,2), "smalldustAluminum", "smalldustBrass"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainless_steel_smallblend,2), "smalldustAluminum", "smalldustBrass"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_smallblend,2), "smalldustRutile", "smalldustMagnesium"));
 
 		// Some people refer to it as Aluminium
 		OreDictionary.registerOre("oreAluminium", Blocks.aluminum_ore);

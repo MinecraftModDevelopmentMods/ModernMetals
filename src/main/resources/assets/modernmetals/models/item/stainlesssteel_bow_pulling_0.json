@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/stainlesssteel_bow",
+    "textures": {
+        "layer0": "modernmetals:items/stainlesssteel_bow_pulling_0"
+    }
+}

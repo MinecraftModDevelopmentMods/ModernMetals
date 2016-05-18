@@ -2,7 +2,6 @@ package modernmetals.init;
 
 import modernmetals.ModernMetals;
 import cyano.basemetals.blocks.*;
-
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
@@ -10,6 +9,7 @@ import net.minecraft.block.BlockDoor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -40,7 +40,7 @@ public abstract class Blocks {
 	public static Block getBlockByName(String name) {
 		return allBlocks.get(name);
 	}
-	
+
 	public static Block aluminum_bars;
 	public static Block aluminum_block;
 	public static Block aluminum_plate;
@@ -54,7 +54,23 @@ public abstract class Blocks {
 	public static BlockDoor aluminumbrass_door;
 //	public static Block aluminumbrass_ore;
 	public static Block aluminumbrass_trapdoor;
-	
+
+/*
+	public static Block antimony_bars;
+	public static Block antimony_block;
+	public static Block antimony_plate;
+	public static BlockDoor antimony_door;
+	public static Block antimony_ore;
+	public static Block antimony_trapdoor;
+
+	public static Block bismuth_bars;
+	public static Block bismuth_block;
+	public static Block bismuth_plate;
+	public static BlockDoor bismuth_door;
+	public static Block bismuth_ore;
+	public static Block bismuth_trapdoor;
+*/
+
 	public static Block cadmium_bars;
 	public static Block cadmium_block;
 	public static Block cadmium_plate;
@@ -69,6 +85,13 @@ public abstract class Blocks {
 	public static Block chromium_ore;
 	public static Block chromium_trapdoor;
 		
+	public static Block galvanizedsteel_bars;
+	public static Block galvanizedsteel_block;
+	public static Block galvanizedsteel_plate;
+	public static BlockDoor galvanizedsteel_door;
+	public static Block galvanizedsteel_ore;
+	public static Block galvanizedsteel_trapdoor;
+
 	public static Block iridium_bars;
 	public static Block iridium_block;
 	public static Block iridium_plate;
@@ -99,6 +122,13 @@ public abstract class Blocks {
 	public static Block manganese_ore;
 	public static Block manganese_trapdoor;
 	
+	public static Block nichrome_bars;
+	public static Block nichrome_block;
+	public static Block nichrome_plate;
+	public static BlockDoor nichrome_door;
+	public static Block nichrome_ore;
+	public static Block nichrome_trapdoor;
+
 /*
 	public static Block niter_bars;
 	public static Block niter_block;
@@ -114,7 +144,16 @@ public abstract class Blocks {
 	public static BlockDoor osmium_door;
 	public static Block osmium_ore;
 	public static Block osmium_trapdoor;
-	
+
+/*
+	public static Block pewter_bars;
+	public static Block pewter_block;
+	public static Block pewter_plate;
+	public static BlockDoor pewter_door;
+	public static Block pewter_ore;
+	public static Block pewter_trapdoor;
+*/
+
 /*
 	public static Block phospherous_bars;
 	public static Block phospherous_block;
@@ -145,7 +184,15 @@ public abstract class Blocks {
 	public static BlockDoor silicon_door;
 	public static Block silicon_ore;
 	public static Block silicon_trapdoor;
-	
+*/
+	public static Block stainlesssteel_bars;
+	public static Block stainlesssteel_block;
+	public static Block stainlesssteel_plate;
+	public static BlockDoor stainlesssteel_door;
+	public static Block stainlesssteel_ore;
+	public static Block stainlesssteel_trapdoor;
+
+/*
 	public static Block sulfur_bars;
 	public static Block sulfur_block;
 	public static Block sulfur_plate;
@@ -211,6 +258,22 @@ public abstract class Blocks {
 		aluminumbrass_door = createDoor(Materials.aluminumbrass);
 		aluminumbrass_trapdoor = createTrapDoor(Materials.aluminumbrass);
 
+/*
+		antimony_block = createBlock(Materials.antimony);
+		antimony_plate = createPlate(Materials.antimony);
+		antimony_ore = createOre(Materials.antimony);
+		antimony_bars = createBars(Materials.antimony);
+		antimony_door = createDoor(Materials.antimony);
+		antimony_trapdoor = createTrapDoor(Materials.antimony);
+
+		bismuth_block = createBlock(Materials.bismuth);
+		bismuth_plate = createPlate(Materials.bismuth);
+		bismuth_ore = createOre(Materials.bismuth);
+		bismuth_bars = createBars(Materials.bismuth);
+		bismuth_door = createDoor(Materials.bismuth);
+		bismuth_trapdoor = createTrapDoor(Materials.bismuth);
+*/
+
 		cadmium_block = createBlock(Materials.cadmium);
 		cadmium_plate = createPlate(Materials.cadmium);
 		cadmium_ore = createOre(Materials.cadmium);
@@ -224,6 +287,13 @@ public abstract class Blocks {
 		chromium_bars = createBars(Materials.chromium);
 		chromium_door = createDoor(Materials.chromium);
 		chromium_trapdoor = createTrapDoor(Materials.chromium);
+
+		galvanizedsteel_block = createBlock(Materials.galvanizedsteel);
+		galvanizedsteel_plate = createPlate(Materials.galvanizedsteel);
+		galvanizedsteel_ore = createOre(Materials.galvanizedsteel);
+		galvanizedsteel_bars = createBars(Materials.galvanizedsteel);
+		galvanizedsteel_door = createDoor(Materials.galvanizedsteel);
+		galvanizedsteel_trapdoor = createTrapDoor(Materials.galvanizedsteel);
 
 		iridium_block = createBlock(Materials.iridium);
 		iridium_plate = createPlate(Materials.iridium);
@@ -255,6 +325,13 @@ public abstract class Blocks {
 		manganese_door = createDoor(Materials.manganese);
 		manganese_trapdoor = createTrapDoor(Materials.manganese);
 
+		nichrome_block = createBlock(Materials.nichrome);
+		nichrome_plate = createPlate(Materials.nichrome);
+		nichrome_ore = createOre(Materials.nichrome);
+		nichrome_bars = createBars(Materials.nichrome);
+		nichrome_door = createDoor(Materials.nichrome);
+		nichrome_trapdoor = createTrapDoor(Materials.nichrome);
+
 /*
 		niter_block = createBlock(Materials.niter);
 		niter_plate = createPlate(Materials.niter);
@@ -280,6 +357,15 @@ public abstract class Blocks {
 		phospherous_trapdoor = createTrapDoor(Materials.phospherous);
 */
 
+/*
+		pewter_block = createBlock(Materials.pewter);
+		pewter_plate = createPlate(Materials.pewter);
+		pewter_ore = createOre(Materials.pewter);
+		pewter_bars = createBars(Materials.pewter);
+		pewter_door = createDoor(Materials.pewter);
+		pewter_trapdoor = createTrapDoor(Materials.pewter);
+*/
+
 		plutonium_block = createBlock(Materials.plutonium);
 		plutonium_plate = createPlate(Materials.plutonium);
 		plutonium_ore = createOre(Materials.plutonium);
@@ -301,7 +387,16 @@ public abstract class Blocks {
 		silicon_bars = createBars(Materials.silicon);
 		silicon_door = createDoor(Materials.silicon);
 		silicon_trapdoor = createTrapDoor(Materials.silicon);
+*/
 
+		stainlesssteel_block = createBlock(Materials.stainlesssteel);
+		stainlesssteel_plate = createPlate(Materials.stainlesssteel);
+		stainlesssteel_ore = createOre(Materials.stainlesssteel);
+		stainlesssteel_bars = createBars(Materials.stainlesssteel);
+		stainlesssteel_door = createDoor(Materials.stainlesssteel);
+		stainlesssteel_trapdoor = createTrapDoor(Materials.stainlesssteel);
+
+/*
 		sulfur_block = createBlock(Materials.sulfur);
 		sulfur_plate = createPlate(Materials.sulfur);
 		sulfur_ore = createOre(Materials.sulfur);
@@ -355,55 +450,57 @@ public abstract class Blocks {
 	}
 
 	private static Block addBlock(Block block, String name){
-		block.setRegistryName(ModernMetals.MODID, name);
-		block.setUnlocalizedName(ModernMetals.MODID+"."+ name);
+		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
+		block.setRegistryName(location);
+		block.setUnlocalizedName(location.toString());
 		GameRegistry.register(block);
-		
-		ItemBlock itemBlock = new ItemBlock(block);
-		itemBlock.setRegistryName(ModernMetals.MODID, name);
-		GameRegistry.register(itemBlock);
-		
+
+		if (block instanceof BlockMetalDoor == false) {
+			ItemBlock itemBlock = new ItemBlock(block);
+			itemBlock.setRegistryName(location);
+			itemBlock.setUnlocalizedName(location.toString());
+			GameRegistry.register(itemBlock);
+		}
+
 		allBlocks.put(name, block);
 		return block;
 	}
 
 	private static Block createPlate(MetalMaterial metal) {
-		return addBlock(new BlockMetalPlate(metal),metal.getName()+"_plate");
+		return addBlock(new BlockMetalPlate(metal), metal.getName()+"_plate");
 	}
 
 	private static Block createBars(MetalMaterial metal){
-		return addBlock(new BlockMetalBars(metal),metal.getName()+"_bars");
+		return addBlock(new BlockMetalBars(metal), metal.getName()+"_bars");
 	}
 
 	private static Block createBlock(MetalMaterial metal){
-		return createBlock(metal,false);
+		return createBlock(metal, false);
 	}
 
 	private static Block createBlock(MetalMaterial metal, boolean glow){
-		return addBlock(new BlockMetalBlock(metal,glow),metal.getName()+"_block");
+		return addBlock(new BlockMetalBlock(metal, glow), metal.getName()+"_block");
 	}
 
 	private static Block createOre(MetalMaterial metal){
-		return addBlock(new BlockMetalOre(metal),metal.getName()+"_ore");
+		return addBlock(new BlockMetalOre(metal), metal.getName()+"_ore");
 	}
 
 	private static BlockDoor createDoor(MetalMaterial metal){
-		String name = metal.getName()+"_door";
-		BlockDoor block = new BlockMetalDoor(metal);
-		block.setRegistryName(ModernMetals.MODID, name);
-		block.setUnlocalizedName(ModernMetals.MODID+"."+name);
-		GameRegistry.register(block);
+//		String name = metal.getName()+"_door";
+//		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
+//		Block block = new modernmetals.blocks.BlockMetalDoor(metal);
+//		block.setRegistryName(location);
+//		block.setUnlocalizedName(location.toString());
+//		GameRegistry.register(block);
 		
-		ItemBlock itemBlock = new ItemBlock(block);
-		itemBlock.setRegistryName(ModernMetals.MODID, name);
-		GameRegistry.register(itemBlock);
-		
-		allBlocks.put(metal.getName()+"_door", block);
-		return block;
+//		allBlocks.put(metal.getName()+"_door", block);
+//		return block;
+		return (BlockDoor)addBlock(new modernmetals.blocks.BlockMetalDoor(metal), metal.getName()+"_door");
 	}
 
 	private static Block createTrapDoor(MetalMaterial metal){
-		return addBlock(new BlockMetalTrapDoor(metal),metal.getName()+"_trapdoor");
+		return addBlock(new BlockMetalTrapDoor(metal), metal.getName()+"_trapdoor");
 	}
 	
 
@@ -413,7 +510,7 @@ public abstract class Blocks {
 			if(allBlocks.get(name) instanceof BlockDoor) continue;// do not add door blocks
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 			.register(net.minecraft.item.Item.getItemFromBlock(allBlocks.get(name)), 0, 
-				new ModelResourceLocation(ModernMetals.MODID+":"+name, "inventory"));
+				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, name), "inventory"));
 		}
 	}
 

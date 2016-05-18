@@ -37,14 +37,15 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-version = "0.9.2.3"
+version = "0.10.2"
 group= "modernmetals" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ModernMetals"
+//ext.repo = Grgit.open(project.file('.'))
 
 minecraft {
-    version = "1.9-12.16.1.1887"
+    version = "1.9-12.16.1.1907"
     runDir = "run"
-    mappings = "snapshot_20160504"
+    mappings = "snapshot_20160516"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
@@ -76,8 +77,8 @@ processResources
 }
 
 task apiJar(type: Jar) {
-  classifier = 'apiClasses'
   from apiClasses
+  classifier = 'apiClasses'
 }
 
 task deobfJar(type: Jar) {
@@ -93,6 +94,7 @@ task javadocJar(type: Jar) {
 artifacts {
 //  archives apiJar
   archives deobfJar
+  archives sourceJar
   archives javadocJar
 }
 

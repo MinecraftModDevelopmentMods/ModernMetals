@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/nichrome_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/nichrome_crossbow_pulling_1"
+    }
+}
