@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import modernmetals.ModernMetals;
-import cyano.basemetals.blocks.BlockMetalDoor;
 import cyano.basemetals.blocks.InteractiveFluidBlock;
 import cyano.basemetals.fluids.CustomFluid;
 import net.minecraft.block.state.IBlockState;
@@ -23,7 +22,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.BlockFluidBase;
-import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -106,58 +104,58 @@ public abstract class Fluids {
 		if(initDone) return;
 
 		// fluids
-		fluidAluminum = newFluid(ModernMetals.MODID, "aluminum", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidAluminum = newFluid(ModernMetals.MODID, "aluminum", 13594,2000,300,0, 0xFFC5C8C1);
 		FluidRegistry.addBucketForFluid(fluidAluminum);
 
-		fluidAluminumBrass = newFluid(ModernMetals.MODID, "alubrass", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidAluminumBrass = newFluid(ModernMetals.MODID, "alubrass", 13594,2000,300,0, 0xFFEBAA56);
 		FluidRegistry.addBucketForFluid(fluidAluminumBrass);
 
-		fluidCadmium = newFluid(ModernMetals.MODID, "cadmium", 13594,2000,300,0, 0xFF49FF00);
+		fluidCadmium = newFluid(ModernMetals.MODID, "cadmium", 13594,2000,300,0, 0xFFC9D4DA);
 		FluidRegistry.addBucketForFluid(fluidCadmium);
 
-		fluidChromium = newFluid(ModernMetals.MODID, "chromium", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidChromium = newFluid(ModernMetals.MODID, "chromium", 13594,2000,300,0, 0xFFCDCDCF);
 		FluidRegistry.addBucketForFluid(fluidChromium);
 
-		fluidGalvanizedSteel = newFluid(ModernMetals.MODID, "galvanizedsteel", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidGalvanizedSteel = newFluid(ModernMetals.MODID, "galvanizedsteel", 13594,2000,300,0, 0xFF9BA6A2);
 		FluidRegistry.addBucketForFluid(fluidGalvanizedSteel);
 
-		fluidIridium = newFluid(ModernMetals.MODID, "iridium", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidIridium = newFluid(ModernMetals.MODID, "iridium", 13594,2000,300,0, 0xFFF8EDCC);
 		FluidRegistry.addBucketForFluid(fluidIridium);
 
-		fluidMagnesium = newFluid(ModernMetals.MODID, "magnesium", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidMagnesium = newFluid(ModernMetals.MODID, "magnesium", 13594,2000,300,0, 0xFF7F7F77);
 		FluidRegistry.addBucketForFluid(fluidMagnesium);
 
-		fluidManganese = newFluid(ModernMetals.MODID, "manganese", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidManganese = newFluid(ModernMetals.MODID, "manganese", 13594,2000,300,0, 0xFFF5CFDA);
 		FluidRegistry.addBucketForFluid(fluidManganese);
 
-		fluidNichrome = newFluid(ModernMetals.MODID, "nichrome", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidNichrome = newFluid(ModernMetals.MODID, "nichrome", 13594,2000,300,0, 0xFFDEA054);
 		FluidRegistry.addBucketForFluid(fluidNichrome);
 
-		fluidOsmium = newFluid(ModernMetals.MODID, "osmium", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidOsmium = newFluid(ModernMetals.MODID, "osmium", 13594,2000,300,0, 0xFF7C8E99);
 		FluidRegistry.addBucketForFluid(fluidOsmium);
 
-		fluidPlutonium = newFluid(ModernMetals.MODID, "plutonium", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidPlutonium = newFluid(ModernMetals.MODID, "plutonium", 13594,2000,300,0, 0xFFB333EA);
 		FluidRegistry.addBucketForFluid(fluidPlutonium);
 
-		fluidRutile = newFluid(ModernMetals.MODID, "rutile", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidRutile = newFluid(ModernMetals.MODID, "rutile", 13594,2000,300,0, 0xFFBF928B);
 		FluidRegistry.addBucketForFluid(fluidRutile);
 
-		fluidStainlessSteel = newFluid(ModernMetals.MODID, "stainlesssteel", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidStainlessSteel = newFluid(ModernMetals.MODID, "stainlesssteel", 13594,2000,300,0, 0xFFC5BFC1);
 		FluidRegistry.addBucketForFluid(fluidStainlessSteel);
 
-		fluidTantalum = newFluid(ModernMetals.MODID, "tantalum", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidTantalum = newFluid(ModernMetals.MODID, "tantalum", 13594,2000,300,0, 0xFFC4BEC2);
 		FluidRegistry.addBucketForFluid(fluidTantalum);
 
-		fluidTitanium = newFluid(ModernMetals.MODID, "titanium", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidTitanium = newFluid(ModernMetals.MODID, "titanium", 13594,2000,300,0, 0xFF73787E);
 		FluidRegistry.addBucketForFluid(fluidTitanium);
 
-		fluidTungsten = newFluid(ModernMetals.MODID, "tungsten", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidTungsten = newFluid(ModernMetals.MODID, "tungsten", 13594,2000,300,0, 0xFF969696);
 		FluidRegistry.addBucketForFluid(fluidTungsten);
 
-		fluidUranium = newFluid(ModernMetals.MODID, "uranium", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidUranium = newFluid(ModernMetals.MODID, "uranium", 13594,2000,300,0, 0xFFA7B345);
 		FluidRegistry.addBucketForFluid(fluidUranium);
 
-		fluidZirconium = newFluid(ModernMetals.MODID, "zirconium", 13594,2000,300,0, 0xFFD8D8D8);
+		fluidZirconium = newFluid(ModernMetals.MODID, "zirconium", 13594,2000,300,0, 0xFF929793);
 		FluidRegistry.addBucketForFluid(fluidZirconium);
 
 		// fluid blocks
@@ -292,11 +290,7 @@ public abstract class Fluids {
 		return fluid;
 	}
 
-	private static BlockFluidClassic registerFluidBlock(Fluid fluid, BlockFluidClassic block, String name) {
-//		block.setUnlocalizedName(ModernMetals.MODID+"."+name);
-//		GameRegistry.registerBlock(block, name);
-//		block.setCreativeTab(CreativeTabs.MISC);
-
+	private static BlockFluidBase registerFluidBlock(Fluid fluid, BlockFluidBase block, String name) {
 		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
 		block.setRegistryName(location);
 		block.setUnlocalizedName(location.toString());

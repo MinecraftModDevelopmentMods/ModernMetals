@@ -75,7 +75,7 @@ public class ModernMetals
 		modernmetals.init.Blocks.init();
 		modernmetals.init.Items.init();
 		modernmetals.init.VillagerTrades.init();
-
+		modernmetals.init.TinkersConstructPlugin.init();
 		
 		
 		
@@ -122,8 +122,7 @@ public class ModernMetals
 	@SideOnly(Side.CLIENT)
 	private void clientPreInit(FMLPreInitializationEvent event){
 		// client-only code
-// TODO
-//		modernmetals.init.Fluids.bakeModels(MODID);
+		modernmetals.init.Fluids.bakeModels(MODID);
 
 	}
 	@SideOnly(Side.SERVER)
