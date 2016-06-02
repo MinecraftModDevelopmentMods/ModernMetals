@@ -29,6 +29,7 @@ public class DataConstants {
 + "\n					\"minHeight\":0,"
 + "\n					\"maxHeight\":96"
 + "\n				},"
+//+ "\n				{"
 //+ "\n					\"blockID\":\"modernmetals:aluminumbrass_ore\","
 //+ "\n					\"size\":8,"
 //+ "\n					\"variation\":4,"

@@ -43,16 +43,16 @@ archivesBaseName = "ModernMetals"
 //ext.repo = Grgit.open(project.file('.'))
 
 minecraft {
-    version = "1.9-12.16.1.1907"
+    version = "1.9-12.16.1.1934"
     runDir = "run"
-    mappings = "snapshot_20160516"
+    mappings = "stable_24"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
 dependencies {
     compile files(
-        'lib/BaseMetals/BaseMetals_1.9-API-2.2.1.jar',
-        'lib/PowerAdvantage/PowerAdvantage_1.9.0-API-2.1.0.jar',
+        'libs/BaseMetals/BaseMetals_1.9-API-2.2.3.2.jar',
+        'libs/PowerAdvantage/PowerAdvantage_1.9.0-API-2.1.1.jar',
     )
 }
 

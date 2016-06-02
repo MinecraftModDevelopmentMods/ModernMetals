@@ -172,16 +172,16 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		
 		// alloy blends
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_blend,2), "dustAluminum", "dustBrass"));
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanised_steel_blend,2), "dustAluminum", "dustBrass"));
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.nichrome_blend,2), "dustAluminum", "dustBrass"));
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainless_steel_blend,2), "dustAluminum", "dustBrass"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanizedsteel_blend,2), "dustSteel", "dustZinc"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.nichrome_blend,2), "dustNickel", "dustChromium"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainlesssteel_blend,2), "dustSteel", "dustChromium"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_blend,2), "dustRutile", "dustMagnesium"));
 		
 		// small alloy blends
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_smallblend,2), "smalldustAluminum", "smalldustBrass"));
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanised_steel_smallblend,2), "smalldustAluminum", "smalldustBrass"));
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.nichrome_smallblend,2), "smalldustAluminum", "smalldustBrass"));
-//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainless_steel_smallblend,2), "smalldustAluminum", "smalldustBrass"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanizedsteel_smallblend,2), "smalldustSteel", "smalldustZinc"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.nichrome_smallblend,2), "smalldustNickel", "smalldustChromium"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainlesssteel_smallblend,2), "smalldustSteel", "smalldustChromium"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_smallblend,2), "smalldustRutile", "smalldustMagnesium"));
 
 		// Some people refer to it as Aluminium
@@ -189,7 +189,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		OreDictionary.registerOre("blockAluminium", Blocks.aluminum_block);
 		OreDictionary.registerOre("plateAluminium", Blocks.aluminum_plate);
 		OreDictionary.registerOre("barsAluminium", Blocks.aluminum_bars);
-		OreDictionary.registerOre("doorAluminium", Blocks.aluminum_door);
+//		OreDictionary.registerOre("doorAluminium", Blocks.aluminum_door);
 		OreDictionary.registerOre("trapdoorAluminium", Blocks.aluminum_trapdoor);
 		OreDictionary.registerOre("ingotAluminium", Items.aluminum_ingot);
 		OreDictionary.registerOre("nuggetAluminium", Items.aluminum_nugget);
@@ -201,7 +201,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		OreDictionary.registerOre("blockAluminiumbrass", Blocks.aluminumbrass_block);
 		OreDictionary.registerOre("plateAluminiumbrass", Blocks.aluminumbrass_plate);
 		OreDictionary.registerOre("barsAluminiumbrass", Blocks.aluminumbrass_bars);
-		OreDictionary.registerOre("doorAluminiumbrass", Blocks.aluminumbrass_door);
+//		OreDictionary.registerOre("doorAluminiumbrass", Blocks.aluminumbrass_door);
 		OreDictionary.registerOre("trapdoorAluminiumbrass", Blocks.aluminumbrass_trapdoor);
 		OreDictionary.registerOre("dustAluminiumbrass", Items.aluminumbrass_blend);
 		OreDictionary.registerOre("ingotAluminiumbrass", Items.aluminumbrass_ingot);
@@ -214,7 +214,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		OreDictionary.registerOre("blockAlubrass", Blocks.aluminumbrass_block);
 		OreDictionary.registerOre("plateAlubrass", Blocks.aluminumbrass_plate);
 		OreDictionary.registerOre("barsAlurass", Blocks.aluminumbrass_bars);
-		OreDictionary.registerOre("doorAlubrass", Blocks.aluminumbrass_door);
+//		OreDictionary.registerOre("doorAlubrass", Blocks.aluminumbrass_door);
 		OreDictionary.registerOre("trapdoorAlubrass", Blocks.aluminumbrass_trapdoor);
 		OreDictionary.registerOre("dustAlubrass", Items.aluminumbrass_blend);
 		OreDictionary.registerOre("ingotAlubrass", Items.aluminumbrass_ingot);

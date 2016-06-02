@@ -4,7 +4,6 @@ import java.util.Random;
 
 import cyano.basemetals.material.MetalMaterial;
 import net.minecraft.block.BlockDoor;
-import net.minecraft.block.BlockDoor.EnumDoorHalf;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

@@ -18,6 +18,7 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -34,7 +35,9 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 		updateJSON = "https://raw.githubusercontent.com/jriwanek/ModernMetals/master/update.json")
 public class ModernMetals
 {
+	@Instance
     public static ModernMetals INSTANCE = null;
+
     public static final String MODID = "modernmetals";
     public static final String NAME = "Modern Metals";
     public static final String VERSION = "0.10.2";
@@ -66,7 +69,7 @@ public class ModernMetals
 
     	config.save();
     	
-//		modernmetals.init.Fluids.init();
+		modernmetals.init.Fluids.init();
 		modernmetals.init.Materials.init();
 		modernmetals.init.ItemGroups.init();
 		modernmetals.init.Blocks.init();
