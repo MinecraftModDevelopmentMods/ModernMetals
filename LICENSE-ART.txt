@@ -1,4 +1,5 @@
 Primary Art Contribution By Eejit
+Art for Molten Metals is from Tinkers Construct (See LICENSE-TiC.txt)
 
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
 

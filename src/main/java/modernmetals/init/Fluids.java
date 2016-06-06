@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import modernmetals.ModernMetals;
-import cyano.basemetals.blocks.InteractiveFluidBlock;
+import modernmetals.blocks.BlockMoltenFluid;
 import cyano.basemetals.fluids.CustomFluid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.ItemMeshDefinition;
@@ -12,16 +12,13 @@ import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.BlockFluidBase;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -97,157 +94,83 @@ public abstract class Fluids {
 	private static final Map<Fluid,BlockFluidBase> fluidBlocks = new HashMap<>();
 	private static final Map<BlockFluidBase,String> fluidBlockNames = new HashMap<>();
 
-    private static final ResourceLocation dizzyPotionKey = new ResourceLocation("nausea");
-
 	private static boolean initDone = false;
 	public static void init() {
 		if(initDone) return;
 
 		// fluids
-		fluidAluminum = newFluid(ModernMetals.MODID, "aluminum", 13594,2000,300,0, 0xFFC5C8C1);
-		FluidRegistry.addBucketForFluid(fluidAluminum);
+		fluidAluminum = newFluid(ModernMetals.MODID, "aluminum", 2000,10000,330,10, 0xFFC5C8C1);
 
-		fluidAluminumBrass = newFluid(ModernMetals.MODID, "alubrass", 13594,2000,300,0, 0xFFEBAA56);
-		FluidRegistry.addBucketForFluid(fluidAluminumBrass);
+		fluidAluminumBrass = newFluid(ModernMetals.MODID, "alubrass", 2000,10000,500,10, 0xFFEBAA56);
 
-		fluidCadmium = newFluid(ModernMetals.MODID, "cadmium", 13594,2000,300,0, 0xFFC9D4DA);
-		FluidRegistry.addBucketForFluid(fluidCadmium);
+		fluidCadmium = newFluid(ModernMetals.MODID, "cadmium", 2000,10000,300,10, 0xFFC9D4DA);
 
-		fluidChromium = newFluid(ModernMetals.MODID, "chromium", 13594,2000,300,0, 0xFFCDCDCF);
-		FluidRegistry.addBucketForFluid(fluidChromium);
+		fluidChromium = newFluid(ModernMetals.MODID, "chromium", 2000,10000,769,10, 0xFFCDCDCF);
 
-		fluidGalvanizedSteel = newFluid(ModernMetals.MODID, "galvanizedsteel", 13594,2000,300,0, 0xFF9BA6A2);
-		FluidRegistry.addBucketForFluid(fluidGalvanizedSteel);
+		fluidGalvanizedSteel = newFluid(ModernMetals.MODID, "galvanizedsteel", 2000,10000,769,10, 0xFF9BA6A2);
 
-		fluidIridium = newFluid(ModernMetals.MODID, "iridium", 13594,2000,300,0, 0xFFF8EDCC);
-		FluidRegistry.addBucketForFluid(fluidIridium);
+		fluidIridium = newFluid(ModernMetals.MODID, "iridium", 2000,10000,769,10, 0xFFF8EDCC);
 
-		fluidMagnesium = newFluid(ModernMetals.MODID, "magnesium", 13594,2000,300,0, 0xFF7F7F77);
-		FluidRegistry.addBucketForFluid(fluidMagnesium);
+		fluidMagnesium = newFluid(ModernMetals.MODID, "magnesium", 2000,10000,769,10, 0xFF7F7F77);
 
-		fluidManganese = newFluid(ModernMetals.MODID, "manganese", 13594,2000,300,0, 0xFFF5CFDA);
-		FluidRegistry.addBucketForFluid(fluidManganese);
+		fluidManganese = newFluid(ModernMetals.MODID, "manganese", 2000,10000,769,10, 0xFFF5CFDA);
 
-		fluidNichrome = newFluid(ModernMetals.MODID, "nichrome", 13594,2000,300,0, 0xFFDEA054);
-		FluidRegistry.addBucketForFluid(fluidNichrome);
+		fluidNichrome = newFluid(ModernMetals.MODID, "nichrome", 2000,10000,769,10, 0xFFDEA054);
 
-		fluidOsmium = newFluid(ModernMetals.MODID, "osmium", 13594,2000,300,0, 0xFF7C8E99);
-		FluidRegistry.addBucketForFluid(fluidOsmium);
+		fluidOsmium = newFluid(ModernMetals.MODID, "osmium", 2000,10000,769,10, 0xFF7C8E99);
 
-		fluidPlutonium = newFluid(ModernMetals.MODID, "plutonium", 13594,2000,300,0, 0xFFB333EA);
-		FluidRegistry.addBucketForFluid(fluidPlutonium);
+		fluidPlutonium = newFluid(ModernMetals.MODID, "plutonium", 2000,769,300,10, 0xFFB333EA);
 
-		fluidRutile = newFluid(ModernMetals.MODID, "rutile", 13594,2000,300,0, 0xFFBF928B);
-		FluidRegistry.addBucketForFluid(fluidRutile);
+		fluidRutile = newFluid(ModernMetals.MODID, "rutile", 2000,10000,769,10, 0xFFBF928B);
 
-		fluidStainlessSteel = newFluid(ModernMetals.MODID, "stainlesssteel", 13594,2000,300,0, 0xFFC5BFC1);
-		FluidRegistry.addBucketForFluid(fluidStainlessSteel);
+		fluidStainlessSteel = newFluid(ModernMetals.MODID, "stainlesssteel", 2000,10000,769,10, 0xFFC5BFC1);
 
-		fluidTantalum = newFluid(ModernMetals.MODID, "tantalum", 13594,2000,300,0, 0xFFC4BEC2);
-		FluidRegistry.addBucketForFluid(fluidTantalum);
+		fluidTantalum = newFluid(ModernMetals.MODID, "tantalum", 2000,10000,769,10, 0xFFC4BEC2);
 
-		fluidTitanium = newFluid(ModernMetals.MODID, "titanium", 13594,2000,300,0, 0xFF73787E);
-		FluidRegistry.addBucketForFluid(fluidTitanium);
+		fluidTitanium = newFluid(ModernMetals.MODID, "titanium", 2000,10000,769,10, 0xFF73787E);
 
-		fluidTungsten = newFluid(ModernMetals.MODID, "tungsten", 13594,2000,300,0, 0xFF969696);
-		FluidRegistry.addBucketForFluid(fluidTungsten);
+		fluidTungsten = newFluid(ModernMetals.MODID, "tungsten", 2000,10000,769,10, 0xFF969696);
 
-		fluidUranium = newFluid(ModernMetals.MODID, "uranium", 13594,2000,300,0, 0xFFA7B345);
-		FluidRegistry.addBucketForFluid(fluidUranium);
+		fluidUranium = newFluid(ModernMetals.MODID, "uranium", 2000,10000,769,10, 0xFFA7B345);
 
-		fluidZirconium = newFluid(ModernMetals.MODID, "zirconium", 13594,2000,300,0, 0xFF929793);
-		FluidRegistry.addBucketForFluid(fluidZirconium);
+		fluidZirconium = newFluid(ModernMetals.MODID, "zirconium", 2000,10000,769,10, 0xFF929793);
 
 		// fluid blocks
-		fluidBlockAluminum = registerFluidBlock(fluidAluminum, new InteractiveFluidBlock(
-				fluidAluminum, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"aluminum");
+		fluidBlockAluminum = registerFluidBlock(fluidAluminum, new BlockMoltenFluid(fluidAluminum),"aluminum");
 
-		fluidBlockAluminumBrass = registerFluidBlock(fluidAluminumBrass, new InteractiveFluidBlock(
-				fluidAluminumBrass, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"alubrass");
+		fluidBlockAluminumBrass = registerFluidBlock(fluidAluminumBrass, new BlockMoltenFluid(fluidAluminumBrass),"alubrass");
 
-		fluidBlockCadmium = registerFluidBlock(fluidCadmium, new InteractiveFluidBlock(
-				fluidCadmium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"cadmium");
+		fluidBlockCadmium = registerFluidBlock(fluidCadmium, new BlockMoltenFluid(fluidCadmium),"cadmium");
 
-		fluidBlockChromium = registerFluidBlock(fluidChromium, new InteractiveFluidBlock(
-				fluidChromium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"chromium");
+		fluidBlockChromium = registerFluidBlock(fluidChromium, new BlockMoltenFluid(fluidChromium),"chromium");
 
-		fluidBlockGalvanizedSteel = registerFluidBlock(fluidGalvanizedSteel, new InteractiveFluidBlock(
-				fluidGalvanizedSteel, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"galvanizedsteel");
+		fluidBlockGalvanizedSteel = registerFluidBlock(fluidGalvanizedSteel, new BlockMoltenFluid(fluidGalvanizedSteel),"galvanizedsteel");
 
-		fluidBlockIridium = registerFluidBlock(fluidIridium, new InteractiveFluidBlock(
-				fluidIridium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"iridium");
+		fluidBlockIridium = registerFluidBlock(fluidIridium, new BlockMoltenFluid(fluidIridium),"iridium");
 
-		fluidBlockMagnesium = registerFluidBlock(fluidMagnesium, new InteractiveFluidBlock(
-				fluidMagnesium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"magnesium");
+		fluidBlockMagnesium = registerFluidBlock(fluidMagnesium, new BlockMoltenFluid(fluidMagnesium),"magnesium");
 
-		fluidBlockManganese = registerFluidBlock(fluidManganese, new InteractiveFluidBlock(
-				fluidManganese, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"manganese");
+		fluidBlockManganese = registerFluidBlock(fluidManganese, new BlockMoltenFluid(fluidManganese),"manganese");
 
-		fluidBlockNichrome = registerFluidBlock(fluidNichrome, new InteractiveFluidBlock(
-				fluidNichrome, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"nichrome");
+		fluidBlockNichrome = registerFluidBlock(fluidNichrome, new BlockMoltenFluid(fluidNichrome),"nichrome");
 
-		fluidBlockOsmium = registerFluidBlock(fluidOsmium, new InteractiveFluidBlock(
-				fluidOsmium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"osmium");
+		fluidBlockOsmium = registerFluidBlock(fluidOsmium, new BlockMoltenFluid(fluidOsmium),"osmium");
 
-		fluidBlockPlutonium = registerFluidBlock(fluidPlutonium, new InteractiveFluidBlock(
-				fluidPlutonium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"plutonium");
+		fluidBlockPlutonium = registerFluidBlock(fluidPlutonium, new BlockMoltenFluid(fluidPlutonium),"plutonium");
 
-		fluidBlockRutile = registerFluidBlock(fluidRutile, new InteractiveFluidBlock(
-				fluidRutile, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"rutile");
+		fluidBlockRutile = registerFluidBlock(fluidRutile, new BlockMoltenFluid(fluidRutile),"rutile");
 
-		fluidBlockStainlessSteel = registerFluidBlock(fluidStainlessSteel, new InteractiveFluidBlock(
-				fluidStainlessSteel, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"stainlesssteel");
+		fluidBlockStainlessSteel = registerFluidBlock(fluidStainlessSteel, new BlockMoltenFluid(fluidStainlessSteel),"stainlesssteel");
 
-		fluidBlockTantalum = registerFluidBlock(fluidTantalum, new InteractiveFluidBlock(
-				fluidTantalum, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"tantalum");
+		fluidBlockTantalum = registerFluidBlock(fluidTantalum, new BlockMoltenFluid(fluidTantalum),"tantalum");
 
-		fluidBlockTitanium = registerFluidBlock(fluidTitanium, new InteractiveFluidBlock(
-				fluidTitanium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"titanium");
+		fluidBlockTitanium = registerFluidBlock(fluidTitanium, new BlockMoltenFluid(fluidTitanium),"titanium");
 
-		fluidBlockTungsten = registerFluidBlock(fluidTungsten, new InteractiveFluidBlock(
-				fluidTungsten, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"tungsten");
+		fluidBlockTungsten = registerFluidBlock(fluidTungsten, new BlockMoltenFluid(fluidTungsten),"tungsten");
 
-		fluidBlockUranium = registerFluidBlock(fluidUranium, new InteractiveFluidBlock(
-				fluidUranium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"uranium");
+		fluidBlockUranium = registerFluidBlock(fluidUranium, new BlockMoltenFluid(fluidUranium),"uranium");
 
-		fluidBlockZirconium = registerFluidBlock(fluidZirconium, new InteractiveFluidBlock(
-				fluidZirconium, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0) e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey), 30*20, 2));
-				}),"zirconium");
+		fluidBlockZirconium = registerFluidBlock(fluidZirconium, new BlockMoltenFluid(fluidZirconium),"zirconium");
 
 		initDone = true;
 	}
@@ -279,7 +202,7 @@ public abstract class Fluids {
 	
 
 	private static Fluid newFluid(String modID, String name, int density, int viscosity, int temperature, int luminosity, int tintColor) {
-		Fluid fluid = new CustomFluid(name, new ResourceLocation(modID+":blocks/"+name+"_still"), new ResourceLocation(modID+":blocks/"+name+"_flow"), tintColor);
+		Fluid fluid = new CustomFluid(name, new ResourceLocation(modID+":blocks/molten_metal_still"), new ResourceLocation(modID+":blocks/molten_metal_flow"), tintColor);
 		fluid.setDensity(density);
 		fluid.setViscosity(viscosity);
 		fluid.setTemperature(temperature);
@@ -290,7 +213,7 @@ public abstract class Fluids {
 		return fluid;
 	}
 
-	private static BlockFluidBase registerFluidBlock(Fluid fluid, BlockFluidBase block, String name) {
+	private static BlockFluidClassic registerFluidBlock(Fluid fluid, BlockFluidClassic block, String name) {
 		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
 		block.setRegistryName(location);
 		block.setUnlocalizedName(location.toString());

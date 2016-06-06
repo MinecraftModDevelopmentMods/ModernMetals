@@ -1,11 +1,9 @@
 package modernmetals.init;
 
-import modernmetals.ModernMetals;
 import modernmetals.init.Fluids;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 
@@ -16,6 +14,8 @@ public class TinkersConstructPlugin {
 		if(initDone)return;
 
 		if(Loader.isModLoaded("tconstruct")) {
+//			registerFluid(Fluids.fluidAluminum); // TCon already has this
+//			registerFluid(Fluids.fluidAluminumBrass); // TCon already has this
 			registerFluid(Fluids.fluidCadmium);
 			registerFluid(Fluids.fluidChromium);
 			registerFluid(Fluids.fluidGalvanizedSteel);
@@ -33,6 +33,7 @@ public class TinkersConstructPlugin {
 			registerFluid(Fluids.fluidUranium);
 			registerFluid(Fluids.fluidZirconium);
 			
+//			registerAlloy("aluminumbrass", 2, "aluminum", 1, "brass", 1); // TCon already has Aluminum Brass alloy
 			registerAlloy("galvanizedsteel", 2, "steel", 1, "zinc", 1);
 			registerAlloy("nichrome", 2, "nickel", 1, "chrome", 1);
 			registerAlloy("stainlesssteel", 2, "steel", 1, "chrome", 1);
@@ -46,12 +47,10 @@ public class TinkersConstructPlugin {
 	public static void registerFluid(Fluid fluid) {
 		// TODO: Make toolforge configurable
 		if(Loader.isModLoaded("tconstruct")) {
-			FMLLog.warning(ModernMetals.MODID+": Registering fluid with lower case name: "+fluid.getName().toLowerCase()+" upper case name: "+fluid.getName().toUpperCase());
-
 			NBTTagCompound message = new NBTTagCompound();
-			message.setString("fluid", fluid.getName().toLowerCase()); // name of the fluid
-			message.setString("ore", upperCaseFirst(fluid.getName())); // ore-suffix: ingotFoo, blockFoo, oreFoo,...
-			message.setBoolean("toolforge", true); // if set to true, blockFoo can be used to build a toolforge
+			message.setString("fluid", fluid.getName());
+			message.setString("ore", upperCaseFirst(fluid.getName()));
+			message.setBoolean("toolforge", true);
 			//message.setTag("alloy", alloysTagList); // you can also send an alloy with the registration (see below)
 
 			// send the NBT to TCon
@@ -91,11 +90,8 @@ public class TinkersConstructPlugin {
 	
 	public static String upperCaseFirst(String value) {
 
-		// Convert String to char array.
 		char[] array = value.toCharArray();
-		// Modify first element in array.
 		array[0] = Character.toUpperCase(array[0]);
-		// Return string.
 		return new String(array);
 	}
 }

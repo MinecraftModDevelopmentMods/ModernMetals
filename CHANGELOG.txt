@@ -5,5 +5,5 @@
 5. Added Galvanized Steel
 6. Added Nichrome
 7. Added Stainless Steel
-8. (In Progress) Fluids
-9. (In Progress) Tinkers Construct 2 Smelting Support
+8. Fluids
+9. Tinkers Construct 2 Smelting Support

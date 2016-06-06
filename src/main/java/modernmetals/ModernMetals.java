@@ -30,7 +30,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
 		dependencies = "required-after:Forge@[12.16.0.1865,);required-after:basemetals@[2.2,)",
-		acceptedMinecraftVersions = "1.9",
+		acceptedMinecraftVersions = "1.9,)",
 		//certificateFingerprint = "",
 		updateJSON = "https://raw.githubusercontent.com/jriwanek/ModernMetals/master/update.json")
 public class ModernMetals
