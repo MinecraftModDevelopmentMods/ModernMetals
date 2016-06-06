@@ -1,6 +1,7 @@
 package modernmetals.data;
 
-public class DataConstants {
+public abstract class DataConstants {
+
 	public static final String defaultOreSpawnJSON = "{"
 + "\n	\"dimensions\":["
 + "\n		{"

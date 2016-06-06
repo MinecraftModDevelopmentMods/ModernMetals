@@ -9,7 +9,7 @@ import modernmetals.init.Items;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraft.block.Block;
-//import net.minecraft.init.Items;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -178,10 +178,10 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_blend,2), "dustRutile", "dustMagnesium"));
 		
 		// small alloy blends
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_smallblend,2), "smalldustAluminum", "smalldustBrass"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanizedsteel_smallblend,2), "smalldustSteel", "smalldustZinc"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.nichrome_smallblend,2), "smalldustNickel", "smalldustChromium"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainlesssteel_smallblend,2), "smalldustSteel", "smalldustChromium"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_smallblend,2), "smalldustAluminum", "smalldustBrass"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanizedsteel_smallblend,2), "smalldustSteel", "smalldustZinc"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.nichrome_smallblend,2), "smalldustNickel", "smalldustChromium"));
+//		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainlesssteel_smallblend,2), "smalldustSteel", "smalldustChromium"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_smallblend,2), "smalldustRutile", "smalldustMagnesium"));
 
 		// Some people refer to it as Aluminium

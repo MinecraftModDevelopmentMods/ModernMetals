@@ -44,7 +44,7 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-version = "0.10.2"
+version = "0.11.0"
 group= "modernmetals" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ModernMetals"
 //ext.repo = Grgit.open(project.file('.'))

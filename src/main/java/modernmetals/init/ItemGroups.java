@@ -46,6 +46,5 @@ public class ItemGroups extends cyano.basemetals.init.ItemGroups {
 		
 		initDone = true;
 	}
-
 }
 
