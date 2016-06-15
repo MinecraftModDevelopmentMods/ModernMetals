@@ -184,6 +184,19 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 //		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.stainlesssteel_smallblend,2), "smalldustSteel", "smalldustChromium"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.titanium_smallblend,2), "smalldustRutile", "smalldustMagnesium"));
 
+		// Alt oreDict Chrome
+		OreDictionary.registerOre("oreChrome", Blocks.chromium_ore);
+		OreDictionary.registerOre("blockChrome", Blocks.chromium_block);
+		OreDictionary.registerOre("plateChrome", Blocks.chromium_plate);
+		OreDictionary.registerOre("barsChrome", Blocks.chromium_bars);
+//		OreDictionary.registerOre("doorChrome", Blocks.chromium_door);
+		OreDictionary.registerOre("trapdoorChrome", Blocks.chromium_trapdoor);
+		OreDictionary.registerOre("ingotChrome", Items.chromium_ingot);
+		OreDictionary.registerOre("nuggetChrome", Items.chromium_nugget);
+		OreDictionary.registerOre("dustChrome", Items.chromium_powder);
+		OreDictionary.registerOre("gearChrome", Items.chromium_gear);
+		OreDictionary.registerOre("rodChrome", Items.chromium_rod);
+
 		// Some people refer to it as Aluminium
 		OreDictionary.registerOre("oreAluminium", Blocks.aluminum_ore);
 		OreDictionary.registerOre("blockAluminium", Blocks.aluminum_block);
