@@ -19,12 +19,12 @@ public class ItemMetalCrossbow extends net.minecraft.item.Item {
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
 
-	public ItemMetalCrossbow(MetalMaterial metal){
+	public ItemMetalCrossbow(MetalMaterial metal) {
 		this.metal = metal;
-        this.setMaxDamage(metal.getToolDurability());
+		this.setMaxDamage(metal.getToolDurability());
 		this.setCreativeTab(CreativeTabs.COMBAT);
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
-		if(metal.equals(Materials.starsteel)){
+		if(metal.equals(Materials.starsteel)) {
 			regenerates = true;
 		} else {
 			regenerates = false;
@@ -35,7 +35,7 @@ public class ItemMetalCrossbow extends net.minecraft.item.Item {
 	@Override
 	public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
 		List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
-		for(ItemStack i : acceptableItems ){
+		for(ItemStack i : acceptableItems ) {
 			if(ItemStack.areItemsEqual(i, repairMaterial)) return true;
 		}
 		return false;
@@ -44,20 +44,19 @@ public class ItemMetalCrossbow extends net.minecraft.item.Item {
 	// TODO: Test this
 	@Override
 	public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
-		if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0){
+		if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0) {
 			item.setItemDamage(item.getItemDamage() - 1);
 		}
 	}
-	
+
 	public String getMaterialName() {
 		return metal.getName();
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b) {
 		super.addInformation(stack,player,list,b);
 		MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
 	}
-
 }

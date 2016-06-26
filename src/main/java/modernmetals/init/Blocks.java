@@ -167,12 +167,11 @@ public abstract class Blocks {
 	public static Block zirconium_trapdoor;
 	
 	private static boolean initDone = false;
-	public static void init(){
+	public static void init() {
 		if(initDone)return;
 		
 		modernmetals.init.Materials.init();
 		modernmetals.init.ItemGroups.init();
-
 
 		aluminum_block = createBlock(Materials.aluminum);
 		aluminum_plate = createPlate(Materials.aluminum);
@@ -300,21 +299,21 @@ public abstract class Blocks {
 		zirconium_trapdoor = createTrapDoor(Materials.zirconium);
 
 		// final block settings
-		for(Block b : allBlocks.values()){
-			if(b instanceof IOreDictionaryEntry){OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);}
-			if(b instanceof BlockMetalDoor == false) b.setCreativeTab(ItemGroups.tab_blocks);
+		for(Block b : allBlocks.values()) {
+			if(b instanceof IOreDictionaryEntry) { OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b); }
+			if(!(b instanceof BlockMetalDoor)) b.setCreativeTab(ItemGroups.tab_blocks);
 		}
 		
 		initDone = true;
 	}
 
-	private static Block addBlock(Block block, String name){
+	private static Block addBlock(Block block, String name) {
 		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
 		block.setRegistryName(location);
 		block.setUnlocalizedName(location.toString());
 		GameRegistry.register(block);
 
-		if (block instanceof BlockMetalDoor == false) {
+		if (!(block instanceof BlockMetalDoor)) {
 			ItemBlock itemBlock = new ItemBlock(block);
 			itemBlock.setRegistryName(location);
 			itemBlock.setUnlocalizedName(location.toString());
@@ -329,35 +328,35 @@ public abstract class Blocks {
 		return addBlock(new BlockMetalPlate(metal), metal.getName()+"_plate");
 	}
 
-	private static Block createBars(MetalMaterial metal){
+	private static Block createBars(MetalMaterial metal) {
 		return addBlock(new BlockMetalBars(metal), metal.getName()+"_bars");
 	}
 
-	private static Block createBlock(MetalMaterial metal){
+	private static Block createBlock(MetalMaterial metal) {
 		return createBlock(metal, false);
 	}
 
-	private static Block createBlock(MetalMaterial metal, boolean glow){
+	private static Block createBlock(MetalMaterial metal, boolean glow) {
 		return addBlock(new BlockMetalBlock(metal, glow), metal.getName()+"_block");
 	}
 
-	private static Block createOre(MetalMaterial metal){
+	private static Block createOre(MetalMaterial metal) {
 		return addBlock(new BlockMetalOre(metal), metal.getName()+"_ore");
 	}
 
-	private static BlockDoor createDoor(MetalMaterial metal){
+	private static BlockDoor createDoor(MetalMaterial metal) {
 		return (BlockDoor)addBlock(new modernmetals.blocks.BlockMetalDoor(metal), metal.getName()+"_door");
 	}
 
-	private static Block createTrapDoor(MetalMaterial metal){
+	private static Block createTrapDoor(MetalMaterial metal) {
 		return addBlock(new BlockMetalTrapDoor(metal), metal.getName()+"_trapdoor");
 	}
 	
 
 	@SideOnly(Side.CLIENT)
-	public static void registerItemRenders(FMLInitializationEvent event){
-		for(String name : allBlocks.keySet()){
-			if(allBlocks.get(name) instanceof BlockDoor) continue;// do not add door blocks
+	public static void registerItemRenders(FMLInitializationEvent event) {
+		for(String name : allBlocks.keySet()) {
+			if(allBlocks.get(name) instanceof BlockDoor) continue; // do not add door blocks
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 			.register(net.minecraft.item.Item.getItemFromBlock(allBlocks.get(name)), 0, 
 				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, name), "inventory"));

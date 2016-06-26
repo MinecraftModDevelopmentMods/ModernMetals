@@ -20,8 +20,8 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 public class Recipes extends cyano.basemetals.init.Recipes {
 
 	private static boolean initDone = false;
-	public static void init(){
-		if(initDone)return;
+	public static void init() {
+		if(initDone) return;
 
 		modernmetals.init.Materials.init();
 		modernmetals.init.Blocks.init();
@@ -31,10 +31,10 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		
 		initDone = true;
 	}
-	private static void initMetalRecipes(){
+	private static void initMetalRecipes() {
 		List<MetalMaterial> exceptions = Arrays.asList(Materials.vanilla_iron,Materials.vanilla_gold,Materials.vanilla_diamond,Materials.vanilla_stone,Materials.vanilla_wood,Materials.copper,Materials.silver,Materials.tin,Materials.lead,Materials.nickel,Materials.bronze,Materials.brass,Materials.steel,Materials.invar,Materials.electrum,Materials.coldiron,Materials.mithril,Materials.adamantine,Materials.starsteel,Materials.zinc,Materials.aquarium);
 
-		for(MetalMaterial metal : Materials.getAllMetals()){
+		for(MetalMaterial metal : Materials.getAllMetals()) {
 			if(exceptions.contains(metal))continue;
 			String baseName = metal.getName()+"_";
 			String oreDictName = metal.getCapitalizedName();
@@ -235,9 +235,5 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		OreDictionary.registerOre("dustAlubrass", Items.aluminumbrass_powder);
 		OreDictionary.registerOre("gearAlubrass", Items.aluminumbrass_gear);
 		OreDictionary.registerOre("rodAlubrass", Items.aluminumbrass_rod);
-		
-
-
-
 	}
 }

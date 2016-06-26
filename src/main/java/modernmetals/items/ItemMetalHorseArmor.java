@@ -9,12 +9,11 @@ public class ItemMetalHorseArmor extends Item implements IMetalObject {
 
 	private final MetalMaterial metal;
 
-	public ItemMetalHorseArmor(MetalMaterial m){
+	public ItemMetalHorseArmor(MetalMaterial m) {
 		this.metal = m;
 	}
 
-	@Override public MetalMaterial getMetalMaterial(){
+	@Override public MetalMaterial getMetalMaterial() {
 		return metal;
 	}
-
 }

@@ -11,17 +11,14 @@ public class ItemMetalBlend extends cyano.basemetals.items.ItemMetalBlend {
 
 	public ItemMetalBlend(MetalMaterial metal) {
 		super(metal);
-		// TODO Auto-generated constructor stub
 	}
 
-    public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
-    	super.onCreated(item, world, crafter);
-    	// achievement
-    	if(metal == Materials.aluminumbrass || metal == Materials.galvanizedsteel || metal == Materials.nichrome
-    			|| metal == Materials.stainlesssteel || metal == Materials.titanium){
-        	crafter.addStat(Achievements.metallurgy, 1);
-    	}
-    	
+	public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
+		super.onCreated(item, world, crafter);
+		// achievement
+		if(metal == Materials.aluminumbrass || metal == Materials.galvanizedsteel || metal == Materials.nichrome
+				|| metal == Materials.stainlesssteel || metal == Materials.titanium) {
+			crafter.addStat(Achievements.metallurgy, 1);
+		}
 	}
-	
 }

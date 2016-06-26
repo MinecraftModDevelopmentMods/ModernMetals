@@ -41,8 +41,8 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	public static MetalMaterial zirconium;
 
 	private static boolean initDone = false;
-	public static void init(){
-		if(initDone)return;
+	public static void init() {
+		if(initDone) return;
 		
 		// mod metals
 		aluminum = addMaterial("aluminum",8,8,4.5);
@@ -75,10 +75,9 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 		initDone = true;
 	}
 
-	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic){
-		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic);
+	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic) {
+		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
 		registerMaterial(name, m);
 		return m;
 	}
-
 }

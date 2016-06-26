@@ -176,8 +176,8 @@ public abstract class Fluids {
 	}
 
 	@SideOnly(Side.CLIENT)
-	public static void bakeModels(String modID){
-		for(Fluid fluid : fluidBlocks.keySet()){
+	public static void bakeModels(String modID) {
+		for(Fluid fluid : fluidBlocks.keySet()) {
 			BlockFluidBase block = fluidBlocks.get(fluid);
 			Item item = Item.getItemFromBlock(block);
 			final ModelResourceLocation fluidModelLocation = new ModelResourceLocation(
