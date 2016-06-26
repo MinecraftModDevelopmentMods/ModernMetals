@@ -72,7 +72,6 @@ public abstract class Blocks {
 	public static Block galvanizedsteel_block;
 	public static Block galvanizedsteel_plate;
 	public static BlockDoor galvanizedsteel_door;
-	public static Block galvanizedsteel_ore;
 	public static Block galvanizedsteel_trapdoor;
 
 	public static Block iridium_bars;
@@ -100,7 +99,6 @@ public abstract class Blocks {
 	public static Block nichrome_block;
 	public static Block nichrome_plate;
 	public static BlockDoor nichrome_door;
-	public static Block nichrome_ore;
 	public static Block nichrome_trapdoor;
 
 	public static Block osmium_bars;
@@ -128,7 +126,6 @@ public abstract class Blocks {
 	public static Block stainlesssteel_block;
 	public static Block stainlesssteel_plate;
 	public static BlockDoor stainlesssteel_door;
-	public static Block stainlesssteel_ore;
 	public static Block stainlesssteel_trapdoor;
 
 	public static Block tantalum_bars;
@@ -202,7 +199,6 @@ public abstract class Blocks {
 
 		galvanizedsteel_block = createBlock(Materials.galvanizedsteel);
 		galvanizedsteel_plate = createPlate(Materials.galvanizedsteel);
-		galvanizedsteel_ore = createOre(Materials.galvanizedsteel);
 		galvanizedsteel_bars = createBars(Materials.galvanizedsteel);
 		galvanizedsteel_door = createDoor(Materials.galvanizedsteel);
 		galvanizedsteel_trapdoor = createTrapDoor(Materials.galvanizedsteel);
@@ -230,7 +226,6 @@ public abstract class Blocks {
 
 		nichrome_block = createBlock(Materials.nichrome);
 		nichrome_plate = createPlate(Materials.nichrome);
-		nichrome_ore = createOre(Materials.nichrome);
 		nichrome_bars = createBars(Materials.nichrome);
 		nichrome_door = createDoor(Materials.nichrome);
 		nichrome_trapdoor = createTrapDoor(Materials.nichrome);
@@ -258,7 +253,6 @@ public abstract class Blocks {
 
 		stainlesssteel_block = createBlock(Materials.stainlesssteel);
 		stainlesssteel_plate = createPlate(Materials.stainlesssteel);
-		stainlesssteel_ore = createOre(Materials.stainlesssteel);
 		stainlesssteel_bars = createBars(Materials.stainlesssteel);
 		stainlesssteel_door = createDoor(Materials.stainlesssteel);
 		stainlesssteel_trapdoor = createTrapDoor(Materials.stainlesssteel);
