@@ -15,6 +15,7 @@ public class ItemMetalArrow extends net.minecraft.item.ItemArrow implements IOre
 		this.oreDict = "arrow"+metal.getCapitalizedName();
 	}
 
+	@Override
 	public String getOreDictionaryName() {
 		return oreDict;
 	}

@@ -11,7 +11,7 @@ public class TinkersConstructPlugin {
 	private static boolean initDone = false;
 
 	public static void init() {
-		if(initDone)return;
+		if(initDone) return;
 
 		if(Loader.isModLoaded("tconstruct")) {
 //			registerFluid(Fluids.fluidAluminum); // TCon already has this
@@ -38,7 +38,6 @@ public class TinkersConstructPlugin {
 			registerAlloy("nichrome", 2, "nickel", 1, "chrome", 1);
 			registerAlloy("stainlesssteel", 2, "steel", 1, "chrome", 1);
 			registerAlloy("titanium", 2, "rutile", 1, "magnesium", 1);
-
 		}
 
 		initDone = true;

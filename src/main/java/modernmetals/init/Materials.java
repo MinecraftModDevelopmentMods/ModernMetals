@@ -3,7 +3,7 @@ package modernmetals.init;
 import cyano.basemetals.material.MetalMaterial;
 
 /**
- * This class initializes all of the metal materials in Base Metals. It also 
+ * This class initializes all of the metal materials in Modern Metals. It also 
  * contains utility methods for looking up materials by name and finding the 
  * tool and armor material equivalents for a given metal.  
  * @author DrCyano
@@ -45,38 +45,44 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 		if(initDone) return;
 		
 		// mod metals
-		aluminum = addMaterial("aluminum",8,8,4.5);
-		aluminumbrass = addMaterial("aluminumbrass",8,8,4.5);
-//		antimony = addMaterial("antimony",8,8,4.5);
-//		bismuth = addMaterial("bismuth",8,8,4.5);
-		cadmium = addMaterial("cadmium",8,8,4.5);
-		chromium = addMaterial("chromium",8,8,4.5);
-		galvanizedsteel = addMaterial("galvanizedsteel",8,8,4.5);
-		iridium = addMaterial("iridium",8,8,4.5);
-//		lithium = addMaterial("lithium",8,8,4.5);
-		magnesium = addMaterial("magnesium",8,8,4.5);
-		manganese = addMaterial("manganese",8,8,4.5);
-		nichrome= addMaterial("nichrome",8,8,4.5);
-//		niter = addMaterial("niter",8,8,4.5);
-		osmium = addMaterial("osmium",8,8,4.5);
-//		pewter = addMaterial("pewter",8,8,4.5);
-//		phospherous = addMaterial("phospherous",8,8,4.5);
-		plutonium = addMaterial("plutonium",8,8,4.5);
-		rutile = addMaterial("rutile",8,8,4.5);
-		silicon = addMaterial("silicon",8,8,4.5);
-		stainlesssteel = addMaterial("stainlesssteel",8,8,4.5);
-//		sulfur = addMaterial("sulfur",8,8,4.5);
-		tantalum = addMaterial("tantalum",8,8,4.5);
-		titanium = addMaterial("titanium",8,8,4.5);
-		tungsten = addMaterial("tungsten",8,8,4.5);
-		uranium = addMaterial("uranium",8,8,4.5);
-		zirconium = addMaterial("zirconium",8,8,4.5);
+		aluminum = addMaterial("aluminum", 8, 8, 4.5);
+		aluminumbrass = addMaterial("aluminumbrass", 8, 8, 4.5);
+//		antimony = addMaterial("antimony", 8, 8, 4.5);
+//		bismuth = addMaterial("bismuth", 8, 8, 4.5);
+		cadmium = addMaterial("cadmium", 8, 8, 4.5);
+		chromium = addMaterial("chromium", 8, 8, 4.5);
+		galvanizedsteel = addMaterial("galvanizedsteel", 8, 8, 4.5);
+		iridium = addMaterial("iridium", 8, 8, 4.5);
+//		lithium = addMaterial("lithium", 8, 8, 4.5);
+		magnesium = addMaterial("magnesium", 8, 8, 4.5);
+		manganese = addMaterial("manganese", 8, 8, 4.5);
+		nichrome= addMaterial("nichrome", 8, 8, 4.5);
+//		niter = addMaterial("niter", 8, 8, 4.5);
+		osmium = addMaterial("osmium", 8, 8, 4.5);
+//		pewter = addMaterial("pewter", 8, 8, 4.5);
+//		phospherous = addMaterial("phospherous", 8, 8, 4.5);
+		plutonium = addMaterial("plutonium", 8, 8, 4.5);
+		rutile = addMaterial("rutile", 8, 8, 4.5);
+		silicon = addMaterial("silicon", 8, 8, 4.5);
+		stainlesssteel = addMaterial("stainlesssteel", 8, 8, 4.5);
+//		sulfur = addMaterial("sulfur", 8, 8, 4.5);
+		tantalum = addMaterial("tantalum", 8, 8, 4.5);
+		titanium = addMaterial("titanium", 8, 8, 4.5);
+		tungsten = addMaterial("tungsten", 8, 8, 4.5);
+		uranium = addMaterial("uranium", 8, 8, 4.5);
+		zirconium = addMaterial("zirconium", 8, 8, 4.5);
 
 		initDone = true;
 	}
 
 	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic) {
 		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
+		registerMaterial(name, m);
+		return m;
+	}
+
+	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic){
+		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic,true);
 		registerMaterial(name, m);
 		return m;
 	}

@@ -15,6 +15,7 @@ public class ItemMetalSmallPowder extends net.minecraft.item.Item implements IOr
 		this.oreDict = "smalldust"+metal.getCapitalizedName();
 	}
 
+	@Override
 	public String getOreDictionaryName() {
 		return oreDict;
 	}

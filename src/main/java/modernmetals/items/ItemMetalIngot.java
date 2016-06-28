@@ -13,6 +13,7 @@ public class ItemMetalIngot extends cyano.basemetals.items.ItemMetalIngot {
 		super(metal);
 	}
 
+	@Override
 	public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
 		super.onCreated(item, world, crafter);
 		crafter.addStat(cyano.basemetals.init.Achievements.this_is_new, 1);

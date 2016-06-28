@@ -1,8 +1,5 @@
 package modernmetals.init;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import modernmetals.ModernMetals;
 import modernmetals.blocks.BlockMoltenFluid;
 import cyano.basemetals.fluids.CustomFluid;
@@ -24,6 +21,9 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class initializes all fluids in Modern Metals and provides some utility 
@@ -99,17 +99,17 @@ public abstract class Fluids {
 		if(initDone) return;
 
 		// fluids
-		fluidAluminum = newFluid(ModernMetals.MODID, "aluminum", 2000,10000,330,10, 0xFFC5C8C1);
+		fluidAluminum = newFluid(ModernMetals.MODID, "aluminum", 2000, 10000, 330, 10, 0xFFC5C8C1);
 
-		fluidAluminumBrass = newFluid(ModernMetals.MODID, "alubrass", 2000,10000,500,10, 0xFFEBAA56);
+		fluidAluminumBrass = newFluid(ModernMetals.MODID, "alubrass", 2000, 10000, 500, 10, 0xFFEBAA56);
 
-		fluidCadmium = newFluid(ModernMetals.MODID, "cadmium", 2000,10000,300,10, 0xFFC9D4DA);
+		fluidCadmium = newFluid(ModernMetals.MODID, "cadmium", 2000, 10000, 300, 10, 0xFFC9D4DA);
 
-		fluidChromium = newFluid(ModernMetals.MODID, "chromium", 2000,10000,769,10, 0xFFCDCDCF);
+		fluidChromium = newFluid(ModernMetals.MODID, "chromium", 2000, 10000, 769, 10, 0xFFCDCDCF);
 
-		fluidGalvanizedSteel = newFluid(ModernMetals.MODID, "galvanizedsteel", 2000,10000,769,10, 0xFF9BA6A2);
+		fluidGalvanizedSteel = newFluid(ModernMetals.MODID, "galvanizedsteel", 2000, 10000,769, 10, 0xFF9BA6A2);
 
-		fluidIridium = newFluid(ModernMetals.MODID, "iridium", 2000,10000,769,10, 0xFFF8EDCC);
+		fluidIridium = newFluid(ModernMetals.MODID, "iridium", 2000, 10000, 769, 10, 0xFFF8EDCC);
 
 		fluidMagnesium = newFluid(ModernMetals.MODID, "magnesium", 2000,10000,769,10, 0xFF7F7F77);
 
@@ -136,7 +136,7 @@ public abstract class Fluids {
 		fluidZirconium = newFluid(ModernMetals.MODID, "zirconium", 2000,10000,769,10, 0xFF929793);
 
 		// fluid blocks
-		fluidBlockAluminum = registerFluidBlock(fluidAluminum, new BlockMoltenFluid(fluidAluminum),"aluminum");
+		fluidBlockAluminum = registerFluidBlock(fluidAluminum, new BlockMoltenFluid(fluidAluminum), "aluminum");
 
 		fluidBlockAluminumBrass = registerFluidBlock(fluidAluminumBrass, new BlockMoltenFluid(fluidAluminumBrass),"alubrass");
 
@@ -185,6 +185,7 @@ public abstract class Fluids {
             ModelBakery.registerItemVariants(item);
 			ModelLoader.setCustomMeshDefinition(item, new ItemMeshDefinition()
 			{
+				@Override
 				public ModelResourceLocation getModelLocation(ItemStack stack)
 				{
 					return fluidModelLocation;
@@ -192,6 +193,7 @@ public abstract class Fluids {
 			});
 			ModelLoader.setCustomStateMapper(block, new StateMapperBase()
 			{
+				@Override
 				protected ModelResourceLocation getModelResourceLocation(IBlockState state)
 				{
 					return fluidModelLocation;
@@ -199,7 +201,6 @@ public abstract class Fluids {
 			});
 		}
 	}
-	
 
 	private static Fluid newFluid(String modID, String name, int density, int viscosity, int temperature, int luminosity, int tintColor) {
 		Fluid fluid = new CustomFluid(name, new ResourceLocation(modID+":blocks/molten_metal_still"), new ResourceLocation(modID+":blocks/molten_metal_flow"), tintColor);

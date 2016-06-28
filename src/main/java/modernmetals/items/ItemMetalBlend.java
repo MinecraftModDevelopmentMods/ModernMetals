@@ -13,6 +13,7 @@ public class ItemMetalBlend extends cyano.basemetals.items.ItemMetalBlend {
 		super(metal);
 	}
 
+	@Override
 	public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
 		super.onCreated(item, world, crafter);
 		// achievement

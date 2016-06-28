@@ -6,6 +6,7 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class ItemMetalBolt extends net.minecraft.item.Item implements IOreDictionaryEntry, IMetalObject {
+
 	protected final MetalMaterial metal;
 	private final String oreDict;
 	public ItemMetalBolt(MetalMaterial metal) {
@@ -14,6 +15,7 @@ public class ItemMetalBolt extends net.minecraft.item.Item implements IOreDictio
 		this.oreDict = "ammoBolt";
 	}
 
+	@Override
 	public String getOreDictionaryName() {
 		return oreDict;
 	}

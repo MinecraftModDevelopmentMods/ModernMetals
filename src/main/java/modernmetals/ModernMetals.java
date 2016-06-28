@@ -29,7 +29,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
-		dependencies = "required-after:Forge@[12.16.0.1865,);required-after:basemetals@[2.2,)",
+		dependencies = "required-after:Forge@[12.16.1.1887,);required-after:basemetals@[2.2,)",
 		acceptedMinecraftVersions = "1.9,)",
 		//certificateFingerprint = "",
 		updateJSON = "https://raw.githubusercontent.com/jriwanek/ModernMetals/master/update.json")
@@ -56,7 +56,7 @@ public class ModernMetals
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 
-		oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
+		oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(), "orespawn");
 		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
 		if(!Files.exists(oreSpawnFile)) {
 			try {
@@ -77,7 +77,7 @@ public class ModernMetals
 		modernmetals.init.VillagerTrades.init();
 		modernmetals.init.TinkersConstructPlugin.init();
 
-		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(),"additional-loot-tables");
+		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(), "additional-loot-tables");
 		Path myLootFolder = ALTPath.resolve(MODID);
 		if(Files.notExists(myLootFolder)) {
 			try {
@@ -136,7 +136,7 @@ public class ModernMetals
 		if(event.getSide() == Side.CLIENT) {
 			clientInit(event);
 		}
-		if(event.getSide() == Side.SERVER){
+		if(event.getSide() == Side.SERVER) {
 			serverInit(event);
 		}
 	}

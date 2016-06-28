@@ -20,6 +20,7 @@ public class ItemMetalSmallBlend extends net.minecraft.item.Item implements IOre
 		this.oreDict = "smalldust"+metal.getCapitalizedName(); // same oreDict entry as powder
 	}
 
+	@Override
 	public String getOreDictionaryName() {
 		return oreDict;
 	}
@@ -32,7 +33,7 @@ public class ItemMetalSmallBlend extends net.minecraft.item.Item implements IOre
 				|| metal == Materials.electrum || metal == Materials.invar || metal == Materials.steel ) {
 			crafter.addStat(Achievements.metallurgy, 1);
 		}
-}
+	}
 
 	@Override
 	public MetalMaterial getMetalMaterial() {

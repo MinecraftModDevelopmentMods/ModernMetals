@@ -31,7 +31,6 @@ public class ItemMetalCrossbow extends net.minecraft.item.Item {
 		}
 	}
 
-	// TODO: Test this
 	@Override
 	public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
 		List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
@@ -41,7 +40,6 @@ public class ItemMetalCrossbow extends net.minecraft.item.Item {
 		return false;
 	}
 
-	// TODO: Test this
 	@Override
 	public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
 		if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0) {
@@ -56,7 +54,7 @@ public class ItemMetalCrossbow extends net.minecraft.item.Item {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b) {
-		super.addInformation(stack,player,list,b);
-		MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
+		super.addInformation(stack, player, list, b);
+		MetalToolEffects.addToolSpecialPropertiesToolTip(metal, list);
 	}
 }

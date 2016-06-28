@@ -1,10 +1,10 @@
 package modernmetals.init;
 
 import modernmetals.ModernMetals;
-import cyano.basemetals.blocks.*;
-import cyano.basemetals.items.*;
 //import modernmetals.blocks.*;
 import modernmetals.items.*;
+import cyano.basemetals.blocks.*;
+import cyano.basemetals.items.*;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
@@ -16,15 +16,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-//import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-//import modernmetals.init.ItemGroups;
-//import modernmetals.init.Blocks;
-//import modernmetals.init.Materials;
 
 import java.util.*;
 
@@ -41,8 +37,6 @@ public abstract class Items {
 	private static Map<MetalMaterial,List<Item>> itemsByMetal = new HashMap<>();
 	
 	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
-	
-	
 
 	@SuppressWarnings("rawtypes")
 	private static Map<Class,Integer> classSortingValues = new HashMap<>();
@@ -1072,8 +1066,7 @@ public abstract class Items {
 		}
 		return item;
 	}
-	
-	
+
 	private static Item create_ingot(MetalMaterial metal) {
 		return registerItem(new modernmetals.items.ItemMetalIngot(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
 	}
@@ -1090,11 +1083,9 @@ public abstract class Items {
 		return registerItem(new modernmetals.items.ItemMetalBlend(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
 	}
 
-
 	private static Item create_rod(MetalMaterial metal) {
 		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"rod", metal, ItemGroups.tab_items);
 	}
-
 
 	private static Item create_gear(MetalMaterial metal) {
 		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"gear", metal, ItemGroups.tab_items);

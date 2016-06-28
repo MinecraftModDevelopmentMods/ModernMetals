@@ -47,7 +47,7 @@ public abstract class Blocks {
 	public static BlockDoor aluminum_door;
 	public static Block aluminum_ore;
 	public static Block aluminum_trapdoor;
-	
+
 	public static Block aluminumbrass_bars;
 	public static Block aluminumbrass_block;
 	public static Block aluminumbrass_plate;
@@ -60,14 +60,14 @@ public abstract class Blocks {
 	public static BlockDoor cadmium_door;
 	public static Block cadmium_ore;
 	public static Block cadmium_trapdoor;
-	
+
 	public static Block chromium_bars;
 	public static Block chromium_block;
 	public static Block chromium_plate;
 	public static BlockDoor chromium_door;
 	public static Block chromium_ore;
 	public static Block chromium_trapdoor;
-		
+
 	public static Block galvanizedsteel_bars;
 	public static Block galvanizedsteel_block;
 	public static Block galvanizedsteel_plate;
@@ -80,21 +80,21 @@ public abstract class Blocks {
 	public static BlockDoor iridium_door;
 	public static Block iridium_ore;
 	public static Block iridium_trapdoor;
-	
+
 	public static Block magnesium_bars;
 	public static Block magnesium_block;
 	public static Block magnesium_plate;
 	public static BlockDoor magnesium_door;
 	public static Block magnesium_ore;
 	public static Block magnesium_trapdoor;
-	
+
 	public static Block manganese_bars;
 	public static Block manganese_block;
 	public static Block manganese_plate;
 	public static BlockDoor manganese_door;
 	public static Block manganese_ore;
 	public static Block manganese_trapdoor;
-	
+
 	public static Block nichrome_bars;
 	public static Block nichrome_block;
 	public static Block nichrome_plate;
@@ -114,7 +114,7 @@ public abstract class Blocks {
 	public static BlockDoor plutonium_door;
 	public static Block plutonium_ore;
 	public static Block plutonium_trapdoor;
-	
+
 	public static Block rutile_bars;
 	public static Block rutile_block;
 	public static Block rutile_plate;
@@ -134,35 +134,35 @@ public abstract class Blocks {
 	public static BlockDoor tantalum_door;
 	public static Block tantalum_ore;
 	public static Block tantalum_trapdoor;
-	
+
 	public static Block titanium_bars;
 	public static Block titanium_block;
 	public static Block titanium_plate;
 	public static BlockDoor titanium_door;
 	public static Block titanium_ore;
 	public static Block titanium_trapdoor;
-	
+
 	public static Block tungsten_bars;
 	public static Block tungsten_block;
 	public static Block tungsten_plate;
 	public static BlockDoor tungsten_door;
 	public static Block tungsten_ore;
 	public static Block tungsten_trapdoor;
-	
+
 	public static Block uranium_bars;
 	public static Block uranium_block;
 	public static Block uranium_plate;
 	public static BlockDoor uranium_door;
 	public static Block uranium_ore;
 	public static Block uranium_trapdoor;
-	
+
 	public static Block zirconium_bars;
 	public static Block zirconium_block;
 	public static Block zirconium_plate;
 	public static BlockDoor zirconium_door;
 	public static Block zirconium_ore;
 	public static Block zirconium_trapdoor;
-	
+
 	private static boolean initDone = false;
 	public static void init() {
 		if(initDone)return;
@@ -297,7 +297,7 @@ public abstract class Blocks {
 			if(b instanceof IOreDictionaryEntry) { OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b); }
 			if(!(b instanceof BlockMetalDoor)) b.setCreativeTab(ItemGroups.tab_blocks);
 		}
-		
+
 		initDone = true;
 	}
 
@@ -345,7 +345,6 @@ public abstract class Blocks {
 	private static Block createTrapDoor(MetalMaterial metal) {
 		return addBlock(new BlockMetalTrapDoor(metal), metal.getName()+"_trapdoor");
 	}
-	
 
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event) {
