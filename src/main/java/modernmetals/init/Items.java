@@ -32,15 +32,16 @@ import java.util.*;
  */
 public abstract class Items {
 
-	private static Map<Item,String> itemRegistry = new HashMap<>();
-	private static Map<String,Item> allItems = new HashMap<>();
-	private static Map<MetalMaterial,List<Item>> itemsByMetal = new HashMap<>();
+	private static Map<Item, String> itemRegistry = new HashMap<>();
+	private static Map<String, Item> allItems = new HashMap<>();
+	private static Map<MetalMaterial, List<Item>> itemsByMetal = new HashMap<>();
 	
 	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
 
 	@SuppressWarnings("rawtypes")
-	private static Map<Class,Integer> classSortingValues = new HashMap<>();
-	private static Map<MetalMaterial,Integer> materialSortingValues = new HashMap<>();
+	private static Map<Class, Integer> classSortingValues = new HashMap<>();
+	private static Map<MetalMaterial, Integer> materialSortingValues = new HashMap<>();
+
 	/**
 	 * Gets an item by its name. The name is the name as it is registered in 
 	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
@@ -65,7 +66,7 @@ public abstract class Items {
 	 * Gets a map of all items added, sorted by metal
 	 * @return An unmodifiable map of added items catagorized by metal material
 	 */
-	public static Map<MetalMaterial,List<Item>> getItemsByMetal() {
+	public static Map<MetalMaterial, List<Item>> getItemsByMetal() {
 		return Collections.unmodifiableMap(itemsByMetal);
 	}
 
@@ -1045,11 +1046,9 @@ public abstract class Items {
 		for(int i = 0; i < metlist.size(); i++) {
 			materialSortingValues.put(metlist.get(i), i*100);
 		}
-		
+
 		initDone = true;
 	}
-
-
 
 	private static Item registerItem(Item item, String name, MetalMaterial metal, CreativeTabs tab) {
 		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
@@ -1070,15 +1069,15 @@ public abstract class Items {
 	private static Item create_ingot(MetalMaterial metal) {
 		return registerItem(new modernmetals.items.ItemMetalIngot(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
 	}
-	
+
 	private static Item create_nugget(MetalMaterial metal) {
 		return registerItem(new ItemMetalNugget(metal), metal.getName()+"_"+"nugget", metal, ItemGroups.tab_items);
 	}
-	
+
 	private static Item create_powder(MetalMaterial metal) {
 		return registerItem(new ItemMetalPowder(metal), metal.getName()+"_"+"powder", metal, ItemGroups.tab_items);
 	}
-	
+
 	private static Item create_blend(MetalMaterial metal) {
 		return registerItem(new modernmetals.items.ItemMetalBlend(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
 	}
@@ -1090,7 +1089,7 @@ public abstract class Items {
 	private static Item create_gear(MetalMaterial metal) {
 		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"gear", metal, ItemGroups.tab_items);
 	}
-	
+
 	private static Item create_axe(MetalMaterial metal) {
 		return registerItem(new ItemMetalAxe(metal), metal.getName()+"_"+"axe", metal, ItemGroups.tab_tools);
 	}
@@ -1098,19 +1097,19 @@ public abstract class Items {
 	private static Item create_crackhammer(MetalMaterial metal) {
 		return registerItem(new ItemMetalCrackHammer(metal), metal.getName()+"_"+"crackhammer", metal, ItemGroups.tab_tools);
 	}
-	
+
 	private static Item create_hoe(MetalMaterial metal) {
 		return registerItem(new ItemMetalHoe(metal), metal.getName()+"_"+"hoe", metal, ItemGroups.tab_tools);
 	}
-	
+
 	private static Item create_pickaxe(MetalMaterial metal) {
 		return registerItem(new ItemMetalPickaxe(metal), metal.getName()+"_"+"pickaxe", metal, ItemGroups.tab_tools);
 	}
-	
+
 	private static Item create_shovel(MetalMaterial metal) {
 		return registerItem(new ItemMetalShovel(metal), metal.getName()+"_"+"shovel", metal, ItemGroups.tab_tools);
 	}
-	
+
 	private static Item create_sword(MetalMaterial metal) {
 		return registerItem(new ItemMetalSword(metal), metal.getName()+"_"+"sword", metal, ItemGroups.tab_tools);
 	}
@@ -1154,7 +1153,7 @@ public abstract class Items {
 	private static Item create_shears(MetalMaterial metal) {
 		return registerItem(new ItemMetalShears(metal), metal.getName()+"_"+"shears", metal, ItemGroups.tab_tools);
 	}
-	
+
 	private static Item create_smallblend(MetalMaterial metal) {
 		return registerItem(new ItemMetalSmallBlend(metal), metal.getName()+"_"+"smallblend", metal, ItemGroups.tab_items);
 	}

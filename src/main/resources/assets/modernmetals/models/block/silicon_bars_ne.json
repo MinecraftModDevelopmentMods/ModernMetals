@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_ne",
-    "textures": {
-        "particle": "modernmetals:blocks/silicon_bars",
-        "bars": "modernmetals:blocks/silicon_bars",
-        "edge": "modernmetals:blocks/silicon_bars"
-    }
-}

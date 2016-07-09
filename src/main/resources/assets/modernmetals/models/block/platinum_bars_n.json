@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_n",
-    "textures": {
-        "particle": "modernmetals:blocks/platinum_bars",
-        "bars": "modernmetals:blocks/platinum_bars",
-        "edge": "modernmetals:blocks/platinum_bars"
-    }
-}

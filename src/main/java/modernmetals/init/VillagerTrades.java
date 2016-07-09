@@ -54,11 +54,11 @@ public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
 				}
 		);
 
-		Map<Integer,List<ITradeList>> tradesTable = new HashMap<>(); // integer is used as byte data: (unused) (profession) (career) (level)
+		Map<Integer, List<ITradeList>> tradesTable = new HashMap<>(); // integer is used as byte data: (unused) (profession) (career) (level)
 
 		for(MetalMaterial m : modernmetals.init.Materials.getAllMetals()) {
 			float value = m.hardness + m.strength + m.magicAffinity + m.getToolHarvestLevel();
-			if(m.isRare) continue;
+//			if(m.isRare) continue;
 			// for reference, iron has a value of 21.5, gold would be 14, copper is 14, and diamond is 30
 			int emeraldPurch = emeraldPurchaseValue(value);
 			int emeraldSale = emeraldSaleValue(value);
@@ -75,16 +75,16 @@ public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
 						makePurchasePalette(emeraldPurch, 12, allIngots.get(m)),
 						makeSalePalette(emeraldSale, 12, allIngots.get(m))
 					);
-				tradesTable.computeIfAbsent(armorsmith,(Integer key)->new ArrayList<>())
+				tradesTable.computeIfAbsent(armorsmith, (Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(ingotTrades));
-				tradesTable.computeIfAbsent(weaponsmith,(Integer key)->new ArrayList<>())
+				tradesTable.computeIfAbsent(weaponsmith, (Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(ingotTrades));
-				tradesTable.computeIfAbsent(toolsmith,(Integer key)->new ArrayList<>())
+				tradesTable.computeIfAbsent(toolsmith, (Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(ingotTrades));
 			}
 			if(allHammers.containsKey(m) && allPickAxes.containsKey(m)
 					 && allAxes.containsKey(m) && allShovels.containsKey(m)
-					 && allHoes.containsKey(m)){
+					 && allHoes.containsKey(m)) {
 				tradesTable.computeIfAbsent(toolsmith,(Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(
 						makeTradePalette(
@@ -114,7 +114,7 @@ public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
 						makePurchasePalette(emeraldPurch + (int)(m.hardness / 2), 1, allArmors.get(m).toArray(new Item[0]))
 						)));
 			}
-			
+
 			if(m.magicAffinity > 5) {
 				if(allHammers.containsKey(m)) tradesTable.computeIfAbsent((3 << 16) | (3 << 8) | (tradeLevel+2),(Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(
@@ -135,14 +135,14 @@ public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
 		}
 		tradesTable.computeIfAbsent((3 << 16) | (1 << 8) | (1),(Integer key)->new ArrayList<>())
 				.addAll(Arrays.asList(
-				makePurchasePalette(1,10,Items.carbon_powder)));
+				makePurchasePalette(1, 10, Items.carbon_powder)));
 		tradesTable.computeIfAbsent((3 << 16) | (2 << 8) | (1),(Integer key)->new ArrayList<>())
 				.addAll(Arrays.asList(
-				makePurchasePalette(1,10,Items.carbon_powder)));
+				makePurchasePalette(1, 10, Items.carbon_powder)));
 		tradesTable.computeIfAbsent((3 << 16) | (3 << 8) | (1),(Integer key)->new ArrayList<>())
 				.addAll(Arrays.asList(
 				makePurchasePalette(1, 10, Items.carbon_powder)));
-		
+
 		for(Integer k : tradesTable.keySet()) {
 			List<ITradeList> trades = tradesTable.get(k);
 			int profession = (k >> 16) & 0xFF;
@@ -202,11 +202,11 @@ public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
 		}
 		return trades;
 	}
-	
+
 	private static ITradeList[] makeTradePalette(ITradeList[]... list) {
 		if(list.length == 1) return list[0];
 		int totalsize = 0;
-		for(ITradeList[] e : list){
+		for(ITradeList[] e : list) {
 			totalsize += e.length;
 		}
 		ITradeList[] concat = new ITradeList[totalsize];

@@ -1,9 +1,0 @@
-1. Ores now spawn less commonly
-2. Fixed Achievements
-3. Doors now drop item when broken.
-4. No more duplicate door items.
-5. Added Galvanized Steel
-6. Added Nichrome
-7. Added Stainless Steel
-8. Fluids
-9. Tinkers Construct 2 Smelting Support

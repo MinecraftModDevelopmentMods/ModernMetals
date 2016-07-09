@@ -12,6 +12,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Random;
 
+/**
+ * Door Block
+ */
 public class BlockMetalDoor extends cyano.basemetals.blocks.BlockMetalDoor {
 
 	public BlockMetalDoor(MetalMaterial metal) {

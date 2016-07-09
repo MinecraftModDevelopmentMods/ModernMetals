@@ -7,6 +7,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+/**
+ * Ingots
+ */
 public class ItemMetalIngot extends cyano.basemetals.items.ItemMetalIngot {
 
 	public ItemMetalIngot(MetalMaterial metal) {

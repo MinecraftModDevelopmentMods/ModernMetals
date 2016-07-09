@@ -43,27 +43,27 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	private static boolean initDone = false;
 	public static void init() {
 		if(initDone) return;
-		
-		// mod metals
-		aluminum = addMaterial("aluminum", 8, 8, 4.5);
-		aluminumbrass = addMaterial("aluminumbrass", 8, 8, 4.5);
+
+		// Mod Metals
+		aluminum = addMaterial("aluminum", 3, 6, 4.5);
+		aluminumbrass = addMaterial("aluminumbrass", 2, 8, 4.5);
 //		antimony = addMaterial("antimony", 8, 8, 4.5);
 //		bismuth = addMaterial("bismuth", 8, 8, 4.5);
-		cadmium = addMaterial("cadmium", 8, 8, 4.5);
-		chromium = addMaterial("chromium", 8, 8, 4.5);
-		galvanizedsteel = addMaterial("galvanizedsteel", 8, 8, 4.5);
-		iridium = addMaterial("iridium", 8, 8, 4.5);
+		cadmium = addMaterial("cadmium", 3, 8, 4.5);
+		chromium = addMaterial("chromium", 4, 8, 4.5);
+		galvanizedsteel = addMaterial("galvanizedsteel", 5, 8, 4.5);
+		iridium = addMaterial("iridium", 1, 7, 4.5);
 //		lithium = addMaterial("lithium", 8, 8, 4.5);
-		magnesium = addMaterial("magnesium", 8, 8, 4.5);
-		manganese = addMaterial("manganese", 8, 8, 4.5);
-		nichrome= addMaterial("nichrome", 8, 8, 4.5);
+		magnesium = addMaterial("magnesium", 2, 7, 4.5);
+		manganese = addMaterial("manganese", 3, 7, 4.5);
+		nichrome= addMaterial("nichrome", 4, 7, 4.5);
 //		niter = addMaterial("niter", 8, 8, 4.5);
-		osmium = addMaterial("osmium", 8, 8, 4.5);
+		osmium = addMaterial("osmium", 5, 7, 4.5);
 //		pewter = addMaterial("pewter", 8, 8, 4.5);
 //		phospherous = addMaterial("phospherous", 8, 8, 4.5);
 		plutonium = addMaterial("plutonium", 8, 8, 4.5);
 		rutile = addMaterial("rutile", 8, 8, 4.5);
-		silicon = addMaterial("silicon", 8, 8, 4.5);
+//		silicon = addMaterial("silicon", 8, 8, 4.5);
 		stainlesssteel = addMaterial("stainlesssteel", 8, 8, 4.5);
 //		sulfur = addMaterial("sulfur", 8, 8, 4.5);
 		tantalum = addMaterial("tantalum", 8, 8, 4.5);
@@ -81,8 +81,8 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 		return m;
 	}
 
-	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic){
-		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic,true);
+	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
+		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
 		registerMaterial(name, m);
 		return m;
 	}

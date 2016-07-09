@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/phospherous_crossbow",
-    "textures": {
-        "layer0": "modernmetals:items/phospherous_crossbow_pulling_1"
-    }
-}

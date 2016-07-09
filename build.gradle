@@ -50,7 +50,7 @@ archivesBaseName = "ModernMetals"
 //ext.repo = Grgit.open(project.file('.'))
 
 minecraft {
-    version = "1.9-12.16.1.1938"
+    version = "1.9-12.16.1.1938-1.9.0"
     runDir = "run"
     mappings = "stable_24"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.

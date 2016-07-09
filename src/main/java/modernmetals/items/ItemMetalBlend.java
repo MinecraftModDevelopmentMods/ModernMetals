@@ -7,6 +7,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+/**
+ * Blends
+ */
 public class ItemMetalBlend extends cyano.basemetals.items.ItemMetalBlend {
 
 	public ItemMetalBlend(MetalMaterial metal) {

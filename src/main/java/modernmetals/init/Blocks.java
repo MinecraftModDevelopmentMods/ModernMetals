@@ -26,10 +26,11 @@ import java.util.Map;
  *
  */
 public abstract class Blocks {
-//	private static Map<Block,String> blockRegistry = new HashMap<>();
-	private static final Map<String,Block> allBlocks = new HashMap<>();
-//	private static Map<MetalMaterial,List<Block>> blocksByMetal = new HashMap<>();
-	
+
+//	private static Map<Block, String> blockRegistry = new HashMap<>();
+	private static final Map<String, Block> allBlocks = new HashMap<>();
+//	private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
+
 	/**
 	 * Gets an block by its name. The name is the name as it is registered in 
 	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
@@ -164,9 +165,10 @@ public abstract class Blocks {
 	public static Block zirconium_trapdoor;
 
 	private static boolean initDone = false;
+
 	public static void init() {
-		if(initDone)return;
-		
+		if(initDone) return;
+
 		modernmetals.init.Materials.init();
 		modernmetals.init.ItemGroups.init();
 

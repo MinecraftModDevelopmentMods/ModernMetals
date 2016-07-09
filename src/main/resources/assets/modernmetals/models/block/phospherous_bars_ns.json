@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_ns",
-    "textures": {
-        "particle": "modernmetals:blocks/phospherous_bars",
-        "bars": "modernmetals:blocks/phospherous_bars",
-        "edge": "modernmetals:blocks/phospherous_bars"
-    }
-}
