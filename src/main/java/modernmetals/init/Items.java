@@ -52,6 +52,7 @@ public abstract class Items {
 	public static Item getItemByName(String name) {
 		return allItems.get(name);
 	}
+
 	/**
 	 * This is the reverse of the getItemByName(...) method, returning the 
 	 * registered name of an item instance (Modern Metals items only).
@@ -62,6 +63,7 @@ public abstract class Items {
 	public static String getNameOfItem(Item i) {
 		return itemRegistry.get(i);
 	}
+
 	/**
 	 * Gets a map of all items added, sorted by metal
 	 * @return An unmodifiable map of added items catagorized by metal material
