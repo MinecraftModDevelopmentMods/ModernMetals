@@ -3,9 +3,9 @@ package modernmetals.init;
 import cyano.basemetals.material.MetalMaterial;
 
 /**
- * This class initializes all of the metal materials in Modern Metals. It also 
+ * This class initializes all of the metal materials in Modern Metals. It also
  * contains utility methods for looking up materials by name and finding the 
- * tool and armor material equivalents for a given metal.  
+ * tool and armor material equivalents for a given metal.
  * @author DrCyano
  *
  */
@@ -68,7 +68,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	}
 
 	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
-		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic, true);
+		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
 		registerMaterial(name, m);
 		return m;
 	}

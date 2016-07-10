@@ -33,7 +33,7 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 
 	/**
 	 * 
-	 * @param m
+	 * @param metal
 	 */
 	public ItemMetalFishingRod(MetalMaterial metal) {
 		this.metal = metal;

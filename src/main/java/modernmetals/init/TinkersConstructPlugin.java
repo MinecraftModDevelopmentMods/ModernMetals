@@ -54,6 +54,7 @@ public class TinkersConstructPlugin {
 	/**
 	 * 
 	 * @param fluid
+	 * @param toolforge
 	 */
 	public static void registerFluid(Fluid fluid, boolean toolforge) {
 		if(Loader.isModLoaded("tconstruct")) {
