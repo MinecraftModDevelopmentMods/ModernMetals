@@ -19,6 +19,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
+/**
+ * 
+ * @author Jasmine Iwanek
+ *
+ */
 public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject {
 
 	private final MetalMaterial metal;
@@ -26,8 +31,12 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
 
-	public ItemMetalFishingRod(MetalMaterial m) {
-		this.metal = m;
+	/**
+	 * 
+	 * @param m
+	 */
+	public ItemMetalFishingRod(MetalMaterial metal) {
+		this.metal = metal;
 		this.setMaxDamage(64);
 		this.setCreativeTab(CreativeTabs.TOOLS);
 		repairOreDictName = "ingot"+metal.getCapitalizedName();

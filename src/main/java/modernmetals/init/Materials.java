@@ -23,7 +23,6 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	public static MetalMaterial osmium;
 	public static MetalMaterial plutonium;
 	public static MetalMaterial rutile;
-	public static MetalMaterial silicon;
 	public static MetalMaterial stainlesssteel;
 	public static MetalMaterial tantalum;
 	public static MetalMaterial titanium;
@@ -32,6 +31,10 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	public static MetalMaterial zirconium;
 
 	private static boolean initDone = false;
+
+	/**
+	 * 
+	 */
 	public static void init() {
 		if(initDone) return;
 
@@ -65,7 +68,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	}
 
 	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
-		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
+		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic, true);
 		registerMaterial(name, m);
 		return m;
 	}

@@ -27,21 +27,6 @@ import java.util.Map;
  */
 public abstract class Blocks {
 
-//	private static Map<Block, String> blockRegistry = new HashMap<>();
-	private static final Map<String, Block> allBlocks = new HashMap<>();
-//	private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
-
-	/**
-	 * Gets an block by its name. The name is the name as it is registered in 
-	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
-	 * registered name plus the prefix "modernmetals.")
-	 * @param name The name of the block in question
-	 * @return The block matching that name, or null if there isn't one
-	 */
-	public static Block getBlockByName(String name) {
-		return allBlocks.get(name);
-	}
-
 	public static Block aluminum_bars;
 	public static Block aluminum_block;
 	public static Block aluminum_plate;
@@ -166,6 +151,24 @@ public abstract class Blocks {
 
 	private static boolean initDone = false;
 
+//	private static Map<Block, String> blockRegistry = new HashMap<>();
+	private static final Map<String, Block> allBlocks = new HashMap<>();
+//	private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
+
+	/**
+	 * Gets an block by its name. The name is the name as it is registered in 
+	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
+	 * registered name plus the prefix "modernmetals.")
+	 * @param name The name of the block in question
+	 * @return The block matching that name, or null if there isn't one
+	 */
+	public static Block getBlockByName(String name) {
+		return allBlocks.get(name);
+	}
+
+	/**
+	 * 
+	 */
 	public static void init() {
 		if(initDone) return;
 
@@ -348,6 +351,10 @@ public abstract class Blocks {
 		return addBlock(new BlockMetalTrapDoor(metal), metal.getName()+"_trapdoor");
 	}
 
+	/**
+	 * 
+	 * @param event
+	 */
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event) {
 		for(String name : allBlocks.keySet()) {

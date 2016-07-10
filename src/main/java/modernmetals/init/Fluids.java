@@ -95,6 +95,10 @@ public abstract class Fluids {
 	private static final Map<BlockFluidBase,String> fluidBlockNames = new HashMap<>();
 
 	private static boolean initDone = false;
+
+	/**
+	 * 
+	 */
 	public static void init() {
 		if(initDone) return;
 
@@ -175,6 +179,10 @@ public abstract class Fluids {
 		initDone = true;
 	}
 
+	/**
+	 * 
+	 * @param modID
+	 */
 	@SideOnly(Side.CLIENT)
 	public static void bakeModels(String modID) {
 		for(Fluid fluid : fluidBlocks.keySet()) {
@@ -225,7 +233,7 @@ public abstract class Fluids {
 		itemBlock.setRegistryName(location);
 		itemBlock.setUnlocalizedName(location.toString());
 		GameRegistry.register(itemBlock);
-		
+
 		fluidBlocks.put(fluid, block);
 		fluidBlockNames.put(block, name);
 		return block;

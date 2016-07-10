@@ -32,46 +32,6 @@ import java.util.*;
  */
 public abstract class Items {
 
-	private static Map<Item, String> itemRegistry = new HashMap<>();
-	private static Map<String, Item> allItems = new HashMap<>();
-	private static Map<MetalMaterial, List<Item>> itemsByMetal = new HashMap<>();
-	
-	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
-
-	@SuppressWarnings("rawtypes")
-	private static Map<Class, Integer> classSortingValues = new HashMap<>();
-	private static Map<MetalMaterial, Integer> materialSortingValues = new HashMap<>();
-
-	/**
-	 * Gets an item by its name. The name is the name as it is registered in 
-	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
-	 * registered name plus the prefix "modernmetals.")
-	 * @param name The name of the item in question
-	 * @return The item matching that name, or null if there isn't one
-	 */
-	public static Item getItemByName(String name) {
-		return allItems.get(name);
-	}
-
-	/**
-	 * This is the reverse of the getItemByName(...) method, returning the 
-	 * registered name of an item instance (Modern Metals items only).
-	 * @param i The item in question
-	 * @return The name of the item, or null if the item is not a Modern Metals 
-	 * item.
-	 */
-	public static String getNameOfItem(Item i) {
-		return itemRegistry.get(i);
-	}
-
-	/**
-	 * Gets a map of all items added, sorted by metal
-	 * @return An unmodifiable map of added items catagorized by metal material
-	 */
-	public static Map<MetalMaterial, List<Item>> getItemsByMetal() {
-		return Collections.unmodifiableMap(itemsByMetal);
-	}
-
 	public static Item aluminum_arrow;
 	public static Item aluminum_axe;
 	public static Item aluminum_boots;
@@ -303,7 +263,6 @@ public abstract class Items {
 	public static Item nichrome_rod;
 	public static Item nichrome_gear;
 
-
 	public static Item osmium_arrow;
 	public static Item osmium_axe;
 	public static Item osmium_boots;
@@ -533,6 +492,48 @@ public abstract class Items {
 	public static Item zirconium_rod;
 	public static Item zirconium_gear;
 
+	private static boolean initDone = false;
+
+	private static Map<Item, String> itemRegistry = new HashMap<>();
+	private static Map<String, Item> allItems = new HashMap<>();
+	private static Map<MetalMaterial, List<Item>> itemsByMetal = new HashMap<>();
+
+	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
+
+	@SuppressWarnings("rawtypes")
+	private static Map<Class, Integer> classSortingValues = new HashMap<>();
+	private static Map<MetalMaterial, Integer> materialSortingValues = new HashMap<>();
+
+	/**
+	 * Gets an item by its name. The name is the name as it is registered in 
+	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
+	 * registered name plus the prefix "modernmetals.")
+	 * @param name The name of the item in question
+	 * @return The item matching that name, or null if there isn't one
+	 */
+	public static Item getItemByName(String name) {
+		return allItems.get(name);
+	}
+
+	/**
+	 * This is the reverse of the getItemByName(...) method, returning the 
+	 * registered name of an item instance (Modern Metals items only).
+	 * @param i The item in question
+	 * @return The name of the item, or null if the item is not a Modern Metals 
+	 * item.
+	 */
+	public static String getNameOfItem(Item i) {
+		return itemRegistry.get(i);
+	}
+
+	/**
+	 * Gets a map of all items added, sorted by metal
+	 * @return An unmodifiable map of added items catagorized by metal material
+	 */
+	public static Map<MetalMaterial, List<Item>> getItemsByMetal() {
+		return Collections.unmodifiableMap(itemsByMetal);
+	}
+
 	/**
 	 * Gets the inventory item corresponding to a given door block
 	 * @param b The door block
@@ -542,7 +543,9 @@ public abstract class Items {
 		return doorMap.get(b);
 	}
 
-	private static boolean initDone = false;
+	/**
+	 * 
+	 */
 	public static void init() {
 		if(initDone) return;
 		
@@ -1089,7 +1092,9 @@ public abstract class Items {
 	}
 
 	private static Item create_gear(MetalMaterial metal) {
-		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"gear", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"gear", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("gear"+metal.getCapitalizedName(), i);
+		return i;
 	}
 
 	private static Item create_axe(MetalMaterial metal) {
@@ -1177,6 +1182,11 @@ public abstract class Items {
 		return item;
 	}
 
+	/**
+	 * 
+	 * @param a
+	 * @return
+	 */
 	@SuppressWarnings("rawtypes")
 	public static int getSortingValue(ItemStack a) {
 		int classVal = 990000;
@@ -1194,7 +1204,11 @@ public abstract class Items {
 		}
 		return classVal + metalVal + (a.getMetadata() % 100);
 	}
-	
+
+	/**
+	 * 
+	 * @param event
+	 */
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event) {
 		for(Item i : itemRegistry.keySet()) {

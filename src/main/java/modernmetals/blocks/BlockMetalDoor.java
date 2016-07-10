@@ -14,9 +14,15 @@ import java.util.Random;
 
 /**
  * Door Block
+ * @author Jasmine Iwanek
+ *
  */
 public class BlockMetalDoor extends cyano.basemetals.blocks.BlockMetalDoor {
 
+	/**
+	 * 
+	 * @param metal
+	 */
 	public BlockMetalDoor(MetalMaterial metal) {
 		super(metal);
 	}

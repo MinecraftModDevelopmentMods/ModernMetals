@@ -9,9 +9,15 @@ import net.minecraft.world.World;
 
 /**
  * Blends
+ * @author Jasmine Iwanek
+ *
  */
 public class ItemMetalBlend extends cyano.basemetals.items.ItemMetalBlend {
 
+	/**
+	 * 
+	 * @param metal
+	 */
 	public ItemMetalBlend(MetalMaterial metal) {
 		super(metal);
 	}

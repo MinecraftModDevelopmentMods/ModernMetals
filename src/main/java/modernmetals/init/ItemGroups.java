@@ -12,7 +12,7 @@ import cyano.basemetals.init.FunctionalCreativeTab;
  * @author DrCyano
  *
  */
-public class ItemGroups extends cyano.basemetals.init.ItemGroups {
+public class ItemGroups {
 
 	public static CreativeTabs tab_blocks;
 	public static CreativeTabs tab_items;
@@ -23,7 +23,11 @@ public class ItemGroups extends cyano.basemetals.init.ItemGroups {
 //	private static Item toolItem;
 
 	private static boolean initDone = false;
-	public static void init(){
+
+	/**
+	 * 
+	 */
+	public static void init() {
 		if(initDone) return;
 
 		// placeholders

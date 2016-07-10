@@ -25,6 +25,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
+/**
+ * This is the entry point for this mod.
+ * @author Jasmine Iwanek
+ *
+ */
 @Mod(
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
@@ -48,10 +53,15 @@ public class ModernMetals
 	/** location of ore-spawn files */
 	public static Path oreSpawnFolder = null;
 
+	/**
+	 * 
+	 * @param event
+	 */
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event)
-	{
+	public void preInit(FMLPreInitializationEvent event) {
+
 		INSTANCE = this;
+
 		// load config
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
@@ -110,6 +120,7 @@ public class ModernMetals
 		if(event.getSide() == Side.CLIENT) {
 			clientPreInit(event);
 		}
+
 		if(event.getSide() == Side.SERVER) {
 			serverPreInit(event);
 		}
@@ -122,20 +133,25 @@ public class ModernMetals
 		// client-only code
 		modernmetals.init.Fluids.bakeModels(MODID);
 	}
+
 	@SideOnly(Side.SERVER)
 	private void serverPreInit(FMLPreInitializationEvent event) {
 		// server-only code
 	}
 
+	/**
+	 * 
+	 * @param event
+	 */
 	@EventHandler
-	public void init(FMLInitializationEvent event)
-	{
+	public void init(FMLInitializationEvent event) {
 		modernmetals.init.Recipes.init();
 		modernmetals.init.Achievements.init();
 
 		if(event.getSide() == Side.CLIENT) {
 			clientInit(event);
 		}
+
 		if(event.getSide() == Side.SERVER) {
 			serverInit(event);
 		}
@@ -147,28 +163,34 @@ public class ModernMetals
 		modernmetals.init.Items.registerItemRenders(event);
 		modernmetals.init.Blocks.registerItemRenders(event);
 	}
+
 	@SideOnly(Side.SERVER)
 	private void serverInit(FMLInitializationEvent event) {
 		// server-only code
 	}
 
+	/**
+	 * 
+	 * @param event
+	 */
 	@EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
+	public void postInit(FMLPostInitializationEvent event) {
 		if(event.getSide() == Side.CLIENT) {
 			clientPostInit(event);
 		}
+
 		if(event.getSide() == Side.SERVER) {
 			serverPostInit(event);
 		}
 
 		CrusherRecipeRegistry.getInstance().clearCache();
-    }
+	}
 
 	@SideOnly(Side.CLIENT)
 	private void clientPostInit(FMLPostInitializationEvent event) {
 		// client-only code
 	}
+
 	@SideOnly(Side.SERVER)
 	private void serverPostInit(FMLPostInitializationEvent event) {
 		// server-only code

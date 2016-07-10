@@ -12,12 +12,22 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
+/**
+ * 
+ * @author Jasmine Iwanek
+ *
+ */
 public class ItemMetalShears extends net.minecraft.item.ItemShears {
 
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
-	protected final long regenInterval = 200; 
+	protected final long regenInterval = 200;
+
+	/**
+	 * 
+	 * @param metal
+	 */
 	public ItemMetalShears(MetalMaterial metal) {
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());

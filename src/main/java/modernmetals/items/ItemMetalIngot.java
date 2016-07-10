@@ -9,9 +9,15 @@ import net.minecraft.world.World;
 
 /**
  * Ingots
+ * @author Jasmine Iwanek
+ *
  */
 public class ItemMetalIngot extends cyano.basemetals.items.ItemMetalIngot {
 
+	/**
+	 * 
+	 * @param metal
+	 */
 	public ItemMetalIngot(MetalMaterial metal) {
 		super(metal);
 	}

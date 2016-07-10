@@ -10,10 +10,20 @@ import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 
+/**
+ * 
+ * @author Jasmine Iwanek
+ *
+ */
 public class ItemMetalSmallBlend extends net.minecraft.item.Item implements IOreDictionaryEntry, IMetalObject {
 
 	protected final MetalMaterial metal;
 	private final String oreDict;
+
+	/**
+	 * 
+	 * @param metal
+	 */
 	public ItemMetalSmallBlend(MetalMaterial metal) {
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);

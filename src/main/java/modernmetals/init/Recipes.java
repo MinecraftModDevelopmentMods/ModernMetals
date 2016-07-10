@@ -15,9 +15,18 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 
+ * @author Jasmine Iwanek
+ *
+ */
 public class Recipes extends cyano.basemetals.init.Recipes {
 
 	private static boolean initDone = false;
+
+	/**
+	 * 
+	 */
 	public static void init() {
 		if(initDone) return;
 
@@ -168,7 +177,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 //			if(rod != null && gear != null && crossbow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crossbow), "zxx", " yx", "x z", 'x', "rod"+oreDictName, 'y', "gear"+oreDictName, 'z', Items.STRING));
 //			if(rod != null && bolt != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bolt), "x", "x", "y", 'x', "rod"+oreDictName, 'y', Items.FEATHER));
 		}
-		
+
 		// alloy blends
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.aluminumbrass_blend, 2), "dustAluminum", "dustBrass"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(modernmetals.init.Items.galvanizedsteel_blend, 2), "dustSteel", "dustZinc"));

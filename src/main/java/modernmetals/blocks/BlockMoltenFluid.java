@@ -7,8 +7,17 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
+/**
+ * 
+ * @author Jasmine Iwanek
+ *
+ */
 public class BlockMoltenFluid extends BlockFluidClassic {
 
+	/**
+	 * 
+	 * @param fluid
+	 */
 	public BlockMoltenFluid(Fluid fluid) {
 		super(fluid, Material.LAVA);
 

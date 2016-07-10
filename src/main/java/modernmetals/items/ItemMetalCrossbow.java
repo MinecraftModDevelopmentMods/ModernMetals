@@ -12,6 +12,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
+/**
+ * 
+ * @author Jasmine Iwanek
+ *
+ */
 public class ItemMetalCrossbow extends net.minecraft.item.Item {
 
 	protected final MetalMaterial metal;
@@ -19,6 +24,10 @@ public class ItemMetalCrossbow extends net.minecraft.item.Item {
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
 
+	/**
+	 * 
+	 * @param metal
+	 */
 	public ItemMetalCrossbow(MetalMaterial metal) {
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());

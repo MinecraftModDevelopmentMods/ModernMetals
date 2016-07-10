@@ -19,6 +19,10 @@ public abstract class Achievements {
 	public static Achievement titanium_maker; // make blend
 
 	private static boolean initDone = false;
+
+	/**
+	 * 
+	 */
 	public static void init() {
 		if(initDone) return;
 
