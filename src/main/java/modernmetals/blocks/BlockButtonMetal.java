@@ -3,6 +3,7 @@ package modernmetals.blocks;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import net.minecraft.block.BlockButton;
 import net.minecraft.block.SoundType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -10,7 +11,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BlockButtonMetal extends net.minecraft.block.BlockButton implements IOreDictionaryEntry, IMetalObject {
+public class BlockButtonMetal extends BlockButton implements IOreDictionaryEntry, IMetalObject {
 
 	final MetalMaterial metal;
 

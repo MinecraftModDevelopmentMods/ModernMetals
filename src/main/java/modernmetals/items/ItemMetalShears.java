@@ -8,6 +8,7 @@ import cyano.basemetals.material.MetalMaterial;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
@@ -17,7 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
  * @author Jasmine Iwanek
  *
  */
-public class ItemMetalShears extends net.minecraft.item.ItemShears {
+public class ItemMetalShears extends ItemShears {
 
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
@@ -33,11 +34,7 @@ public class ItemMetalShears extends net.minecraft.item.ItemShears {
 		this.setMaxDamage(metal.getToolDurability());
 		this.setCreativeTab(CreativeTabs.TOOLS);
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
-		if(metal.equals(Materials.starsteel)) {
-			regenerates = true;
-		} else {
-			regenerates = false;
-		}
+		regenerates = metal.equals(Materials.starsteel);
 	}
 
 	@Override

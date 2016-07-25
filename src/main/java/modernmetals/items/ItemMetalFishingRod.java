@@ -51,11 +51,7 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 			}
 		});
 
-		if(metal.equals(Materials.starsteel)) {
-			regenerates = true;
-		} else {
-			regenerates = false;
-		}
+		regenerates = metal.equals(Materials.starsteel);
 	}
 
 	@Override

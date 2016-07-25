@@ -8,6 +8,7 @@ import cyano.basemetals.material.MetalMaterial;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemBow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
@@ -17,7 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
  * @author Jasmine Iwanek
  *
  */
-public class ItemMetalBow extends net.minecraft.item.ItemBow {
+public class ItemMetalBow extends ItemBow {
 
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
@@ -33,11 +34,7 @@ public class ItemMetalBow extends net.minecraft.item.ItemBow {
 		this.setMaxDamage(metal.getToolDurability());
 		this.setCreativeTab(CreativeTabs.COMBAT);
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
-		if(metal.equals(Materials.starsteel)) {
-			regenerates = true;
-		} else {
-			regenerates = false;
-		}
+		regenerates = metal.equals(Materials.starsteel);
 	}
 
 	@Override

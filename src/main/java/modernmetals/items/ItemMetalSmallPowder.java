@@ -4,13 +4,14 @@ import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 
 /**
  * 
  * @author Jasmine Iwanek
  *
  */
-public class ItemMetalSmallPowder extends net.minecraft.item.Item implements IOreDictionaryEntry, IMetalObject {
+public class ItemMetalSmallPowder extends Item implements IOreDictionaryEntry, IMetalObject {
 
 	protected final MetalMaterial metal;
 	private final String oreDict;

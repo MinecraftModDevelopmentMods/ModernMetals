@@ -3,9 +3,10 @@ package modernmetals.blocks;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import net.minecraft.block.BlockWall;
 import net.minecraft.block.SoundType;
 
-public class BlockMetalWall extends net.minecraft.block.BlockWall implements IOreDictionaryEntry, IMetalObject {
+public class BlockMetalWall extends BlockWall implements IOreDictionaryEntry, IMetalObject {
 
 	final MetalMaterial metal;
 

@@ -2,6 +2,7 @@ package modernmetals.items;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cyano.basemetals.init.Achievements;
@@ -15,7 +16,7 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
  * @author Jasmine Iwanek
  *
  */
-public class ItemMetalSmallBlend extends net.minecraft.item.Item implements IOreDictionaryEntry, IMetalObject {
+public class ItemMetalSmallBlend extends Item implements IOreDictionaryEntry, IMetalObject {
 
 	protected final MetalMaterial metal;
 	private final String oreDict;

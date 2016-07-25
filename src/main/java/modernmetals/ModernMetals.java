@@ -11,6 +11,8 @@ import java.util.List;
 
 import org.apache.logging.log4j.Level;
 
+import modernmetals.init.*;
+
 import modernmetals.data.AdditionalLootTables;
 import modernmetals.data.DataConstants;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
@@ -79,13 +81,13 @@ public class ModernMetals
 
 		config.save();
 
-		modernmetals.init.Fluids.init();
-		modernmetals.init.Materials.init();
-		modernmetals.init.ItemGroups.init();
-		modernmetals.init.Blocks.init();
-		modernmetals.init.Items.init();
-		modernmetals.init.VillagerTrades.init();
-		modernmetals.init.TinkersConstructPlugin.init();
+		Fluids.init();
+		Materials.init();
+		ItemGroups.init();
+		Blocks.init();
+		Items.init();
+		VillagerTrades.init();
+		TinkersConstructPlugin.init();
 
 		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(), "additional-loot-tables");
 		Path myLootFolder = ALTPath.resolve(MODID);
@@ -93,25 +95,25 @@ public class ModernMetals
 			try {
 				Files.createDirectories(myLootFolder.resolve("chests"));
 				Files.write(myLootFolder.resolve("chests").resolve("abandoned_mineshaft.json"),
-						Arrays.asList(         AdditionalLootTables.abandoned_mineshaft));
+						Arrays.asList(AdditionalLootTables.abandoned_mineshaft));
 				Files.write(myLootFolder.resolve("chests").resolve("desert_pyramid.json"),
-						Arrays.asList(         AdditionalLootTables.desert_pyramid));
+						Arrays.asList(AdditionalLootTables.desert_pyramid));
 				Files.write(myLootFolder.resolve("chests").resolve("end_city_treasure.json"),
-						Arrays.asList(         AdditionalLootTables.end_city_treasure));
+						Arrays.asList(AdditionalLootTables.end_city_treasure));
 				Files.write(myLootFolder.resolve("chests").resolve("jungle_temple.json"),
-						Arrays.asList(         AdditionalLootTables.jungle_temple));
+						Arrays.asList(AdditionalLootTables.jungle_temple));
 				Files.write(myLootFolder.resolve("chests").resolve("nether_bridge.json"),
-						Arrays.asList(         AdditionalLootTables.nether_bridge));
+						Arrays.asList(AdditionalLootTables.nether_bridge));
 				Files.write(myLootFolder.resolve("chests").resolve("simple_dungeon.json"),
-						Arrays.asList(         AdditionalLootTables.simple_dungeon));
+						Arrays.asList(AdditionalLootTables.simple_dungeon));
 				Files.write(myLootFolder.resolve("chests").resolve("spawn_bonus_chest.json"),
-						Arrays.asList(         AdditionalLootTables.spawn_bonus_chest));
+						Arrays.asList(AdditionalLootTables.spawn_bonus_chest));
 				Files.write(myLootFolder.resolve("chests").resolve("stronghold_corridor.json"),
-						Arrays.asList(         AdditionalLootTables.stronghold_corridor));
+						Arrays.asList(AdditionalLootTables.stronghold_corridor));
 				Files.write(myLootFolder.resolve("chests").resolve("stronghold_crossing.json"),
-						Arrays.asList(         AdditionalLootTables.stronghold_crossing));
+						Arrays.asList(AdditionalLootTables.stronghold_crossing));
 				Files.write(myLootFolder.resolve("chests").resolve("village_blacksmith.json"),
-						Arrays.asList(         AdditionalLootTables.village_blacksmith));
+						Arrays.asList(AdditionalLootTables.village_blacksmith));
 			} catch(IOException ex) {
 				FMLLog.log(Level.ERROR,ex,"%s: Failed to extract additional loot tables",MODID);
 			}
@@ -131,7 +133,7 @@ public class ModernMetals
 	@SideOnly(Side.CLIENT)
 	private void clientPreInit(FMLPreInitializationEvent event) {
 		// client-only code
-		modernmetals.init.Fluids.bakeModels(MODID);
+		Fluids.bakeModels(MODID);
 	}
 
 	@SideOnly(Side.SERVER)
@@ -145,8 +147,8 @@ public class ModernMetals
 	 */
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		modernmetals.init.Recipes.init();
-		modernmetals.init.Achievements.init();
+		Recipes.init();
+		Achievements.init();
 
 		if(event.getSide() == Side.CLIENT) {
 			clientInit(event);
@@ -160,8 +162,8 @@ public class ModernMetals
 	@SideOnly(Side.CLIENT)
 	private void clientInit(FMLInitializationEvent event) {
 		// client-only code
-		modernmetals.init.Items.registerItemRenders(event);
-		modernmetals.init.Blocks.registerItemRenders(event);
+		Items.registerItemRenders(event);
+		Blocks.registerItemRenders(event);
 	}
 
 	@SideOnly(Side.SERVER)

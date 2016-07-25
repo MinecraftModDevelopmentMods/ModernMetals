@@ -3,9 +3,10 @@ package modernmetals.blocks;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
 
-public class BlockMetalStairs extends net.minecraft.block.BlockStairs implements IOreDictionaryEntry, IMetalObject {
+public class BlockMetalStairs extends BlockStairs implements IOreDictionaryEntry, IMetalObject {
 
 	final MetalMaterial metal;
 

@@ -7,7 +7,7 @@ import net.minecraft.block.BlockPressurePlate;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
-public class BlockMetalPressurePlate extends net.minecraft.block.BlockPressurePlate implements IOreDictionaryEntry, IMetalObject {
+public class BlockMetalPressurePlate extends BlockPressurePlate implements IOreDictionaryEntry, IMetalObject {
 
 	final MetalMaterial metal;
 

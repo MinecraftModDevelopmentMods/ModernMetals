@@ -5,12 +5,14 @@ import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
 
+import net.minecraft.item.ItemArrow;
+
 /**
  * 
  * @author Jasmine Iwanek
  *
  */
-public class ItemMetalArrow extends net.minecraft.item.ItemArrow implements IOreDictionaryEntry, IMetalObject {
+public class ItemMetalArrow extends ItemArrow implements IOreDictionaryEntry, IMetalObject {
 
 	protected final MetalMaterial metal;
 	private final String oreDict;
