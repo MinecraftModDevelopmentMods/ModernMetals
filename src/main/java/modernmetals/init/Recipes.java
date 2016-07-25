@@ -205,6 +205,19 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		OreDictionary.registerOre("gearChrome", Items.chromium_gear);
 		OreDictionary.registerOre("rodChrome", Items.chromium_rod);
 
+		// Alt oreDict Tungsten
+		OreDictionary.registerOre("oreWolfram", Blocks.tungsten_ore);
+		OreDictionary.registerOre("blockWolfram", Blocks.tungsten_block);
+		OreDictionary.registerOre("plateWolfram", Blocks.tungsten_plate);
+		OreDictionary.registerOre("barsWolfram", Blocks.tungsten_bars);
+//		OreDictionary.registerOre("doorWolfram", Blocks.tungsten_door);
+		OreDictionary.registerOre("trapdoorWolfram", Blocks.tungsten_trapdoor);
+		OreDictionary.registerOre("ingotWolfram", Items.tungsten_ingot);
+		OreDictionary.registerOre("nuggetWolfram", Items.tungsten_nugget);
+		OreDictionary.registerOre("dustWolfram", Items.tungsten_powder);
+		OreDictionary.registerOre("gearWolfram", Items.tungsten_gear);
+		OreDictionary.registerOre("rodWolfram", Items.tungsten_rod);
+
 		// Some people refer to it as Aluminium
 		OreDictionary.registerOre("oreAluminium", Blocks.aluminum_ore);
 		OreDictionary.registerOre("blockAluminium", Blocks.aluminum_block);
