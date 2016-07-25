@@ -1,6 +1,11 @@
 package modernmetals.init;
 
 import modernmetals.ModernMetals;
+import modernmetals.blocks.BlockButtonMetal;
+import modernmetals.blocks.BlockMetalLever;
+import modernmetals.blocks.BlockMetalPressurePlate;
+import modernmetals.blocks.BlockMetalStairs;
+import modernmetals.blocks.BlockMetalWall;
 import cyano.basemetals.blocks.*;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
@@ -337,6 +342,26 @@ public abstract class Blocks {
 
 	private static Block createBlock(MetalMaterial metal, boolean glow) {
 		return addBlock(new BlockMetalBlock(metal, glow), metal.getName()+"_block");
+	}
+
+	private static Block createButton(MetalMaterial metal) {
+		return addBlock(new BlockButtonMetal(metal), metal.getName()+"_button");
+	}
+
+	private static Block createLever(MetalMaterial metal) {
+		return addBlock(new BlockMetalLever(metal), metal.getName()+"_lever");
+	}
+
+	private static Block createPressurePlate(MetalMaterial metal) {
+		return addBlock(new BlockMetalPressurePlate(metal), metal.getName()+"_pressure_plate");
+	}
+
+	private static Block createStairs(MetalMaterial metal) {
+		return addBlock(new BlockMetalStairs(metal), metal.getName()+"_stairs");
+	}
+
+	private static Block createWall(MetalMaterial metal) {
+		return addBlock(new BlockMetalWall(metal), metal.getName()+"_wall");
 	}
 
 	private static Block createOre(MetalMaterial metal) {
