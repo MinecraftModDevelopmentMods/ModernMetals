@@ -1,0 +1,14 @@
+{
+	"name": "Tantalum",
+	"id": "modernmetals:tantalum_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/tantalum_block",
+	"blocks": {
+		"full": "modernmetals:tantalum_block",
+		"stairs": "modernmetals:tantalum_stairs",
+		"slab": { "id": "modernmetals:tantalum_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:tantalum_wall", "meta": 0 }
+	}
+}

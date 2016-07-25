@@ -1,0 +1,14 @@
+{
+	"name": "Zirconium",
+	"id": "modernmetals:zirconium_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/zirconium_block",
+	"blocks": {
+		"full": "modernmetals:zirconium_block",
+		"stairs": "modernmetals:zirconium_stairs",
+		"slab": { "id": "modernmetals:zirconium_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:zirconium_wall", "meta": 0 }
+	}
+}

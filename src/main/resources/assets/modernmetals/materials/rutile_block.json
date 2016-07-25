@@ -1,0 +1,14 @@
+{
+	"name": "Rutile",
+	"id": "modernmetals:rutile_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/rutile_block",
+	"blocks": {
+		"full": "modernmetals:rutile_block",
+		"stairs": "modernmetals:rutile_stairs",
+		"slab": { "id": "modernmetals:rutile_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:rutile_wall", "meta": 0 }
+	}
+}

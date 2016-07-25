@@ -1,0 +1,14 @@
+{
+	"name": "Cadmium",
+	"id": "modernmetals:cadmium_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/cadmium_block",
+	"blocks": {
+		"full": "modernmetals:cadmium_block",
+		"stairs": "modernmetals:cadmium_stairs",
+		"slab": { "id": "modernmetals:cadmium_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:cadmium_wall", "meta": 0 }
+	}
+}

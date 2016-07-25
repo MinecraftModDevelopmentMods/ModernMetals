@@ -1,0 +1,14 @@
+{
+	"name": "Nichrome",
+	"id": "modernmetals:nichrome_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/nichrome_block",
+	"blocks": {
+		"full": "modernmetals:nichrome_block",
+		"stairs": "modernmetals:nichrome_stairs",
+		"slab": { "id": "modernmetals:nichrome_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:nichrome_wall", "meta": 0 }
+	}
+}
