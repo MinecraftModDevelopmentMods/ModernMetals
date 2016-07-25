@@ -38,13 +38,9 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 	public ItemMetalFishingRod(MetalMaterial metal) {
 		this.metal = metal;
 		this.setMaxDamage(64);
+        this.setMaxStackSize(1);
 		this.setCreativeTab(CreativeTabs.TOOLS);
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
-		if(metal.equals(Materials.starsteel)) {
-			regenerates = true;
-		} else {
-			regenerates = false;
-		}
 		this.addPropertyOverride(new ResourceLocation("cast"), new IItemPropertyGetter()
 		{
 			@SideOnly(Side.CLIENT)
@@ -54,6 +50,12 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 				return entityIn == null ? 0.0F : (entityIn.getHeldItemMainhand() == stack && entityIn instanceof EntityPlayer && ((EntityPlayer)entityIn).fishEntity != null ? 1.0F : 0.0F);
 			}
 		});
+
+		if(metal.equals(Materials.starsteel)) {
+			regenerates = true;
+		} else {
+			regenerates = false;
+		}
 	}
 
 	@Override
@@ -67,6 +69,8 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 
 	@Override
 	public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
+		super.onUpdate(item, world, player, inventoryIndex, isHeld);
+
 		if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0) {
 			item.setItemDamage(item.getItemDamage() - 1);
 		}
@@ -76,14 +80,14 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 		return metal.getName();
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b) {
+	public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean b) {
 		super.addInformation(stack, player, list, b);
 		MetalToolEffects.addToolSpecialPropertiesToolTip(metal, list);
 	}
 
-	@Override public MetalMaterial getMetalMaterial() {
+	@Override
+	public MetalMaterial getMetalMaterial() {
 		return metal;
 	}
 }

@@ -60,9 +60,8 @@ public class ItemMetalCrossbow extends net.minecraft.item.Item {
 		return metal.getName();
 	}
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b) {
+	public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean b) {
 		super.addInformation(stack, player, list, b);
 		MetalToolEffects.addToolSpecialPropertiesToolTip(metal, list);
 	}

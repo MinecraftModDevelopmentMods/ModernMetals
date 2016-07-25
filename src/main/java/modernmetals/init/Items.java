@@ -41,7 +41,7 @@ public abstract class Items {
 	public static Item aluminum_crackhammer;
 	public static Item aluminum_crossbow;
 	public static Item aluminum_door;
-	public static Item aluminum_fishingrod;
+	public static Item aluminum_fishing_rod;
 	public static Item aluminum_helmet;
 	public static Item aluminum_hoe;
 	public static Item aluminum_horsearmor;
@@ -67,7 +67,7 @@ public abstract class Items {
 	public static Item aluminumbrass_crackhammer;
 	public static Item aluminumbrass_crossbow;
 	public static Item aluminumbrass_door;
-	public static Item aluminumbrass_fishingrod;
+	public static Item aluminumbrass_fishing_rod;
 	public static Item aluminumbrass_helmet;
 	public static Item aluminumbrass_hoe;
 	public static Item aluminumbrass_horsearmor;
@@ -93,7 +93,7 @@ public abstract class Items {
 	public static Item cadmium_crackhammer;
 	public static Item cadmium_crossbow;
 	public static Item cadmium_door;
-	public static Item cadmium_fishingrod;
+	public static Item cadmium_fishing_rod;
 	public static Item cadmium_helmet;
 	public static Item cadmium_hoe;
 	public static Item cadmium_horsearmor;
@@ -118,7 +118,7 @@ public abstract class Items {
 	public static Item chromium_crackhammer;
 	public static Item chromium_crossbow;
 	public static Item chromium_door;
-	public static Item chromium_fishingrod;
+	public static Item chromium_fishing_rod;
 	public static Item chromium_helmet;
 	public static Item chromium_hoe;
 	public static Item chromium_horsearmor;
@@ -144,7 +144,7 @@ public abstract class Items {
 	public static Item galvanizedsteel_crackhammer;
 	public static Item galvanizedsteel_crossbow;
 	public static Item galvanizedsteel_door;
-	public static Item galvanizedsteel_fishingrod;
+	public static Item galvanizedsteel_fishing_rod;
 	public static Item galvanizedsteel_helmet;
 	public static Item galvanizedsteel_hoe;
 	public static Item galvanizedsteel_horsearmor;
@@ -170,7 +170,7 @@ public abstract class Items {
 	public static Item iridium_crackhammer;
 	public static Item iridium_crossbow;
 	public static Item iridium_door;
-	public static Item iridium_fishingrod;
+	public static Item iridium_fishing_rod;
 	public static Item iridium_helmet;
 	public static Item iridium_hoe;
 	public static Item iridium_horsearmor;
@@ -195,7 +195,7 @@ public abstract class Items {
 	public static Item magnesium_crackhammer;
 	public static Item magnesium_crossbow;
 	public static Item magnesium_door;
-	public static Item magnesium_fishingrod;
+	public static Item magnesium_fishing_rod;
 	public static Item magnesium_helmet;
 	public static Item magnesium_hoe;
 	public static Item magnesium_horsearmor;
@@ -220,7 +220,7 @@ public abstract class Items {
 	public static Item manganese_crackhammer;
 	public static Item manganese_crossbow;
 	public static Item manganese_door;
-	public static Item manganese_fishingrod;
+	public static Item manganese_fishing_rod;
 	public static Item manganese_helmet;
 	public static Item manganese_hoe;
 	public static Item manganese_horsearmor;
@@ -246,7 +246,7 @@ public abstract class Items {
 	public static Item nichrome_crackhammer;
 	public static Item nichrome_crossbow;
 	public static Item nichrome_door;
-	public static Item nichrome_fishingrod;
+	public static Item nichrome_fishing_rod;
 	public static Item nichrome_helmet;
 	public static Item nichrome_hoe;
 	public static Item nichrome_horsearmor;
@@ -272,7 +272,7 @@ public abstract class Items {
 	public static Item osmium_crackhammer;
 	public static Item osmium_crossbow;
 	public static Item osmium_door;
-	public static Item osmium_fishingrod;
+	public static Item osmium_fishing_rod;
 	public static Item osmium_helmet;
 	public static Item osmium_hoe;
 	public static Item osmium_horsearmor;
@@ -297,7 +297,7 @@ public abstract class Items {
 	public static Item plutonium_crackhammer;
 	public static Item plutonium_crossbow;
 	public static Item plutonium_door;
-	public static Item plutonium_fishingrod;
+	public static Item plutonium_fishing_rod;
 	public static Item plutonium_helmet;
 	public static Item plutonium_hoe;
 	public static Item plutonium_horsearmor;
@@ -322,7 +322,7 @@ public abstract class Items {
 	public static Item rutile_crackhammer;
 	public static Item rutile_crossbow;
 	public static Item rutile_door;
-	public static Item rutile_fishingrod;
+	public static Item rutile_fishing_rod;
 	public static Item rutile_helmet;
 	public static Item rutile_hoe;
 	public static Item rutile_horsearmor;
@@ -348,7 +348,7 @@ public abstract class Items {
 	public static Item stainlesssteel_crackhammer;
 	public static Item stainlesssteel_crossbow;
 	public static Item stainlesssteel_door;
-	public static Item stainlesssteel_fishingrod;
+	public static Item stainlesssteel_fishing_rod;
 	public static Item stainlesssteel_helmet;
 	public static Item stainlesssteel_hoe;
 	public static Item stainlesssteel_horsearmor;
@@ -374,7 +374,7 @@ public abstract class Items {
 	public static Item tantalum_crackhammer;
 	public static Item tantalum_crossbow;
 	public static Item tantalum_door;
-	public static Item tantalum_fishingrod;
+	public static Item tantalum_fishing_rod;
 	public static Item tantalum_helmet;
 	public static Item tantalum_hoe;
 	public static Item tantalum_horsearmor;
@@ -400,7 +400,7 @@ public abstract class Items {
 	public static Item titanium_crackhammer;
 	public static Item titanium_crossbow;
 	public static Item titanium_door;
-	public static Item titanium_fishingrod;
+	public static Item titanium_fishing_rod;
 	public static Item titanium_helmet;
 	public static Item titanium_hoe;
 	public static Item titanium_horsearmor;
@@ -426,7 +426,7 @@ public abstract class Items {
 	public static Item tungsten_crackhammer;
 	public static Item tungsten_crossbow;
 	public static Item tungsten_door;
-	public static Item tungsten_fishingrod;
+	public static Item tungsten_fishing_rod;
 	public static Item tungsten_helmet;
 	public static Item tungsten_hoe;
 	public static Item tungsten_horsearmor;
@@ -451,7 +451,7 @@ public abstract class Items {
 	public static Item uranium_crackhammer;
 	public static Item uranium_crossbow;
 	public static Item uranium_door;
-	public static Item uranium_fishingrod;
+	public static Item uranium_fishing_rod;
 	public static Item uranium_helmet;
 	public static Item uranium_hoe;
 	public static Item uranium_horsearmor;
@@ -476,7 +476,7 @@ public abstract class Items {
 	public static Item zirconium_crackhammer;
 	public static Item zirconium_crossbow;
 	public static Item zirconium_door;
-	public static Item zirconium_fishingrod;
+	public static Item zirconium_fishing_rod;
 	public static Item zirconium_helmet;
 	public static Item zirconium_hoe;
 	public static Item zirconium_horsearmor;
@@ -500,8 +500,7 @@ public abstract class Items {
 
 	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
 
-	@SuppressWarnings("rawtypes")
-	private static Map<Class, Integer> classSortingValues = new HashMap<>();
+	private static Map<Class<?>, Integer> classSortingValues = new HashMap<>();
 	private static Map<MetalMaterial, Integer> materialSortingValues = new HashMap<>();
 
 	/**
@@ -560,7 +559,7 @@ public abstract class Items {
 		aluminum_crackhammer = create_crackhammer(Materials.aluminum);
 		aluminum_crossbow = create_crossbow(Materials.aluminum);
 		aluminum_door = create_door(Materials.aluminum, Blocks.aluminum_door);
-		aluminum_fishingrod = create_fishingrod(Materials.aluminum);
+		aluminum_fishing_rod = create_fishing_rod(Materials.aluminum);
 		aluminum_helmet = create_helmet(Materials.aluminum);
 		aluminum_hoe = create_hoe(Materials.aluminum);
 		aluminum_horsearmor = create_horsearmor(Materials.aluminum);
@@ -586,7 +585,7 @@ public abstract class Items {
 		aluminumbrass_crackhammer = create_crackhammer(Materials.aluminumbrass);
 		aluminumbrass_crossbow = create_crossbow(Materials.aluminumbrass);
 		aluminumbrass_door = create_door(Materials.aluminumbrass, Blocks.aluminumbrass_door);
-		aluminumbrass_fishingrod = create_fishingrod(Materials.aluminumbrass);
+		aluminumbrass_fishing_rod = create_fishing_rod(Materials.aluminumbrass);
 		aluminumbrass_helmet = create_helmet(Materials.aluminumbrass);
 		aluminumbrass_hoe = create_hoe(Materials.aluminumbrass);
 		aluminumbrass_horsearmor = create_horsearmor(Materials.aluminumbrass);
@@ -612,7 +611,7 @@ public abstract class Items {
 		cadmium_crackhammer = create_crackhammer(Materials.cadmium);
 		cadmium_crossbow = create_crossbow(Materials.cadmium);
 		cadmium_door = create_door(Materials.cadmium, Blocks.cadmium_door);
-		cadmium_fishingrod = create_fishingrod(Materials.cadmium);
+		cadmium_fishing_rod = create_fishing_rod(Materials.cadmium);
 		cadmium_helmet = create_helmet(Materials.cadmium);
 		cadmium_hoe = create_hoe(Materials.cadmium);
 		cadmium_horsearmor = create_horsearmor(Materials.cadmium);
@@ -637,7 +636,7 @@ public abstract class Items {
 		chromium_crackhammer = create_crackhammer(Materials.chromium);
 		chromium_crossbow = create_crossbow(Materials.chromium);
 		chromium_door = create_door(Materials.chromium, Blocks.chromium_door);
-		chromium_fishingrod = create_fishingrod(Materials.chromium);
+		chromium_fishing_rod = create_fishing_rod(Materials.chromium);
 		chromium_helmet = create_helmet(Materials.chromium);
 		chromium_hoe = create_hoe(Materials.chromium);
 		chromium_horsearmor = create_horsearmor(Materials.chromium);
@@ -663,7 +662,7 @@ public abstract class Items {
 		galvanizedsteel_crackhammer = create_crackhammer(Materials.galvanizedsteel);
 		galvanizedsteel_crossbow = create_crossbow(Materials.galvanizedsteel);
 		galvanizedsteel_door = create_door(Materials.galvanizedsteel, Blocks.galvanizedsteel_door);
-		galvanizedsteel_fishingrod = create_fishingrod(Materials.galvanizedsteel);
+		galvanizedsteel_fishing_rod = create_fishing_rod(Materials.galvanizedsteel);
 		galvanizedsteel_helmet = create_helmet(Materials.galvanizedsteel);
 		galvanizedsteel_hoe = create_hoe(Materials.galvanizedsteel);
 		galvanizedsteel_horsearmor = create_horsearmor(Materials.galvanizedsteel);
@@ -689,7 +688,7 @@ public abstract class Items {
 		iridium_crackhammer = create_crackhammer(Materials.iridium);
 		iridium_crossbow = create_crossbow(Materials.iridium);
 		iridium_door = create_door(Materials.iridium, Blocks.iridium_door);
-		iridium_fishingrod = create_fishingrod(Materials.iridium);
+		iridium_fishing_rod = create_fishing_rod(Materials.iridium);
 		iridium_helmet = create_helmet(Materials.iridium);
 		iridium_hoe = create_hoe(Materials.iridium);
 		iridium_horsearmor = create_horsearmor(Materials.iridium);
@@ -714,7 +713,7 @@ public abstract class Items {
 		magnesium_crackhammer = create_crackhammer(Materials.magnesium);
 		magnesium_crossbow = create_crossbow(Materials.magnesium);
 		magnesium_door = create_door(Materials.magnesium, Blocks.magnesium_door);
-		magnesium_fishingrod = create_fishingrod(Materials.magnesium);
+		magnesium_fishing_rod = create_fishing_rod(Materials.magnesium);
 		magnesium_helmet = create_helmet(Materials.magnesium);
 		magnesium_hoe = create_hoe(Materials.magnesium);
 		magnesium_horsearmor = create_horsearmor(Materials.magnesium);
@@ -739,7 +738,7 @@ public abstract class Items {
 		manganese_crackhammer = create_crackhammer(Materials.manganese);
 		manganese_crossbow = create_crossbow(Materials.manganese);
 		manganese_door = create_door(Materials.manganese, Blocks.manganese_door);
-		manganese_fishingrod = create_fishingrod(Materials.manganese);
+		manganese_fishing_rod = create_fishing_rod(Materials.manganese);
 		manganese_helmet = create_helmet(Materials.manganese);
 		manganese_hoe = create_hoe(Materials.manganese);
 		manganese_horsearmor = create_horsearmor(Materials.manganese);
@@ -765,7 +764,7 @@ public abstract class Items {
 		nichrome_crackhammer = create_crackhammer(Materials.nichrome);
 		nichrome_crossbow = create_crossbow(Materials.nichrome);
 		nichrome_door = create_door(Materials.nichrome, Blocks.nichrome_door);
-		nichrome_fishingrod = create_fishingrod(Materials.nichrome);
+		nichrome_fishing_rod = create_fishing_rod(Materials.nichrome);
 		nichrome_helmet = create_helmet(Materials.nichrome);
 		nichrome_hoe = create_hoe(Materials.nichrome);
 		nichrome_horsearmor = create_horsearmor(Materials.nichrome);
@@ -791,7 +790,7 @@ public abstract class Items {
 		osmium_crackhammer = create_crackhammer(Materials.osmium);
 		osmium_crossbow = create_crossbow(Materials.osmium);
 		osmium_door = create_door(Materials.osmium, Blocks.osmium_door);
-		osmium_fishingrod = create_fishingrod(Materials.osmium);
+		osmium_fishing_rod = create_fishing_rod(Materials.osmium);
 		osmium_helmet = create_helmet(Materials.osmium);
 		osmium_hoe = create_hoe(Materials.osmium);
 		osmium_horsearmor = create_horsearmor(Materials.osmium);
@@ -816,7 +815,7 @@ public abstract class Items {
 		plutonium_crackhammer = create_crackhammer(Materials.plutonium);
 		plutonium_crossbow = create_crossbow(Materials.plutonium);
 		plutonium_door = create_door(Materials.plutonium, Blocks.plutonium_door);
-		plutonium_fishingrod = create_fishingrod(Materials.plutonium);
+		plutonium_fishing_rod = create_fishing_rod(Materials.plutonium);
 		plutonium_helmet = create_helmet(Materials.plutonium);
 		plutonium_hoe = create_hoe(Materials.plutonium);
 		plutonium_horsearmor = create_horsearmor(Materials.plutonium);
@@ -841,7 +840,7 @@ public abstract class Items {
 		rutile_crackhammer = create_crackhammer(Materials.rutile);
 		rutile_crossbow = create_crossbow(Materials.rutile);
 		rutile_door = create_door(Materials.rutile, Blocks.rutile_door);
-		rutile_fishingrod = create_fishingrod(Materials.rutile);
+		rutile_fishing_rod = create_fishing_rod(Materials.rutile);
 		rutile_helmet = create_helmet(Materials.rutile);
 		rutile_hoe = create_hoe(Materials.rutile);
 		rutile_horsearmor = create_horsearmor(Materials.rutile);
@@ -867,7 +866,7 @@ public abstract class Items {
 		stainlesssteel_crackhammer = create_crackhammer(Materials.stainlesssteel);
 		stainlesssteel_crossbow = create_crossbow(Materials.stainlesssteel);
 		stainlesssteel_door = create_door(Materials.stainlesssteel, Blocks.stainlesssteel_door);
-		stainlesssteel_fishingrod = create_fishingrod(Materials.stainlesssteel);
+		stainlesssteel_fishing_rod = create_fishing_rod(Materials.stainlesssteel);
 		stainlesssteel_helmet = create_helmet(Materials.stainlesssteel);
 		stainlesssteel_hoe = create_hoe(Materials.stainlesssteel);
 		stainlesssteel_horsearmor = create_horsearmor(Materials.stainlesssteel);
@@ -893,7 +892,7 @@ public abstract class Items {
 		tantalum_crackhammer = create_crackhammer(Materials.tantalum);
 		tantalum_crossbow = create_crossbow(Materials.tantalum);
 		tantalum_door = create_door(Materials.tantalum, Blocks.tantalum_door);
-		tantalum_fishingrod = create_fishingrod(Materials.tantalum);
+		tantalum_fishing_rod = create_fishing_rod(Materials.tantalum);
 		tantalum_helmet = create_helmet(Materials.tantalum);
 		tantalum_hoe = create_hoe(Materials.tantalum);
 		tantalum_horsearmor = create_horsearmor(Materials.tantalum);
@@ -919,7 +918,7 @@ public abstract class Items {
 		titanium_crackhammer = create_crackhammer(Materials.titanium);
 		titanium_crossbow = create_crossbow(Materials.titanium);
 		titanium_door = create_door(Materials.titanium, Blocks.titanium_door);
-		titanium_fishingrod = create_fishingrod(Materials.titanium);
+		titanium_fishing_rod = create_fishing_rod(Materials.titanium);
 		titanium_helmet = create_helmet(Materials.titanium);
 		titanium_hoe = create_hoe(Materials.titanium);
 		titanium_horsearmor = create_horsearmor(Materials.titanium);
@@ -945,7 +944,7 @@ public abstract class Items {
 		tungsten_crackhammer = create_crackhammer(Materials.tungsten);
 		tungsten_crossbow = create_crossbow(Materials.tungsten);
 		tungsten_door = create_door(Materials.tungsten, Blocks.tungsten_door);
-		tungsten_fishingrod = create_fishingrod(Materials.tungsten);
+		tungsten_fishing_rod = create_fishing_rod(Materials.tungsten);
 		tungsten_helmet = create_helmet(Materials.tungsten);
 		tungsten_hoe = create_hoe(Materials.tungsten);
 		tungsten_horsearmor = create_horsearmor(Materials.tungsten);
@@ -970,7 +969,7 @@ public abstract class Items {
 		uranium_crackhammer = create_crackhammer(Materials.uranium);
 		uranium_crossbow = create_crossbow(Materials.uranium);
 		uranium_door = create_door(Materials.uranium, Blocks.uranium_door);
-		uranium_fishingrod = create_fishingrod(Materials.uranium);
+		uranium_fishing_rod = create_fishing_rod(Materials.uranium);
 		uranium_helmet = create_helmet(Materials.uranium);
 		uranium_hoe = create_hoe(Materials.uranium);
 		uranium_horsearmor = create_horsearmor(Materials.uranium);
@@ -995,7 +994,7 @@ public abstract class Items {
 		zirconium_crackhammer = create_crackhammer(Materials.zirconium);
 		zirconium_crossbow = create_crossbow(Materials.zirconium);
 		zirconium_door = create_door(Materials.zirconium, Blocks.zirconium_door);
-		zirconium_fishingrod = create_fishingrod(Materials.zirconium);
+		zirconium_fishing_rod = create_fishing_rod(Materials.zirconium);
 		zirconium_helmet = create_helmet(Materials.zirconium);
 		zirconium_hoe = create_hoe(Materials.zirconium);
 		zirconium_horsearmor = create_horsearmor(Materials.zirconium);
@@ -1165,8 +1164,8 @@ public abstract class Items {
 		return registerItem(new ItemMetalSmallBlend(metal), metal.getName()+"_"+"smallblend", metal, ItemGroups.tab_items);
 	}
 
-	private static Item create_fishingrod(MetalMaterial metal) {
-		return registerItem(new ItemMetalFishingRod(metal), metal.getName()+"_"+"fishingrod", metal, ItemGroups.tab_tools);
+	private static Item create_fishing_rod(MetalMaterial metal) {
+		return registerItem(new ItemMetalFishingRod(metal), metal.getName()+"_"+"fishing_rod", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_smallpowder(MetalMaterial metal) {
@@ -1187,18 +1186,17 @@ public abstract class Items {
 	 * @param a
 	 * @return
 	 */
-	@SuppressWarnings("rawtypes")
 	public static int getSortingValue(ItemStack a) {
 		int classVal = 990000;
 		int metalVal = 9900;
 		if(a.getItem() instanceof ItemBlock && ((ItemBlock)a.getItem()).getBlock() instanceof IMetalObject) {
 			classVal = classSortingValues.computeIfAbsent(((ItemBlock)a.getItem()).getBlock().getClass(),
-					(Class c)->990000);
+					(Class<?> c)->990000);
 			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)((ItemBlock)a.getItem()).getBlock()).getMetalMaterial(),
 					(MetalMaterial m)->9900);
 		} else if(a.getItem() instanceof IMetalObject) {
 			classVal = classSortingValues.computeIfAbsent(a.getItem().getClass(),
-					(Class c)->990000);
+					(Class<?> c)->990000);
 			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)a.getItem()).getMetalMaterial(),
 					(MetalMaterial m)->9900);
 		}
