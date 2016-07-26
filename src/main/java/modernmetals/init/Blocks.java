@@ -317,7 +317,7 @@ public abstract class Blocks {
 		block.setUnlocalizedName(location.toString());
 		GameRegistry.register(block);
 
-		if (!(block instanceof BlockMetalDoor)) {
+		if (!(block instanceof BlockMetalDoor) && !(block instanceof BlockMetalSlab) && !(block instanceof BlockHalfMetalSlab) && !(block instanceof BlockDoubleMetalSlab)) {
 			ItemBlock itemBlock = new ItemBlock(block);
 			itemBlock.setRegistryName(location);
 			itemBlock.setUnlocalizedName(location.toString());
@@ -354,6 +354,14 @@ public abstract class Blocks {
 
 	private static Block createPressurePlate(MetalMaterial metal) {
 		return addBlock(new BlockMetalPressurePlate(metal), metal.getName()+"_pressure_plate");
+	}
+
+	private static BlockSlab createSlab(MetalMaterial metal) {
+		return (BlockSlab)addBlock(new BlockHalfMetalSlab(metal), metal.getName()+"_slab");
+	}
+
+	private static BlockSlab createDoubleSlab(MetalMaterial metal) {
+		return (BlockSlab)addBlock(new BlockDoubleMetalSlab(metal), "double_"+metal.getName()+"_slab");
 	}
 
 	private static Block createStairs(MetalMaterial metal) {

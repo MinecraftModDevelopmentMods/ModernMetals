@@ -8,7 +8,9 @@ import cyano.basemetals.items.*;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
+import net.minecraft.block.BlockSlab;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
@@ -1170,6 +1172,61 @@ public abstract class Items {
 
 	private static Item create_smallpowder(MetalMaterial metal) {
 		return registerItem(new ItemMetalSmallPowder(metal), metal.getName()+"_"+"smallpowder", metal, ItemGroups.tab_items);
+	}
+
+	@SuppressWarnings("unused")
+	private static Item create_shield(MetalMaterial metal) {
+		return registerItem(new ItemMetalShield(metal), metal.getName()+"_"+"shield", metal, ItemGroups.tab_items);
+	}
+
+	private static Item create_crystal(MetalMaterial metal) {
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"crystal", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("crystal"+metal.getCapitalizedName(), i);
+		return i;
+	}
+
+	private static Item create_shard(MetalMaterial metal) {
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"shard", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("shard"+metal.getCapitalizedName(), i);
+		return i;
+	}
+
+	private static Item create_clump(MetalMaterial metal) {
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"clump", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("clump"+metal.getCapitalizedName(), i);
+		return i;
+	}
+
+	private static Item create_DirtyPowder(MetalMaterial metal) {
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"powder_dirty", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dustDirty"+metal.getCapitalizedName(), i);
+		return i;
+	}
+
+	// TODO: Possibly make this a block, 1/2 of the normal plate.
+	private static Item create_DensePlate(MetalMaterial metal) {
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"dense_plate", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("plateDense"+metal.getCapitalizedName(), i);
+		return i;
+	}
+
+	private static Item create_crushed(MetalMaterial metal) {
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"crushed", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("crushed"+metal.getCapitalizedName(), i);
+		return i;
+	}
+
+	private static Item create_crushedPurified(MetalMaterial metal) {
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"crushed_purified", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("crushedPurified"+metal.getCapitalizedName(), i);
+		return i;
+	}
+
+	private static Item create_slab(MetalMaterial metal, Block block, BlockSlab slab, BlockSlab doubleslab) {
+		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName()+"_"+"slab");
+		Item item = new ItemMetalSlab(metal, block, slab, doubleslab);
+		registerItem(item, location.getResourcePath(), metal, ItemGroups.tab_blocks);
+		return item;
 	}
 
 	private static Item create_door(MetalMaterial metal, BlockDoor door) {

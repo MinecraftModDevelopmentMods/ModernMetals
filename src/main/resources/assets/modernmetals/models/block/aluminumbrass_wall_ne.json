@@ -1,0 +1,6 @@
+{
+    "parent": "block/wall_ne",
+    "textures": {
+        "wall": "modernmetals:blocks/aluminumbrass_block"
+    }
+}

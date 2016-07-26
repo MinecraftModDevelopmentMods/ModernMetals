@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "modernmetals:tungsten_pressure_plate_up" },
+        "powered=true": { "model": "modernmetals:tungsten_pressure_plate_down" }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "modernmetals:galvanizedsteel_pressure_plate_up" },
+        "powered=true": { "model": "modernmetals:galvanizedsteel_pressure_plate_down" }
+    }
+}
