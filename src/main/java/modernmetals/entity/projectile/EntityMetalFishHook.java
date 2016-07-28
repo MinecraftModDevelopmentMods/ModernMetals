@@ -433,10 +433,10 @@ public class EntityMetalFishHook extends EntityFishHook {
 			}
 			else if (this.ticksCatchable > 0)
 			{
-				LootContext.Builder lootcontext$builder = new LootContext.Builder((WorldServer)this.worldObj);
-				lootcontext$builder.withLuck((float)EnchantmentHelper.getLuckOfSeaModifier(this.angler) + this.angler.getLuck());
+				LootContext.Builder lootcontext = new LootContext.Builder((WorldServer)this.worldObj);
+				lootcontext.withLuck((float)EnchantmentHelper.getLuckOfSeaModifier(this.angler) + this.angler.getLuck());
 
-				for (ItemStack itemstack : this.worldObj.getLootTableManager().getLootTableFromLocation(LootTableList.GAMEPLAY_FISHING).generateLootForPools(this.rand, lootcontext$builder.build()))
+				for (ItemStack itemstack : this.worldObj.getLootTableManager().getLootTableFromLocation(LootTableList.GAMEPLAY_FISHING).generateLootForPools(this.rand, lootcontext.build()))
 				{
 					EntityItem entityitem = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, itemstack);
 					double d0 = this.angler.posX - this.posX;
