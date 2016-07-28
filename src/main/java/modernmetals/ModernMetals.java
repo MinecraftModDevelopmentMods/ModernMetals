@@ -17,6 +17,7 @@ import modernmetals.data.AdditionalLootTables;
 import modernmetals.data.DataConstants;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -69,13 +70,13 @@ public class ModernMetals
 		config.load();
 
 		oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(), "orespawn");
-		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
+		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID + ".json");
 		if(!Files.exists(oreSpawnFile)) {
 			try {
 				Files.createDirectories(oreSpawnFile.getParent());
 				Files.write(oreSpawnFile, Arrays.asList(DataConstants.defaultOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
 			} catch (IOException e) {
-				FMLLog.severe(MODID+": Error: Failed to write file "+oreSpawnFile);
+				FMLLog.severe(MODID + ": Error: Failed to write file " + oreSpawnFile);
 			}
 		}
 

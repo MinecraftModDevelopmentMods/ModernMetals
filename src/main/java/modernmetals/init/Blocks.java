@@ -596,8 +596,10 @@ public abstract class Blocks {
 
 		// final block settings
 		for(Block b : allBlocks.values()) {
-			if(b instanceof IOreDictionaryEntry) { OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b); }
-			if(!(b instanceof BlockMetalDoor)) b.setCreativeTab(ItemGroups.tab_blocks);
+			if(b instanceof IOreDictionaryEntry)
+				OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);
+			if(!(b instanceof BlockMetalDoor))
+				b.setCreativeTab(ItemGroups.tab_blocks);
 		}
 
 		initDone = true;
@@ -609,7 +611,7 @@ public abstract class Blocks {
 		block.setUnlocalizedName(location.toString());
 		GameRegistry.register(block);
 
-		if (!(block instanceof BlockMetalDoor) && !(block instanceof BlockMetalSlab) && !(block instanceof BlockHalfMetalSlab) && !(block instanceof BlockDoubleMetalSlab)) {
+		if (!(block instanceof BlockMetalDoor) && !(block instanceof BlockMetalSlab)) {
 			ItemBlock itemBlock = new ItemBlock(block);
 			itemBlock.setRegistryName(location);
 			itemBlock.setUnlocalizedName(location.toString());
@@ -621,11 +623,11 @@ public abstract class Blocks {
 	}
 
 	private static Block createPlate(MetalMaterial metal) {
-		return addBlock(new BlockMetalPlate(metal), metal.getName()+"_plate");
+		return addBlock(new BlockMetalPlate(metal), metal.getName() + "_plate");
 	}
 
 	private static Block createBars(MetalMaterial metal) {
-		return addBlock(new BlockMetalBars(metal), metal.getName()+"_bars");
+		return addBlock(new BlockMetalBars(metal), metal.getName() + "_bars");
 	}
 
 	private static Block createBlock(MetalMaterial metal) {
@@ -633,47 +635,47 @@ public abstract class Blocks {
 	}
 
 	private static Block createBlock(MetalMaterial metal, boolean glow) {
-		return addBlock(new BlockMetalBlock(metal, glow), metal.getName()+"_block");
+		return addBlock(new BlockMetalBlock(metal, glow), metal.getName() + "_block");
 	}
 
 	private static Block createButton(MetalMaterial metal) {
-		return addBlock(new BlockButtonMetal(metal), metal.getName()+"_button");
+		return addBlock(new BlockButtonMetal(metal), metal.getName() + "_button");
 	}
 
 	private static Block createLever(MetalMaterial metal) {
-		return addBlock(new BlockMetalLever(metal), metal.getName()+"_lever");
+		return addBlock(new BlockMetalLever(metal), metal.getName() + "_lever");
 	}
 
 	private static Block createPressurePlate(MetalMaterial metal) {
-		return addBlock(new BlockMetalPressurePlate(metal), metal.getName()+"_pressure_plate");
+		return addBlock(new BlockMetalPressurePlate(metal), metal.getName() + "_pressure_plate");
 	}
 
 	private static BlockSlab createSlab(MetalMaterial metal) {
-		return (BlockSlab)addBlock(new BlockHalfMetalSlab(metal), metal.getName()+"_slab");
+		return (BlockSlab)addBlock(new BlockHalfMetalSlab(metal), metal.getName() + "_slab");
 	}
 
 	private static BlockSlab createDoubleSlab(MetalMaterial metal) {
-		return (BlockSlab)addBlock(new BlockDoubleMetalSlab(metal), "double_"+metal.getName()+"_slab");
+		return (BlockSlab)addBlock(new BlockDoubleMetalSlab(metal), "double_" + metal.getName() + "_slab");
 	}
 
 	private static Block createStairs(MetalMaterial metal) {
-		return addBlock(new BlockMetalStairs(metal), metal.getName()+"_stairs");
+		return addBlock(new BlockMetalStairs(metal), metal.getName() + "_stairs");
 	}
 
 	private static Block createWall(MetalMaterial metal) {
-		return addBlock(new BlockMetalWall(metal), metal.getName()+"_wall");
+		return addBlock(new BlockMetalWall(metal), metal.getName() + "_wall");
 	}
 
 	private static Block createOre(MetalMaterial metal) {
-		return addBlock(new BlockMetalOre(metal), metal.getName()+"_ore");
+		return addBlock(new BlockMetalOre(metal), metal.getName() + "_ore");
 	}
 
 	private static BlockDoor createDoor(MetalMaterial metal) {
-		return (BlockDoor)addBlock(new modernmetals.blocks.BlockMetalDoor(metal), metal.getName()+"_door");
+		return (BlockDoor)addBlock(new modernmetals.blocks.BlockMetalDoor(metal), metal.getName() + "_door");
 	}
 
 	private static Block createTrapDoor(MetalMaterial metal) {
-		return addBlock(new BlockMetalTrapDoor(metal), metal.getName()+"_trapdoor");
+		return addBlock(new BlockMetalTrapDoor(metal), metal.getName() + "_trapdoor");
 	}
 
 	/**
@@ -685,7 +687,7 @@ public abstract class Blocks {
 		for(String name : allBlocks.keySet()) {
 			if(allBlocks.get(name) instanceof BlockDoor) continue; // do not add door blocks
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-			.register(net.minecraft.item.Item.getItemFromBlock(allBlocks.get(name)), 0, 
+			.register(net.minecraft.item.Item.getItemFromBlock(allBlocks.get(name)), 0,
 				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, name), "inventory"));
 		}
 	}

@@ -23,7 +23,7 @@ public class ItemMetalSmallPowder extends Item implements IOreDictionaryEntry, I
 	public ItemMetalSmallPowder(MetalMaterial metal) {
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "dustTiny"+metal.getCapitalizedName();
+		this.oreDict = "dustTiny" + metal.getCapitalizedName();
 	}
 
 	@Override

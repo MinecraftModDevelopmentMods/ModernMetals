@@ -8,6 +8,9 @@ import cyano.basemetals.items.*;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import modernmetals.items.ItemMetalBlend;
+import modernmetals.items.ItemMetalIngot;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockSlab;
@@ -1446,7 +1449,8 @@ public abstract class Items {
 
 		for(Item i : itemRegistry.keySet()) {
 			allItems.put(itemRegistry.get(i), i);
-			if(i instanceof IOreDictionaryEntry) { OreDictionary.registerOre(((IOreDictionaryEntry)i).getOreDictionaryName(), i); }
+			if(i instanceof IOreDictionaryEntry)
+				OreDictionary.registerOre(((IOreDictionaryEntry)i).getOreDictionaryName(), i);
 		}
 
 		int ss = 0;
@@ -1457,10 +1461,10 @@ public abstract class Items {
 		classSortingValues.put(BlockMetalDoor.class, ++ss * 10000);
 		classSortingValues.put(BlockMetalTrapDoor.class, ++ss * 10000);
 		classSortingValues.put(InteractiveFluidBlock.class, ++ss * 10000);
-		classSortingValues.put(modernmetals.items.ItemMetalIngot.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalIngot.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalNugget.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalPowder.class, ++ss * 10000);
-		classSortingValues.put(modernmetals.items.ItemMetalBlend.class, classSortingValues.get(ItemMetalPowder.class));
+		classSortingValues.put(ItemMetalBlend.class, classSortingValues.get(ItemMetalPowder.class));
 		classSortingValues.put(ItemMetalCrackHammer.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalPickaxe.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalShovel.class, ++ss * 10000);
@@ -1475,14 +1479,14 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalCrossbow.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalShears.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalSmallPowder.class, ++ss * 10000);
-		classSortingValues.put(modernmetals.items.ItemMetalSmallBlend.class, classSortingValues.get(ItemMetalSmallPowder.class));
+		classSortingValues.put(ItemMetalSmallBlend.class, classSortingValues.get(ItemMetalSmallPowder.class));
 		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
 
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
 		metlist.addAll(Materials.getAllMetals());
 		metlist.sort((MetalMaterial a, MetalMaterial b)-> a.getName().compareToIgnoreCase(b.getName()));
 		for(int i = 0; i < metlist.size(); i++) {
-			materialSortingValues.put(metlist.get(i), i*100);
+			materialSortingValues.put(metlist.get(i), i * 100);
 		}
 
 		initDone = true;
@@ -1505,177 +1509,177 @@ public abstract class Items {
 	}
 
 	private static Item create_ingot(MetalMaterial metal) {
-//		return registerItem(new modernmetals.items.ItemMetalIngot(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("ingot"+metal.getCapitalizedName(), i);
+//		return registerItem(new modernmetals.items.ItemMetalIngot(metal), metal.getName() + "_ingot", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_ingot", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("ingot" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_nugget(MetalMaterial metal) {
-//		return registerItem(new ItemMetalNugget(metal), metal.getName()+"_"+"nugget", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"nugget", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("nugget"+metal.getCapitalizedName(), i);
+//		return registerItem(new ItemMetalNugget(metal), metal.getName() + "_nugget", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_nugget", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("nugget" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_powder(MetalMaterial metal) {
-//		return registerItem(new ItemMetalPowder(metal), metal.getName()+"_"+"powder", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"powder", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("dust"+metal.getCapitalizedName(), i);
+//		return registerItem(new ItemMetalPowder(metal), metal.getName() + "_powder", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_powder", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dust" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_blend(MetalMaterial metal) {
-//		return registerItem(new modernmetals.items.ItemMetalBlend(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("dust"+metal.getCapitalizedName(), i);
+//		return registerItem(new modernmetals.items.ItemMetalBlend(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dust" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_rod(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"rod", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("rod"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_rod", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("rod" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_gear(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"gear", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("gear"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_gear", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("gear" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_axe(MetalMaterial metal) {
-		return registerItem(new ItemMetalAxe(metal), metal.getName()+"_"+"axe", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalAxe(metal), metal.getName() + "_axe", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_crackhammer(MetalMaterial metal) {
-		return registerItem(new ItemMetalCrackHammer(metal), metal.getName()+"_"+"crackhammer", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalCrackHammer(metal), metal.getName() + "_crackhammer", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_hoe(MetalMaterial metal) {
-		return registerItem(new ItemMetalHoe(metal), metal.getName()+"_"+"hoe", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalHoe(metal), metal.getName() + "_hoe", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_pickaxe(MetalMaterial metal) {
-		return registerItem(new ItemMetalPickaxe(metal), metal.getName()+"_"+"pickaxe", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalPickaxe(metal), metal.getName() + "_pickaxe", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_shovel(MetalMaterial metal) {
-		return registerItem(new ItemMetalShovel(metal), metal.getName()+"_"+"shovel", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalShovel(metal), metal.getName() + "_shovel", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_sword(MetalMaterial metal) {
-		return registerItem(new ItemMetalSword(metal), metal.getName()+"_"+"sword", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalSword(metal), metal.getName() + "_sword", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_helmet(MetalMaterial metal) {
-		return registerItem(ItemMetalArmor.createHelmet(metal), metal.getName()+"_"+"helmet", metal, ItemGroups.tab_tools);
+		return registerItem(ItemMetalArmor.createHelmet(metal), metal.getName() + "_helmet", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_chestplate(MetalMaterial metal) {
-		return registerItem(ItemMetalArmor.createChestplate(metal), metal.getName()+"_"+"chestplate", metal, ItemGroups.tab_tools);
+		return registerItem(ItemMetalArmor.createChestplate(metal), metal.getName() + "_chestplate", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_leggings(MetalMaterial metal) {
-		return registerItem(ItemMetalArmor.createLeggings(metal), metal.getName()+"_"+"leggings", metal, ItemGroups.tab_tools);
+		return registerItem(ItemMetalArmor.createLeggings(metal), metal.getName() + "_leggings", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_boots(MetalMaterial metal) {
-		return registerItem(ItemMetalArmor.createBoots(metal), metal.getName()+"_"+"boots", metal, ItemGroups.tab_tools);
+		return registerItem(ItemMetalArmor.createBoots(metal), metal.getName() + "_boots", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_horsearmor(MetalMaterial metal) {
-		return registerItem(new ItemMetalHorseArmor(metal), metal.getName()+"_"+"horsearmor", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalHorseArmor(metal), metal.getName() + "_horsearmor", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_arrow(MetalMaterial metal) {
-		return registerItem(new ItemMetalArrow(metal), metal.getName()+"_"+"arrow", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalArrow(metal), metal.getName() + "_arrow", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_bolt(MetalMaterial metal) {
-		return registerItem(new ItemMetalBolt(metal), metal.getName()+"_"+"bolt", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalBolt(metal), metal.getName() + "_bolt", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_bow(MetalMaterial metal) {
-		return registerItem(new ItemMetalBow(metal), metal.getName()+"_"+"bow", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalBow(metal), metal.getName() + "_bow", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_crossbow(MetalMaterial metal) {
-		return registerItem(new ItemMetalCrossbow(metal), metal.getName()+"_"+"crossbow", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalCrossbow(metal), metal.getName() + "_crossbow", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_shears(MetalMaterial metal) {
-		return registerItem(new ItemMetalShears(metal), metal.getName()+"_"+"shears", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalShears(metal), metal.getName() + "_shears", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_smallblend(MetalMaterial metal) {
-//		return registerItem(new ItemMetalSmallBlend(metal), metal.getName()+"_"+"smallblend", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"smallblend", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("dustTiny"+metal.getCapitalizedName(), i);
+//		return registerItem(new ItemMetalSmallBlend(metal), metal.getName() + "_smallblend", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_smallblend", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dustTiny" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_fishing_rod(MetalMaterial metal) {
-		return registerItem(new ItemMetalFishingRod(metal), metal.getName()+"_"+"fishing_rod", metal, ItemGroups.tab_tools);
+		return registerItem(new ItemMetalFishingRod(metal), metal.getName() + "_fishing_rod", metal, ItemGroups.tab_tools);
 	}
 
 	private static Item create_smallpowder(MetalMaterial metal) {
-//		return registerItem(new ItemMetalSmallPowder(metal), metal.getName()+"_"+"smallpowder", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"smallpowder", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("dustTiny"+metal.getCapitalizedName(), i);
+//		return registerItem(new ItemMetalSmallPowder(metal), metal.getName() + "_smallpowder", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_smallpowder", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dustTiny" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	@SuppressWarnings("unused")
 	private static Item create_shield(MetalMaterial metal) {
-		return registerItem(new ItemMetalShield(metal), metal.getName()+"_"+"shield", metal, ItemGroups.tab_items);
+		return registerItem(new ItemMetalShield(metal), metal.getName() + "_shield", metal, ItemGroups.tab_items);
 	}
 
 	private static Item create_crystal(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"crystal", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("crystal"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crystal", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("crystal" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_shard(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"shard", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("shard"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_shard", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("shard" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_clump(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"clump", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("clump"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_clump", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("clump" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_DirtyPowder(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"powder_dirty", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("dustDirty"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_powder_dirty", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dustDirty" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	// TODO: Possibly make this a block, 1/2 of the normal plate.
 	private static Item create_DensePlate(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"dense_plate", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("plateDense"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_dense_plate", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("plateDense" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_crushed(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"crushed", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("crushed"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crushed", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("crushed" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_crushedPurified(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"crushed_purified", metal, ItemGroups.tab_items);
-		OreDictionary.registerOre("crushedPurified"+metal.getCapitalizedName(), i);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crushed_purified", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("crushedPurified" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_slab(MetalMaterial metal, Block block, BlockSlab slab, BlockSlab doubleslab) {
-		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName()+"_"+"slab");
+		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName() + "_slab");
 		Item item = new ItemMetalSlab(metal, block, slab, doubleslab);
 		registerItem(item, location.getResourcePath(), metal, ItemGroups.tab_blocks);
 //		item.setUnlocalizedName(location.toString()); // Hack to set name right
@@ -1683,9 +1687,9 @@ public abstract class Items {
 	}
 
 	private static Item create_door(MetalMaterial metal, BlockDoor door) {
-		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName()+"_"+"door");
+		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName() + "_door");
 		Item item = new ItemMetalDoor(door, metal);
-		registerItem(item, location.getResourcePath()+"_"+"item", metal, ItemGroups.tab_blocks);
+		registerItem(item, location.getResourcePath() + "_item", metal, ItemGroups.tab_blocks);
 		item.setUnlocalizedName(location.toString()); // Hack to set name right
 		doorMap.put(door, item);
 		return item;

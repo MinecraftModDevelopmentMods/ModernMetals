@@ -20,7 +20,7 @@ import java.util.Random;
 public class BlockMetalDoor extends cyano.basemetals.blocks.BlockMetalDoor {
 
 	/**
-	 * 
+	 *
 	 * @param metal
 	 */
 	public BlockMetalDoor(MetalMaterial metal) {

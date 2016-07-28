@@ -1,6 +1,8 @@
 package modernmetals.init;
 
 import modernmetals.init.Fluids;
+import modernmetals.utils.StringUtilities;
+
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.fluids.Fluid;
@@ -42,10 +44,10 @@ public class TinkersConstructPlugin {
 			registerFluid(Fluids.fluidZirconium, true);
 			
 //			registerAlloy("aluminumbrass", 2, "aluminum", 1, "brass", 1); // TCon already has Aluminum Brass alloy
-			registerAlloy("galvanizedsteel", 2, "steel", 1, "zinc", 1);
-			registerAlloy("nichrome", 2, "nickel", 1, "chrome", 1);
-			registerAlloy("stainlesssteel", 2, "steel", 1, "chrome", 1);
-			registerAlloy("titanium", 2, "rutile", 1, "magnesium", 1);
+			registerAlloy("galvanizedsteel", 2, new String[] {"steel", "zinc"}, new int[] {1, 1});
+			registerAlloy("nichrome", 2,  new String[] {"nickel", "chrome"}, new int[] {1, 1});
+			registerAlloy("stainlesssteel", 2,  new String[] {"steel", "chrome"}, new int[] {1, 1});
+			registerAlloy("titanium", 2,  new String[] {"rutile", "magnesium"}, new int[] {1, 1});
 		}
 
 		initDone = true;
@@ -60,7 +62,7 @@ public class TinkersConstructPlugin {
 		if(Loader.isModLoaded("tconstruct")) {
 			NBTTagCompound message = new NBTTagCompound();
 			message.setString("fluid", fluid.getName());
-			message.setString("ore", upperCaseFirst(fluid.getName()));
+			message.setString("ore", StringUtilities.upperCaseFirst(fluid.getName()));
 			message.setBoolean("toolforge", toolforge);
 			//message.setTag("alloy", alloysTagList); // you can also send an alloy with the registration (see below)
 
@@ -73,15 +75,15 @@ public class TinkersConstructPlugin {
 	 * 
 	 * @param outputName
 	 * @param outputQty
-	 * @param input1Name
-	 * @param input1Qty
-	 * @param input2Name
-	 * @param input2Qty
+	 * @param inputName
+	 * @param inputQty
 	 */
-	public static void registerAlloy(String outputName, int outputQty, String input1Name, int input1Qty, String input2Name, int input2Qty)
+	public static void registerAlloy(String outputName, int outputQty, String[] inputName, int[] inputQty)
 	{
-		// TODO: Make this accept more than two input fluids
 		if(Loader.isModLoaded("tconstruct")) {
+			if(inputName.length != inputQty.length)
+				throw new RuntimeException("Alloy must have the same amount of inputName and intQty");
+
 			NBTTagList tagList = new NBTTagList();
 			
 			// if you have access to the fluid-instance you can also do FluidStack.writeToNBT
@@ -90,33 +92,17 @@ public class TinkersConstructPlugin {
 			fluid.setInteger("Amount", outputQty); // 144 = 1 ingot, 16 = 1 nugget
 			tagList.appendTag(fluid);
 		
-			// first alloy fluid
-			fluid = new NBTTagCompound();
-			fluid.setString("FluidName", input1Name);
-			fluid.setInteger("Amount", input1Qty);
-			tagList.appendTag(fluid);
-		
-			// second alloy fluid
-			fluid = new NBTTagCompound();
-			fluid.setString("FluidName", input2Name);
-			fluid.setInteger("Amount", input2Qty);
-			tagList.appendTag(fluid);
+			// alloy fluid
+			for(int i = 0; i < inputName.length; i++) {
+				fluid = new NBTTagCompound();
+				fluid.setString("FluidName", inputName[i]);
+				fluid.setInteger("Amount", inputQty[i]);
+				tagList.appendTag(fluid);
+			}
 
 			NBTTagCompound message = new NBTTagCompound();
 			message.setTag("alloy", tagList);
 			FMLInterModComms.sendMessage("tconstruct", "alloy", message);
 		}
-	}
-
-	/**
-	 * 
-	 * @param value
-	 * @return
-	 */
-	public static String upperCaseFirst(String value) {
-
-		char[] array = value.toCharArray();
-		array[0] = Character.toUpperCase(array[0]);
-		return new String(array);
 	}
 }

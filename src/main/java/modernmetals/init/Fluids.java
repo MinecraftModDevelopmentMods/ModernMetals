@@ -190,15 +190,8 @@ public abstract class Fluids {
 			Item item = Item.getItemFromBlock(block);
 			final ModelResourceLocation fluidModelLocation = new ModelResourceLocation(
 					modID.toLowerCase() + ":" + fluidBlockNames.get(block), "fluid");
-            ModelBakery.registerItemVariants(item);
-			ModelLoader.setCustomMeshDefinition(item, new ItemMeshDefinition()
-			{
-				@Override
-				public ModelResourceLocation getModelLocation(ItemStack stack)
-				{
-					return fluidModelLocation;
-				}
-			});
+			ModelBakery.registerItemVariants(item);
+			ModelLoader.setCustomMeshDefinition(item, stack -> fluidModelLocation);
 			ModelLoader.setCustomStateMapper(block, new StateMapperBase()
 			{
 				@Override
@@ -211,12 +204,12 @@ public abstract class Fluids {
 	}
 
 	private static Fluid newFluid(String modID, String name, int density, int viscosity, int temperature, int luminosity, int tintColor) {
-		Fluid fluid = new CustomFluid(name, new ResourceLocation(modID+":blocks/molten_metal_still"), new ResourceLocation(modID+":blocks/molten_metal_flow"), tintColor);
+		Fluid fluid = new CustomFluid(name, new ResourceLocation(modID + ":blocks/molten_metal_still"), new ResourceLocation(modID + ":blocks/molten_metal_flow"), tintColor);
 		fluid.setDensity(density);
 		fluid.setViscosity(viscosity);
 		fluid.setTemperature(temperature);
 		fluid.setLuminosity(luminosity);
-		fluid.setUnlocalizedName(modID+"."+name);
+		fluid.setUnlocalizedName(modID + "." + name);
 		FluidRegistry.registerFluid(fluid);
 		FluidRegistry.addBucketForFluid(fluid);
 		return fluid;

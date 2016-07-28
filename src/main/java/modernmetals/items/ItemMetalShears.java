@@ -33,16 +33,17 @@ public class ItemMetalShears extends ItemShears {
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		this.setCreativeTab(CreativeTabs.TOOLS);
-		repairOreDictName = "ingot"+metal.getCapitalizedName();
+		repairOreDictName = "ingot" + metal.getCapitalizedName();
 		regenerates = metal.equals(Materials.starsteel);
 	}
 
 	@Override
 	public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
 		List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
-		for(ItemStack i : acceptableItems ) {
-			if(ItemStack.areItemsEqual(i, repairMaterial)) return true;
-		}
+		for(ItemStack i : acceptableItems)
+			if(ItemStack.areItemsEqual(i, repairMaterial))
+				return true;
+
 		return false;
 	}
 

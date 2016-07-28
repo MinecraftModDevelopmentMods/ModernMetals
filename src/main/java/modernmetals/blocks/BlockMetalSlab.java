@@ -15,9 +15,9 @@ import net.minecraft.util.IStringSerializable;
 
 public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 
-    public static final PropertyEnum<BlockMetalSlab.Variant> VARIANT = PropertyEnum.<BlockMetalSlab.Variant>create("variant", BlockMetalSlab.Variant.class);
+	public static final PropertyEnum<BlockMetalSlab.Variant> VARIANT = PropertyEnum.<BlockMetalSlab.Variant>create("variant", BlockMetalSlab.Variant.class);
 
-    final MetalMaterial metal;
+	final MetalMaterial metal;
 
 	public BlockMetalSlab(MetalMaterial metal) {
 		super(Material.IRON);
@@ -27,53 +27,53 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 		this.blockResistance = metal.getBlastResistance();
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 		
-        IBlockState iblockstate = this.blockState.getBaseState();
+		IBlockState iblockstate = this.blockState.getBaseState();
 
-        if (!this.isDouble())
-        {
-            iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
-        }
+		if (!this.isDouble())
+		{
+			iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
+		}
 
 		this.setDefaultState(iblockstate.withProperty(VARIANT, BlockMetalSlab.Variant.DEFAULT));
 	}
 
-    public IBlockState getStateFromMeta(int meta)
-    {
-        IBlockState iblockstate = this.getDefaultState().withProperty(VARIANT, BlockMetalSlab.Variant.DEFAULT);
+	public IBlockState getStateFromMeta(int meta)
+	{
+		IBlockState iblockstate = this.getDefaultState().withProperty(VARIANT, BlockMetalSlab.Variant.DEFAULT);
 
-        if (!this.isDouble())
-        {
-            iblockstate = iblockstate.withProperty(HALF, (meta & 8) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
-        }
+		if (!this.isDouble())
+		{
+			iblockstate = iblockstate.withProperty(HALF, (meta & 8) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
+		}
 
-        return iblockstate;
-    }
+		return iblockstate;
+	}
 
-    /**
-     * Convert the BlockState into the correct metadata value
-     */
-    public int getMetaFromState(IBlockState state)
-    {
-        int i = 0;
+	/**
+	 * Convert the BlockState into the correct metadata value
+	 */
+	public int getMetaFromState(IBlockState state)
+	{
+		int i = 0;
 
-        if (!this.isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
-        {
-            i |= 8;
-        }
+		if (!this.isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
+		{
+			i |= 8;
+		}
 
-        return i;
-    }
+		return i;
+	}
 
-    protected BlockStateContainer createBlockState()
-    {
-        return this.isDouble() ? new BlockStateContainer(this, new IProperty[] {VARIANT}): new BlockStateContainer(this, new IProperty[] {HALF, VARIANT});
-    }
+	protected BlockStateContainer createBlockState()
+	{
+		return this.isDouble() ? new BlockStateContainer(this, new IProperty[] {VARIANT}): new BlockStateContainer(this, new IProperty[] {HALF, VARIANT});
+	}
 
 	@Override
-    public String getUnlocalizedName(int meta)
-    {
-        return super.getUnlocalizedName();
-    }
+	public String getUnlocalizedName(int meta)
+	{
+		return super.getUnlocalizedName();
+	}
 
 	@Override
 	public boolean isDouble() {
@@ -90,15 +90,15 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 		return BlockMetalSlab.Variant.DEFAULT;
 	}
 
-    public static enum Variant implements IStringSerializable
-    {
-        DEFAULT;
+	public enum Variant implements IStringSerializable
+	{
+		DEFAULT;
 
-        public String getName()
-        {
-            return "default";
-        }
-    }
+		public String getName()
+		{
+			return "default";
+		}
+	}
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
@@ -107,6 +107,6 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 
 //	@Override
 //	public String getOreDictionaryName() {
-//		return "slab"+metal.getCapitalizedName();
+//		return "slab" + metal.getCapitalizedName();
 //	}
 }

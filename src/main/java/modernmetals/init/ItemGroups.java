@@ -39,8 +39,9 @@ public class ItemGroups {
 		tab_blocks = new FunctionalCreativeTab(ModernMetals.MODID.concat(".blocks"), false,
 				()->Items.aluminum_crackhammer, 
 				(ItemStack a,ItemStack b)->{
-					int delta = Items.getSortingValue(a)-Items.getSortingValue(b);
-					if(delta == 0) return a.getItem().getUnlocalizedName().compareToIgnoreCase(b.getItem().getUnlocalizedName());
+					int delta = Items.getSortingValue(a) - Items.getSortingValue(b);
+					if(delta == 0)
+						return a.getItem().getUnlocalizedName().compareToIgnoreCase(b.getItem().getUnlocalizedName());
 					return delta;
 				});
 //		tab_items = new FunctionalCreativeTab(ModernMetals.MODID.concat(".items"), ()->itemItem);

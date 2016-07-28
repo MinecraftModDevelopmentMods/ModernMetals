@@ -11,7 +11,7 @@ public class BlockMetalWall extends BlockWall implements IOreDictionaryEntry, IM
 	final MetalMaterial metal;
 
 	public BlockMetalWall(MetalMaterial metal) {
-		super(modernmetals.init.Blocks.getBlockByName(metal.getName()+"_block"));
+		super(modernmetals.init.Blocks.getBlockByName(metal.getName() + "_block"));
 		this.setSoundType(SoundType.METAL);
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
@@ -26,6 +26,6 @@ public class BlockMetalWall extends BlockWall implements IOreDictionaryEntry, IM
 
 	@Override
 	public String getOreDictionaryName() {
-		return "wall"+metal.getCapitalizedName();
+		return "wall" + metal.getCapitalizedName();
 	}
 }
