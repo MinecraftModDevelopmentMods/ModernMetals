@@ -18,7 +18,7 @@ public class ItemMetalShield extends ItemShield implements IOreDictionaryEntry, 
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		this.setCreativeTab(CreativeTabs.TOOLS);
-		repairOreDictName = "ingot"+metal.getCapitalizedName();
+		repairOreDictName = "ingot" + metal.getCapitalizedName();
 		regenerates = metal.equals(Materials.starsteel);
 	}
 
@@ -29,6 +29,6 @@ public class ItemMetalShield extends ItemShield implements IOreDictionaryEntry, 
 
 	@Override
 	public String getOreDictionaryName() {
-		return "shield"+metal.getCapitalizedName();
+		return "shield" + metal.getCapitalizedName();
 	}
 }

@@ -28,7 +28,7 @@ public class ItemMetalSmallBlend extends Item implements IOreDictionaryEntry, IM
 	public ItemMetalSmallBlend(MetalMaterial metal) {
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "dustTiny"+metal.getCapitalizedName(); // same oreDict entry as powder
+		this.oreDict = "dustTiny" + metal.getCapitalizedName(); // same oreDict entry as powder
 	}
 
 	@Override

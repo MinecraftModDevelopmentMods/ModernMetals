@@ -90,7 +90,7 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 		return BlockMetalSlab.Variant.DEFAULT;
 	}
 
-    public static enum Variant implements IStringSerializable
+    public enum Variant implements IStringSerializable
     {
         DEFAULT;
 
@@ -107,6 +107,6 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 
 //	@Override
 //	public String getOreDictionaryName() {
-//		return "slab"+metal.getCapitalizedName();
+//		return "slab" + metal.getCapitalizedName();
 //	}
 }

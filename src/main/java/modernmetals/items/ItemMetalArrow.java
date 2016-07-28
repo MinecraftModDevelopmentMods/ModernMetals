@@ -24,7 +24,7 @@ public class ItemMetalArrow extends ItemArrow implements IOreDictionaryEntry, IM
 	public ItemMetalArrow(MetalMaterial metal) {
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "arrow"+metal.getCapitalizedName();
+		this.oreDict = "arrow" + metal.getCapitalizedName();
 	}
 
 	@Override

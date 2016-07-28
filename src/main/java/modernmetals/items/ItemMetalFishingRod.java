@@ -48,7 +48,7 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 		this.setMaxDamage(64);
         this.setMaxStackSize(1);
 		this.setCreativeTab(CreativeTabs.TOOLS);
-		repairOreDictName = "ingot"+metal.getCapitalizedName();
+		repairOreDictName = "ingot" + metal.getCapitalizedName();
 		this.addPropertyOverride(new ResourceLocation("cast"), new IItemPropertyGetter()
 		{
 			@SideOnly(Side.CLIENT)

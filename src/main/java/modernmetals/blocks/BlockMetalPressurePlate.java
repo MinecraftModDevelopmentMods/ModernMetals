@@ -27,6 +27,6 @@ public class BlockMetalPressurePlate extends BlockPressurePlate implements IOreD
 
 	@Override
 	public String getOreDictionaryName() {
-		return "pressure"+metal.getCapitalizedName();
+		return "pressure" + metal.getCapitalizedName();
 	}
 }
