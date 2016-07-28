@@ -59,6 +59,18 @@ public abstract class Items {
 	public static Item aluminum_rod;
 	public static Item aluminum_gear;
 
+	public static Item aluminum_slab;
+//	public static Item aluminum_shield;
+
+	public static Item aluminum_crystal;
+	public static Item aluminum_shard;
+	public static Item aluminum_clump;
+	public static Item aluminum_powder_dirty;
+
+	public static Item aluminum_dense_plate;
+	public static Item aluminum_crushed;
+	public static Item aluminum_crushed_purified;
+
 	public static Item aluminumbrass_arrow;
 	public static Item aluminumbrass_axe;
 	public static Item aluminumbrass_blend;
@@ -86,6 +98,18 @@ public abstract class Items {
 	public static Item aluminumbrass_rod;
 	public static Item aluminumbrass_gear;
 
+	public static Item aluminumbrass_slab;
+//	public static Item aluminumbrass_shield;
+
+//	public static Item aluminumbrass_crystal;
+//	public static Item aluminumbrass_shard;
+//	public static Item aluminumbrass_clump;
+//	public static Item aluminumbrass_powder_dirty;
+
+	public static Item aluminumbrass_dense_plate;
+//	public static Item aluminumbrass_crushed;
+//	public static Item aluminumbrass_crushed_purified;
+
 	public static Item cadmium_arrow;
 	public static Item cadmium_axe;
 	public static Item cadmium_boots;
@@ -111,6 +135,18 @@ public abstract class Items {
 	public static Item cadmium_rod;
 	public static Item cadmium_gear;
 
+	public static Item cadmium_slab;
+//	public static Item cadmium_shield;
+
+	public static Item cadmium_crystal;
+	public static Item cadmium_shard;
+	public static Item cadmium_clump;
+	public static Item cadmium_powder_dirty;
+
+	public static Item cadmium_dense_plate;
+	public static Item cadmium_crushed;
+	public static Item cadmium_crushed_purified;
+
 	public static Item chromium_arrow;
 	public static Item chromium_axe;
 	public static Item chromium_boots;
@@ -135,6 +171,18 @@ public abstract class Items {
 	public static Item chromium_sword;
 	public static Item chromium_rod;
 	public static Item chromium_gear;
+
+	public static Item chromium_slab;
+//	public static Item chromium_shield;
+
+	public static Item chromium_crystal;
+	public static Item chromium_shard;
+	public static Item chromium_clump;
+	public static Item chromium_powder_dirty;
+
+	public static Item chromium_dense_plate;
+	public static Item chromium_crushed;
+	public static Item chromium_crushed_purified;
 
 	public static Item galvanizedsteel_arrow;
 	public static Item galvanizedsteel_axe;
@@ -163,6 +211,18 @@ public abstract class Items {
 	public static Item galvanizedsteel_rod;
 	public static Item galvanizedsteel_gear;
 
+	public static Item galvanizedsteel_slab;
+//	public static Item galvanizedsteel_shield;
+
+//	public static Item galvanizedsteel_crystal;
+//	public static Item galvanizedsteel_shard;
+//	public static Item galvanizedsteel_clump;
+//	public static Item galvanizedsteel_powder_dirty;
+
+	public static Item galvanizedsteel_dense_plate;
+//	public static Item galvanizedsteel_crushed;
+//	public static Item galvanizedsteel_crushed_purified;
+
 	public static Item iridium_arrow;
 	public static Item iridium_axe;
 	public static Item iridium_boots;
@@ -187,6 +247,18 @@ public abstract class Items {
 	public static Item iridium_sword;
 	public static Item iridium_rod;
 	public static Item iridium_gear;
+
+	public static Item iridium_slab;
+//	public static Item iridium_shield;
+
+	public static Item iridium_crystal;
+	public static Item iridium_shard;
+	public static Item iridium_clump;
+	public static Item iridium_powder_dirty;
+
+	public static Item iridium_dense_plate;
+	public static Item iridium_crushed;
+	public static Item iridium_crushed_purified;
 
 	public static Item magnesium_arrow;
 	public static Item magnesium_axe;
@@ -213,6 +285,18 @@ public abstract class Items {
 	public static Item magnesium_rod;
 	public static Item magnesium_gear;
 
+	public static Item magnesium_slab;
+//	public static Item magnesium_shield;
+
+	public static Item magnesium_crystal;
+	public static Item magnesium_shard;
+	public static Item magnesium_clump;
+	public static Item magnesium_powder_dirty;
+
+	public static Item magnesium_dense_plate;
+	public static Item magnesium_crushed;
+	public static Item magnesium_crushed_purified;
+
 	public static Item manganese_arrow;
 	public static Item manganese_axe;
 	public static Item manganese_boots;
@@ -237,6 +321,18 @@ public abstract class Items {
 	public static Item manganese_sword;
 	public static Item manganese_rod;
 	public static Item manganese_gear;
+
+	public static Item manganese_slab;
+//	public static Item manganese_shield;
+
+	public static Item manganese_crystal;
+	public static Item manganese_shard;
+	public static Item manganese_clump;
+	public static Item manganese_powder_dirty;
+
+	public static Item manganese_dense_plate;
+	public static Item manganese_crushed;
+	public static Item manganese_crushed_purified;
 
 	public static Item nichrome_arrow;
 	public static Item nichrome_axe;
@@ -265,6 +361,18 @@ public abstract class Items {
 	public static Item nichrome_rod;
 	public static Item nichrome_gear;
 
+	public static Item nichrome_slab;
+//	public static Item nichrome_shield;
+
+//	public static Item nichrome_crystal;
+//	public static Item nichrome_shard;
+//	public static Item nichrome_clump;
+//	public static Item nichrome_powder_dirty;
+
+	public static Item nichrome_dense_plate;
+//	public static Item nichrome_crushed;
+//	public static Item nichrome_crushed_purified;
+
 	public static Item osmium_arrow;
 	public static Item osmium_axe;
 	public static Item osmium_boots;
@@ -289,6 +397,18 @@ public abstract class Items {
 	public static Item osmium_sword;
 	public static Item osmium_rod;
 	public static Item osmium_gear;
+
+	public static Item osmium_slab;
+//	public static Item osmium_shield;
+
+//	public static Item osmium_crystal;
+//	public static Item osmium_shard;
+//	public static Item osmium_clump;
+//	public static Item osmium_powder_dirty;
+
+	public static Item osmium_dense_plate;
+	public static Item osmium_crushed;
+	public static Item osmium_crushed_purified;
 
 	public static Item plutonium_arrow;
 	public static Item plutonium_axe;
@@ -315,6 +435,18 @@ public abstract class Items {
 	public static Item plutonium_rod;
 	public static Item plutonium_gear;
 
+	public static Item plutonium_slab;
+//	public static Item plutonium_shield;
+
+	public static Item plutonium_crystal;
+	public static Item plutonium_shard;
+	public static Item plutonium_clump;
+	public static Item plutonium_powder_dirty;
+
+	public static Item plutonium_dense_plate;
+	public static Item plutonium_crushed;
+	public static Item plutonium_crushed_purified;
+
 	public static Item rutile_arrow;
 	public static Item rutile_axe;
 	public static Item rutile_boots;
@@ -339,6 +471,18 @@ public abstract class Items {
 	public static Item rutile_sword;
 	public static Item rutile_rod;
 	public static Item rutile_gear;
+
+	public static Item rutile_slab;
+//	public static Item rutile_shield;
+
+	public static Item rutile_crystal;
+	public static Item rutile_shard;
+	public static Item rutile_clump;
+	public static Item rutile_powder_dirty;
+
+	public static Item rutile_dense_plate;
+	public static Item rutile_crushed;
+	public static Item rutile_crushed_purified;
 
 	public static Item stainlesssteel_arrow;
 	public static Item stainlesssteel_axe;
@@ -367,6 +511,18 @@ public abstract class Items {
 	public static Item stainlesssteel_rod;
 	public static Item stainlesssteel_gear;
 
+	public static Item stainlesssteel_slab;
+//	public static Item stainlesssteel_shield;
+
+//	public static Item stainlesssteel_crystal;
+//	public static Item stainlesssteel_shard;
+//	public static Item stainlesssteel_clump;
+//	public static Item stainlesssteel_powder_dirty;
+
+	public static Item stainlesssteel_dense_plate;
+//	public static Item stainlesssteel_crushed;
+//	public static Item stainlesssteel_crushed_purified;
+
 	public static Item tantalum_arrow;
 	public static Item tantalum_axe;
 	public static Item tantalum_boots;
@@ -391,6 +547,18 @@ public abstract class Items {
 	public static Item tantalum_sword;
 	public static Item tantalum_rod;
 	public static Item tantalum_gear;
+
+	public static Item tantalum_slab;
+//	public static Item tantalum_shield;
+
+	public static Item tantalum_crystal;
+	public static Item tantalum_shard;
+	public static Item tantalum_clump;
+	public static Item tantalum_powder_dirty;
+
+	public static Item tantalum_dense_plate;
+	public static Item tantalum_crushed;
+	public static Item tantalum_crushed_purified;
 
 	public static Item titanium_arrow;
 	public static Item titanium_axe;
@@ -419,6 +587,18 @@ public abstract class Items {
 	public static Item titanium_rod;
 	public static Item titanium_gear;
 
+	public static Item titanium_slab;
+//	public static Item titanium_shield;
+
+	public static Item titanium_crystal;
+	public static Item titanium_shard;
+	public static Item titanium_clump;
+	public static Item titanium_powder_dirty;
+
+	public static Item titanium_dense_plate;
+	public static Item titanium_crushed;
+	public static Item titanium_crushed_purified;
+
 	public static Item tungsten_arrow;
 	public static Item tungsten_axe;
 	public static Item tungsten_boots;
@@ -443,6 +623,18 @@ public abstract class Items {
 	public static Item tungsten_sword;
 	public static Item tungsten_rod;
 	public static Item tungsten_gear;
+
+	public static Item tungsten_slab;
+//	public static Item tungsten_shield;
+
+	public static Item tungsten_crystal;
+	public static Item tungsten_shard;
+	public static Item tungsten_clump;
+	public static Item tungsten_powder_dirty;
+
+	public static Item tungsten_dense_plate;
+	public static Item tungsten_crushed;
+	public static Item tungsten_crushed_purified;
 
 	public static Item uranium_arrow;
 	public static Item uranium_axe;
@@ -469,6 +661,18 @@ public abstract class Items {
 	public static Item uranium_rod;
 	public static Item uranium_gear;
 
+	public static Item uranium_slab;
+//	public static Item uranium_shield;
+
+	public static Item uranium_crystal;
+	public static Item uranium_shard;
+	public static Item uranium_clump;
+	public static Item uranium_powder_dirty;
+
+	public static Item uranium_dense_plate;
+	public static Item uranium_crushed;
+	public static Item uranium_crushed_purified;
+
 	public static Item zirconium_arrow;
 	public static Item zirconium_axe;
 	public static Item zirconium_boots;
@@ -494,13 +698,25 @@ public abstract class Items {
 	public static Item zirconium_rod;
 	public static Item zirconium_gear;
 
+	public static Item zirconium_slab;
+//	public static Item zirconium_shield;
+
+	public static Item zirconium_crystal;
+	public static Item zirconium_shard;
+	public static Item zirconium_clump;
+	public static Item zirconium_powder_dirty;
+
+	public static Item zirconium_dense_plate;
+	public static Item zirconium_crushed;
+	public static Item zirconium_crushed_purified;
+
 	private static boolean initDone = false;
 
 	private static Map<Item, String> itemRegistry = new HashMap<>();
 	private static Map<String, Item> allItems = new HashMap<>();
 	private static Map<MetalMaterial, List<Item>> itemsByMetal = new HashMap<>();
 
-	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
+	private static Map<BlockDoor, Item> doorMap = new HashMap<>();
 
 	private static Map<Class<?>, Integer> classSortingValues = new HashMap<>();
 	private static Map<MetalMaterial, Integer> materialSortingValues = new HashMap<>();
@@ -577,6 +793,18 @@ public abstract class Items {
 		aluminum_rod = create_rod(Materials.aluminum);
 		aluminum_gear = create_gear(Materials.aluminum);
 
+		aluminum_slab = create_slab(Materials.aluminum, Blocks.aluminum_slab, Blocks.aluminum_slab, Blocks.double_aluminum_slab);
+//		aluminum_shield = create_shield(Materials.aluminum);
+
+		aluminum_crystal = create_crystal(Materials.aluminum);
+		aluminum_shard = create_shard(Materials.aluminum);
+		aluminum_clump = create_clump(Materials.aluminum);
+		aluminum_powder_dirty = create_DirtyPowder(Materials.aluminum);
+
+		aluminum_dense_plate = create_DensePlate(Materials.aluminum);
+		aluminum_crushed = create_crushed(Materials.aluminum);
+		aluminum_crushed_purified = create_crushedPurified(Materials.aluminum);
+
 		aluminumbrass_arrow = create_arrow(Materials.aluminumbrass);
 		aluminumbrass_axe = create_axe(Materials.aluminumbrass);
 		aluminumbrass_blend = create_blend(Materials.aluminumbrass);
@@ -604,6 +832,18 @@ public abstract class Items {
 		aluminumbrass_rod = create_rod(Materials.aluminumbrass);
 		aluminumbrass_gear = create_gear(Materials.aluminumbrass);
 
+		aluminumbrass_slab = create_slab(Materials.aluminumbrass, Blocks.aluminumbrass_slab, Blocks.aluminumbrass_slab, Blocks.double_aluminumbrass_slab);
+//		aluminumbrass_shield = create_shield(Materials.aluminumbrass);
+
+//		aluminumbrass_crystal = create_crystal(Materials.aluminumbrass);
+//		aluminumbrass_shard = create_shard(Materials.aluminumbrass);
+//		aluminumbrass_clump = create_clump(Materials.aluminumbrass);
+//		aluminumbrass_powder_dirty = create_DirtyPowder(Materials.aluminumbrass);
+
+		aluminumbrass_dense_plate = create_DensePlate(Materials.aluminumbrass);
+//		aluminumbrass_crushed = create_crushed(Materials.aluminumbrass);
+//		aluminumbrass_crushed_purified = create_crushedPurified(Materials.aluminumbrass);
+
 		cadmium_arrow = create_arrow(Materials.cadmium);
 		cadmium_axe = create_axe(Materials.cadmium);
 		cadmium_boots = create_boots(Materials.cadmium);
@@ -629,6 +869,18 @@ public abstract class Items {
 		cadmium_rod = create_rod(Materials.cadmium);
 		cadmium_gear = create_gear(Materials.cadmium);
 
+		cadmium_slab = create_slab(Materials.cadmium, Blocks.cadmium_slab, Blocks.cadmium_slab, Blocks.double_cadmium_slab);
+//		cadmium_shield = create_shield(Materials.cadmium);
+
+		cadmium_crystal = create_crystal(Materials.cadmium);
+		cadmium_shard = create_shard(Materials.cadmium);
+		cadmium_clump = create_clump(Materials.cadmium);
+		cadmium_powder_dirty = create_DirtyPowder(Materials.cadmium);
+
+		cadmium_dense_plate = create_DensePlate(Materials.cadmium);
+		cadmium_crushed = create_crushed(Materials.cadmium);
+		cadmium_crushed_purified = create_crushedPurified(Materials.cadmium);
+
 		chromium_arrow = create_arrow(Materials.chromium);
 		chromium_axe = create_axe(Materials.chromium);
 		chromium_boots = create_boots(Materials.chromium);
@@ -653,6 +905,18 @@ public abstract class Items {
 		chromium_sword = create_sword(Materials.chromium);
 		chromium_rod = create_rod(Materials.chromium);
 		chromium_gear = create_gear(Materials.chromium);
+
+		chromium_slab = create_slab(Materials.chromium, Blocks.chromium_slab, Blocks.chromium_slab, Blocks.double_chromium_slab);
+//		chromium_shield = create_shield(Materials.chromium);
+
+		chromium_crystal = create_crystal(Materials.chromium);
+		chromium_shard = create_shard(Materials.chromium);
+		chromium_clump = create_clump(Materials.chromium);
+		chromium_powder_dirty = create_DirtyPowder(Materials.chromium);
+
+		chromium_dense_plate = create_DensePlate(Materials.chromium);
+		chromium_crushed = create_crushed(Materials.chromium);
+		chromium_crushed_purified = create_crushedPurified(Materials.chromium);
 
 		galvanizedsteel_arrow = create_arrow(Materials.galvanizedsteel);
 		galvanizedsteel_axe = create_axe(Materials.galvanizedsteel);
@@ -681,6 +945,18 @@ public abstract class Items {
 		galvanizedsteel_rod = create_rod(Materials.galvanizedsteel);
 		galvanizedsteel_gear = create_gear(Materials.galvanizedsteel);
 
+		galvanizedsteel_slab = create_slab(Materials.galvanizedsteel, Blocks.galvanizedsteel_slab, Blocks.galvanizedsteel_slab, Blocks.double_galvanizedsteel_slab);
+//		galvanizedsteel_shield = create_shield(Materials.galvanizedsteel);
+
+//		galvanizedsteel_crystal = create_crystal(Materials.galvanizedsteel);
+//		galvanizedsteel_shard = create_shard(Materials.galvanizedsteel);
+//		galvanizedsteel_clump = create_clump(Materials.galvanizedsteel);
+//		galvanizedsteel_powder_dirty = create_DirtyPowder(Materials.galvanizedsteel);
+
+		galvanizedsteel_dense_plate = create_DensePlate(Materials.galvanizedsteel);
+//		galvanizedsteel_crushed = create_crushed(Materials.galvanizedsteel);
+//		galvanizedsteel_crushed_purified = create_crushedPurified(Materials.galvanizedsteel);
+
 		iridium_arrow = create_arrow(Materials.iridium);
 		iridium_axe = create_axe(Materials.iridium);
 		iridium_boots = create_boots(Materials.iridium);
@@ -705,6 +981,18 @@ public abstract class Items {
 		iridium_sword = create_sword(Materials.iridium);
 		iridium_rod = create_rod(Materials.iridium);
 		iridium_gear = create_gear(Materials.iridium);
+
+		iridium_slab = create_slab(Materials.iridium, Blocks.iridium_slab, Blocks.iridium_slab, Blocks.double_iridium_slab);
+//		iridium_shield = create_shield(Materials.iridium);
+
+		iridium_crystal = create_crystal(Materials.iridium);
+		iridium_shard = create_shard(Materials.iridium);
+		iridium_clump = create_clump(Materials.iridium);
+		iridium_powder_dirty = create_DirtyPowder(Materials.iridium);
+
+		iridium_dense_plate = create_DensePlate(Materials.iridium);
+		iridium_crushed = create_crushed(Materials.iridium);
+		iridium_crushed_purified = create_crushedPurified(Materials.iridium);
 
 		magnesium_arrow = create_arrow(Materials.magnesium);
 		magnesium_axe = create_axe(Materials.magnesium);
@@ -731,6 +1019,18 @@ public abstract class Items {
 		magnesium_rod = create_rod(Materials.magnesium);
 		magnesium_gear = create_gear(Materials.magnesium);
 
+		magnesium_slab = create_slab(Materials.magnesium, Blocks.magnesium_slab, Blocks.magnesium_slab, Blocks.double_magnesium_slab);
+//		magnesium_shield = create_shield(Materials.magnesium);
+
+		magnesium_crystal = create_crystal(Materials.magnesium);
+		magnesium_shard = create_shard(Materials.magnesium);
+		magnesium_clump = create_clump(Materials.magnesium);
+		magnesium_powder_dirty = create_DirtyPowder(Materials.magnesium);
+
+		magnesium_dense_plate = create_DensePlate(Materials.magnesium);
+		magnesium_crushed = create_crushed(Materials.magnesium);
+		magnesium_crushed_purified = create_crushedPurified(Materials.magnesium);
+
 		manganese_arrow = create_arrow(Materials.manganese);
 		manganese_axe = create_axe(Materials.manganese);
 		manganese_boots = create_boots(Materials.manganese);
@@ -755,6 +1055,18 @@ public abstract class Items {
 		manganese_sword = create_sword(Materials.manganese);
 		manganese_rod = create_rod(Materials.manganese);
 		manganese_gear = create_gear(Materials.manganese);
+
+		manganese_slab = create_slab(Materials.manganese, Blocks.manganese_slab, Blocks.manganese_slab, Blocks.double_manganese_slab);
+//		manganese_shield = create_shield(Materials.manganese);
+
+		manganese_crystal = create_crystal(Materials.manganese);
+		manganese_shard = create_shard(Materials.manganese);
+		manganese_clump = create_clump(Materials.manganese);
+		manganese_powder_dirty = create_DirtyPowder(Materials.manganese);
+
+		manganese_dense_plate = create_DensePlate(Materials.manganese);
+		manganese_crushed = create_crushed(Materials.manganese);
+		manganese_crushed_purified = create_crushedPurified(Materials.manganese);
 
 		nichrome_arrow = create_arrow(Materials.nichrome);
 		nichrome_axe = create_axe(Materials.nichrome);
@@ -783,6 +1095,18 @@ public abstract class Items {
 		nichrome_rod = create_rod(Materials.nichrome);
 		nichrome_gear = create_gear(Materials.nichrome);
 
+		nichrome_slab = create_slab(Materials.nichrome, Blocks.nichrome_slab, Blocks.nichrome_slab, Blocks.double_nichrome_slab);
+//		nichrome_shield = create_shield(Materials.nichrome);
+
+//		nichrome_crystal = create_crystal(Materials.nichrome);
+//		nichrome_shard = create_shard(Materials.nichrome);
+//		nichrome_clump = create_clump(Materials.nichrome);
+//		nichrome_powder_dirty = create_DirtyPowder(Materials.nichrome);
+
+		nichrome_dense_plate = create_DensePlate(Materials.nichrome);
+//		nichrome_crushed = create_crushed(Materials.nichrome);
+//		nichrome_crushed_purified = create_crushedPurified(Materials.nichrome);
+
 		osmium_arrow = create_arrow(Materials.osmium);
 		osmium_axe = create_axe(Materials.osmium);
 		osmium_boots = create_boots(Materials.osmium);
@@ -807,6 +1131,18 @@ public abstract class Items {
 		osmium_sword = create_sword(Materials.osmium);
 		osmium_rod = create_rod(Materials.osmium);
 		osmium_gear = create_gear(Materials.osmium);
+
+		osmium_slab = create_slab(Materials.osmium, Blocks.osmium_slab, Blocks.osmium_slab, Blocks.double_osmium_slab);
+//		osmium_shield = create_shield(Materials.osmium);
+
+//		osmium_crystal = create_crystal(Materials.osmium);
+//		osmium_shard = create_shard(Materials.osmium);
+//		osmium_clump = create_clump(Materials.osmium);
+//		osmium_powder_dirty = create_DirtyPowder(Materials.osmium);
+
+		osmium_dense_plate = create_DensePlate(Materials.osmium);
+		osmium_crushed = create_crushed(Materials.osmium);
+		osmium_crushed_purified = create_crushedPurified(Materials.osmium);
 
 		plutonium_arrow = create_arrow(Materials.plutonium);
 		plutonium_axe = create_axe(Materials.plutonium);
@@ -833,6 +1169,18 @@ public abstract class Items {
 		plutonium_rod = create_rod(Materials.plutonium);
 		plutonium_gear = create_gear(Materials.plutonium);
 
+		plutonium_slab = create_slab(Materials.plutonium, Blocks.plutonium_slab, Blocks.plutonium_slab, Blocks.double_plutonium_slab);
+//		plutonium_shield = create_shield(Materials.plutonium);
+
+		plutonium_crystal = create_crystal(Materials.plutonium);
+		plutonium_shard = create_shard(Materials.plutonium);
+		plutonium_clump = create_clump(Materials.plutonium);
+		plutonium_powder_dirty = create_DirtyPowder(Materials.plutonium);
+
+		plutonium_dense_plate = create_DensePlate(Materials.plutonium);
+		plutonium_crushed = create_crushed(Materials.plutonium);
+		plutonium_crushed_purified = create_crushedPurified(Materials.plutonium);
+
 		rutile_arrow = create_arrow(Materials.rutile);
 		rutile_axe = create_axe(Materials.rutile);
 		rutile_boots = create_boots(Materials.rutile);
@@ -857,6 +1205,18 @@ public abstract class Items {
 		rutile_sword = create_sword(Materials.rutile);
 		rutile_rod = create_rod(Materials.rutile);
 		rutile_gear = create_gear(Materials.rutile);
+
+		rutile_slab = create_slab(Materials.rutile, Blocks.rutile_slab, Blocks.rutile_slab, Blocks.double_rutile_slab);
+//		rutile_shield = create_shield(Materials.rutile);
+
+		rutile_crystal = create_crystal(Materials.rutile);
+		rutile_shard = create_shard(Materials.rutile);
+		rutile_clump = create_clump(Materials.rutile);
+		rutile_powder_dirty = create_DirtyPowder(Materials.rutile);
+
+		rutile_dense_plate = create_DensePlate(Materials.rutile);
+		rutile_crushed = create_crushed(Materials.rutile);
+		rutile_crushed_purified = create_crushedPurified(Materials.rutile);
 
 		stainlesssteel_arrow = create_arrow(Materials.stainlesssteel);
 		stainlesssteel_axe = create_axe(Materials.stainlesssteel);
@@ -885,6 +1245,18 @@ public abstract class Items {
 		stainlesssteel_rod = create_rod(Materials.stainlesssteel);
 		stainlesssteel_gear = create_gear(Materials.stainlesssteel);
 
+		stainlesssteel_slab = create_slab(Materials.stainlesssteel, Blocks.stainlesssteel_slab, Blocks.stainlesssteel_slab, Blocks.double_stainlesssteel_slab);
+//		stainlesssteel_shield = create_shield(Materials.stainlesssteel);
+
+//		stainlesssteel_crystal = create_crystal(Materials.stainlesssteel);
+//		stainlesssteel_shard = create_shard(Materials.stainlesssteel);
+//		stainlesssteel_clump = create_clump(Materials.stainlesssteel);
+//		stainlesssteel_powder_dirty = create_DirtyPowder(Materials.stainlesssteel);
+
+		stainlesssteel_dense_plate = create_DensePlate(Materials.stainlesssteel);
+//		stainlesssteel_crushed = create_crushed(Materials.stainlesssteel);
+//		stainlesssteel_crushed_purified = create_crushedPurified(Materials.stainlesssteel);
+
 		tantalum_arrow = create_arrow(Materials.tantalum);
 		tantalum_axe = create_axe(Materials.tantalum);
 		tantalum_boots = create_boots(Materials.tantalum);
@@ -909,6 +1281,18 @@ public abstract class Items {
 		tantalum_sword = create_sword(Materials.tantalum);
 		tantalum_rod = create_rod(Materials.tantalum);
 		tantalum_gear = create_gear(Materials.tantalum);
+
+		tantalum_slab = create_slab(Materials.tantalum, Blocks.tantalum_slab, Blocks.tantalum_slab, Blocks.double_tantalum_slab);
+//		tantalum_shield = create_shield(Materials.tantalum);
+
+		tantalum_crystal = create_crystal(Materials.tantalum);
+		tantalum_shard = create_shard(Materials.tantalum);
+		tantalum_clump = create_clump(Materials.tantalum);
+		tantalum_powder_dirty = create_DirtyPowder(Materials.tantalum);
+
+		tantalum_dense_plate = create_DensePlate(Materials.tantalum);
+		tantalum_crushed = create_crushed(Materials.tantalum);
+		tantalum_crushed_purified = create_crushedPurified(Materials.tantalum);
 
 		titanium_arrow = create_arrow(Materials.titanium);
 		titanium_axe = create_axe(Materials.titanium);
@@ -937,6 +1321,18 @@ public abstract class Items {
 		titanium_rod = create_rod(Materials.titanium);
 		titanium_gear = create_gear(Materials.titanium);
 
+		titanium_slab = create_slab(Materials.titanium, Blocks.titanium_slab, Blocks.titanium_slab, Blocks.double_titanium_slab);
+//		titanium_shield = create_shield(Materials.titanium);
+
+		titanium_crystal = create_crystal(Materials.titanium);
+		titanium_shard = create_shard(Materials.titanium);
+		titanium_clump = create_clump(Materials.titanium);
+		titanium_powder_dirty = create_DirtyPowder(Materials.titanium);
+
+		titanium_dense_plate = create_DensePlate(Materials.titanium);
+		titanium_crushed = create_crushed(Materials.titanium);
+		titanium_crushed_purified = create_crushedPurified(Materials.titanium);
+
 		tungsten_arrow = create_arrow(Materials.tungsten);
 		tungsten_axe = create_axe(Materials.tungsten);
 		tungsten_boots = create_boots(Materials.tungsten);
@@ -961,6 +1357,18 @@ public abstract class Items {
 		tungsten_sword = create_sword(Materials.tungsten);
 		tungsten_rod = create_rod(Materials.tungsten);
 		tungsten_gear = create_gear(Materials.tungsten);
+
+		tungsten_slab = create_slab(Materials.tungsten, Blocks.tungsten_slab, Blocks.tungsten_slab, Blocks.double_tungsten_slab);
+//		tungsten_shield = create_shield(Materials.tungsten);
+
+		tungsten_crystal = create_crystal(Materials.tungsten);
+		tungsten_shard = create_shard(Materials.tungsten);
+		tungsten_clump = create_clump(Materials.tungsten);
+		tungsten_powder_dirty = create_DirtyPowder(Materials.tungsten);
+
+		tungsten_dense_plate = create_DensePlate(Materials.tungsten);
+		tungsten_crushed = create_crushed(Materials.tungsten);
+		tungsten_crushed_purified = create_crushedPurified(Materials.tungsten);
 
 		uranium_arrow = create_arrow(Materials.uranium);
 		uranium_axe = create_axe(Materials.uranium);
@@ -987,6 +1395,18 @@ public abstract class Items {
 		uranium_rod = create_rod(Materials.uranium);
 		uranium_gear = create_gear(Materials.uranium);
 
+		uranium_slab = create_slab(Materials.uranium, Blocks.uranium_slab, Blocks.uranium_slab, Blocks.double_uranium_slab);
+//		uranium_shield = create_shield(Materials.uranium);
+
+		uranium_crystal = create_crystal(Materials.uranium);
+		uranium_shard = create_shard(Materials.uranium);
+		uranium_clump = create_clump(Materials.uranium);
+		uranium_powder_dirty = create_DirtyPowder(Materials.uranium);
+
+		uranium_dense_plate = create_DensePlate(Materials.uranium);
+		uranium_crushed = create_crushed(Materials.uranium);
+		uranium_crushed_purified = create_crushedPurified(Materials.uranium);
+
 		zirconium_arrow = create_arrow(Materials.zirconium);
 		zirconium_axe = create_axe(Materials.zirconium);
 		zirconium_boots = create_boots(Materials.zirconium);
@@ -1011,6 +1431,18 @@ public abstract class Items {
 		zirconium_sword = create_sword(Materials.zirconium);
 		zirconium_rod = create_rod(Materials.zirconium);
 		zirconium_gear = create_gear(Materials.zirconium);
+
+		zirconium_slab = create_slab(Materials.zirconium, Blocks.zirconium_slab, Blocks.zirconium_slab, Blocks.double_zirconium_slab);
+//		zirconium_shield = create_shield(Materials.zirconium);
+
+		zirconium_crystal = create_crystal(Materials.zirconium);
+		zirconium_shard = create_shard(Materials.zirconium);
+		zirconium_clump = create_clump(Materials.zirconium);
+		zirconium_powder_dirty = create_DirtyPowder(Materials.zirconium);
+
+		zirconium_dense_plate = create_DensePlate(Materials.zirconium);
+		zirconium_crushed = create_crushed(Materials.zirconium);
+		zirconium_crushed_purified = create_crushedPurified(Materials.zirconium);
 
 		for(Item i : itemRegistry.keySet()) {
 			allItems.put(itemRegistry.get(i), i);
@@ -1042,8 +1474,8 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalBow.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalCrossbow.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalShears.class, ++ss * 10000);
-		classSortingValues.put(ItemMetalSmallBlend.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalSmallPowder.class, ++ss * 10000);
+		classSortingValues.put(modernmetals.items.ItemMetalSmallBlend.class, classSortingValues.get(ItemMetalSmallPowder.class));
 		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
 
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
@@ -1073,23 +1505,37 @@ public abstract class Items {
 	}
 
 	private static Item create_ingot(MetalMaterial metal) {
-		return registerItem(new modernmetals.items.ItemMetalIngot(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
+//		return registerItem(new modernmetals.items.ItemMetalIngot(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"ingot", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("ingot"+metal.getCapitalizedName(), i);
+		return i;
 	}
 
 	private static Item create_nugget(MetalMaterial metal) {
-		return registerItem(new ItemMetalNugget(metal), metal.getName()+"_"+"nugget", metal, ItemGroups.tab_items);
+//		return registerItem(new ItemMetalNugget(metal), metal.getName()+"_"+"nugget", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"nugget", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("nugget"+metal.getCapitalizedName(), i);
+		return i;
 	}
 
 	private static Item create_powder(MetalMaterial metal) {
-		return registerItem(new ItemMetalPowder(metal), metal.getName()+"_"+"powder", metal, ItemGroups.tab_items);
+//		return registerItem(new ItemMetalPowder(metal), metal.getName()+"_"+"powder", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"powder", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dust"+metal.getCapitalizedName(), i);
+		return i;
 	}
 
 	private static Item create_blend(MetalMaterial metal) {
-		return registerItem(new modernmetals.items.ItemMetalBlend(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
+//		return registerItem(new modernmetals.items.ItemMetalBlend(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"blend", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dust"+metal.getCapitalizedName(), i);
+		return i;
 	}
 
 	private static Item create_rod(MetalMaterial metal) {
-		return registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"rod", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"rod", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("rod"+metal.getCapitalizedName(), i);
+		return i;
 	}
 
 	private static Item create_gear(MetalMaterial metal) {
@@ -1163,7 +1609,10 @@ public abstract class Items {
 	}
 
 	private static Item create_smallblend(MetalMaterial metal) {
-		return registerItem(new ItemMetalSmallBlend(metal), metal.getName()+"_"+"smallblend", metal, ItemGroups.tab_items);
+//		return registerItem(new ItemMetalSmallBlend(metal), metal.getName()+"_"+"smallblend", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"smallblend", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dustTiny"+metal.getCapitalizedName(), i);
+		return i;
 	}
 
 	private static Item create_fishing_rod(MetalMaterial metal) {
@@ -1171,7 +1620,10 @@ public abstract class Items {
 	}
 
 	private static Item create_smallpowder(MetalMaterial metal) {
-		return registerItem(new ItemMetalSmallPowder(metal), metal.getName()+"_"+"smallpowder", metal, ItemGroups.tab_items);
+//		return registerItem(new ItemMetalSmallPowder(metal), metal.getName()+"_"+"smallpowder", metal, ItemGroups.tab_items);
+		Item i = registerItem(new GenericMetalItem(metal), metal.getName()+"_"+"smallpowder", metal, ItemGroups.tab_items);
+		OreDictionary.registerOre("dustTiny"+metal.getCapitalizedName(), i);
+		return i;
 	}
 
 	@SuppressWarnings("unused")
@@ -1226,6 +1678,7 @@ public abstract class Items {
 		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName()+"_"+"slab");
 		Item item = new ItemMetalSlab(metal, block, slab, doubleslab);
 		registerItem(item, location.getResourcePath(), metal, ItemGroups.tab_blocks);
+//		item.setUnlocalizedName(location.toString()); // Hack to set name right
 		return item;
 	}
 

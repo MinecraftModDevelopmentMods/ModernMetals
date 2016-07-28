@@ -6,14 +6,22 @@ import cyano.basemetals.init.Materials;
 import cyano.basemetals.items.MetalToolEffects;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
+import modernmetals.entity.projectile.EntityMetalFishHook;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+//import net.minecraft.entity.projectile.EntityFishHook;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemFishingRod;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatList;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -55,6 +63,31 @@ public class ItemMetalFishingRod extends ItemFishingRod implements IMetalObject 
 	}
 
 	@Override
+    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand)
+    {
+        if (playerIn.fishEntity != null)
+        {
+            int i = playerIn.fishEntity.handleHookRetraction();
+            itemStackIn.damageItem(i, playerIn);
+            playerIn.swingArm(hand);
+        }
+        else
+        {
+            worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_BOBBER_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+
+            if (!worldIn.isRemote)
+            {
+                worldIn.spawnEntityInWorld(new EntityMetalFishHook(worldIn, playerIn));
+            }
+
+            playerIn.swingArm(hand);
+            playerIn.addStat(StatList.getObjectUseStats(this));
+        }
+
+        return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
+    }
+
+    @Override
 	public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
 		List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
 		for(ItemStack i : acceptableItems ) {

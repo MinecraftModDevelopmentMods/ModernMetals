@@ -42,6 +42,7 @@ public abstract class Achievements {
 		return makeAchievement( baseName, requirement, x, y, new ItemStack(icon));
 	}
 
+	@SuppressWarnings("unused")
 	private static Achievement makeAchievement(String baseName, Achievement requirement, int x, int y, Block icon) {
 		return makeAchievement( baseName, requirement, x, y, new ItemStack(icon));
 	}

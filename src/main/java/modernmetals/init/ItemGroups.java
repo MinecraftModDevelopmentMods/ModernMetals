@@ -18,6 +18,7 @@ public class ItemGroups {
 	public static CreativeTabs tab_items;
 	public static CreativeTabs tab_tools;
 
+	@SuppressWarnings("unused")
 	private static Item blockItem;
 //	private static Item itemItem;
 //	private static Item toolItem;

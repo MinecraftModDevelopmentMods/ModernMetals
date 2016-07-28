@@ -39,6 +39,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		initDone = true;
 	}
 
+	@SuppressWarnings("unused")
 	private static void initMetalRecipes() {
 		List<MetalMaterial> exceptions = Arrays.asList(Materials.vanilla_iron, Materials.vanilla_gold, Materials.vanilla_diamond, Materials.vanilla_stone, Materials.vanilla_wood, Materials.copper, Materials.silver, Materials.tin, Materials.lead, Materials.nickel, Materials.bronze, Materials.brass, Materials.steel, Materials.invar, Materials.electrum, Materials.coldiron, Materials.mithril, Materials.adamantine, Materials.starsteel, Materials.zinc, Materials.aquarium);
 
@@ -116,7 +117,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			if(ingot != null && rod != null) {
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(rod, 4), "x", "x", 'x', "ingot"+oreDictName));
 				OreDictionary.registerOre("stick"+oreDictName, rod);
-				OreDictionary.registerOre("rod"+oreDictName, rod);
+//				OreDictionary.registerOre("rod"+oreDictName, rod);
 				OreDictionary.registerOre("rod", rod);
 			}
 			if(nugget != null && rod != null) {
@@ -127,7 +128,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			}
 			if(rod != null && ingot != null && gear != null) {
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(gear, 4), " x ", "x/x", " x ", 'x', "ingot"+oreDictName, '/', "rod"+oreDictName));
-				OreDictionary.registerOre("gear"+oreDictName, gear);
+//				OreDictionary.registerOre("gear"+oreDictName, gear);
 				OreDictionary.registerOre("gear", gear);
 				if(metal == Materials.steel) OreDictionary.registerOre("sprocket", gear);
 			}
