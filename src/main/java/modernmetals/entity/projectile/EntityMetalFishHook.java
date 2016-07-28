@@ -6,6 +6,8 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityFishHook;
 //import net.minecraft.entity.projectile.EntityFishHook;
@@ -23,6 +25,10 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTableList;
+
+import modernmetals.items.ItemMetalFishingRod;
 
 public class EntityMetalFishHook extends EntityFishHook {
 
@@ -38,7 +44,7 @@ public class EntityMetalFishHook extends EntityFishHook {
 		super(worldIn, fishingPlayer);
 	}
 
-	private static final DataParameter<Integer> DATA_HOOKED_ENTITY = EntityDataManager.<Integer>createKey(EntityFishHook.class, DataSerializers.VARINT);
+	private static final DataParameter<Integer> DATA_HOOKED_ENTITY = EntityDataManager.<Integer>createKey(EntityMetalFishHook.class, DataSerializers.VARINT);
     private int xTile;
     private int yTile;
     private int zTile;
@@ -57,7 +63,27 @@ public class EntityMetalFishHook extends EntityFishHook {
     private double fishYaw;
     private double fishPitch;
 
-	/**
+    @Override
+    protected void entityInit () {
+        this.getDataManager().register(DATA_HOOKED_ENTITY, Integer.valueOf(0));
+    }
+    @Override
+    public void notifyDataManagerChange(DataParameter<?> key)
+    {
+        if (DATA_HOOKED_ENTITY.equals(key))
+        {
+            int i = ((Integer)this.getDataManager().get(DATA_HOOKED_ENTITY)).intValue();
+
+            if (i > 0 && this.caughtEntity != null)
+            {
+                this.caughtEntity = null;
+            }
+        }
+
+        super.notifyDataManagerChange(key);
+    }
+
+    /**
      * Called to update the entity's position/logic.
      */
     @Override
@@ -84,9 +110,8 @@ public class EntityMetalFishHook extends EntityFishHook {
         else
         {
             ItemStack itemstack = this.angler.getHeldItemMainhand();
-// TODO
-//          if (this.angler.isDead || !this.angler.isEntityAlive() || itemstack == null || itemstack.getItem() != Items.FISHING_ROD || this.getDistanceSqToEntity(this.angler) > 1024.0D)
-            if (this.angler.isDead || !this.angler.isEntityAlive() || itemstack == null || this.getDistanceSqToEntity(this.angler) > 1024.0D)
+
+            if (this.angler.isDead || !this.angler.isEntityAlive() || itemstack == null || !(itemstack.getItem() instanceof ItemMetalFishingRod) || this.getDistanceSqToEntity(this.angler) > 1024.0D)
             {
                 this.setDead();
                 this.angler.fishEntity = null;
@@ -386,6 +411,57 @@ public class EntityMetalFishHook extends EntityFishHook {
                 this.motionZ *= (double)f3;
                 this.setPosition(this.posX, this.posY, this.posZ);
             }
+        }
+    }
+
+    @Override
+    public int handleHookRetraction()
+    {
+        if (this.worldObj.isRemote)
+        {
+            return 0;
+        }
+        else
+        {
+            int i = 0;
+
+            if (this.caughtEntity != null)
+            {
+                this.bringInHookedEntity();
+                this.worldObj.setEntityState(this, (byte)31);
+                i = this.caughtEntity instanceof EntityItem ? 3 : 5;
+            }
+            else if (this.ticksCatchable > 0)
+            {
+                LootContext.Builder lootcontext$builder = new LootContext.Builder((WorldServer)this.worldObj);
+                lootcontext$builder.withLuck((float)EnchantmentHelper.getLuckOfSeaModifier(this.angler) + this.angler.getLuck());
+
+                for (ItemStack itemstack : this.worldObj.getLootTableManager().getLootTableFromLocation(LootTableList.GAMEPLAY_FISHING).generateLootForPools(this.rand, lootcontext$builder.build()))
+                {
+                    EntityItem entityitem = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, itemstack);
+                    double d0 = this.angler.posX - this.posX;
+                    double d1 = this.angler.posY - this.posY;
+                    double d2 = this.angler.posZ - this.posZ;
+                    double d3 = (double)MathHelper.sqrt_double(d0 * d0 + d1 * d1 + d2 * d2);
+                    double d4 = 0.1D;
+                    entityitem.motionX = d0 * d4;
+                    entityitem.motionY = d1 * d4 + (double)MathHelper.sqrt_double(d3) * 0.08D;
+                    entityitem.motionZ = d2 * d4;
+                    this.worldObj.spawnEntityInWorld(entityitem);
+                    this.angler.worldObj.spawnEntityInWorld(new EntityXPOrb(this.angler.worldObj, this.angler.posX, this.angler.posY + 0.5D, this.angler.posZ + 0.5D, this.rand.nextInt(6) + 1));
+                }
+
+                i = 1;
+            }
+
+            if (this.inGround)
+            {
+                i = 2;
+            }
+
+            this.setDead();
+            this.angler.fishEntity = null;
+            return i;
         }
     }
 }
