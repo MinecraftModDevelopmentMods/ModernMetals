@@ -1446,6 +1446,7 @@ public abstract class Items {
 		zirconium_crushed = create_crushed(Materials.zirconium);
 		zirconium_crushed_purified = create_crushedPurified(Materials.zirconium);
 
+		// TODO: Make this support multiple oredicts
 		for(Item i : itemRegistry.keySet()) {
 			allItems.put(itemRegistry.get(i), i);
 			if(i instanceof IOreDictionaryEntry)
@@ -1464,6 +1465,8 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalNugget.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalPowder.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalBlend.class, classSortingValues.get(ItemMetalPowder.class));
+		classSortingValues.put(ItemMetalSmallPowder.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalSmallBlend.class, classSortingValues.get(ItemMetalSmallPowder.class));
 		classSortingValues.put(ItemMetalCrackHammer.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalPickaxe.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalShovel.class, ++ss * 10000);
@@ -1476,10 +1479,22 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalBolt.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalBow.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalCrossbow.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalFishingRod.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalHorseArmor.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalShears.class, ++ss * 10000);
-		classSortingValues.put(ItemMetalSmallPowder.class, ++ss * 10000);
-		classSortingValues.put(ItemMetalSmallBlend.class, classSortingValues.get(ItemMetalSmallPowder.class));
+		classSortingValues.put(ItemMetalShield.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
+
+		classSortingValues.put(BlockButtonMetal.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalSlab.class, ++ss * 10000);
+		classSortingValues.put(BlockDoubleMetalSlab.class, ++ss * 10000); // Probably not needed
+		classSortingValues.put(BlockHalfMetalSlab.class, ++ss * 10000); // Probably not needed
+		classSortingValues.put(BlockMetalLever.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalPressurePlate.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalStairs.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalWall.class, ++ss * 10000);
+		classSortingValues.put(BlockMoltenFluid.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalSlab.class, ++ss * 10000);
 
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
 		metlist.addAll(Materials.getAllMetals());
@@ -1536,12 +1551,14 @@ public abstract class Items {
 	}
 
 	private static Item create_rod(MetalMaterial metal) {
+//		return registerItem(new modernmetals.items.ItemMetalRod(metal), metal.getName() + "_rod", metal, ItemGroups.tab_items);
 		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_rod", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("rod" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	private static Item create_gear(MetalMaterial metal) {
+//		return registerItem(new modernmetals.items.ItemMetalGear(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
 		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_gear", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("gear" + metal.getCapitalizedName(), i);
 		return i;

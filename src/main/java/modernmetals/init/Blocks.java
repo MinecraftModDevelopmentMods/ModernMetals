@@ -586,6 +586,7 @@ public abstract class Blocks {
 		zirconium_stairs = createStairs(Materials.zirconium);
 		zirconium_wall = createWall(Materials.zirconium);
 
+		// TODO: Make this support multiple oredicts
 		// final block settings
 		for(Block b : allBlocks.values()) {
 			if(b instanceof IOreDictionaryEntry)
