@@ -25,5 +25,4 @@ public class ItemMetalSlab extends ItemSlab implements IOreDictionaryEntry, IMet
 	public String getOreDictionaryName() {
 		return "slab" + metal.getCapitalizedName();
 	}
-
 }

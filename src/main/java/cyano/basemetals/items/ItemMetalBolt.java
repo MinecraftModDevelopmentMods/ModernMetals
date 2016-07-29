@@ -6,7 +6,6 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-
 /**
  * 
  * @author Jasmine Iwanek

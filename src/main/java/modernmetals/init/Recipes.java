@@ -259,4 +259,27 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		OreDictionary.registerOre("gearAlubrass", Items.aluminumbrass_gear);
 		OreDictionary.registerOre("rodAlubrass", Items.aluminumbrass_rod);
 	}
+
+	public static void addOredicts(String[] oreDictEntries, Block name)
+	{
+		addOredicts(oreDictEntries, new ItemStack(name));
+//		for(int i = 0; i < oreDictEntries.length; i++) {
+//			OreDictionary.registerOre(oreDictEntries[i], name);
+//		}
+	}
+
+	public static void addOredicts(String[] oreDictEntries, Item name)
+	{
+		addOredicts(oreDictEntries, new ItemStack(name));
+//		for(int i = 0; i < oreDictEntries.length; i++) {
+//			OreDictionary.registerOre(oreDictEntries[i], name);
+//		}
+	}
+
+	public static void addOredicts(String[] oreDictEntries, ItemStack ItemStackName)
+	{
+		for(int i = 0; i < oreDictEntries.length; i++) {
+			OreDictionary.registerOre(oreDictEntries[i], ItemStackName);
+		}
+	}
 }

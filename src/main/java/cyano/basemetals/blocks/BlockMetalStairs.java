@@ -11,7 +11,7 @@ public class BlockMetalStairs extends BlockStairs implements IOreDictionaryEntry
 	final MetalMaterial metal;
 
 	public BlockMetalStairs(MetalMaterial metal) {
-		super(modernmetals.init.Blocks.getBlockByName(metal.getName( )+ "_block").getDefaultState());
+		super(modernmetals.init.Blocks.getBlockByName(metal.getName() + "_block").getDefaultState());
 		this.setSoundType(SoundType.METAL);
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();

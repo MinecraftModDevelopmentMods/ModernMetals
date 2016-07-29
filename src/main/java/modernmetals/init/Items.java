@@ -1,15 +1,13 @@
 package modernmetals.init;
 
 import modernmetals.ModernMetals;
-//import modernmetals.blocks.*;
-import modernmetals.items.*;
+import modernmetals.items.ItemMetalBlend;
+import modernmetals.items.ItemMetalIngot;
 import cyano.basemetals.blocks.*;
 import cyano.basemetals.items.*;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
-import modernmetals.items.ItemMetalBlend;
-import modernmetals.items.ItemMetalIngot;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;

@@ -26,23 +26,20 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
-		
+
 		IBlockState iblockstate = this.blockState.getBaseState();
 
-		if (!this.isDouble())
-		{
+		if (!this.isDouble()) {
 			iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
 		}
 
 		this.setDefaultState(iblockstate.withProperty(VARIANT, BlockMetalSlab.Variant.DEFAULT));
 	}
 
-	public IBlockState getStateFromMeta(int meta)
-	{
+	public IBlockState getStateFromMeta(int meta) {
 		IBlockState iblockstate = this.getDefaultState().withProperty(VARIANT, BlockMetalSlab.Variant.DEFAULT);
 
-		if (!this.isDouble())
-		{
+		if (!this.isDouble()) {
 			iblockstate = iblockstate.withProperty(HALF, (meta & 8) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
 		}
 
@@ -52,26 +49,22 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 	/**
 	 * Convert the BlockState into the correct metadata value
 	 */
-	public int getMetaFromState(IBlockState state)
-	{
+	public int getMetaFromState(IBlockState state) {
 		int i = 0;
 
-		if (!this.isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP)
-		{
+		if (!this.isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP) {
 			i |= 8;
 		}
 
 		return i;
 	}
 
-	protected BlockStateContainer createBlockState()
-	{
+	protected BlockStateContainer createBlockState() {
 		return this.isDouble() ? new BlockStateContainer(this, new IProperty[] {VARIANT}): new BlockStateContainer(this, new IProperty[] {HALF, VARIANT});
 	}
 
 	@Override
-	public String getUnlocalizedName(int meta)
-	{
+	public String getUnlocalizedName(int meta) {
 		return super.getUnlocalizedName();
 	}
 
@@ -94,8 +87,7 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 	{
 		DEFAULT;
 
-		public String getName()
-		{
+		public String getName() {
 			return "default";
 		}
 	}
