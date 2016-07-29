@@ -116,29 +116,29 @@ public abstract class Fluids {
 
 		fluidIridium = newFluid(ModernMetals.MODID, "iridium", 2000, 10000, 769, 10, 0xFFF8EDCC);
 
-		fluidMagnesium = newFluid(ModernMetals.MODID, "magnesium", 2000,10000,769,10, 0xFF7F7F77);
+		fluidMagnesium = newFluid(ModernMetals.MODID, "magnesium", 2000, 10000, 769, 10, 0xFF7F7F77);
 
-		fluidManganese = newFluid(ModernMetals.MODID, "manganese", 2000,10000,769,10, 0xFFF5CFDA);
+		fluidManganese = newFluid(ModernMetals.MODID, "manganese", 2000, 10000, 769, 10, 0xFFF5CFDA);
 
-		fluidNichrome = newFluid(ModernMetals.MODID, "nichrome", 2000,10000,769,10, 0xFFDEA054);
+		fluidNichrome = newFluid(ModernMetals.MODID, "nichrome", 2000, 10000, 769, 10, 0xFFDEA054);
 
-		fluidOsmium = newFluid(ModernMetals.MODID, "osmium", 2000,10000,769,10, 0xFF7C8E99);
+		fluidOsmium = newFluid(ModernMetals.MODID, "osmium", 2000, 10000, 769, 10, 0xFF7C8E99);
 
-		fluidPlutonium = newFluid(ModernMetals.MODID, "plutonium", 2000,769,300,10, 0xFFB333EA);
+		fluidPlutonium = newFluid(ModernMetals.MODID, "plutonium", 2000, 769, 300, 10, 0xFFB333EA);
 
-		fluidRutile = newFluid(ModernMetals.MODID, "rutile", 2000,10000,769,10, 0xFFBF928B);
+		fluidRutile = newFluid(ModernMetals.MODID, "rutile", 2000, 10000, 769, 10, 0xFFBF928B);
 
-		fluidStainlessSteel = newFluid(ModernMetals.MODID, "stainlesssteel", 2000,10000,769,10, 0xFFC5BFC1);
+		fluidStainlessSteel = newFluid(ModernMetals.MODID, "stainlesssteel", 2000, 10000, 769, 10, 0xFFC5BFC1);
 
-		fluidTantalum = newFluid(ModernMetals.MODID, "tantalum", 2000,10000,769,10, 0xFFC4BEC2);
+		fluidTantalum = newFluid(ModernMetals.MODID, "tantalum", 2000, 10000, 769, 10, 0xFFC4BEC2);
 
-		fluidTitanium = newFluid(ModernMetals.MODID, "titanium", 2000,10000,769,10, 0xFF73787E);
+		fluidTitanium = newFluid(ModernMetals.MODID, "titanium", 2000, 10000, 769, 10, 0xFF73787E);
 
-		fluidTungsten = newFluid(ModernMetals.MODID, "tungsten", 2000,10000,769,10, 0xFF969696);
+		fluidTungsten = newFluid(ModernMetals.MODID, "tungsten", 2000, 10000, 769, 10, 0xFF969696);
 
-		fluidUranium = newFluid(ModernMetals.MODID, "uranium", 2000,10000,769,10, 0xFFA7B345);
+		fluidUranium = newFluid(ModernMetals.MODID, "uranium", 2000, 10000, 769, 10, 0xFFA7B345);
 
-		fluidZirconium = newFluid(ModernMetals.MODID, "zirconium", 2000,10000,769,10, 0xFF929793);
+		fluidZirconium = newFluid(ModernMetals.MODID, "zirconium", 2000, 10000, 769, 10, 0xFF929793);
 
 		// fluid blocks
 		fluidBlockAluminum = registerFluidBlock(fluidAluminum, new BlockMoltenFluid(fluidAluminum), "aluminum");

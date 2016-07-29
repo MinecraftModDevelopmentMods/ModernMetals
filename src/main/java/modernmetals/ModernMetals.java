@@ -87,7 +87,9 @@ public class ModernMetals
 		Blocks.init();
 		Items.init();
 		VillagerTrades.init();
+		EnderIOPlugin.init();
 		TinkersConstructPlugin.init();
+		VeinMinerPlugin.init();
 
 		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(), "additional-loot-tables");
 		Path myLootFolder = ALTPath.resolve(MODID);
@@ -115,7 +117,7 @@ public class ModernMetals
 				Files.write(myLootFolder.resolve("chests").resolve("village_blacksmith.json"),
 						Arrays.asList(AdditionalLootTables.village_blacksmith));
 			} catch(IOException ex) {
-				FMLLog.log(Level.ERROR,ex,"%s: Failed to extract additional loot tables",MODID);
+				FMLLog.log(Level.ERROR, ex, "%s: Failed to extract additional loot tables", MODID);
 			}
 		}
 
