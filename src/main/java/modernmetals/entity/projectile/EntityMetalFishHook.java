@@ -2,6 +2,7 @@ package modernmetals.entity.projectile;
 
 import java.util.List;
 
+import cyano.basemetals.items.ItemMetalFishingRod;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -27,8 +28,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTableList;
-
-import modernmetals.items.ItemMetalFishingRod;
 
 public class EntityMetalFishHook extends EntityFishHook {
 

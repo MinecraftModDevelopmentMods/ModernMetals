@@ -29,7 +29,8 @@ public class ItemGroups {
 	 * 
 	 */
 	public static void init() {
-		if(initDone) return;
+		if(initDone)
+			return;
 
 		// placeholders
 		blockItem = Items.aluminum_crackhammer;

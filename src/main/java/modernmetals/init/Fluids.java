@@ -1,7 +1,7 @@
 package modernmetals.init;
 
 import modernmetals.ModernMetals;
-import modernmetals.blocks.BlockMoltenFluid;
+import cyano.basemetals.blocks.BlockMoltenFluid;
 import cyano.basemetals.fluids.CustomFluid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.ItemMeshDefinition;
@@ -100,7 +100,8 @@ public abstract class Fluids {
 	 * 
 	 */
 	public static void init() {
-		if(initDone) return;
+		if(initDone)
+			return;
 
 		// fluids
 		fluidAluminum = newFluid(ModernMetals.MODID, "aluminum", 2000, 10000, 330, 10, 0xFFC5C8C1);

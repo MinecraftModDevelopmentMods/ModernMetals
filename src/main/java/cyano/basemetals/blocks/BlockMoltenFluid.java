@@ -1,4 +1,4 @@
-package modernmetals.blocks;
+package cyano.basemetals.blocks;
 
 import javax.annotation.Nonnull;
 

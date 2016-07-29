@@ -1,17 +1,18 @@
-package modernmetals.items;
+package cyano.basemetals.items;
 
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
+
+import net.minecraft.item.ItemArrow;
 
 /**
  * 
  * @author Jasmine Iwanek
  *
  */
-public class ItemMetalSmallPowder extends Item implements IOreDictionaryEntry, IMetalObject {
+public class ItemMetalArrow extends ItemArrow implements IOreDictionaryEntry, IMetalObject {
 
 	protected final MetalMaterial metal;
 	private final String oreDict;
@@ -20,10 +21,10 @@ public class ItemMetalSmallPowder extends Item implements IOreDictionaryEntry, I
 	 * 
 	 * @param metal
 	 */
-	public ItemMetalSmallPowder(MetalMaterial metal) {
+	public ItemMetalArrow(MetalMaterial metal) {
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
-		this.oreDict = "dustTiny" + metal.getCapitalizedName();
+		this.oreDict = "arrow" + metal.getCapitalizedName();
 	}
 
 	@Override

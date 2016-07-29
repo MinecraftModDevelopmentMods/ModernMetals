@@ -36,7 +36,8 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	 * 
 	 */
 	public static void init() {
-		if(initDone) return;
+		if(initDone)
+			return;
 
 		// Mod Metals
 		aluminum = addMaterial("aluminum", 2.5, 3.75, 4.5);

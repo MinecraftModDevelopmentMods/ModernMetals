@@ -840,3 +840,417 @@ tile.modernmetals:titanium.name=Molten Titanium
 tile.modernmetals:tungsten.name=Molten Tungsten
 tile.modernmetals:uranium.name=Molten Uranium
 tile.modernmetals:zirconium.name=Molten Zirconium
+
+
+item.modernmetals:aluminum_clump.name=Aluminum Clump
+item.modernmetals:aluminum_crushed.name=Crushed Aluminum Ore
+item.modernmetals:aluminum_crushed_purified.name=Purified Crushed Aluminum Ore
+item.modernmetals:aluminum_crystal.name=Aluminum Crystal
+item.modernmetals:aluminum_dense_plate.name=Dense Aluminum Plate
+item.modernmetals:aluminum_powder_dirty.name=Dirty Aluminum Dust
+item.modernmetals:aluminum_shard.name=Aluminum Shard
+
+item.modernmetals:aluminum_button.name=Aluminum Button
+item.modernmetals:aluminum_lever.name=Aluminum Lever
+item.modernmetals:aluminum_pressure_plate.name=Aluminum Pressure Plate
+item.modernmetals:aluminum_slab.name=Aluminum Slab
+item.modernmetals:aluminum_stairs.name=Aluminum Stairs
+item.modernmetals:aluminum_wall.name=Aluminum Wall
+
+tile.modernmetals:aluminum_button.name=Aluminum Button
+tile.modernmetals:aluminum_lever.name=Aluminum Lever
+tile.modernmetals:aluminum_pressure_plate.name=Aluminum Pressure Plate
+tile.modernmetals:aluminum_slab.name=Aluminum Slab
+tile.modernmetals:aluminum_stairs.name=Aluminum Stairs
+tile.modernmetals:aluminum_wall.name=Aluminum Wall
+
+
+item.modernmetals:aluminumbrass_clump.name=Aluminum Brass Clump
+item.modernmetals:aluminumbrass_crushed.name=Crushed Aluminum Brass Ore
+item.modernmetals:aluminumbrass_crushed_purified.name=Purified Crushed Aluminum Brass Ore
+item.modernmetals:aluminumbrass_crystal.name=Aluminum Brass Crystal
+item.modernmetals:aluminumbrass_dense_plate.name=Dense Aluminum Brass Plate
+item.modernmetals:aluminumbrass_powder_dirty.name=Dirty Aluminum Brass Dust
+item.modernmetals:aluminumbrass_shard.name=Aluminum Brass Shard
+
+item.modernmetals:aluminumbrass_button.name=Aluminum Brass Button
+item.modernmetals:aluminumbrass_lever.name=Aluminum Brass Lever
+item.modernmetals:aluminumbrass_pressure_plate.name=Aluminum Brass Pressure Plate
+item.modernmetals:aluminumbrass_slab.name=Aluminum Brass Slab
+item.modernmetals:aluminumbrass_stairs.name=Aluminum Brass Stairs
+item.modernmetals:aluminumbrass_wall.name=Aluminum Brass Wall
+
+tile.modernmetals:aluminumbrass_button.name=Aluminum Brass Button
+tile.modernmetals:aluminumbrass_lever.name=Aluminum Brass Lever
+tile.modernmetals:aluminumbrass_pressure_plate.name=Aluminum Brass Pressure Plate
+tile.modernmetals:aluminumbrass_slab.name=Aluminum Brass Slab
+tile.modernmetals:aluminumbrass_stairs.name=Aluminum Brass Stairs
+tile.modernmetals:aluminumbrass_wall.name=Aluminum Brass Wall
+
+
+item.modernmetals:cadmium_clump.name=Cadmium Clump
+item.modernmetals:cadmium_crushed.name=Crushed Cadmium Ore
+item.modernmetals:cadmium_crushed_purified.name=Purified Crushed Cadmium Ore
+item.modernmetals:cadmium_crystal.name=Cadmium Crystal
+item.modernmetals:cadmium_dense_plate.name=Dense Cadmium Plate
+item.modernmetals:cadmium_powder_dirty.name=Dirty Cadmium Dust
+item.modernmetals:cadmium_shard.name=Cadmium Shard
+
+item.modernmetals:cadmium_button.name=Cadmium Button
+item.modernmetals:cadmium_lever.name=Cadmium Lever
+item.modernmetals:cadmium_pressure_plate.name=Cadmium Pressure Plate
+item.modernmetals:cadmium_slab.name=Cadmium Slab
+item.modernmetals:cadmium_stairs.name=Cadmium Stairs
+item.modernmetals:cadmium_wall.name=Cadmium Wall
+
+tile.modernmetals:cadmium_button.name=Cadmium Button
+tile.modernmetals:cadmium_lever.name=Cadmium Lever
+tile.modernmetals:cadmium_pressure_plate.name=Cadmium Pressure Plate
+tile.modernmetals:cadmium_slab.name=Cadmium Slab
+tile.modernmetals:cadmium_stairs.name=Cadmium Stairs
+tile.modernmetals:cadmium_wall.name=Cadmium Wall
+
+
+item.modernmetals:chromium_clump.name=Chromium Clump
+item.modernmetals:chromium_crushed.name=Crushed Chromium Ore
+item.modernmetals:chromium_crushed_purified.name=Purified Crushed Chromium Ore
+item.modernmetals:chromium_crystal.name=Chromium Crystal
+item.modernmetals:chromium_dense_plate.name=Dense Chromium Plate
+item.modernmetals:chromium_powder_dirty.name=Dirty Chromium Dust
+item.modernmetals:chromium_shard.name=Chromium Shard
+
+item.modernmetals:chromium_button.name=Chromium Button
+item.modernmetals:chromium_lever.name=Chromium Lever
+item.modernmetals:chromium_pressure_plate.name=Chromium Pressure Plate
+item.modernmetals:chromium_slab.name=Chromium Slab
+item.modernmetals:chromium_stairs.name=Chromium Stairs
+item.modernmetals:chromium_wall.name=Chromium Wall
+
+tile.modernmetals:chromium_button.name=Chromium Button
+tile.modernmetals:chromium_lever.name=Chromium Lever
+tile.modernmetals:chromium_pressure_plate.name=Chromium Pressure Plate
+tile.modernmetals:chromium_slab.name=Chromium Slab
+tile.modernmetals:chromium_stairs.name=Chromium Stairs
+tile.modernmetals:chromium_wall.name=Chromium Wall
+
+
+item.modernmetals:galvanizedsteel_clump.name=Galvanized Steel Clump
+item.modernmetals:galvanizedsteel_crushed.name=Crushed Galvanized Steel Ore
+item.modernmetals:galvanizedsteel_crushed_purified.name=Purified Crushed Galvanized Steel Ore
+item.modernmetals:galvanizedsteel_crystal.name=Galvanized Steel Crystal
+item.modernmetals:galvanizedsteel_dense_plate.name=Dense Galvanized Steel Plate
+item.modernmetals:galvanizedsteel_powder_dirty.name=Dirty Galvanized Steel Dust
+item.modernmetals:galvanizedsteel_shard.name=Galvanized Steel Shard
+
+item.modernmetals:galvanizedsteel_button.name=Galvanized Steel Button
+item.modernmetals:galvanizedsteel_lever.name=Galvanized Steel Lever
+item.modernmetals:galvanizedsteel_pressure_plate.name=Galvanized Steel Pressure Plate
+item.modernmetals:galvanizedsteel_slab.name=Galvanized Steel Slab
+item.modernmetals:galvanizedsteel_stairs.name=Galvanized Steel Stairs
+item.modernmetals:galvanizedsteel_wall.name=Galvanized Steel Wall
+
+tile.modernmetals:galvanizedsteel_button.name=Galvanized Steel Button
+tile.modernmetals:galvanizedsteel_lever.name=Galvanized Steel Lever
+tile.modernmetals:galvanizedsteel_pressure_plate.name=Galvanized Steel Pressure Plate
+tile.modernmetals:galvanizedsteel_slab.name=Galvanized Steel Slab
+tile.modernmetals:galvanizedsteel_stairs.name=Galvanized Steel Stairs
+tile.modernmetals:galvanizedsteel_wall.name=Galvanized Steel Wall
+
+
+item.modernmetals:iridium_clump.name=Iridium Clump
+item.modernmetals:iridium_crushed.name=Crushed Iridium Ore
+item.modernmetals:iridium_crushed_purified.name=Purified Crushed Iridium Ore
+item.modernmetals:iridium_crystal.name=Iridium Crystal
+item.modernmetals:iridium_dense_plate.name=Dense Iridium Plate
+item.modernmetals:iridium_powder_dirty.name=Dirty Iridium Dust
+item.modernmetals:iridium_shard.name=Iridium Shard
+
+item.modernmetals:iridium_button.name=Iridium Button
+item.modernmetals:iridium_lever.name=Iridium Lever
+item.modernmetals:iridium_pressure_plate.name=Iridium Pressure Plate
+item.modernmetals:iridium_slab.name=Iridium Slab
+item.modernmetals:iridium_stairs.name=Iridium Stairs
+item.modernmetals:iridium_wall.name=Iridium Wall
+
+tile.modernmetals:iridium_button.name=Iridium Button
+tile.modernmetals:iridium_lever.name=Iridium Lever
+tile.modernmetals:iridium_pressure_plate.name=Iridium Pressure Plate
+tile.modernmetals:iridium_slab.name=Iridium Slab
+tile.modernmetals:iridium_stairs.name=Iridium Stairs
+tile.modernmetals:iridium_wall.name=Iridium Wall
+
+
+item.modernmetals:magnesium_clump.name=Magnesium Clump
+item.modernmetals:magnesium_crushed.name=Crushed Magnesium Ore
+item.modernmetals:magnesium_crushed_purified.name=Purified Crushed Magnesium Ore
+item.modernmetals:magnesium_crystal.name=Magnesium Crystal
+item.modernmetals:magnesium_dense_plate.name=Dense Magnesium Plate
+item.modernmetals:magnesium_powder_dirty.name=Dirty Magnesium Dust
+item.modernmetals:magnesium_shard.name=Magnesium Shard
+
+item.modernmetals:magnesium_button.name=Magnesium Button
+item.modernmetals:magnesium_lever.name=Magnesium Lever
+item.modernmetals:magnesium_pressure_plate.name=Magnesium Pressure Plate
+item.modernmetals:magnesium_slab.name=Magnesium Slab
+item.modernmetals:magnesium_stairs.name=Magnesium Stairs
+item.modernmetals:magnesium_wall.name=Magnesium Wall
+
+tile.modernmetals:magnesium_button.name=Magnesium Button
+tile.modernmetals:magnesium_lever.name=Magnesium Lever
+tile.modernmetals:magnesium_pressure_plate.name=Magnesium Pressure Plate
+tile.modernmetals:magnesium_slab.name=Magnesium Slab
+tile.modernmetals:magnesium_stairs.name=Magnesium Stairs
+tile.modernmetals:magnesium_wall.name=Magnesium Wall
+
+
+item.modernmetals:manganese_clump.name=Manganese Clump
+item.modernmetals:manganese_crushed.name=Crushed Manganese Ore
+item.modernmetals:manganese_crushed_purified.name=Purified Crushed Manganese Ore
+item.modernmetals:manganese_crystal.name=Manganese Crystal
+item.modernmetals:manganese_dense_plate.name=Dense Manganese Plate
+item.modernmetals:manganese_powder_dirty.name=Dirty Manganese Dust
+item.modernmetals:manganese_shard.name=Manganese Shard
+
+item.modernmetals:manganese_button.name=Manganese Button
+item.modernmetals:manganese_lever.name=Manganese Lever
+item.modernmetals:manganese_pressure_plate.name=Manganese Pressure Plate
+item.modernmetals:manganese_slab.name=Manganese Slab
+item.modernmetals:manganese_stairs.name=Manganese Stairs
+item.modernmetals:manganese_wall.name=Manganese Wall
+
+tile.modernmetals:manganese_button.name=Manganese Button
+tile.modernmetals:manganese_lever.name=Manganese Lever
+tile.modernmetals:manganese_pressure_plate.name=Manganese Pressure Plate
+tile.modernmetals:manganese_slab.name=Manganese Slab
+tile.modernmetals:manganese_stairs.name=Manganese Stairs
+tile.modernmetals:manganese_wall.name=Manganese Wall
+
+
+item.modernmetals:nichrome_clump.name=Nichrome Clump
+item.modernmetals:nichrome_crushed.name=Crushed Nichrome Ore
+item.modernmetals:nichrome_crushed_purified.name=Purified Crushed Nichrome Ore
+item.modernmetals:nichrome_crystal.name=Nichrome Crystal
+item.modernmetals:nichrome_dense_plate.name=Dense Nichrome Plate
+item.modernmetals:nichrome_powder_dirty.name=Dirty Nichrome Dust
+item.modernmetals:nichrome_shard.name=Nichrome Shard
+
+item.modernmetals:nichrome_button.name=Nichrome Button
+item.modernmetals:nichrome_lever.name=Nichrome Lever
+item.modernmetals:nichrome_pressure_plate.name=Nichrome Pressure Plate
+item.modernmetals:nichrome_slab.name=Nichrome Slab
+item.modernmetals:nichrome_stairs.name=Nichrome Stairs
+item.modernmetals:nichrome_wall.name=Nichrome Wall
+
+tile.modernmetals:nichrome_button.name=Nichrome Button
+tile.modernmetals:nichrome_lever.name=Nichrome Lever
+tile.modernmetals:nichrome_pressure_plate.name=Nichrome Pressure Plate
+tile.modernmetals:nichrome_slab.name=Nichrome Slab
+tile.modernmetals:nichrome_stairs.name=Nichrome Stairs
+tile.modernmetals:nichrome_wall.name=Nichrome Wall
+
+
+item.modernmetals:osmium_clump.name=Osmium Clump
+item.modernmetals:osmium_crushed.name=Crushed Osmium Ore
+item.modernmetals:osmium_crushed_purified.name=Purified Crushed Osmium Ore
+item.modernmetals:osmium_crystal.name=Osmium Crystal
+item.modernmetals:osmium_dense_plate.name=Dense Osmium Plate
+item.modernmetals:osmium_powder_dirty.name=Dirty Osmium Dust
+item.modernmetals:osmium_shard.name=Osmium Shard
+
+item.modernmetals:osmium_button.name=Osmium Button
+item.modernmetals:osmium_lever.name=Osmium Lever
+item.modernmetals:osmium_pressure_plate.name=Osmium Pressure Plate
+item.modernmetals:osmium_slab.name=Osmium Slab
+item.modernmetals:osmium_stairs.name=Osmium Stairs
+item.modernmetals:osmium_wall.name=Osmium Wall
+
+tile.modernmetals:osmium_button.name=Osmium Button
+tile.modernmetals:osmium_lever.name=Osmium Lever
+tile.modernmetals:osmium_pressure_plate.name=Osmium Pressure Plate
+tile.modernmetals:osmium_slab.name=Osmium Slab
+tile.modernmetals:osmium_stairs.name=Osmium Stairs
+tile.modernmetals:osmium_wall.name=Osmium Wall
+
+
+item.modernmetals:plutonium_clump.name=Plutonium Clump
+item.modernmetals:plutonium_crushed.name=Crushed Plutonium Ore
+item.modernmetals:plutonium_crushed_purified.name=Purified Crushed Plutonium Ore
+item.modernmetals:plutonium_crystal.name=Plutonium Crystal
+item.modernmetals:plutonium_dense_plate.name=Dense Plutonium Plate
+item.modernmetals:plutonium_powder_dirty.name=Dirty Plutonium Dust
+item.modernmetals:plutonium_shard.name=Plutonium Shard
+
+item.modernmetals:plutonium_button.name=Plutonium Button
+item.modernmetals:plutonium_lever.name=Plutonium Lever
+item.modernmetals:plutonium_pressure_plate.name=Plutonium Pressure Plate
+item.modernmetals:plutonium_slab.name=Plutonium Slab
+item.modernmetals:plutonium_stairs.name=Plutonium Stairs
+item.modernmetals:plutonium_wall.name=Plutonium Wall
+
+tile.modernmetals:plutonium_button.name=Plutonium Button
+tile.modernmetals:plutonium_lever.name=Plutonium Lever
+tile.modernmetals:plutonium_pressure_plate.name=Plutonium Pressure Plate
+tile.modernmetals:plutonium_slab.name=Plutonium Slab
+tile.modernmetals:plutonium_stairs.name=Plutonium Stairs
+tile.modernmetals:plutonium_wall.name=Plutonium Wall
+
+
+item.modernmetals:rutile_clump.name=Rutile Clump
+item.modernmetals:rutile_crushed.name=Crushed Rutile Ore
+item.modernmetals:rutile_crushed_purified.name=Purified Crushed Rutile Ore
+item.modernmetals:rutile_crystal.name=Rutile Crystal
+item.modernmetals:rutile_dense_plate.name=Dense Rutile Plate
+item.modernmetals:rutile_powder_dirty.name=Dirty Rutile Dust
+item.modernmetals:rutile_shard.name=Rutile Shard
+
+item.modernmetals:rutile_button.name=Rutile Button
+item.modernmetals:rutile_lever.name=Rutile Lever
+item.modernmetals:rutile_pressure_plate.name=Rutile Pressure Plate
+item.modernmetals:rutile_slab.name=Rutile Slab
+item.modernmetals:rutile_stairs.name=Rutile Stairs
+item.modernmetals:rutile_wall.name=Rutile Wall
+
+tile.modernmetals:rutile_button.name=Rutile Button
+tile.modernmetals:rutile_lever.name=Rutile Lever
+tile.modernmetals:rutile_pressure_plate.name=Rutile Pressure Plate
+tile.modernmetals:rutile_slab.name=Rutile Slab
+tile.modernmetals:rutile_stairs.name=Rutile Stairs
+tile.modernmetals:rutile_wall.name=Rutile Wall
+
+
+item.modernmetals:stainlesssteel_clump.name=Stainless Steel Clump
+item.modernmetals:stainlesssteel_crushed.name=Crushed Stainless Steel Ore
+item.modernmetals:stainlesssteel_crushed_purified.name=Purified Crushed Stainless Steel Ore
+item.modernmetals:stainlesssteel_crystal.name=Stainless Steel Crystal
+item.modernmetals:stainlesssteel_dense_plate.name=Dense Stainless Steel Plate
+item.modernmetals:stainlesssteel_powder_dirty.name=Dirty Stainless Steel Dust
+item.modernmetals:stainlesssteel_shard.name=Stainless Steel Shard
+
+item.modernmetals:stainlesssteel_button.name=Stainless Steel Button
+item.modernmetals:stainlesssteel_lever.name=Stainless Steel Lever
+item.modernmetals:stainlesssteel_pressure_plate.name=Stainless Steel Pressure Plate
+item.modernmetals:stainlesssteel_slab.name=Stainless Steel Slab
+item.modernmetals:stainlesssteel_stairs.name=Stainless Steel Stairs
+item.modernmetals:stainlesssteel_wall.name=Stainless Steel Wall
+
+tile.modernmetals:stainlesssteel_button.name=Stainless Steel Button
+tile.modernmetals:stainlesssteel_lever.name=Stainless Steel Lever
+tile.modernmetals:stainlesssteel_pressure_plate.name=Stainless Steel Pressure Plate
+tile.modernmetals:stainlesssteel_slab.name=Stainless Steel Slab
+tile.modernmetals:stainlesssteel_stairs.name=Stainless Steel Stairs
+tile.modernmetals:stainlesssteel_wall.name=Stainless Steel Wall
+
+
+item.modernmetals:tantalum_clump.name=Tantalum Clump
+item.modernmetals:tantalum_crushed.name=Crushed Tantalum Ore
+item.modernmetals:tantalum_crushed_purified.name=Purified Crushed Tantalum Ore
+item.modernmetals:tantalum_crystal.name=Tantalum Crystal
+item.modernmetals:tantalum_dense_plate.name=Dense Tantalum Plate
+item.modernmetals:tantalum_powder_dirty.name=Dirty Tantalum Dust
+item.modernmetals:tantalum_shard.name=Tantalum Shard
+
+item.modernmetals:tantalum_button.name=Tantalum Button
+item.modernmetals:tantalum_lever.name=Tantalum Lever
+item.modernmetals:tantalum_pressure_plate.name=Tantalum Pressure Plate
+item.modernmetals:tantalum_slab.name=Tantalum Slab
+item.modernmetals:tantalum_stairs.name=Tantalum Stairs
+item.modernmetals:tantalum_wall.name=Tantalum Wall
+
+tile.modernmetals:tantalum_button.name=Tantalum Button
+tile.modernmetals:tantalum_lever.name=Tantalum Lever
+tile.modernmetals:tantalum_pressure_plate.name=Tantalum Pressure Plate
+tile.modernmetals:tantalum_slab.name=Tantalum Slab
+tile.modernmetals:tantalum_stairs.name=Tantalum Stairs
+tile.modernmetals:tantalum_wall.name=Tantalum Wall
+
+
+item.modernmetals:titanium_clump.name=Titanium Clump
+item.modernmetals:titanium_crushed.name=Crushed Titanium Ore
+item.modernmetals:titanium_crushed_purified.name=Purified Crushed Titanium Ore
+item.modernmetals:titanium_crystal.name=Titanium Crystal
+item.modernmetals:titanium_dense_plate.name=Dense Titanium Plate
+item.modernmetals:titanium_powder_dirty.name=Dirty Titanium Dust
+item.modernmetals:titanium_shard.name=Titanium Shard
+
+item.modernmetals:titanium_button.name=Titanium Button
+item.modernmetals:titanium_lever.name=Titanium Lever
+item.modernmetals:titanium_pressure_plate.name=Titanium Pressure Plate
+item.modernmetals:titanium_slab.name=Titanium Slab
+item.modernmetals:titanium_stairs.name=Titanium Stairs
+item.modernmetals:titanium_wall.name=Titanium Wall
+
+tile.modernmetals:titanium_button.name=Titanium Button
+tile.modernmetals:titanium_lever.name=Titanium Lever
+tile.modernmetals:titanium_pressure_plate.name=Titanium Pressure Plate
+tile.modernmetals:titanium_slab.name=Titanium Slab
+tile.modernmetals:titanium_stairs.name=Titanium Stairs
+tile.modernmetals:titanium_wall.name=Titanium Wall
+
+
+item.modernmetals:tungsten_clump.name=Tungsten Clump
+item.modernmetals:tungsten_crushed.name=Crushed Tungsten Ore
+item.modernmetals:tungsten_crushed_purified.name=Purified Crushed Tungsten Ore
+item.modernmetals:tungsten_crystal.name=Tungsten Crystal
+item.modernmetals:tungsten_dense_plate.name=Dense Tungsten Plate
+item.modernmetals:tungsten_powder_dirty.name=Dirty Tungsten Dust
+item.modernmetals:tungsten_shard.name=Tungsten Shard
+
+item.modernmetals:tungsten_button.name=Tungsten Button
+item.modernmetals:tungsten_lever.name=Tungsten Lever
+item.modernmetals:tungsten_pressure_plate.name=Tungsten Pressure Plate
+item.modernmetals:tungsten_slab.name=Tungsten Slab
+item.modernmetals:tungsten_stairs.name=Tungsten Stairs
+item.modernmetals:tungsten_wall.name=Tungsten Wall
+
+tile.modernmetals:tungsten_button.name=Tungsten Button
+tile.modernmetals:tungsten_lever.name=Tungsten Lever
+tile.modernmetals:tungsten_pressure_plate.name=Tungsten Pressure Plate
+tile.modernmetals:tungsten_slab.name=Tungsten Slab
+tile.modernmetals:tungsten_stairs.name=Tungsten Stairs
+tile.modernmetals:tungsten_wall.name=Tungsten Wall
+
+
+item.modernmetals:uranium_clump.name=Uranium Clump
+item.modernmetals:uranium_crushed.name=Crushed Uranium Ore
+item.modernmetals:uranium_crushed_purified.name=Purified Crushed Uranium Ore
+item.modernmetals:uranium_crystal.name=Uranium Crystal
+item.modernmetals:uranium_dense_plate.name=Dense Uranium Plate
+item.modernmetals:uranium_powder_dirty.name=Dirty Uranium Dust
+item.modernmetals:uranium_shard.name=Uranium Shard
+
+item.modernmetals:uranium_button.name=Uranium Button
+item.modernmetals:uranium_lever.name=Uranium Lever
+item.modernmetals:uranium_pressure_plate.name=Uranium Pressure Plate
+item.modernmetals:uranium_slab.name=Uranium Slab
+item.modernmetals:uranium_stairs.name=Uranium Stairs
+item.modernmetals:uranium_wall.name=Uranium Wall
+
+tile.modernmetals:uranium_button.name=Uranium Button
+tile.modernmetals:uranium_lever.name=Uranium Lever
+tile.modernmetals:uranium_pressure_plate.name=Uranium Pressure Plate
+tile.modernmetals:uranium_slab.name=Uranium Slab
+tile.modernmetals:uranium_stairs.name=Uranium Stairs
+tile.modernmetals:uranium_wall.name=Uranium Wall
+
+
+item.modernmetals:zirconium_clump.name=Zirconium Clump
+item.modernmetals:zirconium_crushed.name=Crushed Zirconium Ore
+item.modernmetals:zirconium_crushed_purified.name=Purified Crushed Zirconium Ore
+item.modernmetals:zirconium_crystal.name=Zirconium Crystal
+item.modernmetals:zirconium_dense_plate.name=Dense Zirconium Plate
+item.modernmetals:zirconium_powder_dirty.name=Dirty Zirconium Dust
+item.modernmetals:zirconium_shard.name=Zirconium Shard
+
+item.modernmetals:zirconium_button.name=Zirconium Button
+item.modernmetals:zirconium_lever.name=Zirconium Lever
+item.modernmetals:zirconium_pressure_plate.name=Zirconium Pressure Plate
+item.modernmetals:zirconium_slab.name=Zirconium Slab
+item.modernmetals:zirconium_stairs.name=Zirconium Stairs
+item.modernmetals:zirconium_wall.name=Zirconium Wall
+
+tile.modernmetals:zirconium_button.name=Zirconium Button
+tile.modernmetals:zirconium_lever.name=Zirconium Lever
+tile.modernmetals:zirconium_pressure_plate.name=Zirconium Pressure Plate
+tile.modernmetals:zirconium_slab.name=Zirconium Slab
+tile.modernmetals:zirconium_stairs.name=Zirconium Stairs
+tile.modernmetals:zirconium_wall.name=Zirconium Wall

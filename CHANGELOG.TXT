@@ -1,0 +1,11 @@
+1) Tinkers Construct Tools (In Progress)
+2) Code cleanups (Thanks to lclc98 for the assistance)
+3) Support Items for Mekanism
+4) Support Items for IC2
+5) Balanced metals (They now have different stats)
+6) Fixed Fishing Rod item name ($metal_fishing_rod instead of $metal_fishingrod)
+7) Added Buttons, Levers, Stairs, Pressure Plates, Walls & Slabs
+8) Building Bricks integration support
+9) Tungsten oredicted as wolfram for more mod compatibility
+10) Small Blends/small piles of powder oredicted as dustTiny instead of smalldust
+11) Fishing Rods now actually work. (Thanks to lclc98 for the assistance)

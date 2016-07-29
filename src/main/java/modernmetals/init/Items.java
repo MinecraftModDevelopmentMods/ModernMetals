@@ -767,7 +767,8 @@ public abstract class Items {
 	 * 
 	 */
 	public static void init() {
-		if(initDone) return;
+		if(initDone)
+			return;
 		
 		modernmetals.init.Blocks.init();
 

@@ -1,4 +1,4 @@
-package modernmetals.items;
+package cyano.basemetals.items;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import cyano.basemetals.material.MetalMaterial;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemShears;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
@@ -18,21 +18,22 @@ import net.minecraftforge.oredict.OreDictionary;
  * @author Jasmine Iwanek
  *
  */
-public class ItemMetalShears extends ItemShears {
+public class ItemMetalCrossbow extends Item {
 
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
-	protected final long regenInterval = 200;
+	protected final long regenInterval = 200; 
 
 	/**
 	 * 
 	 * @param metal
 	 */
-	public ItemMetalShears(MetalMaterial metal) {
+	public ItemMetalCrossbow(MetalMaterial metal) {
 		this.metal = metal;
+        this.maxStackSize = 1;
 		this.setMaxDamage(metal.getToolDurability());
-		this.setCreativeTab(CreativeTabs.TOOLS);
+		this.setCreativeTab(CreativeTabs.COMBAT);
 		repairOreDictName = "ingot" + metal.getCapitalizedName();
 		regenerates = metal.equals(Materials.starsteel);
 	}
@@ -40,7 +41,7 @@ public class ItemMetalShears extends ItemShears {
 	@Override
 	public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
 		List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
-		for(ItemStack i : acceptableItems)
+		for(ItemStack i : acceptableItems )
 			if(ItemStack.areItemsEqual(i, repairMaterial))
 				return true;
 

@@ -1,4 +1,4 @@
-package modernmetals.blocks;
+package cyano.basemetals.blocks;
 
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;

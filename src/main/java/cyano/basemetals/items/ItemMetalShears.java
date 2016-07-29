@@ -1,4 +1,4 @@
-package modernmetals.items;
+package cyano.basemetals.items;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import cyano.basemetals.material.MetalMaterial;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemBow;
+import net.minecraft.item.ItemShears;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
@@ -18,21 +18,21 @@ import net.minecraftforge.oredict.OreDictionary;
  * @author Jasmine Iwanek
  *
  */
-public class ItemMetalBow extends ItemBow {
+public class ItemMetalShears extends ItemShears {
 
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
-	protected final long regenInterval = 200; 
+	protected final long regenInterval = 200;
 
 	/**
 	 * 
 	 * @param metal
 	 */
-	public ItemMetalBow(MetalMaterial metal) {
+	public ItemMetalShears(MetalMaterial metal) {
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
-		this.setCreativeTab(CreativeTabs.COMBAT);
+		this.setCreativeTab(CreativeTabs.TOOLS);
 		repairOreDictName = "ingot" + metal.getCapitalizedName();
 		regenerates = metal.equals(Materials.starsteel);
 	}

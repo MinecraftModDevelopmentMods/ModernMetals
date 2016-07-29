@@ -17,7 +17,6 @@ import modernmetals.data.AdditionalLootTables;
 import modernmetals.data.DataConstants;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -51,7 +50,7 @@ public class ModernMetals
 	public static final String VERSION = "0.11.0";
 
 	/** All ore-spawn files discovered in the ore-spawn folder */
-	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
+	protected static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
 
 	/** location of ore-spawn files */
 	public static Path oreSpawnFolder = null;
@@ -148,6 +147,7 @@ public class ModernMetals
 	 */
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+
 		Recipes.init();
 		Achievements.init();
 

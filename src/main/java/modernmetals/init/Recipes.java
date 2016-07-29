@@ -26,14 +26,15 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 	 * 
 	 */
 	public static void init() {
-		if(initDone) return;
+		if(initDone)
+			return;
 
 		Materials.init();
 		Blocks.init();
 		Items.init();
-		
+
 		initMetalRecipes();
-		
+
 		initDone = true;
 	}
 
@@ -42,7 +43,8 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 		List<MetalMaterial> exceptions = Arrays.asList(Materials.vanilla_iron, Materials.vanilla_gold, Materials.vanilla_diamond, Materials.vanilla_stone, Materials.vanilla_wood, Materials.copper, Materials.silver, Materials.tin, Materials.lead, Materials.nickel, Materials.bronze, Materials.brass, Materials.steel, Materials.invar, Materials.electrum, Materials.coldiron, Materials.mithril, Materials.adamantine, Materials.starsteel, Materials.zinc, Materials.aquarium);
 
 		for(MetalMaterial metal : Materials.getAllMetals()) {
-			if(exceptions.contains(metal)) continue;
+			if(exceptions.contains(metal))
+				continue;
 			String baseName = metal.getName() + "_";
 			String oreDictName = metal.getCapitalizedName();
 			Item axe = Items.getItemByName(baseName + "axe");
@@ -67,7 +69,7 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			Block plate = Blocks.getBlockByName(baseName + "plate");
 			Block ore = Blocks.getBlockByName(baseName + "ore");
 			Block trapdoor = Blocks.getBlockByName(baseName + "trapdoor");
-			
+
 			Item arrow = Items.getItemByName(baseName + "arrow");
 			Item bow = Items.getItemByName(baseName + "bow");
 			Item bolt = Items.getItemByName(baseName + "bolt");
@@ -128,7 +130,8 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(gear, 4), " x ", "x/x", " x ", 'x', "ingot" + oreDictName, '/', "rod" + oreDictName));
 //				OreDictionary.registerOre("gear" + oreDictName, gear);
 				OreDictionary.registerOre("gear", gear);
-				if(metal == Materials.steel) OreDictionary.registerOre("sprocket", gear);
+				if(metal == Materials.steel)
+					OreDictionary.registerOre("sprocket", gear);
 			}
 			if(ingot != null && door != null) {
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door, 3), "xx", "xx", "xx", 'x', "ingot" + oreDictName));
@@ -167,8 +170,8 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), "x", "/", "/", 'x', "ingot" + oreDictName, '/', "stickWood"));
 			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword), "x", "x", "/", 'x', "ingot" + oreDictName, '/', "stickWood"));
 			if(ingot != null && shears != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shears), " x", "x " , 'x', "ingot" + oreDictName));
-//			if(rod != null && fishingrod != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(fishingrod), "  x", " xy", "x y", 'x', "rod" + oreDictName, 'y', Items.STRING));
-//			if(ingot != null && horsearmor != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(horsearmor), "  x", "xyx", "xxx", 'x', "ingot" + oreDictName, 'y', Blocks.WOOL));
+			if(rod != null && fishingrod != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(fishingrod), "  x", " xy", "x y", 'x', "rod" + oreDictName, 'y', net.minecraft.init.Items.STRING));
+//			if(ingot != null && horsearmor != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(horsearmor), "  x", "xyx", "xxx", 'x', "ingot" + oreDictName, 'y', net.minecraft.init.Blocks.WOOL));
 
 			// Bows and Crossbows
 			if(rod != null && arrow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(arrow), "x", "y", "z", 'x', "nugget" + oreDictName, 'y', "rod" + oreDictName,'z' ,net.minecraft.init.Items.FEATHER));

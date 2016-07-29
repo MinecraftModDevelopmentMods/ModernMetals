@@ -24,7 +24,8 @@ public abstract class Achievements {
 	 * 
 	 */
 	public static void init() {
-		if(initDone) return;
+		if(initDone)
+			return;
 
 		page = new AchievementPage(ModernMetals.NAME);
 		AchievementPage.registerAchievementPage(page);

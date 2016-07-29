@@ -1,14 +1,6 @@
 package modernmetals.init;
 
 import modernmetals.ModernMetals;
-import modernmetals.blocks.BlockButtonMetal;
-import modernmetals.blocks.BlockDoubleMetalSlab;
-import modernmetals.blocks.BlockHalfMetalSlab;
-import modernmetals.blocks.BlockMetalLever;
-import modernmetals.blocks.BlockMetalPressurePlate;
-import modernmetals.blocks.BlockMetalSlab;
-import modernmetals.blocks.BlockMetalStairs;
-import modernmetals.blocks.BlockMetalWall;
 import cyano.basemetals.blocks.*;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
@@ -685,7 +677,8 @@ public abstract class Blocks {
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event) {
 		for(String name : allBlocks.keySet()) {
-			if(allBlocks.get(name) instanceof BlockDoor) continue; // do not add door blocks
+			if(allBlocks.get(name) instanceof BlockDoor)
+				continue; // do not add door blocks
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 			.register(net.minecraft.item.Item.getItemFromBlock(allBlocks.get(name)), 0,
 				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, name), "inventory"));

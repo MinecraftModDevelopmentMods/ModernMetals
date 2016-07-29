@@ -1,4 +1,4 @@
-package modernmetals.items;
+package cyano.basemetals.items;
 
 import java.util.List;
 

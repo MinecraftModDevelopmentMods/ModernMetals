@@ -21,7 +21,8 @@ public class TinkersConstructPlugin {
 	 * 
 	 */
 	public static void init() {
-		if(initDone) return;
+		if(initDone)
+			return;
 
 		if(Loader.isModLoaded("tconstruct")) {
 //			registerFluid(Fluids.fluidAluminum); // TCon already has this
