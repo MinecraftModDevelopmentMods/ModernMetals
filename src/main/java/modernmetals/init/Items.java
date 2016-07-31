@@ -1510,11 +1510,13 @@ public abstract class Items {
 		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
 		item.setRegistryName(location);
 		item.setUnlocalizedName(location.toString());
-		GameRegistry.register(item); 
+		GameRegistry.register(item);
 		itemRegistry.put(item, name);
+
 		if(tab != null) {
 			item.setCreativeTab(tab);
 		}
+
 		if(metal != null) {
 			itemsByMetal.computeIfAbsent(metal, (MetalMaterial g)->new ArrayList<>());
 			itemsByMetal.get(metal).add(item);

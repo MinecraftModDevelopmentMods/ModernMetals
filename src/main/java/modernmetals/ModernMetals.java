@@ -1,16 +1,5 @@
 package modernmetals;
 
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-
-import org.apache.logging.log4j.Level;
-
 import modernmetals.init.*;
 
 import modernmetals.data.AdditionalLootTables;
@@ -26,6 +15,15 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+
+import org.apache.logging.log4j.Level;
 
 /**
  * This is the entry point for this mod.
@@ -69,7 +67,7 @@ public class ModernMetals
 		config.load();
 
 		oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(), "orespawn");
-		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID + ".json");
+		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(), MODID + ".json");
 		if(!Files.exists(oreSpawnFile)) {
 			try {
 				Files.createDirectories(oreSpawnFile.getParent());
