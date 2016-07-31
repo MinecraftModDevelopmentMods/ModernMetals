@@ -18,7 +18,7 @@ import java.util.List;
  * @author Jasmine Iwanek
  *
  */
-public class Recipes extends cyano.basemetals.init.Recipes {
+public class Recipes { // extends cyano.basemetals.init.Recipes {
 
 	private static boolean initDone = false;
 

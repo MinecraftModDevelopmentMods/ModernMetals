@@ -92,7 +92,7 @@ public class ModernMetals
 		Items.init();
 		VillagerTrades.init();
 		EnderIOPlugin.init();
-		TinkersConstructPlugin.init();
+//		TinkersConstructPlugin.init();
 		VeinMinerPlugin.init();
 
 

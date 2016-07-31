@@ -9,7 +9,6 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.BlockFluidBase;
@@ -221,10 +220,10 @@ public abstract class Fluids {
 		GameRegistry.registerBlock(block);
 		block.setCreativeTab(CreativeTabs.tabMisc);
 
-		ItemBlock itemBlock = new ItemBlock(block);
-		itemBlock.setRegistryName(location);
-		itemBlock.setUnlocalizedName(location.toString());
-		GameRegistry.registerItem(itemBlock);
+//		ItemBlock itemBlock = new ItemBlock(block);
+//		itemBlock.setRegistryName(location);
+//		itemBlock.setUnlocalizedName(location.toString());
+//		GameRegistry.registerItem(itemBlock);
 
 		fluidBlocks.put(fluid, block);
 		fluidBlockNames.put(block, name);
