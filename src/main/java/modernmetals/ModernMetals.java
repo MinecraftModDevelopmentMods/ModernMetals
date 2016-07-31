@@ -1,6 +1,5 @@
 package modernmetals;
 
-
 import modernmetals.init.*;
 
 import modernmetals.data.AdditionalLootTables;

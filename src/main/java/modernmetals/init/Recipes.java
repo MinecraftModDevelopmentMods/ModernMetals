@@ -18,7 +18,7 @@ import java.util.List;
  * @author Jasmine Iwanek
  *
  */
-public class Recipes { // extends cyano.basemetals.init.Recipes {
+public class Recipes {
 
 	private static boolean initDone = false;
 
@@ -176,8 +176,8 @@ public class Recipes { // extends cyano.basemetals.init.Recipes {
 			// Bows and Crossbows
 			if(rod != null && arrow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(arrow), "x", "y", "z", 'x', "nugget" + oreDictName, 'y', "rod" + oreDictName,'z' ,net.minecraft.init.Items.feather));
 			if(rod != null && bow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bow), " xy", "x y", " xy", 'x', "rod" + oreDictName, 'y', net.minecraft.init.Items.string));
-//			if(rod != null && gear != null && crossbow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crossbow), "zxx", " yx", "x z", 'x', "rod" + oreDictName, 'y', "gear" + oreDictName, 'z', Items.string));
-//			if(rod != null && bolt != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bolt), "x", "x", "y", 'x', "rod" + oreDictName, 'y', Items.feather));
+//			if(rod != null && gear != null && crossbow != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crossbow), "zxx", " yx", "x z", 'x', "rod" + oreDictName, 'y', "gear" + oreDictName, 'z', net.minecraft.init.Items.string));
+//			if(rod != null && bolt != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bolt), "x", "x", "y", 'x', "rod" + oreDictName, 'y', net.minecraft.init.Items.feather));
 		}
 
 		// alloy blends
@@ -186,9 +186,6 @@ public class Recipes { // extends cyano.basemetals.init.Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.nichrome_blend, 2), "dustNickel", "dustChromium"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.stainlesssteel_blend, 2), "dustSteel", "dustChromium"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.titanium_blend, 2), "dustRutile", "dustMagnesium"));
-		
-		// new recipes using rods and gears
-//		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.lever, 1), "x", "y", 'x', "rod", 'y', "cobblestone"));
 
 		// small alloy blends
 //		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Items.aluminumbrass_smallblend, 2), "smalldustAluminum", "smalldustBrass"));

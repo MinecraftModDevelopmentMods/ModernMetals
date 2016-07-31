@@ -1,15 +1,14 @@
 package modernmetals.init;
 
 import modernmetals.ModernMetals;
-//import modernmetals.init.ItemGroups;
-//import modernmetals.init.Blocks;
-//import modernmetals.init.Materials;
+import modernmetals.items.ItemMetalBlend;
+import modernmetals.items.ItemMetalIngot;
 import cyano.basemetals.blocks.*;
 import cyano.basemetals.items.*;
-//import modernmetals.blocks.*;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockSlab;
@@ -1529,18 +1528,30 @@ public abstract class Items {
 
 	private static Item create_ingot(MetalMaterial metal) {
 		return registerItem(new ItemMetalIngot(metal), metal.getName() + "_ingot", metal, ItemGroups.tab_items);
+//		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_ingot", metal, ItemGroups.tab_items);
+//		OreDictionary.registerOre("ingot" + metal.getCapitalizedName(), i);
+//		return i;
 	}
 
 	private static Item create_nugget(MetalMaterial metal) {
 		return registerItem(new ItemMetalNugget(metal), metal.getName() + "_nugget", metal, ItemGroups.tab_items);
+//		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_nugget", metal, ItemGroups.tab_items);
+//		OreDictionary.registerOre("nugget" + metal.getCapitalizedName(), i);
+//		return i;
 	}
 
 	private static Item create_powder(MetalMaterial metal) {
 		return registerItem(new ItemMetalPowder(metal), metal.getName()+"_"+"powder", metal, ItemGroups.tab_items);
+//		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_powder", metal, ItemGroups.tab_items);
+//		OreDictionary.registerOre("dust" + metal.getCapitalizedName(), i);
+//		return i;
 	}
 
 	private static Item create_blend(MetalMaterial metal) {
 		return registerItem(new ItemMetalBlend(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
+//		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
+//		OreDictionary.registerOre("dust" + metal.getCapitalizedName(), i);
+//		return i;
 	}
 
 	private static Item create_rod(MetalMaterial metal) {

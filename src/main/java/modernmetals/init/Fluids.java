@@ -1,8 +1,8 @@
 package modernmetals.init;
 
+import modernmetals.ModernMetals;
 import cyano.basemetals.blocks.BlockMoltenFluid;
 import cyano.basemetals.fluids.CustomFluid;
-import modernmetals.ModernMetals;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
