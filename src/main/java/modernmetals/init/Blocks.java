@@ -4,6 +4,7 @@ import modernmetals.ModernMetals;
 import cyano.basemetals.blocks.*;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockSlab;
@@ -315,7 +316,8 @@ public abstract class Blocks {
 	 * 
 	 */
 	public static void init() {
-		if(initDone) return;
+		if(initDone)
+			return;
 
 		modernmetals.init.Materials.init();
 		modernmetals.init.ItemGroups.init();

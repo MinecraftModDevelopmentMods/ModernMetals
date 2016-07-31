@@ -91,8 +91,8 @@ public abstract class Fluids {
 	public static Fluid fluidZirconium = null;
 	public static BlockFluidBase fluidBlockZirconium = null;
 
-	private static final Map<Fluid,BlockFluidBase> fluidBlocks = new HashMap<>();
-	private static final Map<BlockFluidBase,String> fluidBlockNames = new HashMap<>();
+	private static final Map<Fluid, BlockFluidBase> fluidBlocks = new HashMap<>();
+	private static final Map<BlockFluidBase, String> fluidBlockNames = new HashMap<>();
 
 	private static boolean initDone = false;
 
