@@ -70,7 +70,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 
 	@SuppressWarnings("unused")
 	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
-		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
+		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic, true);
 		registerMaterial(name, m);
 		return m;
 	}

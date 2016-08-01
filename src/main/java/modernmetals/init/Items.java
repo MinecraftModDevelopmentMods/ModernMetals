@@ -1521,6 +1521,7 @@ public abstract class Items {
 			itemsByMetal.computeIfAbsent(metal, (MetalMaterial g)->new ArrayList<>());
 			itemsByMetal.get(metal).add(item);
 		}
+
 		return item;
 	}
 

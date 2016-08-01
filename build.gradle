@@ -17,7 +17,7 @@ buildscript {
 //	    }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
 		classpath 'com.matthewprenger:CurseGradle:1.0-SNAPSHOT'
 	}
 }
@@ -44,24 +44,24 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-version = "0.11.0"
+version = "0.12.0"
 group= "modernmetals" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "ModernMetals"
+archivesBaseName = "ModernMetals_1.9.4"
 //ext.repo = Grgit.open(project.file('.'))
 
 minecraft {
-    version = "1.9-12.16.1.1938-1.9.0"
+    version = "1.9.4-12.17.0.1990"
     runDir = "run"
-    mappings = "stable_24"
+    mappings = "stable_26"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
 dependencies {
     compile files(
-        'libs/BaseMetals/BaseMetals_1.9-API-2.2.3.2.jar',
-        'libs/PowerAdvantage/PowerAdvantage_1.9.0-API-2.1.1.jar',
-//      'libs/Tinkers/Mantle-1.9-0.10.1.jar',
-//      'libs/Tinkers/TConstruct-1.9-2.3.1a.jar'
+        'libs/BaseMetals/BaseMetals_1.9.4-API-2.3.3.10.jar',
+        'libs/PowerAdvantage/PowerAdvantage_1.9.4-API-2.2.2.jar',
+//      'libs/Tinkers/Mantle-1.9.4-0.10.2.jar',
+//      'libs/Tinkers/TConstruct-1.9.4-2.3.3.jar'
     )
 //	deobfCompile "slimeknights.mantle:Mantle:1.9-0.10.1.jenkins142"
 // 	deobfCompile "slimeknights:TConstruct:1.9-2.3.1.jenkins226"
