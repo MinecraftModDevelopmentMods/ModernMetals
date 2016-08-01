@@ -1,32 +1,34 @@
 package modernmetals;
 
-import modernmetals.init.*;
-
-import modernmetals.data.AdditionalLootTables;
-import modernmetals.data.DataConstants;
-import cyano.basemetals.registry.CrusherRecipeRegistry;
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.common.FMLLog;
-import net.minecraftforge.fml.common.MissingModsException;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.versioning.ArtifactVersion;
-import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.logging.log4j.Level;
+
+import cyano.basemetals.entity.EntityCustomArrow;
+import modernmetals.init.*;
+
+import modernmetals.data.AdditionalLootTables;
+import modernmetals.data.DataConstants;
+import modernmetals.proxy.CommonProxy;
+
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import cyano.basemetals.registry.CrusherRecipeRegistry;
 
 /**
  * This is the entry point for this mod.
@@ -46,13 +48,16 @@ public class ModernMetals
 	@Instance
 	public static ModernMetals INSTANCE = null;
 
+	@SidedProxy(clientSide = "modernmetals.proxy.ClientProxy", serverSide = "modernmetals.proxy.CommonProxy")
+	public static CommonProxy PROXY = null;
+
 	/** ID of this mod */
 	public static final String MODID = "modernmetals";
 
 	/** display name of this mod */
 	public static final String NAME = "Modern Metals";
 
-	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
+	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
 	public static final String VERSION = "0.12.0";
 
@@ -69,7 +74,7 @@ public class ModernMetals
 	public static boolean requireOreSpawn = true;
 
 	/**
-	 * 
+	 *
 	 * @param event
 	 */
 	@EventHandler
@@ -112,8 +117,9 @@ public class ModernMetals
 		Items.init();
 		VillagerTrades.init();
 		EnderIOPlugin.init();
-		TinkersConstructPlugin.init();
+//		TinkersConstructPlugin.init();
 		VeinMinerPlugin.init();
+		EntityRegistry.registerModEntity(EntityCustomArrow.class, "customArrow", 0, INSTANCE, 80, 3, true);
 
 		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(), "additional-loot-tables");
 		Path myLootFolder = ALTPath.resolve(MODID);
@@ -145,30 +151,11 @@ public class ModernMetals
 			}
 		}
 
-		if(event.getSide() == Side.CLIENT) {
-			clientPreInit(event);
-		}
-
-		if(event.getSide() == Side.SERVER) {
-			serverPreInit(event);
-		}
-//		event.getVersionProperties();
-//		event.getModMetadata();
-	}
-
-	@SideOnly(Side.CLIENT)
-	private void clientPreInit(FMLPreInitializationEvent event) {
-		// client-only code
-		Fluids.bakeModels(MODID);
-	}
-
-	@SideOnly(Side.SERVER)
-	private void serverPreInit(FMLPreInitializationEvent event) {
-		// server-only code
+		PROXY.preInit();
 	}
 
 	/**
-	 * 
+	 *
 	 * @param event
 	 */
 	@EventHandler
@@ -177,51 +164,18 @@ public class ModernMetals
 		Recipes.init();
 		Achievements.init();
 
-		if(event.getSide() == Side.CLIENT) {
-			clientInit(event);
-		}
-
-		if(event.getSide() == Side.SERVER) {
-			serverInit(event);
-		}
-	}
-
-	@SideOnly(Side.CLIENT)
-	private void clientInit(FMLInitializationEvent event) {
-		// client-only code
-		Items.registerItemRenders(event);
-		Blocks.registerItemRenders(event);
-	}
-
-	@SideOnly(Side.SERVER)
-	private void serverInit(FMLInitializationEvent event) {
-		// server-only code
+		PROXY.init();
 	}
 
 	/**
-	 * 
+	 *
 	 * @param event
 	 */
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		if(event.getSide() == Side.CLIENT) {
-			clientPostInit(event);
-		}
-
-		if(event.getSide() == Side.SERVER) {
-			serverPostInit(event);
-		}
-
 		CrusherRecipeRegistry.getInstance().clearCache();
+
+		PROXY.postInit();
 	}
 
-	@SideOnly(Side.CLIENT)
-	private void clientPostInit(FMLPostInitializationEvent event) {
-		// client-only code
-	}
-
-	@SideOnly(Side.SERVER)
-	private void serverPostInit(FMLPostInitializationEvent event) {
-		// server-only code
-	}
 }

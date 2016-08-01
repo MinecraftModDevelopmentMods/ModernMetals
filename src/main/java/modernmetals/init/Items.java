@@ -1736,16 +1736,7 @@ public abstract class Items {
 		return classVal + metalVal + (a.getMetadata() % 100);
 	}
 
-	/**
-	 * 
-	 * @param event
-	 */
-	@SideOnly(Side.CLIENT)
-	public static void registerItemRenders(FMLInitializationEvent event) {
-		for(Item i : itemRegistry.keySet()) {
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-			.register(i, 0, 
-				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, itemRegistry.get(i)), "inventory"));
-		}
+	public static Map<Item, String> getItemRegistry () {
+		return itemRegistry;
 	}
 }

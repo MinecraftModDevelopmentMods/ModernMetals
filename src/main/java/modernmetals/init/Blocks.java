@@ -8,14 +8,9 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockSlab;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.HashMap;
@@ -298,7 +293,7 @@ public abstract class Blocks {
 	private static boolean initDone = false;
 
 //	private static Map<Block, String> blockRegistry = new HashMap<>();
-	private static final Map<String, Block> allBlocks = new HashMap<>();
+	private static final Map<String, Block> blockRegistry = new HashMap<>();
 //	private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
 
 	/**
@@ -309,7 +304,7 @@ public abstract class Blocks {
 	 * @return The block matching that name, or null if there isn't one
 	 */
 	public static Block getBlockByName(String name) {
-		return allBlocks.get(name);
+		return blockRegistry.get(name);
 	}
 
 	/**
@@ -590,7 +585,7 @@ public abstract class Blocks {
 
 		// TODO: Make this support multiple oredicts
 		// final block settings
-		for(Block b : allBlocks.values()) {
+		for(Block b : blockRegistry.values()) {
 			if(b instanceof IOreDictionaryEntry)
 				OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);
 			if(!(b instanceof BlockMetalDoor))
@@ -613,7 +608,7 @@ public abstract class Blocks {
 			GameRegistry.register(itemBlock);
 		}
 
-		allBlocks.put(name, block);
+		blockRegistry.put(name, block);
 		return block;
 	}
 
@@ -673,18 +668,7 @@ public abstract class Blocks {
 		return addBlock(new BlockMetalTrapDoor(metal), metal.getName() + "_trapdoor");
 	}
 
-	/**
-	 * 
-	 * @param event
-	 */
-	@SideOnly(Side.CLIENT)
-	public static void registerItemRenders(FMLInitializationEvent event) {
-		for(String name : allBlocks.keySet()) {
-			if(allBlocks.get(name) instanceof BlockDoor)
-				continue; // do not add door blocks
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-			.register(net.minecraft.item.Item.getItemFromBlock(allBlocks.get(name)), 0,
-				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, name), "inventory"));
-		}
+	public static Map<String, Block> getBlockRegistry () {
+		return blockRegistry;
 	}
 }
