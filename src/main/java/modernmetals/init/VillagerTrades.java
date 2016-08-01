@@ -130,7 +130,7 @@ public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
 
 			if(m.magicAffinity > 5) {
 				if(allHammers.containsKey(m))
-					tradesTable.computeIfAbsent((3 << 16) | (3 << 8) | (tradeLevel + 2),(Integer key)->new ArrayList<>())
+					tradesTable.computeIfAbsent((3 << 16) | (3 << 8) | (tradeLevel + 2), (Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(
 						new ListEnchantedItemForEmeralds(allHammers.get(m), new PriceInfo(emeraldPurch + 7, emeraldPurch + 12))));
 				if(allPickAxes.containsKey(m))

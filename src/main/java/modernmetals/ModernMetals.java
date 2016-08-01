@@ -45,6 +45,7 @@ public class ModernMetals
 {
 	@Instance
 	public static ModernMetals INSTANCE = null;
+
 	/** ID of this mod */
 	public static final String MODID = "modernmetals";
 
@@ -92,7 +93,7 @@ public class ModernMetals
 			}
 			oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(), "orespawn");
 			Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(), MODID + ".json");
-			if (!Files.exists(oreSpawnFile)) {
+			if(!Files.exists(oreSpawnFile)) {
 				try {
 					Files.createDirectories(oreSpawnFile.getParent());
 					Files.write(oreSpawnFile, Arrays.asList(DataConstants.defaultOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
