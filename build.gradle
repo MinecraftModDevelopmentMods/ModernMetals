@@ -44,9 +44,9 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-version = "0.11.0"
+version = "0.12.0"
 group= "modernmetals" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "ModernMetals"
+archivesBaseName = "ModernMetals_1.9"
 //ext.repo = Grgit.open(project.file('.'))
 
 minecraft {

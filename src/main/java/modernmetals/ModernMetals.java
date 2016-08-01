@@ -7,10 +7,13 @@ import modernmetals.data.DataConstants;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.MissingModsException;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.versioning.ArtifactVersion;
+import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -43,15 +46,27 @@ public class ModernMetals
 	@Instance
 	public static ModernMetals INSTANCE = null;
 
+	/** ID of this mod */
 	public static final String MODID = "modernmetals";
+
+	/** display name of this mod */
 	public static final String NAME = "Modern Metals";
-	public static final String VERSION = "0.11.0";
+
+	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
+	 * is made that has the potential to break compatibility with other mods that depend on this one. */
+	public static final String VERSION = "0.12.0";
 
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	protected static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
 
+	/** If true, hammers cannot be crafted */
+	public static boolean disableAllHammers = false;
+
 	/** location of ore-spawn files */
 	public static Path oreSpawnFolder = null;
+
+	/** if true, then this mod will require the orespawn mod */
+	public static boolean requireOreSpawn = true;
 
 	/**
 	 * 
@@ -66,16 +81,27 @@ public class ModernMetals
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 
-		oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(), "orespawn");
-		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(), MODID + ".json");
-		if(!Files.exists(oreSpawnFile)) {
-			try {
-				Files.createDirectories(oreSpawnFile.getParent());
-				Files.write(oreSpawnFile, Arrays.asList(DataConstants.defaultOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
-			} catch (IOException e) {
-				FMLLog.severe(MODID + ": Error: Failed to write file " + oreSpawnFile);
+		disableAllHammers = false;
+
+		requireOreSpawn = false;
+
+//		if(requireOreSpawn) {
+//			if(!net.minecraftforge.fml.common.Loader.isModLoaded("orespawn")) {
+//				HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
+//				orespawnMod.add(new DefaultArtifactVersion("1.0.0"));
+//				throw new MissingModsException(orespawnMod, "orespawn", "DrCyano's Ore Spawn Mod");
+//			}
+			oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(), "orespawn");
+			Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(), MODID + ".json");
+			if(!Files.exists(oreSpawnFile)) {
+				try {
+					Files.createDirectories(oreSpawnFile.getParent());
+					Files.write(oreSpawnFile, Arrays.asList(DataConstants.defaultOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
+				} catch (IOException e) {
+					FMLLog.severe(MODID + ": Error: Failed to write file " + oreSpawnFile);
+				}
 			}
-		}
+//		}
 
 		config.save();
 
