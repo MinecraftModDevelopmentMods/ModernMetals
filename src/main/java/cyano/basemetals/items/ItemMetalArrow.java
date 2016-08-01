@@ -1,11 +1,15 @@
 package cyano.basemetals.items;
 
+import cyano.basemetals.entity.EntityCustomArrow;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.creativetab.CreativeTabs;
 
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemArrow;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 /**
  * 
@@ -25,6 +29,10 @@ public class ItemMetalArrow extends ItemArrow implements IOreDictionaryEntry, IM
 		this.metal = metal;
 		this.setCreativeTab(CreativeTabs.MATERIALS);
 		this.oreDict = "arrow" + metal.getCapitalizedName();
+	}
+
+	public EntityCustomArrow createArrow (World worldIn, ItemStack stack, EntityPlayer shooter) {
+		return new EntityCustomArrow(worldIn, stack, shooter);
 	}
 
 	@Override

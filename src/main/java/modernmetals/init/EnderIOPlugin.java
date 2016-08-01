@@ -33,7 +33,7 @@ public class EnderIOPlugin {
 			  "</input>" +
 			  "<output>" +
 			   "<itemStack modID=\"" + ModernMetals.MODID + "\" itemName=\"%s\" itemMeta=\"%d\" number=\"2\" />" +
-			   "<itemStack modID=\"" + ModernMetals.MODID + "\" itemName=\"%s\" itemMeta=\"%d\" number=\"1\" chance=\"0.1\" />" +    
+			   "<itemStack modID=\"" + ModernMetals.MODID + "\" itemName=\"%s\" itemMeta=\"%d\" number=\"1\" chance=\"0.1\" />" +
 			   "<itemStack modID=\"minecraft\" itemName=\"%s\" chance=\"0.15\"/>" +
 			  "</output>" +
 			 "</recipe>" + 
