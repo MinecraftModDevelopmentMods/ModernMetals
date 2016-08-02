@@ -28,7 +28,7 @@ public class TinkersConstructPlugin {
 	private static boolean initDone = false;
 
 	private static List<MaterialIntegration> integrateList = Lists.newArrayList(); // List of materials needed to be integrated
-	 
+
 	/**
 	 * 
 	 */
@@ -163,7 +163,7 @@ public class TinkersConstructPlugin {
 			FMLInterModComms.sendMessage("tconstruct", "alloy", message);
 		}
 	}
-	
+
 	private static void registerTinkerMaterial(Material material, Fluid fluid, int headDura, float headSpeed, float headAttack, float handleMod, int handleDura, int extra, int headLevel, boolean craft, boolean cast) {
 
 		TinkerRegistry.addMaterialStats(material, new HeadMaterialStats(headDura, headSpeed, headAttack, headLevel)); // Sets stats for head

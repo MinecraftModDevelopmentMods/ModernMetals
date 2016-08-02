@@ -31,7 +31,6 @@ public class ClientProxy extends CommonProxy {
 			itemModelMesher.register(item, 0, new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, Items.getItemRegistry().get(item)), "inventory"));
 		}
 
-
 		for (String blockName : Blocks.getBlockRegistry().keySet()) {
 			Block block = Blocks.getBlockByName(blockName);
 			if (block instanceof BlockDoor)

@@ -134,17 +134,17 @@ public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
 						.addAll(Arrays.asList(
 						new ListEnchantedItemForEmeralds(allHammers.get(m), new PriceInfo(emeraldPurch + 7, emeraldPurch + 12))));
 				if(allPickAxes.containsKey(m))
-					tradesTable.computeIfAbsent((3 << 16) | (3 << 8) | (tradeLevel + 1),(Integer key)->new ArrayList<>())
+					tradesTable.computeIfAbsent((3 << 16) | (3 << 8) | (tradeLevel + 1), (Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(
 						new ListEnchantedItemForEmeralds(allPickAxes.get(m), new PriceInfo(emeraldPurch + 7, emeraldPurch + 12))));
 				if(allArmors.containsKey(m)) {
 					for(int i = 0; i < allArmors.get(m).size(); i++)
-						tradesTable.computeIfAbsent((3 << 16) | (1 << 8) | (tradeLevel + 1),(Integer key)->new ArrayList<>())
+						tradesTable.computeIfAbsent((3 << 16) | (1 << 8) | (tradeLevel + 1), (Integer key)->new ArrayList<>())
 								.addAll(Arrays.asList(
 						new ListEnchantedItemForEmeralds(allArmors.get(m).get(i), new PriceInfo(emeraldPurch + 7 + (int)(m.hardness / 2), emeraldPurch + 12 + (int)(m.hardness / 2)))));
 				}
 				if(allSwords.containsKey(m))
-					tradesTable.computeIfAbsent((3 << 16) | (2 << 8) | (tradeLevel + 1),(Integer key)->new ArrayList<>())
+					tradesTable.computeIfAbsent((3 << 16) | (2 << 8) | (tradeLevel + 1), (Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(
 						new ListEnchantedItemForEmeralds(allSwords.get(m), new PriceInfo(emeraldPurch + 7 + (int)(m.getBaseAttackDamage() / 2) - 1, emeraldPurch + 12 + (int)(m.getBaseAttackDamage() / 2) - 1))));
 			}
