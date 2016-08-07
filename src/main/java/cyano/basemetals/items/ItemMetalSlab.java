@@ -18,11 +18,11 @@ public class ItemMetalSlab extends ItemSlab implements IOreDictionaryEntry, IMet
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
-		return metal;
+		return this.metal;
 	}
 
 	@Override
 	public String getOreDictionaryName() {
-		return "slab" + metal.getCapitalizedName();
+		return "slab" + this.metal.getCapitalizedName();
 	}
 }

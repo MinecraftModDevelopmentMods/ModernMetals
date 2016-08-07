@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 /**
- * 
+ *
  * @author Jasmine Iwanek
  *
  */
@@ -22,7 +22,7 @@ public class ItemMetalArrow extends ItemArrow implements IOreDictionaryEntry, IM
 	private final String oreDict;
 
 	/**
-	 * 
+	 *
 	 * @param metal
 	 */
 	public ItemMetalArrow(MetalMaterial metal) {
@@ -31,17 +31,24 @@ public class ItemMetalArrow extends ItemArrow implements IOreDictionaryEntry, IM
 		this.oreDict = "arrow" + metal.getCapitalizedName();
 	}
 
-	public EntityCustomArrow createArrow (World worldIn, ItemStack stack, EntityPlayer shooter) {
+	/**
+	 *
+	 * @param worldIn
+	 * @param stack
+	 * @param shooter
+	 * @return
+	 */
+	public EntityCustomArrow createArrow(World worldIn, ItemStack stack, EntityPlayer shooter) {
 		return new EntityCustomArrow(worldIn, stack, shooter);
 	}
 
 	@Override
 	public String getOreDictionaryName() {
-		return oreDict;
+		return this.oreDict;
 	}
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
-		return metal;
+		return this.metal;
 	}
 }

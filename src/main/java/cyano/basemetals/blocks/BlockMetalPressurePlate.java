@@ -22,11 +22,11 @@ public class BlockMetalPressurePlate extends BlockPressurePlate implements IOreD
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
-		return metal;
+		return this.metal;
 	}
 
 	@Override
 	public String getOreDictionaryName() {
-		return "pressure" + metal.getCapitalizedName();
+		return "pressure" + this.metal.getCapitalizedName();
 	}
 }

@@ -1,19 +1,13 @@
 package cyano.basemetals.entity;
 
 import modernmetals.init.Items;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
-/**
- *
- * @author Jasmine Iwanek
- *
- */
-public class EntityCustomArrow extends EntityTippedArrow {
+public class EntityCustomBolt extends EntityTippedArrow {
 
 	private ItemStack itemStack;
 
@@ -21,7 +15,7 @@ public class EntityCustomArrow extends EntityTippedArrow {
 	 *
 	 * @param worldIn
 	 */
-	public EntityCustomArrow(World worldIn) {
+	public EntityCustomBolt(World worldIn) {
 		super(worldIn);
 	}
 
@@ -31,7 +25,7 @@ public class EntityCustomArrow extends EntityTippedArrow {
 	 * @param stack
 	 * @param shooter
 	 */
-	public EntityCustomArrow (World worldIn, ItemStack stack, EntityPlayer shooter) {
+	public EntityCustomBolt (World worldIn, ItemStack stack, EntityPlayer shooter) {
 		super(worldIn, shooter);
 		this.itemStack = stack;
 	}

@@ -8,6 +8,7 @@ public class BlockDoubleMetalSlab extends BlockMetalSlab {
 		super(metal);
 	}
 
+	@Override
 	public boolean isDouble() {
 		return true;
 	}

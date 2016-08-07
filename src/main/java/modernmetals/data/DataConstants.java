@@ -1,13 +1,14 @@
 package modernmetals.data;
 
 /**
- * 
+ *
  * @author Jasmine Iwanek
  *
  */
 public abstract class DataConstants {
 
-	public static final String defaultOreSpawnJSON = "{"
+	// @formatter:off
+	public static final String DEFAULT_ORESPAWN_JSON = "{"
 + "\n	\"dimensions\":["
 + "\n		{"
 + "\n			\"dimension\":\"+\","
@@ -151,4 +152,6 @@ public abstract class DataConstants {
 + "\n		}"
 + "\n	]"
 + "\n}";
+	//@formatter:on
+
 }

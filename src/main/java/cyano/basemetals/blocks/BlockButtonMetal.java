@@ -36,11 +36,11 @@ public class BlockButtonMetal extends BlockButton implements IOreDictionaryEntry
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
-		return metal;
+		return this.metal;
 	}
 
 	@Override
 	public String getOreDictionaryName() {
-		return "button" + metal.getCapitalizedName();
+		return "button" + this.metal.getCapitalizedName();
 	}
 }

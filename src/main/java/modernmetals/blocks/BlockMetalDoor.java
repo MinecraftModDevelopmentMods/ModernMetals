@@ -1,5 +1,7 @@
 package modernmetals.blocks;
 
+import java.util.Random;
+
 import cyano.basemetals.material.MetalMaterial;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.state.IBlockState;
@@ -10,10 +12,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.Random;
-
 /**
  * Door Block
+ *
  * @author Jasmine Iwanek
  *
  */

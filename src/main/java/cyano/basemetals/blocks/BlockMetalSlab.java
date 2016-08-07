@@ -2,7 +2,6 @@ package cyano.basemetals.blocks;
 
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
-//import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -29,19 +28,18 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 
 		IBlockState iblockstate = this.blockState.getBaseState();
 
-		if (!this.isDouble()) {
+		if (!this.isDouble())
 			iblockstate = iblockstate.withProperty(HALF, BlockSlab.EnumBlockHalf.BOTTOM);
-		}
 
 		this.setDefaultState(iblockstate.withProperty(VARIANT, BlockMetalSlab.Variant.DEFAULT));
 	}
 
+	@Override
 	public IBlockState getStateFromMeta(int meta) {
 		IBlockState iblockstate = this.getDefaultState().withProperty(VARIANT, BlockMetalSlab.Variant.DEFAULT);
 
-		if (!this.isDouble()) {
+		if (!this.isDouble())
 			iblockstate = iblockstate.withProperty(HALF, (meta & 8) == 0 ? BlockSlab.EnumBlockHalf.BOTTOM : BlockSlab.EnumBlockHalf.TOP);
-		}
 
 		return iblockstate;
 	}
@@ -49,18 +47,19 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 	/**
 	 * Convert the BlockState into the correct metadata value
 	 */
+	@Override
 	public int getMetaFromState(IBlockState state) {
 		int i = 0;
 
-		if (!this.isDouble() && state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP) {
+		if (!this.isDouble() && (state.getValue(HALF) == BlockSlab.EnumBlockHalf.TOP))
 			i |= 8;
-		}
 
 		return i;
 	}
 
+	@Override
 	protected BlockStateContainer createBlockState() {
-		return this.isDouble() ? new BlockStateContainer(this, new IProperty[] {VARIANT}): new BlockStateContainer(this, new IProperty[] {HALF, VARIANT});
+		return this.isDouble() ? new BlockStateContainer(this, new IProperty[] { VARIANT }): new BlockStateContainer(this, new IProperty[] { HALF, VARIANT });
 	}
 
 	@Override
@@ -83,10 +82,9 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 		return BlockMetalSlab.Variant.DEFAULT;
 	}
 
-	public enum Variant implements IStringSerializable
-	{
+	public enum Variant implements IStringSerializable {
 		DEFAULT;
-
+		@Override
 		public String getName() {
 			return "default";
 		}
@@ -94,11 +92,11 @@ public class BlockMetalSlab extends BlockSlab implements IMetalObject {
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
-		return metal;
+		return this.metal;
 	}
 
-//	@Override
-//	public String getOreDictionaryName() {
-//		return "slab" + metal.getCapitalizedName();
-//	}
+	//@Override
+	//public String getOreDictionaryName() {
+	//	return "slab" + metal.getCapitalizedName();
+	//}
 }

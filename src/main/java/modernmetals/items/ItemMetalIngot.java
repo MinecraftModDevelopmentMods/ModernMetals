@@ -1,21 +1,23 @@
 package modernmetals.items;
 
+import cyano.basemetals.material.MetalMaterial;
 import modernmetals.init.Achievements;
 import modernmetals.init.Materials;
-import cyano.basemetals.material.MetalMaterial;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 /**
  * Ingots
+ *
  * @author Jasmine Iwanek
  *
  */
 public class ItemMetalIngot extends cyano.basemetals.items.ItemMetalIngot {
 
 	/**
-	 * 
+	 *
 	 * @param metal
 	 */
 	public ItemMetalIngot(MetalMaterial metal) {
@@ -27,10 +29,16 @@ public class ItemMetalIngot extends cyano.basemetals.items.ItemMetalIngot {
 		super.onCreated(item, world, entityPlayer);
 		entityPlayer.addStat(cyano.basemetals.init.Achievements.this_is_new, 1);
 
-		if(metal == Materials.aluminumbrass) entityPlayer.addStat(Achievements.aluminumbrass_maker, 1);
-		if(metal == Materials.galvanizedsteel) entityPlayer.addStat(Achievements.galvanized_steel_maker, 1);
-		if(metal == Materials.nichrome) entityPlayer.addStat(Achievements.nichrome_maker, 1);
-		if(metal == Materials.stainlesssteel) entityPlayer.addStat(Achievements.stainless_steel_maker, 1);
-		if(metal == Materials.titanium) entityPlayer.addStat(Achievements.titanium_maker, 1);
+		if(this.metal == Materials.aluminumbrass) {
+			entityPlayer.addStat(Achievements.aluminumbrass_maker, 1);
+		} else if(this.metal == Materials.galvanizedsteel) {
+			entityPlayer.addStat(Achievements.galvanized_steel_maker, 1);
+		} else if(this.metal == Materials.nichrome) {
+			entityPlayer.addStat(Achievements.nichrome_maker, 1);
+		} else if(this.metal == Materials.stainlesssteel) {
+			entityPlayer.addStat(Achievements.stainless_steel_maker, 1);
+		} else if(this.metal == Materials.titanium) {
+			entityPlayer.addStat(Achievements.titanium_maker, 1);
+		}
 	}
 }

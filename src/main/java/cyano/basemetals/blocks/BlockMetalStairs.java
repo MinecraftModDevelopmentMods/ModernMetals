@@ -21,11 +21,11 @@ public class BlockMetalStairs extends BlockStairs implements IOreDictionaryEntry
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
-		return metal;
+		return this.metal;
 	}
 
 	@Override
 	public String getOreDictionaryName() {
-		return "stairs" + metal.getCapitalizedName();
+		return "stairs" + this.metal.getCapitalizedName();
 	}
 }

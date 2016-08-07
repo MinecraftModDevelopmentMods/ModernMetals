@@ -35,7 +35,7 @@ public class ItemMetalBow extends ItemBow {
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
-	protected final long regenInterval = 200;
+	protected static final long REGEN_INTERVAL = 200;
 
 	/**
 	 *
@@ -45,73 +45,67 @@ public class ItemMetalBow extends ItemBow {
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		this.setCreativeTab(CreativeTabs.COMBAT);
-		repairOreDictName = "ingot" + metal.getCapitalizedName();
-		regenerates = metal.equals(Materials.starsteel);
+		this.repairOreDictName = "ingot" + metal.getCapitalizedName();
+		this.regenerates = metal.equals(Materials.starsteel);
 	}
 
 	@Override
-	public void onPlayerStoppedUsing (ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
+	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
 		if (entityLiving instanceof EntityPlayer) {
-			EntityPlayer entityplayer = (EntityPlayer) entityLiving;
-			boolean flag = entityplayer.capabilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack) > 0;
+			final EntityPlayer entityplayer = (EntityPlayer) entityLiving;
+			final boolean flag = entityplayer.capabilities.isCreativeMode || (EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, stack) > 0);
 			ItemStack itemstack = this.findAmmo(entityplayer);
 
 			int i = this.getMaxItemUseDuration(stack) - timeLeft;
-			i = net.minecraftforge.event.ForgeEventFactory.onArrowLoose(stack, worldIn, (EntityPlayer) entityLiving, i, itemstack != null || flag);
-			if (i < 0) return;
+			i = net.minecraftforge.event.ForgeEventFactory.onArrowLoose(stack, worldIn, (EntityPlayer) entityLiving, i, (itemstack != null) || flag);
+			if (i < 0)
+				return;
 
-			if (itemstack != null || flag) {
-				if (itemstack == null) {
-					itemstack = new ItemStack(Items.aluminum_arrow);
-				}
+			if ((itemstack != null) || flag) {
+				if (itemstack == null)
+					itemstack = new ItemStack(Items.getItemByName("aluminum_arrow"));
 
-				float f = getArrowVelocity(i);
+				final float f = getArrowVelocity(i);
 
 				if ((double) f >= 0.1D) {
-					boolean flag1 = flag && itemstack.getItem() instanceof ItemMetalArrow; //Forge: Fix consuming custom arrows.
+					final boolean flag1 = flag && (itemstack.getItem() instanceof ItemMetalArrow); // Forge: Fix consuming custom arrows.
 
 					if (!worldIn.isRemote) {
-						ItemMetalArrow itemMetalBolt = (ItemMetalArrow) (itemstack.getItem() instanceof ItemMetalArrow ? itemstack.getItem() : Items.aluminum_arrow);
-						EntityCustomArrow entityarrow = itemMetalBolt.createArrow(worldIn, itemstack, entityplayer);
+						final ItemMetalArrow itemMetalArrow = (ItemMetalArrow) (itemstack.getItem() instanceof ItemMetalArrow ? itemstack.getItem() : Items.getItemByName("aluminum_arrow"));
+						final EntityCustomArrow entityarrow = itemMetalArrow.createArrow(worldIn, itemstack, entityplayer);
 						entityarrow.setAim(entityplayer, entityplayer.rotationPitch, entityplayer.rotationYaw, 0.0F, f * 3.0F, 1.0F);
 
-						if (f == 1.0F) {
+						if (f == 1.0F)
 							entityarrow.setIsCritical(true);
-						}
 
-						int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, stack);
+						final int j = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, stack);
 
-						if (j > 0) {
-							entityarrow.setDamage(entityarrow.getDamage() + (double) j * 0.5D + 0.5D);
-						}
+						if (j > 0)
+							entityarrow.setDamage(entityarrow.getDamage() + ((double) j * 0.5D) + 0.5D);
 
-						int k = EnchantmentHelper.getEnchantmentLevel(Enchantments.PUNCH, stack);
+						final int k = EnchantmentHelper.getEnchantmentLevel(Enchantments.PUNCH, stack);
 
-						if (k > 0) {
+						if (k > 0)
 							entityarrow.setKnockbackStrength(k);
-						}
 
-						if (EnchantmentHelper.getEnchantmentLevel(Enchantments.FLAME, stack) > 0) {
+						if (EnchantmentHelper.getEnchantmentLevel(Enchantments.FLAME, stack) > 0)
 							entityarrow.setFire(100);
-						}
 
 						stack.damageItem(1, entityplayer);
 
-						if (flag1) {
+						if (flag1)
 							entityarrow.pickupStatus = EntityArrow.PickupStatus.CREATIVE_ONLY;
-						}
 
 						worldIn.spawnEntityInWorld(entityarrow);
 					}
 
-					worldIn.playSound(null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.NEUTRAL, 1.0F, 1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+					worldIn.playSound(null, entityplayer.posX, entityplayer.posY, entityplayer.posZ, SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.NEUTRAL, 1.0F, (1.0F / ((itemRand.nextFloat() * 0.4F) + 1.2F)) + (f * 0.5F));
 
 					if (!flag1) {
 						--itemstack.stackSize;
 
-						if (itemstack.stackSize == 0) {
+						if (itemstack.stackSize == 0)
 							entityplayer.inventory.deleteStack(itemstack);
-						}
 					}
 
 					entityplayer.addStat(StatList.getObjectUseStats(this));
@@ -120,20 +114,17 @@ public class ItemMetalBow extends ItemBow {
 		}
 	}
 
-	private ItemStack findAmmo (EntityPlayer player) {
+	private ItemStack findAmmo(EntityPlayer player) {
 		if (this.isArrow(player.getHeldItem(EnumHand.OFF_HAND))) {
 			return player.getHeldItem(EnumHand.OFF_HAND);
-		}
-		else if (this.isArrow(player.getHeldItem(EnumHand.MAIN_HAND))) {
+		} else if (this.isArrow(player.getHeldItem(EnumHand.MAIN_HAND))) {
 			return player.getHeldItem(EnumHand.MAIN_HAND);
-		}
-		else {
+		} else {
 			for (int i = 0; i < player.inventory.getSizeInventory(); ++i) {
-				ItemStack itemstack = player.inventory.getStackInSlot(i);
+				final ItemStack itemstack = player.inventory.getStackInSlot(i);
 
-				if (this.isArrow(itemstack)) {
+				if (this.isArrow(itemstack))
 					return itemstack;
-				}
 			}
 
 			return null;
@@ -141,18 +132,17 @@ public class ItemMetalBow extends ItemBow {
 	}
 
 	@Override
-	protected boolean isArrow (ItemStack stack) {
-		return stack != null && stack.getItem() instanceof ItemMetalArrow;
+	protected boolean isArrow(ItemStack stack) {
+		return (stack != null) && (stack.getItem() instanceof ItemMetalArrow);
 	}
 
 	@Override
-	public ActionResult<ItemStack> onItemRightClick (ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
-		boolean flag = this.findAmmo(playerIn) != null;
+	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
+		final boolean flag = this.findAmmo(playerIn) != null;
 
 		if (!playerIn.capabilities.isCreativeMode && !flag) {
 			return new ActionResult<>(EnumActionResult.FAIL, itemStackIn);
-		}
-		else {
+		} else {
 			playerIn.setActiveHand(hand);
 			return new ActionResult<>(EnumActionResult.SUCCESS, itemStackIn);
 		}
@@ -160,8 +150,8 @@ public class ItemMetalBow extends ItemBow {
 
 	@Override
 	public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
-		List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
-		for(ItemStack i : acceptableItems)
+		final List<ItemStack> acceptableItems = OreDictionary.getOres(this.repairOreDictName);
+		for(final ItemStack i : acceptableItems)
 			if(ItemStack.areItemsEqual(i, repairMaterial))
 				return true;
 
@@ -170,18 +160,17 @@ public class ItemMetalBow extends ItemBow {
 
 	@Override
 	public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
-		if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0) {
+		if(this.regenerates && !world.isRemote && isHeld && (item.getItemDamage() > 0) && ((world.getTotalWorldTime() % REGEN_INTERVAL) == 0))
 			item.setItemDamage(item.getItemDamage() - 1);
-		}
 	}
 
 	public String getMaterialName() {
-		return metal.getName();
+		return this.metal.getName();
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean b) {
 		super.addInformation(stack, player, list, b);
-		MetalToolEffects.addToolSpecialPropertiesToolTip(metal, list);
+		MetalToolEffects.addToolSpecialPropertiesToolTip(this.metal, list);
 	}
 }

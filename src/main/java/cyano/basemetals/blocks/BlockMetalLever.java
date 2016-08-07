@@ -20,11 +20,11 @@ public class BlockMetalLever extends BlockLever implements IOreDictionaryEntry, 
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
-		return metal;
+		return this.metal;
 	}
 
 	@Override
 	public String getOreDictionaryName() {
-		return "lever" + metal.getCapitalizedName();
+		return "lever" + this.metal.getCapitalizedName();
 	}
 }

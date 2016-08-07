@@ -1,8 +1,12 @@
 package modernmetals.init;
 
-import modernmetals.ModernMetals;
+import java.util.HashMap;
+import java.util.Map;
+
 import cyano.basemetals.blocks.BlockMoltenFluid;
 import cyano.basemetals.fluids.CustomFluid;
+import modernmetals.ModernMetals;
+
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -20,12 +24,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * This class initializes all fluids in Modern Metals and provides some utility 
- * methods for looking up fluids. 
+ * This class initializes all fluids in Modern Metals and provides some utility
+ * methods for looking up fluids.
+ *
  * @author DrCyano
  *
  */
@@ -95,7 +97,7 @@ public abstract class Fluids {
 	private static boolean initDone = false;
 
 	/**
-	 * 
+	 *
 	 */
 	public static void init() {
 		if(initDone)
@@ -110,7 +112,7 @@ public abstract class Fluids {
 
 		fluidChromium = newFluid(ModernMetals.MODID, "chromium", 2000, 10000, 769, 10, 0xFFCDCDCF);
 
-		fluidGalvanizedSteel = newFluid(ModernMetals.MODID, "galvanizedsteel", 2000, 10000,769, 10, 0xFF9BA6A2);
+		fluidGalvanizedSteel = newFluid(ModernMetals.MODID, "galvanizedsteel", 2000, 10000, 769, 10, 0xFF9BA6A2);
 
 		fluidIridium = newFluid(ModernMetals.MODID, "iridium", 2000, 10000, 769, 10, 0xFFF8EDCC);
 
@@ -141,61 +143,59 @@ public abstract class Fluids {
 		// fluid blocks
 		fluidBlockAluminum = registerFluidBlock(fluidAluminum, new BlockMoltenFluid(fluidAluminum), "aluminum");
 
-		fluidBlockAluminumBrass = registerFluidBlock(fluidAluminumBrass, new BlockMoltenFluid(fluidAluminumBrass),"alubrass");
+		fluidBlockAluminumBrass = registerFluidBlock(fluidAluminumBrass, new BlockMoltenFluid(fluidAluminumBrass), "alubrass");
 
-		fluidBlockCadmium = registerFluidBlock(fluidCadmium, new BlockMoltenFluid(fluidCadmium),"cadmium");
+		fluidBlockCadmium = registerFluidBlock(fluidCadmium, new BlockMoltenFluid(fluidCadmium), "cadmium");
 
-		fluidBlockChromium = registerFluidBlock(fluidChromium, new BlockMoltenFluid(fluidChromium),"chromium");
+		fluidBlockChromium = registerFluidBlock(fluidChromium, new BlockMoltenFluid(fluidChromium), "chromium");
 
-		fluidBlockGalvanizedSteel = registerFluidBlock(fluidGalvanizedSteel, new BlockMoltenFluid(fluidGalvanizedSteel),"galvanizedsteel");
+		fluidBlockGalvanizedSteel = registerFluidBlock(fluidGalvanizedSteel, new BlockMoltenFluid(fluidGalvanizedSteel), "galvanizedsteel");
 
-		fluidBlockIridium = registerFluidBlock(fluidIridium, new BlockMoltenFluid(fluidIridium),"iridium");
+		fluidBlockIridium = registerFluidBlock(fluidIridium, new BlockMoltenFluid(fluidIridium), "iridium");
 
-		fluidBlockMagnesium = registerFluidBlock(fluidMagnesium, new BlockMoltenFluid(fluidMagnesium),"magnesium");
+		fluidBlockMagnesium = registerFluidBlock(fluidMagnesium, new BlockMoltenFluid(fluidMagnesium), "magnesium");
 
-		fluidBlockManganese = registerFluidBlock(fluidManganese, new BlockMoltenFluid(fluidManganese),"manganese");
+		fluidBlockManganese = registerFluidBlock(fluidManganese, new BlockMoltenFluid(fluidManganese), "manganese");
 
-		fluidBlockNichrome = registerFluidBlock(fluidNichrome, new BlockMoltenFluid(fluidNichrome),"nichrome");
+		fluidBlockNichrome = registerFluidBlock(fluidNichrome, new BlockMoltenFluid(fluidNichrome), "nichrome");
 
-		fluidBlockOsmium = registerFluidBlock(fluidOsmium, new BlockMoltenFluid(fluidOsmium),"osmium");
+		fluidBlockOsmium = registerFluidBlock(fluidOsmium, new BlockMoltenFluid(fluidOsmium), "osmium");
 
-		fluidBlockPlutonium = registerFluidBlock(fluidPlutonium, new BlockMoltenFluid(fluidPlutonium),"plutonium");
+		fluidBlockPlutonium = registerFluidBlock(fluidPlutonium, new BlockMoltenFluid(fluidPlutonium), "plutonium");
 
-		fluidBlockRutile = registerFluidBlock(fluidRutile, new BlockMoltenFluid(fluidRutile),"rutile");
+		fluidBlockRutile = registerFluidBlock(fluidRutile, new BlockMoltenFluid(fluidRutile), "rutile");
 
-		fluidBlockStainlessSteel = registerFluidBlock(fluidStainlessSteel, new BlockMoltenFluid(fluidStainlessSteel),"stainlesssteel");
+		fluidBlockStainlessSteel = registerFluidBlock(fluidStainlessSteel, new BlockMoltenFluid(fluidStainlessSteel), "stainlesssteel");
 
-		fluidBlockTantalum = registerFluidBlock(fluidTantalum, new BlockMoltenFluid(fluidTantalum),"tantalum");
+		fluidBlockTantalum = registerFluidBlock(fluidTantalum, new BlockMoltenFluid(fluidTantalum), "tantalum");
 
-		fluidBlockTitanium = registerFluidBlock(fluidTitanium, new BlockMoltenFluid(fluidTitanium),"titanium");
+		fluidBlockTitanium = registerFluidBlock(fluidTitanium, new BlockMoltenFluid(fluidTitanium), "titanium");
 
-		fluidBlockTungsten = registerFluidBlock(fluidTungsten, new BlockMoltenFluid(fluidTungsten),"tungsten");
+		fluidBlockTungsten = registerFluidBlock(fluidTungsten, new BlockMoltenFluid(fluidTungsten), "tungsten");
 
-		fluidBlockUranium = registerFluidBlock(fluidUranium, new BlockMoltenFluid(fluidUranium),"uranium");
+		fluidBlockUranium = registerFluidBlock(fluidUranium, new BlockMoltenFluid(fluidUranium), "uranium");
 
-		fluidBlockZirconium = registerFluidBlock(fluidZirconium, new BlockMoltenFluid(fluidZirconium),"zirconium");
+		fluidBlockZirconium = registerFluidBlock(fluidZirconium, new BlockMoltenFluid(fluidZirconium), "zirconium");
 
 		initDone = true;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param modID
 	 */
 	@SideOnly(Side.CLIENT)
 	public static void bakeModels(String modID) {
-		for(Fluid fluid : fluidBlocks.keySet()) {
-			BlockFluidBase block = fluidBlocks.get(fluid);
-			Item item = Item.getItemFromBlock(block);
+		for(final Fluid fluid : fluidBlocks.keySet()) {
+			final BlockFluidBase block = fluidBlocks.get(fluid);
+			final Item item = Item.getItemFromBlock(block);
 			final ModelResourceLocation fluidModelLocation = new ModelResourceLocation(
 					modID.toLowerCase() + ":" + fluidBlockNames.get(block), "fluid");
 			ModelBakery.registerItemVariants(item);
 			ModelLoader.setCustomMeshDefinition(item, stack -> fluidModelLocation);
-			ModelLoader.setCustomStateMapper(block, new StateMapperBase()
-			{
+			ModelLoader.setCustomStateMapper(block, new StateMapperBase() {
 				@Override
-				protected ModelResourceLocation getModelResourceLocation(IBlockState state)
-				{
+				protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
 					return fluidModelLocation;
 				}
 			});
@@ -203,7 +203,7 @@ public abstract class Fluids {
 	}
 
 	private static Fluid newFluid(String modID, String name, int density, int viscosity, int temperature, int luminosity, int tintColor) {
-		Fluid fluid = new CustomFluid(name, new ResourceLocation(modID + ":blocks/molten_metal_still"), new ResourceLocation(modID + ":blocks/molten_metal_flow"), tintColor);
+		final Fluid fluid = new CustomFluid(name, new ResourceLocation(modID + ":blocks/molten_metal_still"), new ResourceLocation(modID + ":blocks/molten_metal_flow"), tintColor);
 		fluid.setDensity(density);
 		fluid.setViscosity(viscosity);
 		fluid.setTemperature(temperature);
@@ -215,13 +215,13 @@ public abstract class Fluids {
 	}
 
 	private static BlockFluidClassic registerFluidBlock(Fluid fluid, BlockFluidClassic block, String name) {
-		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
+		final ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
 		block.setRegistryName(location);
 		block.setUnlocalizedName(location.toString());
 		GameRegistry.register(block);
 		block.setCreativeTab(CreativeTabs.MISC);
 
-		ItemBlock itemBlock = new ItemBlock(block);
+		final ItemBlock itemBlock = new ItemBlock(block);
 		itemBlock.setRegistryName(location);
 		itemBlock.setUnlocalizedName(location.toString());
 		GameRegistry.register(itemBlock);

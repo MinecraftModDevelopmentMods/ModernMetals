@@ -21,11 +21,11 @@ public class BlockMetalWall extends BlockWall implements IOreDictionaryEntry, IM
 
 	@Override
 	public MetalMaterial getMetalMaterial() {
-		return metal;
+		return this.metal;
 	}
 
 	@Override
 	public String getOreDictionaryName() {
-		return "wall" + metal.getCapitalizedName();
+		return "wall" + this.metal.getCapitalizedName();
 	}
 }

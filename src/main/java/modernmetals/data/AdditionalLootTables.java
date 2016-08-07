@@ -2,19 +2,22 @@ package modernmetals.data;
 
 /**
  * Loot Tables
+ *
  * @author Jasmine Iwanek
  *
  */
 public abstract class AdditionalLootTables {
 
-	public static final String abandoned_mineshaft = "";
-	public static final String nether_bridge = ""; 
-	public static final String stronghold_crossing = "";
-	public static final String desert_pyramid = "";
-	public static final String simple_dungeon = "";
-	public static final String village_blacksmith = "";
-	public static final String end_city_treasure = "";
-	public static final String spawn_bonus_chest = "";
-	public static final String jungle_temple = "";
-	public static final String stronghold_corridor = "";
+	// @formatter:off
+	public static final String ABANDONED_MINESHAFT = "";
+	public static final String NETHER_BRIDGE = "";
+	public static final String STRONGHOLD_CROSSING = "";
+	public static final String DESERT_PYRAMID = "";
+	public static final String SIMPLE_DUNGEON = "";
+	public static final String VILLAGE_BLACKSMITH = "";
+	public static final String END_CITY_TREASURE = "";
+	public static final String SPAWN_BONUS_CHEST = "";
+	public static final String JUNGLE_TEMPLE = "";
+	public static final String STRONGHOLD_CORRIDOR = "";
+	// @formatter:on
 }

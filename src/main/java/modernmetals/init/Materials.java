@@ -4,8 +4,9 @@ import cyano.basemetals.material.MetalMaterial;
 
 /**
  * This class initializes all of the metal materials in Modern Metals. It also
- * contains utility methods for looking up materials by name and finding the 
+ * contains utility methods for looking up materials by name and finding the
  * tool and armor material equivalents for a given metal.
+ *
  * @author DrCyano
  *
  */
@@ -33,7 +34,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	private static boolean initDone = false;
 
 	/**
-	 * 
+	 *
 	 */
 	public static void init() {
 		if(initDone)
@@ -48,7 +49,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 		iridium = addMaterial("iridium", 6.5, 3, 4.5);
 		magnesium = addMaterial("magnesium", 2.5, 3.5, 4.5);
 		manganese = addMaterial("manganese", 5, 2.75, 4.5);
-		nichrome= addMaterial("nichrome", 6, 15.5, 4.5);
+		nichrome = addMaterial("nichrome", 6, 15.5, 4.5);
 		osmium = addMaterial("osmium", 7, 2.75, 4.5);
 		plutonium = addMaterial("plutonium", 4, 7.5, 4.5);
 		rutile = addMaterial("rutile", 6, 0.25, 4.5);
@@ -63,14 +64,14 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	}
 
 	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic) {
-		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
+		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
 		registerMaterial(name, m);
 		return m;
 	}
 
 	@SuppressWarnings("unused")
 	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
-		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
+		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
 		registerMaterial(name, m);
 		return m;
 	}

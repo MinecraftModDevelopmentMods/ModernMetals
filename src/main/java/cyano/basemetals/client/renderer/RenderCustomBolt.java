@@ -1,7 +1,6 @@
 package cyano.basemetals.client.renderer;
 
-import cyano.basemetals.entity.EntityCustomArrow;
-
+import cyano.basemetals.entity.EntityCustomBolt;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.VertexBuffer;
@@ -11,23 +10,18 @@ import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
-/**
- *
- * @author Jasmine Iwanek
- *
- */
-public class RenderCustomArrow extends Render<EntityCustomArrow> {
+public class RenderCustomBolt  extends Render<EntityCustomBolt> {
 	
 	/**
 	 *
 	 * @param renderManager
 	 */
-	public RenderCustomArrow(RenderManager renderManager) {
+	public RenderCustomBolt(RenderManager renderManager) {
 		super(renderManager);
 	}
 
 	@Override
-	public void doRender(EntityCustomArrow entity, double x, double y, double z, float entityYaw, float partialTicks) {
+	public void doRender(EntityCustomBolt entity, double x, double y, double z, float entityYaw, float partialTicks) {
 		this.bindEntityTexture(entity);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 		GlStateManager.pushMatrix();
@@ -102,7 +96,7 @@ public class RenderCustomArrow extends Render<EntityCustomArrow> {
 	}
 
 	@Override
-	protected ResourceLocation getEntityTexture(EntityCustomArrow entity) {
+	protected ResourceLocation getEntityTexture(EntityCustomBolt entity) {
 		return new ResourceLocation("textures/entity/projectiles/arrow.png");
 	}
 }

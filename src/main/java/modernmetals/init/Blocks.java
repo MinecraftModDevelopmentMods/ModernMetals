@@ -1,9 +1,12 @@
 package modernmetals.init;
 
-import modernmetals.ModernMetals;
+import java.util.HashMap;
+import java.util.Map;
+
 import cyano.basemetals.blocks.*;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import modernmetals.ModernMetals;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
@@ -13,293 +16,292 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
- * This class initializes all blocks in Modern Metals and provides some utility 
- * methods for looking up blocks. 
+ * This class initializes all blocks in Modern Metals and provides some utility
+ * methods for looking up blocks.
+ *
  * @author DrCyano
  *
  */
 public abstract class Blocks {
 
-	public static Block aluminum_bars;
-	public static Block aluminum_block;
-	public static Block aluminum_plate;
-	public static BlockDoor aluminum_door;
-	public static Block aluminum_ore;
-	public static Block aluminum_trapdoor;
+	protected static Block aluminum_bars;
+	protected static Block aluminum_block;
+	protected static Block aluminum_plate;
+	protected static BlockDoor aluminum_door;
+	protected static Block aluminum_ore;
+	protected static Block aluminum_trapdoor;
 
-	public static Block aluminum_button;
-	public static BlockSlab aluminum_slab;
-	public static BlockSlab double_aluminum_slab;
-	public static Block aluminum_lever;
-	public static Block aluminum_pressure_plate;
-	public static Block aluminum_stairs;
-	public static Block aluminum_wall;
+	protected static Block aluminum_button;
+	protected static BlockSlab aluminum_slab;
+	protected static BlockSlab double_aluminum_slab;
+	protected static Block aluminum_lever;
+	protected static Block aluminum_pressure_plate;
+	protected static Block aluminum_stairs;
+	protected static Block aluminum_wall;
 
-	public static Block aluminumbrass_bars;
-	public static Block aluminumbrass_block;
-	public static Block aluminumbrass_plate;
-	public static BlockDoor aluminumbrass_door;
-	public static Block aluminumbrass_trapdoor;
+	protected static Block aluminumbrass_bars;
+	protected static Block aluminumbrass_block;
+	protected static Block aluminumbrass_plate;
+	protected static BlockDoor aluminumbrass_door;
+	protected static Block aluminumbrass_trapdoor;
 
-	public static Block aluminumbrass_button;
-	public static BlockSlab aluminumbrass_slab;
-	public static BlockSlab double_aluminumbrass_slab;
-	public static Block aluminumbrass_lever;
-	public static Block aluminumbrass_pressure_plate;
-	public static Block aluminumbrass_stairs;
-	public static Block aluminumbrass_wall;
+	protected static Block aluminumbrass_button;
+	protected static BlockSlab aluminumbrass_slab;
+	protected static BlockSlab double_aluminumbrass_slab;
+	protected static Block aluminumbrass_lever;
+	protected static Block aluminumbrass_pressure_plate;
+	protected static Block aluminumbrass_stairs;
+	protected static Block aluminumbrass_wall;
 
-	public static Block cadmium_bars;
-	public static Block cadmium_block;
-	public static Block cadmium_plate;
-	public static BlockDoor cadmium_door;
-	public static Block cadmium_ore;
-	public static Block cadmium_trapdoor;
+	protected static Block cadmium_bars;
+	protected static Block cadmium_block;
+	protected static Block cadmium_plate;
+	protected static BlockDoor cadmium_door;
+	protected static Block cadmium_ore;
+	protected static Block cadmium_trapdoor;
 
-	public static Block cadmium_button;
-	public static BlockSlab cadmium_slab;
-	public static BlockSlab double_cadmium_slab;
-	public static Block cadmium_lever;
-	public static Block cadmium_pressure_plate;
-	public static Block cadmium_stairs;
-	public static Block cadmium_wall;
+	protected static Block cadmium_button;
+	protected static BlockSlab cadmium_slab;
+	protected static BlockSlab double_cadmium_slab;
+	protected static Block cadmium_lever;
+	protected static Block cadmium_pressure_plate;
+	protected static Block cadmium_stairs;
+	protected static Block cadmium_wall;
 
-	public static Block chromium_bars;
-	public static Block chromium_block;
-	public static Block chromium_plate;
-	public static BlockDoor chromium_door;
-	public static Block chromium_ore;
-	public static Block chromium_trapdoor;
+	protected static Block chromium_bars;
+	protected static Block chromium_block;
+	protected static Block chromium_plate;
+	protected static BlockDoor chromium_door;
+	protected static Block chromium_ore;
+	protected static Block chromium_trapdoor;
 
-	public static Block chromium_button;
-	public static BlockSlab chromium_slab;
-	public static BlockSlab double_chromium_slab;
-	public static Block chromium_lever;
-	public static Block chromium_pressure_plate;
-	public static Block chromium_stairs;
-	public static Block chromium_wall;
+	protected static Block chromium_button;
+	protected static BlockSlab chromium_slab;
+	protected static BlockSlab double_chromium_slab;
+	protected static Block chromium_lever;
+	protected static Block chromium_pressure_plate;
+	protected static Block chromium_stairs;
+	protected static Block chromium_wall;
 
-	public static Block galvanizedsteel_bars;
-	public static Block galvanizedsteel_block;
-	public static Block galvanizedsteel_plate;
-	public static BlockDoor galvanizedsteel_door;
-	public static Block galvanizedsteel_trapdoor;
+	protected static Block galvanizedsteel_bars;
+	protected static Block galvanizedsteel_block;
+	protected static Block galvanizedsteel_plate;
+	protected static BlockDoor galvanizedsteel_door;
+	protected static Block galvanizedsteel_trapdoor;
 
-	public static Block galvanizedsteel_button;
-	public static BlockSlab galvanizedsteel_slab;
-	public static BlockSlab double_galvanizedsteel_slab;
-	public static Block galvanizedsteel_lever;
-	public static Block galvanizedsteel_pressure_plate;
-	public static Block galvanizedsteel_stairs;
-	public static Block galvanizedsteel_wall;
+	protected static Block galvanizedsteel_button;
+	protected static BlockSlab galvanizedsteel_slab;
+	protected static BlockSlab double_galvanizedsteel_slab;
+	protected static Block galvanizedsteel_lever;
+	protected static Block galvanizedsteel_pressure_plate;
+	protected static Block galvanizedsteel_stairs;
+	protected static Block galvanizedsteel_wall;
 
-	public static Block iridium_bars;
-	public static Block iridium_block;
-	public static Block iridium_plate;
-	public static BlockDoor iridium_door;
-	public static Block iridium_ore;
-	public static Block iridium_trapdoor;
+	protected static Block iridium_bars;
+	protected static Block iridium_block;
+	protected static Block iridium_plate;
+	protected static BlockDoor iridium_door;
+	protected static Block iridium_ore;
+	protected static Block iridium_trapdoor;
 
-	public static Block iridium_button;
-	public static BlockSlab iridium_slab;
-	public static BlockSlab double_iridium_slab;
-	public static Block iridium_lever;
-	public static Block iridium_pressure_plate;
-	public static Block iridium_stairs;
-	public static Block iridium_wall;
+	protected static Block iridium_button;
+	protected static BlockSlab iridium_slab;
+	protected static BlockSlab double_iridium_slab;
+	protected static Block iridium_lever;
+	protected static Block iridium_pressure_plate;
+	protected static Block iridium_stairs;
+	protected static Block iridium_wall;
 
-	public static Block magnesium_bars;
-	public static Block magnesium_block;
-	public static Block magnesium_plate;
-	public static BlockDoor magnesium_door;
-	public static Block magnesium_ore;
-	public static Block magnesium_trapdoor;
+	protected static Block magnesium_bars;
+	protected static Block magnesium_block;
+	protected static Block magnesium_plate;
+	protected static BlockDoor magnesium_door;
+	protected static Block magnesium_ore;
+	protected static Block magnesium_trapdoor;
 
-	public static Block magnesium_button;
-	public static BlockSlab magnesium_slab;
-	public static BlockSlab double_magnesium_slab;
-	public static Block magnesium_lever;
-	public static Block magnesium_pressure_plate;
-	public static Block magnesium_stairs;
-	public static Block magnesium_wall;
+	protected static Block magnesium_button;
+	protected static BlockSlab magnesium_slab;
+	protected static BlockSlab double_magnesium_slab;
+	protected static Block magnesium_lever;
+	protected static Block magnesium_pressure_plate;
+	protected static Block magnesium_stairs;
+	protected static Block magnesium_wall;
 
-	public static Block manganese_bars;
-	public static Block manganese_block;
-	public static Block manganese_plate;
-	public static BlockDoor manganese_door;
-	public static Block manganese_ore;
-	public static Block manganese_trapdoor;
+	protected static Block manganese_bars;
+	protected static Block manganese_block;
+	protected static Block manganese_plate;
+	protected static BlockDoor manganese_door;
+	protected static Block manganese_ore;
+	protected static Block manganese_trapdoor;
 
-	public static Block manganese_button;
-	public static BlockSlab manganese_slab;
-	public static BlockSlab double_manganese_slab;
-	public static Block manganese_lever;
-	public static Block manganese_pressure_plate;
-	public static Block manganese_stairs;
-	public static Block manganese_wall;
+	protected static Block manganese_button;
+	protected static BlockSlab manganese_slab;
+	protected static BlockSlab double_manganese_slab;
+	protected static Block manganese_lever;
+	protected static Block manganese_pressure_plate;
+	protected static Block manganese_stairs;
+	protected static Block manganese_wall;
 
-	public static Block nichrome_bars;
-	public static Block nichrome_block;
-	public static Block nichrome_plate;
-	public static BlockDoor nichrome_door;
-	public static Block nichrome_trapdoor;
+	protected static Block nichrome_bars;
+	protected static Block nichrome_block;
+	protected static Block nichrome_plate;
+	protected static BlockDoor nichrome_door;
+	protected static Block nichrome_trapdoor;
 
-	public static Block nichrome_button;
-	public static BlockSlab nichrome_slab;
-	public static BlockSlab double_nichrome_slab;
-	public static Block nichrome_lever;
-	public static Block nichrome_pressure_plate;
-	public static Block nichrome_stairs;
-	public static Block nichrome_wall;
+	protected static Block nichrome_button;
+	protected static BlockSlab nichrome_slab;
+	protected static BlockSlab double_nichrome_slab;
+	protected static Block nichrome_lever;
+	protected static Block nichrome_pressure_plate;
+	protected static Block nichrome_stairs;
+	protected static Block nichrome_wall;
 
-	public static Block osmium_bars;
-	public static Block osmium_block;
-	public static Block osmium_plate;
-	public static BlockDoor osmium_door;
-	public static Block osmium_ore;
-	public static Block osmium_trapdoor;
+	protected static Block osmium_bars;
+	protected static Block osmium_block;
+	protected static Block osmium_plate;
+	protected static BlockDoor osmium_door;
+	protected static Block osmium_ore;
+	protected static Block osmium_trapdoor;
 
-	public static Block osmium_button;
-	public static BlockSlab osmium_slab;
-	public static BlockSlab double_osmium_slab;
-	public static Block osmium_lever;
-	public static Block osmium_pressure_plate;
-	public static Block osmium_stairs;
-	public static Block osmium_wall;
+	protected static Block osmium_button;
+	protected static BlockSlab osmium_slab;
+	protected static BlockSlab double_osmium_slab;
+	protected static Block osmium_lever;
+	protected static Block osmium_pressure_plate;
+	protected static Block osmium_stairs;
+	protected static Block osmium_wall;
 
-	public static Block plutonium_bars;
-	public static Block plutonium_block;
-	public static Block plutonium_plate;
-	public static BlockDoor plutonium_door;
-	public static Block plutonium_ore;
-	public static Block plutonium_trapdoor;
+	protected static Block plutonium_bars;
+	protected static Block plutonium_block;
+	protected static Block plutonium_plate;
+	protected static BlockDoor plutonium_door;
+	protected static Block plutonium_ore;
+	protected static Block plutonium_trapdoor;
 
-	public static Block plutonium_button;
-	public static BlockSlab plutonium_slab;
-	public static BlockSlab double_plutonium_slab;
-	public static Block plutonium_lever;
-	public static Block plutonium_pressure_plate;
-	public static Block plutonium_stairs;
-	public static Block plutonium_wall;
+	protected static Block plutonium_button;
+	protected static BlockSlab plutonium_slab;
+	protected static BlockSlab double_plutonium_slab;
+	protected static Block plutonium_lever;
+	protected static Block plutonium_pressure_plate;
+	protected static Block plutonium_stairs;
+	protected static Block plutonium_wall;
 
-	public static Block rutile_bars;
-	public static Block rutile_block;
-	public static Block rutile_plate;
-	public static BlockDoor rutile_door;
-	public static Block rutile_ore;
-	public static Block rutile_trapdoor;
+	protected static Block rutile_bars;
+	protected static Block rutile_block;
+	protected static Block rutile_plate;
+	protected static BlockDoor rutile_door;
+	protected static Block rutile_ore;
+	protected static Block rutile_trapdoor;
 
-	public static Block rutile_button;
-	public static BlockSlab rutile_slab;
-	public static BlockSlab double_rutile_slab;
-	public static Block rutile_lever;
-	public static Block rutile_pressure_plate;
-	public static Block rutile_stairs;
-	public static Block rutile_wall;
+	protected static Block rutile_button;
+	protected static BlockSlab rutile_slab;
+	protected static BlockSlab double_rutile_slab;
+	protected static Block rutile_lever;
+	protected static Block rutile_pressure_plate;
+	protected static Block rutile_stairs;
+	protected static Block rutile_wall;
 
-	public static Block stainlesssteel_bars;
-	public static Block stainlesssteel_block;
-	public static Block stainlesssteel_plate;
-	public static BlockDoor stainlesssteel_door;
-	public static Block stainlesssteel_trapdoor;
+	protected static Block stainlesssteel_bars;
+	protected static Block stainlesssteel_block;
+	protected static Block stainlesssteel_plate;
+	protected static BlockDoor stainlesssteel_door;
+	protected static Block stainlesssteel_trapdoor;
 
-	public static Block stainlesssteel_button;
-	public static BlockSlab stainlesssteel_slab;
-	public static BlockSlab double_stainlesssteel_slab;
-	public static Block stainlesssteel_lever;
-	public static Block stainlesssteel_pressure_plate;
-	public static Block stainlesssteel_stairs;
-	public static Block stainlesssteel_wall;
+	protected static Block stainlesssteel_button;
+	protected static BlockSlab stainlesssteel_slab;
+	protected static BlockSlab double_stainlesssteel_slab;
+	protected static Block stainlesssteel_lever;
+	protected static Block stainlesssteel_pressure_plate;
+	protected static Block stainlesssteel_stairs;
+	protected static Block stainlesssteel_wall;
 
-	public static Block tantalum_bars;
-	public static Block tantalum_block;
-	public static Block tantalum_plate;
-	public static BlockDoor tantalum_door;
-	public static Block tantalum_ore;
-	public static Block tantalum_trapdoor;
+	protected static Block tantalum_bars;
+	protected static Block tantalum_block;
+	protected static Block tantalum_plate;
+	protected static BlockDoor tantalum_door;
+	protected static Block tantalum_ore;
+	protected static Block tantalum_trapdoor;
 
-	public static Block tantalum_button;
-	public static BlockSlab tantalum_slab;
-	public static BlockSlab double_tantalum_slab;
-	public static Block tantalum_lever;
-	public static Block tantalum_pressure_plate;
-	public static Block tantalum_stairs;
-	public static Block tantalum_wall;
+	protected static Block tantalum_button;
+	protected static BlockSlab tantalum_slab;
+	protected static BlockSlab double_tantalum_slab;
+	protected static Block tantalum_lever;
+	protected static Block tantalum_pressure_plate;
+	protected static Block tantalum_stairs;
+	protected static Block tantalum_wall;
 
-	public static Block titanium_bars;
-	public static Block titanium_block;
-	public static Block titanium_plate;
-	public static BlockDoor titanium_door;
-	public static Block titanium_ore;
-	public static Block titanium_trapdoor;
+	protected static Block titanium_bars;
+	protected static Block titanium_block;
+	protected static Block titanium_plate;
+	protected static BlockDoor titanium_door;
+	protected static Block titanium_ore;
+	protected static Block titanium_trapdoor;
 
-	public static Block titanium_button;
-	public static BlockSlab titanium_slab;
-	public static BlockSlab double_titanium_slab;
-	public static Block titanium_lever;
-	public static Block titanium_pressure_plate;
-	public static Block titanium_stairs;
-	public static Block titanium_wall;
+	protected static Block titanium_button;
+	protected static BlockSlab titanium_slab;
+	protected static BlockSlab double_titanium_slab;
+	protected static Block titanium_lever;
+	protected static Block titanium_pressure_plate;
+	protected static Block titanium_stairs;
+	protected static Block titanium_wall;
 
-	public static Block tungsten_bars;
-	public static Block tungsten_block;
-	public static Block tungsten_plate;
-	public static BlockDoor tungsten_door;
-	public static Block tungsten_ore;
-	public static Block tungsten_trapdoor;
+	protected static Block tungsten_bars;
+	protected static Block tungsten_block;
+	protected static Block tungsten_plate;
+	protected static BlockDoor tungsten_door;
+	protected static Block tungsten_ore;
+	protected static Block tungsten_trapdoor;
 
-	public static Block tungsten_button;
-	public static BlockSlab tungsten_slab;
-	public static BlockSlab double_tungsten_slab;
-	public static Block tungsten_lever;
-	public static Block tungsten_pressure_plate;
-	public static Block tungsten_stairs;
-	public static Block tungsten_wall;
+	protected static Block tungsten_button;
+	protected static BlockSlab tungsten_slab;
+	protected static BlockSlab double_tungsten_slab;
+	protected static Block tungsten_lever;
+	protected static Block tungsten_pressure_plate;
+	protected static Block tungsten_stairs;
+	protected static Block tungsten_wall;
 
-	public static Block uranium_bars;
-	public static Block uranium_block;
-	public static Block uranium_plate;
-	public static BlockDoor uranium_door;
-	public static Block uranium_ore;
-	public static Block uranium_trapdoor;
+	protected static Block uranium_bars;
+	protected static Block uranium_block;
+	protected static Block uranium_plate;
+	protected static BlockDoor uranium_door;
+	protected static Block uranium_ore;
+	protected static Block uranium_trapdoor;
 
-	public static Block uranium_button;
-	public static BlockSlab uranium_slab;
-	public static BlockSlab double_uranium_slab;
-	public static Block uranium_lever;
-	public static Block uranium_pressure_plate;
-	public static Block uranium_stairs;
-	public static Block uranium_wall;
+	protected static Block uranium_button;
+	protected static BlockSlab uranium_slab;
+	protected static BlockSlab double_uranium_slab;
+	protected static Block uranium_lever;
+	protected static Block uranium_pressure_plate;
+	protected static Block uranium_stairs;
+	protected static Block uranium_wall;
 
-	public static Block zirconium_bars;
-	public static Block zirconium_block;
-	public static Block zirconium_plate;
-	public static BlockDoor zirconium_door;
-	public static Block zirconium_ore;
-	public static Block zirconium_trapdoor;
+	protected static Block zirconium_bars;
+	protected static Block zirconium_block;
+	protected static Block zirconium_plate;
+	protected static BlockDoor zirconium_door;
+	protected static Block zirconium_ore;
+	protected static Block zirconium_trapdoor;
 
-	public static Block zirconium_button;
-	public static BlockSlab zirconium_slab;
-	public static BlockSlab double_zirconium_slab;
-	public static Block zirconium_lever;
-	public static Block zirconium_pressure_plate;
-	public static Block zirconium_stairs;
-	public static Block zirconium_wall;
+	protected static Block zirconium_button;
+	protected static BlockSlab zirconium_slab;
+	protected static BlockSlab double_zirconium_slab;
+	protected static Block zirconium_lever;
+	protected static Block zirconium_pressure_plate;
+	protected static Block zirconium_stairs;
+	protected static Block zirconium_wall;
 
 	private static boolean initDone = false;
 
-//	private static Map<Block, String> blockRegistry = new HashMap<>();
+	// private static Map<Block, String> blockRegistry = new HashMap<>();
 	private static final Map<String, Block> blockRegistry = new HashMap<>();
-//	private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
+	// private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
 
 	/**
-	 * Gets an block by its name. The name is the name as it is registered in 
-	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
+	 * Gets an block by its name. The name is the name as it is registered in
+	 * the GameRegistry, not its unlocalized name (the unlocalized name is the
 	 * registered name plus the prefix "modernmetals.")
+	 *
 	 * @param name The name of the block in question
 	 * @return The block matching that name, or null if there isn't one
 	 */
@@ -308,7 +310,7 @@ public abstract class Blocks {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static void init() {
 		if(initDone)
@@ -585,7 +587,7 @@ public abstract class Blocks {
 
 		// TODO: Make this support multiple oredicts
 		// final block settings
-		for(Block b : blockRegistry.values()) {
+		for(final Block b : blockRegistry.values()) {
 			if(b instanceof IOreDictionaryEntry)
 				OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);
 			if(!(b instanceof BlockMetalDoor))
@@ -596,13 +598,13 @@ public abstract class Blocks {
 	}
 
 	private static Block addBlock(Block block, String name) {
-		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
+		final ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
 		block.setRegistryName(location);
 		block.setUnlocalizedName(location.toString());
 		GameRegistry.register(block);
 
 		if (!(block instanceof BlockMetalDoor) && !(block instanceof BlockMetalSlab)) {
-			ItemBlock itemBlock = new ItemBlock(block);
+			final ItemBlock itemBlock = new ItemBlock(block);
 			itemBlock.setRegistryName(location);
 			itemBlock.setUnlocalizedName(location.toString());
 			GameRegistry.register(itemBlock);
@@ -668,7 +670,7 @@ public abstract class Blocks {
 		return addBlock(new BlockMetalTrapDoor(metal), metal.getName() + "_trapdoor");
 	}
 
-	public static Map<String, Block> getBlockRegistry () {
+	public static Map<String, Block> getBlockRegistry() {
 		return blockRegistry;
 	}
 }

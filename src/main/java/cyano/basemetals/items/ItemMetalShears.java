@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
 /**
- * 
+ *
  * @author Jasmine Iwanek
  *
  */
@@ -23,24 +23,24 @@ public class ItemMetalShears extends ItemShears {
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
-	protected final long regenInterval = 200;
+	protected static final long REGEN_INTERVAL = 200;
 
 	/**
-	 * 
+	 *
 	 * @param metal
 	 */
 	public ItemMetalShears(MetalMaterial metal) {
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		this.setCreativeTab(CreativeTabs.TOOLS);
-		repairOreDictName = "ingot" + metal.getCapitalizedName();
-		regenerates = metal.equals(Materials.starsteel);
+		this.repairOreDictName = "ingot" + metal.getCapitalizedName();
+		this.regenerates = metal.equals(Materials.starsteel);
 	}
 
 	@Override
 	public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
-		List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
-		for(ItemStack i : acceptableItems)
+		final List<ItemStack> acceptableItems = OreDictionary.getOres(this.repairOreDictName);
+		for(final ItemStack i : acceptableItems)
 			if(ItemStack.areItemsEqual(i, repairMaterial))
 				return true;
 
@@ -49,18 +49,17 @@ public class ItemMetalShears extends ItemShears {
 
 	@Override
 	public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
-		if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0) {
+		if(this.regenerates && !world.isRemote && isHeld && (item.getItemDamage() > 0) && ((world.getTotalWorldTime() % REGEN_INTERVAL) == 0))
 			item.setItemDamage(item.getItemDamage() - 1);
-		}
 	}
 
 	public String getMaterialName() {
-		return metal.getName();
+		return this.metal.getName();
 	}
 
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean b) {
 		super.addInformation(stack, player, list, b);
-		MetalToolEffects.addToolSpecialPropertiesToolTip(metal, list);
+		MetalToolEffects.addToolSpecialPropertiesToolTip(this.metal, list);
 	}
 }

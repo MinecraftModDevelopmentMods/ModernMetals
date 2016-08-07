@@ -1,7 +1,7 @@
 package portablejim.veinminer.api;
 
-import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fml.common.event.FMLInterModComms;
 
 /**
  * Helper functions to send IMC messages to VeinMiner
@@ -16,7 +16,7 @@ public class IMCMessage {
 	}
 
 	private static void sendWhitelistMessage(String itemType, String toolType, String blockName) {
-		NBTTagCompound message = new NBTTagCompound();
+		final NBTTagCompound message = new NBTTagCompound();
 		message.setString("whitelistType", itemType);
 		message.setString("toolType", toolType);
 		message.setString("blockName", blockName);
@@ -24,7 +24,7 @@ public class IMCMessage {
 	}
 
 	public static void addToolType(String type, String name, String icon) {
-		NBTTagCompound message = new NBTTagCompound();
+		final NBTTagCompound message = new NBTTagCompound();
 		message.setString("toolType", type);
 		message.setString("toolName", name);
 		message.setString("toolIcon", icon);
@@ -32,7 +32,7 @@ public class IMCMessage {
 	}
 
 	public static void addBlockEquivalence(String existingBlock, String newBlock) {
-		NBTTagCompound message = new NBTTagCompound();
+		final NBTTagCompound message = new NBTTagCompound();
 		message.setString("existingBlock", existingBlock);
 		message.setString("newBlock", newBlock);
 		FMLInterModComms.sendMessage("VeinMiner", "addEqualBlocks", message);
