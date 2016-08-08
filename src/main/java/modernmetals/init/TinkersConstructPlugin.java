@@ -1,9 +1,6 @@
 package modernmetals.init;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
-
 import modernmetals.utils.StringUtilities;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
@@ -17,6 +14,8 @@ import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
 import slimeknights.tconstruct.library.materials.HandleMaterialStats;
 import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.materials.Material;
+
+import java.util.List;
 
 /**
  *
@@ -176,7 +175,7 @@ public class TinkersConstructPlugin {
 		
 		// Set fluid used, Set whether craftable, set whether castable, adds the
 		// item with the value 144.
-		material.setFluid(fluid).setCraftable(craft).setCastable(cast).addItem(item, 1, Material.VALUE_Ingot);
+		//material.setFluid(fluid).setCraftable(craft).setCastable(cast).addItem(item, 1, Material.VALUE_Ingot); TODO
 		material.setRepresentativeItem(item); // Uses item as the picture?
 
 		// Probably don't need this
