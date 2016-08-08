@@ -11,7 +11,7 @@ public class HorseTypeTransformer implements ITransformer {
     @Override
     public void transform(ClassNode node, boolean dev) {
         for (MethodNode methodNode : node.methods) {
-            if (methodNode.name.equals(dev ? "getByItem" : "")) {
+            if (methodNode.name.equals(dev ? "getByItem" : "func_188576_a")) {
                 InsnList inject = new InsnList();
                 inject.add(new VarInsnNode(ALOAD, 0));
                 inject.add(new TypeInsnNode(INSTANCEOF, "modernmetals/items/IHorseArmor"));
