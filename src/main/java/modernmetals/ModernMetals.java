@@ -1,5 +1,25 @@
 package modernmetals;
 
+import cyano.basemetals.entity.EntityCustomArrow;
+import cyano.basemetals.registry.CrusherRecipeRegistry;
+import modernmetals.data.AdditionalLootTables;
+import modernmetals.data.DataConstants;
+import modernmetals.init.*;
+import modernmetals.items.TestArmorItem;
+import modernmetals.proxy.CommonProxy;
+import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
+import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import org.apache.logging.log4j.Level;
+
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -8,27 +28,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.apache.logging.log4j.Level;
-
-import cyano.basemetals.entity.EntityCustomArrow;
-import cyano.basemetals.registry.CrusherRecipeRegistry;
-import modernmetals.init.*;
-
-import modernmetals.data.AdditionalLootTables;
-import modernmetals.data.DataConstants;
-import modernmetals.proxy.CommonProxy;
-
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fml.common.FMLLog;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 /**
  * This is the entry point for this mod.
@@ -40,9 +39,7 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
-		dependencies = "required-after:Forge@[12.16.1.1887,);required-after:basemetals@[2.2,);before:buildingbricks",
-		acceptedMinecraftVersions = "1.9,)",
-		// certificateFingerprint = "",
+		dependencies = "required-after:basemetals@[2.2,)",
 		updateJSON = "https://raw.githubusercontent.com/jriwanek/ModernMetals/master/update.json")
 public class ModernMetals {
 
@@ -154,6 +151,8 @@ public class ModernMetals {
 			}
 
 		PROXY.preInit();
+
+		GameRegistry.register(new TestArmorItem());
 	}
 
 	/**
