@@ -29,6 +29,7 @@ minecraft {
     version = "1.9-12.16.1.1938-1.9.0"
     runDir = "run"
     mappings = "stable_24"
+    coreMod = "modernmetals.asm.ModernMetalPlugin"
 }
 
 repositories {
@@ -40,7 +41,7 @@ repositories {
 
 dependencies {
     compile "slimeknights:TConstruct:1.9-2.3.1.jenkins227:deobf"
-    compile "slimeknights.mantle:Mantle:1.9-0.9.4.jenkins131:deobf"
+    compile "slimeknights.mantle:Mantle:1.9-0.10.1.jenkins141:deobf"
 }
 
 processResources {
@@ -54,6 +55,12 @@ processResources {
 
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
+    }
+}
+
+jar {
+    manifest {
+        attributes("FMLCorePluginContainsFMLMod": "true", "FMLCorePlugin": "modernmetals.asm.ModernMetalPlugin")
     }
 }
 

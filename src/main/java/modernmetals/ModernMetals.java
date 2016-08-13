@@ -152,7 +152,7 @@ public class ModernMetals {
 
 		PROXY.preInit();
 
-		GameRegistry.register(new TestArmorItem());
+//		GameRegistry.register(new TestArmorItem());
 	}
 
 	/**
