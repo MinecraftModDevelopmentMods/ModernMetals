@@ -3,6 +3,7 @@ package modernmetals.init;
 import java.util.*;
 
 import modernmetals.ModernMetals;
+import modernmetals.items.GenericMetalItem;
 import modernmetals.items.ItemMetalBlend;
 import modernmetals.items.ItemMetalIngot;
 import cyano.basemetals.blocks.*;

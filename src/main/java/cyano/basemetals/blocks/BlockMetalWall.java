@@ -3,6 +3,7 @@ package cyano.basemetals.blocks;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockWall;
 import net.minecraft.block.SoundType;
 
@@ -10,8 +11,8 @@ public class BlockMetalWall extends BlockWall implements IOreDictionaryEntry, IM
 
 	final MetalMaterial metal;
 
-	public BlockMetalWall(MetalMaterial metal) {
-		super(modernmetals.init.Blocks.getBlockByName(metal.getName() + "_block"));
+	public BlockMetalWall(MetalMaterial metal, Block modelBlock) {
+		super(modelBlock);
 		this.setSoundType(SoundType.METAL);
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();

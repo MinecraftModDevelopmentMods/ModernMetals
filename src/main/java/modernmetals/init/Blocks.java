@@ -655,7 +655,7 @@ public abstract class Blocks {
 	}
 
 	private static Block createWall(MetalMaterial metal) {
-		return addBlock(new BlockMetalWall(metal), metal.getName() + "_wall");
+		return addBlock(new BlockMetalWall(metal, Blocks.getBlockByName(metal.getName() + "_block")), metal.getName() + "_wall");
 	}
 
 	private static Block createOre(MetalMaterial metal) {

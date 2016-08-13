@@ -260,8 +260,8 @@ public class Recipes {
 			if (ingot != null)
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pressure_plate), "xx", 'x', "ingot" + oreDictName));
 
-			if (block != null) // Crashes
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(stairs, 4), "x", "xx", "xxx", 'x', "block" + oreDictName));
+//			if (block != null) // Crashes
+//				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(stairs, 4), "x", "xx", "xxx", 'x', "block" + oreDictName));
 
 			if (block != null)
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(wall, 6), "", "", "", 'x', "block" + oreDictName));
