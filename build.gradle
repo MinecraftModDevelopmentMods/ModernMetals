@@ -22,6 +22,7 @@ apply plugin: "com.matthewprenger.cursegradle"
 def mod_file = getModFile()
 version = getVersion("VERSION", mod_file)
 group = "modernmetals"
+archivesBaseName = "ModernMetals_1.9"
 sourceCompatibility = targetCompatibility = "1.8"
 
 minecraft {
