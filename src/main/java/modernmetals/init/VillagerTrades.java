@@ -125,7 +125,7 @@ public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
 										allShovels.get(m),
 										allHoes.get(m)))
 						));
-				tradesTable.computeIfAbsent((3 << 16) | (3 << 8) | (tradeLevel + 1),(Integer key)->new ArrayList<>())
+				tradesTable.computeIfAbsent((3 << 16) | (3 << 8) | (tradeLevel + 1), (Integer key)->new ArrayList<>())
 						.addAll(Arrays.asList(makeTradePalette(
 								makePurchasePalette(emeraldPurch, 1,
 										allHammers.get(m)))

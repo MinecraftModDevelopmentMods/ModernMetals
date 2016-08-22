@@ -5,7 +5,6 @@ import cyano.basemetals.registry.CrusherRecipeRegistry;
 import modernmetals.data.AdditionalLootTables;
 import modernmetals.data.DataConstants;
 import modernmetals.init.*;
-import modernmetals.items.TestArmorItem;
 import modernmetals.proxy.CommonProxy;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
@@ -17,7 +16,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Level;
 
 import java.io.IOException;

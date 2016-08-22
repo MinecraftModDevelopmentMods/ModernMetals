@@ -11,7 +11,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT"
+        classpath "net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT"
         classpath "com.matthewprenger:CurseGradle:1.0-SNAPSHOT"
     }
 }
@@ -22,7 +22,6 @@ apply plugin: "com.matthewprenger.cursegradle"
 def mod_file = getModFile()
 version = getVersion("VERSION", mod_file)
 group = "modernmetals"
-archivesBaseName = "modernmetals-1.9"
 sourceCompatibility = targetCompatibility = "1.8"
 
 minecraft {

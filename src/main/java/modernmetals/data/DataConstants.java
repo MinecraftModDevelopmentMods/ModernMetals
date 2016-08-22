@@ -153,5 +153,4 @@ public abstract class DataConstants {
 + "\n	]"
 + "\n}";
 	//@formatter:on
-
 }
