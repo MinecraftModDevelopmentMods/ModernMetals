@@ -18,6 +18,7 @@ import slimeknights.tconstruct.library.materials.ExtraMaterialStats;
 import slimeknights.tconstruct.library.materials.HandleMaterialStats;
 import slimeknights.tconstruct.library.materials.HeadMaterialStats;
 import slimeknights.tconstruct.library.materials.Material;
+import slimeknights.tconstruct.library.traits.ITrait;
 
 /**
  * 
@@ -73,38 +74,13 @@ public class TinkersConstructPlugin {
 //			registerFluid(Fluids.fluidAluminumBrass); // TCon already has this
 //			registerTinkerMaterial(aluminumbrass, Fluids.fluidAluminumBrass, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
 			
-			registerFluid(Fluids.fluidCadmium, true);
-			registerTinkerMaterial(cadmium, Fluids.fluidCadmium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidChromium, true);
-			registerTinkerMaterial(chromium, Fluids.fluidChromium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidGalvanizedSteel, true);
-			registerTinkerMaterial(galvanizedsteel, Fluids.fluidGalvanizedSteel, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidIridium, true);
-			registerTinkerMaterial(iridium, Fluids.fluidIridium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidMagnesium, true);
-			registerTinkerMaterial(magnesium, Fluids.fluidMagnesium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidManganese, true);
-			registerTinkerMaterial(manganese, Fluids.fluidManganese, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidNichrome, true);
-			registerTinkerMaterial(nichrome, Fluids.fluidNichrome, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidOsmium, true);
-			registerTinkerMaterial(osmium, Fluids.fluidOsmium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidPlutonium, true);
-			registerTinkerMaterial(plutonium, Fluids.fluidPlutonium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidRutile, true);
-			registerTinkerMaterial(rutile, Fluids.fluidRutile, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidStainlessSteel, true);
-			registerTinkerMaterial(stainlesssteel, Fluids.fluidStainlessSteel, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidTantalum, true);
-			registerTinkerMaterial(tantalum, Fluids.fluidTantalum, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidTitanium, true);
-			registerTinkerMaterial(titanium, Fluids.fluidTitanium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidTungsten, true);
-			registerTinkerMaterial(tungsten, Fluids.fluidTungsten, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidUranium, true);
-			registerTinkerMaterial(uranium, Fluids.fluidUranium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-			registerFluid(Fluids.fluidZirconium, true);
-			registerTinkerMaterial(zirconium, Fluids.fluidZirconium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
+			for(String name : correlation.keySet())
+			{
+				if (null != correlation.get(name).getMeltFluid())
+				{
+					setupTConSmeltAndParts(name, d, s, a);
+				}
+			}
 			
 //			registerAlloy("aluminumbrass", 2, "aluminum", 1, "brass", 1); // TCon already has Aluminum Brass alloy
 			registerAlloy("galvanizedsteel", 2, new String[] {"steel", "zinc"}, new int[] {1, 1});
@@ -116,9 +92,30 @@ public class TinkersConstructPlugin {
 		initDone = true;
 	}
 
+	/**
+	 * @param name
+	 * @param durabilityFactor
+	 * @param speedFactor
+	 * @param attackFactor
+	 */
+	private static void setupTConSmeltAndParts(final String name, double durabilityFactor, float speedFactor, float attackFactor) {
+		final MaterialCorrelation materialCorrelation = correlation.get(name);
+		registerFluid(materialCorrelation.getMeltFluid(), true);
+		registerTinkerMaterial(materialCorrelation.getMaterial(), materialCorrelation.getMeltFluid(), 
+				(int) (235 * durabilityFactor), 5.33f * speedFactor, 3.80f * attackFactor, 
+				// Handle durability multiplier, handle durability
+				1.15f, 17, 
+				// "Extra"
+				117,
+				// Mining level
+				1,
+				// Craft at workbench: always false, craft at smeltery: always true
+				false, true);
+	}
+
 	private static Material createTCMaterial(String name, int hexColor, Fluid meltFluid) {
 		final Material material = new Material(name,hexColor);
-		correlation.put(name, new MaterialCorrelation(material, Materials.getMetalByName(name),meltFluid));
+		correlation.put(name, new MaterialCorrelation(material, Materials.getMetalByName(name), meltFluid));
 		
 		return material;
 	}
@@ -185,11 +182,21 @@ public class TinkersConstructPlugin {
 		}
 	}
 	
-	private static void registerTinkerMaterial(Material material, Fluid fluid, int headDura, float headSpeed, float headAttack, float handleMod, int handleDura, int extra, int headLevel, boolean craft, boolean cast) {
+	private static void registerTinkerMaterial(Material material, Fluid fluid, int headDura, float headSpeed, float headAttack, float handleMod, int handleDura, int extra, int headLevel, boolean craft, boolean cast)
+	{
+		registerTinkerMaterial(material, fluid, headDura, headSpeed, headAttack, handleMod, handleDura, extra, headLevel, craft, cast, null);
+	}
+	
+	private static void registerTinkerMaterial(Material material, Fluid fluid, int headDura, float headSpeed, float headAttack, float handleMod, int handleDura, int extra, int headLevel, boolean craft, boolean cast, ITrait trait) {
 
 		TinkerRegistry.addMaterialStats(material, new HeadMaterialStats(headDura, headSpeed, headAttack, headLevel)); // Sets stats for head
 		TinkerRegistry.addMaterialStats(material, new HandleMaterialStats(handleMod, handleDura)); // Sets Stats for handle
 		TinkerRegistry.addMaterialStats(material, new ExtraMaterialStats(extra)); // Sets stats for everything else
+		if (trait != null)
+		{
+			String stats = "temporary placeholder"; // TODO: find out what goes here
+			TinkerRegistry.addMaterialTrait(material, trait, stats);
+		}
 
 		Item item = Items.getItemByName(material.identifier + "_ingot"); // Why do we need to get an item here?
 		
