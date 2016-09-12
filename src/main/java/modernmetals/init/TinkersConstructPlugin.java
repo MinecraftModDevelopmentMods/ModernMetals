@@ -108,11 +108,11 @@ public class TinkersConstructPlugin {
 		materialCorrelation.getMetal().getBaseAttackDamage();
 		
 		registerTinkerMaterial(materialCorrelation.getMaterial(), materialCorrelation.getMeltFluid(), 
-				(int) (materialCorrelation.getMetal().getToolDurability()/2), 
+				(int) (materialCorrelation.getMetal().getToolDurability()), 
 				materialCorrelation.getMetal().magicAffinity,
-				materialCorrelation.getMetal().getBaseAttackDamage(), 
+				materialCorrelation.getMetal().getBaseAttackDamage()*2, 
 				// Handle durability multiplier, handle durability
-				materialCorrelation.getMetal().getToolDurability()/255, (int) (materialCorrelation.getMetal().getToolDurability()/16), 
+				(materialCorrelation.getMetal().hardness+3)/9, (int) (materialCorrelation.getMetal().getToolDurability()/64), 
 				// "Extra" - durability of non handle, non-head parts?
 				(int) (materialCorrelation.getMetal().getToolDurability()/2),
 				// Mining level
