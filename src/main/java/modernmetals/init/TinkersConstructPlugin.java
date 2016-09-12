@@ -76,7 +76,9 @@ public class TinkersConstructPlugin {
 			
 			for(String name : correlation.keySet())
 			{
-				if (null != correlation.get(name).getMeltFluid())
+				if (null != correlation.get(name).getMeltFluid()) 
+				// skip items with no declared melt fluid - eg Aluminum, Aluminum Brass
+				// 		also skips items where the melt fluid process went awol, which is nice.
 				{
 					setupTConSmeltAndParts(name, d, s, a);
 				}
@@ -93,26 +95,39 @@ public class TinkersConstructPlugin {
 	}
 
 	/**
-	 * @param name
-	 * @param durabilityFactor
-	 * @param speedFactor
-	 * @param attackFactor
+	 * Factory method to convert MetalMaterial statistics to Tinkers Construct statistics and create the TCon material. 
+	 * @param name Material identifier
+	 * @param durabilityFactor Overall scaling factor of toolpart durability
+	 * @param speedFactor overall scaling factor of toolpart speed
+	 * @param attackFactor overall scaling factor of toolpart damage
 	 */
 	private static void setupTConSmeltAndParts(final String name, double durabilityFactor, float speedFactor, float attackFactor) {
 		final MaterialCorrelation materialCorrelation = correlation.get(name);
+		
 		registerFluid(materialCorrelation.getMeltFluid(), true);
+		materialCorrelation.getMetal().getBaseAttackDamage();
+		
 		registerTinkerMaterial(materialCorrelation.getMaterial(), materialCorrelation.getMeltFluid(), 
-				(int) (235 * durabilityFactor), 5.33f * speedFactor, 3.80f * attackFactor, 
+				(int) (materialCorrelation.getMetal().getToolDurability()/2), 
+				materialCorrelation.getMetal().magicAffinity,
+				materialCorrelation.getMetal().getBaseAttackDamage(), 
 				// Handle durability multiplier, handle durability
-				1.15f, 17, 
-				// "Extra"
-				117,
+				materialCorrelation.getMetal().getToolDurability()/255, (int) (materialCorrelation.getMetal().getToolDurability()/16), 
+				// "Extra" - durability of non handle, non-head parts?
+				(int) (materialCorrelation.getMetal().getToolDurability()/2),
 				// Mining level
-				1,
+				materialCorrelation.getMetal().getToolHarvestLevel(),
 				// Craft at workbench: always false, craft at smeltery: always true
 				false, true);
 	}
 
+	/**
+	 * Creates a Tinkers Construct {@link slimeknights.tconstruct.library.materials.Material} and associates it with the {@link cyano.basemetals.Material.MetalMaterial} and {@fluid net.minecraftforge.fluids.Fluid} it goes with. This association is saved in the {@link #correlation} map so later we can just loop over the correlation for stuff. 
+	 * @param hexColor Color of the tool parts
+	 * @param name Material identifier
+	 * @param meltFluid fluid to be produced when this is melted in the smeltery
+	 * @return
+	 */
 	private static Material createTCMaterial(String name, int hexColor, Fluid meltFluid) {
 		final Material material = new Material(name,hexColor);
 		correlation.put(name, new MaterialCorrelation(material, Materials.getMetalByName(name), meltFluid));
@@ -121,8 +136,11 @@ public class TinkersConstructPlugin {
 	}
 
 	/**
-	 * @param hexColor 
-	 * @param name 
+	 * Wrapper for {@link #createTCMaterial(String, int, Fluid) createTCMaterial(String name, int hexColor, Fluid meltFluid)} method, for when there is no fluid needed
+	 * Creates a Tinkers Construct {@link slimeknights.tconstruct.library.materials.Material} and associates it with the {@link cyano.basemetals.Material.MetalMaterial} it goes with. This association is saved in the {@link #correlation} map so later we can just loop over the correlation for stuff. 
+	 *
+	 * @param hexColor Color of the tool parts
+	 * @param name Material identifier
 	 * @return
 	 */
 	private static Material createTCMaterial(String name, int hexColor) {
