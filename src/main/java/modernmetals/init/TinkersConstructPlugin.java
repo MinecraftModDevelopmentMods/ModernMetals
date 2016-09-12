@@ -1,9 +1,9 @@
 package modernmetals.init;
 
+import java.util.HashMap;
 import java.util.List;
-
 import com.google.common.collect.Lists;
-
+import cyano.basemetals.material.MetalMaterial;
 import modernmetals.init.Fluids;
 import modernmetals.utils.StringUtilities;
 import net.minecraft.item.Item;
@@ -25,11 +25,13 @@ import slimeknights.tconstruct.library.materials.Material;
  *
  */
 public class TinkersConstructPlugin {
-
+	
+	private static HashMap<String, MaterialCorrelation> correlation = new HashMap<String,MaterialCorrelation>(); 
 	private static boolean initDone = false;
 
 	private static List<MaterialIntegration> integrateList = Lists.newArrayList(); // List of materials needed to be integrated
-	 
+	
+	
 	/**
 	 * 
 	 */
@@ -39,6 +41,7 @@ public class TinkersConstructPlugin {
 			return;
 
 		if(Loader.isModLoaded("tconstruct")) {
+			
 			double d = 0; //durabilityFactorGeneral;
 			System.out.println("DURABILITY FACTOR" + d);
 			float s = 0;// (float) speedFactorGeneral;
@@ -46,29 +49,30 @@ public class TinkersConstructPlugin {
 			float a = 0; //(float) attackFactorGeneral;
 			System.out.println("ATTACK FACTOR" + a);
 
-			final Material aluminum = new Material("aluminum", 0xFFC5C8C1);
-			final Material aluminumbrass = new Material("aluminumbrass", 0xFFEBAA56);
-			final Material cadmium = new Material("cadmium", 0xFFC9D4DA);
-			final Material chromium = new Material("chromium", 0xFFCDCDCF);
-			final Material galvanizedsteel = new Material("galvanizedsteel", 0xFF9BA6A2);
-			final Material iridium = new Material("iridium", 0xFFF8EDCC);
-			final Material magnesium = new Material("magnesium", 0xFF7F7F77);
-			final Material manganese = new Material("manganese", 0xFFF5CFDA);
-			final Material nichrome = new Material("nichrome", 0xFFDEA054);
-			final Material osmium = new Material("osmium", 0xFF7C8E99);
-			final Material plutonium = new Material("plutonium", 0xFFB333EA);
-			final Material rutile = new Material("rutile", 0xFFBF928B);
-			final Material stainlesssteel = new Material("stainlesssteel", 0xFFC5BFC1);
-			final Material tantalum = new Material("tantalum", 0xFFC4BEC2);
-			final Material titanium = new Material("titanium", 0xFF73787E);
-			final Material tungsten = new Material("tungsten", 0xFF969696);
-			final Material uranium = new Material("uranium", 0xFFA7B345);
-			final Material zirconium = new Material("zirconium", 0xFF929793);
+			final Material aluminum = createTCMaterial("aluminum", 0xFFC5C8C1);
+			final Material aluminumbrass = createTCMaterial("aluminumbrass", 0xFFEBAA56);
+			final Material cadmium = createTCMaterial("cadmium", 0xFFC9D4DA, Fluids.fluidCadmium);
+			final Material chromium = createTCMaterial("chromium", 0xFFCDCDCF, Fluids.fluidChromium);
+			final Material galvanizedsteel = createTCMaterial("galvanizedsteel", 0xFF9BA6A2, Fluids.fluidGalvanizedSteel);
+			final Material iridium = createTCMaterial("iridium", 0xFFF8EDCC, Fluids.fluidIridium);
+			final Material magnesium = createTCMaterial("magnesium", 0xFF7F7F77, Fluids.fluidMagnesium);
+			final Material manganese = createTCMaterial("manganese", 0xFFF5CFDA, Fluids.fluidManganese);
+			final Material nichrome = createTCMaterial("nichrome", 0xFFDEA054, Fluids.fluidNichrome);
+			final Material osmium = createTCMaterial("osmium", 0xFF7C8E99, Fluids.fluidOsmium);
+			final Material plutonium = createTCMaterial("plutonium", 0xFFB333EA, Fluids.fluidPlutonium);
+			final Material rutile = createTCMaterial("rutile", 0xFFBF928B, Fluids.fluidRutile);
+			final Material stainlesssteel = createTCMaterial("stainlesssteel", 0xFFC5BFC1, Fluids.fluidStainlessSteel);
+			final Material tantalum = createTCMaterial("tantalum", 0xFFC4BEC2, Fluids.fluidTantalum);
+			final Material titanium = createTCMaterial("titanium", 0xFF73787E, Fluids.fluidTitanium);
+			final Material tungsten = createTCMaterial("tungsten", 0xFF969696, Fluids.fluidTungsten);
+			final Material uranium = createTCMaterial("uranium", 0xFFA7B345, Fluids.fluidUranium);
+			final Material zirconium = createTCMaterial("zirconium", 0xFF929793, Fluids.fluidZirconium);
 
 //			registerFluid(Fluids.fluidAluminum); // TCon already has this
 //			registerTinkerMaterial(aluminum, Fluids.fluidAluminum, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
 //			registerFluid(Fluids.fluidAluminumBrass); // TCon already has this
 //			registerTinkerMaterial(aluminumbrass, Fluids.fluidAluminumBrass, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
+			
 			registerFluid(Fluids.fluidCadmium, true);
 			registerTinkerMaterial(cadmium, Fluids.fluidCadmium, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
 			registerFluid(Fluids.fluidChromium, true);
@@ -110,6 +114,22 @@ public class TinkersConstructPlugin {
 		}
 
 		initDone = true;
+	}
+
+	private static Material createTCMaterial(String name, int hexColor, Fluid meltFluid) {
+		final Material material = new Material(name,hexColor);
+		correlation.put(name, new MaterialCorrelation(material, Materials.getMetalByName(name),meltFluid));
+		
+		return material;
+	}
+
+	/**
+	 * @param hexColor 
+	 * @param name 
+	 * @return
+	 */
+	private static Material createTCMaterial(String name, int hexColor) {
+		return createTCMaterial(name, hexColor, null);
 	}
 
 	/**
