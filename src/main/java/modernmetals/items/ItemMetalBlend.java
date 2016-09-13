@@ -15,7 +15,7 @@ import net.minecraft.world.World;
 public class ItemMetalBlend extends cyano.basemetals.items.ItemMetalBlend {
 
 	/**
-	 * 
+	 *
 	 * @param metal
 	 */
 	public ItemMetalBlend(MetalMaterial metal) {
@@ -26,9 +26,11 @@ public class ItemMetalBlend extends cyano.basemetals.items.ItemMetalBlend {
 	public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
 		super.onCreated(item, world, crafter);
 		// achievement
-		if(metal == Materials.aluminumbrass || metal == Materials.galvanizedsteel || metal == Materials.nichrome
-				|| metal == Materials.stainlesssteel || metal == Materials.titanium) {
+		if((this.getMetalMaterial() == Materials.aluminumbrass)
+				|| (this.getMetalMaterial() == Materials.galvanizedsteel)
+				|| (this.getMetalMaterial() == Materials.nichrome)
+				|| (this.getMetalMaterial() == Materials.stainlesssteel)
+				|| (this.getMetalMaterial() == Materials.titanium))
 			crafter.addStat(Achievements.metallurgy, 1);
-		}
 	}
 }

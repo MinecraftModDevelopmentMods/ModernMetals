@@ -22,8 +22,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This class initializes all blocks in Modern Metals and provides some utility 
- * methods for looking up blocks. 
+ * This class initializes all blocks in Modern Metals and provides some utility
+ * methods for looking up blocks.
+ *
  * @author DrCyano
  *
  */
@@ -297,23 +298,23 @@ public abstract class Blocks {
 
 	private static boolean initDone = false;
 
-//	private static Map<Block, String> blockRegistry = new HashMap<>();
-	private static final Map<String, Block> allBlocks = new HashMap<>();
-//	private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
+	// private static Map<Block, String> blockRegistry = new HashMap<>();
+	private static final Map<String, Block> blockRegistry = new HashMap<>();
+	// private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
 
 	/**
-	 * Gets an block by its name. The name is the name as it is registered in 
-	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
+	 * Gets an block by its name. The name is the name as it is registered in
+	 * the GameRegistry, not its unlocalized name (the unlocalized name is the
 	 * registered name plus the prefix "modernmetals.")
 	 * @param name The name of the block in question
 	 * @return The block matching that name, or null if there isn't one
 	 */
 	public static Block getBlockByName(String name) {
-		return allBlocks.get(name);
+		return blockRegistry.get(name);
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static void init() {
 		if(initDone)
@@ -590,7 +591,7 @@ public abstract class Blocks {
 
 		// TODO: Make this support multiple oredicts
 		// final block settings
-		for(Block b : allBlocks.values()) {
+		for(final Block b : blockRegistry.values()) {
 			if(b instanceof IOreDictionaryEntry)
 				OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);
 			if(!(b instanceof BlockMetalDoor))
@@ -601,19 +602,19 @@ public abstract class Blocks {
 	}
 
 	private static Block addBlock(Block block, String name) {
-		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
+		final ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
 		block.setRegistryName(location);
 		block.setUnlocalizedName(location.toString());
 		GameRegistry.register(block);
 
 		if (!(block instanceof BlockMetalDoor) && !(block instanceof BlockMetalSlab)) {
-			ItemBlock itemBlock = new ItemBlock(block);
+			final ItemBlock itemBlock = new ItemBlock(block);
 			itemBlock.setRegistryName(location);
 			itemBlock.setUnlocalizedName(location.toString());
 			GameRegistry.register(itemBlock);
 		}
 
-		allBlocks.put(name, block);
+		blockRegistry.put(name, block);
 		return block;
 	}
 
@@ -654,11 +655,11 @@ public abstract class Blocks {
 	}
 
 	private static Block createStairs(MetalMaterial metal) {
-		return addBlock(new BlockMetalStairs(metal), metal.getName() + "_stairs");
+		return addBlock(new BlockMetalStairs(metal, Blocks.getBlockByName(metal.getName() + "_block")), metal.getName() + "_stairs");
 	}
 
 	private static Block createWall(MetalMaterial metal) {
-		return addBlock(new BlockMetalWall(metal), metal.getName() + "_wall");
+		return addBlock(new BlockMetalWall(metal, Blocks.getBlockByName(metal.getName() + "_block")), metal.getName() + "_wall");
 	}
 
 	private static Block createOre(MetalMaterial metal) {
@@ -679,12 +680,16 @@ public abstract class Blocks {
 	 */
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event) {
-		for(String name : allBlocks.keySet()) {
-			if(allBlocks.get(name) instanceof BlockDoor)
+		for(final String name : blockRegistry.keySet()) {
+			if(blockRegistry.get(name) instanceof BlockDoor)
 				continue; // do not add door blocks
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-			.register(net.minecraft.item.Item.getItemFromBlock(allBlocks.get(name)), 0,
+			.register(net.minecraft.item.Item.getItemFromBlock(blockRegistry.get(name)), 0,
 				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, name), "inventory"));
 		}
+	}
+
+	public static Map<String, Block> getBlockRegistry() {
+		return blockRegistry;
 	}
 }

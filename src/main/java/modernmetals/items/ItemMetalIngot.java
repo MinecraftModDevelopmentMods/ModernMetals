@@ -9,6 +9,7 @@ import net.minecraft.world.World;
 
 /**
  * Ingots
+ *
  * @author Jasmine Iwanek
  *
  */
@@ -27,10 +28,15 @@ public class ItemMetalIngot extends cyano.basemetals.items.ItemMetalIngot {
 		super.onCreated(item, world, entityPlayer);
 		entityPlayer.addStat(cyano.basemetals.init.Achievements.this_is_new, 1);
 
-		if(metal == Materials.aluminumbrass) entityPlayer.addStat(Achievements.aluminumbrass_maker, 1);
-		if(metal == Materials.galvanizedsteel) entityPlayer.addStat(Achievements.galvanized_steel_maker, 1);
-		if(metal == Materials.nichrome) entityPlayer.addStat(Achievements.nichrome_maker, 1);
-		if(metal == Materials.stainlesssteel) entityPlayer.addStat(Achievements.stainless_steel_maker, 1);
-		if(metal == Materials.titanium) entityPlayer.addStat(Achievements.titanium_maker, 1);
+		if(this.getMetalMaterial() == Materials.aluminumbrass)
+			entityPlayer.addStat(Achievements.aluminumbrass_maker, 1);
+		else if(this.getMetalMaterial() == Materials.galvanizedsteel)
+			entityPlayer.addStat(Achievements.galvanized_steel_maker, 1);
+		else if(this.getMetalMaterial() == Materials.nichrome)
+			entityPlayer.addStat(Achievements.nichrome_maker, 1);
+		else if(this.getMetalMaterial() == Materials.stainlesssteel)
+			entityPlayer.addStat(Achievements.stainless_steel_maker, 1);
+		else if(this.getMetalMaterial() == Materials.titanium)
+			entityPlayer.addStat(Achievements.titanium_maker, 1);
 	}
 }

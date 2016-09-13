@@ -4,20 +4,24 @@ import modernmetals.init.*;
 
 import modernmetals.data.AdditionalLootTables;
 import modernmetals.data.DataConstants;
+
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.MissingModsException;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.versioning.ArtifactVersion;
 import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+
+import org.apache.logging.log4j.Level;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -26,17 +30,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-import org.apache.logging.log4j.Level;
-
 /**
  * This is the entry point for this mod.
  * @author Jasmine Iwanek
  *
  */
-@Mod(
-		modid = ModernMetals.MODID,
-		name = ModernMetals.NAME,
-		version = ModernMetals.VERSION,
+@Mod(modid = ModernMetals.MODID, name = ModernMetals.NAME, version = ModernMetals.VERSION,
 		dependencies = "required-after:Forge@[12.17.0.1976,);required-after:basemetals@[2.3,);before:buildingbricks",
 		acceptedMinecraftVersions = "1.9.4,)",
 		//certificateFingerprint = "",
@@ -81,9 +80,13 @@ public class ModernMetals
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 
+
 		disableAllHammers = false;
 
+
 		requireOreSpawn = true;
+
+		config.save();
 
 		if(requireOreSpawn) {
 			if(!net.minecraftforge.fml.common.Loader.isModLoaded("orespawn")) {
@@ -93,17 +96,16 @@ public class ModernMetals
 			}
 			oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(), "orespawn");
 			Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(), MODID + ".json");
-			if(!Files.exists(oreSpawnFile)) {
+			if (!(Files.exists(oreSpawnFile))) {
 				try {
 					Files.createDirectories(oreSpawnFile.getParent());
-					Files.write(oreSpawnFile, Arrays.asList(DataConstants.defaultOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
+					Files.write(oreSpawnFile, Arrays.asList(DataConstants.DEFAULT_ORESPAWN_JSON.split("\n")), Charset.forName("UTF-8"));
 				} catch (IOException e) {
 					FMLLog.severe(MODID + ": Error: Failed to write file " + oreSpawnFile);
 				}
 			}
 		}
 
-		config.save();
 
 		Fluids.init();
 		Materials.init();
@@ -112,7 +114,8 @@ public class ModernMetals
 		Items.init();
 		VillagerTrades.init();
 		EnderIOPlugin.init();
-		TinkersConstructPlugin.init();
+		if(Loader.isModLoaded("tconstruct"))
+			TinkersConstructPlugin.init();
 		VeinMinerPlugin.init();
 
 		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(), "additional-loot-tables");
@@ -121,25 +124,25 @@ public class ModernMetals
 			try {
 				Files.createDirectories(myLootFolder.resolve("chests"));
 				Files.write(myLootFolder.resolve("chests").resolve("abandoned_mineshaft.json"),
-						Arrays.asList(AdditionalLootTables.abandoned_mineshaft));
+						Collections.singletonList(AdditionalLootTables.abandoned_mineshaft));
 				Files.write(myLootFolder.resolve("chests").resolve("desert_pyramid.json"),
-						Arrays.asList(AdditionalLootTables.desert_pyramid));
+						Collections.singletonList(AdditionalLootTables.desert_pyramid));
 				Files.write(myLootFolder.resolve("chests").resolve("end_city_treasure.json"),
-						Arrays.asList(AdditionalLootTables.end_city_treasure));
+						Collections.singletonList(AdditionalLootTables.end_city_treasure));
 				Files.write(myLootFolder.resolve("chests").resolve("jungle_temple.json"),
-						Arrays.asList(AdditionalLootTables.jungle_temple));
+						Collections.singletonList(AdditionalLootTables.jungle_temple));
 				Files.write(myLootFolder.resolve("chests").resolve("nether_bridge.json"),
-						Arrays.asList(AdditionalLootTables.nether_bridge));
+						Collections.singletonList(AdditionalLootTables.nether_bridge));
 				Files.write(myLootFolder.resolve("chests").resolve("simple_dungeon.json"),
-						Arrays.asList(AdditionalLootTables.simple_dungeon));
+						Collections.singletonList(AdditionalLootTables.simple_dungeon));
 				Files.write(myLootFolder.resolve("chests").resolve("spawn_bonus_chest.json"),
-						Arrays.asList(AdditionalLootTables.spawn_bonus_chest));
+						Collections.singletonList(AdditionalLootTables.spawn_bonus_chest));
 				Files.write(myLootFolder.resolve("chests").resolve("stronghold_corridor.json"),
-						Arrays.asList(AdditionalLootTables.stronghold_corridor));
+						Collections.singletonList(AdditionalLootTables.stronghold_corridor));
 				Files.write(myLootFolder.resolve("chests").resolve("stronghold_crossing.json"),
-						Arrays.asList(AdditionalLootTables.stronghold_crossing));
+						Collections.singletonList(AdditionalLootTables.stronghold_crossing));
 				Files.write(myLootFolder.resolve("chests").resolve("village_blacksmith.json"),
-						Arrays.asList(AdditionalLootTables.village_blacksmith));
+						Collections.singletonList(AdditionalLootTables.village_blacksmith));
 			} catch(IOException ex) {
 				FMLLog.log(Level.ERROR, ex, "%s: Failed to extract additional loot tables", MODID);
 			}
@@ -152,8 +155,6 @@ public class ModernMetals
 		if(event.getSide() == Side.SERVER) {
 			serverPreInit(event);
 		}
-//		event.getVersionProperties();
-//		event.getModMetadata();
 	}
 
 	@SideOnly(Side.CLIENT)
