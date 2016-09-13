@@ -112,9 +112,9 @@ public class TinkersConstructPlugin {
 				metal.getMetal().magicAffinity*3/2,
 				metal.getMetal().getBaseAttackDamage()*4, 
 				// Handle durability multiplier, handle durability
-				((metal.getMetal().hardness+metal.getMetal().magicAffinity)/2+2)/9, (int) (metal.getMetal().getToolDurability()/3.4), 
+				(metal.getMetal().hardness+metal.getMetal().magicAffinity*2)/9, (int) (metal.getMetal().getToolDurability()/6.8), 
 				// "Extra" - durability of non handle, non-head parts?
-				(int) (metal.getMetal().getToolDurability()/20),
+				(int) (metal.getMetal().getToolDurability()/10),
 				// Mining level
 				metal.getMetal().getToolHarvestLevel(),
 				// Craft at workbench: always false, craft at smeltery: always true
