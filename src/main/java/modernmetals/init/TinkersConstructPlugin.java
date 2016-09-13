@@ -102,21 +102,21 @@ public class TinkersConstructPlugin {
 	 * @param attackFactor overall scaling factor of toolpart damage
 	 */
 	private static void setupTConSmeltAndParts(final String name, double durabilityFactor, float speedFactor, float attackFactor) {
-		final MaterialCorrelation materialCorrelation = correlation.get(name);
+		final MaterialCorrelation metal = correlation.get(name);
 		
-		registerFluid(materialCorrelation.getMeltFluid(), true);
-		materialCorrelation.getMetal().getBaseAttackDamage();
+		registerFluid(metal.getMeltFluid(), true);
+		metal.getMetal().getBaseAttackDamage();
 		
-		registerTinkerMaterial(materialCorrelation.getMaterial(), materialCorrelation.getMeltFluid(), 
-				(int) (materialCorrelation.getMetal().getToolDurability()), 
-				materialCorrelation.getMetal().magicAffinity,
-				materialCorrelation.getMetal().getBaseAttackDamage()*2, 
+		registerTinkerMaterial(metal.getMaterial(), metal.getMeltFluid(), 
+				(int) (metal.getMetal().getToolDurability()), 
+				metal.getMetal().magicAffinity*3/2,
+				metal.getMetal().getBaseAttackDamage()*4, 
 				// Handle durability multiplier, handle durability
-				(materialCorrelation.getMetal().hardness+3)/9, (int) (materialCorrelation.getMetal().getToolDurability()/64), 
+				((metal.getMetal().hardness+metal.getMetal().magicAffinity)/2+2)/9, (int) (metal.getMetal().getToolDurability()/3.4), 
 				// "Extra" - durability of non handle, non-head parts?
-				(int) (materialCorrelation.getMetal().getToolDurability()/2),
+				(int) (metal.getMetal().getToolDurability()/20),
 				// Mining level
-				materialCorrelation.getMetal().getToolHarvestLevel(),
+				metal.getMetal().getToolHarvestLevel(),
 				// Craft at workbench: always false, craft at smeltery: always true
 				false, true);
 	}
