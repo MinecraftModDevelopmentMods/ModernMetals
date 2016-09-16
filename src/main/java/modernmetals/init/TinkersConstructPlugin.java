@@ -42,45 +42,47 @@ public class TinkersConstructPlugin {
 		if(initDone)
 			return;
 
-		final Material aluminum = createTCMaterial("aluminum", 0xFFC5C8C1);
-		final Material aluminumbrass = createTCMaterial("aluminumbrass", 0xFFEBAA56);
-		final Material cadmium = createTCMaterial("cadmium", 0xFFC9D4DA, Fluids.fluidCadmium);
-		final Material chromium = createTCMaterial("chromium", 0xFFCDCDCF, Fluids.fluidChromium);
-		final Material galvanizedsteel = createTCMaterial("galvanizedsteel", 0xFF9BA6A2, Fluids.fluidGalvanizedSteel);
-		final Material iridium = createTCMaterial("iridium", 0xFFF8EDCC, Fluids.fluidIridium);
-		final Material magnesium = createTCMaterial("magnesium", 0xFF7F7F77, Fluids.fluidMagnesium);
-		final Material manganese = createTCMaterial("manganese", 0xFFF5CFDA, Fluids.fluidManganese);
-		final Material nichrome = createTCMaterial("nichrome", 0xFFDEA054, Fluids.fluidNichrome);
-		final Material osmium = createTCMaterial("osmium", 0xFF7C8E99, Fluids.fluidOsmium);
-		final Material plutonium = createTCMaterial("plutonium", 0xFFB333EA, Fluids.fluidPlutonium);
-		final Material rutile = createTCMaterial("rutile", 0xFFBF928B, Fluids.fluidRutile);
-		final Material stainlesssteel = createTCMaterial("stainlesssteel", 0xFFC5BFC1, Fluids.fluidStainlessSteel);
-		final Material tantalum = createTCMaterial("tantalum", 0xFFC4BEC2, Fluids.fluidTantalum);
-		final Material titanium = createTCMaterial("titanium", 0xFF73787E, Fluids.fluidTitanium);
-		final Material tungsten = createTCMaterial("tungsten", 0xFF969696, Fluids.fluidTungsten);
-		final Material uranium = createTCMaterial("uranium", 0xFFA7B345, Fluids.fluidUranium);
-		final Material zirconium = createTCMaterial("zirconium", 0xFF929793, Fluids.fluidZirconium);
+			final Material aluminum = createTCMaterial("aluminum", 0xFFC5C8C1);
+			final Material aluminumbrass = createTCMaterial("aluminumbrass", 0xFFEBAA56);
+			final Material cadmium = createTCMaterial("cadmium", 0xFFC9D4DA, Fluids.fluidCadmium);
+			final Material chromium = createTCMaterial("chromium", 0xFFCDCDCF, Fluids.fluidChromium);
+			final Material galvanizedsteel = createTCMaterial("galvanizedsteel", 0xFF9BA6A2, Fluids.fluidGalvanizedSteel);
+			final Material iridium = createTCMaterial("iridium", 0xFFF8EDCC, Fluids.fluidIridium);
+			final Material magnesium = createTCMaterial("magnesium", 0xFF7F7F77, Fluids.fluidMagnesium);
+			final Material manganese = createTCMaterial("manganese", 0xFFF5CFDA, Fluids.fluidManganese);
+			final Material nichrome = createTCMaterial("nichrome", 0xFFDEA054, Fluids.fluidNichrome);
+			final Material osmium = createTCMaterial("osmium", 0xFF7C8E99, Fluids.fluidOsmium);
+			final Material plutonium = createTCMaterial("plutonium", 0xFFB333EA, Fluids.fluidPlutonium);
+			final Material rutile = createTCMaterial("rutile", 0xFFBF928B, Fluids.fluidRutile);
+			final Material stainlesssteel = createTCMaterial("stainlesssteel", 0xFFC5BFC1, Fluids.fluidStainlessSteel);
+			final Material tantalum = createTCMaterial("tantalum", 0xFFC4BEC2, Fluids.fluidTantalum);
+			final Material titanium = createTCMaterial("titanium", 0xFF73787E, Fluids.fluidTitanium);
+			final Material tungsten = createTCMaterial("tungsten", 0xFF969696, Fluids.fluidTungsten);
+			final Material uranium = createTCMaterial("uranium", 0xFFA7B345, Fluids.fluidUranium);
+			final Material zirconium = createTCMaterial("zirconium", 0xFF929793, Fluids.fluidZirconium);
 
-//		registerFluid(Fluids.fluidAluminum); // TCon already has this
-//		registerTinkerMaterial(aluminum, Fluids.fluidAluminum, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-//		registerFluid(Fluids.fluidAluminumBrass); // TCon already has this
-//		registerTinkerMaterial(aluminumbrass, Fluids.fluidAluminumBrass, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
-		
-		for(String name : correlation.keySet()) {
-			if (null != correlation.get(name).getMeltFluid()) 
-			// skip items with no declared melt fluid - eg Aluminum, Aluminum Brass
-			// 		also skips items where the melt fluid process went awol, which is nice.
+//			registerFluid(Fluids.fluidAluminum); // TCon already has this
+//			registerTinkerMaterial(aluminum, Fluids.fluidAluminum, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
+//			registerFluid(Fluids.fluidAluminumBrass); // TCon already has this
+//			registerTinkerMaterial(aluminumbrass, Fluids.fluidAluminumBrass, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
+			
+			for(String name : correlation.keySet())
 			{
-				setupTConSmeltAndParts(name);
+				if (null != correlation.get(name).getMeltFluid()) 
+				// skip items with no declared melt fluid - eg Aluminum, Aluminum Brass
+				// 		also skips items where the melt fluid process went awol, which is nice.
+				{
+					setupTConSmeltAndParts(name, d, s, a);
+				}
 			}
+			
+//			registerAlloy("aluminumbrass", 2, "aluminum", 1, "brass", 1); // TCon already has Aluminum Brass alloy
+			registerAlloy("galvanizedsteel", 2, new String[] {"steel", "zinc"}, new int[] {1, 1});
+			registerAlloy("nichrome", 2,  new String[] {"nickel", "chrome"}, new int[] {1, 1});
+			registerAlloy("stainlesssteel", 2,  new String[] {"steel", "chrome"}, new int[] {1, 1});
+			registerAlloy("titanium", 2,  new String[] {"rutile", "magnesium"}, new int[] {1, 1});
 		}
-		
-//		registerAlloy("aluminumbrass", 2, "aluminum", 1, "brass", 1); // TCon already has Aluminum Brass alloy
-		registerAlloy("galvanizedsteel", 2, new String[] {"steel", "zinc"}, new int[] {1, 1});
-		registerAlloy("nichrome", 2,  new String[] {"nickel", "chrome"}, new int[] {1, 1});
-		registerAlloy("stainlesssteel", 2,  new String[] {"steel", "chrome"}, new int[] {1, 1});
-		registerAlloy("titanium", 2,  new String[] {"rutile", "magnesium"}, new int[] {1, 1});
-		
+
 		initDone = true;
 	}
 
@@ -109,10 +111,6 @@ public class TinkersConstructPlugin {
 				metal.getMetal().getToolHarvestLevel(),
 				// Craft at workbench: always false, craft at smeltery: always true
 				false, true);
-	}
-
-	private static void setupTConSmeltAndParts(final String name) {
-		setupTConSmeltAndParts(name, 1, 1, 1);
 	}
 
 	/**
@@ -204,7 +202,8 @@ public class TinkersConstructPlugin {
 		TinkerRegistry.addMaterialStats(material, new HeadMaterialStats(headDura, headSpeed, headAttack, headLevel)); // Sets stats for head
 		TinkerRegistry.addMaterialStats(material, new HandleMaterialStats(handleMod, handleDura)); // Sets Stats for handle
 		TinkerRegistry.addMaterialStats(material, new ExtraMaterialStats(extra)); // Sets stats for everything else
-		if (trait != null) {
+		if (trait != null)
+		{
 			String stats = "temporary placeholder"; // TODO: find out what goes here
 			TinkerRegistry.addMaterialTrait(material, trait, stats);
 		}
