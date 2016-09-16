@@ -7,8 +7,9 @@ import cyano.basemetals.material.MetalMaterial;
 
 /**
  * This class initializes all of the metal materials in Modern Metals. It also
- * contains utility methods for looking up materials by name and finding the 
+ * contains utility methods for looking up materials by name and finding the
  * tool and armor material equivalents for a given metal.
+ *
  * @author DrCyano
  *
  */
@@ -38,7 +39,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	private static boolean initDone = false;
 
 	/**
-	 * 
+	 *
 	 */
 	public static void init() {
 		if(initDone)
@@ -68,7 +69,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	}
 
 	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic) {
-		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
+		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
 		registerMaterial(name, m);
 		
 		materials.add(m);
@@ -77,7 +78,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 
 	@SuppressWarnings("unused")
 	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
-		MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic, true);
+		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic, true);
 		registerMaterial(name, m);
 		
 		materials.add(m);

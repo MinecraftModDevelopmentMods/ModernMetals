@@ -4,28 +4,24 @@ import modernmetals.ModernMetals;
 import cyano.basemetals.blocks.BlockMoltenFluid;
 import cyano.basemetals.fluids.CustomFluid;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.ModelBakery;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.model.*;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
+import net.minecraft.item.*;
+import net.minecraft.potion.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fluids.BlockFluidBase;
-import net.minecraftforge.fluids.BlockFluidClassic;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.*;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This class initializes all fluids in Modern Metals and provides some utility 
- * methods for looking up fluids. 
+ * This class initializes all fluids in Modern Metals and provides some utility
+ * methods for looking up fluids.
+ *
  * @author DrCyano
  *
  */
@@ -95,7 +91,7 @@ public abstract class Fluids {
 	private static boolean initDone = false;
 
 	/**
-	 * 
+	 *
 	 */
 	public static void init() {
 		if(initDone)
@@ -179,23 +175,21 @@ public abstract class Fluids {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param modID
 	 */
 	@SideOnly(Side.CLIENT)
 	public static void bakeModels(String modID) {
-		for(Fluid fluid : fluidBlocks.keySet()) {
-			BlockFluidBase block = fluidBlocks.get(fluid);
-			Item item = Item.getItemFromBlock(block);
+		for(final Fluid fluid : fluidBlocks.keySet()) {
+			final BlockFluidBase block = fluidBlocks.get(fluid);
+			final Item item = Item.getItemFromBlock(block);
 			final ModelResourceLocation fluidModelLocation = new ModelResourceLocation(
 					modID.toLowerCase() + ":" + fluidBlockNames.get(block), "fluid");
 			ModelBakery.registerItemVariants(item);
 			ModelLoader.setCustomMeshDefinition(item, stack -> fluidModelLocation);
-			ModelLoader.setCustomStateMapper(block, new StateMapperBase()
-			{
+			ModelLoader.setCustomStateMapper(block, new StateMapperBase() {
 				@Override
-				protected ModelResourceLocation getModelResourceLocation(IBlockState state)
-				{
+				protected ModelResourceLocation getModelResourceLocation(IBlockState state) {
 					return fluidModelLocation;
 				}
 			});
@@ -221,7 +215,7 @@ public abstract class Fluids {
 		GameRegistry.register(block);
 		block.setCreativeTab(CreativeTabs.MISC);
 
-		ItemBlock itemBlock = new ItemBlock(block);
+		final ItemBlock itemBlock = new ItemBlock(block);
 		itemBlock.setRegistryName(location);
 		itemBlock.setUnlocalizedName(location.toString());
 		GameRegistry.register(itemBlock);

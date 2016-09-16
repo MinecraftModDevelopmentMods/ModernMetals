@@ -1,5 +1,10 @@
 package modernmetals.utils;
 
+/**
+ *
+ * @author Jasmine Iwanek
+ *
+ */
 public class StringUtilities {
 
 	/**

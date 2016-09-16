@@ -723,8 +723,8 @@ public abstract class Items {
 	private static Map<MetalMaterial, Integer> materialSortingValues = new HashMap<>();
 
 	/**
-	 * Gets an item by its name. The name is the name as it is registered in 
-	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
+	 * Gets an item by its name. The name is the name as it is registered in the
+	 * GameRegistry, not its unlocalized name (the unlocalized name is the
 	 * registered name plus the prefix "modernmetals.")
 	 * @param name The name of the item in question
 	 * @return The item matching that name, or null if there isn't one
@@ -734,10 +734,10 @@ public abstract class Items {
 	}
 
 	/**
-	 * This is the reverse of the getItemByName(...) method, returning the 
+	 * This is the reverse of the getItemByName(...) method, returning the
 	 * registered name of an item instance (Modern Metals items only).
 	 * @param i The item in question
-	 * @return The name of the item, or null if the item is not a Modern Metals 
+	 * @return The name of the item, or null if the item is not a Modern Metals
 	 * item.
 	 */
 	public static String getNameOfItem(Item i) {
@@ -754,6 +754,7 @@ public abstract class Items {
 
 	/**
 	 * Gets the inventory item corresponding to a given door block
+	 *
 	 * @param b The door block
 	 * @return The item that the player should use to place that kind of door
 	 */
@@ -762,7 +763,7 @@ public abstract class Items {
 	}
 
 	/**
-	 * 
+	 *
 	 */
 	public static void init() {
 		if(initDone)
@@ -770,684 +771,684 @@ public abstract class Items {
 		
 		modernmetals.init.Blocks.init();
 
-		aluminum_arrow = create_arrow(Materials.aluminum);
-		aluminum_axe = create_axe(Materials.aluminum);
-		aluminum_boots = create_boots(Materials.aluminum);
-		aluminum_bolt = create_bolt(Materials.aluminum);
-		aluminum_bow = create_bow(Materials.aluminum);
-		aluminum_chestplate = create_chestplate(Materials.aluminum);
-		aluminum_crackhammer = create_crackhammer(Materials.aluminum);
-		aluminum_crossbow = create_crossbow(Materials.aluminum);
-		aluminum_door = create_door(Materials.aluminum, Blocks.aluminum_door);
-		aluminum_fishing_rod = create_fishing_rod(Materials.aluminum);
-		aluminum_helmet = create_helmet(Materials.aluminum);
-		aluminum_hoe = create_hoe(Materials.aluminum);
-		aluminum_horsearmor = create_horsearmor(Materials.aluminum);
-		aluminum_ingot = create_ingot(Materials.aluminum);
-		aluminum_leggings = create_leggings(Materials.aluminum);
-		aluminum_nugget = create_nugget(Materials.aluminum);
-		aluminum_pickaxe = create_pickaxe(Materials.aluminum);
-		aluminum_powder = create_powder(Materials.aluminum);
-		aluminum_shears = create_shears(Materials.aluminum);
-		aluminum_shovel = create_shovel(Materials.aluminum);
-		aluminum_smallpowder = create_smallpowder(Materials.aluminum);
-		aluminum_sword = create_sword(Materials.aluminum);
-		aluminum_rod = create_rod(Materials.aluminum);
-		aluminum_gear = create_gear(Materials.aluminum);
-
-		aluminum_slab = create_slab(Materials.aluminum, Blocks.aluminum_slab, Blocks.aluminum_slab, Blocks.double_aluminum_slab);
-//		aluminum_shield = create_shield(Materials.aluminum);
-
-		aluminum_crystal = create_crystal(Materials.aluminum);
-		aluminum_shard = create_shard(Materials.aluminum);
-		aluminum_clump = create_clump(Materials.aluminum);
-		aluminum_powder_dirty = create_DirtyPowder(Materials.aluminum);
-
-		aluminum_dense_plate = create_DensePlate(Materials.aluminum);
-		aluminum_crushed = create_crushed(Materials.aluminum);
-		aluminum_crushed_purified = create_crushedPurified(Materials.aluminum);
-
-		aluminumbrass_arrow = create_arrow(Materials.aluminumbrass);
-		aluminumbrass_axe = create_axe(Materials.aluminumbrass);
-		aluminumbrass_blend = create_blend(Materials.aluminumbrass);
-		aluminumbrass_boots = create_boots(Materials.aluminumbrass);
-		aluminumbrass_bolt = create_bolt(Materials.aluminumbrass);
-		aluminumbrass_bow = create_bow(Materials.aluminumbrass);
-		aluminumbrass_chestplate = create_chestplate(Materials.aluminumbrass);
-		aluminumbrass_crackhammer = create_crackhammer(Materials.aluminumbrass);
-		aluminumbrass_crossbow = create_crossbow(Materials.aluminumbrass);
-		aluminumbrass_door = create_door(Materials.aluminumbrass, Blocks.aluminumbrass_door);
-		aluminumbrass_fishing_rod = create_fishing_rod(Materials.aluminumbrass);
-		aluminumbrass_helmet = create_helmet(Materials.aluminumbrass);
-		aluminumbrass_hoe = create_hoe(Materials.aluminumbrass);
-		aluminumbrass_horsearmor = create_horsearmor(Materials.aluminumbrass);
-		aluminumbrass_ingot = create_ingot(Materials.aluminumbrass);
-		aluminumbrass_leggings = create_leggings(Materials.aluminumbrass);
-		aluminumbrass_nugget = create_nugget(Materials.aluminumbrass);
-		aluminumbrass_pickaxe = create_pickaxe(Materials.aluminumbrass);
-		aluminumbrass_powder = create_powder(Materials.aluminumbrass);
-		aluminumbrass_shears = create_shears(Materials.aluminumbrass);
-		aluminumbrass_shovel = create_shovel(Materials.aluminumbrass);
-		aluminumbrass_smallblend = create_smallblend(Materials.aluminumbrass);
-		aluminumbrass_smallpowder = create_smallpowder(Materials.aluminumbrass);
-		aluminumbrass_sword = create_sword(Materials.aluminumbrass);
-		aluminumbrass_rod = create_rod(Materials.aluminumbrass);
-		aluminumbrass_gear = create_gear(Materials.aluminumbrass);
-
-		aluminumbrass_slab = create_slab(Materials.aluminumbrass, Blocks.aluminumbrass_slab, Blocks.aluminumbrass_slab, Blocks.double_aluminumbrass_slab);
-//		aluminumbrass_shield = create_shield(Materials.aluminumbrass);
-
-//		aluminumbrass_crystal = create_crystal(Materials.aluminumbrass);
-//		aluminumbrass_shard = create_shard(Materials.aluminumbrass);
-//		aluminumbrass_clump = create_clump(Materials.aluminumbrass);
-//		aluminumbrass_powder_dirty = create_DirtyPowder(Materials.aluminumbrass);
-
-		aluminumbrass_dense_plate = create_DensePlate(Materials.aluminumbrass);
-//		aluminumbrass_crushed = create_crushed(Materials.aluminumbrass);
-//		aluminumbrass_crushed_purified = create_crushedPurified(Materials.aluminumbrass);
-
-		cadmium_arrow = create_arrow(Materials.cadmium);
-		cadmium_axe = create_axe(Materials.cadmium);
-		cadmium_boots = create_boots(Materials.cadmium);
-		cadmium_bolt = create_bolt(Materials.cadmium);
-		cadmium_bow = create_bow(Materials.cadmium);
-		cadmium_chestplate = create_chestplate(Materials.cadmium);
-		cadmium_crackhammer = create_crackhammer(Materials.cadmium);
-		cadmium_crossbow = create_crossbow(Materials.cadmium);
-		cadmium_door = create_door(Materials.cadmium, Blocks.cadmium_door);
-		cadmium_fishing_rod = create_fishing_rod(Materials.cadmium);
-		cadmium_helmet = create_helmet(Materials.cadmium);
-		cadmium_hoe = create_hoe(Materials.cadmium);
-		cadmium_horsearmor = create_horsearmor(Materials.cadmium);
-		cadmium_ingot = create_ingot(Materials.cadmium);
-		cadmium_leggings = create_leggings(Materials.cadmium);
-		cadmium_nugget = create_nugget(Materials.cadmium);
-		cadmium_pickaxe = create_pickaxe(Materials.cadmium);
-		cadmium_powder = create_powder(Materials.cadmium);
-		cadmium_shears = create_shears(Materials.cadmium);
-		cadmium_shovel = create_shovel(Materials.cadmium);
-		cadmium_smallpowder = create_smallpowder(Materials.cadmium);
-		cadmium_sword = create_sword(Materials.cadmium);
-		cadmium_rod = create_rod(Materials.cadmium);
-		cadmium_gear = create_gear(Materials.cadmium);
-
-		cadmium_slab = create_slab(Materials.cadmium, Blocks.cadmium_slab, Blocks.cadmium_slab, Blocks.double_cadmium_slab);
-//		cadmium_shield = create_shield(Materials.cadmium);
-
-		cadmium_crystal = create_crystal(Materials.cadmium);
-		cadmium_shard = create_shard(Materials.cadmium);
-		cadmium_clump = create_clump(Materials.cadmium);
-		cadmium_powder_dirty = create_DirtyPowder(Materials.cadmium);
-
-		cadmium_dense_plate = create_DensePlate(Materials.cadmium);
-		cadmium_crushed = create_crushed(Materials.cadmium);
-		cadmium_crushed_purified = create_crushedPurified(Materials.cadmium);
-
-		chromium_arrow = create_arrow(Materials.chromium);
-		chromium_axe = create_axe(Materials.chromium);
-		chromium_boots = create_boots(Materials.chromium);
-		chromium_bolt = create_bolt(Materials.chromium);
-		chromium_bow = create_bow(Materials.chromium);
-		chromium_chestplate = create_chestplate(Materials.chromium);
-		chromium_crackhammer = create_crackhammer(Materials.chromium);
-		chromium_crossbow = create_crossbow(Materials.chromium);
-		chromium_door = create_door(Materials.chromium, Blocks.chromium_door);
-		chromium_fishing_rod = create_fishing_rod(Materials.chromium);
-		chromium_helmet = create_helmet(Materials.chromium);
-		chromium_hoe = create_hoe(Materials.chromium);
-		chromium_horsearmor = create_horsearmor(Materials.chromium);
-		chromium_ingot = create_ingot(Materials.chromium);
-		chromium_leggings = create_leggings(Materials.chromium);
-		chromium_nugget = create_nugget(Materials.chromium);
-		chromium_pickaxe = create_pickaxe(Materials.chromium);
-		chromium_powder = create_powder(Materials.chromium);
-		chromium_shears = create_shears(Materials.chromium);
-		chromium_shovel = create_shovel(Materials.chromium);
-		chromium_smallpowder = create_smallpowder(Materials.chromium);
-		chromium_sword = create_sword(Materials.chromium);
-		chromium_rod = create_rod(Materials.chromium);
-		chromium_gear = create_gear(Materials.chromium);
-
-		chromium_slab = create_slab(Materials.chromium, Blocks.chromium_slab, Blocks.chromium_slab, Blocks.double_chromium_slab);
-//		chromium_shield = create_shield(Materials.chromium);
-
-		chromium_crystal = create_crystal(Materials.chromium);
-		chromium_shard = create_shard(Materials.chromium);
-		chromium_clump = create_clump(Materials.chromium);
-		chromium_powder_dirty = create_DirtyPowder(Materials.chromium);
-
-		chromium_dense_plate = create_DensePlate(Materials.chromium);
-		chromium_crushed = create_crushed(Materials.chromium);
-		chromium_crushed_purified = create_crushedPurified(Materials.chromium);
-
-		galvanizedsteel_arrow = create_arrow(Materials.galvanizedsteel);
-		galvanizedsteel_axe = create_axe(Materials.galvanizedsteel);
-		galvanizedsteel_blend = create_blend(Materials.galvanizedsteel);
-		galvanizedsteel_boots = create_boots(Materials.galvanizedsteel);
-		galvanizedsteel_bolt = create_bolt(Materials.galvanizedsteel);
-		galvanizedsteel_bow = create_bow(Materials.galvanizedsteel);
-		galvanizedsteel_chestplate = create_chestplate(Materials.galvanizedsteel);
-		galvanizedsteel_crackhammer = create_crackhammer(Materials.galvanizedsteel);
-		galvanizedsteel_crossbow = create_crossbow(Materials.galvanizedsteel);
-		galvanizedsteel_door = create_door(Materials.galvanizedsteel, Blocks.galvanizedsteel_door);
-		galvanizedsteel_fishing_rod = create_fishing_rod(Materials.galvanizedsteel);
-		galvanizedsteel_helmet = create_helmet(Materials.galvanizedsteel);
-		galvanizedsteel_hoe = create_hoe(Materials.galvanizedsteel);
-		galvanizedsteel_horsearmor = create_horsearmor(Materials.galvanizedsteel);
-		galvanizedsteel_ingot = create_ingot(Materials.galvanizedsteel);
-		galvanizedsteel_leggings = create_leggings(Materials.galvanizedsteel);
-		galvanizedsteel_nugget = create_nugget(Materials.galvanizedsteel);
-		galvanizedsteel_pickaxe = create_pickaxe(Materials.galvanizedsteel);
-		galvanizedsteel_powder = create_powder(Materials.galvanizedsteel);
-		galvanizedsteel_shears = create_shears(Materials.galvanizedsteel);
-		galvanizedsteel_shovel = create_shovel(Materials.galvanizedsteel);
-		galvanizedsteel_smallblend = create_smallblend(Materials.galvanizedsteel);
-		galvanizedsteel_smallpowder = create_smallpowder(Materials.galvanizedsteel);
-		galvanizedsteel_sword = create_sword(Materials.galvanizedsteel);
-		galvanizedsteel_rod = create_rod(Materials.galvanizedsteel);
-		galvanizedsteel_gear = create_gear(Materials.galvanizedsteel);
-
-		galvanizedsteel_slab = create_slab(Materials.galvanizedsteel, Blocks.galvanizedsteel_slab, Blocks.galvanizedsteel_slab, Blocks.double_galvanizedsteel_slab);
-//		galvanizedsteel_shield = create_shield(Materials.galvanizedsteel);
-
-//		galvanizedsteel_crystal = create_crystal(Materials.galvanizedsteel);
-//		galvanizedsteel_shard = create_shard(Materials.galvanizedsteel);
-//		galvanizedsteel_clump = create_clump(Materials.galvanizedsteel);
-//		galvanizedsteel_powder_dirty = create_DirtyPowder(Materials.galvanizedsteel);
-
-		galvanizedsteel_dense_plate = create_DensePlate(Materials.galvanizedsteel);
-//		galvanizedsteel_crushed = create_crushed(Materials.galvanizedsteel);
-//		galvanizedsteel_crushed_purified = create_crushedPurified(Materials.galvanizedsteel);
-
-		iridium_arrow = create_arrow(Materials.iridium);
-		iridium_axe = create_axe(Materials.iridium);
-		iridium_boots = create_boots(Materials.iridium);
-		iridium_bolt = create_bolt(Materials.iridium);
-		iridium_bow = create_bow(Materials.iridium);
-		iridium_chestplate = create_chestplate(Materials.iridium);
-		iridium_crackhammer = create_crackhammer(Materials.iridium);
-		iridium_crossbow = create_crossbow(Materials.iridium);
-		iridium_door = create_door(Materials.iridium, Blocks.iridium_door);
-		iridium_fishing_rod = create_fishing_rod(Materials.iridium);
-		iridium_helmet = create_helmet(Materials.iridium);
-		iridium_hoe = create_hoe(Materials.iridium);
-		iridium_horsearmor = create_horsearmor(Materials.iridium);
-		iridium_ingot = create_ingot(Materials.iridium);
-		iridium_leggings = create_leggings(Materials.iridium);
-		iridium_nugget = create_nugget(Materials.iridium);
-		iridium_pickaxe = create_pickaxe(Materials.iridium);
-		iridium_powder = create_powder(Materials.iridium);
-		iridium_shears = create_shears(Materials.iridium);
-		iridium_shovel = create_shovel(Materials.iridium);
-		iridium_smallpowder = create_smallpowder(Materials.iridium);
-		iridium_sword = create_sword(Materials.iridium);
-		iridium_rod = create_rod(Materials.iridium);
-		iridium_gear = create_gear(Materials.iridium);
-
-		iridium_slab = create_slab(Materials.iridium, Blocks.iridium_slab, Blocks.iridium_slab, Blocks.double_iridium_slab);
-//		iridium_shield = create_shield(Materials.iridium);
-
-		iridium_crystal = create_crystal(Materials.iridium);
-		iridium_shard = create_shard(Materials.iridium);
-		iridium_clump = create_clump(Materials.iridium);
-		iridium_powder_dirty = create_DirtyPowder(Materials.iridium);
-
-		iridium_dense_plate = create_DensePlate(Materials.iridium);
-		iridium_crushed = create_crushed(Materials.iridium);
-		iridium_crushed_purified = create_crushedPurified(Materials.iridium);
-
-		magnesium_arrow = create_arrow(Materials.magnesium);
-		magnesium_axe = create_axe(Materials.magnesium);
-		magnesium_boots = create_boots(Materials.magnesium);
-		magnesium_bolt = create_bolt(Materials.magnesium);
-		magnesium_bow = create_bow(Materials.magnesium);
-		magnesium_chestplate = create_chestplate(Materials.magnesium);
-		magnesium_crackhammer = create_crackhammer(Materials.magnesium);
-		magnesium_crossbow = create_crossbow(Materials.magnesium);
-		magnesium_door = create_door(Materials.magnesium, Blocks.magnesium_door);
-		magnesium_fishing_rod = create_fishing_rod(Materials.magnesium);
-		magnesium_helmet = create_helmet(Materials.magnesium);
-		magnesium_hoe = create_hoe(Materials.magnesium);
-		magnesium_horsearmor = create_horsearmor(Materials.magnesium);
-		magnesium_ingot = create_ingot(Materials.magnesium);
-		magnesium_leggings = create_leggings(Materials.magnesium);
-		magnesium_nugget = create_nugget(Materials.magnesium);
-		magnesium_pickaxe = create_pickaxe(Materials.magnesium);
-		magnesium_powder = create_powder(Materials.magnesium);
-		magnesium_shears = create_shears(Materials.magnesium);
-		magnesium_shovel = create_shovel(Materials.magnesium);
-		magnesium_smallpowder = create_smallpowder(Materials.magnesium);
-		magnesium_sword = create_sword(Materials.magnesium);
-		magnesium_rod = create_rod(Materials.magnesium);
-		magnesium_gear = create_gear(Materials.magnesium);
-
-		magnesium_slab = create_slab(Materials.magnesium, Blocks.magnesium_slab, Blocks.magnesium_slab, Blocks.double_magnesium_slab);
-//		magnesium_shield = create_shield(Materials.magnesium);
-
-		magnesium_crystal = create_crystal(Materials.magnesium);
-		magnesium_shard = create_shard(Materials.magnesium);
-		magnesium_clump = create_clump(Materials.magnesium);
-		magnesium_powder_dirty = create_DirtyPowder(Materials.magnesium);
-
-		magnesium_dense_plate = create_DensePlate(Materials.magnesium);
-		magnesium_crushed = create_crushed(Materials.magnesium);
-		magnesium_crushed_purified = create_crushedPurified(Materials.magnesium);
-
-		manganese_arrow = create_arrow(Materials.manganese);
-		manganese_axe = create_axe(Materials.manganese);
-		manganese_boots = create_boots(Materials.manganese);
-		manganese_bolt = create_bolt(Materials.manganese);
-		manganese_bow = create_bow(Materials.manganese);
-		manganese_chestplate = create_chestplate(Materials.manganese);
-		manganese_crackhammer = create_crackhammer(Materials.manganese);
-		manganese_crossbow = create_crossbow(Materials.manganese);
-		manganese_door = create_door(Materials.manganese, Blocks.manganese_door);
-		manganese_fishing_rod = create_fishing_rod(Materials.manganese);
-		manganese_helmet = create_helmet(Materials.manganese);
-		manganese_hoe = create_hoe(Materials.manganese);
-		manganese_horsearmor = create_horsearmor(Materials.manganese);
-		manganese_ingot = create_ingot(Materials.manganese);
-		manganese_leggings = create_leggings(Materials.manganese);
-		manganese_nugget = create_nugget(Materials.manganese);
-		manganese_pickaxe = create_pickaxe(Materials.manganese);
-		manganese_powder = create_powder(Materials.manganese);
-		manganese_shears = create_shears(Materials.manganese);
-		manganese_shovel = create_shovel(Materials.manganese);
-		manganese_smallpowder = create_smallpowder(Materials.manganese);
-		manganese_sword = create_sword(Materials.manganese);
-		manganese_rod = create_rod(Materials.manganese);
-		manganese_gear = create_gear(Materials.manganese);
-
-		manganese_slab = create_slab(Materials.manganese, Blocks.manganese_slab, Blocks.manganese_slab, Blocks.double_manganese_slab);
-//		manganese_shield = create_shield(Materials.manganese);
-
-		manganese_crystal = create_crystal(Materials.manganese);
-		manganese_shard = create_shard(Materials.manganese);
-		manganese_clump = create_clump(Materials.manganese);
-		manganese_powder_dirty = create_DirtyPowder(Materials.manganese);
-
-		manganese_dense_plate = create_DensePlate(Materials.manganese);
-		manganese_crushed = create_crushed(Materials.manganese);
-		manganese_crushed_purified = create_crushedPurified(Materials.manganese);
-
-		nichrome_arrow = create_arrow(Materials.nichrome);
-		nichrome_axe = create_axe(Materials.nichrome);
-		nichrome_blend = create_blend(Materials.nichrome);
-		nichrome_boots = create_boots(Materials.nichrome);
-		nichrome_bolt = create_bolt(Materials.nichrome);
-		nichrome_bow = create_bow(Materials.nichrome);
-		nichrome_chestplate = create_chestplate(Materials.nichrome);
-		nichrome_crackhammer = create_crackhammer(Materials.nichrome);
-		nichrome_crossbow = create_crossbow(Materials.nichrome);
-		nichrome_door = create_door(Materials.nichrome, Blocks.nichrome_door);
-		nichrome_fishing_rod = create_fishing_rod(Materials.nichrome);
-		nichrome_helmet = create_helmet(Materials.nichrome);
-		nichrome_hoe = create_hoe(Materials.nichrome);
-		nichrome_horsearmor = create_horsearmor(Materials.nichrome);
-		nichrome_ingot = create_ingot(Materials.nichrome);
-		nichrome_leggings = create_leggings(Materials.nichrome);
-		nichrome_nugget = create_nugget(Materials.nichrome);
-		nichrome_pickaxe = create_pickaxe(Materials.nichrome);
-		nichrome_powder = create_powder(Materials.nichrome);
-		nichrome_shears = create_shears(Materials.nichrome);
-		nichrome_shovel = create_shovel(Materials.nichrome);
-		nichrome_smallblend = create_smallblend(Materials.nichrome);
-		nichrome_smallpowder = create_smallpowder(Materials.nichrome);
-		nichrome_sword = create_sword(Materials.nichrome);
-		nichrome_rod = create_rod(Materials.nichrome);
-		nichrome_gear = create_gear(Materials.nichrome);
-
-		nichrome_slab = create_slab(Materials.nichrome, Blocks.nichrome_slab, Blocks.nichrome_slab, Blocks.double_nichrome_slab);
-//		nichrome_shield = create_shield(Materials.nichrome);
-
-//		nichrome_crystal = create_crystal(Materials.nichrome);
-//		nichrome_shard = create_shard(Materials.nichrome);
-//		nichrome_clump = create_clump(Materials.nichrome);
-//		nichrome_powder_dirty = create_DirtyPowder(Materials.nichrome);
-
-		nichrome_dense_plate = create_DensePlate(Materials.nichrome);
-//		nichrome_crushed = create_crushed(Materials.nichrome);
-//		nichrome_crushed_purified = create_crushedPurified(Materials.nichrome);
-
-		osmium_arrow = create_arrow(Materials.osmium);
-		osmium_axe = create_axe(Materials.osmium);
-		osmium_boots = create_boots(Materials.osmium);
-		osmium_bolt = create_bolt(Materials.osmium);
-		osmium_bow = create_bow(Materials.osmium);
-		osmium_chestplate = create_chestplate(Materials.osmium);
-		osmium_crackhammer = create_crackhammer(Materials.osmium);
-		osmium_crossbow = create_crossbow(Materials.osmium);
-		osmium_door = create_door(Materials.osmium, Blocks.osmium_door);
-		osmium_fishing_rod = create_fishing_rod(Materials.osmium);
-		osmium_helmet = create_helmet(Materials.osmium);
-		osmium_hoe = create_hoe(Materials.osmium);
-		osmium_horsearmor = create_horsearmor(Materials.osmium);
-		osmium_ingot = create_ingot(Materials.osmium);
-		osmium_leggings = create_leggings(Materials.osmium);
-		osmium_nugget = create_nugget(Materials.osmium);
-		osmium_pickaxe = create_pickaxe(Materials.osmium);
-		osmium_powder = create_powder(Materials.osmium);
-		osmium_shears = create_shears(Materials.osmium);
-		osmium_shovel = create_shovel(Materials.osmium);
-		osmium_smallpowder = create_smallpowder(Materials.osmium);
-		osmium_sword = create_sword(Materials.osmium);
-		osmium_rod = create_rod(Materials.osmium);
-		osmium_gear = create_gear(Materials.osmium);
-
-		osmium_slab = create_slab(Materials.osmium, Blocks.osmium_slab, Blocks.osmium_slab, Blocks.double_osmium_slab);
-//		osmium_shield = create_shield(Materials.osmium);
-
-//		osmium_crystal = create_crystal(Materials.osmium);
-//		osmium_shard = create_shard(Materials.osmium);
-//		osmium_clump = create_clump(Materials.osmium);
-//		osmium_powder_dirty = create_DirtyPowder(Materials.osmium);
-
-		osmium_dense_plate = create_DensePlate(Materials.osmium);
-		osmium_crushed = create_crushed(Materials.osmium);
-		osmium_crushed_purified = create_crushedPurified(Materials.osmium);
-
-		plutonium_arrow = create_arrow(Materials.plutonium);
-		plutonium_axe = create_axe(Materials.plutonium);
-		plutonium_boots = create_boots(Materials.plutonium);
-		plutonium_bolt = create_bolt(Materials.plutonium);
-		plutonium_bow = create_bow(Materials.plutonium);
-		plutonium_chestplate = create_chestplate(Materials.plutonium);
-		plutonium_crackhammer = create_crackhammer(Materials.plutonium);
-		plutonium_crossbow = create_crossbow(Materials.plutonium);
-		plutonium_door = create_door(Materials.plutonium, Blocks.plutonium_door);
-		plutonium_fishing_rod = create_fishing_rod(Materials.plutonium);
-		plutonium_helmet = create_helmet(Materials.plutonium);
-		plutonium_hoe = create_hoe(Materials.plutonium);
-		plutonium_horsearmor = create_horsearmor(Materials.plutonium);
-		plutonium_ingot = create_ingot(Materials.plutonium);
-		plutonium_leggings = create_leggings(Materials.plutonium);
-		plutonium_nugget = create_nugget(Materials.plutonium);
-		plutonium_pickaxe = create_pickaxe(Materials.plutonium);
-		plutonium_powder = create_powder(Materials.plutonium);
-		plutonium_shears = create_shears(Materials.plutonium);
-		plutonium_shovel = create_shovel(Materials.plutonium);
-		plutonium_smallpowder = create_smallpowder(Materials.plutonium);
-		plutonium_sword = create_sword(Materials.plutonium);
-		plutonium_rod = create_rod(Materials.plutonium);
-		plutonium_gear = create_gear(Materials.plutonium);
-
-		plutonium_slab = create_slab(Materials.plutonium, Blocks.plutonium_slab, Blocks.plutonium_slab, Blocks.double_plutonium_slab);
-//		plutonium_shield = create_shield(Materials.plutonium);
-
-		plutonium_crystal = create_crystal(Materials.plutonium);
-		plutonium_shard = create_shard(Materials.plutonium);
-		plutonium_clump = create_clump(Materials.plutonium);
-		plutonium_powder_dirty = create_DirtyPowder(Materials.plutonium);
-
-		plutonium_dense_plate = create_DensePlate(Materials.plutonium);
-		plutonium_crushed = create_crushed(Materials.plutonium);
-		plutonium_crushed_purified = create_crushedPurified(Materials.plutonium);
-
-		rutile_arrow = create_arrow(Materials.rutile);
-		rutile_axe = create_axe(Materials.rutile);
-		rutile_boots = create_boots(Materials.rutile);
-		rutile_bolt = create_bolt(Materials.rutile);
-		rutile_bow = create_bow(Materials.rutile);
-		rutile_chestplate = create_chestplate(Materials.rutile);
-		rutile_crackhammer = create_crackhammer(Materials.rutile);
-		rutile_crossbow = create_crossbow(Materials.rutile);
-		rutile_door = create_door(Materials.rutile, Blocks.rutile_door);
-		rutile_fishing_rod = create_fishing_rod(Materials.rutile);
-		rutile_helmet = create_helmet(Materials.rutile);
-		rutile_hoe = create_hoe(Materials.rutile);
-		rutile_horsearmor = create_horsearmor(Materials.rutile);
-		rutile_ingot = create_ingot(Materials.rutile);
-		rutile_leggings = create_leggings(Materials.rutile);
-		rutile_nugget = create_nugget(Materials.rutile);
-		rutile_pickaxe = create_pickaxe(Materials.rutile);
-		rutile_powder = create_powder(Materials.rutile);
-		rutile_shears = create_shears(Materials.rutile);
-		rutile_shovel = create_shovel(Materials.rutile);
-		rutile_smallpowder = create_smallpowder(Materials.rutile);
-		rutile_sword = create_sword(Materials.rutile);
-		rutile_rod = create_rod(Materials.rutile);
-		rutile_gear = create_gear(Materials.rutile);
-
-		rutile_slab = create_slab(Materials.rutile, Blocks.rutile_slab, Blocks.rutile_slab, Blocks.double_rutile_slab);
-//		rutile_shield = create_shield(Materials.rutile);
-
-		rutile_crystal = create_crystal(Materials.rutile);
-		rutile_shard = create_shard(Materials.rutile);
-		rutile_clump = create_clump(Materials.rutile);
-		rutile_powder_dirty = create_DirtyPowder(Materials.rutile);
-
-		rutile_dense_plate = create_DensePlate(Materials.rutile);
-		rutile_crushed = create_crushed(Materials.rutile);
-		rutile_crushed_purified = create_crushedPurified(Materials.rutile);
-
-		stainlesssteel_arrow = create_arrow(Materials.stainlesssteel);
-		stainlesssteel_axe = create_axe(Materials.stainlesssteel);
-		stainlesssteel_blend = create_blend(Materials.stainlesssteel);
-		stainlesssteel_boots = create_boots(Materials.stainlesssteel);
-		stainlesssteel_bolt = create_bolt(Materials.stainlesssteel);
-		stainlesssteel_bow = create_bow(Materials.stainlesssteel);
-		stainlesssteel_chestplate = create_chestplate(Materials.stainlesssteel);
-		stainlesssteel_crackhammer = create_crackhammer(Materials.stainlesssteel);
-		stainlesssteel_crossbow = create_crossbow(Materials.stainlesssteel);
-		stainlesssteel_door = create_door(Materials.stainlesssteel, Blocks.stainlesssteel_door);
-		stainlesssteel_fishing_rod = create_fishing_rod(Materials.stainlesssteel);
-		stainlesssteel_helmet = create_helmet(Materials.stainlesssteel);
-		stainlesssteel_hoe = create_hoe(Materials.stainlesssteel);
-		stainlesssteel_horsearmor = create_horsearmor(Materials.stainlesssteel);
-		stainlesssteel_ingot = create_ingot(Materials.stainlesssteel);
-		stainlesssteel_leggings = create_leggings(Materials.stainlesssteel);
-		stainlesssteel_nugget = create_nugget(Materials.stainlesssteel);
-		stainlesssteel_pickaxe = create_pickaxe(Materials.stainlesssteel);
-		stainlesssteel_powder = create_powder(Materials.stainlesssteel);
-		stainlesssteel_shears = create_shears(Materials.stainlesssteel);
-		stainlesssteel_shovel = create_shovel(Materials.stainlesssteel);
-		stainlesssteel_smallblend = create_smallblend(Materials.stainlesssteel);
-		stainlesssteel_smallpowder = create_smallpowder(Materials.stainlesssteel);
-		stainlesssteel_sword = create_sword(Materials.stainlesssteel);
-		stainlesssteel_rod = create_rod(Materials.stainlesssteel);
-		stainlesssteel_gear = create_gear(Materials.stainlesssteel);
-
-		stainlesssteel_slab = create_slab(Materials.stainlesssteel, Blocks.stainlesssteel_slab, Blocks.stainlesssteel_slab, Blocks.double_stainlesssteel_slab);
-//		stainlesssteel_shield = create_shield(Materials.stainlesssteel);
-
-//		stainlesssteel_crystal = create_crystal(Materials.stainlesssteel);
-//		stainlesssteel_shard = create_shard(Materials.stainlesssteel);
-//		stainlesssteel_clump = create_clump(Materials.stainlesssteel);
-//		stainlesssteel_powder_dirty = create_DirtyPowder(Materials.stainlesssteel);
-
-		stainlesssteel_dense_plate = create_DensePlate(Materials.stainlesssteel);
-//		stainlesssteel_crushed = create_crushed(Materials.stainlesssteel);
-//		stainlesssteel_crushed_purified = create_crushedPurified(Materials.stainlesssteel);
-
-		tantalum_arrow = create_arrow(Materials.tantalum);
-		tantalum_axe = create_axe(Materials.tantalum);
-		tantalum_boots = create_boots(Materials.tantalum);
-		tantalum_bolt = create_bolt(Materials.tantalum);
-		tantalum_bow = create_bow(Materials.tantalum);
-		tantalum_chestplate = create_chestplate(Materials.tantalum);
-		tantalum_crackhammer = create_crackhammer(Materials.tantalum);
-		tantalum_crossbow = create_crossbow(Materials.tantalum);
-		tantalum_door = create_door(Materials.tantalum, Blocks.tantalum_door);
-		tantalum_fishing_rod = create_fishing_rod(Materials.tantalum);
-		tantalum_helmet = create_helmet(Materials.tantalum);
-		tantalum_hoe = create_hoe(Materials.tantalum);
-		tantalum_horsearmor = create_horsearmor(Materials.tantalum);
-		tantalum_ingot = create_ingot(Materials.tantalum);
-		tantalum_leggings = create_leggings(Materials.tantalum);
-		tantalum_nugget = create_nugget(Materials.tantalum);
-		tantalum_pickaxe = create_pickaxe(Materials.tantalum);
-		tantalum_powder = create_powder(Materials.tantalum);
-		tantalum_shears = create_shears(Materials.tantalum);
-		tantalum_shovel = create_shovel(Materials.tantalum);
-		tantalum_smallpowder = create_smallpowder(Materials.tantalum);
-		tantalum_sword = create_sword(Materials.tantalum);
-		tantalum_rod = create_rod(Materials.tantalum);
-		tantalum_gear = create_gear(Materials.tantalum);
-
-		tantalum_slab = create_slab(Materials.tantalum, Blocks.tantalum_slab, Blocks.tantalum_slab, Blocks.double_tantalum_slab);
-//		tantalum_shield = create_shield(Materials.tantalum);
-
-		tantalum_crystal = create_crystal(Materials.tantalum);
-		tantalum_shard = create_shard(Materials.tantalum);
-		tantalum_clump = create_clump(Materials.tantalum);
-		tantalum_powder_dirty = create_DirtyPowder(Materials.tantalum);
-
-		tantalum_dense_plate = create_DensePlate(Materials.tantalum);
-		tantalum_crushed = create_crushed(Materials.tantalum);
-		tantalum_crushed_purified = create_crushedPurified(Materials.tantalum);
-
-		titanium_arrow = create_arrow(Materials.titanium);
-		titanium_axe = create_axe(Materials.titanium);
-		titanium_blend = create_blend(Materials.titanium);
-		titanium_boots = create_boots(Materials.titanium);
-		titanium_bolt = create_bolt(Materials.titanium);
-		titanium_bow = create_bow(Materials.titanium);
-		titanium_chestplate = create_chestplate(Materials.titanium);
-		titanium_crackhammer = create_crackhammer(Materials.titanium);
-		titanium_crossbow = create_crossbow(Materials.titanium);
-		titanium_door = create_door(Materials.titanium, Blocks.titanium_door);
-		titanium_fishing_rod = create_fishing_rod(Materials.titanium);
-		titanium_helmet = create_helmet(Materials.titanium);
-		titanium_hoe = create_hoe(Materials.titanium);
-		titanium_horsearmor = create_horsearmor(Materials.titanium);
-		titanium_ingot = create_ingot(Materials.titanium);
-		titanium_leggings = create_leggings(Materials.titanium);
-		titanium_nugget = create_nugget(Materials.titanium);
-		titanium_pickaxe = create_pickaxe(Materials.titanium);
-		titanium_powder = create_powder(Materials.titanium);
-		titanium_shears = create_shears(Materials.titanium);
-		titanium_shovel = create_shovel(Materials.titanium);
-		titanium_smallblend = create_smallblend(Materials.titanium);
-		titanium_smallpowder = create_smallpowder(Materials.titanium);
-		titanium_sword = create_sword(Materials.titanium);
-		titanium_rod = create_rod(Materials.titanium);
-		titanium_gear = create_gear(Materials.titanium);
-
-		titanium_slab = create_slab(Materials.titanium, Blocks.titanium_slab, Blocks.titanium_slab, Blocks.double_titanium_slab);
-//		titanium_shield = create_shield(Materials.titanium);
-
-		titanium_crystal = create_crystal(Materials.titanium);
-		titanium_shard = create_shard(Materials.titanium);
-		titanium_clump = create_clump(Materials.titanium);
-		titanium_powder_dirty = create_DirtyPowder(Materials.titanium);
-
-		titanium_dense_plate = create_DensePlate(Materials.titanium);
-		titanium_crushed = create_crushed(Materials.titanium);
-		titanium_crushed_purified = create_crushedPurified(Materials.titanium);
-
-		tungsten_arrow = create_arrow(Materials.tungsten);
-		tungsten_axe = create_axe(Materials.tungsten);
-		tungsten_boots = create_boots(Materials.tungsten);
-		tungsten_bolt = create_bolt(Materials.tungsten);
-		tungsten_bow = create_bow(Materials.tungsten);
-		tungsten_chestplate = create_chestplate(Materials.tungsten);
-		tungsten_crackhammer = create_crackhammer(Materials.tungsten);
-		tungsten_crossbow = create_crossbow(Materials.tungsten);
-		tungsten_door = create_door(Materials.tungsten, Blocks.tungsten_door);
-		tungsten_fishing_rod = create_fishing_rod(Materials.tungsten);
-		tungsten_helmet = create_helmet(Materials.tungsten);
-		tungsten_hoe = create_hoe(Materials.tungsten);
-		tungsten_horsearmor = create_horsearmor(Materials.tungsten);
-		tungsten_ingot = create_ingot(Materials.tungsten);
-		tungsten_leggings = create_leggings(Materials.tungsten);
-		tungsten_nugget = create_nugget(Materials.tungsten);
-		tungsten_pickaxe = create_pickaxe(Materials.tungsten);
-		tungsten_powder = create_powder(Materials.tungsten);
-		tungsten_shears = create_shears(Materials.tungsten);
-		tungsten_shovel = create_shovel(Materials.tungsten);
-		tungsten_smallpowder = create_smallpowder(Materials.tungsten);
-		tungsten_sword = create_sword(Materials.tungsten);
-		tungsten_rod = create_rod(Materials.tungsten);
-		tungsten_gear = create_gear(Materials.tungsten);
-
-		tungsten_slab = create_slab(Materials.tungsten, Blocks.tungsten_slab, Blocks.tungsten_slab, Blocks.double_tungsten_slab);
-//		tungsten_shield = create_shield(Materials.tungsten);
-
-		tungsten_crystal = create_crystal(Materials.tungsten);
-		tungsten_shard = create_shard(Materials.tungsten);
-		tungsten_clump = create_clump(Materials.tungsten);
-		tungsten_powder_dirty = create_DirtyPowder(Materials.tungsten);
-
-		tungsten_dense_plate = create_DensePlate(Materials.tungsten);
-		tungsten_crushed = create_crushed(Materials.tungsten);
-		tungsten_crushed_purified = create_crushedPurified(Materials.tungsten);
-
-		uranium_arrow = create_arrow(Materials.uranium);
-		uranium_axe = create_axe(Materials.uranium);
-		uranium_boots = create_boots(Materials.uranium);
-		uranium_bolt = create_bolt(Materials.uranium);
-		uranium_bow = create_bow(Materials.uranium);
-		uranium_chestplate = create_chestplate(Materials.uranium);
-		uranium_crackhammer = create_crackhammer(Materials.uranium);
-		uranium_crossbow = create_crossbow(Materials.uranium);
-		uranium_door = create_door(Materials.uranium, Blocks.uranium_door);
-		uranium_fishing_rod = create_fishing_rod(Materials.uranium);
-		uranium_helmet = create_helmet(Materials.uranium);
-		uranium_hoe = create_hoe(Materials.uranium);
-		uranium_horsearmor = create_horsearmor(Materials.uranium);
-		uranium_ingot = create_ingot(Materials.uranium);
-		uranium_leggings = create_leggings(Materials.uranium);
-		uranium_nugget = create_nugget(Materials.uranium);
-		uranium_pickaxe = create_pickaxe(Materials.uranium);
-		uranium_powder = create_powder(Materials.uranium);
-		uranium_shears = create_shears(Materials.uranium);
-		uranium_shovel = create_shovel(Materials.uranium);
-		uranium_smallpowder = create_smallpowder(Materials.uranium);
-		uranium_sword = create_sword(Materials.uranium);
-		uranium_rod = create_rod(Materials.uranium);
-		uranium_gear = create_gear(Materials.uranium);
-
-		uranium_slab = create_slab(Materials.uranium, Blocks.uranium_slab, Blocks.uranium_slab, Blocks.double_uranium_slab);
-//		uranium_shield = create_shield(Materials.uranium);
-
-		uranium_crystal = create_crystal(Materials.uranium);
-		uranium_shard = create_shard(Materials.uranium);
-		uranium_clump = create_clump(Materials.uranium);
-		uranium_powder_dirty = create_DirtyPowder(Materials.uranium);
-
-		uranium_dense_plate = create_DensePlate(Materials.uranium);
-		uranium_crushed = create_crushed(Materials.uranium);
-		uranium_crushed_purified = create_crushedPurified(Materials.uranium);
-
-		zirconium_arrow = create_arrow(Materials.zirconium);
-		zirconium_axe = create_axe(Materials.zirconium);
-		zirconium_boots = create_boots(Materials.zirconium);
-		zirconium_bolt = create_bolt(Materials.zirconium);
-		zirconium_bow = create_bow(Materials.zirconium);
-		zirconium_chestplate = create_chestplate(Materials.zirconium);
-		zirconium_crackhammer = create_crackhammer(Materials.zirconium);
-		zirconium_crossbow = create_crossbow(Materials.zirconium);
-		zirconium_door = create_door(Materials.zirconium, Blocks.zirconium_door);
-		zirconium_fishing_rod = create_fishing_rod(Materials.zirconium);
-		zirconium_helmet = create_helmet(Materials.zirconium);
-		zirconium_hoe = create_hoe(Materials.zirconium);
-		zirconium_horsearmor = create_horsearmor(Materials.zirconium);
-		zirconium_ingot = create_ingot(Materials.zirconium);
-		zirconium_leggings = create_leggings(Materials.zirconium);
-		zirconium_nugget = create_nugget(Materials.zirconium);
-		zirconium_pickaxe = create_pickaxe(Materials.zirconium);
-		zirconium_powder = create_powder(Materials.zirconium);
-		zirconium_shears = create_shears(Materials.zirconium);
-		zirconium_shovel = create_shovel(Materials.zirconium);
-		zirconium_smallpowder = create_smallpowder(Materials.zirconium);
-		zirconium_sword = create_sword(Materials.zirconium);
-		zirconium_rod = create_rod(Materials.zirconium);
-		zirconium_gear = create_gear(Materials.zirconium);
-
-		zirconium_slab = create_slab(Materials.zirconium, Blocks.zirconium_slab, Blocks.zirconium_slab, Blocks.double_zirconium_slab);
-//		zirconium_shield = create_shield(Materials.zirconium);
-
-		zirconium_crystal = create_crystal(Materials.zirconium);
-		zirconium_shard = create_shard(Materials.zirconium);
-		zirconium_clump = create_clump(Materials.zirconium);
-		zirconium_powder_dirty = create_DirtyPowder(Materials.zirconium);
-
-		zirconium_dense_plate = create_DensePlate(Materials.zirconium);
-		zirconium_crushed = create_crushed(Materials.zirconium);
-		zirconium_crushed_purified = create_crushedPurified(Materials.zirconium);
+		aluminum_arrow = createArrow(Materials.aluminum);
+		aluminum_axe = createAxe(Materials.aluminum);
+		aluminum_boots = createBoots(Materials.aluminum);
+		aluminum_bolt = createBolt(Materials.aluminum);
+		aluminum_bow = createBow(Materials.aluminum);
+		aluminum_chestplate = createChestplate(Materials.aluminum);
+		aluminum_crackhammer = createCrackhammer(Materials.aluminum);
+		aluminum_crossbow = createCrossbow(Materials.aluminum);
+		aluminum_door = createDoor(Materials.aluminum, Blocks.aluminum_door);
+		aluminum_fishing_rod = createFishingRod(Materials.aluminum);
+		aluminum_helmet = createHelmet(Materials.aluminum);
+		aluminum_hoe = createHoe(Materials.aluminum);
+		aluminum_horsearmor = createHorseArmor(Materials.aluminum);
+		aluminum_ingot = createIngot(Materials.aluminum);
+		aluminum_leggings = createLeggings(Materials.aluminum);
+		aluminum_nugget = createNugget(Materials.aluminum);
+		aluminum_pickaxe = createPickaxe(Materials.aluminum);
+		aluminum_powder = createPowder(Materials.aluminum);
+		aluminum_shears = createShears(Materials.aluminum);
+		aluminum_shovel = createShovel(Materials.aluminum);
+		aluminum_smallpowder = createSmallPowder(Materials.aluminum);
+		aluminum_sword = createSword(Materials.aluminum);
+		aluminum_rod = createRod(Materials.aluminum);
+		aluminum_gear = createGear(Materials.aluminum);
+
+		aluminum_slab = createSlab(Materials.aluminum, Blocks.aluminum_slab, Blocks.aluminum_slab, Blocks.double_aluminum_slab);
+//		aluminum_shield = createShield(Materials.aluminum);
+
+		aluminum_crystal = createCrystal(Materials.aluminum);
+		aluminum_shard = createShard(Materials.aluminum);
+		aluminum_clump = createClump(Materials.aluminum);
+		aluminum_powder_dirty = createDirtyPowder(Materials.aluminum);
+
+		aluminum_dense_plate = createDensePlate(Materials.aluminum);
+		aluminum_crushed = createCrushed(Materials.aluminum);
+		aluminum_crushed_purified = createCrushedPurified(Materials.aluminum);
+
+		aluminumbrass_arrow = createArrow(Materials.aluminumbrass);
+		aluminumbrass_axe = createAxe(Materials.aluminumbrass);
+		aluminumbrass_blend = createBlend(Materials.aluminumbrass);
+		aluminumbrass_boots = createBoots(Materials.aluminumbrass);
+		aluminumbrass_bolt = createBolt(Materials.aluminumbrass);
+		aluminumbrass_bow = createBow(Materials.aluminumbrass);
+		aluminumbrass_chestplate = createChestplate(Materials.aluminumbrass);
+		aluminumbrass_crackhammer = createCrackhammer(Materials.aluminumbrass);
+		aluminumbrass_crossbow = createCrossbow(Materials.aluminumbrass);
+		aluminumbrass_door = createDoor(Materials.aluminumbrass, Blocks.aluminumbrass_door);
+		aluminumbrass_fishing_rod = createFishingRod(Materials.aluminumbrass);
+		aluminumbrass_helmet = createHelmet(Materials.aluminumbrass);
+		aluminumbrass_hoe = createHoe(Materials.aluminumbrass);
+		aluminumbrass_horsearmor = createHorseArmor(Materials.aluminumbrass);
+		aluminumbrass_ingot = createIngot(Materials.aluminumbrass);
+		aluminumbrass_leggings = createLeggings(Materials.aluminumbrass);
+		aluminumbrass_nugget = createNugget(Materials.aluminumbrass);
+		aluminumbrass_pickaxe = createPickaxe(Materials.aluminumbrass);
+		aluminumbrass_powder = createPowder(Materials.aluminumbrass);
+		aluminumbrass_shears = createShears(Materials.aluminumbrass);
+		aluminumbrass_shovel = createShovel(Materials.aluminumbrass);
+		aluminumbrass_smallblend = createSmallBlend(Materials.aluminumbrass);
+		aluminumbrass_smallpowder = createSmallPowder(Materials.aluminumbrass);
+		aluminumbrass_sword = createSword(Materials.aluminumbrass);
+		aluminumbrass_rod = createRod(Materials.aluminumbrass);
+		aluminumbrass_gear = createGear(Materials.aluminumbrass);
+
+		aluminumbrass_slab = createSlab(Materials.aluminumbrass, Blocks.aluminumbrass_slab, Blocks.aluminumbrass_slab, Blocks.double_aluminumbrass_slab);
+//		aluminumbrass_shield = createShield(Materials.aluminumbrass);
+
+//		aluminumbrass_crystal = createCrystal(Materials.aluminumbrass);
+//		aluminumbrass_shard = createShard(Materials.aluminumbrass);
+//		aluminumbrass_clump = createClump(Materials.aluminumbrass);
+//		aluminumbrass_powder_dirty = createDirtyPowder(Materials.aluminumbrass);
+
+		aluminumbrass_dense_plate = createDensePlate(Materials.aluminumbrass);
+//		aluminumbrass_crushed = createCrushed(Materials.aluminumbrass);
+//		aluminumbrass_crushed_purified = createCrushedPurified(Materials.aluminumbrass);
+
+		cadmium_arrow = createArrow(Materials.cadmium);
+		cadmium_axe = createAxe(Materials.cadmium);
+		cadmium_boots = createBoots(Materials.cadmium);
+		cadmium_bolt = createBolt(Materials.cadmium);
+		cadmium_bow = createBow(Materials.cadmium);
+		cadmium_chestplate = createChestplate(Materials.cadmium);
+		cadmium_crackhammer = createCrackhammer(Materials.cadmium);
+		cadmium_crossbow = createCrossbow(Materials.cadmium);
+		cadmium_door = createDoor(Materials.cadmium, Blocks.cadmium_door);
+		cadmium_fishing_rod = createFishingRod(Materials.cadmium);
+		cadmium_helmet = createHelmet(Materials.cadmium);
+		cadmium_hoe = createHoe(Materials.cadmium);
+		cadmium_horsearmor = createHorseArmor(Materials.cadmium);
+		cadmium_ingot = createIngot(Materials.cadmium);
+		cadmium_leggings = createLeggings(Materials.cadmium);
+		cadmium_nugget = createNugget(Materials.cadmium);
+		cadmium_pickaxe = createPickaxe(Materials.cadmium);
+		cadmium_powder = createPowder(Materials.cadmium);
+		cadmium_shears = createShears(Materials.cadmium);
+		cadmium_shovel = createShovel(Materials.cadmium);
+		cadmium_smallpowder = createSmallPowder(Materials.cadmium);
+		cadmium_sword = createSword(Materials.cadmium);
+		cadmium_rod = createRod(Materials.cadmium);
+		cadmium_gear = createGear(Materials.cadmium);
+
+		cadmium_slab = createSlab(Materials.cadmium, Blocks.cadmium_slab, Blocks.cadmium_slab, Blocks.double_cadmium_slab);
+//		cadmium_shield = createShield(Materials.cadmium);
+
+		cadmium_crystal = createCrystal(Materials.cadmium);
+		cadmium_shard = createShard(Materials.cadmium);
+		cadmium_clump = createClump(Materials.cadmium);
+		cadmium_powder_dirty = createDirtyPowder(Materials.cadmium);
+
+		cadmium_dense_plate = createDensePlate(Materials.cadmium);
+		cadmium_crushed = createCrushed(Materials.cadmium);
+		cadmium_crushed_purified = createCrushedPurified(Materials.cadmium);
+
+		chromium_arrow = createArrow(Materials.chromium);
+		chromium_axe = createAxe(Materials.chromium);
+		chromium_boots = createBoots(Materials.chromium);
+		chromium_bolt = createBolt(Materials.chromium);
+		chromium_bow = createBow(Materials.chromium);
+		chromium_chestplate = createChestplate(Materials.chromium);
+		chromium_crackhammer = createCrackhammer(Materials.chromium);
+		chromium_crossbow = createCrossbow(Materials.chromium);
+		chromium_door = createDoor(Materials.chromium, Blocks.chromium_door);
+		chromium_fishing_rod = createFishingRod(Materials.chromium);
+		chromium_helmet = createHelmet(Materials.chromium);
+		chromium_hoe = createHoe(Materials.chromium);
+		chromium_horsearmor = createHorseArmor(Materials.chromium);
+		chromium_ingot = createIngot(Materials.chromium);
+		chromium_leggings = createLeggings(Materials.chromium);
+		chromium_nugget = createNugget(Materials.chromium);
+		chromium_pickaxe = createPickaxe(Materials.chromium);
+		chromium_powder = createPowder(Materials.chromium);
+		chromium_shears = createShears(Materials.chromium);
+		chromium_shovel = createShovel(Materials.chromium);
+		chromium_smallpowder = createSmallPowder(Materials.chromium);
+		chromium_sword = createSword(Materials.chromium);
+		chromium_rod = createRod(Materials.chromium);
+		chromium_gear = createGear(Materials.chromium);
+
+		chromium_slab = createSlab(Materials.chromium, Blocks.chromium_slab, Blocks.chromium_slab, Blocks.double_chromium_slab);
+//		chromium_shield = createShield(Materials.chromium);
+
+		chromium_crystal = createCrystal(Materials.chromium);
+		chromium_shard = createShard(Materials.chromium);
+		chromium_clump = createClump(Materials.chromium);
+		chromium_powder_dirty = createDirtyPowder(Materials.chromium);
+
+		chromium_dense_plate = createDensePlate(Materials.chromium);
+		chromium_crushed = createCrushed(Materials.chromium);
+		chromium_crushed_purified = createCrushedPurified(Materials.chromium);
+
+		galvanizedsteel_arrow = createArrow(Materials.galvanizedsteel);
+		galvanizedsteel_axe = createAxe(Materials.galvanizedsteel);
+		galvanizedsteel_blend = createBlend(Materials.galvanizedsteel);
+		galvanizedsteel_boots = createBoots(Materials.galvanizedsteel);
+		galvanizedsteel_bolt = createBolt(Materials.galvanizedsteel);
+		galvanizedsteel_bow = createBow(Materials.galvanizedsteel);
+		galvanizedsteel_chestplate = createChestplate(Materials.galvanizedsteel);
+		galvanizedsteel_crackhammer = createCrackhammer(Materials.galvanizedsteel);
+		galvanizedsteel_crossbow = createCrossbow(Materials.galvanizedsteel);
+		galvanizedsteel_door = createDoor(Materials.galvanizedsteel, Blocks.galvanizedsteel_door);
+		galvanizedsteel_fishing_rod = createFishingRod(Materials.galvanizedsteel);
+		galvanizedsteel_helmet = createHelmet(Materials.galvanizedsteel);
+		galvanizedsteel_hoe = createHoe(Materials.galvanizedsteel);
+		galvanizedsteel_horsearmor = createHorseArmor(Materials.galvanizedsteel);
+		galvanizedsteel_ingot = createIngot(Materials.galvanizedsteel);
+		galvanizedsteel_leggings = createLeggings(Materials.galvanizedsteel);
+		galvanizedsteel_nugget = createNugget(Materials.galvanizedsteel);
+		galvanizedsteel_pickaxe = createPickaxe(Materials.galvanizedsteel);
+		galvanizedsteel_powder = createPowder(Materials.galvanizedsteel);
+		galvanizedsteel_shears = createShears(Materials.galvanizedsteel);
+		galvanizedsteel_shovel = createShovel(Materials.galvanizedsteel);
+		galvanizedsteel_smallblend = createSmallBlend(Materials.galvanizedsteel);
+		galvanizedsteel_smallpowder = createSmallPowder(Materials.galvanizedsteel);
+		galvanizedsteel_sword = createSword(Materials.galvanizedsteel);
+		galvanizedsteel_rod = createRod(Materials.galvanizedsteel);
+		galvanizedsteel_gear = createGear(Materials.galvanizedsteel);
+
+		galvanizedsteel_slab = createSlab(Materials.galvanizedsteel, Blocks.galvanizedsteel_slab, Blocks.galvanizedsteel_slab, Blocks.double_galvanizedsteel_slab);
+//		galvanizedsteel_shield = createShield(Materials.galvanizedsteel);
+
+//		galvanizedsteel_crystal = createCrystal(Materials.galvanizedsteel);
+//		galvanizedsteel_shard = createShard(Materials.galvanizedsteel);
+//		galvanizedsteel_clump = createClump(Materials.galvanizedsteel);
+//		galvanizedsteel_powder_dirty = createDirtyPowder(Materials.galvanizedsteel);
+
+		galvanizedsteel_dense_plate = createDensePlate(Materials.galvanizedsteel);
+//		galvanizedsteel_crushed = createCrushed(Materials.galvanizedsteel);
+//		galvanizedsteel_crushed_purified = createCrushedPurified(Materials.galvanizedsteel);
+
+		iridium_arrow = createArrow(Materials.iridium);
+		iridium_axe = createAxe(Materials.iridium);
+		iridium_boots = createBoots(Materials.iridium);
+		iridium_bolt = createBolt(Materials.iridium);
+		iridium_bow = createBow(Materials.iridium);
+		iridium_chestplate = createChestplate(Materials.iridium);
+		iridium_crackhammer = createCrackhammer(Materials.iridium);
+		iridium_crossbow = createCrossbow(Materials.iridium);
+		iridium_door = createDoor(Materials.iridium, Blocks.iridium_door);
+		iridium_fishing_rod = createFishingRod(Materials.iridium);
+		iridium_helmet = createHelmet(Materials.iridium);
+		iridium_hoe = createHoe(Materials.iridium);
+		iridium_horsearmor = createHorseArmor(Materials.iridium);
+		iridium_ingot = createIngot(Materials.iridium);
+		iridium_leggings = createLeggings(Materials.iridium);
+		iridium_nugget = createNugget(Materials.iridium);
+		iridium_pickaxe = createPickaxe(Materials.iridium);
+		iridium_powder = createPowder(Materials.iridium);
+		iridium_shears = createShears(Materials.iridium);
+		iridium_shovel = createShovel(Materials.iridium);
+		iridium_smallpowder = createSmallPowder(Materials.iridium);
+		iridium_sword = createSword(Materials.iridium);
+		iridium_rod = createRod(Materials.iridium);
+		iridium_gear = createGear(Materials.iridium);
+
+		iridium_slab = createSlab(Materials.iridium, Blocks.iridium_slab, Blocks.iridium_slab, Blocks.double_iridium_slab);
+//		iridium_shield = createShield(Materials.iridium);
+
+		iridium_crystal = createCrystal(Materials.iridium);
+		iridium_shard = createShard(Materials.iridium);
+		iridium_clump = createClump(Materials.iridium);
+		iridium_powder_dirty = createDirtyPowder(Materials.iridium);
+
+		iridium_dense_plate = createDensePlate(Materials.iridium);
+		iridium_crushed = createCrushed(Materials.iridium);
+		iridium_crushed_purified = createCrushedPurified(Materials.iridium);
+
+		magnesium_arrow = createArrow(Materials.magnesium);
+		magnesium_axe = createAxe(Materials.magnesium);
+		magnesium_boots = createBoots(Materials.magnesium);
+		magnesium_bolt = createBolt(Materials.magnesium);
+		magnesium_bow = createBow(Materials.magnesium);
+		magnesium_chestplate = createChestplate(Materials.magnesium);
+		magnesium_crackhammer = createCrackhammer(Materials.magnesium);
+		magnesium_crossbow = createCrossbow(Materials.magnesium);
+		magnesium_door = createDoor(Materials.magnesium, Blocks.magnesium_door);
+		magnesium_fishing_rod = createFishingRod(Materials.magnesium);
+		magnesium_helmet = createHelmet(Materials.magnesium);
+		magnesium_hoe = createHoe(Materials.magnesium);
+		magnesium_horsearmor = createHorseArmor(Materials.magnesium);
+		magnesium_ingot = createIngot(Materials.magnesium);
+		magnesium_leggings = createLeggings(Materials.magnesium);
+		magnesium_nugget = createNugget(Materials.magnesium);
+		magnesium_pickaxe = createPickaxe(Materials.magnesium);
+		magnesium_powder = createPowder(Materials.magnesium);
+		magnesium_shears = createShears(Materials.magnesium);
+		magnesium_shovel = createShovel(Materials.magnesium);
+		magnesium_smallpowder = createSmallPowder(Materials.magnesium);
+		magnesium_sword = createSword(Materials.magnesium);
+		magnesium_rod = createRod(Materials.magnesium);
+		magnesium_gear = createGear(Materials.magnesium);
+
+		magnesium_slab = createSlab(Materials.magnesium, Blocks.magnesium_slab, Blocks.magnesium_slab, Blocks.double_magnesium_slab);
+//		magnesium_shield = createShield(Materials.magnesium);
+
+		magnesium_crystal = createCrystal(Materials.magnesium);
+		magnesium_shard = createShard(Materials.magnesium);
+		magnesium_clump = createClump(Materials.magnesium);
+		magnesium_powder_dirty = createDirtyPowder(Materials.magnesium);
+
+		magnesium_dense_plate = createDensePlate(Materials.magnesium);
+		magnesium_crushed = createCrushed(Materials.magnesium);
+		magnesium_crushed_purified = createCrushedPurified(Materials.magnesium);
+
+		manganese_arrow = createArrow(Materials.manganese);
+		manganese_axe = createAxe(Materials.manganese);
+		manganese_boots = createBoots(Materials.manganese);
+		manganese_bolt = createBolt(Materials.manganese);
+		manganese_bow = createBow(Materials.manganese);
+		manganese_chestplate = createChestplate(Materials.manganese);
+		manganese_crackhammer = createCrackhammer(Materials.manganese);
+		manganese_crossbow = createCrossbow(Materials.manganese);
+		manganese_door = createDoor(Materials.manganese, Blocks.manganese_door);
+		manganese_fishing_rod = createFishingRod(Materials.manganese);
+		manganese_helmet = createHelmet(Materials.manganese);
+		manganese_hoe = createHoe(Materials.manganese);
+		manganese_horsearmor = createHorseArmor(Materials.manganese);
+		manganese_ingot = createIngot(Materials.manganese);
+		manganese_leggings = createLeggings(Materials.manganese);
+		manganese_nugget = createNugget(Materials.manganese);
+		manganese_pickaxe = createPickaxe(Materials.manganese);
+		manganese_powder = createPowder(Materials.manganese);
+		manganese_shears = createShears(Materials.manganese);
+		manganese_shovel = createShovel(Materials.manganese);
+		manganese_smallpowder = createSmallPowder(Materials.manganese);
+		manganese_sword = createSword(Materials.manganese);
+		manganese_rod = createRod(Materials.manganese);
+		manganese_gear = createGear(Materials.manganese);
+
+		manganese_slab = createSlab(Materials.manganese, Blocks.manganese_slab, Blocks.manganese_slab, Blocks.double_manganese_slab);
+//		manganese_shield = createShield(Materials.manganese);
+
+		manganese_crystal = createCrystal(Materials.manganese);
+		manganese_shard = createShard(Materials.manganese);
+		manganese_clump = createClump(Materials.manganese);
+		manganese_powder_dirty = createDirtyPowder(Materials.manganese);
+
+		manganese_dense_plate = createDensePlate(Materials.manganese);
+		manganese_crushed = createCrushed(Materials.manganese);
+		manganese_crushed_purified = createCrushedPurified(Materials.manganese);
+
+		nichrome_arrow = createArrow(Materials.nichrome);
+		nichrome_axe = createAxe(Materials.nichrome);
+		nichrome_blend = createBlend(Materials.nichrome);
+		nichrome_boots = createBoots(Materials.nichrome);
+		nichrome_bolt = createBolt(Materials.nichrome);
+		nichrome_bow = createBow(Materials.nichrome);
+		nichrome_chestplate = createChestplate(Materials.nichrome);
+		nichrome_crackhammer = createCrackhammer(Materials.nichrome);
+		nichrome_crossbow = createCrossbow(Materials.nichrome);
+		nichrome_door = createDoor(Materials.nichrome, Blocks.nichrome_door);
+		nichrome_fishing_rod = createFishingRod(Materials.nichrome);
+		nichrome_helmet = createHelmet(Materials.nichrome);
+		nichrome_hoe = createHoe(Materials.nichrome);
+		nichrome_horsearmor = createHorseArmor(Materials.nichrome);
+		nichrome_ingot = createIngot(Materials.nichrome);
+		nichrome_leggings = createLeggings(Materials.nichrome);
+		nichrome_nugget = createNugget(Materials.nichrome);
+		nichrome_pickaxe = createPickaxe(Materials.nichrome);
+		nichrome_powder = createPowder(Materials.nichrome);
+		nichrome_shears = createShears(Materials.nichrome);
+		nichrome_shovel = createShovel(Materials.nichrome);
+		nichrome_smallblend = createSmallBlend(Materials.nichrome);
+		nichrome_smallpowder = createSmallPowder(Materials.nichrome);
+		nichrome_sword = createSword(Materials.nichrome);
+		nichrome_rod = createRod(Materials.nichrome);
+		nichrome_gear = createGear(Materials.nichrome);
+
+		nichrome_slab = createSlab(Materials.nichrome, Blocks.nichrome_slab, Blocks.nichrome_slab, Blocks.double_nichrome_slab);
+//		nichrome_shield = createShield(Materials.nichrome);
+
+//		nichrome_crystal = createCrystal(Materials.nichrome);
+//		nichrome_shard = createShard(Materials.nichrome);
+//		nichrome_clump = createClump(Materials.nichrome);
+//		nichrome_powder_dirty = createDirtyPowder(Materials.nichrome);
+
+		nichrome_dense_plate = createDensePlate(Materials.nichrome);
+//		nichrome_crushed = createCrushed(Materials.nichrome);
+//		nichrome_crushed_purified = createCrushedPurified(Materials.nichrome);
+
+		osmium_arrow = createArrow(Materials.osmium);
+		osmium_axe = createAxe(Materials.osmium);
+		osmium_boots = createBoots(Materials.osmium);
+		osmium_bolt = createBolt(Materials.osmium);
+		osmium_bow = createBow(Materials.osmium);
+		osmium_chestplate = createChestplate(Materials.osmium);
+		osmium_crackhammer = createCrackhammer(Materials.osmium);
+		osmium_crossbow = createCrossbow(Materials.osmium);
+		osmium_door = createDoor(Materials.osmium, Blocks.osmium_door);
+		osmium_fishing_rod = createFishingRod(Materials.osmium);
+		osmium_helmet = createHelmet(Materials.osmium);
+		osmium_hoe = createHoe(Materials.osmium);
+		osmium_horsearmor = createHorseArmor(Materials.osmium);
+		osmium_ingot = createIngot(Materials.osmium);
+		osmium_leggings = createLeggings(Materials.osmium);
+		osmium_nugget = createNugget(Materials.osmium);
+		osmium_pickaxe = createPickaxe(Materials.osmium);
+		osmium_powder = createPowder(Materials.osmium);
+		osmium_shears = createShears(Materials.osmium);
+		osmium_shovel = createShovel(Materials.osmium);
+		osmium_smallpowder = createSmallPowder(Materials.osmium);
+		osmium_sword = createSword(Materials.osmium);
+		osmium_rod = createRod(Materials.osmium);
+		osmium_gear = createGear(Materials.osmium);
+
+		osmium_slab = createSlab(Materials.osmium, Blocks.osmium_slab, Blocks.osmium_slab, Blocks.double_osmium_slab);
+//		osmium_shield = createShield(Materials.osmium);
+
+//		osmium_crystal = createCrystal(Materials.osmium);
+//		osmium_shard = createShard(Materials.osmium);
+//		osmium_clump = createClump(Materials.osmium);
+//		osmium_powder_dirty = createDirtyPowder(Materials.osmium);
+
+		osmium_dense_plate = createDensePlate(Materials.osmium);
+		osmium_crushed = createCrushed(Materials.osmium);
+		osmium_crushed_purified = createCrushedPurified(Materials.osmium);
+
+		plutonium_arrow = createArrow(Materials.plutonium);
+		plutonium_axe = createAxe(Materials.plutonium);
+		plutonium_boots = createBoots(Materials.plutonium);
+		plutonium_bolt = createBolt(Materials.plutonium);
+		plutonium_bow = createBow(Materials.plutonium);
+		plutonium_chestplate = createChestplate(Materials.plutonium);
+		plutonium_crackhammer = createCrackhammer(Materials.plutonium);
+		plutonium_crossbow = createCrossbow(Materials.plutonium);
+		plutonium_door = createDoor(Materials.plutonium, Blocks.plutonium_door);
+		plutonium_fishing_rod = createFishingRod(Materials.plutonium);
+		plutonium_helmet = createHelmet(Materials.plutonium);
+		plutonium_hoe = createHoe(Materials.plutonium);
+		plutonium_horsearmor = createHorseArmor(Materials.plutonium);
+		plutonium_ingot = createIngot(Materials.plutonium);
+		plutonium_leggings = createLeggings(Materials.plutonium);
+		plutonium_nugget = createNugget(Materials.plutonium);
+		plutonium_pickaxe = createPickaxe(Materials.plutonium);
+		plutonium_powder = createPowder(Materials.plutonium);
+		plutonium_shears = createShears(Materials.plutonium);
+		plutonium_shovel = createShovel(Materials.plutonium);
+		plutonium_smallpowder = createSmallPowder(Materials.plutonium);
+		plutonium_sword = createSword(Materials.plutonium);
+		plutonium_rod = createRod(Materials.plutonium);
+		plutonium_gear = createGear(Materials.plutonium);
+
+		plutonium_slab = createSlab(Materials.plutonium, Blocks.plutonium_slab, Blocks.plutonium_slab, Blocks.double_plutonium_slab);
+//		plutonium_shield = createShield(Materials.plutonium);
+
+		plutonium_crystal = createCrystal(Materials.plutonium);
+		plutonium_shard = createShard(Materials.plutonium);
+		plutonium_clump = createClump(Materials.plutonium);
+		plutonium_powder_dirty = createDirtyPowder(Materials.plutonium);
+
+		plutonium_dense_plate = createDensePlate(Materials.plutonium);
+		plutonium_crushed = createCrushed(Materials.plutonium);
+		plutonium_crushed_purified = createCrushedPurified(Materials.plutonium);
+
+		rutile_arrow = createArrow(Materials.rutile);
+		rutile_axe = createAxe(Materials.rutile);
+		rutile_boots = createBoots(Materials.rutile);
+		rutile_bolt = createBolt(Materials.rutile);
+		rutile_bow = createBow(Materials.rutile);
+		rutile_chestplate = createChestplate(Materials.rutile);
+		rutile_crackhammer = createCrackhammer(Materials.rutile);
+		rutile_crossbow = createCrossbow(Materials.rutile);
+		rutile_door = createDoor(Materials.rutile, Blocks.rutile_door);
+		rutile_fishing_rod = createFishingRod(Materials.rutile);
+		rutile_helmet = createHelmet(Materials.rutile);
+		rutile_hoe = createHoe(Materials.rutile);
+		rutile_horsearmor = createHorseArmor(Materials.rutile);
+		rutile_ingot = createIngot(Materials.rutile);
+		rutile_leggings = createLeggings(Materials.rutile);
+		rutile_nugget = createNugget(Materials.rutile);
+		rutile_pickaxe = createPickaxe(Materials.rutile);
+		rutile_powder = createPowder(Materials.rutile);
+		rutile_shears = createShears(Materials.rutile);
+		rutile_shovel = createShovel(Materials.rutile);
+		rutile_smallpowder = createSmallPowder(Materials.rutile);
+		rutile_sword = createSword(Materials.rutile);
+		rutile_rod = createRod(Materials.rutile);
+		rutile_gear = createGear(Materials.rutile);
+
+		rutile_slab = createSlab(Materials.rutile, Blocks.rutile_slab, Blocks.rutile_slab, Blocks.double_rutile_slab);
+//		rutile_shield = createShield(Materials.rutile);
+
+		rutile_crystal = createCrystal(Materials.rutile);
+		rutile_shard = createShard(Materials.rutile);
+		rutile_clump = createClump(Materials.rutile);
+		rutile_powder_dirty = createDirtyPowder(Materials.rutile);
+
+		rutile_dense_plate = createDensePlate(Materials.rutile);
+		rutile_crushed = createCrushed(Materials.rutile);
+		rutile_crushed_purified = createCrushedPurified(Materials.rutile);
+
+		stainlesssteel_arrow = createArrow(Materials.stainlesssteel);
+		stainlesssteel_axe = createAxe(Materials.stainlesssteel);
+		stainlesssteel_blend = createBlend(Materials.stainlesssteel);
+		stainlesssteel_boots = createBoots(Materials.stainlesssteel);
+		stainlesssteel_bolt = createBolt(Materials.stainlesssteel);
+		stainlesssteel_bow = createBow(Materials.stainlesssteel);
+		stainlesssteel_chestplate = createChestplate(Materials.stainlesssteel);
+		stainlesssteel_crackhammer = createCrackhammer(Materials.stainlesssteel);
+		stainlesssteel_crossbow = createCrossbow(Materials.stainlesssteel);
+		stainlesssteel_door = createDoor(Materials.stainlesssteel, Blocks.stainlesssteel_door);
+		stainlesssteel_fishing_rod = createFishingRod(Materials.stainlesssteel);
+		stainlesssteel_helmet = createHelmet(Materials.stainlesssteel);
+		stainlesssteel_hoe = createHoe(Materials.stainlesssteel);
+		stainlesssteel_horsearmor = createHorseArmor(Materials.stainlesssteel);
+		stainlesssteel_ingot = createIngot(Materials.stainlesssteel);
+		stainlesssteel_leggings = createLeggings(Materials.stainlesssteel);
+		stainlesssteel_nugget = createNugget(Materials.stainlesssteel);
+		stainlesssteel_pickaxe = createPickaxe(Materials.stainlesssteel);
+		stainlesssteel_powder = createPowder(Materials.stainlesssteel);
+		stainlesssteel_shears = createShears(Materials.stainlesssteel);
+		stainlesssteel_shovel = createShovel(Materials.stainlesssteel);
+		stainlesssteel_smallblend = createSmallBlend(Materials.stainlesssteel);
+		stainlesssteel_smallpowder = createSmallPowder(Materials.stainlesssteel);
+		stainlesssteel_sword = createSword(Materials.stainlesssteel);
+		stainlesssteel_rod = createRod(Materials.stainlesssteel);
+		stainlesssteel_gear = createGear(Materials.stainlesssteel);
+
+		stainlesssteel_slab = createSlab(Materials.stainlesssteel, Blocks.stainlesssteel_slab, Blocks.stainlesssteel_slab, Blocks.double_stainlesssteel_slab);
+//		stainlesssteel_shield = createShield(Materials.stainlesssteel);
+
+//		stainlesssteel_crystal = createCrystal(Materials.stainlesssteel);
+//		stainlesssteel_shard = createShard(Materials.stainlesssteel);
+//		stainlesssteel_clump = createClump(Materials.stainlesssteel);
+//		stainlesssteel_powder_dirty = createDirtyPowder(Materials.stainlesssteel);
+
+		stainlesssteel_dense_plate = createDensePlate(Materials.stainlesssteel);
+//		stainlesssteel_crushed = createCrushed(Materials.stainlesssteel);
+//		stainlesssteel_crushed_purified = createCrushedPurified(Materials.stainlesssteel);
+
+		tantalum_arrow = createArrow(Materials.tantalum);
+		tantalum_axe = createAxe(Materials.tantalum);
+		tantalum_boots = createBoots(Materials.tantalum);
+		tantalum_bolt = createBolt(Materials.tantalum);
+		tantalum_bow = createBow(Materials.tantalum);
+		tantalum_chestplate = createChestplate(Materials.tantalum);
+		tantalum_crackhammer = createCrackhammer(Materials.tantalum);
+		tantalum_crossbow = createCrossbow(Materials.tantalum);
+		tantalum_door = createDoor(Materials.tantalum, Blocks.tantalum_door);
+		tantalum_fishing_rod = createFishingRod(Materials.tantalum);
+		tantalum_helmet = createHelmet(Materials.tantalum);
+		tantalum_hoe = createHoe(Materials.tantalum);
+		tantalum_horsearmor = createHorseArmor(Materials.tantalum);
+		tantalum_ingot = createIngot(Materials.tantalum);
+		tantalum_leggings = createLeggings(Materials.tantalum);
+		tantalum_nugget = createNugget(Materials.tantalum);
+		tantalum_pickaxe = createPickaxe(Materials.tantalum);
+		tantalum_powder = createPowder(Materials.tantalum);
+		tantalum_shears = createShears(Materials.tantalum);
+		tantalum_shovel = createShovel(Materials.tantalum);
+		tantalum_smallpowder = createSmallPowder(Materials.tantalum);
+		tantalum_sword = createSword(Materials.tantalum);
+		tantalum_rod = createRod(Materials.tantalum);
+		tantalum_gear = createGear(Materials.tantalum);
+
+		tantalum_slab = createSlab(Materials.tantalum, Blocks.tantalum_slab, Blocks.tantalum_slab, Blocks.double_tantalum_slab);
+//		tantalum_shield = createShield(Materials.tantalum);
+
+		tantalum_crystal = createCrystal(Materials.tantalum);
+		tantalum_shard = createShard(Materials.tantalum);
+		tantalum_clump = createClump(Materials.tantalum);
+		tantalum_powder_dirty = createDirtyPowder(Materials.tantalum);
+
+		tantalum_dense_plate = createDensePlate(Materials.tantalum);
+		tantalum_crushed = createCrushed(Materials.tantalum);
+		tantalum_crushed_purified = createCrushedPurified(Materials.tantalum);
+
+		titanium_arrow = createArrow(Materials.titanium);
+		titanium_axe = createAxe(Materials.titanium);
+		titanium_blend = createBlend(Materials.titanium);
+		titanium_boots = createBoots(Materials.titanium);
+		titanium_bolt = createBolt(Materials.titanium);
+		titanium_bow = createBow(Materials.titanium);
+		titanium_chestplate = createChestplate(Materials.titanium);
+		titanium_crackhammer = createCrackhammer(Materials.titanium);
+		titanium_crossbow = createCrossbow(Materials.titanium);
+		titanium_door = createDoor(Materials.titanium, Blocks.titanium_door);
+		titanium_fishing_rod = createFishingRod(Materials.titanium);
+		titanium_helmet = createHelmet(Materials.titanium);
+		titanium_hoe = createHoe(Materials.titanium);
+		titanium_horsearmor = createHorseArmor(Materials.titanium);
+		titanium_ingot = createIngot(Materials.titanium);
+		titanium_leggings = createLeggings(Materials.titanium);
+		titanium_nugget = createNugget(Materials.titanium);
+		titanium_pickaxe = createPickaxe(Materials.titanium);
+		titanium_powder = createPowder(Materials.titanium);
+		titanium_shears = createShears(Materials.titanium);
+		titanium_shovel = createShovel(Materials.titanium);
+		titanium_smallblend = createSmallBlend(Materials.titanium);
+		titanium_smallpowder = createSmallPowder(Materials.titanium);
+		titanium_sword = createSword(Materials.titanium);
+		titanium_rod = createRod(Materials.titanium);
+		titanium_gear = createGear(Materials.titanium);
+
+		titanium_slab = createSlab(Materials.titanium, Blocks.titanium_slab, Blocks.titanium_slab, Blocks.double_titanium_slab);
+//		titanium_shield = createShield(Materials.titanium);
+
+		titanium_crystal = createCrystal(Materials.titanium);
+		titanium_shard = createShard(Materials.titanium);
+		titanium_clump = createClump(Materials.titanium);
+		titanium_powder_dirty = createDirtyPowder(Materials.titanium);
+
+		titanium_dense_plate = createDensePlate(Materials.titanium);
+		titanium_crushed = createCrushed(Materials.titanium);
+		titanium_crushed_purified = createCrushedPurified(Materials.titanium);
+
+		tungsten_arrow = createArrow(Materials.tungsten);
+		tungsten_axe = createAxe(Materials.tungsten);
+		tungsten_boots = createBoots(Materials.tungsten);
+		tungsten_bolt = createBolt(Materials.tungsten);
+		tungsten_bow = createBow(Materials.tungsten);
+		tungsten_chestplate = createChestplate(Materials.tungsten);
+		tungsten_crackhammer = createCrackhammer(Materials.tungsten);
+		tungsten_crossbow = createCrossbow(Materials.tungsten);
+		tungsten_door = createDoor(Materials.tungsten, Blocks.tungsten_door);
+		tungsten_fishing_rod = createFishingRod(Materials.tungsten);
+		tungsten_helmet = createHelmet(Materials.tungsten);
+		tungsten_hoe = createHoe(Materials.tungsten);
+		tungsten_horsearmor = createHorseArmor(Materials.tungsten);
+		tungsten_ingot = createIngot(Materials.tungsten);
+		tungsten_leggings = createLeggings(Materials.tungsten);
+		tungsten_nugget = createNugget(Materials.tungsten);
+		tungsten_pickaxe = createPickaxe(Materials.tungsten);
+		tungsten_powder = createPowder(Materials.tungsten);
+		tungsten_shears = createShears(Materials.tungsten);
+		tungsten_shovel = createShovel(Materials.tungsten);
+		tungsten_smallpowder = createSmallPowder(Materials.tungsten);
+		tungsten_sword = createSword(Materials.tungsten);
+		tungsten_rod = createRod(Materials.tungsten);
+		tungsten_gear = createGear(Materials.tungsten);
+
+		tungsten_slab = createSlab(Materials.tungsten, Blocks.tungsten_slab, Blocks.tungsten_slab, Blocks.double_tungsten_slab);
+//		tungsten_shield = createShield(Materials.tungsten);
+
+		tungsten_crystal = createCrystal(Materials.tungsten);
+		tungsten_shard = createShard(Materials.tungsten);
+		tungsten_clump = createClump(Materials.tungsten);
+		tungsten_powder_dirty = createDirtyPowder(Materials.tungsten);
+
+		tungsten_dense_plate = createDensePlate(Materials.tungsten);
+		tungsten_crushed = createCrushed(Materials.tungsten);
+		tungsten_crushed_purified = createCrushedPurified(Materials.tungsten);
+
+		uranium_arrow = createArrow(Materials.uranium);
+		uranium_axe = createAxe(Materials.uranium);
+		uranium_boots = createBoots(Materials.uranium);
+		uranium_bolt = createBolt(Materials.uranium);
+		uranium_bow = createBow(Materials.uranium);
+		uranium_chestplate = createChestplate(Materials.uranium);
+		uranium_crackhammer = createCrackhammer(Materials.uranium);
+		uranium_crossbow = createCrossbow(Materials.uranium);
+		uranium_door = createDoor(Materials.uranium, Blocks.uranium_door);
+		uranium_fishing_rod = createFishingRod(Materials.uranium);
+		uranium_helmet = createHelmet(Materials.uranium);
+		uranium_hoe = createHoe(Materials.uranium);
+		uranium_horsearmor = createHorseArmor(Materials.uranium);
+		uranium_ingot = createIngot(Materials.uranium);
+		uranium_leggings = createLeggings(Materials.uranium);
+		uranium_nugget = createNugget(Materials.uranium);
+		uranium_pickaxe = createPickaxe(Materials.uranium);
+		uranium_powder = createPowder(Materials.uranium);
+		uranium_shears = createShears(Materials.uranium);
+		uranium_shovel = createShovel(Materials.uranium);
+		uranium_smallpowder = createSmallPowder(Materials.uranium);
+		uranium_sword = createSword(Materials.uranium);
+		uranium_rod = createRod(Materials.uranium);
+		uranium_gear = createGear(Materials.uranium);
+
+		uranium_slab = createSlab(Materials.uranium, Blocks.uranium_slab, Blocks.uranium_slab, Blocks.double_uranium_slab);
+//		uranium_shield = createShield(Materials.uranium);
+
+		uranium_crystal = createCrystal(Materials.uranium);
+		uranium_shard = createShard(Materials.uranium);
+		uranium_clump = createClump(Materials.uranium);
+		uranium_powder_dirty = createDirtyPowder(Materials.uranium);
+
+		uranium_dense_plate = createDensePlate(Materials.uranium);
+		uranium_crushed = createCrushed(Materials.uranium);
+		uranium_crushed_purified = createCrushedPurified(Materials.uranium);
+
+		zirconium_arrow = createArrow(Materials.zirconium);
+		zirconium_axe = createAxe(Materials.zirconium);
+		zirconium_boots = createBoots(Materials.zirconium);
+		zirconium_bolt = createBolt(Materials.zirconium);
+		zirconium_bow = createBow(Materials.zirconium);
+		zirconium_chestplate = createChestplate(Materials.zirconium);
+		zirconium_crackhammer = createCrackhammer(Materials.zirconium);
+		zirconium_crossbow = createCrossbow(Materials.zirconium);
+		zirconium_door = createDoor(Materials.zirconium, Blocks.zirconium_door);
+		zirconium_fishing_rod = createFishingRod(Materials.zirconium);
+		zirconium_helmet = createHelmet(Materials.zirconium);
+		zirconium_hoe = createHoe(Materials.zirconium);
+		zirconium_horsearmor = createHorseArmor(Materials.zirconium);
+		zirconium_ingot = createIngot(Materials.zirconium);
+		zirconium_leggings = createLeggings(Materials.zirconium);
+		zirconium_nugget = createNugget(Materials.zirconium);
+		zirconium_pickaxe = createPickaxe(Materials.zirconium);
+		zirconium_powder = createPowder(Materials.zirconium);
+		zirconium_shears = createShears(Materials.zirconium);
+		zirconium_shovel = createShovel(Materials.zirconium);
+		zirconium_smallpowder = createSmallPowder(Materials.zirconium);
+		zirconium_sword = createSword(Materials.zirconium);
+		zirconium_rod = createRod(Materials.zirconium);
+		zirconium_gear = createGear(Materials.zirconium);
+
+		zirconium_slab = createSlab(Materials.zirconium, Blocks.zirconium_slab, Blocks.zirconium_slab, Blocks.double_zirconium_slab);
+//		zirconium_shield = createShield(Materials.zirconium);
+
+		zirconium_crystal = createCrystal(Materials.zirconium);
+		zirconium_shard = createShard(Materials.zirconium);
+		zirconium_clump = createClump(Materials.zirconium);
+		zirconium_powder_dirty = createDirtyPowder(Materials.zirconium);
+
+		zirconium_dense_plate = createDensePlate(Materials.zirconium);
+		zirconium_crushed = createCrushed(Materials.zirconium);
+		zirconium_crushed_purified = createCrushedPurified(Materials.zirconium);
 
 		// TODO: Make this support multiple oredicts
-		for(Item i : itemRegistry.keySet()) {
+		for(final Item i : itemRegistry.keySet()) {
 			allItems.put(itemRegistry.get(i), i);
 			if(i instanceof IOreDictionaryEntry)
 				OreDictionary.registerOre(((IOreDictionaryEntry)i).getOreDictionaryName(), i);
@@ -1499,15 +1500,14 @@ public abstract class Items {
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
 		metlist.addAll(Materials.getAllMetals());
 		metlist.sort((MetalMaterial a, MetalMaterial b)-> a.getName().compareToIgnoreCase(b.getName()));
-		for(int i = 0; i < metlist.size(); i++) {
+		for(int i = 0; i < metlist.size(); i++)
 			materialSortingValues.put(metlist.get(i), i * 100);
-		}
 
 		initDone = true;
 	}
 
 	private static Item registerItem(Item item, String name, MetalMaterial metal, CreativeTabs tab) {
-		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
+		final ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
 		item.setRegistryName(location);
 		item.setUnlocalizedName(location.toString());
 		GameRegistry.register(item);
@@ -1525,189 +1525,189 @@ public abstract class Items {
 		return item;
 	}
 
-	private static Item create_ingot(MetalMaterial metal) {
+	private static Item createIngot(MetalMaterial metal) {
 //		return registerItem(new modernmetals.items.ItemMetalIngot(metal), metal.getName() + "_ingot", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_ingot", metal, ItemGroups.tab_items);
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_ingot", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("ingot" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_nugget(MetalMaterial metal) {
+	private static Item createNugget(MetalMaterial metal) {
 //		return registerItem(new ItemMetalNugget(metal), metal.getName() + "_nugget", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_nugget", metal, ItemGroups.tab_items);
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_nugget", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("nugget" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_powder(MetalMaterial metal) {
+	private static Item createPowder(MetalMaterial metal) {
 //		return registerItem(new ItemMetalPowder(metal), metal.getName() + "_powder", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_powder", metal, ItemGroups.tab_items);
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_powder", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("dust" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_blend(MetalMaterial metal) {
+	private static Item createBlend(MetalMaterial metal) {
 //		return registerItem(new modernmetals.items.ItemMetalBlend(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("dust" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_rod(MetalMaterial metal) {
+	private static Item createRod(MetalMaterial metal) {
 //		return registerItem(new modernmetals.items.ItemMetalRod(metal), metal.getName() + "_rod", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_rod", metal, ItemGroups.tab_items);
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_rod", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("rod" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_gear(MetalMaterial metal) {
+	private static Item createGear(MetalMaterial metal) {
 //		return registerItem(new modernmetals.items.ItemMetalGear(metal), metal.getName() + "_blend", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_gear", metal, ItemGroups.tab_items);
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_gear", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("gear" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_axe(MetalMaterial metal) {
+	private static Item createAxe(MetalMaterial metal) {
 		return registerItem(new ItemMetalAxe(metal), metal.getName() + "_axe", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_crackhammer(MetalMaterial metal) {
+	private static Item createCrackhammer(MetalMaterial metal) {
 		return registerItem(new ItemMetalCrackHammer(metal), metal.getName() + "_crackhammer", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_hoe(MetalMaterial metal) {
+	private static Item createHoe(MetalMaterial metal) {
 		return registerItem(new ItemMetalHoe(metal), metal.getName() + "_hoe", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_pickaxe(MetalMaterial metal) {
+	private static Item createPickaxe(MetalMaterial metal) {
 		return registerItem(new ItemMetalPickaxe(metal), metal.getName() + "_pickaxe", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_shovel(MetalMaterial metal) {
+	private static Item createShovel(MetalMaterial metal) {
 		return registerItem(new ItemMetalShovel(metal), metal.getName() + "_shovel", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_sword(MetalMaterial metal) {
+	private static Item createSword(MetalMaterial metal) {
 		return registerItem(new ItemMetalSword(metal), metal.getName() + "_sword", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_helmet(MetalMaterial metal) {
+	private static Item createHelmet(MetalMaterial metal) {
 		return registerItem(ItemMetalArmor.createHelmet(metal), metal.getName() + "_helmet", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_chestplate(MetalMaterial metal) {
+	private static Item createChestplate(MetalMaterial metal) {
 		return registerItem(ItemMetalArmor.createChestplate(metal), metal.getName() + "_chestplate", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_leggings(MetalMaterial metal) {
+	private static Item createLeggings(MetalMaterial metal) {
 		return registerItem(ItemMetalArmor.createLeggings(metal), metal.getName() + "_leggings", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_boots(MetalMaterial metal) {
+	private static Item createBoots(MetalMaterial metal) {
 		return registerItem(ItemMetalArmor.createBoots(metal), metal.getName() + "_boots", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_horsearmor(MetalMaterial metal) {
+	private static Item createHorseArmor(MetalMaterial metal) {
 		return registerItem(new ItemMetalHorseArmor(metal), metal.getName() + "_horsearmor", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_arrow(MetalMaterial metal) {
+	private static Item createArrow(MetalMaterial metal) {
 		return registerItem(new ItemMetalArrow(metal), metal.getName() + "_arrow", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_bolt(MetalMaterial metal) {
+	private static Item createBolt(MetalMaterial metal) {
 		return registerItem(new ItemMetalBolt(metal), metal.getName() + "_bolt", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_bow(MetalMaterial metal) {
+	private static Item createBow(MetalMaterial metal) {
 		return registerItem(new ItemMetalBow(metal), metal.getName() + "_bow", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_crossbow(MetalMaterial metal) {
+	private static Item createCrossbow(MetalMaterial metal) {
 		return registerItem(new ItemMetalCrossbow(metal), metal.getName() + "_crossbow", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_shears(MetalMaterial metal) {
+	private static Item createShears(MetalMaterial metal) {
 		return registerItem(new ItemMetalShears(metal), metal.getName() + "_shears", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_smallblend(MetalMaterial metal) {
+	private static Item createSmallBlend(MetalMaterial metal) {
 //		return registerItem(new ItemMetalSmallBlend(metal), metal.getName() + "_smallblend", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_smallblend", metal, ItemGroups.tab_items);
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_smallblend", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("dustTiny" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_fishing_rod(MetalMaterial metal) {
+	private static Item createFishingRod(MetalMaterial metal) {
 		return registerItem(new ItemMetalFishingRod(metal), metal.getName() + "_fishing_rod", metal, ItemGroups.tab_tools);
 	}
 
-	private static Item create_smallpowder(MetalMaterial metal) {
+	private static Item createSmallPowder(MetalMaterial metal) {
 //		return registerItem(new ItemMetalSmallPowder(metal), metal.getName() + "_smallpowder", metal, ItemGroups.tab_items);
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_smallpowder", metal, ItemGroups.tab_items);
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_smallpowder", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("dustTiny" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	@SuppressWarnings("unused")
-	private static Item create_shield(MetalMaterial metal) {
+	private static Item createShield(MetalMaterial metal) {
 		return registerItem(new ItemMetalShield(metal), metal.getName() + "_shield", metal, ItemGroups.tab_items);
 	}
 
-	private static Item create_crystal(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crystal", metal, ItemGroups.tab_items);
+	private static Item createCrystal(MetalMaterial metal) {
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crystal", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("crystal" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_shard(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_shard", metal, ItemGroups.tab_items);
+	private static Item createShard(MetalMaterial metal) {
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_shard", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("shard" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_clump(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_clump", metal, ItemGroups.tab_items);
+	private static Item createClump(MetalMaterial metal) {
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_clump", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("clump" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_DirtyPowder(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_powder_dirty", metal, ItemGroups.tab_items);
+	private static Item createDirtyPowder(MetalMaterial metal) {
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_powder_dirty", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("dustDirty" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
 	// TODO: Possibly make this a block, 1/2 of the normal plate.
-	private static Item create_DensePlate(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_dense_plate", metal, ItemGroups.tab_items);
+	private static Item createDensePlate(MetalMaterial metal) {
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_dense_plate", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("plateDense" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_crushed(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crushed", metal, ItemGroups.tab_items);
+	private static Item createCrushed(MetalMaterial metal) {
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crushed", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("crushed" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_crushedPurified(MetalMaterial metal) {
-		Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crushed_purified", metal, ItemGroups.tab_items);
+	private static Item createCrushedPurified(MetalMaterial metal) {
+		final Item i = registerItem(new GenericMetalItem(metal), metal.getName() + "_crushed_purified", metal, ItemGroups.tab_items);
 		OreDictionary.registerOre("crushedPurified" + metal.getCapitalizedName(), i);
 		return i;
 	}
 
-	private static Item create_slab(MetalMaterial metal, Block block, BlockSlab slab, BlockSlab doubleslab) {
-		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName() + "_slab");
-		Item item = new ItemMetalSlab(metal, block, slab, doubleslab);
+	private static Item createSlab(MetalMaterial metal, Block block, BlockSlab slab, BlockSlab doubleslab) {
+		final ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName() + "_slab");
+		final Item item = new ItemMetalSlab(metal, block, slab, doubleslab);
 		registerItem(item, location.getResourcePath(), metal, ItemGroups.tab_blocks);
-//		item.setUnlocalizedName(location.toString()); // Hack to set name right
+		//item.setUnlocalizedName(location.toString()); // Hack to set name right
 		return item;
 	}
 
-	private static Item create_door(MetalMaterial metal, BlockDoor door) {
-		ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName() + "_door");
-		Item item = new ItemMetalDoor(door, metal);
+	private static Item createDoor(MetalMaterial metal, BlockDoor door) {
+		final ResourceLocation location = new ResourceLocation(ModernMetals.MODID, metal.getName() + "_door");
+		final Item item = new ItemMetalDoor(door, metal);
 		registerItem(item, location.getResourcePath() + "_item", metal, ItemGroups.tab_blocks);
 		item.setUnlocalizedName(location.toString()); // Hack to set name right
 		doorMap.put(door, item);
@@ -1742,10 +1742,14 @@ public abstract class Items {
 	 */
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event) {
-		for(Item i : itemRegistry.keySet()) {
+		for(final Item i : itemRegistry.keySet()) {
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 			.register(i, 0, 
 				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, itemRegistry.get(i)), "inventory"));
 		}
+	}
+
+	public static Map<Item, String> getItemRegistry() {
+		return itemRegistry;
 	}
 }
