@@ -74,12 +74,10 @@ public class TinkersConstructPlugin {
 //			registerFluid(Fluids.fluidAluminumBrass); // TCon already has this
 //			registerTinkerMaterial(aluminumbrass, Fluids.fluidAluminumBrass, (int) (235 * d), 5.33f * s, 3.80f * a, 1.15f, 17, 117, 1, false, true);
 			
-			for(String name : correlation.keySet())
-			{
-				if (null != correlation.get(name).getMeltFluid()) 
+			for(String name : correlation.keySet()) {
+				if (null != correlation.get(name).getMeltFluid()) {
 				// skip items with no declared melt fluid - eg Aluminum, Aluminum Brass
 				// 		also skips items where the melt fluid process went awol, which is nice.
-				{
 					setupTConSmeltAndParts(name, d, s, a);
 				}
 			}
@@ -210,8 +208,7 @@ public class TinkersConstructPlugin {
 		TinkerRegistry.addMaterialStats(material, new HeadMaterialStats(headDura, headSpeed, headAttack, headLevel)); // Sets stats for head
 		TinkerRegistry.addMaterialStats(material, new HandleMaterialStats(handleMod, handleDura)); // Sets Stats for handle
 		TinkerRegistry.addMaterialStats(material, new ExtraMaterialStats(extra)); // Sets stats for everything else
-		if (trait != null)
-		{
+		if (trait != null) {
 			String stats = "temporary placeholder"; // TODO: find out what goes here
 			TinkerRegistry.addMaterialTrait(material, trait, stats);
 		}
