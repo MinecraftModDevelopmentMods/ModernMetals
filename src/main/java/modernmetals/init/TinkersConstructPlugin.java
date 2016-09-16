@@ -42,6 +42,14 @@ public class TinkersConstructPlugin {
 		if(initDone)
 			return;
 
+		if(Loader.isModLoaded(TCONSTRUCT_MODID)) {
+			final double d = 0; // durabilityFactorGeneral;
+			// System.out.println("DURABILITY FACTOR" + d);
+			final float s = 0;// (float) speedFactorGeneral;
+			// System.out.println("SPEED FACTOR" + s);
+			final float a = 0; // (float) attackFactorGeneral;
+			// System.out.println("ATTACK FACTOR" + a);
+			
 			final Material aluminum = createTCMaterial("aluminum", 0xFFC5C8C1);
 			final Material aluminumbrass = createTCMaterial("aluminumbrass", 0xFFEBAA56);
 			final Material cadmium = createTCMaterial("cadmium", 0xFFC9D4DA, Fluids.fluidCadmium);
