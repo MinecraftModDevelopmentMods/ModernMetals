@@ -5,11 +5,8 @@ import net.minecraftforge.fluids.Fluid;
 import slimeknights.tconstruct.library.materials.Material;
 
 class MaterialCorrelation {
-	@SuppressWarnings("unused")
 	private Material material;
-	@SuppressWarnings("unused")
 	private MetalMaterial metal;
-	@SuppressWarnings("unused")
 	private Fluid meltFluid;
 	
 	public MaterialCorrelation(Material material, MetalMaterial metalByName, Fluid meltFluid) {
