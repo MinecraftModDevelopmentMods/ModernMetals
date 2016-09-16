@@ -1,5 +1,8 @@
 package modernmetals.init;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import cyano.basemetals.material.MetalMaterial;
 
 /**
@@ -30,6 +33,8 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	public static MetalMaterial tungsten;
 	public static MetalMaterial uranium;
 	public static MetalMaterial zirconium;
+	
+	public static List<MetalMaterial> materials = new LinkedList<MetalMaterial>();
 
 	private static boolean initDone = false;
 
@@ -66,6 +71,8 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic) {
 		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
 		registerMaterial(name, m);
+		
+		materials.add(m);
 		return m;
 	}
 
@@ -73,6 +80,8 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
 		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic, true);
 		registerMaterial(name, m);
+		
+		materials.add(m);
 		return m;
 	}
 }
