@@ -1,6 +1,7 @@
 package modernmetals.init;
 
 import modernmetals.ModernMetals;
+
 import cyano.basemetals.blocks.BlockMoltenFluid;
 import cyano.basemetals.fluids.CustomFluid;
 import net.minecraft.block.state.IBlockState;

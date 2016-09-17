@@ -5,9 +5,8 @@ import cyano.basemetals.items.ItemMetalCrackHammer;
 import cyano.basemetals.items.ItemMetalIngot;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.util.VillagerTradeHelper;
-import net.minecraft.entity.passive.EntityVillager.ITradeList;
-import net.minecraft.entity.passive.EntityVillager.ListEnchantedItemForEmeralds;
-import net.minecraft.entity.passive.EntityVillager.PriceInfo;
+
+import net.minecraft.entity.passive.EntityVillager.*;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;

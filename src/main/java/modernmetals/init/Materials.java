@@ -5,6 +5,10 @@ import java.util.List;
 
 import cyano.basemetals.material.MetalMaterial;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * This class initializes all of the metal materials in Modern Metals. It also
  * contains utility methods for looking up materials by name and finding the
@@ -71,7 +75,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic) {
 		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
 		registerMaterial(name, m);
-		
+
 		materials.add(m);
 		return m;
 	}
@@ -80,7 +84,7 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
 		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic, true);
 		registerMaterial(name, m);
-		
+
 		materials.add(m);
 		return m;
 	}

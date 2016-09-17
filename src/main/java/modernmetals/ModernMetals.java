@@ -40,8 +40,8 @@ import java.util.*;
 		acceptedMinecraftVersions = "1.9.4,)",
 		//certificateFingerprint = "",
 		updateJSON = "https://raw.githubusercontent.com/jriwanek/ModernMetals/master/update.json")
-public class ModernMetals
-{
+public class ModernMetals {
+
 	@Instance
 	public static ModernMetals INSTANCE = null;
 
@@ -80,9 +80,7 @@ public class ModernMetals
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 
-
 		disableAllHammers = false;
-
 
 		requireOreSpawn = true;
 
@@ -105,7 +103,6 @@ public class ModernMetals
 				}
 			}
 		}
-
 
 		Fluids.init();
 		Materials.init();
