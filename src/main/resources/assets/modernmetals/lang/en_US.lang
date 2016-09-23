@@ -3,6 +3,7 @@ itemGroup.modernmetals.tools=Modern Metals
 itemGroup.modernmetals.blocks=Modern Metals
 nei.modernmetals.recipehandler.crusher.name=Crushed Blocks/Items
 
+material.aluminum.name=Aluminum
 item.modernmetals:aluminum_arrow.name=Aluminum Arrow
 item.modernmetals:aluminum_axe.name=Aluminum Axe
 item.modernmetals:aluminum_bars.name=Aluminum Bars
@@ -34,6 +35,7 @@ item.modernmetals:aluminum_smallpowder.name=Small Pile of Powdered Aluminum
 item.modernmetals:aluminum_sword.name=Aluminum Sword
 item.modernmetals:aluminum_trapdoor.name=Aluminum Trapdoor
 
+material.aluminumbrass.name=Aluminum Brass
 item.modernmetals:aluminumbrass_arrow.name=Aluminum Brass Arrow
 item.modernmetals:aluminumbrass_axe.name=Aluminum Brass Axe
 item.modernmetals:aluminumbrass_bars.name=Aluminum Brass Bars
@@ -65,6 +67,7 @@ item.modernmetals:aluminumbrass_smallpowder.name=Small Pile of Powdered Aluminum
 item.modernmetals:aluminumbrass_sword.name=Aluminum Brass Sword
 item.modernmetals:aluminumbrass_trapdoor.name=Aluminum Brass Trapdoor
 
+material.antimony.name=Antimony
 item.modernmetals:antimony_arrow.name=Antimony Arrow
 item.modernmetals:antimony_axe.name=Antimony Axe
 item.modernmetals:antimony_bars.name=Antimony Bars
@@ -87,6 +90,7 @@ item.modernmetals:antimony_smallpowder.name=Small Pile of Powdered Antimony
 item.modernmetals:antimony_sword.name=Antimony Sword
 item.modernmetals:antimony_trapdoor.name=Antimony Trapdoor
 
+material.bismuth.name=Bismuth
 item.modernmetals:bismuth_arrow.name=Bismuth Arrow
 item.modernmetals:bismuth_axe.name=Bismuth Axe
 item.modernmetals:bismuth_bars.name=Bismuth Bars
@@ -109,6 +113,7 @@ item.modernmetals:bismuth_smallpowder.name=Small Pile of Powdered Bismuth
 item.modernmetals:bismuth_sword.name=Bismuth Sword
 item.modernmetals:bismuth_trapdoor.name=Bismuth Trapdoor
 
+material.cadmium.name=Cadmium
 item.modernmetals:cadmium_arrow.name=Cadmium Arrow
 item.modernmetals:cadmium_axe.name=Cadmium Axe
 item.modernmetals:cadmium_bars.name=Cadmium Bars
@@ -140,6 +145,7 @@ item.modernmetals:cadmium_smallpowder.name=Small Pile of Powdered Cadmium
 item.modernmetals:cadmium_sword.name=Cadmium Sword
 item.modernmetals:cadmium_trapdoor.name=Cadmium Trapdoor
 
+material.chromium.name=Chromium
 item.modernmetals:chromium_arrow.name=Chromium Arrow
 item.modernmetals:chromium_axe.name=Chromium Axe
 item.modernmetals:chromium_bars.name=Chromium Bars
@@ -171,6 +177,7 @@ item.modernmetals:chromium_smallpowder.name=Small Pile of Powdered Chromium
 item.modernmetals:chromium_sword.name=Chromium Sword
 item.modernmetals:chromium_trapdoor.name=Chromium Trapdoor
 
+material.galvanizedsteel.name=Galvanized Steel
 item.modernmetals:galvanizedsteel_arrow.name=Galvanized Steel Arrow
 item.modernmetals:galvanizedsteel_axe.name=Galvanized Steel Axe
 item.modernmetals:galvanizedsteel_bars.name=Galvanized Steel Bars
@@ -202,6 +209,7 @@ item.modernmetals:galvanizedsteel_smallpowder.name=Small Pile of Powdered Galvan
 item.modernmetals:galvanizedsteel_sword.name=Galvanized Steel Sword
 item.modernmetals:galvanizedsteel_trapdoor.name=Galvanized Steel Trapdoor
 
+material.iridium.name=Iridium
 item.modernmetals:iridium_arrow.name=Iridium Arrow
 item.modernmetals:iridium_axe.name=Iridium Axe
 item.modernmetals:iridium_bars.name=Iridium Bars
@@ -233,6 +241,7 @@ item.modernmetals:iridium_smallpowder.name=Small Pile of Powdered Iridium
 item.modernmetals:iridium_sword.name=Iridium Sword
 item.modernmetals:iridium_trapdoor.name=Iridium Trapdoor
 
+material.magnesium.name=Magnesium
 item.modernmetals:magnesium_arrow.name=Magnesium Arrow
 item.modernmetals:magnesium_axe.name=Magnesium Axe
 item.modernmetals:magnesium_bars.name=Magnesium Bars
@@ -264,6 +273,7 @@ item.modernmetals:magnesium_smallpowder.name=Small Pile of Powdered Magnesium
 item.modernmetals:magnesium_sword.name=Magnesium Sword
 item.modernmetals:magnesium_trapdoor.name=Magnesium Trapdoor
 
+material.manganese.name=Manganese
 item.modernmetals:manganese_arrow.name=Manganese Arrow
 item.modernmetals:manganese_axe.name=Manganese Axe
 item.modernmetals:manganese_bars.name=Manganese Bars
@@ -295,6 +305,7 @@ item.modernmetals:manganese_smallpowder.name=Small Pile of Powdered Manganese
 item.modernmetals:manganese_sword.name=Manganese Sword
 item.modernmetals:manganese_trapdoor.name=Manganese Trapdoor
 
+material.nichrome.name=Nichrome
 item.modernmetals:nichrome_arrow.name=Nichrome Arrow
 item.modernmetals:nichrome_axe.name=Nichrome Axe
 item.modernmetals:nichrome_bars.name=Nichrome Bars
@@ -326,6 +337,7 @@ item.modernmetals:nichrome_smallpowder.name=Small Pile of Powdered Nichrome
 item.modernmetals:nichrome_sword.name=Nichrome Sword
 item.modernmetals:nichrome_trapdoor.name=Nichrome Trapdoor
 
+material.osmium.name=Osmium
 item.modernmetals:osmium_arrow.name=Osmium Arrow
 item.modernmetals:osmium_axe.name=Osmium Axe
 item.modernmetals:osmium_bars.name=Osmium Bars
@@ -357,6 +369,7 @@ item.modernmetals:osmium_smallpowder.name=Small Pile of Powdered Osmium
 item.modernmetals:osmium_sword.name=Osmium Sword
 item.modernmetals:osmium_trapdoor.name=Osmium Trapdoor
 
+material.pewter.name=Pewter
 item.modernmetals:pewter_arrow.name=Pewter Arrow
 item.modernmetals:pewter_axe.name=Pewter Axe
 item.modernmetals:pewter_bars.name=Pewter Bars
@@ -380,6 +393,7 @@ item.modernmetals:pewter_smallpowder.name=Small Pile of Powdered Pewter
 item.modernmetals:pewter_sword.name=Pewter Sword
 item.modernmetals:pewter_trapdoor.name=Pewter Trapdoor
 
+material.plutonium.name=Plutonium
 item.modernmetals:plutonium_arrow.name=Plutonium Arrow
 item.modernmetals:plutonium_axe.name=Plutonium Axe
 item.modernmetals:plutonium_bars.name=Plutonium Bars
@@ -411,6 +425,7 @@ item.modernmetals:plutonium_smallpowder.name=Small Pile of Powdered Plutonium
 item.modernmetals:plutonium_sword.name=Plutonium Sword
 item.modernmetals:plutonium_trapdoor.name=Plutonium Trapdoor
 
+material.rutile.name=Rutile
 item.modernmetals:rutile_arrow.name=Rutile Arrow
 item.modernmetals:rutile_axe.name=Rutile Axe
 item.modernmetals:rutile_bars.name=Rutile Bars
@@ -442,6 +457,7 @@ item.modernmetals:rutile_smallpowder.name=Small Pile of Powdered Rutile
 item.modernmetals:rutile_sword.name=Rutile Sword
 item.modernmetals:rutile_trapdoor.name=Rutile Trapdoor
 
+material.stainlesssteel.name=Stainless Steel
 item.modernmetals:stainlesssteel_arrow.name=Stainless Steel Arrow
 item.modernmetals:stainlesssteel_axe.name=Stainless Steel Axe
 item.modernmetals:stainlesssteel_bars.name=Stainless Steel Bars
@@ -473,6 +489,7 @@ item.modernmetals:stainlesssteel_smallpowder.name=Small Pile of Powdered Stainle
 item.modernmetals:stainlesssteel_sword.name=Stainless Steel Sword
 item.modernmetals:stainlesssteel_trapdoor.name=Stainless Steel Trapdoor
 
+material.tantalum.name=Tantalum
 item.modernmetals:tantalum_arrow.name=Tantalum Arrow
 item.modernmetals:tantalum_axe.name=Tantalum Axe
 item.modernmetals:tantalum_bars.name=Tantalum Bars
@@ -504,6 +521,7 @@ item.modernmetals:tantalum_smallpowder.name=Small Pile of Powdered Tantalum
 item.modernmetals:tantalum_sword.name=Tantalum Sword
 item.modernmetals:tantalum_trapdoor.name=Tantalum Trapdoor
 
+material.titanium.name=Titanium
 item.modernmetals:titanium_arrow.name=Titanium Arrow
 item.modernmetals:titanium_axe.name=Titanium Axe
 item.modernmetals:titanium_bars.name=Titanium Bars
@@ -535,6 +553,7 @@ item.modernmetals:titanium_smallpowder.name=Small Pile of Powdered Titanium
 item.modernmetals:titanium_sword.name=Titanium Sword
 item.modernmetals:titanium_trapdoor.name=Titanium Trapdoor
 
+material.tungsten.name=Tungsten
 item.modernmetals:tungsten_arrow.name=Tungsten Arrow
 item.modernmetals:tungsten_axe.name=Tungsten Axe
 item.modernmetals:tungsten_bars.name=Tungsten Bars
@@ -566,6 +585,7 @@ item.modernmetals:tungsten_smallpowder.name=Small Pile of Powdered Tungsten
 item.modernmetals:tungsten_sword.name=Tungsten Sword
 item.modernmetals:tungsten_trapdoor.name=Tungsten Trapdoor
 
+material.uranium.name=Uranium
 item.modernmetals:uranium_arrow.name=Uranium Arrow
 item.modernmetals:uranium_axe.name=Uranium Axe
 item.modernmetals:uranium_bars.name=Uranium Bars
@@ -597,6 +617,7 @@ item.modernmetals:uranium_smallpowder.name=Small Pile of Powdered Uranium
 item.modernmetals:uranium_sword.name=Uranium Sword
 item.modernmetals:uranium_trapdoor.name=Uranium Trapdoor
 
+material.zirconium.name=Zirconium
 item.modernmetals:zirconium_arrow.name=Zirconium Arrow
 item.modernmetals:zirconium_axe.name=Zirconium Axe
 item.modernmetals:zirconium_bars.name=Zirconium Bars
