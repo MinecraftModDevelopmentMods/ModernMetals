@@ -5,10 +5,10 @@
   "description": "Modern Metals Addon",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "http://minecraft.curseforge.com/projects/modern-metals",
+  "url": "https://github.com/MineCraftModDevelopment/ModernMetals",
   "updateUrl": "",
-  "authorList": ["cyb3rkat"],
-  "credits": "DrCyano (aka Cyanobacterium), lclc98 for all the help",
+  "authorList": ["jriwanek"],
+  "credits": "Cyanobacterium (aka DrCyano), lclc98 for all the help",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
