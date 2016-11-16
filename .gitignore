@@ -23,5 +23,3 @@ run
 
 /README.txt
 /forge-*-changelog.txt
-gradle.properties
-*.bat
