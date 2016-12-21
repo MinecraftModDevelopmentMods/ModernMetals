@@ -1,23 +1,15 @@
 package modernmetals.init;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import cyano.basemetals.material.MetalMaterial;
-
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import modernmetals.util.Config.Options;
 
 /**
- * This class initializes all of the metal materials in Modern Metals. It also
- * contains utility methods for looking up materials by name and finding the
- * tool and armor material equivalents for a given metal.
+ * This class initializes all of the materials in Modern Metals.
  *
  * @author DrCyano
  *
  */
-public abstract class Materials extends cyano.basemetals.init.Materials {
+public class Materials extends cyano.basemetals.init.Materials {
 
 	public static MetalMaterial aluminum;
 	public static MetalMaterial aluminumbrass;
@@ -37,8 +29,6 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	public static MetalMaterial tungsten;
 	public static MetalMaterial uranium;
 	public static MetalMaterial zirconium;
-	
-	public static List<MetalMaterial> materials = new LinkedList<MetalMaterial>();
 
 	private static boolean initDone = false;
 
@@ -46,46 +36,66 @@ public abstract class Materials extends cyano.basemetals.init.Materials {
 	 *
 	 */
 	public static void init() {
-		if(initDone)
+		if (initDone) {
 			return;
+		}
 
-		// Mod Metals
-		aluminum = addMaterial("aluminum", 2.5, 3.75, 4.5);
-		aluminumbrass = addMaterial("aluminumbrass", 1, 7.5, 4.5);
-		cadmium = addMaterial("cadmium", 2, 1, 4.5);
-		chromium = addMaterial("chromium", 9, 3, 4.5);
-		galvanizedsteel = addMaterial("galvanizedsteel", 5.5, 15.25, 4.5);
-		iridium = addMaterial("iridium", 6.5, 3, 4.5);
-		magnesium = addMaterial("magnesium", 2.5, 3.5, 4.5);
-		manganese = addMaterial("manganese", 5, 2.75, 4.5);
-		nichrome= addMaterial("nichrome", 6, 15.5, 4.5);
-		osmium = addMaterial("osmium", 7, 2.75, 4.5);
-		plutonium = addMaterial("plutonium", 4, 7.5, 4.5);
-		rutile = addMaterial("rutile", 6, 0.25, 4.5);
-		stainlesssteel = addMaterial("stainlesssteel", 6, 16, 4.5);
-		tantalum = addMaterial("tantalum", 6.5, 17.5, 4.5);
-		titanium = addMaterial("titanium", 6.5, 16.25, 4.5);
-		tungsten = addMaterial("tungsten", 7.5, 12.5, 4.5);
-		uranium = addMaterial("uranium", 6, 16.25, 4.5);
-		zirconium = addMaterial("zirconium", 5, 3.5, 4.5);
+		// Mod Materials
+		if (Options.ENABLE_ALUMINUM) {
+			aluminum = createMaterial("aluminum", 2.5, 3.75, 4.5, 0xFFC5C8C1);
+		}
+		if (Options.ENABLE_ALUMINUMBRASS) {
+			aluminumbrass = createMaterial("aluminumbrass", 1, 7.5, 4.5, 0xFFEBAA56);
+		}
+		if (Options.ENABLE_CADMIUM) {
+			cadmium = createMaterial("cadmium", 2, 1, 4.5, 0xFFC9D4DA);
+		}
+		if (Options.ENABLE_CHROMIUM) {
+			chromium = createMaterial("chromium", 9, 3, 4.5, 0xFFCDCDCF);
+		}
+		if (Options.ENABLE_GALVANIZEDSTEEL) {
+			galvanizedsteel = createMaterial("galvanizedsteel", 5.5, 15.25, 4.5, 0xFF9BA6A2);
+		}
+		if (Options.ENABLE_IRIDIUM) {
+			iridium = createMaterial("iridium", 6.5, 3, 4.5, 0xFFF8EDCC);
+		}
+		if (Options.ENABLE_MAGNESIUM) {
+			magnesium = createMaterial("magnesium", 2.5, 3.5, 4.5, 0xFF7F7F77);
+		}
+		if (Options.ENABLE_MANGANESE) {
+			manganese = createMaterial("manganese", 5, 2.75, 4.5, 0xFFF5CFDA);
+		}
+		if (Options.ENABLE_NICHROME) {
+			nichrome= createMaterial("nichrome", 6, 15.5, 4.5, 0xFFDEA054);
+		}
+		if (Options.ENABLE_OSMIUM) {
+			osmium = createMaterial("osmium", 7, 2.75, 4.5, 0xFF7C8E99);
+		}
+		if (Options.ENABLE_PLUTONIUM) {
+			plutonium = createMaterial("plutonium", 4, 7.5, 4.5, 0xFFB333EA);
+		}
+		if (Options.ENABLE_RUTILE) {
+			rutile = createMaterial("rutile", 6, 0.25, 4.5, 0xFFBF928B);
+		}
+		if (Options.ENABLE_STAINLESSSTEEL) {
+			stainlesssteel = createMaterial("stainlesssteel", 6, 16, 4.5, 0xFFC5BFC1);
+		}
+		if (Options.ENABLE_TANTALUM) {
+			tantalum = createMaterial("tantalum", 6.5, 17.5, 4.5, 0xFFC4BEC2);
+		}
+		if (Options.ENABLE_TITANIUM) {
+			titanium = createMaterial("titanium", 6.5, 16.25, 4.5, 0xFF73787E);
+		}
+		if (Options.ENABLE_TUNGSTEN) {
+			tungsten = createMaterial("tungsten", 7.5, 12.5, 4.5, 0xFF969696);
+		}
+		if (Options.ENABLE_URANIUM) {
+			uranium = createMaterial("uranium", 6, 16.25, 4.5, 0xFFA7B345);
+		}
+		if (Options.ENABLE_ZIRCONIUM) {
+			zirconium = createMaterial("zirconium", 5, 3.5, 4.5, 0xFF929793);
+		}
 
 		initDone = true;
-	}
-
-	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic) {
-		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic);
-		registerMaterial(name, m);
-
-		materials.add(m);
-		return m;
-	}
-
-	@SuppressWarnings("unused")
-	private static MetalMaterial addRareMaterial(String name, double hardness, double strength, double magic) {
-		final MetalMaterial m = new MetalMaterial(name, (float)hardness, (float)strength, (float)magic, true);
-		registerMaterial(name, m);
-
-		materials.add(m);
-		return m;
 	}
 }

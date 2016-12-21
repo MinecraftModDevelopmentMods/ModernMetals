@@ -18,22 +18,52 @@ buildscript {
 
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: "com.matthewprenger.cursegradle"
-//apply plugin: "org.ajoberstar.grgit"
-//apply plugin: "org.ajoberstar.github-pages"
-//apply plugin: "org.ajoberstar.release-base"
+apply plugin: "maven-publish"
+
+javadoc {
+    failOnError = false
+}
 
 def mod_file = getModFile()
-version = getVersion("VERSION", mod_file)
-group= "modernmetals"
-archivesBaseName = "ModernMetals_1.10.2"
+def mc_version = "1.10.2"
+def short_version = getVersion("VERSION", mod_file)
+version = mc_version + "-" + short_version
+if (System.getenv().BUILD_NUMBER) {
+    version += "." + System.getenv().BUILD_NUMBER
+}
+group= "mmd"
+archivesBaseName = "ModernMetals"
 sourceCompatibility = targetCompatibility = "1.8"
-//ext.repo = Grgit.open(project.file('.'))
+
+class Secrets {
+    def data = null
+
+    def getProperty(String key) {
+        return data ? data[key] : ""
+    }
+}
+
+import groovy.json.JsonSlurper
+
+def secretFile
+if (System.getenv().SECRET_FILE) {
+    secretFile = file System.getenv().SECRET_FILE
+} else {
+    secretFile = file "secret.json"
+}
+
+project.ext.secret = new Secrets()
+if (secretFile.exists()) {
+    secretFile.withReader {
+        project.ext.secret.data = new JsonSlurper().parse it
+    }
+}
 
 minecraft {
-    version = "1.10.2-12.18.2.2099"
+    version = "1.10.2-12.18.3.2185"
     runDir = "run"
-    mappings = "snapshot_20161115"
-//    coreMod = 
+    mappings = "stable_29"
+//    coreMod = ""
 }
 
 repositories {
@@ -49,38 +79,44 @@ repositories {
         name "tterrag"
         url "http://maven.tterrag.com/"
     }
-	maven {
-		name "Ilexiconn"
-		url "https://maven.ilexiconn.net/"
-	}
-	maven {
-		name "amadornes"
-		url "http://maven.amadornes.com/"
-	}
+    maven {
+        name "MMD"
+        url "https://maven.mcmoddev.com/"
+    }
+    maven {
+        name "amadornes"
+        url "http://maven.amadornes.com/"
+    }
+    maven {
+        name "epoxide"
+        url "http://maven.epoxide.xyz"
+    }
 }
 
 dependencies {
     compile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}:deobf"
     compile "slimeknights.mantle:Mantle:${mc_version}-${mantle_version}:deobf"
-	compile "mmd:orespawn:${orespawn_version}-${mc_version}:dev"
+    compile "mmd:orespawn:${orespawn_version}-${mc_version}:dev"
+    compile "cyano:BaseMetals:${mc_version}-${bme_version}:deobf"
 }
 
 processResources {
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
 
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version': project.version, 'mcversion': project.minecraft.version
+    from (sourceSets.main.resources.srcDirs) {
+        include "mcmod.info"
+        expand "version": short_version, "mcversion": project.minecraft.version
     }
 
-    from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.info'
+    from (sourceSets.main.resources.srcDirs) {
+        exclude "mcmod.info"
     }
 }
 
 jar {
     manifest {
+//        attributes("FMLCorePluginContainsFMLMod": "true", "FMLCorePlugin": "")
     }
 }
 
@@ -106,30 +142,77 @@ artifacts {
     archives javadocJar
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId project.group
+            artifactId project.archivesBaseName
+            version project.version
+            from components.java
+            artifact sourceJar {
+                classifier "sources"
+            }
+            artifact apiJar {
+                classifier "api"
+            }
+            artifact deobfJar {
+                classifier "deobf"
+            }
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username secret.username
+                password secret.password
+            }
+            url secret.url
+        }
+    }
+}
+
 curseforge {
-    apiKey = ""
+    apiKey = secret.curseforgeAPIKey
     project {
         id = "244357"
         changelog = file("CHANGELOG.txt")
         releaseType = "release"
+        addGameVersion(project.mc_version)
+        def projName = "Modern Metals"
+        def displayVersion = getVersion("VERSION", mod_file)
+        if (System.getenv().BUILD_NUMBER) {
+            displayVersion += "." + System.getenv().BUILD_NUMBER
+        }
         mainArtifact(jar) {
-            displayName = "Modern Metals $project.version"
+            displayName = "$projName $displayVersion"
             relations {
                 requiredLibrary "mmd-orespawn"
                 requiredLibrary "base-metals"
                 optionalLibrary "additional-loot-tables"
             }
         }
-        addArtifact sourceJar
-        addArtifact deobfJar
-        addArtifact javadocJar
+//        addArtifact(apiJar) {
+//            displayName = "$projName $displayVersion API"
+//        }
+        addArtifact(sourceJar) {
+            displayName = "$projName $displayVersion Sources"
+        }
+        addArtifact(deobfJar) {
+            displayName = "$projName $displayVersion Development"
+        }
+        addArtifact(javadocJar) {
+            displayName = "$projName $displayVersion Javadoc"
+        }
     }
 }
 
 String getModFile() {
     String path = "";
     FileTree tree = fileTree(dir: "src/main/java")
-    tree.include '**/*.java'
+    tree.include "**/*.java"
     tree.visit { element ->
         if (element.file.isFile()) {
             element.file.eachLine { String s ->
@@ -162,12 +245,3 @@ String getVersion(String type, String mod_file) {
     }
     return "$major.$revision.$patch";
 }
-
-/*
-task tagRelease << {
-    repo.tag.add {
-        name = version
-        message = "Release of ${version}"
-    }
-}
-*/

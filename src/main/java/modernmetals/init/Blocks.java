@@ -1,34 +1,15 @@
 package modernmetals.init;
 
-import modernmetals.ModernMetals;
-import cyano.basemetals.blocks.*;
-import cyano.basemetals.material.MetalMaterial;
-import cyano.basemetals.registry.IOreDictionaryEntry;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockDoor;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.oredict.OreDictionary;
-
-import java.util.HashMap;
-import java.util.Map;
+import modernmetals.util.Config.Options;
+import net.minecraft.block.*;
 
 /**
- * This class initializes all blocks in Modern Metals and provides some utility
- * methods for looking up blocks.
+ * This class initializes all blocks in Modern Metals.
  *
  * @author DrCyano
  *
  */
-public abstract class Blocks {
+public class Blocks extends cyano.basemetals.init.Blocks {
 
 	public static Block aluminum_bars;
 	public static Block aluminum_block;
@@ -298,398 +279,375 @@ public abstract class Blocks {
 
 	private static boolean initDone = false;
 
-	// private static Map<Block, String> blockRegistry = new HashMap<>();
-	private static final Map<String, Block> blockRegistry = new HashMap<>();
-	// private static Map<MetalMaterial, List<Block>> blocksByMetal = new HashMap<>();
-
-	/**
-	 * Gets an block by its name. The name is the name as it is registered in
-	 * the GameRegistry, not its unlocalized name (the unlocalized name is the
-	 * registered name plus the prefix "modernmetals.")
-	 * @param name The name of the block in question
-	 * @return The block matching that name, or null if there isn't one
-	 */
-	public static Block getBlockByName(String name) {
-		return blockRegistry.get(name);
-	}
-
 	/**
 	 *
 	 */
 	public static void init() {
-		if(initDone)
+		if (initDone) {
 			return;
+		}
 
-		modernmetals.init.Materials.init();
-		modernmetals.init.ItemGroups.init();
+		Materials.init();
+		ItemGroups.init();
 
-		aluminum_block = createBlock(Materials.aluminum);
-		aluminum_plate = createPlate(Materials.aluminum);
-		aluminum_ore = createOre(Materials.aluminum);
-		aluminum_bars = createBars(Materials.aluminum);
-		aluminum_door = createDoor(Materials.aluminum);
-		aluminum_trapdoor = createTrapDoor(Materials.aluminum);
+		String materialName;
 
-		aluminum_button = createButton(Materials.aluminum);
-		aluminum_slab = createSlab(Materials.aluminum);
-		double_aluminum_slab = createDoubleSlab(Materials.aluminum);
-		aluminum_lever = createLever(Materials.aluminum);
-		aluminum_pressure_plate = createPressurePlate(Materials.aluminum);
-		aluminum_stairs = createStairs(Materials.aluminum);
-		aluminum_wall = createWall(Materials.aluminum);
+		if (Options.ENABLE_ALUMINUM) {
 
-		aluminumbrass_block = createBlock(Materials.aluminumbrass);
-		aluminumbrass_plate = createPlate(Materials.aluminumbrass);
-		aluminumbrass_bars = createBars(Materials.aluminumbrass);
-		aluminumbrass_door = createDoor(Materials.aluminumbrass);
-		aluminumbrass_trapdoor = createTrapDoor(Materials.aluminumbrass);
+			materialName = "aluminum";
 
-		aluminumbrass_button = createButton(Materials.aluminumbrass);
-		aluminumbrass_slab = createSlab(Materials.aluminumbrass);
-		double_aluminumbrass_slab = createDoubleSlab(Materials.aluminumbrass);
-		aluminumbrass_lever = createLever(Materials.aluminumbrass);
-		aluminumbrass_pressure_plate = createPressurePlate(Materials.aluminumbrass);
-		aluminumbrass_stairs = createStairs(Materials.aluminumbrass);
-		aluminumbrass_wall = createWall(Materials.aluminumbrass);
+			aluminum_block = createBlock(materialName);
+			aluminum_plate = createPlate(materialName);
+			aluminum_ore = createOre(materialName);
+			aluminum_bars = createBars(materialName);
+			aluminum_door = createDoor(materialName);
+			aluminum_trapdoor = createTrapDoor(materialName);
 
-		cadmium_block = createBlock(Materials.cadmium);
-		cadmium_plate = createPlate(Materials.cadmium);
-		cadmium_ore = createOre(Materials.cadmium);
-		cadmium_bars = createBars(Materials.cadmium);
-		cadmium_door = createDoor(Materials.cadmium);
-		cadmium_trapdoor = createTrapDoor(Materials.cadmium);
+			aluminum_button = createButton(materialName);
+			aluminum_slab = createSlab(materialName);
+			double_aluminum_slab = createDoubleSlab(materialName);
+			aluminum_lever = createLever(materialName);
+			aluminum_pressure_plate = createPressurePlate(materialName);
+			aluminum_stairs = createStairs(materialName);
+			aluminum_wall = createWall(materialName);
+		}
 
-		cadmium_button = createButton(Materials.cadmium);
-		cadmium_slab = createSlab(Materials.cadmium);
-		double_cadmium_slab = createDoubleSlab(Materials.cadmium);
-		cadmium_lever = createLever(Materials.cadmium);
-		cadmium_pressure_plate = createPressurePlate(Materials.cadmium);
-		cadmium_stairs = createStairs(Materials.cadmium);
-		cadmium_wall = createWall(Materials.cadmium);
+		if (Options.ENABLE_ALUMINUMBRASS) {
 
-		chromium_block = createBlock(Materials.chromium);
-		chromium_plate = createPlate(Materials.chromium);
-		chromium_ore = createOre(Materials.chromium);
-		chromium_bars = createBars(Materials.chromium);
-		chromium_door = createDoor(Materials.chromium);
-		chromium_trapdoor = createTrapDoor(Materials.chromium);
+			materialName = "aluminumbrass";
 
-		chromium_button = createButton(Materials.chromium);
-		chromium_slab = createSlab(Materials.chromium);
-		double_chromium_slab = createDoubleSlab(Materials.chromium);
-		chromium_lever = createLever(Materials.chromium);
-		chromium_pressure_plate = createPressurePlate(Materials.chromium);
-		chromium_stairs = createStairs(Materials.chromium);
-		chromium_wall = createWall(Materials.chromium);
+			aluminumbrass_block = createBlock(materialName);
+			aluminumbrass_plate = createPlate(materialName);
+			aluminumbrass_bars = createBars(materialName);
+			aluminumbrass_door = createDoor(materialName);
+			aluminumbrass_trapdoor = createTrapDoor(materialName);
 
-		galvanizedsteel_block = createBlock(Materials.galvanizedsteel);
-		galvanizedsteel_plate = createPlate(Materials.galvanizedsteel);
-		galvanizedsteel_bars = createBars(Materials.galvanizedsteel);
-		galvanizedsteel_door = createDoor(Materials.galvanizedsteel);
-		galvanizedsteel_trapdoor = createTrapDoor(Materials.galvanizedsteel);
+			aluminumbrass_button = createButton(materialName);
+			aluminumbrass_slab = createSlab(materialName);
+			double_aluminumbrass_slab = createDoubleSlab(materialName);
+			aluminumbrass_lever = createLever(materialName);
+			aluminumbrass_pressure_plate = createPressurePlate(materialName);
+			aluminumbrass_stairs = createStairs(materialName);
+			aluminumbrass_wall = createWall(materialName);
+		}
 
-		galvanizedsteel_button = createButton(Materials.galvanizedsteel);
-		galvanizedsteel_slab = createSlab(Materials.galvanizedsteel);
-		double_galvanizedsteel_slab = createDoubleSlab(Materials.galvanizedsteel);
-		galvanizedsteel_lever = createLever(Materials.galvanizedsteel);
-		galvanizedsteel_pressure_plate = createPressurePlate(Materials.galvanizedsteel);
-		galvanizedsteel_stairs = createStairs(Materials.galvanizedsteel);
-		galvanizedsteel_wall = createWall(Materials.galvanizedsteel);
+		if (Options.ENABLE_CADMIUM) {
 
-		iridium_block = createBlock(Materials.iridium);
-		iridium_plate = createPlate(Materials.iridium);
-		iridium_ore = createOre(Materials.iridium);
-		iridium_bars = createBars(Materials.iridium);
-		iridium_door = createDoor(Materials.iridium);
-		iridium_trapdoor = createTrapDoor(Materials.iridium);
+			materialName = "cadmium";
 
-		iridium_button = createButton(Materials.iridium);
-		iridium_slab = createSlab(Materials.iridium);
-		double_iridium_slab = createDoubleSlab(Materials.iridium);
-		iridium_lever = createLever(Materials.iridium);
-		iridium_pressure_plate = createPressurePlate(Materials.iridium);
-		iridium_stairs = createStairs(Materials.iridium);
-		iridium_wall = createWall(Materials.iridium);
+		cadmium_block = createBlock(materialName);
+		cadmium_plate = createPlate(materialName);
+		cadmium_ore = createOre(materialName);
+		cadmium_bars = createBars(materialName);
+		cadmium_door = createDoor(materialName);
+		cadmium_trapdoor = createTrapDoor(materialName);
 
-		magnesium_block = createBlock(Materials.magnesium);
-		magnesium_plate = createPlate(Materials.magnesium);
-		magnesium_ore = createOre(Materials.magnesium);
-		magnesium_bars = createBars(Materials.magnesium);
-		magnesium_door = createDoor(Materials.magnesium);
-		magnesium_trapdoor = createTrapDoor(Materials.magnesium);
+		cadmium_button = createButton(materialName);
+		cadmium_slab = createSlab(materialName);
+		double_cadmium_slab = createDoubleSlab(materialName);
+		cadmium_lever = createLever(materialName);
+		cadmium_pressure_plate = createPressurePlate(materialName);
+		cadmium_stairs = createStairs(materialName);
+		cadmium_wall = createWall(materialName);
+		}
 
-		magnesium_button = createButton(Materials.magnesium);
-		magnesium_slab = createSlab(Materials.magnesium);
-		double_magnesium_slab = createDoubleSlab(Materials.magnesium);
-		magnesium_lever = createLever(Materials.magnesium);
-		magnesium_pressure_plate = createPressurePlate(Materials.magnesium);
-		magnesium_stairs = createStairs(Materials.magnesium);
-		magnesium_wall = createWall(Materials.magnesium);
+		if (Options.ENABLE_CHROMIUM) {
 
-		manganese_block = createBlock(Materials.manganese);
-		manganese_plate = createPlate(Materials.manganese);
-		manganese_ore = createOre(Materials.manganese);
-		manganese_bars = createBars(Materials.manganese);
-		manganese_door = createDoor(Materials.manganese);
-		manganese_trapdoor = createTrapDoor(Materials.manganese);
+			materialName = "chromium";
 
-		manganese_button = createButton(Materials.manganese);
-		manganese_slab = createSlab(Materials.manganese);
-		double_manganese_slab = createDoubleSlab(Materials.manganese);
-		manganese_lever = createLever(Materials.manganese);
-		manganese_pressure_plate = createPressurePlate(Materials.manganese);
-		manganese_stairs = createStairs(Materials.manganese);
-		manganese_wall = createWall(Materials.manganese);
+		chromium_block = createBlock(materialName);
+		chromium_plate = createPlate(materialName);
+		chromium_ore = createOre(materialName);
+		chromium_bars = createBars(materialName);
+		chromium_door = createDoor(materialName);
+		chromium_trapdoor = createTrapDoor(materialName);
 
-		nichrome_block = createBlock(Materials.nichrome);
-		nichrome_plate = createPlate(Materials.nichrome);
-		nichrome_bars = createBars(Materials.nichrome);
-		nichrome_door = createDoor(Materials.nichrome);
-		nichrome_trapdoor = createTrapDoor(Materials.nichrome);
+		chromium_button = createButton(materialName);
+		chromium_slab = createSlab(materialName);
+		double_chromium_slab = createDoubleSlab(materialName);
+		chromium_lever = createLever(materialName);
+		chromium_pressure_plate = createPressurePlate(materialName);
+		chromium_stairs = createStairs(materialName);
+		chromium_wall = createWall(materialName);
+		}
 
-		nichrome_button = createButton(Materials.nichrome);
-		nichrome_slab = createSlab(Materials.nichrome);
-		double_nichrome_slab = createDoubleSlab(Materials.nichrome);
-		nichrome_lever = createLever(Materials.nichrome);
-		nichrome_pressure_plate = createPressurePlate(Materials.nichrome);
-		nichrome_stairs = createStairs(Materials.nichrome);
-		nichrome_wall = createWall(Materials.nichrome);
+		if (Options.ENABLE_GALVANIZEDSTEEL) {
 
-		osmium_block = createBlock(Materials.osmium);
-		osmium_plate = createPlate(Materials.osmium);
-		osmium_ore = createOre(Materials.osmium);
-		osmium_bars = createBars(Materials.osmium);
-		osmium_door = createDoor(Materials.osmium);
-		osmium_trapdoor = createTrapDoor(Materials.osmium);
+			materialName = "galvanizedsteel";
 
-		osmium_button = createButton(Materials.osmium);
-		osmium_slab = createSlab(Materials.osmium);
-		double_osmium_slab = createDoubleSlab(Materials.osmium);
-		osmium_lever = createLever(Materials.osmium);
-		osmium_pressure_plate = createPressurePlate(Materials.osmium);
-		osmium_stairs = createStairs(Materials.osmium);
-		osmium_wall = createWall(Materials.osmium);
+		galvanizedsteel_block = createBlock(materialName);
+		galvanizedsteel_plate = createPlate(materialName);
+		galvanizedsteel_bars = createBars(materialName);
+		galvanizedsteel_door = createDoor(materialName);
+		galvanizedsteel_trapdoor = createTrapDoor(materialName);
 
-		plutonium_block = createBlock(Materials.plutonium);
-		plutonium_plate = createPlate(Materials.plutonium);
-		plutonium_ore = createOre(Materials.plutonium);
-		plutonium_bars = createBars(Materials.plutonium);
-		plutonium_door = createDoor(Materials.plutonium);
-		plutonium_trapdoor = createTrapDoor(Materials.plutonium);
+		galvanizedsteel_button = createButton(materialName);
+		galvanizedsteel_slab = createSlab(materialName);
+		double_galvanizedsteel_slab = createDoubleSlab(materialName);
+		galvanizedsteel_lever = createLever(materialName);
+		galvanizedsteel_pressure_plate = createPressurePlate(materialName);
+		galvanizedsteel_stairs = createStairs(materialName);
+		galvanizedsteel_wall = createWall(materialName);
+		}
 
-		plutonium_button = createButton(Materials.plutonium);
-		plutonium_slab = createSlab(Materials.plutonium);
-		double_plutonium_slab = createDoubleSlab(Materials.plutonium);
-		plutonium_lever = createLever(Materials.plutonium);
-		plutonium_pressure_plate = createPressurePlate(Materials.plutonium);
-		plutonium_stairs = createStairs(Materials.plutonium);
-		plutonium_wall = createWall(Materials.plutonium);
+		if (Options.ENABLE_IRIDIUM) {
 
-		rutile_block = createBlock(Materials.rutile);
-		rutile_plate = createPlate(Materials.rutile);
-		rutile_ore = createOre(Materials.rutile);
-		rutile_bars = createBars(Materials.rutile);
-		rutile_door = createDoor(Materials.rutile);
-		rutile_trapdoor = createTrapDoor(Materials.rutile);
+			materialName = "iridium";
 
-		rutile_button = createButton(Materials.rutile);
-		rutile_slab = createSlab(Materials.rutile);
-		double_rutile_slab = createDoubleSlab(Materials.rutile);
-		rutile_lever = createLever(Materials.rutile);
-		rutile_pressure_plate = createPressurePlate(Materials.rutile);
-		rutile_stairs = createStairs(Materials.rutile);
-		rutile_wall = createWall(Materials.rutile);
+		iridium_block = createBlock(materialName);
+		iridium_plate = createPlate(materialName);
+		iridium_ore = createOre(materialName);
+		iridium_bars = createBars(materialName);
+		iridium_door = createDoor(materialName);
+		iridium_trapdoor = createTrapDoor(materialName);
 
-		stainlesssteel_block = createBlock(Materials.stainlesssteel);
-		stainlesssteel_plate = createPlate(Materials.stainlesssteel);
-		stainlesssteel_bars = createBars(Materials.stainlesssteel);
-		stainlesssteel_door = createDoor(Materials.stainlesssteel);
-		stainlesssteel_trapdoor = createTrapDoor(Materials.stainlesssteel);
+		iridium_button = createButton(materialName);
+		iridium_slab = createSlab(materialName);
+		double_iridium_slab = createDoubleSlab(materialName);
+		iridium_lever = createLever(materialName);
+		iridium_pressure_plate = createPressurePlate(materialName);
+		iridium_stairs = createStairs(materialName);
+		iridium_wall = createWall(materialName);
+		}
 
-		stainlesssteel_button = createButton(Materials.stainlesssteel);
-		stainlesssteel_slab = createSlab(Materials.stainlesssteel);
-		double_stainlesssteel_slab = createDoubleSlab(Materials.stainlesssteel);
-		stainlesssteel_lever = createLever(Materials.stainlesssteel);
-		stainlesssteel_pressure_plate = createPressurePlate(Materials.stainlesssteel);
-		stainlesssteel_stairs = createStairs(Materials.stainlesssteel);
-		stainlesssteel_wall = createWall(Materials.stainlesssteel);
+		if (Options.ENABLE_MAGNESIUM) {
 
-		tantalum_block = createBlock(Materials.tantalum);
-		tantalum_plate = createPlate(Materials.tantalum);
-		tantalum_ore = createOre(Materials.tantalum);
-		tantalum_bars = createBars(Materials.tantalum);
-		tantalum_door = createDoor(Materials.tantalum);
-		tantalum_trapdoor = createTrapDoor(Materials.tantalum);
+			materialName = "magnesium";
 
-		tantalum_button = createButton(Materials.tantalum);
-		tantalum_slab = createSlab(Materials.tantalum);
-		double_tantalum_slab = createDoubleSlab(Materials.tantalum);
-		tantalum_lever = createLever(Materials.tantalum);
-		tantalum_pressure_plate = createPressurePlate(Materials.tantalum);
-		tantalum_stairs = createStairs(Materials.tantalum);
-		tantalum_wall = createWall(Materials.tantalum);
+		magnesium_block = createBlock(materialName);
+		magnesium_plate = createPlate(materialName);
+		magnesium_ore = createOre(materialName);
+		magnesium_bars = createBars(materialName);
+		magnesium_door = createDoor(materialName);
+		magnesium_trapdoor = createTrapDoor(materialName);
 
-		titanium_block = createBlock(Materials.titanium);
-		titanium_plate = createPlate(Materials.titanium);
-		titanium_ore = createOre(Materials.titanium);
-		titanium_bars = createBars(Materials.titanium);
-		titanium_door = createDoor(Materials.titanium);
-		titanium_trapdoor = createTrapDoor(Materials.titanium);
+		magnesium_button = createButton(materialName);
+		magnesium_slab = createSlab(materialName);
+		double_magnesium_slab = createDoubleSlab(materialName);
+		magnesium_lever = createLever(materialName);
+		magnesium_pressure_plate = createPressurePlate(materialName);
+		magnesium_stairs = createStairs(materialName);
+		magnesium_wall = createWall(materialName);
+		}
 
-		titanium_button = createButton(Materials.titanium);
-		titanium_slab = createSlab(Materials.titanium);
-		double_titanium_slab = createDoubleSlab(Materials.titanium);
-		titanium_lever = createLever(Materials.titanium);
-		titanium_pressure_plate = createPressurePlate(Materials.titanium);
-		titanium_stairs = createStairs(Materials.titanium);
-		titanium_wall = createWall(Materials.titanium);
+		if (Options.ENABLE_MANGANESE) {
 
-		tungsten_block = createBlock(Materials.tungsten);
-		tungsten_plate = createPlate(Materials.tungsten);
-		tungsten_ore = createOre(Materials.tungsten);
-		tungsten_bars = createBars(Materials.tungsten);
-		tungsten_door = createDoor(Materials.tungsten);
-		tungsten_trapdoor = createTrapDoor(Materials.tungsten);
+			materialName = "manganese";
 
-		tungsten_button = createButton(Materials.tungsten);
-		tungsten_slab = createSlab(Materials.tungsten);
-		double_tungsten_slab = createDoubleSlab(Materials.tungsten);
-		tungsten_lever = createLever(Materials.tungsten);
-		tungsten_pressure_plate = createPressurePlate(Materials.tungsten);
-		tungsten_stairs = createStairs(Materials.tungsten);
-		tungsten_wall = createWall(Materials.tungsten);
+		manganese_block = createBlock(materialName);
+		manganese_plate = createPlate(materialName);
+		manganese_ore = createOre(materialName);
+		manganese_bars = createBars(materialName);
+		manganese_door = createDoor(materialName);
+		manganese_trapdoor = createTrapDoor(materialName);
 
-		uranium_block = createBlock(Materials.uranium);
-		uranium_plate = createPlate(Materials.uranium);
-		uranium_ore = createOre(Materials.uranium);
-		uranium_bars = createBars(Materials.uranium);
-		uranium_door = createDoor(Materials.uranium);
-		uranium_trapdoor = createTrapDoor(Materials.uranium);
+		manganese_button = createButton(materialName);
+		manganese_slab = createSlab(materialName);
+		double_manganese_slab = createDoubleSlab(materialName);
+		manganese_lever = createLever(materialName);
+		manganese_pressure_plate = createPressurePlate(materialName);
+		manganese_stairs = createStairs(materialName);
+		manganese_wall = createWall(materialName);
+		}
 
-		uranium_button = createButton(Materials.uranium);
-		uranium_slab = createSlab(Materials.uranium);
-		double_uranium_slab = createDoubleSlab(Materials.uranium);
-		uranium_lever = createLever(Materials.uranium);
-		uranium_pressure_plate = createPressurePlate(Materials.uranium);
-		uranium_stairs = createStairs(Materials.uranium);
-		uranium_wall = createWall(Materials.uranium);
+		if (Options.ENABLE_NICHROME) {
 
-		zirconium_block = createBlock(Materials.zirconium);
-		zirconium_plate = createPlate(Materials.zirconium);
-		zirconium_ore = createOre(Materials.zirconium);
-		zirconium_bars = createBars(Materials.zirconium);
-		zirconium_door = createDoor(Materials.zirconium);
-		zirconium_trapdoor = createTrapDoor(Materials.zirconium);
+			materialName = "nichrome";
 
-		zirconium_button = createButton(Materials.zirconium);
-		zirconium_slab = createSlab(Materials.zirconium);
-		double_zirconium_slab = createDoubleSlab(Materials.zirconium);
-		zirconium_lever = createLever(Materials.zirconium);
-		zirconium_pressure_plate = createPressurePlate(Materials.zirconium);
-		zirconium_stairs = createStairs(Materials.zirconium);
-		zirconium_wall = createWall(Materials.zirconium);
+		nichrome_block = createBlock(materialName);
+		nichrome_plate = createPlate(materialName);
+		nichrome_bars = createBars(materialName);
+		nichrome_door = createDoor(materialName);
+		nichrome_trapdoor = createTrapDoor(materialName);
 
-		// TODO: Make this support multiple oredicts
-		// final block settings
-		for(final Block b : blockRegistry.values()) {
-			if(b instanceof IOreDictionaryEntry)
-				OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);
-			if(!(b instanceof BlockMetalDoor))
-				b.setCreativeTab(ItemGroups.tab_blocks);
+		nichrome_button = createButton(materialName);
+		nichrome_slab = createSlab(materialName);
+		double_nichrome_slab = createDoubleSlab(materialName);
+		nichrome_lever = createLever(materialName);
+		nichrome_pressure_plate = createPressurePlate(materialName);
+		nichrome_stairs = createStairs(materialName);
+		nichrome_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_OSMIUM) {
+
+			materialName = "osmium";
+
+		osmium_block = createBlock(materialName);
+		osmium_plate = createPlate(materialName);
+		osmium_ore = createOre(materialName);
+		osmium_bars = createBars(materialName);
+		osmium_door = createDoor(materialName);
+		osmium_trapdoor = createTrapDoor(materialName);
+
+		osmium_button = createButton(materialName);
+		osmium_slab = createSlab(materialName);
+		double_osmium_slab = createDoubleSlab(materialName);
+		osmium_lever = createLever(materialName);
+		osmium_pressure_plate = createPressurePlate(materialName);
+		osmium_stairs = createStairs(materialName);
+		osmium_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_PLUTONIUM) {
+
+			materialName = "plutonium";
+
+		plutonium_block = createBlock(materialName);
+		plutonium_plate = createPlate(materialName);
+		plutonium_ore = createOre(materialName);
+		plutonium_bars = createBars(materialName);
+		plutonium_door = createDoor(materialName);
+		plutonium_trapdoor = createTrapDoor(materialName);
+
+		plutonium_button = createButton(materialName);
+		plutonium_slab = createSlab(materialName);
+		double_plutonium_slab = createDoubleSlab(materialName);
+		plutonium_lever = createLever(materialName);
+		plutonium_pressure_plate = createPressurePlate(materialName);
+		plutonium_stairs = createStairs(materialName);
+		plutonium_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_RUTILE) {
+
+			materialName = "rutile";
+
+		rutile_block = createBlock(materialName);
+		rutile_plate = createPlate(materialName);
+		rutile_ore = createOre(materialName);
+		rutile_bars = createBars(materialName);
+		rutile_door = createDoor(materialName);
+		rutile_trapdoor = createTrapDoor(materialName);
+
+		rutile_button = createButton(materialName);
+		rutile_slab = createSlab(materialName);
+		double_rutile_slab = createDoubleSlab(materialName);
+		rutile_lever = createLever(materialName);
+		rutile_pressure_plate = createPressurePlate(materialName);
+		rutile_stairs = createStairs(materialName);
+		rutile_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_STAINLESSSTEEL) {
+
+			materialName = "stainlesssteel";
+
+		stainlesssteel_block = createBlock(materialName);
+		stainlesssteel_plate = createPlate(materialName);
+		stainlesssteel_bars = createBars(materialName);
+		stainlesssteel_door = createDoor(materialName);
+		stainlesssteel_trapdoor = createTrapDoor(materialName);
+
+		stainlesssteel_button = createButton(materialName);
+		stainlesssteel_slab = createSlab(materialName);
+		double_stainlesssteel_slab = createDoubleSlab(materialName);
+		stainlesssteel_lever = createLever(materialName);
+		stainlesssteel_pressure_plate = createPressurePlate(materialName);
+		stainlesssteel_stairs = createStairs(materialName);
+		stainlesssteel_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_TANTALUM) {
+
+			materialName = "tantalum";
+
+		tantalum_block = createBlock(materialName);
+		tantalum_plate = createPlate(materialName);
+		tantalum_ore = createOre(materialName);
+		tantalum_bars = createBars(materialName);
+		tantalum_door = createDoor(materialName);
+		tantalum_trapdoor = createTrapDoor(materialName);
+
+		tantalum_button = createButton(materialName);
+		tantalum_slab = createSlab(materialName);
+		double_tantalum_slab = createDoubleSlab(materialName);
+		tantalum_lever = createLever(materialName);
+		tantalum_pressure_plate = createPressurePlate(materialName);
+		tantalum_stairs = createStairs(materialName);
+		tantalum_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_TITANIUM) {
+
+			materialName = "titanium";
+
+		titanium_block = createBlock(materialName);
+		titanium_plate = createPlate(materialName);
+		titanium_ore = createOre(materialName);
+		titanium_bars = createBars(materialName);
+		titanium_door = createDoor(materialName);
+		titanium_trapdoor = createTrapDoor(materialName);
+
+		titanium_button = createButton(materialName);
+		titanium_slab = createSlab(materialName);
+		double_titanium_slab = createDoubleSlab(materialName);
+		titanium_lever = createLever(materialName);
+		titanium_pressure_plate = createPressurePlate(materialName);
+		titanium_stairs = createStairs(materialName);
+		titanium_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_TUNGSTEN) {
+
+			materialName = "tungsten";
+
+		tungsten_block = createBlock(materialName);
+		tungsten_plate = createPlate(materialName);
+		tungsten_ore = createOre(materialName);
+		tungsten_bars = createBars(materialName);
+		tungsten_door = createDoor(materialName);
+		tungsten_trapdoor = createTrapDoor(materialName);
+
+		tungsten_button = createButton(materialName);
+		tungsten_slab = createSlab(materialName);
+		double_tungsten_slab = createDoubleSlab(materialName);
+		tungsten_lever = createLever(materialName);
+		tungsten_pressure_plate = createPressurePlate(materialName);
+		tungsten_stairs = createStairs(materialName);
+		tungsten_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_URANIUM) {
+
+			materialName = "uranium";
+
+			uranium_block = createBlock(materialName);
+			uranium_plate = createPlate(materialName);
+			uranium_ore = createOre(materialName);
+			uranium_bars = createBars(materialName);
+			uranium_door = createDoor(materialName);
+			uranium_trapdoor = createTrapDoor(materialName);
+
+			uranium_button = createButton(materialName);
+			uranium_slab = createSlab(materialName);
+			double_uranium_slab = createDoubleSlab(materialName);
+			uranium_lever = createLever(materialName);
+			uranium_pressure_plate = createPressurePlate(materialName);
+			uranium_stairs = createStairs(materialName);
+			uranium_wall = createWall(materialName);
+		}
+
+		if (Options.ENABLE_ZIRCONIUM) {
+
+			materialName = "zirconium";
+
+			zirconium_block = createBlock(materialName);
+			zirconium_plate = createPlate(materialName);
+			zirconium_ore = createOre(materialName);
+			zirconium_bars = createBars(materialName);
+			zirconium_door = createDoor(materialName);
+			zirconium_trapdoor = createTrapDoor(materialName);
+
+			zirconium_button = createButton("zirconium");
+			zirconium_slab = createSlab(materialName);
+			double_zirconium_slab = createDoubleSlab(materialName);
+			zirconium_lever = createLever(materialName);
+			zirconium_pressure_plate = createPressurePlate(materialName);
+			zirconium_stairs = createStairs(materialName);
+			zirconium_wall = createWall(materialName);
 		}
 
 		initDone = true;
-	}
-
-	private static Block addBlock(Block block, String name) {
-		final ResourceLocation location = new ResourceLocation(ModernMetals.MODID, name);
-		block.setRegistryName(location);
-		block.setUnlocalizedName(location.toString());
-		GameRegistry.register(block);
-
-		if (!(block instanceof BlockMetalDoor) && !(block instanceof BlockMetalSlab)) {
-			final ItemBlock itemBlock = new ItemBlock(block);
-			itemBlock.setRegistryName(location);
-			itemBlock.setUnlocalizedName(location.toString());
-			GameRegistry.register(itemBlock);
-		}
-
-		blockRegistry.put(name, block);
-		return block;
-	}
-
-	private static Block createPlate(MetalMaterial metal) {
-		return addBlock(new BlockMetalPlate(metal), metal.getName() + "_plate");
-	}
-
-	private static Block createBars(MetalMaterial metal) {
-		return addBlock(new BlockMetalBars(metal), metal.getName() + "_bars");
-	}
-
-	private static Block createBlock(MetalMaterial metal) {
-		return createBlock(metal, false);
-	}
-
-	private static Block createBlock(MetalMaterial metal, boolean glow) {
-		return addBlock(new BlockMetalBlock(metal, glow), metal.getName() + "_block");
-	}
-
-	private static Block createButton(MetalMaterial metal) {
-		return addBlock(new BlockButtonMetal(metal), metal.getName() + "_button");
-	}
-
-	private static Block createLever(MetalMaterial metal) {
-		return addBlock(new BlockMetalLever(metal), metal.getName() + "_lever");
-	}
-
-	private static Block createPressurePlate(MetalMaterial metal) {
-		return addBlock(new BlockMetalPressurePlate(metal), metal.getName() + "_pressure_plate");
-	}
-
-	private static BlockSlab createSlab(MetalMaterial metal) {
-		return (BlockSlab)addBlock(new BlockHalfMetalSlab(metal), metal.getName() + "_slab");
-	}
-
-	private static BlockSlab createDoubleSlab(MetalMaterial metal) {
-		return (BlockSlab)addBlock(new BlockDoubleMetalSlab(metal), "double_" + metal.getName() + "_slab");
-	}
-
-	private static Block createStairs(MetalMaterial metal) {
-		return addBlock(new BlockMetalStairs(metal, Blocks.getBlockByName(metal.getName() + "_block")), metal.getName() + "_stairs");
-	}
-
-	private static Block createWall(MetalMaterial metal) {
-		return addBlock(new BlockMetalWall(metal, Blocks.getBlockByName(metal.getName() + "_block")), metal.getName() + "_wall");
-	}
-
-	private static Block createOre(MetalMaterial metal) {
-		return addBlock(new BlockMetalOre(metal), metal.getName() + "_ore");
-	}
-
-	private static BlockDoor createDoor(MetalMaterial metal) {
-		return (BlockDoor)addBlock(new modernmetals.blocks.BlockMetalDoor(metal), metal.getName() + "_door");
-	}
-
-	private static Block createTrapDoor(MetalMaterial metal) {
-		return addBlock(new BlockMetalTrapDoor(metal), metal.getName() + "_trapdoor");
-	}
-
-	/**
-	 * 
-	 * @param event
-	 */
-	@SideOnly(Side.CLIENT)
-	public static void registerItemRenders(FMLInitializationEvent event) {
-		for(final String name : blockRegistry.keySet()) {
-			if(blockRegistry.get(name) instanceof BlockDoor)
-				continue; // do not add door blocks
-			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
-			.register(net.minecraft.item.Item.getItemFromBlock(blockRegistry.get(name)), 0,
-				new ModelResourceLocation(new ResourceLocation(ModernMetals.MODID, name), "inventory"));
-		}
-	}
-
-	public static Map<String, Block> getBlockRegistry() {
-		return blockRegistry;
 	}
 }

@@ -1,5 +1,5 @@
 # ModernMetals [![Build Status](https://travis-ci.org/jriwanek/ModernMetals.svg?branch=master)](https://travis-ci.org/jriwanek/ModernMetals)
-Addon to BaseMetals supporting Modern Metals along with a few utility items
+Addon to BaseMetals supporting Modern Metals
 
 Content
 -------
