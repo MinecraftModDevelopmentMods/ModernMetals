@@ -7,7 +7,7 @@ import com.mcmoddev.basemetals.material.MetalMaterial;
 /**
  * This class initializes all of the materials in Modern Metals.
  *
- * @author DrCyano
+ * @author Jasmine Iwanek
  *
  */
 public class Materials extends com.mcmoddev.lib.init.Materials {

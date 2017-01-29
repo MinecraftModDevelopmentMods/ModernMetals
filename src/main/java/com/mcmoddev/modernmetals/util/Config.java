@@ -10,8 +10,8 @@ import org.apache.logging.log4j.Level;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.AdditionalLootTables;
 import com.mcmoddev.modernmetals.data.DataConstants;
-
 import com.mcmoddev.basemetals.registry.CrusherRecipeRegistry;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.*;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -30,7 +30,7 @@ public class Config {
 //	private static final String GENERAL_CAT = "General";
 //	private static final String INTEGRATION_CAT = "Mod Integration";
 	private static final String MATERIALS_CAT = "Metals";
-	private static final String ALT_CFG_PATH = "config/additional-loot-tables"; // + ModernMetals.MODID;
+	private static final String ALT_CFG_PATH = "config/additional-loot-tables";
 	private static final String ORESPAWN_CFG_PATH = "config/orespawn";
 //	private static List<String> USER_CRUSHER_RECIPES = new ArrayList<String>();
 
@@ -46,27 +46,6 @@ public class Config {
 			CONFIG = new Configuration(new File(CONFIG_FILE));
 			MinecraftForge.EVENT_BUS.register(new Config());
 		}
-
-		//GENERAL
-		// enablePotionRecipes = config.getBoolean("enable_potions", "options",
-		// enablePotionRecipes,
-		// "If true, then some metals can be used to brew potions.");
-
-		//GENERAL
-		//Options.DISABLE_ALL_HAMMERS = CONFIG.getBoolean("disable_crack_hammer", GENERAL_CAT, false, "If true, then the crack hammer cannot be crafted.");
-		//Options.ENFORCE_HARDNESS = CONFIG.getBoolean("enforce_hardness", GENERAL_CAT, true, "If true, then the crack hammer cannot crush ingots into powders if that \n" + "crackhammer is not hard enough to crush the ingot's ore.");
-		//Options.STRONG_HAMMERS = CONFIG.getBoolean("strong_hammers", GENERAL_CAT, true, "If true, then the crack hammer can crush ingots/ores that a pickaxe of the same \n" + "material can harvest. If false, then your crack hammer must be made of a harder \n" + "material than the ore you are crushing.");
-		//Options.AUTODETECT_RECIPES = CONFIG.getBoolean("automatic_recipes", GENERAL_CAT, true, "If true, then Base Metals will scan the Ore Dictionary to automatically add a \n" + "Crack Hammer recipe for every material that has an ore, dust, and ingot.");
-		//Options.REQUIRE_ORESPAWN = CONFIG.getBoolean("using_orespawn", GENERAL_CAT, true, "If false, then Modern Metals will not require DrCyano's Ore Spawn mod. \n" + "Set to false if using another mod to manually handle ore generation.");
-		//Options.ENABLE_ACHIEVEMENTS = CONFIG.getBoolean("achievements", GENERAL_CAT, true, "If false, then Base Metals Achievements will be disabled (This is currently required if you disable any metals");
-
-		// INTEGRATION
-		//Options.ENABLE_ENDER_IO = CONFIG.getBoolean("ender_io_integration", INTEGRATION_CAT, true, "If false, then Modern Metals will not try and integrate with Ender IO");
-		//Options.ENABLE_IC2 = CONFIG.getBoolean("ic2_integration", INTEGRATION_CAT, true, "If false, then Modern Metals will not try and integrate with IC2");
-		//Options.ENABLE_MEKANISM = CONFIG.getBoolean("mekanism_integration", INTEGRATION_CAT, true, "If false, then Modern Metals will not try and integrate with Mekanism");
-		//Options.ENABLE_THAUMCRAFT = CONFIG.getBoolean("thaumcraft_integration", INTEGRATION_CAT, true, "If false, then Modern Metals will not try and integrate with Thaumcraft");
-		//Options.ENABLE_TINKERS_CONSTRUCT = CONFIG.getBoolean("tinkers_construct_integration", INTEGRATION_CAT, true, "If false, then Modern Metals will not try and integrate with Tinkers Construct");
-		//Options.ENABLE_VEINMINER = CONFIG.getBoolean("veinminer_integration", INTEGRATION_CAT, true, "If false, then Modern Metals will not try and integrate with VeinMiner");
 
 		// METALS
 		Options.ENABLE_ALUMINUM = CONFIG.getBoolean("EnableAluminum", MATERIALS_CAT, true, "Enable Aluminum Items and Materials");
@@ -173,57 +152,4 @@ public class Config {
 	public static void postInit() {
 		CrusherRecipeRegistry.getInstance().clearCache();
 	}
-
-	/**
-	 * Parses a String in the format (stack-size)*(modid):(item/block
-	 * name)#(metadata value). The stacksize and metadata value parameters are
-	 * optional.
-	 *
-	 * @param str
-	 *            A String describing an itemstack (e.g. "4*minecraft:dye#15" or
-	 *            "minecraft:bow")
-	 * @param allowWildcard
-	 *            If true, then item strings that do not specify a metadata
-	 *            value will use the OreDictionary wildcard value. If false,
-	 *            then the default meta value is 0 instead.
-	 * @return An ItemStack representing the item, or null if the item is not
-	 *         found
-	 */
-	/*
-	public static ItemStack parseStringAsItemStack(String str, boolean allowWildcard) {
-		str = str.trim();
-		int count = 1;
-		int meta;
-		if (allowWildcard) {
-			meta = OreDictionary.WILDCARD_VALUE;
-		}
-		else {
-			meta = 0;
-		}
-		int nameStart = 0;
-		int nameEnd = str.length();
-		if (str.contains("*")) {
-			count = Integer.parseInt(str.substring(0, str.indexOf('*')).trim());
-			nameStart = str.indexOf('*') + 1;
-		}
-		if (str.contains("#")) {
-			meta = Integer.parseInt(str.substring(str.indexOf('#') + 1, str.length()).trim());
-			nameEnd = str.indexOf('#');
-		}
-		final String id = str.substring(nameStart, nameEnd).trim();
-		if (Block.getBlockFromName(id) != null) {
-			// is a block
-			return new ItemStack(Block.getBlockFromName(id), count, meta);
-		}
-		else if (Item.getByNameOrId(id) != null) {
-			// is an item
-			return new ItemStack(Item.getByNameOrId(id), count, meta);
-		}
-		else {
-			// item not found
-			FMLLog.severe("Failed to find item or block for ID '" + id + "'");
-			return null;
-		}
-	}
-	*/
 }

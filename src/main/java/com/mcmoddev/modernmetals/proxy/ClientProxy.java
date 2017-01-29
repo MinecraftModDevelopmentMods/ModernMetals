@@ -3,8 +3,6 @@ package com.mcmoddev.modernmetals.proxy;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.init.*;
 
-import com.mcmoddev.basemetals.client.renderer.RenderCustomArrow;
-import com.mcmoddev.basemetals.entity.EntityCustomArrow;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
@@ -15,7 +13,6 @@ import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -46,35 +43,44 @@ public class ClientProxy extends CommonProxy {
 				}
 			});
 		}
-
-		RenderingRegistry.registerEntityRenderingHandler(EntityCustomArrow.class, RenderCustomArrow::new);
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
 		super.init(event);
-		final ItemModelMesher itemModelMesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
 
 		for (final String name : Items.getItemRegistry().keySet()) {
-			final Item item = Items.getItemByName(name);
-			if (!item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID))
-				continue;
-			itemModelMesher.register(item, 0, new ModelResourceLocation(new ResourceLocation(item.getRegistryName().getResourceDomain(), name), "inventory"));
+			registerRenderOuter(Items.getItemByName(name));
 		}
 
 		for (final String name : Blocks.getBlockRegistry().keySet()) {
-			final Block block = Blocks.getBlockByName(name);
-			if ((block instanceof BlockDoor) || (block instanceof BlockSlab))
-				continue; // do not add door blocks
-			final Item item = Item.getItemFromBlock(block);
-			if (!item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID))
-				continue;
-			itemModelMesher.register(item, 0, new ModelResourceLocation(new ResourceLocation(item.getRegistryName().getResourceDomain(), name), "inventory"));
+			registerRenderOuter(Blocks.getBlockByName(name));
 		}
 	}
 
 	@Override
 	public void postInit(FMLPostInitializationEvent event) {
 		super.postInit(event);
+	}
+	public void registerRenderOuter(Item item) {
+		if (item != null) {
+			registerRender(item, Items.getNameOfItem(item));
+		}
+	}
+
+	public void registerRenderOuter(Block block) {
+		if ((block instanceof BlockDoor) || (block instanceof BlockSlab))
+			return; // do not add door blocks or slabs
+
+		if (block != null) {
+			registerRender(Item.getItemFromBlock(block), Blocks.getNameOfBlock(block));
+		}
+	}
+
+	public void registerRender(Item item, String name) {
+		final ItemModelMesher itemModelMesher = Minecraft.getMinecraft().getRenderItem().getItemModelMesher();
+		if (!item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID))
+			return;
+		itemModelMesher.register(item, 0, new ModelResourceLocation(new ResourceLocation(item.getRegistryName().getResourceDomain(), name), "inventory"));
 	}
 }

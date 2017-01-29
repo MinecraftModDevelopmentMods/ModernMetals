@@ -37,27 +37,6 @@ public class CommonProxy {
 		FMLInterModComms.sendFunctionMessage("orespawn", "api", "com.mcmoddev.orespawn.ModernMetalsOreSpawn");
 
 		IntegrationManager.INSTANCE.preInit(event);
-
-		/*
-		if ((Loader.isModLoaded("EnderIO")) && Options.ENABLE_ENDER_IO) {
-			EnderIO.init();
-		}
-		if ((Loader.isModLoaded("IC2")) && Options.ENABLE_IC2) {
-			//IC2.init();
-		}
-		if ((Loader.isModLoaded("tconstruct")) && Options.ENABLE_TINKERS_CONSTRUCT) {
-			TinkersConstruct.init();
-		}
-		if ((Loader.isModLoaded("Mekanism")) && Options.ENABLE_MEKANISM) {
-			Mekanism.init();
-		}
-		if ((Loader.isModLoaded("thaumcraft")) && Options.ENABLE_THAUMCRAFT) {
-			//Thaumcraft.init();
-		}
-		if ((Loader.isModLoaded("veinminer")) && Options.ENABLE_VEINMINER) {
-			VeinMiner.init();
-		}
-		*/
 	}
 
 	public void onRemap(FMLMissingMappingsEvent event) {

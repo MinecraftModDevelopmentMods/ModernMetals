@@ -1,8 +1,8 @@
 package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
-
 import com.mcmoddev.basemetals.material.MetalMaterial;
+
 import net.minecraft.item.*;
 
 /**
@@ -11,7 +11,7 @@ import net.minecraft.item.*;
  * @author Jasmine Iwanek
  *
  */
-public class Items extends com.mcmoddev.basemetals.init.Items {
+public class Items extends com.mcmoddev.lib.init.Items {
 
 	public static Item aluminum_boots;
 	public static Item aluminum_chestplate;
@@ -390,7 +390,6 @@ public class Items extends com.mcmoddev.basemetals.init.Items {
 		}
 
 		if (Options.ENABLE_TANTALUM) {
-
 			material = Materials.tantalum;
 			createItemsFull(material);
 			createItemsModSupport(material);

@@ -1,18 +1,12 @@
 package com.mcmoddev.modernmetals.init;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
-
-import com.mcmoddev.modernmetals.init.Items;
-import com.mcmoddev.modernmetals.init.Materials;
-
 /**
  * This class initializes all item groups in Modern Metals.
  *
- * @author DrCyano
+ * @author Jasmine Iwanek
  *
  */
-public class ItemGroups extends com.mcmoddev.basemetals.init.ItemGroups {
+public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 /*
 	public static final java.util.function.BiFunction<ItemStack, ItemStack, Integer> sortingAlgorithm = (ItemStack a, ItemStack b) -> {
 		final int delta = Items.getSortingValue(a) - Items.getSortingValue(b);

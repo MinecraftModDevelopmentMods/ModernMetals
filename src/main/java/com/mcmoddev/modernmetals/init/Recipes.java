@@ -11,7 +11,7 @@ import net.minecraftforge.oredict.*;
  * @author Jasmine Iwanek
  *
  */
-public class Recipes extends com.mcmoddev.basemetals.init.Recipes {
+public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 	private static boolean initDone = false;
 
@@ -119,7 +119,7 @@ public class Recipes extends com.mcmoddev.basemetals.init.Recipes {
 		if (Options.ENABLE_ALUMINUMBRASS) {
 			OreDictionary.registerOre("blockAlubrass", Materials.aluminumbrass.block);
 			OreDictionary.registerOre("plateAlubrass", Materials.aluminumbrass.plate);
-			OreDictionary.registerOre("barsAlurass", Materials.aluminumbrass.bars);
+			OreDictionary.registerOre("barsAlubrass", Materials.aluminumbrass.bars);
 //			OreDictionary.registerOre("doorAlubrass", Materials.aluminumbrass_doorBlock);
 			OreDictionary.registerOre("trapdoorAlubrass", Materials.aluminumbrass.trapdoor);
 			OreDictionary.registerOre("dustAlubrass", Materials.aluminumbrass.blend);

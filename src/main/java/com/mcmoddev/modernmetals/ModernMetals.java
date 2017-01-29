@@ -17,7 +17,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
  * @author Jasmine Iwanek
  *
  */
-@Mod(modid = ModernMetals.MODID, name = ModernMetals.NAME, version = ModernMetals.VERSION, dependencies = "required-after:Forge@[12.17.0.1976,);required-after:basemetals;before:buildingbricks", acceptedMinecraftVersions = "[1.10.2,)", updateJSON = "https://raw.githubusercontent.com/MinecraftModDevelopment/ModernMetals/master/update.json")
+@Mod(modid = ModernMetals.MODID, name = ModernMetals.NAME, version = ModernMetals.VERSION, dependencies = "required-after:Forge@[12.17.0.1976,);required-after:basemetals;before:buildingbricks", acceptedMinecraftVersions = "[1.10.2,)", updateJSON = ModernMetals.UPDATEJSON)
 public class ModernMetals {
 
 	@Instance
@@ -35,6 +35,8 @@ public class ModernMetals {
 	 * compatibility with other mods that depend on this one.
 	 */
 	public static final String VERSION = "0.12.0-beta1";
+
+	public static final String UPDATEJSON = "https://raw.githubusercontent.com/MinecraftModDevelopment/ModernMetals/master/update.json";
 
 	@SidedProxy(clientSide = "com.mcmoddev.modernmetals.proxy.ClientProxy", serverSide = "com.mcmoddev.modernmetals.proxy.ServerProxy")
 	public static CommonProxy PROXY;

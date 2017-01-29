@@ -11,7 +11,7 @@ import net.minecraft.block.*;
  * @author Jasmine Iwanek
  *
  */
-public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
+public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
 	public static Block aluminum_block;
 	public static Block aluminum_ore;
@@ -79,7 +79,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		MetalMaterial material;
 
 		if (Options.ENABLE_ALUMINUM) {
-
 			material = Materials.aluminum;
 			createBlocksFull(material);
 
@@ -88,7 +87,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_ALUMINUMBRASS) {
-
 			material = Materials.aluminumbrass;
 			createBlocksFull(material);
 
@@ -96,7 +94,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_CADMIUM) {
-
 			material = Materials.cadmium;
 			createBlocksFull(material);
 
@@ -105,7 +102,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_CHROMIUM) {
-
 			material = Materials.chromium;
 			createBlocksFull(material);
 
@@ -114,7 +110,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_GALVANIZEDSTEEL) {
-
 			material = Materials.galvanizedsteel;
 			createBlocksFull(material);
 
@@ -122,7 +117,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_IRIDIUM) {
-
 			material = Materials.iridium;
 			createBlocksFull(material);
 
@@ -131,7 +125,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_MAGNESIUM) {
-
 			material = Materials.magnesium;
 			createBlocksFull(material);
 
@@ -140,7 +133,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_MANGANESE) {
-
 			material = Materials.manganese;
 			createBlocksFull(material);
 
@@ -149,7 +141,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_NICHROME) {
-
 			material = Materials.nichrome;
 			createBlocksFull(material);
 
@@ -157,7 +148,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_OSMIUM) {
-
 			material = Materials.osmium;
 			createBlocksFull(material);
 
@@ -166,7 +156,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_PLUTONIUM) {
-
 			material = Materials.plutonium;
 			createBlocksFull(material);
 
@@ -175,7 +164,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_RUTILE) {
-
 			material = Materials.rutile;
 			createBlocksFull(material);
 
@@ -184,7 +172,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_STAINLESSSTEEL) {
-
 			material = Materials.stainlesssteel;
 			createBlocksFull(material);
 
@@ -192,7 +179,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_TANTALUM) {
-
 			material = Materials.tantalum;
 			createBlocksFull(material);
 
@@ -201,7 +187,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_TITANIUM) {
-
 			material = Materials.titanium;
 			createBlocksFull(material);
 
@@ -210,7 +195,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_TUNGSTEN) {
-
 			material = Materials.tungsten;
 			createBlocksFull(material);
 
@@ -219,7 +203,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_URANIUM) {
-
 			material = Materials.uranium;
 			createBlocksFull(material);
 
@@ -228,7 +211,6 @@ public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 		}
 
 		if (Options.ENABLE_ZIRCONIUM) {
-
 			material = Materials.zirconium;
 			createBlocksFull(material);
 
