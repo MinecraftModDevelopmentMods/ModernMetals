@@ -1,4 +1,4 @@
-1) Tinkers Construct Tools (In Progress)
+1) Tinkers Construct Tools (Still needs traits)
 2) Code cleanups (Thanks to lclc98 for the assistance)
 3) Support Items for Mekanism
 4) Support Items for IC2
@@ -11,3 +11,4 @@
 11) Fishing Rods now actually work. (Thanks to lclc98 for the assistance)
 12) Veinminer integration
 13) Ender IO Integration
+14) More Zinc Stuff

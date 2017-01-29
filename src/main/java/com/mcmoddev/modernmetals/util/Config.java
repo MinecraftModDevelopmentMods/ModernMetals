@@ -11,7 +11,7 @@ import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.AdditionalLootTables;
 import com.mcmoddev.modernmetals.data.DataConstants;
 
-import cyano.basemetals.registry.CrusherRecipeRegistry;
+import com.mcmoddev.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.*;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
@@ -92,7 +92,7 @@ public class Config {
 			CONFIG.save();
 		}
 
-		if (cyano.basemetals.util.Config.Options.REQUIRE_ORESPAWN) {
+		if (com.mcmoddev.basemetals.util.Config.Options.REQUIRE_ORESPAWN) {
 			if (!Loader.isModLoaded("orespawn")) {
 				final HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
 				orespawnMod.add(new DefaultArtifactVersion("1.1.0"));

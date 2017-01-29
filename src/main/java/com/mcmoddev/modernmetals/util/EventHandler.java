@@ -3,11 +3,11 @@ package com.mcmoddev.modernmetals.util;
 import com.mcmoddev.modernmetals.init.Achievements;
 import com.mcmoddev.modernmetals.init.Materials;
 
-import cyano.basemetals.items.ItemMetalBlend;
-import cyano.basemetals.items.ItemMetalIngot;
-import cyano.basemetals.material.IMetalObject;
-import cyano.basemetals.material.MetalMaterial;
-import cyano.basemetals.util.Config.Options;
+import com.mcmoddev.lib.items.ItemMetalBlend;
+import com.mcmoddev.lib.items.ItemMetalIngot;
+import com.mcmoddev.basemetals.material.IMetalObject;
+import com.mcmoddev.basemetals.material.MetalMaterial;
+import com.mcmoddev.basemetals.util.Config.Options;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;

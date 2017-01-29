@@ -21,7 +21,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class ModernMetals {
 
 	@Instance
-	public static ModernMetals INSTANCE = new ModernMetals();
+	public static ModernMetals INSTANCE;
 
 	/** ID of this Mod */
 	public static final String MODID = "modernmetals";
@@ -36,12 +36,11 @@ public class ModernMetals {
 	 */
 	public static final String VERSION = "0.12.0-beta1";
 
-	@SidedProxy(clientSide = "modernmetals.proxy.ClientProxy", serverSide = "modernmetals.proxy.ServerProxy")
+	@SidedProxy(clientSide = "com.mcmoddev.modernmetals.proxy.ClientProxy", serverSide = "com.mcmoddev.modernmetals.proxy.ServerProxy")
 	public static CommonProxy PROXY;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-//		INSTANCE = this;
 		PROXY.preInit(event);
 	}
 

@@ -11,7 +11,7 @@ import net.minecraftforge.oredict.*;
  * @author Jasmine Iwanek
  *
  */
-public class Recipes extends cyano.basemetals.init.Recipes {
+public class Recipes extends com.mcmoddev.basemetals.init.Recipes {
 
 	private static boolean initDone = false;
 
@@ -34,18 +34,26 @@ public class Recipes extends cyano.basemetals.init.Recipes {
 
 	private static void initModSpecificRecipes() {
 		// alloy blends
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.aluminumbrass.blend, 2), "dustAluminum", "dustBrass"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.galvanizedsteel.blend, 2), "dustSteel", "dustZinc"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.nichrome.blend, 2), "dustNickel", "dustChromium"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.stainlesssteel.blend, 2), "dustSteel", "dustChromium"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.titanium.blend, 2), "dustRutile", "dustMagnesium"));
-
-		// small alloy blends
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.aluminumbrass.smallblend, 2), "smalldustAluminum", "smalldustBrass"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.galvanizedsteel.smallblend, 2), "smalldustSteel", "smalldustZinc"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.nichrome.smallblend, 2), "smalldustNickel", "smalldustChromium"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.stainlesssteel.smallblend, 2), "smalldustSteel", "smalldustChromium"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.titanium.smallblend, 2), "smalldustRutile", "smalldustMagnesium"));
+		if (Options.ENABLE_ALUMINUMBRASS) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.aluminumbrass.blend, 2), "dustAluminum", "dustBrass"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.aluminumbrass.smallblend, 2), "smalldustAluminum", "smalldustBrass"));
+		}
+		if (Options.ENABLE_GALVANIZEDSTEEL) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.galvanizedsteel.blend, 2), "dustSteel", "dustZinc"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.galvanizedsteel.smallblend, 2), "smalldustSteel", "smalldustZinc"));
+		}
+		if (Options.ENABLE_NICHROME) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.nichrome.blend, 2), "dustNickel", "dustChromium"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.nichrome.smallblend, 2), "smalldustNickel", "smalldustChromium"));
+		}
+		if (Options.ENABLE_STAINLESSSTEEL) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.stainlesssteel.blend, 2), "dustSteel", "dustChromium"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.stainlesssteel.smallblend, 2), "smalldustSteel", "smalldustChromium"));
+		}
+		if (Options.ENABLE_TITANIUM) {
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.titanium.blend, 2), "dustRutile", "dustMagnesium"));
+			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.titanium.smallblend, 2), "smalldustRutile", "smalldustMagnesium"));
+		}
 
 		// Alt oreDict Chrome
 		if (Options.ENABLE_CHROMIUM) {

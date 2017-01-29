@@ -2,7 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
 
-import cyano.basemetals.material.MetalMaterial;
+import com.mcmoddev.basemetals.material.MetalMaterial;
 import net.minecraft.item.*;
 
 /**
@@ -11,7 +11,7 @@ import net.minecraft.item.*;
  * @author Jasmine Iwanek
  *
  */
-public class Items extends cyano.basemetals.init.Items {
+public class Items extends com.mcmoddev.basemetals.init.Items {
 
 	public static Item aluminum_boots;
 	public static Item aluminum_chestplate;
@@ -197,6 +197,7 @@ public class Items extends cyano.basemetals.init.Items {
 		if (Options.ENABLE_ALUMINUM) {
 			material = Materials.aluminum;
 			createItemsFull(material);
+			createItemsModSupport(material);
 
 			aluminum_boots = createBoots(material);
 			aluminum_chestplate = createChestplate(material);
@@ -207,6 +208,7 @@ public class Items extends cyano.basemetals.init.Items {
 			aluminum_powder = createPowder(material);
 			aluminum_sword = createSword(material);
 		}
+
 		if (Options.ENABLE_ALUMINUMBRASS) {
 			material = Materials.aluminumbrass;
 			createItemsFull(material);
@@ -221,9 +223,11 @@ public class Items extends cyano.basemetals.init.Items {
 			aluminumbrass_powder = createPowder(material);
 			aluminumbrass_sword = createSword(material);
 		}
+
 		if (Options.ENABLE_CADMIUM) {
 			material = Materials.cadmium;
 			createItemsFull(material);
+			createItemsModSupport(material);
 
 			cadmium_boots = createBoots(material);
 			cadmium_chestplate = createChestplate(material);
@@ -236,229 +240,230 @@ public class Items extends cyano.basemetals.init.Items {
 		}
 
 		if (Options.ENABLE_CHROMIUM) {
-		material = Materials.chromium;
-		createItemsFull(material);
+			material = Materials.chromium;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		chromium_boots = createBoots(material);
-		chromium_chestplate = createChestplate(material);
-		chromium_helmet = createHelmet(material);
-		chromium_ingot = createIngot(material);
-		chromium_leggings = createLeggings(material);
-		chromium_nugget = createNugget(material);
-		chromium_powder = createPowder(material);
-		chromium_sword = createSword(material);
+			chromium_boots = createBoots(material);
+			chromium_chestplate = createChestplate(material);
+			chromium_helmet = createHelmet(material);
+			chromium_ingot = createIngot(material);
+			chromium_leggings = createLeggings(material);
+			chromium_nugget = createNugget(material);
+			chromium_powder = createPowder(material);
+			chromium_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_GALVANIZEDSTEEL) {
-		material = Materials.galvanizedsteel;
-		createItemsFull(material);
+			material = Materials.galvanizedsteel;
+			createItemsFull(material);
 
-		galvanizedsteel_blend = createBlend(material);
-		galvanizedsteel_boots = createBoots(material);
-		galvanizedsteel_chestplate = createChestplate(material);
-		galvanizedsteel_helmet = createHelmet(material);
-		galvanizedsteel_ingot = createIngot(material);
-		galvanizedsteel_leggings = createLeggings(material);
-		galvanizedsteel_nugget = createNugget(material);
-		galvanizedsteel_powder = createPowder(material);
-		galvanizedsteel_sword = createSword(material);
+			galvanizedsteel_blend = createBlend(material);
+			galvanizedsteel_boots = createBoots(material);
+			galvanizedsteel_chestplate = createChestplate(material);
+			galvanizedsteel_helmet = createHelmet(material);
+			galvanizedsteel_ingot = createIngot(material);
+			galvanizedsteel_leggings = createLeggings(material);
+			galvanizedsteel_nugget = createNugget(material);
+			galvanizedsteel_powder = createPowder(material);
+			galvanizedsteel_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_IRIDIUM) {
-		material = Materials.iridium;
-		createItemsFull(material);
+			material = Materials.iridium;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		iridium_boots = createBoots(material);
-		iridium_chestplate = createChestplate(material);
-		iridium_helmet = createHelmet(material);
-		iridium_ingot = createIngot(material);
-		iridium_leggings = createLeggings(material);
-		iridium_nugget = createNugget(material);
-		iridium_powder = createPowder(material);
-		iridium_sword = createSword(material);
+			iridium_boots = createBoots(material);
+			iridium_chestplate = createChestplate(material);
+			iridium_helmet = createHelmet(material);
+			iridium_ingot = createIngot(material);
+			iridium_leggings = createLeggings(material);
+			iridium_nugget = createNugget(material);
+			iridium_powder = createPowder(material);
+			iridium_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_MAGNESIUM) {
+			material = Materials.magnesium;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		material = Materials.magnesium;
-		createItemsFull(material);
-
-		magnesium_boots = createBoots(material);
-		magnesium_chestplate = createChestplate(material);
-		magnesium_helmet = createHelmet(material);
-		magnesium_ingot = createIngot(material);
-		magnesium_leggings = createLeggings(material);
-		magnesium_nugget = createNugget(material);
-		magnesium_powder = createPowder(material);
-		magnesium_sword = createSword(material);
+			magnesium_boots = createBoots(material);
+			magnesium_chestplate = createChestplate(material);
+			magnesium_helmet = createHelmet(material);
+			magnesium_ingot = createIngot(material);
+			magnesium_leggings = createLeggings(material);
+			magnesium_nugget = createNugget(material);
+			magnesium_powder = createPowder(material);
+			magnesium_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_MANGANESE) {
+			material = Materials.manganese;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		material = Materials.manganese;
-		createItemsFull(material);
-
-		manganese_boots = createBoots(material);
-		manganese_chestplate = createChestplate(material);
-		manganese_helmet = createHelmet(material);
-		manganese_ingot = createIngot(material);
-		manganese_leggings = createLeggings(material);
-		manganese_nugget = createNugget(material);
-		manganese_powder = createPowder(material);
-		manganese_sword = createSword(material);
+			manganese_boots = createBoots(material);
+			manganese_chestplate = createChestplate(material);
+			manganese_helmet = createHelmet(material);
+			manganese_ingot = createIngot(material);
+			manganese_leggings = createLeggings(material);
+			manganese_nugget = createNugget(material);
+			manganese_powder = createPowder(material);
+			manganese_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_NICHROME) {
+			material = Materials.nichrome;
+			createItemsFull(material);
 
-		material = Materials.nichrome;
-		createItemsFull(material);
-
-		nichrome_blend = createBlend(material);
-		nichrome_boots = createBoots(material);
-		nichrome_chestplate = createChestplate(material);
-		nichrome_helmet = createHelmet(material);
-		nichrome_ingot = createIngot(material);
-		nichrome_leggings = createLeggings(material);
-		nichrome_nugget = createNugget(material);
-		nichrome_powder = createPowder(material);
-		nichrome_sword = createSword(material);
+			nichrome_blend = createBlend(material);
+			nichrome_boots = createBoots(material);
+			nichrome_chestplate = createChestplate(material);
+			nichrome_helmet = createHelmet(material);
+			nichrome_ingot = createIngot(material);
+			nichrome_leggings = createLeggings(material);
+			nichrome_nugget = createNugget(material);
+			nichrome_powder = createPowder(material);
+			nichrome_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_OSMIUM) {
+			material = Materials.osmium;
+			createItemsFull(material);
+			createItemsModIC2(material);
 
-		material = Materials.osmium;
-		createItemsFull(material);
-
-		osmium_boots = createBoots(material);
-		osmium_chestplate = createChestplate(material);
-		osmium_helmet = createHelmet(material);
-		osmium_ingot = createIngot(material);
-		osmium_leggings = createLeggings(material);
-		osmium_nugget = createNugget(material);
-		osmium_powder = createPowder(material);
-		osmium_sword = createSword(material);
+			osmium_boots = createBoots(material);
+			osmium_chestplate = createChestplate(material);
+			osmium_helmet = createHelmet(material);
+			osmium_ingot = createIngot(material);
+			osmium_leggings = createLeggings(material);
+			osmium_nugget = createNugget(material);
+			osmium_powder = createPowder(material);
+			osmium_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_PLUTONIUM) {
+			material = Materials.plutonium;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		material = Materials.plutonium;
-		createItemsFull(material);
-
-		plutonium_boots = createBoots(material);
-		plutonium_chestplate = createChestplate(material);
-		plutonium_helmet = createHelmet(material);
-		plutonium_ingot = createIngot(material);
-		plutonium_leggings = createLeggings(material);
-		plutonium_nugget = createNugget(material);
-		plutonium_powder = createPowder(material);
-		plutonium_sword = createSword(material);
+			plutonium_boots = createBoots(material);
+			plutonium_chestplate = createChestplate(material);
+			plutonium_helmet = createHelmet(material);
+			plutonium_ingot = createIngot(material);
+			plutonium_leggings = createLeggings(material);
+			plutonium_nugget = createNugget(material);
+			plutonium_powder = createPowder(material);
+			plutonium_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_RUTILE) {
+			material = Materials.rutile;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		material = Materials.rutile;
-		createItemsFull(material);
-
-		rutile_boots = createBoots(material);
-		rutile_chestplate = createChestplate(material);
-		rutile_helmet = createHelmet(material);
-		rutile_ingot = createIngot(material);
-		rutile_leggings = createLeggings(material);
-		rutile_nugget = createNugget(material);
-		rutile_powder = createPowder(material);
-		rutile_sword = createSword(material);
+			rutile_boots = createBoots(material);
+			rutile_chestplate = createChestplate(material);
+			rutile_helmet = createHelmet(material);
+			rutile_ingot = createIngot(material);
+			rutile_leggings = createLeggings(material);
+			rutile_nugget = createNugget(material);
+			rutile_powder = createPowder(material);
+			rutile_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_STAINLESSSTEEL) {
+			material = Materials.stainlesssteel;
+			createItemsFull(material);
 
-		material = Materials.stainlesssteel;
-		createItemsFull(material);
-
-		stainlesssteel_blend = createBlend(material);
-		stainlesssteel_boots = createBoots(material);
-		stainlesssteel_chestplate = createChestplate(material);
-		stainlesssteel_helmet = createHelmet(material);
-		stainlesssteel_ingot = createIngot(material);
-		stainlesssteel_leggings = createLeggings(material);
-		stainlesssteel_nugget = createNugget(material);
-		stainlesssteel_powder = createPowder(material);
-		stainlesssteel_sword = createSword(material);
+			stainlesssteel_blend = createBlend(material);
+			stainlesssteel_boots = createBoots(material);
+			stainlesssteel_chestplate = createChestplate(material);
+			stainlesssteel_helmet = createHelmet(material);
+			stainlesssteel_ingot = createIngot(material);
+			stainlesssteel_leggings = createLeggings(material);
+			stainlesssteel_nugget = createNugget(material);
+			stainlesssteel_powder = createPowder(material);
+			stainlesssteel_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_TANTALUM) {
 
-		material = Materials.tantalum;
-		createItemsFull(material);
+			material = Materials.tantalum;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		tantalum_boots = createBoots(material);
-		tantalum_chestplate = createChestplate(material);
-		tantalum_helmet = createHelmet(material);
-		tantalum_ingot = createIngot(material);
-		tantalum_leggings = createLeggings(material);
-		tantalum_nugget = createNugget(material);
-		tantalum_powder = createPowder(material);
-		tantalum_sword = createSword(material);
+			tantalum_boots = createBoots(material);
+			tantalum_chestplate = createChestplate(material);
+			tantalum_helmet = createHelmet(material);
+			tantalum_ingot = createIngot(material);
+			tantalum_leggings = createLeggings(material);
+			tantalum_nugget = createNugget(material);
+			tantalum_powder = createPowder(material);
+			tantalum_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_TITANIUM) {
+			material = Materials.titanium;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		material = Materials.titanium;
-		createItemsFull(material);
-
-		titanium_blend = createBlend(material);
-		titanium_boots = createBoots(material);
-		titanium_chestplate = createChestplate(material);
-		titanium_helmet = createHelmet(material);
-		titanium_ingot = createIngot(material);
-		titanium_leggings = createLeggings(material);
-		titanium_nugget = createNugget(material);
-		titanium_powder = createPowder(material);
-		titanium_sword = createSword(material);
+			titanium_blend = createBlend(material);
+			titanium_boots = createBoots(material);
+			titanium_chestplate = createChestplate(material);
+			titanium_helmet = createHelmet(material);
+			titanium_ingot = createIngot(material);
+			titanium_leggings = createLeggings(material);
+			titanium_nugget = createNugget(material);
+			titanium_powder = createPowder(material);
+			titanium_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_TUNGSTEN) {
+			material = Materials.tungsten;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		material = Materials.tungsten;
-		createItemsFull(material);
-
-		tungsten_boots = createBoots(material);
-		tungsten_chestplate = createChestplate(material);
-		tungsten_helmet = createHelmet(material);
-		tungsten_ingot = createIngot(material);
-		tungsten_leggings = createLeggings(material);
-		tungsten_nugget = createNugget(material);
-		tungsten_powder = createPowder(material);
-		tungsten_sword = createSword(material);
+			tungsten_boots = createBoots(material);
+			tungsten_chestplate = createChestplate(material);
+			tungsten_helmet = createHelmet(material);
+			tungsten_ingot = createIngot(material);
+			tungsten_leggings = createLeggings(material);
+			tungsten_nugget = createNugget(material);
+			tungsten_powder = createPowder(material);
+			tungsten_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_URANIUM) {
+			material = Materials.uranium;
+			createItemsFull(material);
+			createItemsModMekanism(material);
 
-		material = Materials.uranium;
-		createItemsFull(material);
-
-		uranium_boots = createBoots(material);
-		uranium_chestplate = createChestplate(material);
-		uranium_helmet = createHelmet(material);
-		uranium_ingot = createIngot(material);
-		uranium_leggings = createLeggings(material);
-		uranium_nugget = createNugget(material);
-		uranium_powder = createPowder(material);
-		uranium_sword = createSword(material);
+			uranium_boots = createBoots(material);
+			uranium_chestplate = createChestplate(material);
+			uranium_helmet = createHelmet(material);
+			uranium_ingot = createIngot(material);
+			uranium_leggings = createLeggings(material);
+			uranium_nugget = createNugget(material);
+			uranium_powder = createPowder(material);
+			uranium_sword = createSword(material);
 		}
 
 		if (Options.ENABLE_ZIRCONIUM) {
+			material = Materials.zirconium;
+			createItemsFull(material);
+			createItemsModSupport(material);
 
-		material = Materials.zirconium;
-		createItemsFull(material);
-
-		zirconium_boots = createBoots(material);
-		zirconium_chestplate = createChestplate(material);
-		zirconium_helmet = createHelmet(material);
-		zirconium_ingot = createIngot(material);
-		zirconium_leggings = createLeggings(material);
-		zirconium_nugget = createNugget(material);
-		zirconium_powder = createPowder(material);
-		zirconium_sword = createSword(material);
+			zirconium_boots = createBoots(material);
+			zirconium_chestplate = createChestplate(material);
+			zirconium_helmet = createHelmet(material);
+			zirconium_ingot = createIngot(material);
+			zirconium_leggings = createLeggings(material);
+			zirconium_nugget = createNugget(material);
+			zirconium_powder = createPowder(material);
+			zirconium_sword = createSword(material);
 		}
 
 //		addToMetList() // May not be needed, check

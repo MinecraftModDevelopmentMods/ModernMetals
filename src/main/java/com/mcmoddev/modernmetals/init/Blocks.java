@@ -2,7 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
 
-import cyano.basemetals.material.MetalMaterial;
+import com.mcmoddev.basemetals.material.MetalMaterial;
 import net.minecraft.block.*;
 
 /**
@@ -11,7 +11,7 @@ import net.minecraft.block.*;
  * @author Jasmine Iwanek
  *
  */
-public class Blocks extends cyano.basemetals.init.Blocks {
+public class Blocks extends com.mcmoddev.basemetals.init.Blocks {
 
 	public static Block aluminum_block;
 	public static Block aluminum_ore;

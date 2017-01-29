@@ -2,22 +2,22 @@ package com.mcmoddev.modernmetals.integration.plugins;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
 
-import cyano.basemetals.integration.BaseMetalsPlugin;
-import cyano.basemetals.integration.IIntegration;
+import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
+import com.mcmoddev.basemetals.integration.IIntegration;
 
 /**
  *
  * @author Jasmine Iwanek
  *
  */
-@BaseMetalsPlugin(TinkersConstruct.PLUGIN_MODID)
-public class TinkersConstruct extends cyano.basemetals.integration.plugins.TinkersConstruct implements IIntegration {
+@ModernMetalsPlugin(TinkersConstruct.PLUGIN_MODID)
+public class TinkersConstruct extends com.mcmoddev.basemetals.integration.plugins.TinkersConstruct implements IIntegration {
 
 	private static boolean initDone = false;
 
 	@Override
 	public void init() {
-		if (initDone || !cyano.basemetals.util.Config.Options.ENABLE_TINKERS_CONSTRUCT) {
+		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.ENABLE_TINKERS_CONSTRUCT) {
 			return;
 		}
 

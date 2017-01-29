@@ -1,5 +1,6 @@
 package com.mcmoddev.modernmetals.proxy;
 
+import com.mcmoddev.modernmetals.integration.IntegrationManager;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.init.*;
 import com.mcmoddev.modernmetals.util.Config;
@@ -26,14 +27,16 @@ public class CommonProxy {
 
 		Config.init();
 
-		Fluids.init();
 		Materials.init();
+		Fluids.init();
 		ItemGroups.init();
 		Blocks.init();
 		Items.init();
 		VillagerTrades.init();
 
-		FMLInterModComms.sendFunctionMessage("orespawn", "api", "mmd.orespawn.ModernMetalsOreSpawn");
+		FMLInterModComms.sendFunctionMessage("orespawn", "api", "com.mcmoddev.orespawn.ModernMetalsOreSpawn");
+
+		IntegrationManager.INSTANCE.preInit(event);
 
 		/*
 		if ((Loader.isModLoaded("EnderIO")) && Options.ENABLE_ENDER_IO) {

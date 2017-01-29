@@ -1,16 +1,16 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
-import cyano.basemetals.integration.BaseMetalsPlugin;
-import cyano.basemetals.integration.IIntegration;
+import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
+import com.mcmoddev.basemetals.integration.IIntegration;
 
-@BaseMetalsPlugin(Thaumcraft.PLUGIN_MODID)
-public class Thaumcraft extends cyano.basemetals.integration.plugins.Thaumcraft implements IIntegration {
+@ModernMetalsPlugin(Thaumcraft.PLUGIN_MODID)
+public class Thaumcraft extends com.mcmoddev.basemetals.integration.plugins.Thaumcraft implements IIntegration {
 
 	private static boolean initDone = false;
 
 	@Override
 	public void init() {
-		if (initDone || !cyano.basemetals.util.Config.Options.ENABLE_THAUMCRAFT) {
+		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.ENABLE_THAUMCRAFT) {
 			return;
 		}
 

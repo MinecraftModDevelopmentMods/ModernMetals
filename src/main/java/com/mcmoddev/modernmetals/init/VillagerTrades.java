@@ -5,7 +5,7 @@ package com.mcmoddev.modernmetals.init;
  * @author Jasmine Iwanek
  *
  */
-public class VillagerTrades extends cyano.basemetals.init.VillagerTrades {
+public class VillagerTrades extends com.mcmoddev.basemetals.init.VillagerTrades {
 
 	private static boolean initDone = false;
 

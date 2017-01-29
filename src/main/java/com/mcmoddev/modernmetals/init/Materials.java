@@ -2,7 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
 
-import cyano.basemetals.material.MetalMaterial;
+import com.mcmoddev.basemetals.material.MetalMaterial;
 
 /**
  * This class initializes all of the materials in Modern Metals.
@@ -10,7 +10,7 @@ import cyano.basemetals.material.MetalMaterial;
  * @author DrCyano
  *
  */
-public class Materials extends cyano.basemetals.init.Materials {
+public class Materials extends com.mcmoddev.lib.init.Materials {
 
 	public static MetalMaterial aluminum;
 	public static MetalMaterial aluminumbrass;
@@ -44,7 +44,7 @@ public class Materials extends cyano.basemetals.init.Materials {
 		// Mod Materials
 		if (Options.ENABLE_ALUMINUM) {
 			aluminum = createMaterial("aluminum", 2.5, 3.75, 4.5, 0xFFC5C8C1);
-			zirconium.materialType = MetalMaterial.MaterialType.METAL;
+			aluminum.materialType = MetalMaterial.MaterialType.METAL;
 		}
 		if (Options.ENABLE_ALUMINUMBRASS) {
 			aluminumbrass = createAlloyMaterial("aluminumbrass", 1, 7.5, 4.5, 0xFFEBAA56);

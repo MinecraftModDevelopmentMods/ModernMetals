@@ -3,8 +3,8 @@ package com.mcmoddev.modernmetals.proxy;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.init.*;
 
-import cyano.basemetals.client.renderer.RenderCustomArrow;
-import cyano.basemetals.entity.EntityCustomArrow;
+import com.mcmoddev.basemetals.client.renderer.RenderCustomArrow;
+import com.mcmoddev.basemetals.entity.EntityCustomArrow;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
