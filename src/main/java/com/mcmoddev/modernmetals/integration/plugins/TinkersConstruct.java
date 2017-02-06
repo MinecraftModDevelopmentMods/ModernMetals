@@ -1,9 +1,9 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
-
+import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
-import com.mcmoddev.basemetals.integration.IIntegration;
+import com.mcmoddev.lib.integration.IIntegration;
 
 /**
  *
@@ -11,76 +11,92 @@ import com.mcmoddev.basemetals.integration.IIntegration;
  *
  */
 @ModernMetalsPlugin(TinkersConstruct.PLUGIN_MODID)
-public class TinkersConstruct extends com.mcmoddev.basemetals.integration.plugins.TinkersConstruct implements IIntegration {
+public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.TinkersConstruct implements IIntegration {
 
 	private static boolean initDone = false;
 
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.ENABLE_TINKERS_CONSTRUCT) {
+		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.enableTinkersConstruct) {
 			return;
 		}
 
-		if (Options.ENABLE_ALUMINUM) {
-			registerMaterial("aluminum", false, true);
-		}
-		if (Options.ENABLE_ALUMINUMBRASS) {
-			registerMaterial("aluminumbrass", false, true);
-		}
-		if (Options.ENABLE_CADMIUM) {
-			registerMaterial("cadmium", false, true);
-		}
-		if (Options.ENABLE_CHROMIUM) {
-			registerMaterial("chromium", false, true);
-		}
-		if (Options.ENABLE_GALVANIZEDSTEEL) {
-			registerMaterial("galvanizedsteel", false, true);
-		}
-		if (Options.ENABLE_IRIDIUM) {
-			registerMaterial("iridium", false, true);
-		}
-		if (Options.ENABLE_MAGNESIUM) {
-			registerMaterial("magnesium", false, true);
-		}
-		if (Options.ENABLE_MANGANESE) {
-			registerMaterial("manganese", false, true);
-		}
-		if (Options.ENABLE_NICHROME) {
-			registerMaterial("nichrome", false, true);
-		}
-		if (Options.ENABLE_OSMIUM) {
-			registerMaterial("osmium", false, true);
-		}
-		if (Options.ENABLE_PLUTONIUM) {
-			registerMaterial("plutonium", false, true);
-		}
-		if (Options.ENABLE_RUTILE) {
-			registerMaterial("rutile", false, true);
-		}
-		if (Options.ENABLE_STAINLESSSTEEL) {
-			registerMaterial("stainlesssteel", false, true);
-		}
-		if (Options.ENABLE_TANTALUM) {
-			registerMaterial("tantalum", false, true);
-		}
-		if (Options.ENABLE_TITANIUM) {
-			registerMaterial("titanium", false, true);
-		}
-		if (Options.ENABLE_TUNGSTEN) {
-			registerMaterial("tungsten", false, true);
-		}
-		if (Options.ENABLE_URANIUM) {
-			registerMaterial("uranium", false, true);
-		}
-		if (Options.ENABLE_ZIRCONIUM) {
-			registerMaterial("zirconium", false, true);
+		if (Options.enableAluminum) {
+			registerMaterial(Materials.aluminum.getName(), false, true);
 		}
 
-		// registerAlloy("aluminumbrass", 2, new String[] { "aluminum", "brass" }, new int[] { 1, 1 }); // TCon already has Aluminum Brass alloy
-		registerAlloy("galvanizedsteel", 2, new String[] { "steel", "zinc" }, new int[] { 1, 1 });
-		registerAlloy("nichrome", 2, new String[] { "nickel", "chrome" }, new int[] { 1, 1 });
-		registerAlloy("stainlesssteel", 2, new String[] { "steel", "chrome" }, new int[] { 1, 1 });
-		registerAlloy("titanium", 2, new String[] { "rutile", "magnesium" }, new int[] { 1, 1 });
+		if (Options.enableAluminumBrass) {
+			registerMaterial(Materials.aluminumBrass.getName(), false, true);
+			// registerAlloy(Materials.aluminumbrass.getName(), 2, new String[] { "aluminum", "brass" }, new int[] { 1, 1 }); // TCon already has Aluminum Brass alloy
+		}
+
+		if (Options.enableCadmium) {
+			registerMaterial(Materials.cadmium.getName(), false, true);
+		}
+
+		if (Options.enableChromium) {
+			registerMaterial(Materials.chromium.getName(), false, true);
+		}
+
+		if (Options.enableGalvanizedSteel) {
+			registerMaterial(Materials.galvanizedSteel.getName(), false, true);
+			registerAlloy(Materials.galvanizedSteel.getName(), 2, new String[] { "steel", "zinc" }, new int[] { 1, 1 });
+		}
+
+		if (Options.enableIridium) {
+			registerMaterial(Materials.iridium.getName(), false, true);
+		}
+
+		if (Options.enableMagnesium) {
+			registerMaterial(Materials.magnesium.getName(), false, true);
+		}
+
+		if (Options.enableManganese) {
+			registerMaterial(Materials.manganese.getName(), false, true);
+		}
+
+		if (Options.enableNichrome) {
+			registerMaterial(Materials.nichrome.getName(), false, true);
+			registerAlloy(Materials.nichrome.getName(), 2, new String[] { "nickel", "chrome" }, new int[] { 1, 1 });
+		}
+
+		if (Options.enableOsmium) {
+			registerMaterial(Materials.osmium.getName(), false, true);
+		}
+
+		if (Options.enablePlutonium) {
+			registerMaterial(Materials.plutonium.getName(), false, true);
+		}
+
+		if (Options.enableRutile) {
+			registerMaterial(Materials.rutile.getName(), false, true);
+		}
+
+		if (Options.enableStainlessSteel) {
+			registerMaterial(Materials.stainlessSteel.getName(), false, true);
+			registerAlloy(Materials.stainlessSteel.getName(), 2, new String[] { "steel", "chrome" }, new int[] { 1, 1 });
+		}
+
+		if (Options.enableTantalum) {
+			registerMaterial(Materials.tantalum.getName(), false, true);
+		}
+
+		if (Options.enableTitanium) {
+			registerMaterial(Materials.titanium.getName(), false, true);
+			registerAlloy(Materials.titanium.getName(), 2, new String[] { "rutile", "magnesium" }, new int[] { 1, 1 });
+		}
+
+		if (Options.enableTungsten) {
+			registerMaterial(Materials.tungsten.getName(), false, true);
+		}
+
+		if (Options.enableUranium) {
+			registerMaterial(Materials.uranium.getName(), false, true);
+		}
+
+		if (Options.enableZirconium) {
+			registerMaterial(Materials.zirconium.getName(), false, true);
+		}
 
 		initDone = true;
 	}

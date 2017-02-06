@@ -9,6 +9,10 @@ public class VillagerTrades extends com.mcmoddev.lib.init.VillagerTrades {
 
 	private static boolean initDone = false;
 
+	private VillagerTrades() {
+		throw new IllegalAccessError("Not a instantiable class");
+	}
+
 	/**
 	 *
 	 */

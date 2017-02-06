@@ -2,9 +2,6 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
 
-import com.mcmoddev.basemetals.material.MetalMaterial;
-import net.minecraft.block.*;
-
 /**
  * This class initializes all blocks in Modern Metals.
  *
@@ -12,56 +9,6 @@ import net.minecraft.block.*;
  *
  */
 public class Blocks extends com.mcmoddev.lib.init.Blocks {
-
-	public static Block aluminum_block;
-	public static Block aluminum_ore;
-
-	public static Block aluminumbrass_block;
-
-	public static Block cadmium_block;
-	public static Block cadmium_ore;
-
-	public static Block chromium_block;
-	public static Block chromium_ore;
-
-	public static Block galvanizedsteel_block;
-
-	public static Block iridium_block;
-	public static Block iridium_ore;
-
-	public static Block magnesium_block;
-	public static Block magnesium_ore;
-
-	public static Block manganese_block;
-	public static Block manganese_ore;
-
-	public static Block nichrome_block;
-
-	public static Block osmium_block;
-	public static Block osmium_ore;
-
-	public static Block plutonium_block;
-	public static Block plutonium_ore;
-
-	public static Block rutile_block;
-	public static Block rutile_ore;
-
-	public static Block stainlesssteel_block;
-
-	public static Block tantalum_block;
-	public static Block tantalum_ore;
-
-	public static Block titanium_block;
-	public static Block titanium_ore;
-
-	public static Block tungsten_block;
-	public static Block tungsten_ore;
-
-	public static Block uranium_block;
-	public static Block uranium_ore;
-
-	public static Block zirconium_block;
-	public static Block zirconium_ore;
 
 	private static boolean initDone = false;
 
@@ -76,146 +23,76 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		Materials.init();
 		ItemGroups.init();
 
-		MetalMaterial material;
-
-		if (Options.ENABLE_ALUMINUM) {
-			material = Materials.aluminum;
-			createBlocksFull(material);
-
-			aluminum_block = material.block;
-			aluminum_ore = material.ore;
+		if (Options.enableAluminum) {
+			createBlocksFull(Materials.aluminum);
 		}
 
-		if (Options.ENABLE_ALUMINUMBRASS) {
-			material = Materials.aluminumbrass;
-			createBlocksFull(material);
-
-			aluminumbrass_block = material.block;
+		if (Options.enableAluminumBrass) {
+			createBlocksFull(Materials.aluminumBrass);
 		}
 
-		if (Options.ENABLE_CADMIUM) {
-			material = Materials.cadmium;
-			createBlocksFull(material);
-
-			cadmium_block = material.block;
-			cadmium_ore = material.ore;
+		if (Options.enableCadmium) {
+			createBlocksFull(Materials.cadmium);
 		}
 
-		if (Options.ENABLE_CHROMIUM) {
-			material = Materials.chromium;
-			createBlocksFull(material);
-
-			chromium_block = material.block;
-			chromium_ore = material.ore;
+		if (Options.enableChromium) {
+			createBlocksFull(Materials.chromium);
 		}
 
-		if (Options.ENABLE_GALVANIZEDSTEEL) {
-			material = Materials.galvanizedsteel;
-			createBlocksFull(material);
-
-			galvanizedsteel_block = material.block;
+		if (Options.enableGalvanizedSteel) {
+			createBlocksFull(Materials.galvanizedSteel);
 		}
 
-		if (Options.ENABLE_IRIDIUM) {
-			material = Materials.iridium;
-			createBlocksFull(material);
-
-			iridium_block = material.block;
-			iridium_ore = material.ore;
+		if (Options.enableIridium) {
+			createBlocksFull(Materials.iridium);
 		}
 
-		if (Options.ENABLE_MAGNESIUM) {
-			material = Materials.magnesium;
-			createBlocksFull(material);
-
-			magnesium_block = material.block;
-			magnesium_ore = material.ore;
+		if (Options.enableMagnesium) {
+			createBlocksFull(Materials.magnesium);
 		}
 
-		if (Options.ENABLE_MANGANESE) {
-			material = Materials.manganese;
-			createBlocksFull(material);
-
-			manganese_block = material.block;
-			manganese_ore = material.ore;
+		if (Options.enableManganese) {
+			createBlocksFull(Materials.manganese);
 		}
 
-		if (Options.ENABLE_NICHROME) {
-			material = Materials.nichrome;
-			createBlocksFull(material);
-
-			nichrome_block = material.block;
+		if (Options.enableNichrome) {
+			createBlocksFull(Materials.nichrome);
 		}
 
-		if (Options.ENABLE_OSMIUM) {
-			material = Materials.osmium;
-			createBlocksFull(material);
-
-			osmium_block = material.block;
-			osmium_ore = material.ore;
+		if (Options.enableOsmium) {
+			createBlocksFull(Materials.osmium);
 		}
 
-		if (Options.ENABLE_PLUTONIUM) {
-			material = Materials.plutonium;
-			createBlocksFull(material);
-
-			plutonium_block = material.block;
-			plutonium_ore = material.ore;
+		if (Options.enablePlutonium) {
+			createBlocksFull(Materials.plutonium);
 		}
 
-		if (Options.ENABLE_RUTILE) {
-			material = Materials.rutile;
-			createBlocksFull(material);
-
-			rutile_block = material.block;
-			rutile_ore = material.ore;
+		if (Options.enableRutile) {
+			createBlocksFull(Materials.rutile);
 		}
 
-		if (Options.ENABLE_STAINLESSSTEEL) {
-			material = Materials.stainlesssteel;
-			createBlocksFull(material);
-
-			stainlesssteel_block = material.block;
+		if (Options.enableStainlessSteel) {
+			createBlocksFull(Materials.stainlessSteel);
 		}
 
-		if (Options.ENABLE_TANTALUM) {
-			material = Materials.tantalum;
-			createBlocksFull(material);
-
-			tantalum_block = material.block;
-			tantalum_ore = material.ore;
+		if (Options.enableTantalum) {
+			createBlocksFull(Materials.tantalum);
 		}
 
-		if (Options.ENABLE_TITANIUM) {
-			material = Materials.titanium;
-			createBlocksFull(material);
-
-			titanium_block = material.block;
-			titanium_ore = material.ore;
+		if (Options.enableTitanium) {
+			createBlocksFull(Materials.titanium);
 		}
 
-		if (Options.ENABLE_TUNGSTEN) {
-			material = Materials.tungsten;
-			createBlocksFull(material);
-
-			tungsten_block = material.block;
-			tungsten_ore = material.ore;
+		if (Options.enableTungsten) {
+			createBlocksFull(Materials.tungsten);
 		}
 
-		if (Options.ENABLE_URANIUM) {
-			material = Materials.uranium;
-			createBlocksFull(material);
-
-			uranium_block = material.block;
-			uranium_ore = material.ore;
+		if (Options.enableUranium) {
+			createBlocksFull(Materials.uranium);
 		}
 
-		if (Options.ENABLE_ZIRCONIUM) {
-			material = Materials.zirconium;
-			createBlocksFull(material);
-
-			zirconium_block = material.block;
-			zirconium_ore = material.ore;
+		if (Options.enableZirconium) {
+			createBlocksFull(Materials.zirconium);
 		}
 
 		initDone = true;

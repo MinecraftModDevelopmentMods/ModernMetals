@@ -2,7 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
 
-import com.mcmoddev.basemetals.material.MetalMaterial;
+import com.mcmoddev.lib.material.MetalMaterial;
 
 /**
  * This class initializes all of the materials in Modern Metals.
@@ -13,10 +13,10 @@ import com.mcmoddev.basemetals.material.MetalMaterial;
 public class Materials extends com.mcmoddev.lib.init.Materials {
 
 	public static MetalMaterial aluminum;
-	public static MetalMaterial aluminumbrass;
+	public static MetalMaterial aluminumBrass;
 	public static MetalMaterial cadmium;
 	public static MetalMaterial chromium;
-	public static MetalMaterial galvanizedsteel;
+	public static MetalMaterial galvanizedSteel;
 	public static MetalMaterial iridium;
 	public static MetalMaterial magnesium;
 	public static MetalMaterial manganese;
@@ -24,7 +24,7 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 	public static MetalMaterial osmium;
 	public static MetalMaterial plutonium;
 	public static MetalMaterial rutile;
-	public static MetalMaterial stainlesssteel;
+	public static MetalMaterial stainlessSteel;
 	public static MetalMaterial tantalum;
 	public static MetalMaterial titanium;
 	public static MetalMaterial tungsten;
@@ -32,6 +32,10 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 	public static MetalMaterial zirconium;
 
 	private static boolean initDone = false;
+
+	protected Materials() {
+		throw new IllegalAccessError("Not a instantiable class");
+	}
 
 	/**
 	 *
@@ -41,76 +45,92 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			return;
 		}
 
-		// Mod Materials
-		if (Options.ENABLE_ALUMINUM) {
+		if (Options.enableAluminum) {
 			aluminum = createMaterial("aluminum", 2.5, 3.75, 4.5, 0xFFC5C8C1);
 			aluminum.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_ALUMINUMBRASS) {
-			aluminumbrass = createAlloyMaterial("aluminumbrass", 1, 7.5, 4.5, 0xFFEBAA56);
-			aluminumbrass.materialType = MetalMaterial.MaterialType.METAL;
+
+		if (Options.enableAluminumBrass) {
+			aluminumBrass = createAlloyMaterial("aluminumbrass", 1, 7.5, 4.5, 0xFFEBAA56);
+			aluminumBrass.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_CADMIUM) {
+
+		if (Options.enableCadmium) {
 			cadmium = createRareMaterial("cadmium", 2, 1, 4.5, 0xFFC9D4DA);
 			cadmium.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_CHROMIUM) {
+
+		if (Options.enableChromium) {
 			chromium = createMaterial("chromium", 9, 3, 4.5, 0xFFCDCDCF);
 			chromium.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_GALVANIZEDSTEEL) {
-			galvanizedsteel = createAlloyMaterial("galvanizedsteel", 5.5, 15.25, 4.5, 0xFF9BA6A2);
-			galvanizedsteel.materialType = MetalMaterial.MaterialType.METAL;
+
+		if (Options.enableGalvanizedSteel) {
+			galvanizedSteel = createAlloyMaterial("galvanizedsteel", 5.5, 15.25, 4.5, 0xFF9BA6A2);
+			galvanizedSteel.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_IRIDIUM) {
+
+		if (Options.enableIridium) {
 			iridium = createRareMaterial("iridium", 6.5, 3, 4.5, 0xFFF8EDCC);
 			iridium.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_MAGNESIUM) {
+
+		if (Options.enableMagnesium) {
 			magnesium = createMaterial("magnesium", 2.5, 3.5, 4.5, 0xFF7F7F77);
 			magnesium.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_MANGANESE) {
+
+		if (Options.enableManganese) {
 			manganese = createMaterial("manganese", 5, 2.75, 4.5, 0xFFF5CFDA);
 			manganese.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_NICHROME) {
+
+		if (Options.enableNichrome) {
 			nichrome = createAlloyMaterial("nichrome", 6, 15.5, 4.5, 0xFFDEA054);
 			nichrome.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_OSMIUM) {
+
+		if (Options.enableOsmium) {
 			osmium = createMaterial("osmium", 7, 2.75, 4.5, 0xFF7C8E99);
 			osmium.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_PLUTONIUM) {
+
+		if (Options.enablePlutonium) {
 			plutonium = createRareMaterial("plutonium", 4, 7.5, 4.5, 0xFFB333EA);
 			plutonium.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_RUTILE) {
+
+		if (Options.enableRutile) {
 			rutile = createMaterial("rutile", 6, 0.25, 4.5, 0xFFBF928B);
 			rutile.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_STAINLESSSTEEL) {
-			stainlesssteel = createAlloyMaterial("stainlesssteel", 6, 16, 4.5, 0xFFC5BFC1);
-			stainlesssteel.materialType = MetalMaterial.MaterialType.METAL;
+
+		if (Options.enableStainlessSteel) {
+			stainlessSteel = createAlloyMaterial("stainlesssteel", 6, 16, 4.5, 0xFFC5BFC1);
+			stainlessSteel.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_TANTALUM) {
+
+		if (Options.enableTantalum) {
 			tantalum = createMaterial("tantalum", 6.5, 17.5, 4.5, 0xFFC4BEC2);
 			tantalum.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_TITANIUM) {
+
+		if (Options.enableTitanium) {
 			titanium = createSpecialMaterial("titanium", 6.5, 16.25, 4.5, 0xFF73787E);
 			titanium.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_TUNGSTEN) {
+
+		if (Options.enableTungsten) {
 			tungsten = createMaterial("tungsten", 7.5, 12.5, 4.5, 0xFF969696);
 			tungsten.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_URANIUM) {
+
+		if (Options.enableUranium) {
 			uranium = createRareMaterial("uranium", 6, 16.25, 4.5, 0xFFA7B345);
 			uranium.materialType = MetalMaterial.MaterialType.METAL;
 		}
-		if (Options.ENABLE_ZIRCONIUM) {
+
+		if (Options.enableZirconium) {
 			zirconium = createMaterial("zirconium", 5, 3.5, 4.5, 0xFF929793);
 			zirconium.materialType = MetalMaterial.MaterialType.METAL;
 		}

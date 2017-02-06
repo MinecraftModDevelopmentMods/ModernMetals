@@ -3,10 +3,8 @@ package com.mcmoddev.modernmetals.util;
 import com.mcmoddev.modernmetals.init.Achievements;
 import com.mcmoddev.modernmetals.init.Materials;
 
-import com.mcmoddev.basemetals.material.IMetalObject;
-import com.mcmoddev.basemetals.material.MetalMaterial;
-import com.mcmoddev.basemetals.util.Config.Options;
-import com.mcmoddev.lib.items.ItemMetalBlend;
+import com.mcmoddev.lib.material.IMetalObject;
+import com.mcmoddev.lib.material.MetalMaterial;
 import com.mcmoddev.lib.items.ItemMetalIngot;
 
 import net.minecraft.item.Item;
@@ -18,6 +16,7 @@ public class EventHandler {
 
 	@SubscribeEvent
 	void event(ItemCraftedEvent event) {
+/*
 		final Item item = event.crafting.getItem();
 		if (item instanceof IMetalObject) {
 			final MetalMaterial material = ((IMetalObject) item).getMaterial();
@@ -27,6 +26,7 @@ public class EventHandler {
 				}
 			}
 		}
+*/
 	}
 
 	@SubscribeEvent
@@ -35,18 +35,18 @@ public class EventHandler {
 		if (item instanceof IMetalObject) {
 			final MetalMaterial material = ((IMetalObject) item).getMaterial();
 			if (item instanceof ItemMetalIngot) {
-				if (Options.ENABLE_ACHIEVEMENTS) {
+				if (com.mcmoddev.basemetals.util.Config.Options.enableAchievements) {
 //					event.player.addStat(Achievements.this_is_new, 1);
-					if (material == Materials.aluminumbrass) {
-						event.player.addStat(Achievements.aluminumbrass_maker, 1);
-					} else if (material == Materials.galvanizedsteel) {
-						event.player.addStat(Achievements.galvanized_steel_maker, 1);
+					if (material == Materials.aluminumBrass) {
+						event.player.addStat(Achievements.aluminumBrassMaker, 1);
+					} else if (material == Materials.galvanizedSteel) {
+						event.player.addStat(Achievements.galvanizedSteelMaker, 1);
 					} else if (material == Materials.nichrome) {
-						event.player.addStat(Achievements.nichrome_maker, 1);
-					} else if (material == Materials.stainlesssteel) {
-						event.player.addStat(Achievements.stainless_steel_maker, 1);
+						event.player.addStat(Achievements.nichromeMaker, 1);
+					} else if (material == Materials.stainlessSteel) {
+						event.player.addStat(Achievements.stainlessSteelMaker, 1);
 					} else if (material == Materials.titanium) {
-						event.player.addStat(Achievements.titanium_maker, 1);
+						event.player.addStat(Achievements.titaniumMaker, 1);
 					}
 				}
 			}

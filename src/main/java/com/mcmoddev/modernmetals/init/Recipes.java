@@ -1,10 +1,10 @@
 package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
+import com.mcmoddev.lib.util.Oredicts;
+import com.mcmoddev.modernmetals.init.Materials;
 
-import net.minecraft.item.*;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.*;
+import net.minecraftforge.oredict.OreDictionary;
 
 /**
  *
@@ -14,6 +14,10 @@ import net.minecraftforge.oredict.*;
 public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 	private static boolean initDone = false;
+
+	private Recipes() {
+		throw new IllegalAccessError("Not a instantiable class");
+	}
 
 	/**
 	 *
@@ -33,101 +37,44 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 	}
 
 	private static void initModSpecificRecipes() {
-		// alloy blends
-		if (Options.ENABLE_ALUMINUMBRASS) {
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.aluminumbrass.blend, 2), "dustAluminum", "dustBrass"));
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.aluminumbrass.smallblend, 2), "smalldustAluminum", "smalldustBrass"));
-		}
-		if (Options.ENABLE_GALVANIZEDSTEEL) {
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.galvanizedsteel.blend, 2), "dustSteel", "dustZinc"));
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.galvanizedsteel.smallblend, 2), "smalldustSteel", "smalldustZinc"));
-		}
-		if (Options.ENABLE_NICHROME) {
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.nichrome.blend, 2), "dustNickel", "dustChromium"));
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.nichrome.smallblend, 2), "smalldustNickel", "smalldustChromium"));
-		}
-		if (Options.ENABLE_STAINLESSSTEEL) {
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.stainlesssteel.blend, 2), "dustSteel", "dustChromium"));
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.stainlesssteel.smallblend, 2), "smalldustSteel", "smalldustChromium"));
-		}
-		if (Options.ENABLE_TITANIUM) {
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.titanium.blend, 2), "dustRutile", "dustMagnesium"));
-			GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(Materials.titanium.smallblend, 2), "smalldustRutile", "smalldustMagnesium"));
+		if (Options.enableAluminum) {
+			String oreDictName = "Bauxite";
+
+			addAdditionalOredicts(Materials.aluminum, "Aluminium");
+			OreDictionary.registerOre(Oredicts.ORE + oreDictName, Materials.aluminum.ore);
+			OreDictionary.registerOre(Oredicts.DUST + oreDictName, Materials.aluminum.powder);
+			OreDictionary.registerOre(Oredicts.DUSTTINY + oreDictName, Materials.aluminum.smallpowder);
+			OreDictionary.registerOre(Oredicts.DUSTSMALL + oreDictName, Materials.aluminum.smallpowder);
 		}
 
-		// Alt oreDict Chrome
-		if (Options.ENABLE_CHROMIUM) {
-			OreDictionary.registerOre("oreChrome", Materials.chromium.ore);
-			OreDictionary.registerOre("blockChrome", Materials.chromium.block);
-			OreDictionary.registerOre("plateChrome", Materials.chromium.plate);
-			OreDictionary.registerOre("barsChrome", Materials.chromium.bars);
-//			OreDictionary.registerOre("doorChrome", Materials.chromium.doorBlock);
-			OreDictionary.registerOre("trapdoorChrome", Materials.chromium.trapdoor);
-			OreDictionary.registerOre("ingotChrome", Materials.chromium.ingot);
-			OreDictionary.registerOre("nuggetChrome", Materials.chromium.nugget);
-			OreDictionary.registerOre("dustChrome", Materials.chromium.powder);
-			OreDictionary.registerOre("gearChrome", Materials.chromium.gear);
-			OreDictionary.registerOre("rodChrome", Materials.chromium.rod);
+		if (Options.enableAluminumBrass) {
+			addSimpleAlloyRecipe(Materials.aluminumBrass, 2, "Aluminum", "Brass");
+			addAdditionalOredicts(Materials.aluminumBrass, "Aluminiumbrass");
+			addAdditionalOredicts(Materials.aluminumBrass, "Alubrass");
 		}
 
-		// Alt oreDict Tungsten
-		if (Options.ENABLE_TUNGSTEN) {
-			OreDictionary.registerOre("oreWolfram", Materials.tungsten.ore);
-			OreDictionary.registerOre("blockWolfram", Materials.tungsten.block);
-			OreDictionary.registerOre("plateWolfram", Materials.tungsten.plate);
-			OreDictionary.registerOre("barsWolfram", Materials.tungsten.bars);
-//			OreDictionary.registerOre("doorWolfram", Materials.tungsten.doorBlock);
-			OreDictionary.registerOre("trapdoorWolfram", Materials.tungsten.trapdoor);
-			OreDictionary.registerOre("ingotWolfram", Materials.tungsten.ingot);
-			OreDictionary.registerOre("nuggetWolfram", Materials.tungsten.nugget);
-			OreDictionary.registerOre("dustWolfram", Materials.tungsten.powder);
-			OreDictionary.registerOre("gearWolfram", Materials.tungsten.gear);
-			OreDictionary.registerOre("rodWolfram", Materials.tungsten.rod);
+		if (Options.enableChromium) {
+			addAdditionalOredicts(Materials.chromium, "Chrome");
 		}
 
-		// Some people refer to it as Aluminium
-		if (Options.ENABLE_ALUMINUM) {
-			OreDictionary.registerOre("oreAluminium", Materials.aluminum.ore);
-			OreDictionary.registerOre("blockAluminium", Materials.aluminum.block);
-			OreDictionary.registerOre("plateAluminium", Materials.aluminum.plate);
-			OreDictionary.registerOre("barsAluminium", Materials.aluminum.bars);
-//			OreDictionary.registerOre("doorAluminium", Materials.aluminum.doorBlock);
-			OreDictionary.registerOre("trapdoorAluminium", Materials.aluminum.trapdoor);
-			OreDictionary.registerOre("ingotAluminium", Materials.aluminum.ingot);
-			OreDictionary.registerOre("nuggetAluminium", Materials.aluminum.nugget);
-			OreDictionary.registerOre("dustAluminium", Materials.aluminum.powder);
-			OreDictionary.registerOre("gearAluminium", Materials.aluminum.gear);
-			OreDictionary.registerOre("rodAluminium", Materials.aluminum.rod);
+		if (Options.enableGalvanizedSteel) {
+			addSimpleAlloyRecipe(Materials.galvanizedSteel, 2, "Steel", "Zinc");
 		}
 
-		// Some people refer to it as Aluminium
-		if (Options.ENABLE_ALUMINUMBRASS) {
-			OreDictionary.registerOre("blockAluminiumbrass", Materials.aluminumbrass.block);
-			OreDictionary.registerOre("plateAluminiumbrass", Materials.aluminumbrass.plate);
-			OreDictionary.registerOre("barsAluminiumbrass", Materials.aluminumbrass.bars);
-//			OreDictionary.registerOre("doorAluminiumbrass", Materials.aluminumbrass.doorBlock);
-			OreDictionary.registerOre("trapdoorAluminiumbrass", Materials.aluminumbrass.trapdoor);
-			OreDictionary.registerOre("dustAluminiumbrass", Materials.aluminumbrass.blend);
-			OreDictionary.registerOre("ingotAluminiumbrass", Materials.aluminumbrass.ingot);
-			OreDictionary.registerOre("nuggetAluminiumbrass", Materials.aluminumbrass.nugget);
-			OreDictionary.registerOre("dustAluminiumbrass", Materials.aluminumbrass.powder);
-			OreDictionary.registerOre("gearAluminiumbrass", Materials.aluminumbrass.gear);
-			OreDictionary.registerOre("rodAluminiumbrass", Materials.aluminumbrass.rod);
+		if (Options.enableNichrome) {
+			addSimpleAlloyRecipe(Materials.nichrome, 2, "Nickel", "Chromium");
 		}
 
-		// Make Tinkers Construct happy
-		if (Options.ENABLE_ALUMINUMBRASS) {
-			OreDictionary.registerOre("blockAlubrass", Materials.aluminumbrass.block);
-			OreDictionary.registerOre("plateAlubrass", Materials.aluminumbrass.plate);
-			OreDictionary.registerOre("barsAlubrass", Materials.aluminumbrass.bars);
-//			OreDictionary.registerOre("doorAlubrass", Materials.aluminumbrass_doorBlock);
-			OreDictionary.registerOre("trapdoorAlubrass", Materials.aluminumbrass.trapdoor);
-			OreDictionary.registerOre("dustAlubrass", Materials.aluminumbrass.blend);
-			OreDictionary.registerOre("ingotAlubrass", Materials.aluminumbrass.ingot);
-			OreDictionary.registerOre("nuggetAlubrass", Materials.aluminumbrass.nugget);
-			OreDictionary.registerOre("dustAlubrass", Materials.aluminumbrass.powder);
-			OreDictionary.registerOre("gearAlubrass", Materials.aluminumbrass.gear);
-			OreDictionary.registerOre("rodAlubrass", Materials.aluminumbrass.rod);
+		if (Options.enableStainlessSteel) {
+			addSimpleAlloyRecipe(Materials.stainlessSteel, 2, "Steel", "Chromium");
+		}
+
+		if (Options.enableTitanium) {
+			addSimpleAlloyRecipe(Materials.titanium, 2, "Rutile", "Magnesium");
+		}
+
+		if (Options.enableTungsten) {
+			addAdditionalOredicts(Materials.tungsten, "Wolfram");
 		}
 	}
 }

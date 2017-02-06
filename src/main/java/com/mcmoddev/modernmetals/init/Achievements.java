@@ -7,15 +7,24 @@ import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.fml.common.Loader;
 
 /** initializer for achievements */
-public class Achievements extends com.mcmoddev.basemetals.init.Achievements {
+public class Achievements extends com.mcmoddev.lib.init.Achievements {
 
-	public static Achievement aluminumbrass_maker; // make blend
-	public static Achievement galvanized_steel_maker; // make blend
-	public static Achievement nichrome_maker; // make blend
-	public static Achievement stainless_steel_maker; // make blend
-	public static Achievement titanium_maker; // make blend
+	/** Make Aluminum Brass Blend */
+	public static Achievement aluminumBrassMaker;
+	/** Make Galvanized Steel Blend */
+	public static Achievement galvanizedSteelMaker;
+	/** Make Nichrome Blend */
+	public static Achievement nichromeMaker;
+	/** Make Stainless Steel Blend */
+	public static Achievement stainlessSteelMaker;
+	/** Make Titanium Blend */
+	public static Achievement titaniumMaker;
 
 	private static boolean initDone = false;
+
+	private Achievements() {
+		throw new IllegalAccessError("Not a instantiable class");
+	}
 
 	/**
 	 *
@@ -25,24 +34,24 @@ public class Achievements extends com.mcmoddev.basemetals.init.Achievements {
 			return;
 		}
 
-		if (com.mcmoddev.basemetals.util.Config.Options.ENABLE_ACHIEVEMENTS) {
+		if (com.mcmoddev.basemetals.util.Config.Options.enableAchievements) {
 			AchievementPage page = new AchievementPage(Loader.instance().activeModContainer().getModId());
 			AchievementPage.registerAchievementPage(page);
 
-			if (Options.ENABLE_ALUMINUMBRASS) {
-				aluminumbrass_maker = makeAchievement("aluminumbrass_maker", metallurgy, 0, 0, Materials.aluminumbrass.ingot, page);
+			if (Options.enableAluminumBrass) {
+				aluminumBrassMaker = makeAchievement("aluminumbrass_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 0, Materials.aluminumBrass.ingot, page);
 			}
-			if (Options.ENABLE_GALVANIZEDSTEEL) {
-				galvanized_steel_maker = makeAchievement("galvanized_steel_maker", metallurgy, 0, 1, Materials.galvanizedsteel.ingot, page);
+			if (Options.enableGalvanizedSteel) {
+				galvanizedSteelMaker = makeAchievement("galvanized_steel_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 1, Materials.galvanizedSteel.ingot, page);
 			}
-			if (Options.ENABLE_NICHROME) {
-				nichrome_maker = makeAchievement("nichrome_maker", metallurgy, 0, 2, Materials.nichrome.ingot, page);
+			if (Options.enableNichrome) {
+				nichromeMaker = makeAchievement("nichrome_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 2, Materials.nichrome.ingot, page);
 			}
-			if (Options.ENABLE_STAINLESSSTEEL) {
-				stainless_steel_maker = makeAchievement("stainless_steel_maker", metallurgy, 0, 3, Materials.stainlesssteel.ingot, page);
+			if (Options.enableStainlessSteel) {
+				stainlessSteelMaker = makeAchievement("stainless_steel_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 3, Materials.stainlessSteel.ingot, page);
 			}
-			if (Options.ENABLE_TITANIUM) {
-				titanium_maker = makeAchievement("titanium_maker", metallurgy, 0, 4, Materials.titanium.ingot, page);
+			if (Options.enableTitanium) {
+				titaniumMaker = makeAchievement("titanium_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 4, Materials.titanium.ingot, page);
 			}
 		}
 

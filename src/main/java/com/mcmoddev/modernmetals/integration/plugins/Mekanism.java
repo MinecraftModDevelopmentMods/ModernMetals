@@ -4,217 +4,69 @@ import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.util.Config.Options;
 
 import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
-import com.mcmoddev.basemetals.integration.IIntegration;
-import com.mcmoddev.basemetals.material.MetalMaterial;
-
-import net.minecraft.item.ItemStack;
+import com.mcmoddev.lib.integration.IIntegration;
 
 @ModernMetalsPlugin(Mekanism.PLUGIN_MODID)
-public class Mekanism extends com.mcmoddev.basemetals.integration.plugins.Mekanism implements IIntegration {
+public class Mekanism extends com.mcmoddev.lib.integration.plugins.Mekanism implements IIntegration {
 
 	private static boolean initDone = false;
 
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.ENABLE_MEKANISM) {
+		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.enableMekanism) {
 			return;
 		}
 
-		MetalMaterial material;
-
-		if (Options.ENABLE_ALUMINUM) {
-			material = Materials.aluminum;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableAluminum) {
+			addOreMultiplicationRecipes(Materials.aluminum);
 		}
 
-		if (Options.ENABLE_CADMIUM) {
-			material = Materials.cadmium;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableCadmium) {
+			addOreMultiplicationRecipes(Materials.cadmium);
 		}
 
-		if (Options.ENABLE_CHROMIUM) {
-			material = Materials.chromium;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableChromium) {
+			addOreMultiplicationRecipes(Materials.chromium);
 		}
 
-		if (Options.ENABLE_IRIDIUM) {
-			material = Materials.iridium;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableIridium) {
+			addOreMultiplicationRecipes(Materials.iridium);
 		}
 
-		if (Options.ENABLE_MAGNESIUM) {
-			material = Materials.magnesium;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableMagnesium) {
+			addOreMultiplicationRecipes(Materials.magnesium);
 		}
 
-		if (Options.ENABLE_MANGANESE) {
-			material = Materials.manganese;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableManganese) {
+			addOreMultiplicationRecipes(Materials.manganese);
 		}
 
-		if (Options.ENABLE_PLUTONIUM) {
-			material = Materials.plutonium;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enablePlutonium) {
+			addOreMultiplicationRecipes(Materials.plutonium);
 		}
 
-		if (Options.ENABLE_RUTILE) {
-			material = Materials.rutile;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableRutile) {
+			addOreMultiplicationRecipes(Materials.rutile);
 		}
 
-		if (Options.ENABLE_TANTALUM) {
-			material = Materials.tantalum;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableTantalum) {
+			addOreMultiplicationRecipes(Materials.tantalum);
 		}
 
-		if (Options.ENABLE_TITANIUM) {
-			material = Materials.titanium;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableTitanium) {
+			addOreMultiplicationRecipes(Materials.titanium);
 		}
 
-		if (Options.ENABLE_TUNGSTEN) {
-			material = Materials.tungsten;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableTungsten) {
+			addOreMultiplicationRecipes(Materials.tungsten);
 		}
 
-		if (Options.ENABLE_URANIUM) {
-			material = Materials.uranium;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableUranium) {
+			addOreMultiplicationRecipes(Materials.uranium);
 		}
 
-		if (Options.ENABLE_ZIRCONIUM) {
-			material = Materials.zirconium;
-			addCrusherRecipe(new ItemStack(material.clump), new ItemStack(material.powder_dirty));
-			addCrusherRecipe(new ItemStack(material.ingot), new ItemStack(material.powder));
-
-			addEnrichmentChamberRecipe(new ItemStack(material.ore), new ItemStack(material.powder, 2));
-			addEnrichmentChamberRecipe(new ItemStack(material.powder_dirty), new ItemStack(material.powder));
-
-			addPurificationChamberRecipe(new ItemStack(material.ore), new ItemStack(material.clump, 3));
-			addPurificationChamberRecipe(new ItemStack(material.shard), new ItemStack(material.clump));
-
-			addChemicalInjectionChamberRecipe(new ItemStack(material.ore), new ItemStack(material.shard, 4));
-			addChemicalInjectionChamberRecipe(new ItemStack(material.crystal), new ItemStack(material.shard));
+		if (Options.enableZirconium) {
+			addOreMultiplicationRecipes(Materials.zirconium);
 		}
 
 		initDone = true;
