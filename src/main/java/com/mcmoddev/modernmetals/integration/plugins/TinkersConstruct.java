@@ -34,7 +34,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		if (Options.enableAluminumBrass) {
-			TCMetalMaterial alubrassTC = new TCMetalMaterial(Materials.aluminumBrass;
+			TCMetalMaterial alubrassTC = new TCMetalMaterial(Materials.aluminumBrass);
 			alubrassTC.craftable = false;
 			
 			registerMaterial(alubrassTC);
@@ -128,7 +128,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		// request is for custom modifier item to grant +50% durability
 		// This is not yet in the API - might require extra classes in MMDLib
 		if (Options.enableRutile) {
-			TCMetalMaterial rutileTC = new TCMetalMaterial(Materials.rutile;
+			TCMetalMaterial rutileTC = new TCMetalMaterial(Materials.rutile);
 			rutileTC.craftable = false;
 			
 			registerMaterial(rutileTC);
