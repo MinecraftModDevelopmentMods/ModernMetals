@@ -30,7 +30,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			aluminumTC.craftable=false;
 
 			aluminumTC.addTrait(TinkerTraits.lightweight);
-			registerMaterial(Materials.aluminum.getName(), false, true);
+			registerMaterial(aluminumTC);
 		}
 
 		if (Options.enableAluminumBrass) {
@@ -52,6 +52,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			chromiumTC.craftable = false;
 			
 			chromiumTC.addTrait(TinkerTraits.magnetic);
+			chromiumTC.addTrait(TinkerTraits.magnetic2, MaterialTypes.HEAD);
 			registerMaterial(chromiumTC);
 		}
 
