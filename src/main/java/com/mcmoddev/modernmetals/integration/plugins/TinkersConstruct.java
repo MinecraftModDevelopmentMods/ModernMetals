@@ -3,6 +3,10 @@ package com.mcmoddev.modernmetals.integration.plugins;
 import com.mcmoddev.modernmetals.util.Config.Options;
 import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
+import com.mcmoddev.lib.integration.plugins.tinkers.TCMetalMaterial;
+import com.mcmoddev.lib.integration.plugins.tinkers.traits.*;
+import slimeknights.tconstruct.tools.TinkerTraits;
+import slimeknights.tconstruct.library.materials.MaterialTypes;
 import com.mcmoddev.lib.integration.IIntegration;
 
 /**
@@ -22,80 +26,163 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		if (Options.enableAluminum) {
+			TCMetalMaterial aluminumTC = new TCMetalMaterial(Materials.aluminum);
+			aluminumTC.craftable=false;
+
+			aluminumTC.addTrait(TinkerTraits.lightweight);
 			registerMaterial(Materials.aluminum.getName(), false, true);
 		}
 
 		if (Options.enableAluminumBrass) {
-			registerMaterial(Materials.aluminumBrass.getName(), false, true);
-			// registerAlloy(Materials.aluminumbrass.getName(), 2, new String[] { "aluminum", "brass" }, new int[] { 1, 1 }); // TCon already has Aluminum Brass alloy
+			TCMetalMaterial alubrassTC = new TCMetalMaterial(Materials.aluminumBrass;
+			alubrassTC.craftable = false;
+			
+			registerMaterial(alubrassTC);
 		}
 
 		if (Options.enableCadmium) {
-			registerMaterial(Materials.cadmium.getName(), false, true);
+			TCMetalMaterial cadmiumTC = new TCMetalMaterial(Materials.cadmium);
+			cadmiumTC.craftable = false;
+			
+			registerMaterial(cadmiumTC);
 		}
 
 		if (Options.enableChromium) {
-			registerMaterial(Materials.chromium.getName(), false, true);
+			TCMetalMaterial chromiumTC = new TCMetalMaterial(Materials.chromium);
+			chromiumTC.craftable = false;
+			
+			chromiumTC.addTrait(TinkerTraits.magnetic);
+			registerMaterial(chromiumTC);
 		}
 
 		if (Options.enableGalvanizedSteel) {
-			registerMaterial(Materials.galvanizedSteel.getName(), false, true);
-			registerAlloy(Materials.galvanizedSteel.getName(), 2, new String[] { "steel", "zinc" }, new int[] { 1, 1 });
+			TCMetalMaterial galsteelTC = new TCMetalMaterial(Materials.galvanizedSteel);
+			galsteelTC.craftable = false;
+			
+			galsteelTC.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
+			galsteelTC.addTrait(TinkerTraits.stiff);
+			
+			registerMaterial(galsteelTC);
+			registerAlloy(Materials.galvanizedSteel.fluid.getName(), 2, new String[] { "steel", "zinc" }, new int[] { 1, 1 });
 		}
 
+		// TODO: add TraitHeavy to plugins.tinkers.traits - adds knockback
+		// TODO: add TraitBrittle - takes damage when hitting ore:stone blocks
 		if (Options.enableIridium) {
-			registerMaterial(Materials.iridium.getName(), false, true);
+			TCMetalMaterial iridiumTC = new TCMetalMaterial(Materials.iridium);
+			iridiumTC.craftable = false;
+			
+			// iridiumTC.addTrait( traits.heavy );
+			// iridiumTC.addTrait( traits.brittle );
+			registerMaterial(iridiumTC);
 		}
 
+		// TODO: add TraitReactive - extra damage to water mobs, extra damage when used in water
 		if (Options.enableMagnesium) {
-			registerMaterial(Materials.magnesium.getName(), false, true);
+			TCMetalMaterial magnesiumTC = new TCMetalMaterial(Materials.magnesium);
+			magnesiumTC.craftable = false;
+			
+			// magnesiumTC.addTrait(traits.reactive);
+			registerMaterial(magnesiumTC);
 		}
 
 		if (Options.enableManganese) {
-			registerMaterial(Materials.manganese.getName(), false, true);
+			TCMetalMaterial manganeseTC = new TCMetalMaterial(Materials.manganese);
+			manganeseTC.craftable = false;
+			
+			//manganeseTC.addTrait(traits.brittle);
+			registerMaterial(manganeseTC);
 		}
 
 		if (Options.enableNichrome) {
-			registerMaterial(Materials.nichrome.getName(), false, true);
-			registerAlloy(Materials.nichrome.getName(), 2, new String[] { "nickel", "chromium" }, new int[] { 1, 1 });
+			TCMetalMaterial nichromeTC = new TCMetalMaterial(Materials.nichrome);
+			nichromeTC.craftable = false;
+			
+			registerMaterial(nichromeTC);
+			registerAlloy(Materials.nichrome.fluid.getName(), 2, new String[] { "nickel", "chromium" }, new int[] { 1, 1 });
 		}
 
 		if (Options.enableOsmium) {
-			registerMaterial(Materials.osmium.getName(), false, true);
+			TCMetalMaterial osmiumTC = new TCMetalMaterial(Materials.osmium);
+			osmiumTC.craftable = false;
+			
+			// osiumTC.addTrait( traits.heavy );
+			// osiumTC.addTrait( traits.brittle );
+
+			registerMaterial(osmiumTC);
 		}
 
+		// TODO: add TraitRadioactive - deals damage to user if weapon doesn't have modifier:lead
+		// TODO: add TraitToxic - poison II on enemies
 		if (Options.enablePlutonium) {
-			registerMaterial(Materials.plutonium.getName(), false, true);
+			TCMetalMaterial plutoniumTC = new TCMetalMaterial(Materials.plutonium);
+			plutoniumTC.craftable = false;
+			
+			//plutoniumTC.addTrait(traits.radioactive);
+			//plutoniumTC.addTrait(traits.toxic, MaterialTypes.HEAD);
+			//plutoniumTC.addTrait(traits.toxic, MaterialTypes.PROJECTILE);
+			
+			registerMaterial(plutoniumTC);
 		}
 
+		// request is for custom modifier item to grant +50% durability
+		// This is not yet in the API - might require extra classes in MMDLib
 		if (Options.enableRutile) {
-			registerMaterial(Materials.rutile.getName(), false, true);
+			TCMetalMaterial rutileTC = new TCMetalMaterial(Materials.rutile;
+			rutileTC.craftable = false;
+			
+			registerMaterial(rutileTC);
 		}
 
 		if (Options.enableStainlessSteel) {
-			registerMaterial(Materials.stainlessSteel.getName(), false, true);
-			registerAlloy(Materials.stainlessSteel.getName(), 2, new String[] { "steel", "chromium" }, new int[] { 1, 1 });
+			TCMetalMaterial stainlessTC = new TCMetalMaterial(Materials.stainlessSteel);
+			stainlessTC.craftable = false;
+			
+			stainlessTC.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
+			stainlessTC.addTrait(TinkerTraits.stiff);
+			
+			registerMaterial(stainlessTC);
+			registerAlloy(Materials.stainlessSteel.fluid.getName(), 2, new String[] { "steel", "chromium" }, new int[] { 1, 1 });
 		}
 
 		if (Options.enableTantalum) {
-			registerMaterial(Materials.tantalum.getName(), false, true);
+			TCMetalMaterial tantalumTC = new TCMetalMaterial(Materials.tantalum);
+			tantalumTC.craftable = false;
+			
+			registerMaterial(tantalumTC);
 		}
 
 		if (Options.enableTitanium) {
-			registerMaterial(Materials.titanium.getName(), false, true);
-			registerAlloy(Materials.titanium.getName(), 2, new String[] { "rutile", "magnesium" }, new int[] { 1, 1 });
+			TCMetalMaterial titaniumTC = new TCMetalMaterial(Materials.titanium);
+			titaniumTC.craftable = false;
+			
+			registerMaterial(titaniumTC);
+			registerAlloy(Materials.titanium.fluid.getName(), 2, new String[] { "rutile", "magnesium" }, new int[] { 1, 1 });
 		}
 
 		if (Options.enableTungsten) {
-			registerMaterial(Materials.tungsten.getName(), false, true);
+			TCMetalMaterial tungstenTC = new TCMetalMaterial(Materials.tungsten);
+			tungstenTC.craftable = false;
+			
+			registerMaterial(tungstenTC);
 		}
 
 		if (Options.enableUranium) {
-			registerMaterial(Materials.uranium.getName(), false, true);
+			TCMetalMaterial uraniumTC = new TCMetalMaterial(Materials.uranium);
+			uraniumTC.craftable = false;
+			
+			uraniumTC.addTrait(TinkerTraits.poisonous, MaterialTypes.HEAD);
+			uraniumTC.addTrait(TinkerTraits.poisonous, MaterialTypes.PROJECTILE);
+			//uraniumTC.addTrait(traits.radioactive);
+			
+			registerMaterial(uraniumTC);
 		}
 
 		if (Options.enableZirconium) {
-			registerMaterial(Materials.zirconium.getName(), false, true);
+			TCMetalMaterial zirconiumTC = new TCMetalMaterial(Materials.zirconium);
+			zirconiumTC.craftable = false;
+			
+			registerMaterial(zirconiumTC);
 		}
 
 		initDone = true;
