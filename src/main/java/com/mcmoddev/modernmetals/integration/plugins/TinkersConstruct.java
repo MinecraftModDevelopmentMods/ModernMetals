@@ -57,7 +57,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 
 		if (Options.enableNichrome) {
 			registerMaterial(Materials.nichrome.getName(), false, true);
-			registerAlloy(Materials.nichrome.getName(), 2, new String[] { "nickel", "chrome" }, new int[] { 1, 1 });
+			registerAlloy(Materials.nichrome.getName(), 2, new String[] { "nickel", "chromium" }, new int[] { 1, 1 });
 		}
 
 		if (Options.enableOsmium) {
@@ -74,7 +74,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 
 		if (Options.enableStainlessSteel) {
 			registerMaterial(Materials.stainlessSteel.getName(), false, true);
-			registerAlloy(Materials.stainlessSteel.getName(), 2, new String[] { "steel", "chrome" }, new int[] { 1, 1 });
+			registerAlloy(Materials.stainlessSteel.getName(), 2, new String[] { "steel", "chromium" }, new int[] { 1, 1 });
 		}
 
 		if (Options.enableTantalum) {
