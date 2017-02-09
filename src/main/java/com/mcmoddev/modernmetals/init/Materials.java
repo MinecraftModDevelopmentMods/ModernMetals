@@ -12,23 +12,41 @@ import com.mcmoddev.lib.material.MetalMaterial;
  */
 public class Materials extends com.mcmoddev.lib.init.Materials {
 
+	/** Aluminum */
 	public static MetalMaterial aluminum;
+	/** Aluminum-Brass*/
 	public static MetalMaterial aluminumBrass;
+	/** Cadmium */
 	public static MetalMaterial cadmium;
+	/** Chromium */
 	public static MetalMaterial chromium;
+	/** Galvanized Steel */
 	public static MetalMaterial galvanizedSteel;
+	/** Iridium */
 	public static MetalMaterial iridium;
+	/** Magnesium */
 	public static MetalMaterial magnesium;
+	/** Manganese */
 	public static MetalMaterial manganese;
+	/** Nichrome */
 	public static MetalMaterial nichrome;
+	/** Osmium */
 	public static MetalMaterial osmium;
+	/** Plutonium */
 	public static MetalMaterial plutonium;
+	/** Rutile */
 	public static MetalMaterial rutile;
+	/** Stainless Steel */
 	public static MetalMaterial stainlessSteel;
+	/** Tantalum */
 	public static MetalMaterial tantalum;
+	/** Titanium */
 	public static MetalMaterial titanium;
+	/** Tungsten */
 	public static MetalMaterial tungsten;
+	/** Uranium */
 	public static MetalMaterial uranium;
+	/** Zirconium */
 	public static MetalMaterial zirconium;
 
 	private static boolean initDone = false;
