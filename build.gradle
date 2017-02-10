@@ -97,7 +97,7 @@ dependencies {
     compile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}:deobf"
     compile "slimeknights.mantle:Mantle:${mc_version}-${mantle_version}:deobf"
     compile "mmd:orespawn:${orespawn_version}-${mc_version}:dev"
-    compile "cyano:BaseMetals:${mc_version}-${bme_version}:deobf"
+    compile "mmd:BaseMetals:${mc_version}-${bme_version}:deobf"
 }
 
 processResources {
