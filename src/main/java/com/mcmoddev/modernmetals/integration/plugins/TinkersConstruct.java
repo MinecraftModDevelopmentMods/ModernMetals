@@ -4,8 +4,7 @@ import com.mcmoddev.modernmetals.util.Config.Options;
 import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
 import com.mcmoddev.lib.integration.plugins.tinkers.TCMetalMaterial;
-import com.mcmoddev.lib.integration.plugins.tinkers.TraitRegistry;
-import com.mcmoddev.lib.integration.plugins.tinkers.TraitLocationss;
+import com.mcmoddev.lib.integration.plugins.tinkers.TraitLocations;
 
 import com.mcmoddev.lib.integration.IIntegration;
 
@@ -67,8 +66,6 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			registerAlloy(Materials.galvanizedSteel.fluid.getName(), 2, new String[] { "steel", "zinc" }, new int[] { 1, 1 });
 		}
 
-		// TODO: add TraitHeavy to plugins.tinkers.traits - adds knockback
-		// TODO: add TraitBrittle - takes damage when hitting ore:stone blocks
 		if (Options.enableIridium) {
 			TCMetalMaterial iridiumTC = new TCMetalMaterial(Materials.iridium);
 			iridiumTC.craftable = false;
@@ -114,7 +111,6 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		// TODO: add TraitRadioactive - deals damage to user if weapon doesn't have modifier:lead
-		// TODO: add TraitToxic - poison II on enemies
 		if (Options.enablePlutonium) {
 			TCMetalMaterial plutoniumTC = new TCMetalMaterial(Materials.plutonium);
 			plutoniumTC.craftable = false;
