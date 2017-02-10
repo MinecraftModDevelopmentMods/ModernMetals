@@ -4,9 +4,9 @@ import com.mcmoddev.modernmetals.util.Config.Options;
 import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
 import com.mcmoddev.lib.integration.plugins.tinkers.TCMetalMaterial;
-import com.mcmoddev.lib.integration.plugins.tinkers.traits.MMDTraits;
-import slimeknights.tconstruct.tools.TinkerTraits;
-import slimeknights.tconstruct.library.materials.MaterialTypes;
+import com.mcmoddev.lib.integration.plugins.tinkers.TraitRegistry;
+import com.mcmoddev.lib.integration.plugins.tinkers.TraitLocationss;
+
 import com.mcmoddev.lib.integration.IIntegration;
 
 /**
@@ -29,7 +29,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial aluminumTC = new TCMetalMaterial(Materials.aluminum);
 			aluminumTC.craftable=false;
 
-			aluminumTC.addTrait(TinkerTraits.lightweight);
+			aluminumTC.addTrait("lightweight");
 			registerMaterial(aluminumTC);
 		}
 
@@ -51,8 +51,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial chromiumTC = new TCMetalMaterial(Materials.chromium);
 			chromiumTC.craftable = false;
 			
-			chromiumTC.addTrait(TinkerTraits.magnetic);
-			chromiumTC.addTrait(TinkerTraits.magnetic2, MaterialTypes.HEAD);
+			chromiumTC.addTrait("magnetic");
+			chromiumTC.addTrait("magnetic2", TraitLocations.HEAD);
 			registerMaterial(chromiumTC);
 		}
 
@@ -60,8 +60,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial galsteelTC = new TCMetalMaterial(Materials.galvanizedSteel);
 			galsteelTC.craftable = false;
 			
-			galsteelTC.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
-			galsteelTC.addTrait(TinkerTraits.stiff);
+			galsteelTC.addTrait("sharp", TraitLocations.HEAD);
+			galsteelTC.addTrait("stiff");
 			
 			registerMaterial(galsteelTC);
 			registerAlloy(Materials.galvanizedSteel.fluid.getName(), 2, new String[] { "steel", "zinc" }, new int[] { 1, 1 });
@@ -73,8 +73,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial iridiumTC = new TCMetalMaterial(Materials.iridium);
 			iridiumTC.craftable = false;
 			
-			iridiumTC.addTrait( MMDTraits.heavy );
-			iridiumTC.addTrait( MMDTraits.brittle );
+			iridiumTC.addTrait( "heavy" );
+			iridiumTC.addTrait( "brittle" );
 			registerMaterial(iridiumTC);
 		}
 
@@ -83,7 +83,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial magnesiumTC = new TCMetalMaterial(Materials.magnesium);
 			magnesiumTC.craftable = false;
 			
-			// magnesiumTC.addTrait(MMDTraits.reactive);
+			// magnesiumTC.addTrait("reactive");
 			registerMaterial(magnesiumTC);
 		}
 
@@ -91,7 +91,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial manganeseTC = new TCMetalMaterial(Materials.manganese);
 			manganeseTC.craftable = false;
 			
-			manganeseTC.addTrait(MMDTraits.brittle);
+			manganeseTC.addTrait("brittle");
 			registerMaterial(manganeseTC);
 		}
 
@@ -107,8 +107,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial osmiumTC = new TCMetalMaterial(Materials.osmium);
 			osmiumTC.craftable = false;
 			
-			osmiumTC.addTrait( MMDTraits.heavy );
-			osmiumTC.addTrait( MMDTraits.brittle );
+			osmiumTC.addTrait( "heavy" );
+			osmiumTC.addTrait( "brittle" );
 
 			registerMaterial(osmiumTC);
 		}
@@ -119,9 +119,9 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial plutoniumTC = new TCMetalMaterial(Materials.plutonium);
 			plutoniumTC.craftable = false;
 			
-			//plutoniumTC.addTrait(MMDTraits.radioactive);
-			plutoniumTC.addTrait(MMDTraits.toxic, MaterialTypes.HEAD);
-			plutoniumTC.addTrait(MMDTraits.toxic, MaterialTypes.PROJECTILE);
+			//plutoniumTC.addTrait("radioactive");
+			plutoniumTC.addTrait("toxic", TraitLocations.HEAD);
+			plutoniumTC.addTrait("toxic", TraitLocations.PROJECTILE);
 			
 			registerMaterial(plutoniumTC);
 		}
@@ -139,8 +139,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial stainlessTC = new TCMetalMaterial(Materials.stainlessSteel);
 			stainlessTC.craftable = false;
 			
-			stainlessTC.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
-			stainlessTC.addTrait(TinkerTraits.stiff);
+			stainlessTC.addTrait("sharp", TraitLocations.HEAD);
+			stainlessTC.addTrait("stiff");
 			
 			registerMaterial(stainlessTC);
 			registerAlloy(Materials.stainlessSteel.fluid.getName(), 2, new String[] { "steel", "chromium" }, new int[] { 1, 1 });
@@ -172,8 +172,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial uraniumTC = new TCMetalMaterial(Materials.uranium);
 			uraniumTC.craftable = false;
 			
-			uraniumTC.addTrait(TinkerTraits.poisonous, MaterialTypes.HEAD);
-			uraniumTC.addTrait(TinkerTraits.poisonous, MaterialTypes.PROJECTILE);
+			uraniumTC.addTrait("poisonous", TraitLocations.HEAD);
+			uraniumTC.addTrait("poisonous", TraitLocations.PROJECTILE);
 			//uraniumTC.addTrait(traits.radioactive);
 			
 			registerMaterial(uraniumTC);
