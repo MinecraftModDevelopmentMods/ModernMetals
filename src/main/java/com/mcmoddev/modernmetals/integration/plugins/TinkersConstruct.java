@@ -4,8 +4,7 @@ import com.mcmoddev.modernmetals.util.Config.Options;
 import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
 import com.mcmoddev.lib.integration.plugins.tinkers.TCMetalMaterial;
-import com.mcmoddev.lib.integration.plugins.tinkers.TraitRegistry;
-import com.mcmoddev.lib.integration.plugins.tinkers.TraitLocationss;
+import com.mcmoddev.lib.integration.plugins.tinkers.TraitLocations;
 
 import com.mcmoddev.lib.integration.IIntegration;
 
