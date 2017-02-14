@@ -80,7 +80,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial magnesiumTC = new TCMetalMaterial(Materials.magnesium);
 			magnesiumTC.craftable = false;
 			
-			// magnesiumTC.addTrait("reactive");
+			magnesiumTC.addTrait("reactive");
 			registerMaterial(magnesiumTC);
 		}
 
@@ -115,7 +115,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial plutoniumTC = new TCMetalMaterial(Materials.plutonium);
 			plutoniumTC.craftable = false;
 			
-			//plutoniumTC.addTrait("radioactive");
+			plutoniumTC.addTrait("radioactive");
 			plutoniumTC.addTrait("toxic", TraitLocations.HEAD);
 			plutoniumTC.addTrait("toxic", TraitLocations.PROJECTILE);
 			
@@ -170,7 +170,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			
 			uraniumTC.addTrait("poisonous", TraitLocations.HEAD);
 			uraniumTC.addTrait("poisonous", TraitLocations.PROJECTILE);
-			//uraniumTC.addTrait(traits.radioactive);
+			uraniumTC.addTrait("radioactive");
 			
 			registerMaterial(uraniumTC);
 		}
