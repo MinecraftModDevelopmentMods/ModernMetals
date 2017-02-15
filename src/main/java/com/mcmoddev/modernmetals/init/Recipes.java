@@ -49,8 +49,11 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 		if (Options.enableAluminumBrass) {
 			addSimpleAlloyRecipe(Materials.aluminumBrass, 2, "Aluminum", "Brass");
+			addAdditionalOredicts(Materials.aluminumBrass, "AluminumBrass");
 			addAdditionalOredicts(Materials.aluminumBrass, "Aluminiumbrass");
+			addAdditionalOredicts(Materials.aluminumBrass, "AluminiumBrass");
 			addAdditionalOredicts(Materials.aluminumBrass, "Alubrass");
+			addAdditionalOredicts(Materials.aluminumBrass, "AluBrass");
 		}
 
 		if (Options.enableChromium) {
@@ -59,6 +62,7 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 		if (Options.enableGalvanizedSteel) {
 			addSimpleAlloyRecipe(Materials.galvanizedSteel, 2, "Steel", "Zinc");
+			addAdditionalOredicts(Materials.galvanizedSteel, "GalvinizedSteel");
 		}
 
 		if (Options.enableNichrome) {
@@ -67,6 +71,7 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 		if (Options.enableStainlessSteel) {
 			addSimpleAlloyRecipe(Materials.stainlessSteel, 2, "Steel", "Chromium");
+			addAdditionalOredicts(Materials.stainlessSteel, "StainlessSteel");
 		}
 
 		if (Options.enableTitanium) {
