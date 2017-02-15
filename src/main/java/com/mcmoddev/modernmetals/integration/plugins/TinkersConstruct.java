@@ -66,8 +66,6 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			registerAlloy(Materials.galvanizedSteel.fluid.getName(), 2, new String[] { "steel", "zinc" }, new int[] { 1, 1 });
 		}
 
-		// TODO: add TraitHeavy to plugins.tinkers.traits - adds knockback
-		// TODO: add TraitBrittle - takes damage when hitting ore:stone blocks
 		if (Options.enableIridium) {
 			TCMetalMaterial iridiumTC = new TCMetalMaterial(Materials.iridium);
 			iridiumTC.craftable = false;
@@ -82,7 +80,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			TCMetalMaterial magnesiumTC = new TCMetalMaterial(Materials.magnesium);
 			magnesiumTC.craftable = false;
 			
-			// magnesiumTC.addTrait("reactive");
+			magnesiumTC.addTrait("reactive");
 			registerMaterial(magnesiumTC);
 		}
 
@@ -113,12 +111,11 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		// TODO: add TraitRadioactive - deals damage to user if weapon doesn't have modifier:lead
-		// TODO: add TraitToxic - poison II on enemies
 		if (Options.enablePlutonium) {
 			TCMetalMaterial plutoniumTC = new TCMetalMaterial(Materials.plutonium);
 			plutoniumTC.craftable = false;
 			
-			//plutoniumTC.addTrait("radioactive");
+			plutoniumTC.addTrait("radioactive");
 			plutoniumTC.addTrait("toxic", TraitLocations.HEAD);
 			plutoniumTC.addTrait("toxic", TraitLocations.PROJECTILE);
 			
@@ -173,7 +170,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			
 			uraniumTC.addTrait("poisonous", TraitLocations.HEAD);
 			uraniumTC.addTrait("poisonous", TraitLocations.PROJECTILE);
-			//uraniumTC.addTrait(traits.radioactive);
+			uraniumTC.addTrait("radioactive");
 			
 			registerMaterial(uraniumTC);
 		}
