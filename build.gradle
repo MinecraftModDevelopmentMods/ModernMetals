@@ -17,6 +17,10 @@ buildscript {
         classpath "com.matthewprenger:CurseGradle:1.0-SNAPSHOT"
     }
 }
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
+
+Logger logger = LoggerFactory.getLogger('MMD')
 
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: "com.matthewprenger.cursegradle"
@@ -252,6 +256,7 @@ String getModFile() {
 }
 
 String getVersion(String type, String mod_file) {
+    logger.info('ModFile: '+mod_file);
     String major = "0";
     String revision = "0";
     String patch = "0";
