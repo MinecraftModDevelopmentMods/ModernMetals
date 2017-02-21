@@ -1,9 +1,10 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
-import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
+import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.IIntegration;
 
-@ModernMetalsPlugin(Thaumcraft.PLUGIN_MODID)
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = Thaumcraft.PLUGIN_MODID)
 public class Thaumcraft extends com.mcmoddev.lib.integration.plugins.Thaumcraft implements IIntegration {
 
 	private static boolean initDone = false;

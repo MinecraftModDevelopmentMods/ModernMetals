@@ -20,7 +20,13 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
  * @author Jasmine Iwanek
  *
  */
-@Mod(modid = ModernMetals.MODID, name = ModernMetals.NAME, version = ModernMetals.VERSION, dependencies = "required-after:Forge@[12.18.3.2185,);required-after:basemetals;before:buildingbricks", acceptedMinecraftVersions = "[1.10.2,)", updateJSON = ModernMetals.UPDATEJSON)
+@Mod(
+		modid = ModernMetals.MODID,
+		name = ModernMetals.NAME,
+		version = ModernMetals.VERSION,
+		dependencies = "required-after:Forge@[12.18.3.2185,);required-after:basemetals;before:buildingbricks",
+		acceptedMinecraftVersions = "[1.10.2,)",
+		updateJSON = ModernMetals.UPDATEJSON)
 public class ModernMetals {
 
 	@Instance
@@ -37,7 +43,7 @@ public class ModernMetals {
 	 * increased whenever a change is made that has the potential to break
 	 * compatibility with other mods that depend on this one.
 	 */
-	public static final String VERSION = "0.12.0-beta1";
+	public static final String VERSION = "2.5.0-beta1";
 
 	public static final String UPDATEJSON = "https://raw.githubusercontent.com/MinecraftModDevelopment/ModernMetals/master/update.json";
 
@@ -46,17 +52,10 @@ public class ModernMetals {
 	@SidedProxy(clientSide = PROXY_BASE + "ClientProxy", serverSide = PROXY_BASE + "ServerProxy")
 	public static CommonProxy proxy;
 
-	public static Logger logger;
-/*
-	private ModernMetals() {
-		throw new IllegalAccessError("Not a instantiable class");
-	}
-*/
+	public static final Logger logger = LogManager.getFormatterLogger(ModernMetals.MODID);
+
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
-//		logger = event.getModLog();
-		logger = LogManager.getFormatterLogger(ModernMetals.MODID);
-
 		proxy.preInit(event);
 	}
 

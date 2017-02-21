@@ -12,6 +12,10 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
 	private static boolean initDone = false;
 
+	protected Blocks() {
+		throw new IllegalAccessError("Not a instantiable class");
+	}
+
 	/**
 	 *
 	 */

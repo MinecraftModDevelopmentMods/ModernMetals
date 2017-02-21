@@ -1,7 +1,9 @@
 package com.mcmoddev.modernmetals.proxy;
 
 import com.mcmoddev.modernmetals.ModernMetals;
-import com.mcmoddev.modernmetals.init.*;
+import com.mcmoddev.modernmetals.init.Blocks;
+import com.mcmoddev.modernmetals.init.Fluids;
+import com.mcmoddev.modernmetals.init.Items;
 
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;

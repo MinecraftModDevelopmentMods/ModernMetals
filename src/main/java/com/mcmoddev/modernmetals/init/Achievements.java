@@ -41,15 +41,19 @@ public class Achievements extends com.mcmoddev.lib.init.Achievements {
 			if (Options.enableAluminumBrass) {
 				aluminumBrassMaker = makeAchievement("aluminumbrass_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 0, Materials.aluminumBrass.ingot, page);
 			}
+
 			if (Options.enableGalvanizedSteel) {
 				galvanizedSteelMaker = makeAchievement("galvanized_steel_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 1, Materials.galvanizedSteel.ingot, page);
 			}
+
 			if (Options.enableNichrome) {
 				nichromeMaker = makeAchievement("nichrome_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 2, Materials.nichrome.ingot, page);
 			}
+
 			if (Options.enableStainlessSteel) {
 				stainlessSteelMaker = makeAchievement("stainless_steel_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 3, Materials.stainlessSteel.ingot, page);
 			}
+
 			if (Options.enableTitanium) {
 				titaniumMaker = makeAchievement("titanium_maker", com.mcmoddev.basemetals.init.Achievements.metallurgy, 0, 4, Materials.titanium.ingot, page);
 			}

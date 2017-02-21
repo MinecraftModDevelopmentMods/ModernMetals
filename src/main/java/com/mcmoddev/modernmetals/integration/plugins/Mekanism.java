@@ -1,12 +1,12 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
+import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.util.Config.Options;
-
-import com.mcmoddev.modernmetals.integration.ModernMetalsPlugin;
+import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.IIntegration;
 
-@ModernMetalsPlugin(Mekanism.PLUGIN_MODID)
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = Mekanism.PLUGIN_MODID)
 public class Mekanism extends com.mcmoddev.lib.integration.plugins.Mekanism implements IIntegration {
 
 	private static boolean initDone = false;

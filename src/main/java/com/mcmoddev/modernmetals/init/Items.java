@@ -112,7 +112,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 			createItemsModSupport(Materials.zirconium);
 		}
 
-//		addToMetList() // May not be needed, check
+		// addToMetList() // May not be needed, check
 
 		initDone = true;
 	}

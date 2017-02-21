@@ -1,8 +1,8 @@
 package com.mcmoddev.modernmetals.init;
 
+import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.util.Config.Options;
 import com.mcmoddev.lib.util.Oredicts;
-import com.mcmoddev.modernmetals.init.Materials;
 
 import net.minecraftforge.oredict.OreDictionary;
 
