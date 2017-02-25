@@ -5,7 +5,7 @@ import com.mcmoddev.modernmetals.init.Materials;
 
 import com.mcmoddev.lib.material.IMetalObject;
 import com.mcmoddev.lib.material.MetalMaterial;
-import com.mcmoddev.lib.items.ItemMetalIngot;
+import com.mcmoddev.lib.item.ItemMetalIngot;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
