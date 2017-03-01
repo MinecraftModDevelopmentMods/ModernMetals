@@ -29,7 +29,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		if (Options.enableAluminumBrass) {
-			registry.getMaterial("aluminumBrass", Materials.aluminumBrass).setCastable(true).settle();
+			registry.getMaterial("aluminumbrass", Materials.aluminumBrass).setCastable(true).settle();
 		}
 
 		if (Options.enableCadmium) {
@@ -41,8 +41,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		if (Options.enableGalvanizedSteel) {
-			registry.getMaterial("galvanizedSteel", Materials.galvanizedSteel).addTrait("sharp", TraitLocations.HEAD).addTrait("stiff").setCastable(true).settle();
-			registry.registerAlloy("galvanizedSteel",Materials.galvanizedSteel.fluid, 2, "steel", 1, "zinc", 1);
+			registry.getMaterial("galvanizedsteel", Materials.galvanizedSteel).addTrait("sharp", TraitLocations.HEAD).addTrait("stiff").setCastable(true).settle();
+			registry.registerAlloy("galvanizedsteel",Materials.galvanizedSteel.fluid, 2, "steel", 1, "zinc", 1);
 		}
 
 		if (Options.enableIridium) {
@@ -77,8 +77,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		if (Options.enableStainlessSteel) {
-			registry.getMaterial("stainlessSteel", Materials.stainlessSteel).setCastable(true).addTrait("sharp", TraitLocations.HEAD).addTrait("stiff").settle();
-			registry.registerAlloy("stainlessSteel", Materials.stainlessSteel.fluid, 2, "steel", 1, "chromium", 1);
+			registry.getMaterial("stainlesssteel", Materials.stainlessSteel).setCastable(true).addTrait("sharp", TraitLocations.HEAD).addTrait("stiff").settle();
+			registry.registerAlloy("stainlesssteel", Materials.stainlessSteel.fluid, 2, "steel", 1, "chromium", 1);
 		}
 
 		if (Options.enableTantalum) {
@@ -93,11 +93,12 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		if (Options.enableTungsten) {
 			registry.getMaterial("tungsten", Materials.tungsten).setCastable(true).settle();
 		}
-
+/*
+		TODO: FIXME
 		if (Options.enableUranium) {
 			registry.getMaterial("uranium", Materials.uranium).setCastable(true).addTrait("poisonous", TraitLocations.HEAD).addTrait("poisonous", TraitLocations.PROJECTILE).addTrait("radioactive");
 		}
-
+*/
 		if (Options.enableZirconium) {
 			registry.getMaterial("zirconium", Materials.zirconium).setCastable(true).settle();
 		}
