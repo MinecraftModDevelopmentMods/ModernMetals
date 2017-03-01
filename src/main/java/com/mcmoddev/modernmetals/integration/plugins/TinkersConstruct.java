@@ -93,12 +93,11 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		if (Options.enableTungsten) {
 			registry.getMaterial("tungsten", Materials.tungsten).setCastable(true).settle();
 		}
-/*
-		TODO: FIXME
+
 		if (Options.enableUranium) {
-			registry.getMaterial("uranium", Materials.uranium).setCastable(true).addTrait("poisonous", TraitLocations.HEAD).addTrait("poisonous", TraitLocations.PROJECTILE).addTrait("radioactive");
+			registry.getMaterial("uranium", Materials.uranium).setCastable(true).addTrait("poisonous", TraitLocations.HEAD).addTrait("poisonous", TraitLocations.PROJECTILE).addTrait("radioactive").settle();
 		}
-*/
+
 		if (Options.enableZirconium) {
 			registry.getMaterial("zirconium", Materials.zirconium).setCastable(true).settle();
 		}
