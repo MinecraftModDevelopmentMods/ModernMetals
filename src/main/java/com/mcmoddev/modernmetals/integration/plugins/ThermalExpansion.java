@@ -46,11 +46,25 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 			addPlatePress(e.getValue(), e.getKey());
 			addPressStorage(e.getValue(), e.getKey());			
 		}
-		ThermalExpansionHelper.addMagmaticFuel(Materials.plutonium.fluid.getName(), 1000000);
-		ThermalExpansionHelper.addMagmaticFuel(Materials.uranium.fluid.getName(), 750000);
-		addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.chromium.ingot, 1), new ItemStack(Materials.stainlessSteel.ingot, 2));
-		addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.getMaterialByName("zinc").ingot, 1), new ItemStack(Materials.galvanizedSteel.ingot, 2));
-		addSmelterRecipe(4000, new ItemStack( Materials.rutile.ingot, 1), new ItemStack( Materials.magnesium.ingot, 1), new ItemStack( Materials.titanium.ingot, 2));
+		
+		if( Options.enablePlutonium ) {
+			ThermalExpansionHelper.addMagmaticFuel(Materials.plutonium.fluid.getName(), 1000000);
+		}
+		
+		if( Options.enableUranium ) {
+			ThermalExpansionHelper.addMagmaticFuel(Materials.getMaterialByName("uranium").fluid.getName(), 750000);
+		}
+		
+		if( Options.enableChromium && Options.enableStainlessSteel ) {
+			addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.chromium.ingot, 1), new ItemStack(Materials.stainlessSteel.ingot, 2));
+		}
+		
+		if( Options.enableGalvanizedSteel ) {
+			addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.getMaterialByName("zinc").ingot, 1), new ItemStack(Materials.galvanizedSteel.ingot, 2));
+		}
+		
+		if( Options.enableRutile && Options.enableMagnesium && Options.enableTitanium ) {
+			addSmelterRecipe(4000, new ItemStack( Materials.rutile.ingot, 1), new ItemStack( Materials.magnesium.ingot, 1), new ItemStack( Materials.titanium.ingot, 2));
+		}
 	}
-
 }
