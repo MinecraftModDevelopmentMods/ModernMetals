@@ -12,7 +12,7 @@ import cofh.api.util.ThermalExpansionHelper;
 import net.minecraft.item.ItemStack;
 
 @MMDPlugin( addonId = ModernMetals.MODID, pluginId = ThermalExpansion.PLUGIN_MODID )
-public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.ThermalExpansion implements IIntegration {
+public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.ThermalExpansionBase implements IIntegration {
 
 	public ThermalExpansion() {
 		

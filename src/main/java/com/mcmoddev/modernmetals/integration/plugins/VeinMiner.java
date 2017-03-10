@@ -12,7 +12,7 @@ import com.mcmoddev.lib.integration.IIntegration;
  *
  */
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = VeinMiner.PLUGIN_MODID)
-public class VeinMiner extends com.mcmoddev.lib.integration.plugins.VeinMiner implements IIntegration {
+public class VeinMiner extends com.mcmoddev.lib.integration.plugins.VeinMinerBase implements IIntegration {
 
 	private static boolean initDone = false;
 

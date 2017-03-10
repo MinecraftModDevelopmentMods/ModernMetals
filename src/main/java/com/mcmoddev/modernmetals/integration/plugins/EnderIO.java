@@ -11,7 +11,7 @@ import com.mcmoddev.lib.integration.IIntegration;
  *
  */
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = EnderIO.PLUGIN_MODID)
-public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIO implements IIntegration {
+public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIOBase implements IIntegration {
 
 	private static boolean initDone = false;
 
