@@ -111,6 +111,10 @@ repositories {
     	name "tehnut"
     	url "http://tehnut.info/maven"
     }
+    maven { // CoFH stuff is here
+    	name "Covers Maven"
+    	url "http://maven.covers1624.net"
+    }
 }
 
 dependencies {
@@ -118,6 +122,10 @@ dependencies {
     compile "slimeknights.mantle:Mantle:${mc_version}-${mantle_version}:deobf"
     compile "mmd:orespawn:${orespawn_version}-${mc_version}:dev"
     compile "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}:deobf"
+    // CoFHCore for TE integration
+    compile ("cofh:CoFHCore:${mc_version}-${cofhcore_version}:deobf") {
+    	exclude group: 'mezz.jei'
+    }
 }
 
 processResources {
