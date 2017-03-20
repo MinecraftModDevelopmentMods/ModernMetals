@@ -56,11 +56,11 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		}
 		
 		if( Options.enableChromium && Options.enableStainlessSteel ) {
-			addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.chromium.ingot, 1), new ItemStack(Materials.stainlessSteel.ingot, 2));
+			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.chromium.ingot, 1), new ItemStack(Materials.stainlessSteel.ingot, 2));
 		}
 		
 		if( Options.enableGalvanizedSteel ) {
-			addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.getMaterialByName("zinc").ingot, 1), new ItemStack(Materials.galvanizedSteel.ingot, 2));
+			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.getMaterialByName("zinc").ingot, 1), new ItemStack(Materials.galvanizedSteel.ingot, 2));
 		}
 		
 		if( Options.enableRutile && Options.enableMagnesium && Options.enableTitanium ) {
