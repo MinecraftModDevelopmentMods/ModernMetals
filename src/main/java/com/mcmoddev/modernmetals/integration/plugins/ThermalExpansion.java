@@ -64,7 +64,7 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		}
 		
 		if( Options.enableRutile && Options.enableMagnesium && Options.enableTitanium ) {
-			addSmelterRecipe(4000, new ItemStack( Materials.rutile.ingot, 1), new ItemStack( Materials.magnesium.ingot, 1), new ItemStack( Materials.titanium.ingot, 2));
+			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.rutile.ingot, 1), new ItemStack( Materials.magnesium.ingot, 1), new ItemStack( Materials.titanium.ingot, 2));
 		}
 	}
 }
