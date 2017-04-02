@@ -15,12 +15,14 @@ buildscript {
     dependencies {
         classpath "net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT"
         classpath "com.matthewprenger:CurseGradle:1.0-SNAPSHOT"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2.1"
     }
 }
 
 apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: "com.matthewprenger.cursegradle"
 apply plugin: "maven-publish"
+apply plugin: "org.sonarqube"
 
 javadoc {
     failOnError = false
@@ -71,15 +73,15 @@ minecraft {
 }
 
 repositories {
-    maven {
+    maven { // Mantle, TCon, JEI
         name "DVS1 Maven FS"
         url "http://dvs1.progwml6.com/files/maven"
     }
-    maven {
+    maven { // CCL, CCC, NEI
         name "Chickenbones Repo"
         url "http://chickenbones.net/maven/"
     }
-    maven {
+    maven { // The One Probe
         name "tterrag"
         url "http://maven.tterrag.com/"
     }
@@ -87,31 +89,31 @@ repositories {
         name "MMD"
         url "https://maven.mcmoddev.com/"
     }
-    maven {
+    maven { // MCMultipart
         name "amadornes"
         url "http://maven.amadornes.com/"
     }
-    maven {
+    maven { // Tesla
         name "epoxide"
         url "http://maven.epoxide.org"
     }
-    maven { // CraftTweaker
+    maven { // CraftTweaker, ZenScript
         name 'jared maven'
         url "http://blamejared.com/maven"
     }
-    maven {
+    maven { // Mekanism, TAIGA
         name "jitpack"
         url "https://jitpack.io"
     }
-    maven {
+    maven { // IC2
         name "industrialcraft"
         url "http://maven.ic2.player.to"
     }
-    maven { // Waila is here
+    maven { // Waila
     	name "tehnut"
     	url "http://tehnut.info/maven"
     }
-    maven { // CoFH stuff is here
+    maven { // CoFH
     	name "Covers Maven"
     	url "http://maven.covers1624.net"
     }
