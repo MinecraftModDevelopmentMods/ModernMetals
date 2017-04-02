@@ -3,9 +3,9 @@ package com.mcmoddev.modernmetals.util;
 import com.mcmoddev.modernmetals.init.Achievements;
 import com.mcmoddev.modernmetals.init.Materials;
 
-import com.mcmoddev.lib.material.IMetalObject;
-import com.mcmoddev.lib.material.MetalMaterial;
-import com.mcmoddev.lib.item.ItemMetalIngot;
+import com.mcmoddev.lib.material.IMMDObject;
+import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.lib.item.ItemMMDIngot;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -17,8 +17,8 @@ public class EventHandler {
 	@SubscribeEvent
 	void event(ItemCraftedEvent event) {
 		final Item item = event.crafting.getItem();
-		if (item instanceof IMetalObject) {
-			final MetalMaterial material = ((IMetalObject) item).getMaterial();
+		if (item instanceof IMMDObject) {
+			final MMDMaterial material = ((IMMDObject) item).getMaterial();
 			if (com.mcmoddev.basemetals.util.Config.Options.enableAchievements) {
 				if (item instanceof ItemMetalBlend) {
 //					event.player.addStat(Achievements.metallurgy, 1);
@@ -31,10 +31,10 @@ public class EventHandler {
 	@SubscribeEvent
 	void event(ItemSmeltedEvent event) {
 		final Item item = event.smelting.getItem();
-		if (item instanceof IMetalObject) {
-			final MetalMaterial material = ((IMetalObject) item).getMaterial();
+		if (item instanceof IMMDObject) {
+			final MMDMaterial material = ((IMMDObject) item).getMaterial();
 			if (com.mcmoddev.basemetals.util.Config.Options.enableAchievements) {
-				if (item instanceof ItemMetalIngot) {
+				if (item instanceof ItemMMDIngot) {
 					// event.player.addStat(Achievements.this_is_new, 1);
 					if (material == Materials.aluminumBrass) {
 						event.player.addStat(Achievements.aluminumBrassMaker, 1);

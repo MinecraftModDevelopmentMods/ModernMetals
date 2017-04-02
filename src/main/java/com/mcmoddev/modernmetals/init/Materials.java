@@ -2,8 +2,8 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.util.Config.Options;
 
-import com.mcmoddev.lib.material.MetalMaterial;
-import com.mcmoddev.lib.material.MetalMaterial.MaterialType;
+import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.lib.material.MMDMaterial.MaterialType;
 
 /**
  * This class initializes all of the materials in Modern Metals.
@@ -14,41 +14,41 @@ import com.mcmoddev.lib.material.MetalMaterial.MaterialType;
 public class Materials extends com.mcmoddev.lib.init.Materials {
 
 	/** Aluminum */
-	public static MetalMaterial aluminum;
+	public static MMDMaterial aluminum;
 	/** Aluminum-Brass*/
-	public static MetalMaterial aluminumBrass;
+	public static MMDMaterial aluminumBrass;
 	/** Cadmium */
-	public static MetalMaterial cadmium;
+	public static MMDMaterial cadmium;
 	/** Chromium */
-	public static MetalMaterial chromium;
+	public static MMDMaterial chromium;
 	/** Galvanized Steel */
-	public static MetalMaterial galvanizedSteel;
+	public static MMDMaterial galvanizedSteel;
 	/** Iridium */
-	public static MetalMaterial iridium;
+	public static MMDMaterial iridium;
 	/** Magnesium */
-	public static MetalMaterial magnesium;
+	public static MMDMaterial magnesium;
 	/** Manganese */
-	public static MetalMaterial manganese;
+	public static MMDMaterial manganese;
 	/** Nichrome */
-	public static MetalMaterial nichrome;
+	public static MMDMaterial nichrome;
 	/** Osmium */
-	public static MetalMaterial osmium;
+	public static MMDMaterial osmium;
 	/** Plutonium */
-	public static MetalMaterial plutonium;
+	public static MMDMaterial plutonium;
 	/** Rutile */
-	public static MetalMaterial rutile;
+	public static MMDMaterial rutile;
 	/** Stainless Steel */
-	public static MetalMaterial stainlessSteel;
+	public static MMDMaterial stainlessSteel;
 	/** Tantalum */
-	public static MetalMaterial tantalum;
+	public static MMDMaterial tantalum;
 	/** Titanium */
-	public static MetalMaterial titanium;
+	public static MMDMaterial titanium;
 	/** Tungsten */
-	public static MetalMaterial tungsten;
+	public static MMDMaterial tungsten;
 	/** Uranium */
-	public static MetalMaterial uranium;
+	public static MMDMaterial uranium;
 	/** Zirconium */
-	public static MetalMaterial zirconium;
+	public static MMDMaterial zirconium;
 
 	private static boolean initDone = false;
 
