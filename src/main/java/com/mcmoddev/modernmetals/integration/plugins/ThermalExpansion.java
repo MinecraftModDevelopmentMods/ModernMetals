@@ -6,6 +6,7 @@ import java.util.Map;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.util.Config.Options;
+import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import cofh.api.util.ThermalExpansionHelper;
@@ -48,23 +49,23 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		}
 		
 		if( Options.enablePlutonium ) {
-			ThermalExpansionHelper.addMagmaticFuel(Materials.plutonium.fluid.getName(), 1000000);
+			ThermalExpansionHelper.addMagmaticFuel(Materials.getMaterialByName("plutonium").getFluid().getName(), 1000000);
 		}
 		
 		if( Options.enableUranium ) {
-			ThermalExpansionHelper.addMagmaticFuel(Materials.getMaterialByName("uranium").fluid.getName(), 750000);
+			ThermalExpansionHelper.addMagmaticFuel(Materials.getMaterialByName("uranium").getFluid().getName(), 750000);
 		}
 		
 		if( Options.enableChromium && Options.enableStainlessSteel ) {
-			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.chromium.ingot, 1), new ItemStack(Materials.stainlessSteel.ingot, 2));
+			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName("chromium").getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName("stainlessSteel").getItem(Names.INGOT), 2));
 		}
 		
 		if( Options.enableGalvanizedSteel ) {
-			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").ingot, 1), new ItemStack(Materials.getMaterialByName("zinc").ingot, 1), new ItemStack(Materials.galvanizedSteel.ingot, 2));
+			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("steel").getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName("zinc").getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName("galvanizedSteel").getItem(Names.INGOT), 2));
 		}
 		
 		if( Options.enableRutile && Options.enableMagnesium && Options.enableTitanium ) {
-			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.rutile.ingot, 1), new ItemStack( Materials.magnesium.ingot, 1), new ItemStack( Materials.titanium.ingot, 2));
+			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack( Materials.getMaterialByName("rutile").getItem(Names.INGOT), 1), new ItemStack( Materials.getMaterialByName("magnesium").getItem(Names.INGOT), 1), new ItemStack( Materials.getMaterialByName("titanium").getItem(Names.INGOT), 2));
 		}
 	}
 }
