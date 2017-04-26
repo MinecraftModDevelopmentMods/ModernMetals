@@ -2,6 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.modernmetals.util.Config.Options;
+import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.util.Oredicts;
 
 import net.minecraftforge.oredict.OreDictionary;
@@ -41,10 +42,10 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 			String oreDictName = "Bauxite";
 
 			addAdditionalOredicts(Materials.aluminum, "Aluminium");
-			OreDictionary.registerOre(Oredicts.ORE + oreDictName, Materials.aluminum.ore);
-			OreDictionary.registerOre(Oredicts.DUST + oreDictName, Materials.aluminum.powder);
-			OreDictionary.registerOre(Oredicts.DUSTTINY + oreDictName, Materials.aluminum.smallpowder);
-			OreDictionary.registerOre(Oredicts.DUSTSMALL + oreDictName, Materials.aluminum.smallpowder);
+			OreDictionary.registerOre(Oredicts.ORE + oreDictName, Materials.getMaterialByName("aluminum").getBlock(Names.ORE));
+			OreDictionary.registerOre(Oredicts.DUST + oreDictName, Materials.getMaterialByName("aluminum").getItem(Names.POWDER));
+			OreDictionary.registerOre(Oredicts.DUST_TINY + oreDictName, Materials.getMaterialByName("aluminum").getItem(Names.SMALLPOWDER));
+			OreDictionary.registerOre(Oredicts.DUST_SMALL + oreDictName, Materials.getMaterialByName("aluminum").getItem(Names.SMALLPOWDER));
 		}
 
 		if (Options.enableAluminumBrass) {
