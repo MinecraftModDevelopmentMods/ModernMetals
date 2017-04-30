@@ -29,7 +29,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		if (Options.enableAluminumBrass) {
-			registry.getMaterial("aluminumbrass", Materials.getMaterialByName("aluminumBrass")).setCastable(true).settle();
+			registry.getMaterial("aluminumbrass", Materials.getMaterialByName("aluminumbrass")).setCastable(true).settle();
 		}
 
 		if (Options.enableCadmium) {
@@ -41,8 +41,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		if (Options.enableGalvanizedSteel) {
-			registry.getMaterial("galvanizedsteel", Materials.getMaterialByName("galvanizedSteel")).addTrait("sharp", TraitLocations.HEAD).addTrait("stiff").setCastable(true).settle();
-			registry.registerAlloy("galvanizedsteel",Materials.getMaterialByName("galvanizedSteel").getFluid(), 2, "steel", 1, "zinc", 1);
+			registry.getMaterial("galvanizedsteel", Materials.getMaterialByName("galvanizedsteel")).addTrait("sharp", TraitLocations.HEAD).addTrait("stiff").setCastable(true).settle();
+			registry.registerAlloy("galvanizedsteel",Materials.getMaterialByName("galvanizedsteel").getFluid(), 2, "steel", 1, "zinc", 1);
 		}
 
 		if (Options.enableIridium) {
@@ -77,8 +77,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		if (Options.enableStainlessSteel) {
-			registry.getMaterial("stainlesssteel", Materials.getMaterialByName("stainlessSteel")).setCastable(true).addTrait("sharp", TraitLocations.HEAD).addTrait("stiff").settle();
-			registry.registerAlloy("stainlesssteel", Materials.getMaterialByName("stainlessSteel").getFluid(), 2, "steel", 1, "chromium", 1);
+			registry.getMaterial("stainlesssteel", Materials.getMaterialByName("stainlesssteel")).setCastable(true).addTrait("sharp", TraitLocations.HEAD).addTrait("stiff").settle();
+			registry.registerAlloy("stainlesssteel", Materials.getMaterialByName("stainlesssteel").getFluid(), 2, "steel", 1, "chromium", 1);
 		}
 
 		if (Options.enableTantalum) {
