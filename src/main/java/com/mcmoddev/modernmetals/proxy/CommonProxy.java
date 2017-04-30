@@ -33,7 +33,8 @@ public class CommonProxy {
 		Blocks.init();
 		Items.init();
 		VillagerTrades.init();
-
+		ItemGroups.setupIcons();
+		
 		FMLInterModComms.sendFunctionMessage("orespawn", "api", "com.mcmoddev.orespawn.ModernMetalsOreSpawn");
 
 		IntegrationManager.INSTANCE.preInit(event);

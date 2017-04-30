@@ -38,6 +38,10 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 			return;
 		}
 
+		initDone = true;
+	}
+	
+	public static void setupIcons() {
 		Item blocksTabIconItem = Item.getItemFromBlock(Options.enableSteel?Materials.getMaterialByName(MaterialNames.STEEL).getBlock(Names.BLOCK):(Block) Materials.getMaterialByName(MaterialNames.IRON).getBlock(Names.BLOCK));
 		Item itemsTabIconItem = Options.enableGear?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.GEAR):Items.STICK;
 		Item toolsTabIconItem = Options.enableBasicTools?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.SWORD):Items.DIAMOND_SWORD;
@@ -45,7 +49,5 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 		blocksTab.setTabIconItem( blocksTabIconItem );
 		itemsTab.setTabIconItem(itemsTabIconItem);
 		toolsTab.setTabIconItem(toolsTabIconItem);
-
-		initDone = true;
 	}
 }
