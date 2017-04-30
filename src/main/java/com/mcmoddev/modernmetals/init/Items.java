@@ -35,7 +35,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		}
 
 		if (Options.enableAluminumBrass) {
-			createItemsFull(Materials.getMaterialByName("aluminumBrass"), myTabs);
+			createItemsFull(Materials.getMaterialByName("aluminumbrass"), myTabs);
 		}
 
 		if (Options.enableCadmium) {
@@ -49,7 +49,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		}
 
 		if (Options.enableGalvanizedSteel) {
-			createItemsFull(Materials.getMaterialByName("galvanizedSteel"), myTabs);
+			createItemsFull(Materials.getMaterialByName("galvanizedsteel"), myTabs);
 		}
 
 		if (Options.enableIridium) {
@@ -87,7 +87,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		}
 
 		if (Options.enableStainlessSteel) {
-			createItemsFull(Materials.getMaterialByName("stainlessSteel"), myTabs);
+			createItemsFull(Materials.getMaterialByName("stainlesssteel"), myTabs);
 		}
 
 		if (Options.enableTantalum) {
