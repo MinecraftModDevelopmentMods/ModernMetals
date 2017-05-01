@@ -22,24 +22,22 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 	public void init() {
 		Map<String, Boolean> materials = new HashMap<>();
 		
-		materials.put("Aluminum", Options.enableAluminum);
-		materials.put("AluminumBrass", Options.enableAluminumBrass);
-		materials.put("Cadmium", Options.enableCadmium);
-		materials.put("Chromium", Options.enableChromium);
-		materials.put("GalvanizedSteel", Options.enableGalvanizedSteel);
-		materials.put("Iridium", Options.enableIridium);
-		materials.put("Magnesium", Options.enableMagnesium);
-		materials.put("Manganese", Options.enableManganese);
-		materials.put("Nichrome", Options.enableNichrome);
-		materials.put("Osmium", Options.enableOsmium);
-		materials.put("Plutonium", Options.enablePlutonium);
-		materials.put("Rutile", Options.enableRutile);
-		materials.put("StainlessSteel", Options.enableStainlessSteel);
-		materials.put("Tantalum", Options.enableTantalum);
-		materials.put("Titanium", Options.enableTitanium);
-		materials.put("Tungsten", Options.enableTungsten);
-		materials.put("Uranium", Options.enableUranium);
-		materials.put("Zirconium", Options.enableZirconium);
+		materials.put("aluminumbrass", Options.enableAluminumBrass);
+		materials.put("cadmium", Options.enableCadmium);
+		materials.put("chromium", Options.enableChromium);
+		materials.put("galvanizedsteel", Options.enableGalvanizedSteel);
+		materials.put("magnesium", Options.enableMagnesium);
+		materials.put("manganese", Options.enableManganese);
+		materials.put("nichrome", Options.enableNichrome);
+		materials.put("osmium", Options.enableOsmium);
+		materials.put("plutonium", Options.enablePlutonium);
+		materials.put("rutile", Options.enableRutile);
+		materials.put("stainlesssteel", Options.enableStainlessSteel);
+		materials.put("tantalum", Options.enableTantalum);
+		materials.put("titanium", Options.enableTitanium);
+		materials.put("tungsten", Options.enableTungsten);
+		materials.put("uranium", Options.enableUranium);
+		materials.put("zirconium", Options.enableZirconium);
 
 		for( Map.Entry<String, Boolean> e : materials.entrySet()) {
 			addFurnace(e.getValue(), e.getKey());

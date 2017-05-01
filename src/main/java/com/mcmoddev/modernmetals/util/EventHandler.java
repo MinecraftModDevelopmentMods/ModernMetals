@@ -32,8 +32,8 @@ public class EventHandler {
 	void event(ItemSmeltedEvent event) {
 		final Item item = event.smelting.getItem();
 		if (item instanceof IMMDObject) {
-			final MMDMaterial material = ((IMMDObject) item).getMaterial();
-			if (com.mcmoddev.basemetals.util.Config.Options.enableAchievements) {
+			final MMDMaterial material = ((IMMDObject) item).getMMDMaterial();
+			if (com.mcmoddev.basemetals.util.Config.Options.enableAchievements()) {
 				if (item instanceof ItemMMDIngot) {
 					// event.player.addStat(Achievements.this_is_new, 1);
 					if (material == Materials.aluminumBrass) {
