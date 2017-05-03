@@ -1,6 +1,6 @@
 package com.mcmoddev.modernmetals.init;
 
-import com.mcmoddev.basemetals.init.ItemGroups;
+
 import com.mcmoddev.lib.util.TabContainer;
 import com.mcmoddev.modernmetals.util.Config.Options;
 
