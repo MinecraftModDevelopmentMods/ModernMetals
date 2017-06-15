@@ -17,7 +17,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT"
+        classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
         classpath "com.matthewprenger:CurseGradle:1.0-SNAPSHOT"
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.2.1"
     }
@@ -33,7 +33,7 @@ javadoc {
 }
 
 def mod_file = getModFile()
-def mc_version = "1.11.2"
+def mc_version = "1.12"
 def short_version = getVersion("VERSION", mod_file)
 version = mc_version + "-" + short_version
 if (System.getenv().BUILD_NUMBER) {
@@ -68,9 +68,9 @@ if (secretFile.exists()) {
 }
 
 minecraft {
-    version = "1.11.2-13.20.0.2228"
+    version = "1.12-14.21.0.2327"
     runDir = "run"
-    mappings = "stable_32"
+    mappings = "snapshot_20170615"
 //  coreMod = corePlugin
 //  clientJvmArgs = ["-Dfml.coreMods.load=$corePlugin"]
 //  serverJvmArgs = ["-Dfml.coreMods.load=$corePlugin"]
@@ -128,10 +128,10 @@ repositories {
 }
 
 dependencies {
-    compile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}:deobf"
-    compile "slimeknights.mantle:Mantle:${mc_version}-${mantle_version}:deobf"
-    compile "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}:dev"
-    compile "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}:deobf"
+    compile "slimeknights:TConstruct:1.11.2-${tconstruct_version}:deobf"
+    compile "slimeknights.mantle:Mantle:1.11.2-${mantle_version}:deobf"
+    compile "com.mcmoddev:OreSpawn:1.11.2-${orespawn_version}:dev"
+    compile "com.mcmoddev:BaseMetals:1.11.2-${bme_version}:deobf"
     // CoFHCore for TE integration
     compile ("cofh:CoFHCore:1.10.2-${cofhcore_version}:deobf") {
     	exclude group: 'mezz.jei'
