@@ -42,9 +42,9 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 	}
 	
 	public static void setupIcons() {
-		Item blocksTabIconItem = Item.getItemFromBlock(Options.enableSteel?Materials.getMaterialByName(MaterialNames.STEEL).getBlock(Names.BLOCK):(Block) Materials.getMaterialByName(MaterialNames.IRON).getBlock(Names.BLOCK));
-		Item itemsTabIconItem = Options.enableGear?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.GEAR):Items.STICK;
-		Item toolsTabIconItem = Options.enableBasicTools?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.SWORD):Items.DIAMOND_SWORD;
+		Item blocksTabIconItem = Item.getItemFromBlock(Options.materialEnabled(com.mcmoddev.basemetals.data.MaterialNames.STEEL)?Materials.getMaterialByName(MaterialNames.STEEL).getBlock(Names.BLOCK):(Block) Materials.getMaterialByName(MaterialNames.IRON).getBlock(Names.BLOCK));
+		Item itemsTabIconItem = Options.thingEnabled("Gear")?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.GEAR):Items.STICK;
+		Item toolsTabIconItem = Options.thingEnabled("BasicTools")?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.SWORD):Items.DIAMOND_SWORD;
 		
 		blocksTab.setTabIconItem( blocksTabIconItem );
 		itemsTab.setTabIconItem(itemsTabIconItem);

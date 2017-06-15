@@ -71,7 +71,7 @@ public class Config {
 			configuration.save();
 		}
 
-		if (com.mcmoddev.basemetals.util.Config.Options.requireMMDOreSpawn) {
+		if (com.mcmoddev.basemetals.util.Config.Options.requireMMDOreSpawn()) {
 			if (!Loader.isModLoaded("orespawn")) {
 				final HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
 				orespawnMod.add(new DefaultArtifactVersion("1.1.0"));
