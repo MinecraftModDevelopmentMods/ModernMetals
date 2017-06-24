@@ -130,10 +130,10 @@ repositories {
 dependencies {
     compile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}:deobf"
     compile "slimeknights.mantle:Mantle:${mc_version}-${mantle_version}:deobf"
-    compile "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}:dev"
+    compile "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}:deobf"
     compile "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}:deobf"
     // CoFHCore for TE integration
-    compile ("cofh:CoFHCore:1.10.2-${cofhcore_version}:deobf") {
+    compile ("cofh:CoFHCore:${mc_version}-${cofhcore_version}:deobf") {
     	exclude group: 'mezz.jei'
     }
 }
