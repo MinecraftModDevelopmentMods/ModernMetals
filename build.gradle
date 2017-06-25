@@ -36,9 +36,14 @@ javadoc {
     failOnError = false
 }
 
+description = "Modern Metals"
 def mod_file = getModFile()
 def mc_version = "1.11.2"
-def short_version = getVersion("VERSION", mod_file)
+
+ext {
+    short_version = getVersion("VERSION", mod_file)
+}
+
 version = mc_version + "-" + short_version
 if (System.getenv().BUILD_NUMBER) {
     version += "." + System.getenv().BUILD_NUMBER
@@ -253,6 +258,16 @@ curseforge {
         addArtifact(javadocJar) {
             displayName = "$projName $displayVersion Javadoc"
         }
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.host.url", secret.sonarHost
+        property "sonar.organization", secret.sonarOrganization
+        property "sonar.login", secret.sonarToken
+        property "sonar.projectName", project.archivesBaseName
+        property "sonar.projectKey", "$project.group:$project.archivesBaseName"
     }
 }
 
