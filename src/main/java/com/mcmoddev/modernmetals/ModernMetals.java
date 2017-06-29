@@ -71,6 +71,7 @@ public class ModernMetals {
 
 	@EventHandler
 	public static void onRemap(FMLMissingMappingsEvent event) {
-		proxy.onRemap(event);
+		// we are not using this right now...
+		// proxy.onRemap(event);
 	}
 }
