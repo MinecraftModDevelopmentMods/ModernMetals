@@ -3,8 +3,8 @@ package com.mcmoddev.orespawn;
 import com.google.common.base.Function;
 import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.modernmetals.init.Materials;
-import mmd.orespawn.api.OreSpawnAPI;
-import mmd.orespawn.api.SpawnLogic;
+import com.mcmoddev.orespawn.api.OreSpawnAPI;
+import com.mcmoddev.orespawn.api.SpawnLogic;
 import com.mcmoddev.modernmetals.util.Config.Options;
 
 public class ModernMetalsOreSpawn implements Function<OreSpawnAPI, SpawnLogic> {
