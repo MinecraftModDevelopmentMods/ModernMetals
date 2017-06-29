@@ -77,6 +77,7 @@ public class Config {
 				orespawnMod.add(new DefaultArtifactVersion("1.1.0"));
 				throw new MissingModsException(orespawnMod, "orespawn", "MMD Ore Spawn Mod");
 			}
+			/*
 			final Path oreSpawnFile = Paths.get(ORESPAWN_CFG_PATH, ModernMetals.MODID + ".json");
 			if (!(oreSpawnFile.toFile().exists())) {
 				try {
@@ -87,6 +88,7 @@ public class Config {
 					ModernMetals.logger.error("Failed to write file " + oreSpawnFile, ex);
 				}
 			}
+			*/
 		}
 
 		final Path myLootFolder = Paths.get(ALT_CFG_PATH, ModernMetals.MODID);
