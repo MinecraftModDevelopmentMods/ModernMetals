@@ -24,8 +24,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
-		dependencies = "required-after:Forge@[12.18.3.2185,);required-after:basemetals;before:buildingbricks",
-		acceptedMinecraftVersions = "[1.10.2,)",
+		dependencies = "required-after:forge@[13.20.0.2228,);required-after:basemetals;before:buildingbricks",
+		acceptedMinecraftVersions = "[1.11.2,)",
 		updateJSON = ModernMetals.UPDATEJSON)
 public class ModernMetals {
 
