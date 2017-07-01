@@ -2,6 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 
 import com.mcmoddev.lib.util.TabContainer;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.util.Config.Options;
 
 /**
@@ -30,76 +31,76 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		Materials.init();
 		ItemGroups.init();
 
-		if (Options.enableAluminum) {
-			createBlocksFull(Materials.getMaterialByName("aluminum"), myTabs);
+		if (Options.materialEnabled(MaterialNames.ALUMINUM)) {
+			createBlocksFull(MaterialNames.ALUMINUM, myTabs);
 		}
 
-		if (Options.enableAluminumBrass) {
-			createBlocksFull(Materials.getMaterialByName("aluminumbrass"), myTabs);
+		if (Options.materialEnabled(MaterialNames.ALUMINUM_BRASS)) {
+			createBlocksFull(MaterialNames.ALUMINUM_BRASS, myTabs);
 		}
 
-		if (Options.enableCadmium) {
-			createBlocksFull(Materials.getMaterialByName("cadmium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.CADMIUM)) {
+			createBlocksFull(MaterialNames.CADMIUM, myTabs);
 		}
 
-		if (Options.enableChromium) {
-			createBlocksFull(Materials.getMaterialByName("chromium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.CHROMIUM)) {
+			createBlocksFull(MaterialNames.CHROMIUM, myTabs);
 		}
 
-		if (Options.enableGalvanizedSteel) {
-			createBlocksFull(Materials.getMaterialByName("galvanizedsteel"), myTabs);
+		if (Options.materialEnabled(MaterialNames.GALVANIZED_STEEL)) {
+			createBlocksFull(MaterialNames.GALVANIZED_STEEL, myTabs);
 		}
 
-		if (Options.enableIridium) {
-			createBlocksFull(Materials.getMaterialByName("iridium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.IRIDIUM)) {
+			createBlocksFull(MaterialNames.IRIDIUM, myTabs);
 		}
 
-		if (Options.enableMagnesium) {
-			createBlocksFull(Materials.getMaterialByName("magnesium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.MAGNESIUM)) {
+			createBlocksFull(MaterialNames.MAGNESIUM, myTabs);
 		}
 
-		if (Options.enableManganese) {
-			createBlocksFull(Materials.getMaterialByName("manganese"), myTabs);
+		if (Options.materialEnabled(MaterialNames.MANGANESE)) {
+			createBlocksFull(MaterialNames.MANGANESE, myTabs);
 		}
 
-		if (Options.enableNichrome) {
-			createBlocksFull(Materials.getMaterialByName("nichrome"), myTabs);
+		if (Options.materialEnabled(MaterialNames.NICHROME)) {
+			createBlocksFull(MaterialNames.NICHROME, myTabs);
 		}
 
-		if (Options.enableOsmium) {
-			createBlocksFull(Materials.getMaterialByName("osmium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.OSMIUM)) {
+			createBlocksFull(MaterialNames.OSMIUM, myTabs);
 		}
 
-		if (Options.enablePlutonium) {
-			createBlocksFull(Materials.getMaterialByName("plutonium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.PLUTONIUM)) {
+			createBlocksFull(MaterialNames.PLUTONIUM, myTabs);
 		}
 
-		if (Options.enableRutile) {
-			createBlocksFull(Materials.getMaterialByName("rutile"), myTabs);
+		if (Options.materialEnabled(MaterialNames.RUTILE)) {
+			createBlocksFull(MaterialNames.RUTILE, myTabs);
 		}
 
-		if (Options.enableStainlessSteel) {
-			createBlocksFull(Materials.getMaterialByName("stainlesssteel"), myTabs);
+		if (Options.materialEnabled(MaterialNames.STAINLESS_STEEL)) {
+			createBlocksFull(MaterialNames.STAINLESS_STEEL, myTabs);
 		}
 
-		if (Options.enableTantalum) {
-			createBlocksFull(Materials.getMaterialByName("tantalum"), myTabs);
+		if (Options.materialEnabled(MaterialNames.TANTALUM)) {
+			createBlocksFull(MaterialNames.TANTALUM, myTabs);
 		}
 
-		if (Options.enableTitanium) {
-			createBlocksFull(Materials.getMaterialByName("titanium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.TITANIUM)) {
+			createBlocksFull(MaterialNames.TITANIUM, myTabs);
 		}
 
-		if (Options.enableTungsten) {
-			createBlocksFull(Materials.getMaterialByName("tungsten"), myTabs);
+		if (Options.materialEnabled(MaterialNames.TUNGSTEN)) {
+			createBlocksFull(MaterialNames.TUNGSTEN, myTabs);
 		}
 
-		if (Options.enableUranium) {
-			createBlocksFull(Materials.getMaterialByName("uranium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.URANIUM)) {
+			createBlocksFull(MaterialNames.URANIUM, myTabs);
 		}
 
-		if (Options.enableZirconium) {
-			createBlocksFull(Materials.getMaterialByName("zirconium"), myTabs);
+		if (Options.materialEnabled(MaterialNames.ZIRCONIUM)) {
+			createBlocksFull(MaterialNames.ZIRCONIUM, myTabs);
 		}
 
 		initDone = true;
