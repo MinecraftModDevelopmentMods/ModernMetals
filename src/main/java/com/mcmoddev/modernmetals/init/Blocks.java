@@ -14,7 +14,7 @@ import com.mcmoddev.modernmetals.util.Config.Options;
 public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
 	private static boolean initDone = false;
-	private static TabContainer myTabs = new TabContainer( ItemGroups.blocksTab, ItemGroups.itemsTab, ItemGroups.toolsTab );
+	private static TabContainer myTabs = ItemGroups.myTabs;
 
 	protected Blocks() {
 		throw new IllegalAccessError("Not a instantiable class");
