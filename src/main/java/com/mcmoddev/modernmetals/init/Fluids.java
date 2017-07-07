@@ -1,5 +1,6 @@
 package com.mcmoddev.modernmetals.init;
 
+import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.util.Config.Options;
 
 /**
@@ -24,94 +25,94 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 			return;
 		}
 
-		if (Options.enableAluminum) {
-			addFluid(Materials.aluminum, 2000, 10000, 330, 10);
-			addFluidBlock(Materials.aluminum);
+		if (Options.materialEnabled(MaterialNames.ALUMINUM)) {
+			addFluid(MaterialNames.ALUMINUM, 2000, 10000, 330, 10);
+			addFluidBlock(MaterialNames.ALUMINUM);
 		}
 
-		if (Options.enableAluminumBrass) {
-			addFluid(Materials.aluminumBrass, 2000, 10000, 500, 10);
-			addFluidBlock(Materials.aluminumBrass);
+		if (Options.materialEnabled(MaterialNames.ALUMINUM_BRASS)) {
+			addFluid(MaterialNames.ALUMINUM_BRASS, 2000, 10000, 500, 10);
+			addFluidBlock(MaterialNames.ALUMINUM_BRASS);
 		}
 
-		if (Options.enableCadmium) {
-			addFluid(Materials.cadmium, 2000, 10000, 300, 10);
-			addFluidBlock(Materials.cadmium);
+		if (Options.materialEnabled(MaterialNames.CADMIUM)) {
+			addFluid(MaterialNames.CADMIUM, 2000, 10000, 300, 10);
+			addFluidBlock(MaterialNames.CADMIUM);
 		}
 
-		if (Options.enableChromium) {
-			addFluid(Materials.chromium, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.chromium);
+		if (Options.materialEnabled(MaterialNames.CHROMIUM)) {
+			addFluid(MaterialNames.CHROMIUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.CHROMIUM);
 		}
 
-		if (Options.enableGalvanizedSteel) {
-			addFluid(Materials.galvanizedSteel, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.galvanizedSteel);
+		if (Options.materialEnabled(MaterialNames.GALVANIZED_STEEL)) {
+			addFluid(MaterialNames.GALVANIZED_STEEL, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.GALVANIZED_STEEL);
 		}
 
-		if (Options.enableIridium) {
-			addFluid(Materials.iridium, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.iridium);
+		if (Options.materialEnabled(MaterialNames.IRIDIUM)) {
+			addFluid(MaterialNames.IRIDIUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.IRIDIUM);
 		}
 
-		if (Options.enableMagnesium) {
-			addFluid(Materials.magnesium, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.magnesium);
+		if (Options.materialEnabled(MaterialNames.MAGNESIUM)) {
+			addFluid(MaterialNames.MAGNESIUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.MAGNESIUM);
 		}
 
-		if (Options.enableManganese) {
-			addFluid(Materials.manganese, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.manganese);
+		if (Options.materialEnabled(MaterialNames.MANGANESE)) {
+			addFluid(MaterialNames.MANGANESE, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.MANGANESE);
 		}
 
-		if (Options.enableNichrome) {
-			addFluid(Materials.nichrome, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.nichrome);
+		if (Options.materialEnabled(MaterialNames.NICHROME)) {
+			addFluid(MaterialNames.NICHROME, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.NICHROME);
 		}
 
-		if (Options.enableOsmium) {
-			addFluid(Materials.osmium, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.osmium);
+		if (Options.materialEnabled(MaterialNames.OSMIUM)) {
+			addFluid(MaterialNames.OSMIUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.OSMIUM);
 		}
 
-		if (Options.enablePlutonium) {
-			addFluid(Materials.plutonium, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.plutonium);
+		if (Options.materialEnabled(MaterialNames.PLUTONIUM)) {
+			addFluid(MaterialNames.PLUTONIUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.PLUTONIUM);
 		}
 
-		if (Options.enableRutile) {
-			addFluid(Materials.rutile, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.rutile);
+		if (Options.materialEnabled(MaterialNames.RUTILE)) {
+			addFluid(MaterialNames.RUTILE, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.RUTILE);
 		}
 
-		if (Options.enableStainlessSteel) {
-			addFluid(Materials.stainlessSteel, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.stainlessSteel);
+		if (Options.materialEnabled(MaterialNames.STAINLESS_STEEL)) {
+			addFluid(MaterialNames.STAINLESS_STEEL, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.STAINLESS_STEEL);
 		}
 
-		if (Options.enableTantalum) {
-			addFluid(Materials.tantalum, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.tantalum);
+		if (Options.materialEnabled(MaterialNames.TANTALUM)) {
+			addFluid(MaterialNames.TANTALUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.TANTALUM);
 		}
 
-		if (Options.enableTitanium) {
-			addFluid(Materials.titanium, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.titanium);
+		if (Options.materialEnabled(MaterialNames.TITANIUM)) {
+			addFluid(MaterialNames.TITANIUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.TITANIUM);
 		}
 
-		if (Options.enableTungsten) {
-			addFluid(Materials.tungsten, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.tungsten);
+		if (Options.materialEnabled(MaterialNames.TUNGSTEN)) {
+			addFluid(MaterialNames.TUNGSTEN, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.TUNGSTEN);
 		}
 
-		if (Options.enableUranium) {
-			addFluid(Materials.uranium, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.uranium);
+		if (Options.materialEnabled(MaterialNames.URANIUM)) {
+			addFluid(MaterialNames.URANIUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.URANIUM);
 		}
 
-		if (Options.enableZirconium) {
-			addFluid(Materials.zirconium, 2000, 10000, 769, 10);
-			addFluidBlock(Materials.zirconium);
+		if (Options.materialEnabled(MaterialNames.ZIRCONIUM)) {
+			addFluid(MaterialNames.ZIRCONIUM, 2000, 10000, 769, 10);
+			addFluidBlock(MaterialNames.ZIRCONIUM);
 		}
 
 		initDone = true;

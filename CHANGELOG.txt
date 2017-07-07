@@ -1,5 +1,5 @@
-1) Tinkers Construct Tools (Still needs traits)
-2) Code cleanups (Thanks to lclc98 for the assistance)
+1) Tinkers Construct Tools
+2) Code cleanups
 3) Support Items for Mekanism
 4) Support Items for IC2
 5) Balanced metals (They now have different stats)
@@ -12,3 +12,4 @@
 12) Veinminer integration
 13) Ender IO Integration
 14) More Zinc Stuff
+15) Ported to 1.11.2

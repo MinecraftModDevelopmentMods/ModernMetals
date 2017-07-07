@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
     "textures": {
-        "layer0": "modernmetals:items/rutile_horsearmor"
+        "layer0": "modernmetals:items/osmium_horse_armor"
     }
 }

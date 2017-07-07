@@ -15,10 +15,10 @@ buildscript {
             name = 'sonatype'
             url = 'https://oss.sonatype.org/content/groups/public'
         }
-        maven {
-            name = 'sponge'
-            url = 'http://repo.spongepowered.org/maven'
-        }
+//        maven {
+//            name = 'sponge'
+//            url = 'http://repo.spongepowered.org/maven'
+//        }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
@@ -77,7 +77,7 @@ if (secretFile.exists()) {
 }
 
 minecraft {
-    version = '1.11.2-13.20.0.2228'
+    version = '1.11.2-13.20.1.2386'
     runDir = 'run'
     mappings = 'stable_32'
 //  coreMod = corePlugin
@@ -86,10 +86,10 @@ minecraft {
 }
 
 repositories {
-    maven {
-        name 'SpongePowered'
-        url 'https://repo.spongepowered.org/maven/'
-    }
+//    maven {
+//        name 'SpongePowered'
+//        url 'https://repo.spongepowered.org/maven/'
+//    }
     maven { // Mantle, TCon, JEI
         name 'DVS1 Maven FS'
         url 'http://dvs1.progwml6.com/files/maven'

@@ -1,6 +1,7 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
 import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.util.Config.Options;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.IIntegration;
@@ -18,80 +19,36 @@ public class VeinMiner extends com.mcmoddev.lib.integration.plugins.VeinMinerBas
 
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.modEnabled("veinminer")) {
+		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.modEnabled(VeinMiner.PLUGIN_MODID)) {
 			return;
 		}
 
-		if (Options.enableAluminum) {
-			addToolsForMaterial("aluminum");
-		}
+		final String[] baseNames = new String[] {
+			MaterialNames.ALUMINUM,
+			MaterialNames.ALUMINUM_BRASS,
+			MaterialNames.CADMIUM,
+			MaterialNames.CHROMIUM,
+			MaterialNames.GALVANIZED_STEEL,
+			MaterialNames.IRIDIUM,
+			MaterialNames.MAGNESIUM,
+			MaterialNames.MANGANESE,
+			MaterialNames.NICHROME,
+			MaterialNames.OSMIUM,
+			MaterialNames.PLUTONIUM,
+			MaterialNames.RUTILE,
+			MaterialNames.STAINLESS_STEEL,
+			MaterialNames.TANTALUM,
+			MaterialNames.TITANIUM,
+			MaterialNames.TUNGSTEN,
+			MaterialNames.URANIUM,
+			MaterialNames.ZIRCONIUM
+		};
 
-		if (Options.enableAluminumBrass) {
-			addToolsForMaterial("aluminumbrass");
-		}
-
-		if (Options.enableCadmium) {
-			addToolsForMaterial("cadmium");
-		}
-
-		if (Options.enableChromium) {
-			addToolsForMaterial("chromium");
-		}
-
-		if (Options.enableGalvanizedSteel) {
-			addToolsForMaterial("galvanizedsteel");
-		}
-
-		if (Options.enableIridium) {
-			addToolsForMaterial("iridium");
-		}
-
-		if (Options.enableMagnesium) {
-			addToolsForMaterial("magnesium");
-		}
-
-		if (Options.enableManganese) {
-			addToolsForMaterial("manganese");
-		}
-
-		if (Options.enableNichrome) {
-			addToolsForMaterial("nichrome");
-		}
-
-		if (Options.enableOsmium) {
-			addToolsForMaterial("osmium");
-		}
-
-		if (Options.enablePlutonium) {
-			addToolsForMaterial("plutonium");
-		}
-
-		if (Options.enableRutile) {
-			addToolsForMaterial("rutile");
-		}
-
-		if (Options.enableStainlessSteel) {
-			addToolsForMaterial("stainlesssteel");
-		}
-
-		if (Options.enableTantalum) {
-			addToolsForMaterial("tantalum");
-		}
-
-		if (Options.enableTitanium) {
-			addToolsForMaterial("titanium");
-		}
-
-		if (Options.enableTungsten) {
-			addToolsForMaterial("tungsten");
-		}
-
-		if (Options.enableUranium) {
-			addToolsForMaterial("uranium");
-		}
-
-		if (Options.enableZirconium) {
-			addToolsForMaterial("zirconium");
+		for (int i = 0; i < baseNames.length; i++) {
+			final String materialName = baseNames[i];
+			if (Options.materialEnabled(materialName)) {
+				addToolsForMaterial(materialName);
+			}
 		}
 
 		initDone = true;
