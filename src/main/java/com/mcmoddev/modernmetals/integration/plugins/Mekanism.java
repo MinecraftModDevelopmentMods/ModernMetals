@@ -2,7 +2,7 @@ package com.mcmoddev.modernmetals.integration.plugins;
 
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
-import com.mcmoddev.modernmetals.util.Config.Options;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.IIntegration;
 
@@ -13,7 +13,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.modEnabled(Mekanism.PLUGIN_MODID)) {
+		if (initDone || !com.mcmoddev.lib.util.ConfigBase.Options.isModEnabled(Mekanism.PLUGIN_MODID)) {
 			return;
 		}
 
@@ -35,7 +35,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 		for (int i = 0; i < baseNames.length; i++) {
 			final String materialName = baseNames[i];
-			if (Options.materialEnabled(materialName)) {
+			if (Options.isMaterialEnabled(materialName)) {
 				addOreMultiplicationRecipes(materialName);
 			}
 		}
