@@ -2,7 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.basemetals.data.MaterialNames;
 import com.mcmoddev.basemetals.init.Materials;
-import com.mcmoddev.basemetals.util.Config.Options;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.init.MMDCreativeTab;
 import com.mcmoddev.lib.util.TabContainer;
@@ -45,9 +45,9 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 	}
 	
 	public static void setupIcons() {
-		Item blocksTabIconItem = Item.getItemFromBlock(Options.materialEnabled(com.mcmoddev.basemetals.data.MaterialNames.STEEL)?Materials.getMaterialByName(MaterialNames.STEEL).getBlock(Names.BLOCK):(Block) Materials.getMaterialByName(MaterialNames.IRON).getBlock(Names.BLOCK));
-		Item itemsTabIconItem = Options.thingEnabled("Gear")?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.GEAR):Items.STICK;
-		Item toolsTabIconItem = Options.thingEnabled("BasicTools")?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.SWORD):Items.DIAMOND_SWORD;
+		Item blocksTabIconItem = Item.getItemFromBlock(Options.isMaterialEnabled(com.mcmoddev.basemetals.data.MaterialNames.STEEL)?Materials.getMaterialByName(MaterialNames.STEEL).getBlock(Names.BLOCK):(Block) Materials.getMaterialByName(MaterialNames.IRON).getBlock(Names.BLOCK));
+		Item itemsTabIconItem = Options.isThingEnabled("Gear")?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.GEAR):Items.STICK;
+		Item toolsTabIconItem = Options.isThingEnabled("BasicTools")?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.SWORD):Items.DIAMOND_SWORD;
 		
 		blocksTab.setTabIconItem(new ItemStack(blocksTabIconItem));
 		itemsTab.setTabIconItem(new ItemStack(itemsTabIconItem));

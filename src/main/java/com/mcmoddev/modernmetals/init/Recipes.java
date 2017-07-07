@@ -2,7 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.init.Materials;
-import com.mcmoddev.modernmetals.util.Config.Options;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /**
  *
@@ -35,12 +35,12 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 	}
 
 	private static void initModSpecificRecipes() {
-		if (Options.materialEnabled(MaterialNames.ALUMINUM)) {
+		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM)) {
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM), "Aluminium");
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM), "Bauxite");
 		}
 
-		if (Options.materialEnabled(MaterialNames.ALUMINUM_BRASS)) {
+		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
 			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), 2, "Aluminum", "Brass");
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), "AluminumBrass");
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), "Aluminiumbrass");
@@ -49,29 +49,29 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), "AluBrass");
 		}
 
-		if (Options.materialEnabled(MaterialNames.CHROMIUM)) {
+		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.CHROMIUM), "Chrome");
 		}
 
-		if (Options.materialEnabled(MaterialNames.GALVANIZED_STEEL)) {
+		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
 			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL), 2, "Steel", "Zinc");
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL), "GalvinizedSteel");
 		}
 
-		if (Options.materialEnabled(MaterialNames.NICHROME)) {
+		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
 			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.NICHROME), 2, "Nickel", "Chromium");
 		}
 
-		if (Options.materialEnabled(MaterialNames.STAINLESS_STEEL)) {
+		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
 			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL), 2, "Steel", "Chromium");
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL), "StainlessSteel");
 		}
 
-		if (Options.materialEnabled(MaterialNames.TITANIUM)) {
+		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
 			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.TITANIUM), 2, "Rutile", "Magnesium");
 		}
 
-		if (Options.materialEnabled(MaterialNames.TUNGSTEN)) {
+		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
 			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.TUNGSTEN), "Wolfram");
 		}
 	}
