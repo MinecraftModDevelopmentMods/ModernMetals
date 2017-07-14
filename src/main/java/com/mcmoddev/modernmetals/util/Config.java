@@ -11,7 +11,6 @@ import java.util.HashSet;
 import java.util.Map;
 
 import com.mcmoddev.modernmetals.ModernMetals;
-import com.mcmoddev.modernmetals.data.AdditionalLootTables;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.lib.registry.CrusherRecipeRegistry;
 
