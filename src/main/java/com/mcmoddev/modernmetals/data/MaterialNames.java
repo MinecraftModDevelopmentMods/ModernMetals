@@ -1,6 +1,7 @@
 package com.mcmoddev.modernmetals.data;
 
 public class MaterialNames {
+	
 	public static final String ALUMINUM = "aluminum";
 	public static final String ALUMINUM_BRASS = "aluminumbrass";
 	public static final String CADMIUM = "cadmium";

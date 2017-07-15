@@ -1,14 +1,6 @@
 package com.mcmoddev.modernmetals.util;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -17,11 +9,7 @@ import com.mcmoddev.lib.registry.CrusherRecipeRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.Loader;
-import net.minecraftforge.fml.common.MissingModsException;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.versioning.ArtifactVersion;
-import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
 
 /**
  * @author Jasmine Iwanek
@@ -68,12 +56,6 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 
 		if (configuration.hasChanged()) {
 			configuration.save();
-		}
-
-		if ((com.mcmoddev.basemetals.util.Config.Options.requireMMDOreSpawn()) && (!Loader.isModLoaded("orespawn"))) {
-			final HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
-			orespawnMod.add(new DefaultArtifactVersion("3.1.0"));
-			throw new MissingModsException(orespawnMod, "orespawn", "MMD Ore Spawn Mod");
 		}
 	}
 

@@ -14,7 +14,6 @@ public class TraitNames {
 	public static final String TOXIC = "toxic";
 	public static final String POISONOUS = "poisonous";
 
-
 	private TraitNames() {
 		throw new IllegalAccessError("Not a instantiable class");
 	}

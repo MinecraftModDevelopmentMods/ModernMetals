@@ -3,42 +3,44 @@ package com.mcmoddev.modernmetals.integration.plugins;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.lib.util.ConfigBase.Options;
-import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
+import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.lib.util.Oredicts;
 
-/**
- *
- * @author Jasmine Iwanek
- *
- */
-@MMDPlugin(addonId = ModernMetals.MODID, pluginId = EnderIO.PLUGIN_MODID)
-public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIOBase implements IIntegration {
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = DenseOres.PLUGIN_MODID)
+public class DenseOres extends com.mcmoddev.lib.integration.plugins.DenseOresBase implements IIntegration {
 
 	private static boolean initDone = false;
 
-	/**
-	 *
-	 */
 	@Override
 	public void init() {
-		if (initDone || !Options.isModEnabled(EnderIO.PLUGIN_MODID)) {
+		if (initDone || !Options.isModEnabled(DenseOres.PLUGIN_MODID)) {
 			return;
 		}
 
+		registerOres();
+
+		initDone = true;
+	}
+
+	/**
+	 * Register all ores that are currently known by the materials registry
+	 * 
+	 * @author Daniel Hazelton &lt;dshadowwolf@gmail.com&gt;
+	 */
+	private static void registerOres() {
 		final String[] baseNames = new String[] {
 				MaterialNames.ALUMINUM,
-				MaterialNames.ALUMINUM_BRASS,
 				MaterialNames.CADMIUM,
 				MaterialNames.CHROMIUM,
-				MaterialNames.GALVANIZED_STEEL,
 				MaterialNames.IRIDIUM,
 				MaterialNames.MAGNESIUM,
 				MaterialNames.MANGANESE,
-				MaterialNames.NICHROME,
 				MaterialNames.OSMIUM,
 				MaterialNames.PLUTONIUM,
 				MaterialNames.RUTILE,
-				MaterialNames.STAINLESS_STEEL,
 				MaterialNames.TANTALUM,
 				MaterialNames.TITANIUM,
 				MaterialNames.TUNGSTEN,
@@ -48,11 +50,10 @@ public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIOBase im
 
 		for (int i = 0; i < baseNames.length; i++) {
 			final String materialName = baseNames[i];
-			if (Options.isMaterialEnabled(materialName)) {
-				addSagMillRecipe(materialName, 3600);
+			final MMDMaterial material = Materials.getMaterialByName(materialName);
+			if (material != null && Options.isMaterialEnabled(materialName)) {
+				registerOre(String.format("%s_%s", materialName, Oredicts.ORE), Oredicts.STONE, 0);
 			}
 		}
-
-		initDone = true;
 	}
 }
