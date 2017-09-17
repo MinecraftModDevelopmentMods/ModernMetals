@@ -29,7 +29,7 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "blockGalvanizedSteel"
+			"ore": "blockGalvanizedsteel"
 		},
 		"y": {
 			"type": "forge:ore_dict",

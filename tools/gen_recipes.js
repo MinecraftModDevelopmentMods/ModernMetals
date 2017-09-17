@@ -471,6 +471,12 @@ const patterns_basic = {
  * functionality
  */
 
+// no embedded caps except to start a name, usually
+function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+
 // map a type-name descriptor to an 'Ingredient'
 function mapNameIngredient( desc, material ) {
     let descLC = desc.toLowerCase();
@@ -500,7 +506,7 @@ function mapNameIngredient( desc, material ) {
 	r_item.item = "minecraft:feather";
 	return r_item;
     default:
-	r_oredict.ore = `${descLC}${material}`;
+	r_oredict.ore = `${descLC}${toTitleCase(material)}`;
 	return r_oredict;
     };
 };
@@ -656,7 +662,6 @@ for( let i = 0; i < materials.length; i++ ) {
     for( let j = 0; j < base_recipes.length; j++ ) {
 	let recipe = processRecipe( base_recipes[j], materials[i] );
 	let fn = `output/${materials[i].toLowerCase()}_${base_recipes[j].toLowerCase()}.json`;
-	console.log( `writing ${fn}` );
 	fs.writeFileSync( fn, JSON.stringify( recipe, null, '\t' ) );
     }
 }

@@ -32,11 +32,11 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "nuggetGalvanizedSteel"
+			"ore": "nuggetGalvanizedsteel"
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "rodGalvanizedSteel"
+			"ore": "rodGalvanizedsteel"
 		},
 		"z": {
 			"type": "minecraft:item",

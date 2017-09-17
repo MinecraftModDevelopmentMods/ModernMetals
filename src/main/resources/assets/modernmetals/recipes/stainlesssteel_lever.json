@@ -36,11 +36,11 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "rodStainlessSteel"
+			"ore": "rodStainlesssteel"
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "ingotStainlessSteel"
+			"ore": "ingotStainlesssteel"
 		}
 	},
 	"pattern": [

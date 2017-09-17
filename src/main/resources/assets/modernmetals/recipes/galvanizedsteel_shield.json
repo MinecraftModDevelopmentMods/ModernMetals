@@ -31,7 +31,7 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "ingotGalvanizedSteel"
+			"ore": "ingotGalvanizedsteel"
 		},
 		"y": {
 			"type": "forge:ore_dict",

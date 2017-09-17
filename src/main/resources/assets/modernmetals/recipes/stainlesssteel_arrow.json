@@ -32,11 +32,11 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "nuggetStainlessSteel"
+			"ore": "nuggetStainlesssteel"
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "rodStainlessSteel"
+			"ore": "rodStainlesssteel"
 		},
 		"z": {
 			"type": "minecraft:item",

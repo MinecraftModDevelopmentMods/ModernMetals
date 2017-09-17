@@ -36,11 +36,11 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "rodAluminumBrass"
+			"ore": "rodAluminumbrass"
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "ingotAluminumBrass"
+			"ore": "ingotAluminumbrass"
 		}
 	},
 	"pattern": [

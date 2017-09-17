@@ -32,11 +32,11 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "nuggetAluminumBrass"
+			"ore": "nuggetAluminumbrass"
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "rodAluminumBrass"
+			"ore": "rodAluminumbrass"
 		},
 		"z": {
 			"type": "minecraft:item",

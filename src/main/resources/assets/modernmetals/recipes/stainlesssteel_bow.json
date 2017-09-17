@@ -31,7 +31,7 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "rodStainlessSteel"
+			"ore": "rodStainlesssteel"
 		},
 		"s": {
 			"type": "minecraft:item",
