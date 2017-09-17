@@ -3,11 +3,11 @@
 	"ingredients": [
 		{
 			"type": "forge:ore_dict",
-			"ore": "dustRutile"
+			"ore": "dustSteel"
 		},
 		{
 			"type": "forge:ore_dict",
-			"ore": "dustMagnesium"
+			"ore": "dustNickel"
 		}
 	],
 	"conditions": [
@@ -17,17 +17,17 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "material",
-					"optionValue": "Titanium"
+					"optionValue": "GalvanizedSteel"
 				},
 				{
 					"type": "basemetals:enabled",
 					"optionName": "material",
-					"optionValue": "Rutile"
+					"optionValue": "Steel"
 				},
 				{
 					"type": "basemetals:enabled",
 					"optionName": "material",
-					"optionValue": "Magnesium"
+					"optionValue": "Nickel"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -39,8 +39,9 @@
 	],
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:titanium_blend",
-		"data": 0
+		"item": "modernmetals:galvanizedsteel_blend",
+		"data": 0,
+		"count": 2
 	},
 	"group": "alloys"
 }

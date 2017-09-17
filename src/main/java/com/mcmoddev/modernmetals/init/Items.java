@@ -128,8 +128,10 @@ public class Items extends com.mcmoddev.lib.init.Items {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
             for( MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID) ) {
+    			ModernMetals.logger.fatal("Trying to register itemss for material %s", mat.getCapitalizedName());
                     for( Item item : mat.getItems() ) {
                             if( item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID) ) {
+            					ModernMetals.logger.fatal("Trying to register item %s of material %s", item.getRegistryName(), mat.getCapitalizedName());
                                     event.getRegistry().register(item);
                             }
                     }

@@ -171,7 +171,7 @@ const patterns_basic = {
 		   config: { enabled: [ 'Basics' ] },
 		   group: "basics" },
     blend: { type: 'forge:ore_shaped',
-	     input: [ 'xxx',
+	     recipe: [ 'xxx',
 		      'xxx',
 		      'xxx' ],
 	     key: { x: 'SMALLBLEND' },
@@ -670,9 +670,9 @@ for( let i = 0; i < alloy_materials.length; i++ ) {
     let recipe = processAlloyRecipe( alloy_recipes[alloy_materials[i]], alloy_materials[i] );
     let b2sb = processRecipe( 'blend', alloy_materials[i] );
     let sb2b = processRecipe( 'smallblend', alloy_materials[i] );
-    let fnbb = `output/${materials[i].toLowerCase()}_blend_base.json`;
-    let fnb2sb = `output/${materials[i].toLowerCase()}_blend_smallblend.json`;
-    let fnsb2b = `output/${materials[i].toLowerCase()}_smallblend_blend.json`;
+    let fnbb = `output/${alloy_materials[i].toLowerCase()}_blend_base.json`;
+    let fnb2sb = `output/${alloy_materials[i].toLowerCase()}_blend_smallblend.json`;
+    let fnsb2b = `output/${alloy_materials[i].toLowerCase()}_smallblend_blend.json`;
     fs.writeFileSync( fnbb, JSON.stringify( recipe, null, '\t' ) );
     fs.writeFileSync( fnb2sb, JSON.stringify( b2sb, null, '\t' ) );
     fs.writeFileSync( fnsb2b, JSON.stringify( sb2b, null, '\t' ) );    

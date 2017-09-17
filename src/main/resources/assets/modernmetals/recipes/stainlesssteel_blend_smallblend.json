@@ -3,7 +3,7 @@
 	"group": "basics",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:galvanizedsteel_blend",
+		"item": "modernmetals:stainlesssteel_blend",
 		"data": 0
 	},
 	"conditions": [
@@ -13,7 +13,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "material",
-					"optionValue": "GalvanizedSteel"
+					"optionValue": "StainlessSteel"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -26,7 +26,12 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "smallblendGalvanizedSteel"
+			"ore": "smallblendStainlessSteel"
 		}
-	}
+	},
+	"pattern": [
+		"xxx",
+		"xxx",
+		"xxx"
+	]
 }

@@ -113,8 +113,10 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
 		for( MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID) ) {
+			ModernMetals.logger.fatal("Trying to register blocks for material %s", mat.getCapitalizedName());
 			for( Block block : mat.getBlocks() ) {
 				if( block.getRegistryName().getResourceDomain().equals(ModernMetals.MODID) ) {
+					ModernMetals.logger.fatal("Trying to register block %s of material %s", block.getRegistryName(), mat.getCapitalizedName());
 					event.getRegistry().register(block);
 				}
 			}

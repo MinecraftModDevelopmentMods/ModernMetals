@@ -28,5 +28,10 @@
 			"type": "forge:ore_dict",
 			"ore": "smallblendAluminumBrass"
 		}
-	}
+	},
+	"pattern": [
+		"xxx",
+		"xxx",
+		"xxx"
+	]
 }

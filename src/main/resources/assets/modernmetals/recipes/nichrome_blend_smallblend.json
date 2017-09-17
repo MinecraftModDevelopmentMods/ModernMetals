@@ -28,5 +28,10 @@
 			"type": "forge:ore_dict",
 			"ore": "smallblendNichrome"
 		}
-	}
+	},
+	"pattern": [
+		"xxx",
+		"xxx",
+		"xxx"
+	]
 }

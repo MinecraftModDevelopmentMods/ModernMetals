@@ -32,6 +32,8 @@ public class CommonProxy {
 
 	public void preInit(FMLPreInitializationEvent event) {
 		ModernMetals.logger.debug("CommonProxy preInit() with event %s", event.description());
+		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Items.class);
+		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Blocks.class);
 
 		Config.init();
 
@@ -79,8 +81,6 @@ public class CommonProxy {
 		Achievements.init();
 
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
-		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Items.class);
-		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Blocks.class);
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {

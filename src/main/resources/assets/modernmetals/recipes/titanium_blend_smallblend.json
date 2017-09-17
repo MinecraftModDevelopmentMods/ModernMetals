@@ -1,11 +1,10 @@
 {
-	"type": "forge:ore_shapeless",
+	"type": "forge:ore_shaped",
 	"group": "basics",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:galvanizedsteel_smallblend",
-		"data": 0,
-		"count": 9
+		"item": "modernmetals:titanium_blend",
+		"data": 0
 	},
 	"conditions": [
 		{
@@ -14,7 +13,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "material",
-					"optionValue": "GalvanizedSteel"
+					"optionValue": "Titanium"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -24,8 +23,15 @@
 			]
 		}
 	],
-	"ingredients": [
-		null,
-		"GalvanizedSteel"
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "smallblendTitanium"
+		}
+	},
+	"pattern": [
+		"xxx",
+		"xxx",
+		"xxx"
 	]
 }
