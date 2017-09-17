@@ -66,16 +66,11 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
 			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL);
-			addSimpleAlloyRecipe(material, 2, com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM);
 			addAdditionalOredicts(material, "StainlessSteel");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
-			addSimpleAlloyRecipe(MaterialNames.TITANIUM, 2, MaterialNames.RUTILE, MaterialNames.MAGNESIUM);
-		}
-
 		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
-			addAdditionalOredicts(MaterialNames.TUNGSTEN, "Wolfram");
+			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.TUNGSTEN), "Wolfram");
 		}
 	}
 }

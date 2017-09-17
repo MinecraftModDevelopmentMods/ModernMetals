@@ -1,13 +1,10 @@
 package com.mcmoddev.modernmetals.init;
 
-import com.mcmoddev.lib.data.Names;
-import com.mcmoddev.modernmetals.data.AchievementNames;
-import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /*import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
-*/import net.minecraftforge.fml.common.Loader;
+*/
 
 /** initializer for achievements */
 public class Achievements extends com.mcmoddev.lib.init.Achievements {
