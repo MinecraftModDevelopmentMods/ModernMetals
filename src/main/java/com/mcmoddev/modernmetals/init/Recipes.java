@@ -44,7 +44,6 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
 			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS);
-			addSimpleAlloyRecipe(material, 2, MaterialNames.ALUMINUM, com.mcmoddev.basemetals.data.MaterialNames.BRASS);
 			addAdditionalOredicts(material, "AluminumBrass");
 			addAdditionalOredicts(material, "Aluminiumbrass");
 			addAdditionalOredicts(material, "AluminiumBrass");
@@ -53,17 +52,16 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
-			addAdditionalOredicts(MaterialNames.CHROMIUM, "Chrome");
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
 			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
-			addSimpleAlloyRecipe(material, 2, com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC);
 			addAdditionalOredicts(material, "GalvinizedSteel");
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
-			addSimpleAlloyRecipe(MaterialNames.NICHROME, 2, com.mcmoddev.basemetals.data.MaterialNames.NICKEL, MaterialNames.CHROMIUM);
+			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.NICHROME);
+			addAdditionalOredicts(material, "Nichrome");
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {

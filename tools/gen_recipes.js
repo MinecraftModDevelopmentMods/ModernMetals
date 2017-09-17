@@ -11,7 +11,7 @@ const materials = [ 'Aluminum', 'AlumniumBrass', 'Cadmium', 'Chromium', 'Galvani
 // materials getting armors made
 const armor_materials = [ 'Aluminum', 'AlumniumBrass', 'Cadmium', 'Chromium', 'GalvanizedSteel', 'Iridium', 'Magnesium', 'Manganese', 'Nichrome', 'Osmium', 'Plutonium', 'Rutile', 'StainlessSteel', 'Tantalum', 'Titanium', 'Tungsten', 'Uranium', 'Zirconium' ];
 // materials that are alloys
-const alloy_materials = [ 'AluminumBrass', 'GalvanizedSteel', 'Nichrome', 'StainlessSteel' ];
+const alloy_materials = [ 'AluminumBrass', 'GalvanizedSteel', 'Nichrome', 'StainlessSteel', 'Titanium' ];
 // alloy recipes
 const alloy_recipes = { AluminumBrass: { recipe: { type: 'forge:ore_shapeless',
 						   mix: [ { type: 'forge:ore_dict', ore: 'dustAluminum' },
@@ -34,7 +34,12 @@ const alloy_recipes = { AluminumBrass: { recipe: { type: 'forge:ore_shapeless',
 						    mix: [ { type: 'forge:ore_dict', ore: 'dustSteel' },
 							   { type: 'forge:ore_dict', ore: 'dustChrome' } ] },
 					  output: 2,
-					  config: { material: [ 'Steel', 'Chrome' ] } } };
+					  config: { material: [ 'Steel', 'Chrome' ] } },
+			Titanium: { recipe: { type: 'forge:ore_shapeless',
+					      mix: [ { type: 'forge:ore_dict', ore: 'dustRutile' },
+						     { type: 'forge:ore_dict', ore: 'dustMagnesium' } ] },
+					      ouput: 2,
+				    config: { material: [ 'Rutile', 'Magnesium' ] } } };
 /*
  * True constants
  * What follows shouldn't need changing
