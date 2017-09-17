@@ -35,7 +35,7 @@
 		},
 		"s": {
 			"type": "forge:ore_dict",
-			"ore": "stickAluminum"
+			"ore": "stickWood"
 		}
 	},
 	"pattern": [

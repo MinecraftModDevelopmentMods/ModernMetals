@@ -33,7 +33,7 @@
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "stickTantalum"
+			"ore": "stickWood"
 		}
 	},
 	"pattern": [

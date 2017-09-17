@@ -39,8 +39,9 @@
 			"ore": "rodNichrome"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringNichrome"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		},
 		"z": {
 			"type": "forge:ore_dict",

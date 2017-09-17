@@ -39,8 +39,9 @@
 			"ore": "rodGalvanizedSteel"
 		},
 		"z": {
-			"type": "forge:ore_dict",
-			"ore": "featherGalvanizedSteel"
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
 		}
 	},
 	"pattern": [

@@ -39,8 +39,9 @@
 			"ore": "rodPlutonium"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringPlutonium"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		},
 		"z": {
 			"type": "forge:ore_dict",

@@ -39,8 +39,9 @@
 			"ore": "rodUranium"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringUranium"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		},
 		"z": {
 			"type": "forge:ore_dict",

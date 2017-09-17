@@ -478,7 +478,7 @@ function mapNameIngredient( desc, material ) {
     let r_item = { type: "minecraft:item", item: "", data: 0 };
     let r_oredict = { type: "forge:ore_dict", ore: "" };
     
-    switch( descLC ) {
+    switch( desc ) {
 	// things known to be vanilla
     case 'STRING':
 	r_item.item = "minecraft:string";

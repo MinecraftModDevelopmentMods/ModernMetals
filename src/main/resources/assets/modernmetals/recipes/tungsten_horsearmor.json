@@ -34,8 +34,9 @@
 			"ore": "ingotTungsten"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "woolTungsten"
+			"type": "minecraft:item",
+			"item": "minecraft:wool",
+			"data": 32767
 		}
 	},
 	"pattern": [

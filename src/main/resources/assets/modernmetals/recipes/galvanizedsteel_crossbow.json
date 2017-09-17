@@ -39,8 +39,9 @@
 			"ore": "rodGalvanizedSteel"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringGalvanizedSteel"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		},
 		"z": {
 			"type": "forge:ore_dict",

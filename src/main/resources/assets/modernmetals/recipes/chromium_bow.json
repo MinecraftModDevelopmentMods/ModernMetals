@@ -34,8 +34,9 @@
 			"ore": "rodChromium"
 		},
 		"s": {
-			"type": "forge:ore_dict",
-			"ore": "stringChromium"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		}
 	},
 	"pattern": [

@@ -33,7 +33,7 @@
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "stickStainlessSteel"
+			"ore": "stickWood"
 		}
 	},
 	"pattern": [

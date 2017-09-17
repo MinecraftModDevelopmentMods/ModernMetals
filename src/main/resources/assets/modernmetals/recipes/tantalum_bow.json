@@ -34,8 +34,9 @@
 			"ore": "rodTantalum"
 		},
 		"s": {
-			"type": "forge:ore_dict",
-			"ore": "stringTantalum"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		}
 	},
 	"pattern": [

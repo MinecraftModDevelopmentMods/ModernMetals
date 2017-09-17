@@ -34,8 +34,9 @@
 			"ore": "rodOsmium"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringOsmium"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		}
 	},
 	"pattern": [

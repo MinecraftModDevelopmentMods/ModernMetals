@@ -35,8 +35,9 @@
 			"ore": "rodCadmium"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "featherCadmium"
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
 		}
 	},
 	"pattern": [

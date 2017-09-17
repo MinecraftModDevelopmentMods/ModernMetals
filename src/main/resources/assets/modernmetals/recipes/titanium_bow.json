@@ -34,8 +34,9 @@
 			"ore": "rodTitanium"
 		},
 		"s": {
-			"type": "forge:ore_dict",
-			"ore": "stringTitanium"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		}
 	},
 	"pattern": [

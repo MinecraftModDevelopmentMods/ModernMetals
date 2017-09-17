@@ -39,8 +39,9 @@
 			"ore": "rodAlumniumBrass"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringAlumniumBrass"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		},
 		"z": {
 			"type": "forge:ore_dict",

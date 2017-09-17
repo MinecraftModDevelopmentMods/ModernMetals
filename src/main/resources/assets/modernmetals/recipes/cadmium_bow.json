@@ -34,8 +34,9 @@
 			"ore": "rodCadmium"
 		},
 		"s": {
-			"type": "forge:ore_dict",
-			"ore": "stringCadmium"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		}
 	},
 	"pattern": [

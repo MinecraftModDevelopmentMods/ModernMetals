@@ -34,8 +34,9 @@
 			"ore": "ingotTantalum"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "woolTantalum"
+			"type": "minecraft:item",
+			"item": "minecraft:wool",
+			"data": 32767
 		}
 	},
 	"pattern": [

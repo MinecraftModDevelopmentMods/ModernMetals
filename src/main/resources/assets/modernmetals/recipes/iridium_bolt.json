@@ -35,8 +35,9 @@
 			"ore": "rodIridium"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "featherIridium"
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
 		}
 	},
 	"pattern": [

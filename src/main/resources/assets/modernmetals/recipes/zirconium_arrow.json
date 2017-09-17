@@ -39,8 +39,9 @@
 			"ore": "rodZirconium"
 		},
 		"z": {
-			"type": "forge:ore_dict",
-			"ore": "featherZirconium"
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
 		}
 	},
 	"pattern": [

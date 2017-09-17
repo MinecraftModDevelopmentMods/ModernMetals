@@ -34,8 +34,9 @@
 			"ore": "rodTungsten"
 		},
 		"s": {
-			"type": "forge:ore_dict",
-			"ore": "stringTungsten"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		}
 	},
 	"pattern": [

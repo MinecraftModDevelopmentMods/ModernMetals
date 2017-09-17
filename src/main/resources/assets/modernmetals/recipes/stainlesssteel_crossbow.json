@@ -39,8 +39,9 @@
 			"ore": "rodStainlessSteel"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringStainlessSteel"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		},
 		"z": {
 			"type": "forge:ore_dict",

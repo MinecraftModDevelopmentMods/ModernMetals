@@ -39,8 +39,9 @@
 			"ore": "rodMagnesium"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringMagnesium"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		},
 		"z": {
 			"type": "forge:ore_dict",

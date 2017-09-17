@@ -39,8 +39,9 @@
 			"ore": "rodPlutonium"
 		},
 		"z": {
-			"type": "forge:ore_dict",
-			"ore": "featherPlutonium"
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
 		}
 	},
 	"pattern": [

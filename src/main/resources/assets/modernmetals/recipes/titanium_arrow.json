@@ -39,8 +39,9 @@
 			"ore": "rodTitanium"
 		},
 		"z": {
-			"type": "forge:ore_dict",
-			"ore": "featherTitanium"
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
 		}
 	},
 	"pattern": [

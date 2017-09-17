@@ -34,8 +34,9 @@
 			"ore": "ingotNichrome"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "woolNichrome"
+			"type": "minecraft:item",
+			"item": "minecraft:wool",
+			"data": 32767
 		}
 	},
 	"pattern": [

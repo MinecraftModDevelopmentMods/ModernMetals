@@ -39,8 +39,9 @@
 			"ore": "rodAluminum"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "stringAluminum"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		},
 		"z": {
 			"type": "forge:ore_dict",

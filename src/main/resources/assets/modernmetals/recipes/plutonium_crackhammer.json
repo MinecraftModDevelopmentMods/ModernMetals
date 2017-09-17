@@ -33,7 +33,7 @@
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "stickPlutonium"
+			"ore": "stickWood"
 		}
 	},
 	"pattern": [

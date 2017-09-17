@@ -39,8 +39,9 @@
 			"ore": "rodOsmium"
 		},
 		"z": {
-			"type": "forge:ore_dict",
-			"ore": "featherOsmium"
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
 		}
 	},
 	"pattern": [

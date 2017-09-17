@@ -34,8 +34,9 @@
 			"ore": "ingotIridium"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "woolIridium"
+			"type": "minecraft:item",
+			"item": "minecraft:wool",
+			"data": 32767
 		}
 	},
 	"pattern": [

@@ -35,8 +35,9 @@
 			"ore": "rodNichrome"
 		},
 		"y": {
-			"type": "forge:ore_dict",
-			"ore": "featherNichrome"
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
 		}
 	},
 	"pattern": [

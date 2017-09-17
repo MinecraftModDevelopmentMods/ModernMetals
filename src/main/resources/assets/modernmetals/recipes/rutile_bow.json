@@ -34,8 +34,9 @@
 			"ore": "rodRutile"
 		},
 		"s": {
-			"type": "forge:ore_dict",
-			"ore": "stringRutile"
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		}
 	},
 	"pattern": [

@@ -35,7 +35,7 @@
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "wood_plankOsmium"
+			"ore": "plankWood"
 		}
 	},
 	"pattern": [

@@ -33,7 +33,7 @@
 		},
 		"y": {
 			"type": "forge:ore_dict",
-			"ore": "stickManganese"
+			"ore": "stickWood"
 		}
 	},
 	"pattern": [
