@@ -10,7 +10,6 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -24,8 +23,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
-		dependencies = "required-after:forge@[13.20.1.2386,);required-after:basemetals;before:buildingbricks",
-		acceptedMinecraftVersions = "[1.11.2,)",
+		dependencies = "required-after:forge@[14.21.0.2327,);required-after:basemetals;before:buildingbricks",
+		acceptedMinecraftVersions = "[1.12,)",
 		updateJSON = ModernMetals.UPDATEJSON)
 public class ModernMetals {
 
@@ -69,9 +68,4 @@ public class ModernMetals {
 		proxy.postInit(event);
 	}
 
-	@EventHandler
-	public static void onRemap(FMLMissingMappingsEvent event) {
-		// we are not using this right now...
-		// proxy.onRemap(event);
-	}
 }

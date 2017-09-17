@@ -5,9 +5,9 @@ import com.mcmoddev.modernmetals.data.AchievementNames;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 
-import net.minecraft.stats.Achievement;
+/*import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
-import net.minecraftforge.fml.common.Loader;
+*/import net.minecraftforge.fml.common.Loader;
 
 /** initializer for achievements */
 public class Achievements extends com.mcmoddev.lib.init.Achievements {
@@ -27,7 +27,7 @@ public class Achievements extends com.mcmoddev.lib.init.Achievements {
 		}
 
 		if (Options.enableAchievements()) {
-			AchievementPage page = new AchievementPage(Loader.instance().activeModContainer().getModId());
+/*			AchievementPage page = new AchievementPage(Loader.instance().activeModContainer().getModId());
 			AchievementPage.registerAchievementPage(page);
 
 			final Achievement metallurgy = getAchievementByName(AchievementNames.METALLURGY);
@@ -52,7 +52,7 @@ public class Achievements extends com.mcmoddev.lib.init.Achievements {
 					makeAchievement(AchievementNames.TITANIUM_MAKER, metallurgy, 0, 4, Materials.getMaterialByName(MaterialNames.TITANIUM).getItem(Names.INGOT), page);
 				}
 			}
-		}
+*/		}
 
 		initDone = true;
 	}

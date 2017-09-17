@@ -57,6 +57,8 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
+	}
+	
 	public static void postInit() {
 		CrusherRecipeRegistry.getInstance().clearCache();
 	}

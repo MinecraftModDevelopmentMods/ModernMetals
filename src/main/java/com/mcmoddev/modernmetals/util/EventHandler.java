@@ -1,9 +1,9 @@
 package com.mcmoddev.modernmetals.util;
 
-import com.mcmoddev.modernmetals.data.AchievementNames;
+/*import com.mcmoddev.modernmetals.data.AchievementNames;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.init.Achievements;
-
+*/
 import com.mcmoddev.lib.material.IMMDObject;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.item.ItemMMDIngot;
@@ -25,9 +25,9 @@ public class EventHandler {
 			return;
 		}
 
-		final String materialName = ((IMMDObject) item).getMMDMaterial().getName();
+//		final String materialName = ((IMMDObject) item).getMMDMaterial().getName();
 		if (item instanceof ItemMMDIngot) {
-			if (materialName.equals(MaterialNames.ALUMINUM_BRASS)) {
+/*			if (materialName.equals(MaterialNames.ALUMINUM_BRASS)) {
 				event.player.addStat(Achievements.getAchievementByName(AchievementNames.ALUMINUM_BRASS_MAKER), 1);
 			} else if (materialName.equals(MaterialNames.GALVANIZED_STEEL)) {
 				event.player.addStat(Achievements.getAchievementByName(AchievementNames.GALVANIZED_STEEL_MAKER), 1);
@@ -38,6 +38,6 @@ public class EventHandler {
 			} else if (materialName.equals(MaterialNames.TITANIUM)) {
 				event.player.addStat(Achievements.getAchievementByName(AchievementNames.TITANIUM_MAKER), 1);
 			}
-		}
+*/		}
 	}
 }

@@ -21,7 +21,7 @@ buildscript {
 //        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.9'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5'
     }
@@ -38,7 +38,7 @@ javadoc {
 
 description = 'Modern Metals'
 def mod_file = getModFile()
-def mc_version = '1.11.2'
+def mc_version = '1.12'
 
 ext {
     short_version = getVersion('VERSION', mod_file)
@@ -77,9 +77,9 @@ if (secretFile.exists()) {
 }
 
 minecraft {
-    version = '1.11.2-13.20.1.2386'
+    version = '1.12.1-14.22.1.2479'
     runDir = 'run'
-    mappings = 'stable_32'
+    mappings = 'snapshot_20170908'
 //  coreMod = corePlugin
 //  clientJvmArgs = ["-Dfml.coreMods.load=$corePlugin"]
 //  serverJvmArgs = ["-Dfml.coreMods.load=$corePlugin"]
@@ -145,7 +145,7 @@ repositories {
 }
 
 dependencies {
-    compile "com.mcmoddev:AdditionalLootTables:${mc_version}-${alt_version}:deobf"
+    //compile "com.mcmoddev:AdditionalLootTables:${mc_version}-${alt_version}:deobf"
     compile "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}:deobf"
     compile "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}:deobf"
     compile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}:deobf"
