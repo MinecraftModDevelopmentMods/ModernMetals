@@ -1,0 +1,42 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "tools",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:tungsten_axe",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Tungsten"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "BasicTools"
+				}
+			]
+		}
+	],
+	"key": {
+		"x,s": {
+			"type": "forge:ore_dict",
+			"ore": "sTungsten"
+		}
+	},
+	"pattern": [
+		"xx",
+		"xs",
+		" s"
+	]
+}

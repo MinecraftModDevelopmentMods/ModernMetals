@@ -1,0 +1,42 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "armor",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:stainlesssteel_horse_armor",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "StainlessSteel"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "HorseArmor"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x,y": {
+			"type": "forge:ore_dict",
+			"ore": "yStainlessSteel"
+		}
+	},
+	"pattern": [
+		"  x",
+		"xyx",
+		"xxx"
+	]
+}

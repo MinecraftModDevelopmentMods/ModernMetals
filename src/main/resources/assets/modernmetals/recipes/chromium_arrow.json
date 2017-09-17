@@ -1,0 +1,43 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "weapon",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:chromium_arrow",
+		"data": 0,
+		"count": 4
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Chromium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "BowAndArrow"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x,y,z": {
+			"type": "forge:ore_dict",
+			"ore": "zChromium"
+		}
+	},
+	"pattern": [
+		"x",
+		"y",
+		"z"
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "misc",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:iridium_door",
+		"data": 0,
+		"count": 3
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Iridium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Door"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "xIridium"
+		}
+	},
+	"pattern": [
+		"xx",
+		"xx",
+		"xx"
+	]
+}

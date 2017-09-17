@@ -1,0 +1,42 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "weapon",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:osmium_bow",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Osmium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "BowAndArrow"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Rod"
+				}
+			]
+		}
+	],
+	"key": {
+		"x,s": {
+			"type": "forge:ore_dict",
+			"ore": "sOsmium"
+		}
+	},
+	"pattern": [
+		" xs",
+		"x s",
+		" xs"
+	]
+}

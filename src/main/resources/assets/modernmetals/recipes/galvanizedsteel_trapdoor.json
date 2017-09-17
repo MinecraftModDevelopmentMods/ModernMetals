@@ -1,0 +1,41 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "misc",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:galvanizedsteel_trapdoor",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "GalvanizedSteel"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Trapdoors"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "xGalvanizedSteel"
+		}
+	},
+	"pattern": [
+		"xx",
+		"xx"
+	]
+}

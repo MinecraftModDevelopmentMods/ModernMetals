@@ -1,0 +1,41 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "misc",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:rutile_button",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Rutile"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Button"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "xRutile"
+		}
+	},
+	"pattern": [
+		"x",
+		"x"
+	]
+}

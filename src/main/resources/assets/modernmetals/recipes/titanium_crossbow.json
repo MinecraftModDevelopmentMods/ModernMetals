@@ -1,0 +1,47 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "weapon",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:titanium_crossbow",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Titanium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "CrossbowAndBolts"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Rod"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Gear"
+				}
+			]
+		}
+	],
+	"key": {
+		"x,y,z": {
+			"type": "forge:ore_dict",
+			"ore": "zTitanium"
+		}
+	},
+	"pattern": [
+		"zxx",
+		" yx",
+		"x z"
+	]
+}

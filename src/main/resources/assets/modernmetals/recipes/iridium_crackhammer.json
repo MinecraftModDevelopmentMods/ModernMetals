@@ -1,0 +1,40 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "tools",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:iridium_crackhammer",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Iridium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				},
+				{
+					"type": "basemetals:hammer"
+				}
+			]
+		}
+	],
+	"key": {
+		"x,y": {
+			"type": "forge:ore_dict",
+			"ore": "yIridium"
+		}
+	},
+	"pattern": [
+		"x",
+		"y",
+		"y"
+	]
+}

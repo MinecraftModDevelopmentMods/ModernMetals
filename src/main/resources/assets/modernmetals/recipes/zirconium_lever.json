@@ -1,0 +1,46 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "misc",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:zirconium_lever",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Zirconium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Lever"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Rod"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x,y": {
+			"type": "forge:ore_dict",
+			"ore": "yZirconium"
+		}
+	},
+	"pattern": [
+		"x",
+		"y"
+	]
+}

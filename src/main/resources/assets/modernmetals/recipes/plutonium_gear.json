@@ -1,0 +1,43 @@
+{
+	"type": "basemetals:variableOutputOre",
+	"group": "misc",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:plutonium_gear",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Plutonium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Gear"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x,r": {
+			"type": "forge:ore_dict",
+			"ore": "rPlutonium"
+		}
+	},
+	"pattern": [
+		" x ",
+		"xrx",
+		" x "
+	],
+	"config_key": "gear"
+}

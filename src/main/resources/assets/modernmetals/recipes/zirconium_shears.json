@@ -1,0 +1,41 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "tools",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:zirconium_shears",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Zirconium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Shears"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "xZirconium"
+		}
+	},
+	"pattern": [
+		" x",
+		"x "
+	]
+}

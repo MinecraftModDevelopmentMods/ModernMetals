@@ -1,0 +1,37 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "basics",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:uranium_block",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Uranium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "xUranium"
+		}
+	},
+	"pattern": [
+		"xxx",
+		"xxx",
+		"xxx"
+	]
+}
