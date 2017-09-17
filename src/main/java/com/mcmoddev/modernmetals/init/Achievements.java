@@ -26,7 +26,7 @@ public class Achievements extends com.mcmoddev.lib.init.Achievements {
 			return;
 		}
 
-		if (com.mcmoddev.basemetals.util.Config.Options.enableAchievements()) {
+		if (Options.enableAchievements()) {
 			AchievementPage page = new AchievementPage(Loader.instance().activeModContainer().getModId());
 			AchievementPage.registerAchievementPage(page);
 

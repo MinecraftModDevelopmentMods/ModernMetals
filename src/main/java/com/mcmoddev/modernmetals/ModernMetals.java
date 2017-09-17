@@ -24,7 +24,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
-		dependencies = "required-after:forge@[13.20.0.2228,);required-after:basemetals;before:buildingbricks",
+		dependencies = "required-after:forge@[13.20.1.2386,);required-after:basemetals;before:buildingbricks",
 		acceptedMinecraftVersions = "[1.11.2,)",
 		updateJSON = ModernMetals.UPDATEJSON)
 public class ModernMetals {
@@ -43,7 +43,7 @@ public class ModernMetals {
 	 * increased whenever a change is made that has the potential to break
 	 * compatibility with other mods that depend on this one.
 	 */
-	public static final String VERSION = "2.5.0-beta1";
+	public static final String VERSION = "2.5.0-beta2";
 
 	public static final String UPDATEJSON = "https://raw.githubusercontent.com/MinecraftModDevelopment/ModernMetals/master/update.json";
 

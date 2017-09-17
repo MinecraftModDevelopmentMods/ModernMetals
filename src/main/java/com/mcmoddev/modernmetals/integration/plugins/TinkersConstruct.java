@@ -22,7 +22,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 	
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.lib.util.ConfigBase.Options.isModEnabled(TinkersConstruct.PLUGIN_MODID)) {
+		if (initDone || !Options.isModEnabled(TinkersConstruct.PLUGIN_MODID)) {
 			return;
 		}
 
@@ -72,7 +72,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			registry.getMaterial(MaterialNames.PLUTONIUM, Materials.getMaterialByName(MaterialNames.PLUTONIUM)).addTrait(TraitNames.RADIOACTIVE).addTrait(TraitNames.TOXIC, TraitLocations.HEAD).addTrait(TraitNames.TOXIC, TraitLocations.PROJECTILE).setCastable(true).settle();
 		}
 
-		// request is for custom modifier item to grant +50% durability
+		// TODO: request is for custom modifier item to grant +50% durability
 		// This is not yet in the API - might require extra classes in MMDLib
 		if (Options.isMaterialEnabled(MaterialNames.RUTILE)) {
 			registry.getMaterial(MaterialNames.RUTILE, Materials.getMaterialByName(MaterialNames.RUTILE)).setCastable(true).settle();

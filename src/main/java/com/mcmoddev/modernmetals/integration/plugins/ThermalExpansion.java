@@ -19,7 +19,7 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 	private static boolean initDone = false;
 
 	public void init() {
-		if (initDone || !com.mcmoddev.lib.util.ConfigBase.Options.isModEnabled(ThermalExpansion.PLUGIN_MODID)) {
+		if (initDone || !Options.isModEnabled(ThermalExpansion.PLUGIN_MODID)) {
 			return;
 		}
 

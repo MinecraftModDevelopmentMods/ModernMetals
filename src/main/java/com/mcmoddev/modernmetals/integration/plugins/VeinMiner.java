@@ -19,7 +19,7 @@ public class VeinMiner extends com.mcmoddev.lib.integration.plugins.VeinMinerBas
 
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.lib.util.ConfigBase.Options.isModEnabled(VeinMiner.PLUGIN_MODID)) {
+		if (initDone || !Options.isModEnabled(VeinMiner.PLUGIN_MODID)) {
 			return;
 		}
 

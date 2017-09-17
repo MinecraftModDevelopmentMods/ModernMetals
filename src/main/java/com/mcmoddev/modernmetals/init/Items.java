@@ -1,7 +1,5 @@
 package com.mcmoddev.modernmetals.init;
 
-
-import com.mcmoddev.lib.util.TabContainer;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 
@@ -14,7 +12,6 @@ import com.mcmoddev.lib.util.ConfigBase.Options;
 public class Items extends com.mcmoddev.lib.init.Items {
 
 	private static boolean initDone = false;
-	private static TabContainer myTabs = ItemGroups.myTabs;
 
 	protected Items() {
 		throw new IllegalAccessError("Not a instantiable class");
@@ -31,92 +28,92 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		Blocks.init();
 
 		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM)) {
-			createItemsFull(MaterialNames.ALUMINUM, myTabs);
-			createItemsModSupport(MaterialNames.ALUMINUM, myTabs);
+			createItemsFull(MaterialNames.ALUMINUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.ALUMINUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
-			createItemsFull(MaterialNames.ALUMINUM_BRASS, myTabs);
+			createItemsFull(MaterialNames.ALUMINUM_BRASS, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
-			createItemsFull(MaterialNames.CADMIUM, myTabs);
-			createItemsModSupport(MaterialNames.CADMIUM, myTabs);
+			createItemsFull(MaterialNames.CADMIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.CADMIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
-			createItemsFull(MaterialNames.CHROMIUM, myTabs);
-			createItemsModSupport(MaterialNames.CHROMIUM, myTabs);
+			createItemsFull(MaterialNames.CHROMIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.CHROMIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
-			createItemsFull(MaterialNames.GALVANIZED_STEEL, myTabs);
+			createItemsFull(MaterialNames.GALVANIZED_STEEL, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.IRIDIUM)) {
-			createItemsFull(MaterialNames.IRIDIUM, myTabs);
-			createItemsModSupport(MaterialNames.IRIDIUM, myTabs);
+			createItemsFull(MaterialNames.IRIDIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.IRIDIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.MAGNESIUM)) {
-			createItemsFull(MaterialNames.MAGNESIUM, myTabs);
-			createItemsModSupport(MaterialNames.MAGNESIUM, myTabs);
+			createItemsFull(MaterialNames.MAGNESIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.MAGNESIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.MANGANESE)) {
-			createItemsFull(MaterialNames.MANGANESE, myTabs);
-			createItemsModSupport(MaterialNames.MANGANESE, myTabs);
+			createItemsFull(MaterialNames.MANGANESE, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.MANGANESE, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
-			createItemsFull(MaterialNames.NICHROME, myTabs);
+			createItemsFull(MaterialNames.NICHROME, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.OSMIUM)) {
-			createItemsFull(MaterialNames.OSMIUM, myTabs);
-			createItemsModIC2(MaterialNames.OSMIUM, myTabs);
+			createItemsFull(MaterialNames.OSMIUM, ItemGroups.myTabs);
+			createItemsModIC2(MaterialNames.OSMIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.PLUTONIUM)) {
-			createItemsFull(MaterialNames.PLUTONIUM, myTabs);
-			createItemsModSupport(MaterialNames.PLUTONIUM, myTabs);
+			createItemsFull(MaterialNames.PLUTONIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.PLUTONIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.RUTILE)) {
-			createItemsFull(MaterialNames.RUTILE, myTabs);
-			createItemsModSupport(MaterialNames.RUTILE, myTabs);
+			createItemsFull(MaterialNames.RUTILE, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.RUTILE, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
-			createItemsFull(MaterialNames.STAINLESS_STEEL, myTabs);
+			createItemsFull(MaterialNames.STAINLESS_STEEL, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TANTALUM)) {
-			createItemsFull(MaterialNames.TANTALUM, myTabs);
-			createItemsModSupport(MaterialNames.TANTALUM, myTabs);
+			createItemsFull(MaterialNames.TANTALUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.TANTALUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
-			createItemsFull(MaterialNames.TITANIUM, myTabs);
-			createItemsModSupport(MaterialNames.TITANIUM, myTabs);
+			createItemsFull(MaterialNames.TITANIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.TITANIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
-			createItemsFull(MaterialNames.TUNGSTEN, myTabs);
-			createItemsModSupport(MaterialNames.TUNGSTEN, myTabs);
+			createItemsFull(MaterialNames.TUNGSTEN, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.TUNGSTEN, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.URANIUM)) {
-			createItemsFull(MaterialNames.URANIUM, myTabs);
-			createItemsModMekanism(MaterialNames.URANIUM, myTabs);
+			createItemsFull(MaterialNames.URANIUM, ItemGroups.myTabs);
+			createItemsModMekanism(MaterialNames.URANIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.ZIRCONIUM)) {
-			createItemsFull(MaterialNames.ZIRCONIUM, myTabs);
-			createItemsModSupport(MaterialNames.ZIRCONIUM, myTabs);
+			createItemsFull(MaterialNames.ZIRCONIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.ZIRCONIUM, ItemGroups.myTabs);
 		}
 
-		// addToMetList() // May not be needed, check
+		// addToMetList() // TODO: May not be needed, check
 
 		initDone = true;
 	}

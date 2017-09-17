@@ -13,7 +13,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.lib.util.ConfigBase.Options.isModEnabled(Mekanism.PLUGIN_MODID)) {
+		if (initDone || !Options.isModEnabled(Mekanism.PLUGIN_MODID)) {
 			return;
 		}
 

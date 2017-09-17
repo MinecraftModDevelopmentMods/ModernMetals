@@ -2,6 +2,7 @@ package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.init.Materials;
+import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /**
@@ -36,43 +37,47 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 	private static void initModSpecificRecipes() {
 		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM)) {
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM), "Aluminium");
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM), "Bauxite");
+			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.ALUMINUM);
+			addAdditionalOredicts(material, "Aluminium");
+			addAdditionalOredicts(material, "Bauxite");
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
-			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), 2, "Aluminum", "Brass");
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), "AluminumBrass");
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), "Aluminiumbrass");
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), "AluminiumBrass");
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), "Alubrass");
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS), "AluBrass");
+			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS);
+			addSimpleAlloyRecipe(material, 2, MaterialNames.ALUMINUM, com.mcmoddev.basemetals.data.MaterialNames.BRASS);
+			addAdditionalOredicts(material, "AluminumBrass");
+			addAdditionalOredicts(material, "Aluminiumbrass");
+			addAdditionalOredicts(material, "AluminiumBrass");
+			addAdditionalOredicts(material, "Alubrass");
+			addAdditionalOredicts(material, "AluBrass");
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.CHROMIUM), "Chrome");
+			addAdditionalOredicts(MaterialNames.CHROMIUM, "Chrome");
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
-			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL), 2, "Steel", "Zinc");
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL), "GalvinizedSteel");
+			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
+			addSimpleAlloyRecipe(material, 2, com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC);
+			addAdditionalOredicts(material, "GalvinizedSteel");
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
-			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.NICHROME), 2, "Nickel", "Chromium");
+			addSimpleAlloyRecipe(MaterialNames.NICHROME, 2, com.mcmoddev.basemetals.data.MaterialNames.NICKEL, MaterialNames.CHROMIUM);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
-			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL), 2, "Steel", "Chromium");
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL), "StainlessSteel");
+			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL);
+			addSimpleAlloyRecipe(material, 2, com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM);
+			addAdditionalOredicts(material, "StainlessSteel");
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
-			addSimpleAlloyRecipe(Materials.getMaterialByName(MaterialNames.TITANIUM), 2, "Rutile", "Magnesium");
+			addSimpleAlloyRecipe(MaterialNames.TITANIUM, 2, MaterialNames.RUTILE, MaterialNames.MAGNESIUM);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.TUNGSTEN), "Wolfram");
+			addAdditionalOredicts(MaterialNames.TUNGSTEN, "Wolfram");
 		}
 	}
 }
