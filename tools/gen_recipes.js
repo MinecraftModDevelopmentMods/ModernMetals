@@ -521,6 +521,8 @@ function mapNameResult( desc, material ) {
 	return { type: "minecraft:item", item: "minecraft:planks", data: 32767 };
     case 'WOOD':
 	return { type: "minecraft:item", item: "minecraft:log", data: 32767 };
+    case 'PRESSUREPLATE':
+	return { type: "minecraft:item", item: `${modid}:${materialLC}_pressure_plate`, data: 0 };
     default:
 	return { type: "minecraft:item", item: `${modid}:${materialLC}_${descLC}`, data: 0 };
     }
