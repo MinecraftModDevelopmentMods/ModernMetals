@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:tantalum_pressureplate",
+		"item": "modernmetals:tantalum_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

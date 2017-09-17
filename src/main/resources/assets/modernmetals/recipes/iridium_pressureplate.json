@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:iridium_pressureplate",
+		"item": "modernmetals:iridium_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

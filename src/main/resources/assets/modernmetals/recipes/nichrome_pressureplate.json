@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:nichrome_pressureplate",
+		"item": "modernmetals:nichrome_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

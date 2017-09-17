@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:osmium_pressureplate",
+		"item": "modernmetals:osmium_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

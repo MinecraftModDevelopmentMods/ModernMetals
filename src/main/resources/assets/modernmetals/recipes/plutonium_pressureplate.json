@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:plutonium_pressureplate",
+		"item": "modernmetals:plutonium_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

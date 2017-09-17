@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:magnesium_pressureplate",
+		"item": "modernmetals:magnesium_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

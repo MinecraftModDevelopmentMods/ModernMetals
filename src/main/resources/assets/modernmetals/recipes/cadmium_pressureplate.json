@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:cadmium_pressureplate",
+		"item": "modernmetals:cadmium_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

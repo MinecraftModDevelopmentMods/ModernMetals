@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:titanium_pressureplate",
+		"item": "modernmetals:titanium_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

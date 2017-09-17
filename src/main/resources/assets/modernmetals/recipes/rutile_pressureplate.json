@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:rutile_pressureplate",
+		"item": "modernmetals:rutile_pressure_plate",
 		"data": 0
 	},
 	"conditions": [

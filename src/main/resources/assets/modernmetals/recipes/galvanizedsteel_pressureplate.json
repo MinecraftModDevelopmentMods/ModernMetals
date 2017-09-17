@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:galvanizedsteel_pressureplate",
+		"item": "modernmetals:galvanizedsteel_pressure_plate",
 		"data": 0
 	},
 	"conditions": [
