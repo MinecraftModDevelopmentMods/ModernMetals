@@ -1,9 +1,9 @@
 {
 	"type": "forge:ore_shaped",
-	"group": "misc",
+	"group": "tools",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_hoe",
 		"data": 0
 	},
 	"conditions": [
@@ -18,12 +18,12 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "Basics"
 				},
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Basics"
+					"optionValue": "BasicTools"
 				}
 			]
 		}
@@ -32,10 +32,15 @@
 		"x": {
 			"type": "forge:ore_dict",
 			"ore": "ingotAluminumBrass"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
 		}
 	},
 	"pattern": [
 		"xx",
-		"xx"
+		" s",
+		" s"
 	]
 }

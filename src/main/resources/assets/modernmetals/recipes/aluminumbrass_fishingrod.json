@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_fishing_rod",
 		"data": 0
 	},
 	"conditions": [
@@ -18,12 +18,12 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "FishingRod"
 				},
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Basics"
+					"optionValue": "Rod"
 				}
 			]
 		}
@@ -31,11 +31,17 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "ingotAluminumBrass"
+			"ore": "rodAluminumBrass"
+		},
+		"y": {
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
 		}
 	},
 	"pattern": [
-		"xx",
-		"xx"
+		"  x",
+		" xy",
+		"x y"
 	]
 }

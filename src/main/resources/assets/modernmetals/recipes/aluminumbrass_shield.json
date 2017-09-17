@@ -1,9 +1,9 @@
 {
 	"type": "forge:ore_shaped",
-	"group": "misc",
+	"group": "armor",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_shield",
 		"data": 0
 	},
 	"conditions": [
@@ -18,7 +18,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "Shields"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -32,10 +32,15 @@
 		"x": {
 			"type": "forge:ore_dict",
 			"ore": "ingotAluminumBrass"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "plankWood"
 		}
 	},
 	"pattern": [
-		"xx",
-		"xx"
+		"xyx",
+		"xxx",
+		" x "
 	]
 }

@@ -1,9 +1,9 @@
 {
 	"type": "forge:ore_shaped",
-	"group": "misc",
+	"group": "armor",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_chestplate",
 		"data": 0
 	},
 	"conditions": [
@@ -18,12 +18,12 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "Basics"
 				},
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Basics"
+					"optionValue": "Armor"
 				}
 			]
 		}
@@ -35,7 +35,8 @@
 		}
 	},
 	"pattern": [
-		"xx",
-		"xx"
+		"x x",
+		"xxx",
+		"xxx"
 	]
 }

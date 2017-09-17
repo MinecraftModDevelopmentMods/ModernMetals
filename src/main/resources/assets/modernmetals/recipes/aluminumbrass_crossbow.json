@@ -1,9 +1,9 @@
 {
 	"type": "forge:ore_shaped",
-	"group": "misc",
+	"group": "weapon",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_crossbow",
 		"data": 0
 	},
 	"conditions": [
@@ -18,12 +18,17 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "CrossbowAndBolt"
 				},
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Basics"
+					"optionValue": "Rod"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Gear"
 				}
 			]
 		}
@@ -31,11 +36,21 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "ingotAluminumBrass"
+			"ore": "rodAluminumBrass"
+		},
+		"y": {
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "gearAluminumBrass"
 		}
 	},
 	"pattern": [
-		"xx",
-		"xx"
+		"zxx",
+		" yx",
+		"x z"
 	]
 }

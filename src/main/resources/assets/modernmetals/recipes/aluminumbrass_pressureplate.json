@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_pressure_plate",
 		"data": 0
 	},
 	"conditions": [
@@ -18,7 +18,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "PressurePlate"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -35,7 +35,6 @@
 		}
 	},
 	"pattern": [
-		"xx",
 		"xx"
 	]
 }

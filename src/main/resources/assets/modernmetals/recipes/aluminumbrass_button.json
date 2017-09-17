@@ -3,7 +3,7 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_button",
 		"data": 0
 	},
 	"conditions": [
@@ -18,7 +18,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "Button"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -31,11 +31,11 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "ingotAluminumBrass"
+			"ore": "nuggetAluminumBrass"
 		}
 	},
 	"pattern": [
-		"xx",
-		"xx"
+		"x",
+		"x"
 	]
 }

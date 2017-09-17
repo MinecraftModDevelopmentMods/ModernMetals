@@ -1,9 +1,9 @@
 {
-	"type": "forge:ore_shaped",
+	"type": "basemetals:variableOutputOre",
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_plate",
 		"data": 0
 	},
 	"conditions": [
@@ -18,7 +18,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "Plate"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -37,5 +37,6 @@
 	"pattern": [
 		"xx",
 		"xx"
-	]
+	],
+	"config_key": "plate"
 }

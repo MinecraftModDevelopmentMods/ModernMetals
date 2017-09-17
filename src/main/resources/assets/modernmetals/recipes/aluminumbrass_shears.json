@@ -1,9 +1,9 @@
 {
 	"type": "forge:ore_shaped",
-	"group": "misc",
+	"group": "tools",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_shears",
 		"data": 0
 	},
 	"conditions": [
@@ -18,7 +18,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "Shears"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -35,7 +35,7 @@
 		}
 	},
 	"pattern": [
-		"xx",
-		"xx"
+		" x",
+		"x "
 	]
 }

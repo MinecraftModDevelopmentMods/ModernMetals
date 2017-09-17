@@ -1,9 +1,9 @@
 {
 	"type": "forge:ore_shaped",
-	"group": "misc",
+	"group": "tools",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_crackhammer",
 		"data": 0
 	},
 	"conditions": [
@@ -18,12 +18,10 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "Basics"
 				},
 				{
-					"type": "basemetals:enabled",
-					"optionName": "thing",
-					"optionValue": "Basics"
+					"type": "basemetals:hammer"
 				}
 			]
 		}
@@ -31,11 +29,16 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "ingotAluminumBrass"
+			"ore": "blockAluminumBrass"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
 		}
 	},
 	"pattern": [
-		"xx",
-		"xx"
+		"x",
+		"y",
+		"y"
 	]
 }

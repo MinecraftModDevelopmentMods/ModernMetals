@@ -1,9 +1,9 @@
 {
 	"type": "forge:ore_shaped",
-	"group": "misc",
+	"group": "armor",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
+		"item": "modernmetals:aluminumbrass_horse_armor",
 		"data": 0
 	},
 	"conditions": [
@@ -18,7 +18,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "HorseArmor"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -32,10 +32,16 @@
 		"x": {
 			"type": "forge:ore_dict",
 			"ore": "ingotAluminumBrass"
+		},
+		"y": {
+			"type": "minecraft:item",
+			"item": "minecraft:wool",
+			"data": 32767
 		}
 	},
 	"pattern": [
-		"xx",
-		"xx"
+		"  x",
+		"xyx",
+		"xxx"
 	]
 }

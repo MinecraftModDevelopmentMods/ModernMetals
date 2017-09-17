@@ -3,8 +3,9 @@
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
-		"data": 0
+		"item": "modernmetals:aluminumbrass_door",
+		"data": 0,
+		"count": 3
 	},
 	"conditions": [
 		{
@@ -18,7 +19,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
+					"optionValue": "Door"
 				},
 				{
 					"type": "basemetals:enabled",
@@ -35,6 +36,7 @@
 		}
 	},
 	"pattern": [
+		"xx",
 		"xx",
 		"xx"
 	]

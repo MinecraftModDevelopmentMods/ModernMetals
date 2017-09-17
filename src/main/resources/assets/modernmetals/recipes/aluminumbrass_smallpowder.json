@@ -1,10 +1,11 @@
 {
-	"type": "forge:ore_shaped",
-	"group": "misc",
+	"type": "forge:ore_shapeless",
+	"group": "basics",
 	"result": {
 		"type": "minecraft:item",
-		"item": "modernmetals:aluminumbrass_trapdoor",
-		"data": 0
+		"item": "modernmetals:aluminumbrass_smallpowder",
+		"data": 0,
+		"count": 9
 	},
 	"conditions": [
 		{
@@ -18,24 +19,15 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "thing",
-					"optionValue": "Trapdoor"
-				},
-				{
-					"type": "basemetals:enabled",
-					"optionName": "thing",
 					"optionValue": "Basics"
 				}
 			]
 		}
 	],
-	"key": {
-		"x": {
+	"ingredients": [
+		{
 			"type": "forge:ore_dict",
-			"ore": "ingotAluminumBrass"
+			"ore": "powderAluminumBrass"
 		}
-	},
-	"pattern": [
-		"xx",
-		"xx"
 	]
 }

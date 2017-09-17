@@ -7,9 +7,9 @@ const fs = require('fs');
 // mod-id of the mod we're generating recipes for
 const modid = "modernmetals";
 // all materials
-const materials = [ 'Aluminum', 'AlumniumBrass', 'Cadmium', 'Chromium', 'GalvanizedSteel', 'Iridium', 'Magnesium', 'Manganese', 'Nichrome', 'Osmium', 'Plutonium', 'Rutile', 'StainlessSteel', 'Tantalum', 'Titanium', 'Tungsten', 'Uranium', 'Zirconium' ];
+const materials = [ 'Aluminum', 'AluminumBrass', 'Cadmium', 'Chromium', 'GalvanizedSteel', 'Iridium', 'Magnesium', 'Manganese', 'Nichrome', 'Osmium', 'Plutonium', 'Rutile', 'StainlessSteel', 'Tantalum', 'Titanium', 'Tungsten', 'Uranium', 'Zirconium' ];
 // materials getting armors made
-const armor_materials = [ 'Aluminum', 'AlumniumBrass', 'Cadmium', 'Chromium', 'GalvanizedSteel', 'Iridium', 'Magnesium', 'Manganese', 'Nichrome', 'Osmium', 'Plutonium', 'Rutile', 'StainlessSteel', 'Tantalum', 'Titanium', 'Tungsten', 'Uranium', 'Zirconium' ];
+const armor_materials = [ 'Aluminum', 'AluminumBrass', 'Cadmium', 'Chromium', 'GalvanizedSteel', 'Iridium', 'Magnesium', 'Manganese', 'Nichrome', 'Osmium', 'Plutonium', 'Rutile', 'StainlessSteel', 'Tantalum', 'Titanium', 'Tungsten', 'Uranium', 'Zirconium' ];
 // materials that are alloys
 const alloy_materials = [ 'AluminumBrass', 'GalvanizedSteel', 'Nichrome', 'StainlessSteel', 'Titanium' ];
 // alloy recipes
@@ -656,6 +656,7 @@ for( let i = 0; i < materials.length; i++ ) {
     for( let j = 0; j < base_recipes.length; j++ ) {
 	let recipe = processRecipe( base_recipes[j], materials[i] );
 	let fn = `output/${materials[i].toLowerCase()}_${base_recipes[j].toLowerCase()}.json`;
+	console.log( `writing ${fn}` );
 	fs.writeFileSync( fn, JSON.stringify( recipe, null, '\t' ) );
     }
 }
