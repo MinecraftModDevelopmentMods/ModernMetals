@@ -597,7 +597,7 @@ function processRecipeConditions( recipeName, conds, material ) {
 function processRecipeIngredients( ingredients, material ) {
     let res = [];
     for( let i = 0; i < ingredients.length; i++ ) {
-	res.push( mapNameIngredient, material );
+	res.push( mapNameIngredient( ingredients[i], material ) );
     }
     return res;
 }

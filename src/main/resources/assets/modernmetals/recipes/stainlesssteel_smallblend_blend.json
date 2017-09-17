@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"StainlessSteel"
+		{
+			"type": "forge:ore_dict",
+			"ore": "blendStainlessSteel"
+		}
 	]
 }

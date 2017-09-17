@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"AluminumBrass"
+		{
+			"type": "forge:ore_dict",
+			"ore": "blendAluminumBrass"
+		}
 	]
 }

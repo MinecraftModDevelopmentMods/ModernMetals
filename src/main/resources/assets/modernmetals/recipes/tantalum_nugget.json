@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Tantalum"
+		{
+			"type": "forge:ore_dict",
+			"ore": "ingotTantalum"
+		}
 	]
 }

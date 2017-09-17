@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Iridium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderIridium"
+		}
 	]
 }

@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Plutonium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "ingotPlutonium"
+		}
 	]
 }

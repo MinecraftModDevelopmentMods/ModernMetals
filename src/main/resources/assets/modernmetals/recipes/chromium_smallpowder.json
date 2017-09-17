@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Chromium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderChromium"
+		}
 	]
 }

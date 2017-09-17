@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Tungsten"
+		{
+			"type": "forge:ore_dict",
+			"ore": "ingotTungsten"
+		}
 	]
 }

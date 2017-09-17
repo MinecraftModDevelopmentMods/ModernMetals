@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Manganese"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderManganese"
+		}
 	]
 }

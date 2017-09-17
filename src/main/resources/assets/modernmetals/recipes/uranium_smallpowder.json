@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Uranium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderUranium"
+		}
 	]
 }

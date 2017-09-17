@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"GalvanizedSteel"
+		{
+			"type": "forge:ore_dict",
+			"ore": "blendGalvanizedSteel"
+		}
 	]
 }

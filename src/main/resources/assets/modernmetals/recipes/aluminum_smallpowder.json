@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Aluminum"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderAluminum"
+		}
 	]
 }

@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Zirconium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderZirconium"
+		}
 	]
 }

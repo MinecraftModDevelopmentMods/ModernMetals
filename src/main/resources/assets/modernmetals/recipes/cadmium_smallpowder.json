@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Cadmium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderCadmium"
+		}
 	]
 }

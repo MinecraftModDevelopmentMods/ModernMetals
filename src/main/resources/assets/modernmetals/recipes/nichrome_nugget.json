@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Nichrome"
+		{
+			"type": "forge:ore_dict",
+			"ore": "ingotNichrome"
+		}
 	]
 }

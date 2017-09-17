@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Titanium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderTitanium"
+		}
 	]
 }

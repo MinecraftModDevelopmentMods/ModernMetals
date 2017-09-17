@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Magnesium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderMagnesium"
+		}
 	]
 }

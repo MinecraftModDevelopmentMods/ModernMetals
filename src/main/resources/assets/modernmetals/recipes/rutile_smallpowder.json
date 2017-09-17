@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Rutile"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderRutile"
+		}
 	]
 }

@@ -25,7 +25,9 @@
 		}
 	],
 	"ingredients": [
-		null,
-		"Osmium"
+		{
+			"type": "forge:ore_dict",
+			"ore": "powderOsmium"
+		}
 	]
 }
