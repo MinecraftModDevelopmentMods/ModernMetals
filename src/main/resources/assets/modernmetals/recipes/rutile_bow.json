@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sRutile"
+			"ore": "rodRutile"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stringRutile"
 		}
 	},
 	"pattern": [

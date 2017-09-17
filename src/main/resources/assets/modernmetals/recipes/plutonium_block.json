@@ -26,7 +26,7 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "xPlutonium"
+			"ore": "ingotPlutonium"
 		}
 	},
 	"pattern": [

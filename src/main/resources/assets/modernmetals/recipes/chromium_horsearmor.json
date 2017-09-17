@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yChromium"
+			"ore": "ingotChromium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "woolChromium"
 		}
 	},
 	"pattern": [

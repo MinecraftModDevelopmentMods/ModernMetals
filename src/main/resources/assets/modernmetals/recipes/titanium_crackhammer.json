@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yTitanium"
+			"ore": "blockTitanium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickTitanium"
 		}
 	},
 	"pattern": [

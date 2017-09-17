@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,r": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "rGalvanizedSteel"
+			"ore": "ingotGalvanizedSteel"
+		},
+		"r": {
+			"type": "forge:ore_dict",
+			"ore": "rodGalvanizedSteel"
 		}
 	},
 	"pattern": [

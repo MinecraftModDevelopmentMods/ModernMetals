@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sNichrome"
+			"ore": "ingotNichrome"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stickNichrome"
 		}
 	},
 	"pattern": [

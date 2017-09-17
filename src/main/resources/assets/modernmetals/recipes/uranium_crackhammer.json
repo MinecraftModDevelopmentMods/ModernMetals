@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yUranium"
+			"ore": "blockUranium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickUranium"
 		}
 	},
 	"pattern": [

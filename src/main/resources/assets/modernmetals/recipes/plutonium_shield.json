@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yPlutonium"
+			"ore": "ingotPlutonium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "wood_plankPlutonium"
 		}
 	},
 	"pattern": [

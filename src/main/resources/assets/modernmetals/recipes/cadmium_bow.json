@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sCadmium"
+			"ore": "rodCadmium"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stringCadmium"
 		}
 	},
 	"pattern": [

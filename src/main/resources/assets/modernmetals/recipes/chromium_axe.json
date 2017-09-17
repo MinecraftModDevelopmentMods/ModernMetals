@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sChromium"
+			"ore": "ingotChromium"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stickChromium"
 		}
 	},
 	"pattern": [

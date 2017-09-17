@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yTungsten"
+			"ore": "blockTungsten"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickTungsten"
 		}
 	},
 	"pattern": [

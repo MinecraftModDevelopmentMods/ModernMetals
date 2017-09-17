@@ -30,9 +30,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zPlutonium"
+			"ore": "nuggetPlutonium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "rodPlutonium"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "featherPlutonium"
 		}
 	},
 	"pattern": [

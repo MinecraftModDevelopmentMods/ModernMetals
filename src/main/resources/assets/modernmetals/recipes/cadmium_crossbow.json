@@ -34,9 +34,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zCadmium"
+			"ore": "rodCadmium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stringCadmium"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "gearCadmium"
 		}
 	},
 	"pattern": [

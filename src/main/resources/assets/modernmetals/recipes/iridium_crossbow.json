@@ -34,9 +34,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zIridium"
+			"ore": "rodIridium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stringIridium"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "gearIridium"
 		}
 	},
 	"pattern": [

@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yAlumniumBrass"
+			"ore": "blockAlumniumBrass"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickAlumniumBrass"
 		}
 	},
 	"pattern": [

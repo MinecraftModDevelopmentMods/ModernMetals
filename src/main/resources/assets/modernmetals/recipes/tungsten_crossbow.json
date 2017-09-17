@@ -34,9 +34,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zTungsten"
+			"ore": "rodTungsten"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stringTungsten"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "gearTungsten"
 		}
 	},
 	"pattern": [

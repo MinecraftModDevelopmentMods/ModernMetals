@@ -34,9 +34,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yOsmium"
+			"ore": "rodOsmium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "ingotOsmium"
 		}
 	},
 	"pattern": [

@@ -34,9 +34,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zZirconium"
+			"ore": "rodZirconium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stringZirconium"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "gearZirconium"
 		}
 	},
 	"pattern": [

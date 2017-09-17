@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yTantalum"
+			"ore": "ingotTantalum"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "woolTantalum"
 		}
 	},
 	"pattern": [

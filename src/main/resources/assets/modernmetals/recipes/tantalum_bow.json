@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sTantalum"
+			"ore": "rodTantalum"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stringTantalum"
 		}
 	},
 	"pattern": [

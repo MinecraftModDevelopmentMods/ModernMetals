@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sUranium"
+			"ore": "rodUranium"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stringUranium"
 		}
 	},
 	"pattern": [

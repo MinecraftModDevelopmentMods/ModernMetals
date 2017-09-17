@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yMagnesium"
+			"ore": "blockMagnesium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickMagnesium"
 		}
 	},
 	"pattern": [

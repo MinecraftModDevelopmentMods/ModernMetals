@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sTungsten"
+			"ore": "rodTungsten"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stringTungsten"
 		}
 	},
 	"pattern": [

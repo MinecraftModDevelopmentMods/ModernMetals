@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,r": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "rPlutonium"
+			"ore": "ingotPlutonium"
+		},
+		"r": {
+			"type": "forge:ore_dict",
+			"ore": "rodPlutonium"
 		}
 	},
 	"pattern": [

@@ -32,7 +32,7 @@
 	"key": {
 		"x": {
 			"type": "forge:ore_dict",
-			"ore": "xGalvanizedSteel"
+			"ore": "blockGalvanizedSteel"
 		}
 	},
 	"pattern": [

@@ -34,9 +34,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zChromium"
+			"ore": "rodChromium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stringChromium"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "gearChromium"
 		}
 	},
 	"pattern": [

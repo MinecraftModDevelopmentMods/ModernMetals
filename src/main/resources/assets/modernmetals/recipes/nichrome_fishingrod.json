@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yNichrome"
+			"ore": "rodNichrome"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stringNichrome"
 		}
 	},
 	"pattern": [

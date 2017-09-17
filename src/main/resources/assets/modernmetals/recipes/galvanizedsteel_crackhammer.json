@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yGalvanizedSteel"
+			"ore": "blockGalvanizedSteel"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickGalvanizedSteel"
 		}
 	},
 	"pattern": [

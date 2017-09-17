@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yTungsten"
+			"ore": "ingotTungsten"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "woolTungsten"
 		}
 	},
 	"pattern": [

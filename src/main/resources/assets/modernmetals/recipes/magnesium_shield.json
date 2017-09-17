@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yMagnesium"
+			"ore": "ingotMagnesium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "wood_plankMagnesium"
 		}
 	},
 	"pattern": [

@@ -532,7 +532,7 @@ function processRecipeKey( key, material ) {
     res = {};
     for( let i = 0; i < ks.length; i++ ) {
 	let this_key = ks[i];
-	res[ks] = mapNameIngredient(this_key, material);
+	res[this_key] = mapNameIngredient(key[this_key], material);
     }
     return res;
 }

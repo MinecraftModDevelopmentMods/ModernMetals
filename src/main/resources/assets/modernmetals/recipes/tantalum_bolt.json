@@ -30,9 +30,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yTantalum"
+			"ore": "rodTantalum"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "featherTantalum"
 		}
 	},
 	"pattern": [

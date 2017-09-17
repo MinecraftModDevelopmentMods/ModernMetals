@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yOsmium"
+			"ore": "blockOsmium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickOsmium"
 		}
 	},
 	"pattern": [

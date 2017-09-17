@@ -30,9 +30,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yAlumniumBrass"
+			"ore": "rodAlumniumBrass"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "featherAlumniumBrass"
 		}
 	},
 	"pattern": [

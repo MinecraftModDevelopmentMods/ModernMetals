@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sAluminum"
+			"ore": "rodAluminum"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stringAluminum"
 		}
 	},
 	"pattern": [

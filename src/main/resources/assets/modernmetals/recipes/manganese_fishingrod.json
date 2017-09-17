@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yManganese"
+			"ore": "rodManganese"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stringManganese"
 		}
 	},
 	"pattern": [

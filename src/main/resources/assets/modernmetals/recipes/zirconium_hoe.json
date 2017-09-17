@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sZirconium"
+			"ore": "ingotZirconium"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stickZirconium"
 		}
 	},
 	"pattern": [

@@ -30,9 +30,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yMagnesium"
+			"ore": "rodMagnesium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "featherMagnesium"
 		}
 	},
 	"pattern": [

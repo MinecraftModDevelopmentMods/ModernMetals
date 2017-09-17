@@ -30,9 +30,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zStainlessSteel"
+			"ore": "nuggetStainlessSteel"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "rodStainlessSteel"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "featherStainlessSteel"
 		}
 	},
 	"pattern": [

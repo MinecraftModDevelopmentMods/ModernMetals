@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yCadmium"
+			"ore": "ingotCadmium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "woolCadmium"
 		}
 	},
 	"pattern": [

@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yPlutonium"
+			"ore": "blockPlutonium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickPlutonium"
 		}
 	},
 	"pattern": [

@@ -30,9 +30,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zGalvanizedSteel"
+			"ore": "nuggetGalvanizedSteel"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "rodGalvanizedSteel"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "featherGalvanizedSteel"
 		}
 	},
 	"pattern": [

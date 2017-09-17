@@ -30,9 +30,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zManganese"
+			"ore": "nuggetManganese"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "rodManganese"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "featherManganese"
 		}
 	},
 	"pattern": [

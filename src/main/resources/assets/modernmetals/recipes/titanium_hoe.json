@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sTitanium"
+			"ore": "ingotTitanium"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stickTitanium"
 		}
 	},
 	"pattern": [

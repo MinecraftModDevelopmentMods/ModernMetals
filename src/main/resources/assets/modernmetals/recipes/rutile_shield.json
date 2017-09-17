@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yRutile"
+			"ore": "ingotRutile"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "wood_plankRutile"
 		}
 	},
 	"pattern": [

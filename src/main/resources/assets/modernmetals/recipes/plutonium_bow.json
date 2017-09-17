@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,s": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "sPlutonium"
+			"ore": "rodPlutonium"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stringPlutonium"
 		}
 	},
 	"pattern": [

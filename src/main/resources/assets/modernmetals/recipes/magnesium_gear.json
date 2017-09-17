@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,r": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "rMagnesium"
+			"ore": "ingotMagnesium"
+		},
+		"r": {
+			"type": "forge:ore_dict",
+			"ore": "rodMagnesium"
 		}
 	},
 	"pattern": [

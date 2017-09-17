@@ -34,9 +34,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yIridium"
+			"ore": "rodIridium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "ingotIridium"
 		}
 	},
 	"pattern": [

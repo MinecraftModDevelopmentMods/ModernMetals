@@ -29,9 +29,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yTitanium"
+			"ore": "ingotTitanium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "wood_plankTitanium"
 		}
 	},
 	"pattern": [

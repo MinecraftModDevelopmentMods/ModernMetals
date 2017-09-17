@@ -30,9 +30,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zRutile"
+			"ore": "nuggetRutile"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "rodRutile"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "featherRutile"
 		}
 	},
 	"pattern": [

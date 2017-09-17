@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yCadmium"
+			"ore": "blockCadmium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickCadmium"
 		}
 	},
 	"pattern": [

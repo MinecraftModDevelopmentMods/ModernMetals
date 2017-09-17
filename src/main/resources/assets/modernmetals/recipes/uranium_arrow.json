@@ -30,9 +30,17 @@
 		}
 	],
 	"key": {
-		"x,y,z": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "zUranium"
+			"ore": "nuggetUranium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "rodUranium"
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "featherUranium"
 		}
 	},
 	"pattern": [

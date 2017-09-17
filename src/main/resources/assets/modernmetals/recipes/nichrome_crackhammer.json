@@ -27,9 +27,13 @@
 		}
 	],
 	"key": {
-		"x,y": {
+		"x": {
 			"type": "forge:ore_dict",
-			"ore": "yNichrome"
+			"ore": "blockNichrome"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickNichrome"
 		}
 	},
 	"pattern": [
