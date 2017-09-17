@@ -1,6 +1,13 @@
 package com.mcmoddev.modernmetals.init;
 
+import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
+
+import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /**
@@ -117,4 +124,16 @@ public class Items extends com.mcmoddev.lib.init.Items {
 
 		initDone = true;
 	}
+	
+    @SubscribeEvent
+    public static void registerItems(RegistryEvent.Register<Item> event) {
+            for( MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID) ) {
+                    for( Item item : mat.getItems() ) {
+                            if( item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID) ) {
+                                    event.getRegistry().register(item);
+                            }
+                    }
+            }
+    }
+
 }
