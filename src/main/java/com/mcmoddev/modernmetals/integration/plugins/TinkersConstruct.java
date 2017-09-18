@@ -22,7 +22,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 	
 	@Override
 	public void init() {
-		if (initDone || !Options.isModEnabled(TinkersConstruct.PLUGIN_MODID)) {
+		if (initDone || !Options.isModEnabled("tinkersconstruct")) {
 			return;
 		}
 
