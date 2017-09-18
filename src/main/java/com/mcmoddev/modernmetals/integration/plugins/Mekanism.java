@@ -1,8 +1,8 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
 import com.mcmoddev.modernmetals.ModernMetals;
-import com.mcmoddev.modernmetals.init.Materials;
-import com.mcmoddev.modernmetals.util.Config.Options;
+import com.mcmoddev.modernmetals.data.MaterialNames;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.IIntegration;
 
@@ -13,60 +13,31 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.modEnabled("mekanism")) {
+		if (initDone || !Options.isModEnabled(Mekanism.PLUGIN_MODID)) {
 			return;
 		}
 
-		if (Options.enableAluminum) {
-			addOreMultiplicationRecipes(Materials.aluminum);
-		}
+		final String[] baseNames = new String[] {
+			MaterialNames.ALUMINUM,
+			MaterialNames.CADMIUM,
+			MaterialNames.CHROMIUM,
+			MaterialNames.IRIDIUM,
+			MaterialNames.MAGNESIUM,
+			MaterialNames.MANGANESE,
+			MaterialNames.PLUTONIUM,
+			MaterialNames.RUTILE,
+			MaterialNames.TANTALUM,
+			MaterialNames.TITANIUM,
+			MaterialNames.TUNGSTEN,
+			MaterialNames.URANIUM,
+			MaterialNames.ZIRCONIUM
+		};
 
-		if (Options.enableCadmium) {
-			addOreMultiplicationRecipes(Materials.cadmium);
-		}
-
-		if (Options.enableChromium) {
-			addOreMultiplicationRecipes(Materials.chromium);
-		}
-
-		if (Options.enableIridium) {
-			addOreMultiplicationRecipes(Materials.iridium);
-		}
-
-		if (Options.enableMagnesium) {
-			addOreMultiplicationRecipes(Materials.magnesium);
-		}
-
-		if (Options.enableManganese) {
-			addOreMultiplicationRecipes(Materials.manganese);
-		}
-
-		if (Options.enablePlutonium) {
-			addOreMultiplicationRecipes(Materials.plutonium);
-		}
-
-		if (Options.enableRutile) {
-			addOreMultiplicationRecipes(Materials.rutile);
-		}
-
-		if (Options.enableTantalum) {
-			addOreMultiplicationRecipes(Materials.tantalum);
-		}
-
-		if (Options.enableTitanium) {
-			addOreMultiplicationRecipes(Materials.titanium);
-		}
-
-		if (Options.enableTungsten) {
-			addOreMultiplicationRecipes(Materials.tungsten);
-		}
-
-		if (Options.enableUranium) {
-			addOreMultiplicationRecipes(Materials.uranium);
-		}
-
-		if (Options.enableZirconium) {
-			addOreMultiplicationRecipes(Materials.zirconium);
+		for (int i = 0; i < baseNames.length; i++) {
+			final String materialName = baseNames[i];
+			if (Options.isMaterialEnabled(materialName)) {
+				addOreMultiplicationRecipes(materialName);
+			}
 		}
 
 		initDone = true;

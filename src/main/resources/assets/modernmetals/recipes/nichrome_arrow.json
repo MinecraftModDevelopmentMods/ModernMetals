@@ -1,0 +1,52 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "weapon",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:nichrome_arrow",
+		"data": 0,
+		"count": 4
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Nichrome"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "BowAndArrow"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "nuggetNichrome"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "rodNichrome"
+		},
+		"z": {
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
+		}
+	},
+	"pattern": [
+		"x",
+		"y",
+		"z"
+	]
+}

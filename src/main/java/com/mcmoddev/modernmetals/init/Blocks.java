@@ -1,8 +1,14 @@
 package com.mcmoddev.modernmetals.init;
 
+import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 
-import com.mcmoddev.lib.util.TabContainer;
-import com.mcmoddev.modernmetals.util.Config.Options;
+import net.minecraft.block.Block;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /**
  * This class initializes all blocks in Modern Metals.
@@ -13,7 +19,6 @@ import com.mcmoddev.modernmetals.util.Config.Options;
 public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
 	private static boolean initDone = false;
-	private static TabContainer myTabs = new TabContainer( ItemGroups.blocksTab, ItemGroups.itemsTab, ItemGroups.toolsTab );
 
 	protected Blocks() {
 		throw new IllegalAccessError("Not a instantiable class");
@@ -30,78 +35,89 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		Materials.init();
 		ItemGroups.init();
 
-		if (Options.enableAluminum) {
-			createBlocksFull(Materials.getMaterialByName("aluminum"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM)) {
+			createBlocksFull(MaterialNames.ALUMINUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableAluminumBrass) {
-			createBlocksFull(Materials.getMaterialByName("aluminumbrass"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
+			createBlocksFull(MaterialNames.ALUMINUM_BRASS, ItemGroups.myTabs);
 		}
 
-		if (Options.enableCadmium) {
-			createBlocksFull(Materials.getMaterialByName("cadmium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
+			createBlocksFull(MaterialNames.CADMIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableChromium) {
-			createBlocksFull(Materials.getMaterialByName("chromium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
+			createBlocksFull(MaterialNames.CHROMIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableGalvanizedSteel) {
-			createBlocksFull(Materials.getMaterialByName("galvanizedsteel"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
+			createBlocksFull(MaterialNames.GALVANIZED_STEEL, ItemGroups.myTabs);
 		}
 
-		if (Options.enableIridium) {
-			createBlocksFull(Materials.getMaterialByName("iridium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.IRIDIUM)) {
+			createBlocksFull(MaterialNames.IRIDIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableMagnesium) {
-			createBlocksFull(Materials.getMaterialByName("magnesium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.MAGNESIUM)) {
+			createBlocksFull(MaterialNames.MAGNESIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableManganese) {
-			createBlocksFull(Materials.getMaterialByName("manganese"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.MANGANESE)) {
+			createBlocksFull(MaterialNames.MANGANESE, ItemGroups.myTabs);
 		}
 
-		if (Options.enableNichrome) {
-			createBlocksFull(Materials.getMaterialByName("nichrome"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
+			createBlocksFull(MaterialNames.NICHROME, ItemGroups.myTabs);
 		}
 
-		if (Options.enableOsmium) {
-			createBlocksFull(Materials.getMaterialByName("osmium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.OSMIUM)) {
+			createBlocksFull(MaterialNames.OSMIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enablePlutonium) {
-			createBlocksFull(Materials.getMaterialByName("plutonium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.PLUTONIUM)) {
+			createBlocksFull(MaterialNames.PLUTONIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableRutile) {
-			createBlocksFull(Materials.getMaterialByName("rutile"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.RUTILE)) {
+			createBlocksFull(MaterialNames.RUTILE, ItemGroups.myTabs);
 		}
 
-		if (Options.enableStainlessSteel) {
-			createBlocksFull(Materials.getMaterialByName("stainlesssteel"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
+			createBlocksFull(MaterialNames.STAINLESS_STEEL, ItemGroups.myTabs);
 		}
 
-		if (Options.enableTantalum) {
-			createBlocksFull(Materials.getMaterialByName("tantalum"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.TANTALUM)) {
+			createBlocksFull(MaterialNames.TANTALUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableTitanium) {
-			createBlocksFull(Materials.getMaterialByName("titanium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
+			createBlocksFull(MaterialNames.TITANIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableTungsten) {
-			createBlocksFull(Materials.getMaterialByName("tungsten"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
+			createBlocksFull(MaterialNames.TUNGSTEN, ItemGroups.myTabs);
 		}
 
-		if (Options.enableUranium) {
-			createBlocksFull(Materials.getMaterialByName("uranium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.URANIUM)) {
+			createBlocksFull(MaterialNames.URANIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.enableZirconium) {
-			createBlocksFull(Materials.getMaterialByName("zirconium"), myTabs);
+		if (Options.isMaterialEnabled(MaterialNames.ZIRCONIUM)) {
+			createBlocksFull(MaterialNames.ZIRCONIUM, ItemGroups.myTabs);
 		}
 
 		initDone = true;
+	}
+	
+	@SubscribeEvent
+	public static void registerBlocks(RegistryEvent.Register<Block> event) {
+		for( MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID) ) {
+			for( Block block : mat.getBlocks() ) {
+				if( block.getRegistryName().getResourceDomain().equals(ModernMetals.MODID) ) {
+					event.getRegistry().register(block);
+				}
+			}
+		}
 	}
 }

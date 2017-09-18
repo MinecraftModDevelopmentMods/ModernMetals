@@ -1,0 +1,33 @@
+{
+	"type": "forge:ore_shapeless",
+	"group": "basics",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:chromium_nugget",
+		"data": 0,
+		"count": 9
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Chromium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"ingredients": [
+		{
+			"type": "forge:ore_dict",
+			"ore": "ingotChromium"
+		}
+	]
+}

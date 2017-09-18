@@ -1,0 +1,56 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "weapon",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:iridium_crossbow",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Iridium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "CrossbowAndBolt"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Rod"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Gear"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "rodIridium"
+		},
+		"y": {
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
+		},
+		"z": {
+			"type": "forge:ore_dict",
+			"ore": "gearIridium"
+		}
+	},
+	"pattern": [
+		"zxx",
+		" yx",
+		"x z"
+	]
+}

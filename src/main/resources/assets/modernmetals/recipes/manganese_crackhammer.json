@@ -1,0 +1,44 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "tools",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:manganese_crackhammer",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Manganese"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				},
+				{
+					"type": "basemetals:hammer"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "blockManganese"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		}
+	},
+	"pattern": [
+		"x",
+		"y",
+		"y"
+	]
+}

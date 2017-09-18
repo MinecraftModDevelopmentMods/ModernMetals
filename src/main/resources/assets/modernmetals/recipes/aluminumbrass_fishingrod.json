@@ -1,0 +1,47 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "misc",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:aluminumbrass_fishing_rod",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "AluminumBrass"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "FishingRod"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Rod"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "rodAluminumbrass"
+		},
+		"y": {
+			"type": "minecraft:item",
+			"item": "minecraft:string",
+			"data": 0
+		}
+	},
+	"pattern": [
+		"  x",
+		" xy",
+		"x y"
+	]
+}

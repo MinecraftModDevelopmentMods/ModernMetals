@@ -1,7 +1,8 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
 import com.mcmoddev.modernmetals.ModernMetals;
-import com.mcmoddev.modernmetals.util.Config.Options;
+import com.mcmoddev.modernmetals.data.MaterialNames;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.IIntegration;
 
@@ -20,80 +21,36 @@ public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIOBase im
 	 */
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.modEnabled("enderio")) {
+		if (initDone || !Options.isModEnabled(EnderIO.PLUGIN_MODID)) {
 			return;
 		}
 
-		if (Options.enableAluminum) {
-			addSagMillRecipe("aluminum", null, 3600);
-		}
+		final String[] baseNames = new String[] {
+				MaterialNames.ALUMINUM,
+				MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.CADMIUM,
+				MaterialNames.CHROMIUM,
+				MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM,
+				MaterialNames.MANGANESE,
+				MaterialNames.NICHROME,
+				MaterialNames.OSMIUM,
+				MaterialNames.PLUTONIUM,
+				MaterialNames.RUTILE,
+				MaterialNames.STAINLESS_STEEL,
+				MaterialNames.TANTALUM,
+				MaterialNames.TITANIUM,
+				MaterialNames.TUNGSTEN,
+				MaterialNames.URANIUM,
+				MaterialNames.ZIRCONIUM
+		};
 
-		if (Options.enableAluminumBrass) {
-			addSagMillRecipe("aluminumbrass", null, 3600);
-		}
-
-		if (Options.enableCadmium) {
-			addSagMillRecipe("cadmium", null, 3600);
-		}
-
-		if (Options.enableChromium) {
-			addSagMillRecipe("chromium", null, 3600);
-		}
-
-		if (Options.enableGalvanizedSteel) {
-			addSagMillRecipe("galvanizedsteel", null, 3600);
-		}
-
-		if (Options.enableIridium) {
-			addSagMillRecipe("iridium", null, 3600);
-		}
-
-		if (Options.enableMagnesium) {
-			addSagMillRecipe("magnesium", null, 3600);
-		}
-
-		if (Options.enableManganese) {
-			addSagMillRecipe("manganese", null, 3600);
-		}
-
-		if (Options.enableNichrome) {
-			addSagMillRecipe("nichrome", null, 3600);
-		}
-
-		if (Options.enableOsmium) {
-			addSagMillRecipe("osmium", null, 3600);
-		}
-
-		if (Options.enablePlutonium) {
-			addSagMillRecipe("plutonium", null, 3600);
-		}
-
-		if (Options.enableRutile) {
-			addSagMillRecipe("rutile", null, 3600);
-		}
-
-		if (Options.enableStainlessSteel) {
-			addSagMillRecipe("stainlesssteel", null, 3600);
-		}
-
-		if (Options.enableTantalum) {
-			addSagMillRecipe("tantalum", null, 3600);
-		}
-
-		if (Options.enableTitanium) {
-			addSagMillRecipe("titanium", null, 3600);
-		}
-
-		if (Options.enableTungsten) {
-			addSagMillRecipe("tungsten", null, 3600);
-		}
-
-		if (Options.enableUranium) {
-			addSagMillRecipe("uranium", null, 3600);
-		}
-
-		if (Options.enableZirconium) {
-			addSagMillRecipe("zirconium", null, 3600);
+		for (int i = 0; i < baseNames.length; i++) {
+			final String materialName = baseNames[i];
+			if (Options.isMaterialEnabled(materialName)) {
+				addSagMillRecipe(materialName, 3600);
+			}
 		}
 
 		initDone = true;
