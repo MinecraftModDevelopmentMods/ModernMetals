@@ -38,13 +38,9 @@ javadoc {
 
 description = 'Modern Metals'
 def mod_file = getModFile()
-def mc_version = '1.12'
-
-ext {
-    short_version = getVersion('VERSION', mod_file)
-}
-
-version = mc_version + '-' + short_version
+def mc_version = "1.12"
+def short_version = getVersion("VERSION", mod_file)
+version = mc_version + "-" + short_version
 if (System.getenv().BUILD_NUMBER) {
     version += '.' + System.getenv().BUILD_NUMBER
 }
