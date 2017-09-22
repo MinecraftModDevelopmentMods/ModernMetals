@@ -120,8 +120,6 @@ public class Items extends com.mcmoddev.lib.init.Items {
 			createItemsModSupport(MaterialNames.ZIRCONIUM, ItemGroups.myTabs);
 		}
 
-		// addToMetList() // TODO: May not be needed, check
-
 		initDone = true;
 	}
 	

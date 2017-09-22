@@ -51,9 +51,6 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 			addAdditionalOredicts(material, "AluBrass");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
-		}
-
 		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
 			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
 			addAdditionalOredicts(material, "GalvinizedSteel");

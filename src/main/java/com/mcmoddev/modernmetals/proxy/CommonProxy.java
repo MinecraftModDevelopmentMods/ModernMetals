@@ -78,8 +78,6 @@ public class CommonProxy {
 		ModernMetals.logger.debug("CommonProxy init() with event %s", event.description());
 		Recipes.init();
 
-		Achievements.init();
-
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
 	}
 
