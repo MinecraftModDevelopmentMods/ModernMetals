@@ -5,7 +5,6 @@ import java.util.HashSet;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.init.*;
 import com.mcmoddev.modernmetals.util.Config;
-import com.mcmoddev.modernmetals.util.EventHandler;
 import com.mcmoddev.lib.integration.IntegrationManager;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 
@@ -77,8 +76,6 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent event) {
 		ModernMetals.logger.debug("CommonProxy init() with event %s", event.description());
 		Recipes.init();
-
-		MinecraftForge.EVENT_BUS.register(new EventHandler());
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
