@@ -12,6 +12,9 @@ import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import cofh.api.util.ThermalExpansionHelper;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @MMDPlugin( addonId = ModernMetals.MODID, pluginId = ThermalExpansion.PLUGIN_MODID )
 public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.ThermalExpansionBase implements IIntegration {
@@ -23,6 +26,11 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 			return;
 		}
 
+		initDone = true;
+	}
+	
+	@SubscribeEvent
+	public void regShit(RegistryEvent.Register<IRecipe> ev ) {
 		Map<String, Boolean> materials = new HashMap<>();
 		
 		materials.put(MaterialNames.ALUMINUM_BRASS, Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS));
@@ -68,7 +76,5 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		if (Options.isMaterialEnabled(MaterialNames.RUTILE) && Options.isMaterialEnabled(MaterialNames.MAGNESIUM) && Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
 			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack(Materials.getMaterialByName(MaterialNames.RUTILE).getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(MaterialNames.MAGNESIUM).getItem(Names.INGOT), 1), new ItemStack( Materials.getMaterialByName(MaterialNames.TITANIUM).getItem(Names.INGOT), 2));
 		}
-
-		initDone = true;
 	}
 }
