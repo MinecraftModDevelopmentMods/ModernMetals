@@ -4,6 +4,12 @@ import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.data.TraitNames;
 import com.mcmoddev.modernmetals.init.Materials;
+
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.item.crafting.IRecipe;
+
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.plugins.tinkers.TCMaterial;
@@ -25,7 +31,13 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		if (initDone || !Options.isModEnabled("tinkersconstruct")) {
 			return;
 		}
-
+		
+		MinecraftForge.EVENT_BUS.register(this);
+		initDone = true;
+	}
+	
+	@SubscribeEvent
+	public void setupTinkers(RegistryEvent.Register<IRecipe> ev ) {
 		registerMaterial(Options.isMaterialEnabled(MaterialNames.ALUMINUM), 
 				MaterialNames.ALUMINUM, true, false, TraitNames.LIGHTWEIGHT);
 
@@ -108,7 +120,6 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		registry.registerAll();
-		initDone = true;
 	}
 
 	private boolean isTraitLoc(String loc) {
