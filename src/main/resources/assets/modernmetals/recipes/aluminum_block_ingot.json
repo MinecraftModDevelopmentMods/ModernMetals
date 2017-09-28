@@ -1,0 +1,31 @@
+{
+	"type": "forge:ore_shapeless",
+	"ingredients": [
+		{
+			"type": "forge:ore_dict",
+			"ore": "blockAluminum"
+		}
+	],
+	"result": {
+		"item": "modernmetals:aluminum_ingot",
+		"count": 9
+	},
+	"group": "basics",
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "modernmetals:enabled",
+					"optionName": "material",
+					"optionValue": "Aluminum"
+				},
+				{
+					"type": "modernmetals:enabled",
+					"optionName": "thing",
+					"optionValue": "basics"
+				}
+			]
+		}
+	]
+}
