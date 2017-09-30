@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.util.Oredicts;
 
 /**
  * This class initializes all items in Modern Metals.
@@ -125,13 +126,15 @@ public class Items extends com.mcmoddev.lib.init.Items {
 	
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-            for( MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID) ) {
-                    for( Item item : mat.getItems() ) {
-                            if( item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID) ) {
-                                    event.getRegistry().register(item);
-                            }
-                    }
-            }
+    	for( MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID) ) {
+    		for( Item item : mat.getItems() ) {
+    			if( item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID) ) {
+    				event.getRegistry().register(item);
+    			}
+    		}
+    	}
+    	Oredicts.registerItemOreDictionaryEntries();
+    	Oredicts.registerBlockOreDictionaryEntries();
     }
 
 }

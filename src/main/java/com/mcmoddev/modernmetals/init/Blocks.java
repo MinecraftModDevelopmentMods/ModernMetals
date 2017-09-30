@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.util.Oredicts;
 
 /**
  * This class initializes all blocks in Modern Metals.
