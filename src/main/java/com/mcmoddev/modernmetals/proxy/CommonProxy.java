@@ -51,6 +51,7 @@ public class CommonProxy {
 		ItemGroups.setupIcons();
 		
 		IntegrationManager.INSTANCE.preInit(event);
+		IntegrationManager.INSTANCE.runCallbacks("preInit");
 		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.proxy.CommonProxy.class);
 	}
 	
@@ -74,11 +75,13 @@ public class CommonProxy {
 
 
 	public void init(FMLInitializationEvent event) {
+		IntegrationManager.INSTANCE.runCallbacks("init");
 		ModernMetals.logger.debug("CommonProxy init() with event %s", event.description());
 		Recipes.init();
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
+		IntegrationManager.INSTANCE.runCallbacks("postinit");
 		ModernMetals.logger.debug("CommonProxy postInit() with event %s", event.description());
 		Config.postInit();
 	}
