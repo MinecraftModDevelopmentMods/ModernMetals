@@ -98,17 +98,17 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 	}
 
 	public void preInit() {
-		super.preInitSetup();
-		super.setMaterialsVisible();
+		preInitSetup();
+		setMaterialsVisible();
 	}
 	
 	public void initCallback() {
 		registerAlloys();
-		super.initSetup();
+		initSetup();
 	}
 
 	public void postInit() {
-		super.postInitSetup();
+		postInitSetup();
 	}
 
 	private void registerAlloys() {
