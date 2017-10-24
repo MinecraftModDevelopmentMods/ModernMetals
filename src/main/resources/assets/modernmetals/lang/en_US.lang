@@ -117,6 +117,39 @@ item.modernmetals.bismuth_smallpowder.name=Small Pile of Powdered Bismuth
 item.modernmetals.bismuth_sword.name=Bismuth Sword
 item.modernmetals.bismuth_trapdoor.name=Bismuth Trapdoor
 
+material.boron.name=Boron
+item.modernmetals.boron_arrow.name=Boron Arrow
+item.modernmetals.boron_axe.name=Boron Axe
+item.modernmetals.boron_bars.name=Boron Bars
+item.modernmetals.boron_blend.name=Boron Blend
+item.modernmetals.boron_block.name=Block of Boron
+item.modernmetals.boron_boots.name=Boron Boots
+item.modernmetals.boron_bolt.name=Boron Bolt
+item.modernmetals.boron_bow.name=Boron Bow
+item.modernmetals.boron_chestplate.name=Boron Chestplate
+item.modernmetals.boron_crackhammer.name=Boron Crack Hammer
+item.modernmetals.boron_crossbow.name=Boron Crossbow
+item.modernmetals.boron_door.name=Boron Door
+item.modernmetals.boron_fishing_rod.name=Boron Fishing Rod
+item.modernmetals.boron_gear.name=Boron Gear
+item.modernmetals.boron_helmet.name=Boron Helmet
+item.modernmetals.boron_hoe.name=Boron Hoe
+item.modernmetals.boron_horse_armor.name=Boron Horse Armor
+item.modernmetals.boron_ingot.name=Boron Ingot
+item.modernmetals.boron_leggings.name=Boron Leg Armor
+item.modernmetals.boron_nugget.name=Boron Nugget
+item.modernmetals.boron_ore.name=Boron Ore
+item.modernmetals.boron_pickaxe.name=Boron Pickaxe
+item.modernmetals.boron_powder.name=Powdered Boron
+item.modernmetals.boron_rod.name=Boron Rod
+item.modernmetals.boron_shears.name=Boron Shears
+item.modernmetals.boron_shield.name=Boron Shield
+item.modernmetals.boron_shovel.name=Boron Shovel
+item.modernmetals.boron_smallblend.name=Small Pile of Boron Blend
+item.modernmetals.boron_smallpowder.name=Small Pile of Powdered Boron
+item.modernmetals.boron_sword.name=Boron Sword
+item.modernmetals.boron_trapdoor.name=Boron Trapdoor
+
 material.cadmium.name=Cadmium
 item.modernmetals.cadmium_arrow.name=Cadmium Arrow
 item.modernmetals.cadmium_axe.name=Cadmium Axe
@@ -684,6 +717,13 @@ tile.modernmetals.aluminumbrass_ore.name=Aluminum Brass Ore
 tile.modernmetals.aluminumbrass_plate.name=Aluminum Brass Plate
 tile.modernmetals.aluminumbrass_trapdoor.name=Aluminum Brass Trapdoor
 
+tile.modernmetals.boron_bars.name=Boron Bars
+tile.modernmetals.boron_block.name=Block of Boron
+tile.modernmetals.boron_door.name=Boron Door
+tile.modernmetals.boron_ore.name=Boron Ore
+tile.modernmetals.boron_plate.name=Boron Plate
+tile.modernmetals.boron_trapdoor.name=Boron Trapdoor
+
 tile.modernmetals.cadmium_bars.name=Cadmium Bars
 tile.modernmetals.cadmium_block.name=Block of Cadmium
 tile.modernmetals.cadmium_door.name=Cadmium Door
@@ -847,6 +887,7 @@ achievement.titanium_maker.desc=Combine powdered Rutile and Magnesium to make Ti
 
 fluid.modernmetals.aluminum=Molten Aluminum
 fluid.modernmetals.aluminumbrass=Molten Aluminum Brass
+fluid.modernmetals.boron=Molten Boron
 fluid.modernmetals.cadmium=Molten Cadmium
 fluid.modernmetals.chromium=Molten Chromium
 fluid.modernmetals.galvanizedsteel=Molten Galvanized Steel
@@ -866,6 +907,7 @@ fluid.modernmetals.zirconium=Molten Zirconium
 
 fluid.modernmetals.aluminum.name=Molten Aluminum
 fluid.modernmetals.aluminumbrass.name=Molten Aluminum Brass
+fluid.modernmetals.boron.name=Molten Boron
 fluid.modernmetals.cadmium.name=Molten Cadmium
 fluid.modernmetals.chromium.name=Molten Chromium
 fluid.modernmetals.galvanizedsteel.name=Molten Galvanized Steel
@@ -885,6 +927,7 @@ fluid.modernmetals.zirconium.name=Molten Zirconium
 
 tile.modernmetals.aluminum.name=Molten Aluminum
 tile.modernmetals.aluminumbrass.name=Molten Aluminum Brass
+tile.modernmetals.boron.name=Molten Boron
 tile.modernmetals.cadmium.name=Molten Cadmium
 tile.modernmetals.chromium.name=Molten Chromium
 tile.modernmetals.galvanizedsteel.name=Molten Galvanized Steel
@@ -946,6 +989,29 @@ tile.modernmetals.aluminumbrass_pressure_plate.name=Aluminum Brass Pressure Plat
 tile.modernmetals.aluminumbrass_slab.name=Aluminum Brass Slab
 tile.modernmetals.aluminumbrass_stairs.name=Aluminum Brass Stairs
 tile.modernmetals.aluminumbrass_wall.name=Aluminum Brass Wall
+
+
+item.modernmetals.boron_clump.name=Boron Clump
+item.modernmetals.boron_crushed.name=Crushed Boron Ore
+item.modernmetals.boron_crushed_purified.name=Purified Crushed Boron Ore
+item.modernmetals.boron_crystal.name=Boron Crystal
+item.modernmetals.boron_dense_plate.name=Dense Boron Plate
+item.modernmetals.boron_powder_dirty.name=Dirty Boron Dust
+item.modernmetals.boron_shard.name=Boron Shard
+
+item.modernmetals.boron_button.name=Boron Button
+item.modernmetals.boron_lever.name=Boron Lever
+item.modernmetals.boron_pressure_plate.name=Boron Pressure Plate
+item.modernmetals.boron_slab.name=Boron Slab
+item.modernmetals.boron_stairs.name=Boron Stairs
+item.modernmetals.boron_wall.name=Boron Wall
+
+tile.modernmetals.boron_button.name=Boron Button
+tile.modernmetals.boron_lever.name=Boron Lever
+tile.modernmetals.boron_pressure_plate.name=Boron Pressure Plate
+tile.modernmetals.boron_slab.name=Boron Slab
+tile.modernmetals.boron_stairs.name=Boron Stairs
+tile.modernmetals.boron_wall.name=Boron Wall
 
 
 item.modernmetals.cadmium_clump.name=Cadmium Clump

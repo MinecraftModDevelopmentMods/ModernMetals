@@ -1,0 +1,46 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "tools",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:boron_axe",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Boron"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "BasicTools"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "ingotBoron"
+		},
+		"s": {
+			"type": "forge:ore_dict",
+			"ore": "stickWood"
+		}
+	},
+	"pattern": [
+		"xx",
+		"xs",
+		" s"
+	]
+}
