@@ -37,6 +37,7 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		// METALS
 		Options.materialEnabled(MaterialNames.ALUMINUM, configuration.getBoolean("EnableAluminum", MATERIALS_CAT, true, "Enable Aluminum Items and Materials"));
 		Options.materialEnabled(MaterialNames.ALUMINUM_BRASS, configuration.getBoolean("EnableAluminumBrass", MATERIALS_CAT, true, "Enable Aluminum Brass Items and Materials"));
+		Options.materialEnabled(MaterialNames.BORON, configuration.getBoolean("EnableBoron", MATERIALS_CAT, true, "Enable Boron Items and Materials"));
 		Options.materialEnabled(MaterialNames.CADMIUM, configuration.getBoolean("EnableCadmium", MATERIALS_CAT, true, "Enable Cadmium Items and Materials"));
 		Options.materialEnabled(MaterialNames.CHROMIUM, configuration.getBoolean("EnableChromium", MATERIALS_CAT, true, "Enable Chromium Items and Materials"));
 		Options.materialEnabled(MaterialNames.GALVANIZED_STEEL, configuration.getBoolean("EnableGalvanizedSteel", MATERIALS_CAT, true, "Enable Galvanized Steel Items and Materials"));
@@ -53,7 +54,7 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		Options.materialEnabled(MaterialNames.TUNGSTEN, configuration.getBoolean("EnableTungsten", MATERIALS_CAT, true, "Enable Tungsten Items and Materials"));
 		Options.materialEnabled(MaterialNames.URANIUM, configuration.getBoolean("EnableUranium", MATERIALS_CAT, true, "Enable Uranium Items and Materials"));
 		Options.materialEnabled(MaterialNames.ZIRCONIUM, configuration.getBoolean("EnableZirconium", MATERIALS_CAT, true, "Enable Zirconium Items and Materials"));
-
+		
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}

@@ -35,6 +35,11 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 			addFluidBlock(MaterialNames.ALUMINUM_BRASS);
 		}
 
+		if (Options.isMaterialEnabled(MaterialNames.BORON)) {
+			addFluid(MaterialNames.BORON, 2000, 10000, 400, 10);
+			addFluidBlock(MaterialNames.BORON);
+		}
+		
 		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
 			addFluid(MaterialNames.CADMIUM, 2000, 10000, 300, 10);
 			addFluidBlock(MaterialNames.CADMIUM);

@@ -44,6 +44,10 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 			createBlocksFullOreless(MaterialNames.ALUMINUM_BRASS, ItemGroups.myTabs);
 		}
 
+		if (Options.isMaterialEnabled(MaterialNames.BORON)) {
+			createBlocksFull(MaterialNames.BORON, ItemGroups.myTabs);
+		}
+		
 		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
 			createBlocksFull(MaterialNames.CADMIUM, ItemGroups.myTabs);
 		}

@@ -35,6 +35,10 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			createAlloyMaterial(MaterialNames.ALUMINUM_BRASS, MaterialType.METAL, 1, 7.5, 4.5, 0xFFEBAA56);
 		}
 
+		if (Options.isMaterialEnabled(MaterialNames.BORON)) {
+			createMaterial(MaterialNames.BORON, MaterialType.METAL,9.5, 8, 1, 0xFF888888);
+		}
+		
 		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
 			createRareMaterial(MaterialNames.CADMIUM, MaterialType.METAL, 2, 1, 4.5, 0xFFC9D4DA);
 		}
