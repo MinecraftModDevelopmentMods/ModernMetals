@@ -93,6 +93,40 @@ item.modernmetals.antimony_smallpowder.name=Small Pile of Powdered Antimony
 item.modernmetals.antimony_sword.name=Antimony Sword
 item.modernmetals.antimony_trapdoor.name=Antimony Trapdoor
 
+material.beryllium.name=Beryllium
+item.modernmetals.beryllium_arrow.name=Beryllium Arrow
+item.modernmetals.beryllium_axe.name=Beryllium Axe
+item.modernmetals.beryllium_bars.name=Beryllium Bars
+item.modernmetals.beryllium_blend.name=Beryllium Blend
+item.modernmetals.beryllium_block.name=Block of Beryllium
+item.modernmetals.beryllium_boots.name=Beryllium Boots
+item.modernmetals.beryllium_bolt.name=Beryllium Bolt
+item.modernmetals.beryllium_bow.name=Beryllium Bow
+item.modernmetals.beryllium_chestplate.name=Beryllium Chestplate
+item.modernmetals.beryllium_crackhammer.name=Beryllium Crack Hammer
+item.modernmetals.beryllium_crossbow.name=Beryllium Crossbow
+item.modernmetals.beryllium_door.name=Beryllium Door
+item.modernmetals.beryllium_fishing_rod.name=Beryllium Fishing Rod
+item.modernmetals.beryllium_gear.name=Beryllium Gear
+item.modernmetals.beryllium_helmet.name=Beryllium Helmet
+item.modernmetals.beryllium_hoe.name=Beryllium Hoe
+item.modernmetals.beryllium_horse_armor.name=Beryllium Horse Armor
+item.modernmetals.beryllium_ingot.name=Beryllium Ingot
+item.modernmetals.beryllium_leggings.name=Beryllium Leg Armor
+item.modernmetals.beryllium_nugget.name=Beryllium Nugget
+item.modernmetals.beryllium_ore.name=Beryllium Ore
+item.modernmetals.beryllium_pickaxe.name=Beryllium Pickaxe
+item.modernmetals.beryllium_powder.name=Powdered Beryllium
+item.modernmetals.beryllium_rod.name=Beryllium Rod
+item.modernmetals.beryllium_shears.name=Beryllium Shears
+item.modernmetals.beryllium_shield.name=Beryllium Shield
+item.modernmetals.beryllium_shovel.name=Beryllium Shovel
+item.modernmetals.beryllium_smallblend.name=Small Pile of Beryllium Blend
+item.modernmetals.beryllium_smallpowder.name=Small Pile of Powdered Beryllium
+item.modernmetals.beryllium_sword.name=Beryllium Sword
+item.modernmetals.beryllium_trapdoor.name=Beryllium Trapdoor
+
+
 material.bismuth.name=Bismuth
 item.modernmetals.bismuth_arrow.name=Bismuth Arrow
 item.modernmetals.bismuth_axe.name=Bismuth Axe
@@ -168,6 +202,8 @@ item.modernmetals.cadmium_gear.name=Cadmium Gear
 item.modernmetals.cadmium_helmet.name=Cadmium Helmet
 item.modernmetals.cadmium_hoe.name=Cadmium Hoe
 item.modernmetals.cadmium_horse_armor.name=Cadmium Horse Armor
+
+
 item.modernmetals.cadmium_ingot.name=Cadmium Ingot
 item.modernmetals.cadmium_leggings.name=Cadmium Leg Armor
 item.modernmetals.cadmium_nugget.name=Cadmium Nugget
@@ -888,6 +924,7 @@ achievement.titanium_maker.desc=Combine powdered Rutile and Magnesium to make Ti
 fluid.modernmetals.aluminum=Molten Aluminum
 fluid.modernmetals.aluminumbrass=Molten Aluminum Brass
 fluid.modernmetals.boron=Molten Boron
+fluid.modernmetals.beryllium=Molten Beryllium
 fluid.modernmetals.cadmium=Molten Cadmium
 fluid.modernmetals.chromium=Molten Chromium
 fluid.modernmetals.galvanizedsteel=Molten Galvanized Steel
@@ -908,6 +945,7 @@ fluid.modernmetals.zirconium=Molten Zirconium
 fluid.modernmetals.aluminum.name=Molten Aluminum
 fluid.modernmetals.aluminumbrass.name=Molten Aluminum Brass
 fluid.modernmetals.boron.name=Molten Boron
+fluid.modernmetals.beryllium.name=Molten Beryllium
 fluid.modernmetals.cadmium.name=Molten Cadmium
 fluid.modernmetals.chromium.name=Molten Chromium
 fluid.modernmetals.galvanizedsteel.name=Molten Galvanized Steel
@@ -989,6 +1027,37 @@ tile.modernmetals.aluminumbrass_pressure_plate.name=Aluminum Brass Pressure Plat
 tile.modernmetals.aluminumbrass_slab.name=Aluminum Brass Slab
 tile.modernmetals.aluminumbrass_stairs.name=Aluminum Brass Stairs
 tile.modernmetals.aluminumbrass_wall.name=Aluminum Brass Wall
+
+
+tile.modernmetals.beryllium_bars.name=Beryllium Bars
+tile.modernmetals.beryllium_block.name=Block of Beryllium
+tile.modernmetals.beryllium_door.name=Beryllium Door
+tile.modernmetals.beryllium_ore.name=Beryllium Ore
+tile.modernmetals.beryllium_plate.name=Beryllium Plate
+tile.modernmetals.beryllium_trapdoor.name=Beryllium Trapdoor
+
+item.modernmetals.beryllium_clump.name=Beryllium Clump
+item.modernmetals.beryllium_crushed.name=Crushed Beryllium Ore
+item.modernmetals.beryllium_crushed_purified.name=Purified Crushed Beryllium Ore
+item.modernmetals.beryllium_crystal.name=Beryllium Crystal
+item.modernmetals.beryllium_dense_plate.name=Dense Beryllium Plate
+item.modernmetals.beryllium_powder_dirty.name=Dirty Beryllium Dust
+item.modernmetals.beryllium_shard.name=Beryllium Shard
+item.modernmetals.beryllium_button.name=Beryllium Button
+item.modernmetals.beryllium_lever.name=Beryllium Lever
+item.modernmetals.beryllium_pressure_plate.name=Beryllium Pressure Plate
+item.modernmetals.beryllium_slab.name=Beryllium Slab
+item.modernmetals.beryllium_stairs.name=Beryllium Stairs
+item.modernmetals.beryllium_wall.name=Beryllium Wall
+
+
+tile.modernmetals.beryllium.name=Molten Beryllium
+tile.modernmetals.beryllium_button.name=Beryllium Button
+tile.modernmetals.beryllium_lever.name=Beryllium Lever
+tile.modernmetals.beryllium_pressure_plate.name=Beryllium Pressure Plate
+tile.modernmetals.beryllium_slab.name=Beryllium Slab
+tile.modernmetals.beryllium_stairs.name=Beryllium Stairs
+tile.modernmetals.beryllium_wall.name=Beryllium Wall
 
 
 item.modernmetals.boron_clump.name=Boron Clump
@@ -1380,3 +1449,5 @@ tile.modernmetals.zirconium_pressure_plate.name=Zirconium Pressure Plate
 tile.modernmetals.zirconium_slab.name=Zirconium Slab
 tile.modernmetals.zirconium_stairs.name=Zirconium Stairs
 tile.modernmetals.zirconium_wall.name=Zirconium Wall
+
+

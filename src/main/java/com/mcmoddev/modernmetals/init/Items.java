@@ -44,6 +44,10 @@ public class Items extends com.mcmoddev.lib.init.Items {
 			createItemsFull(MaterialNames.ALUMINUM_BRASS, ItemGroups.myTabs);
 		}
 
+		if (Options.isMaterialEnabled(MaterialNames.BERYLLIUM)) {
+			createItemsFull(MaterialNames.BERYLLIUM, ItemGroups.myTabs);
+		}
+
 		if (Options.isMaterialEnabled(MaterialNames.BORON)) {
 			createItemsFull(MaterialNames.BORON, ItemGroups.myTabs);
 		}

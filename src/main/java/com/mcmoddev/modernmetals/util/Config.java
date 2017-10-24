@@ -37,6 +37,7 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		// METALS
 		Options.materialEnabled(MaterialNames.ALUMINUM, configuration.getBoolean("EnableAluminum", MATERIALS_CAT, true, "Enable Aluminum Items and Materials"));
 		Options.materialEnabled(MaterialNames.ALUMINUM_BRASS, configuration.getBoolean("EnableAluminumBrass", MATERIALS_CAT, true, "Enable Aluminum Brass Items and Materials"));
+		Options.materialEnabled(MaterialNames.BERYLLIUM, configuration.getBoolean("EnableBeryllium", MATERIALS_CAT, true, "Enable Beryllium Items and Materials"));
 		Options.materialEnabled(MaterialNames.BORON, configuration.getBoolean("EnableBoron", MATERIALS_CAT, true, "Enable Boron Items and Materials"));
 		Options.materialEnabled(MaterialNames.CADMIUM, configuration.getBoolean("EnableCadmium", MATERIALS_CAT, true, "Enable Cadmium Items and Materials"));
 		Options.materialEnabled(MaterialNames.CHROMIUM, configuration.getBoolean("EnableChromium", MATERIALS_CAT, true, "Enable Chromium Items and Materials"));

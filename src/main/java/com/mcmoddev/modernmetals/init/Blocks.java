@@ -9,7 +9,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.lib.util.ConfigBase.Options;
-import com.mcmoddev.lib.util.Oredicts;
 
 /**
  * This class initializes all blocks in Modern Metals.
@@ -44,6 +43,10 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 			createBlocksFullOreless(MaterialNames.ALUMINUM_BRASS, ItemGroups.myTabs);
 		}
 
+		if (Options.isMaterialEnabled(MaterialNames.BERYLLIUM)) {
+			createBlocksFull(MaterialNames.BERYLLIUM, ItemGroups.myTabs);
+		}
+		
 		if (Options.isMaterialEnabled(MaterialNames.BORON)) {
 			createBlocksFull(MaterialNames.BORON, ItemGroups.myTabs);
 		}
