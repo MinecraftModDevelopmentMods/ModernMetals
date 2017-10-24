@@ -41,6 +41,12 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		registerMaterial(Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS),
 				MaterialNames.ALUMINUM_BRASS, true, false);
 
+		registerMaterial(Options.isMaterialEnabled(MaterialNames.BERYLLIUM),
+				MaterialNames.BERYLLIUM, true, false);
+		
+		registerMaterial(Options.isMaterialEnabled(MaterialNames.BORON),
+				MaterialNames.BORON, true, false);
+
 		registerMaterial(Options.isMaterialEnabled(MaterialNames.CADMIUM),
 				MaterialNames.CADMIUM, true, false);
 		

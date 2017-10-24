@@ -99,6 +99,10 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 			createBlocksFull(MaterialNames.TANTALUM, ItemGroups.myTabs);
 		}
 
+		if (Options.isMaterialEnabled(MaterialNames.THORIUM)) {
+			createBlocksFull(MaterialNames.THORIUM, ItemGroups.myTabs);
+		}
+
 		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
 			createBlocksFull(MaterialNames.TITANIUM, ItemGroups.myTabs);
 		}

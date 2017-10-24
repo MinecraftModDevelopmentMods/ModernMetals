@@ -105,6 +105,11 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 			addFluidBlock(MaterialNames.TANTALUM);
 		}
 
+		if (Options.isMaterialEnabled(MaterialNames.THORIUM)) {
+			addFluid(MaterialNames.THORIUM, 2000, 10000, 514, 10);
+			addFluidBlock(MaterialNames.THORIUM);
+		}
+		
 		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
 			addFluid(MaterialNames.TITANIUM, 2000, 10000, 769, 10);
 			addFluidBlock(MaterialNames.TITANIUM);

@@ -90,6 +90,10 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 		if (Options.isMaterialEnabled(MaterialNames.TANTALUM)) {
 			createMaterial(MaterialNames.TANTALUM, MaterialType.METAL, 6.5, 17.5, 4.5, 0xFFC4BEC2);
 		}
+		
+		if (Options.isMaterialEnabled(MaterialNames.THORIUM)) {
+			createMaterial(MaterialNames.THORIUM, MaterialType.METAL, 3, 1, 1, 0xFF4F5A5A);
+		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
 			createSpecialMaterial(MaterialNames.TITANIUM, MaterialType.METAL, 6.5, 16.25, 4.5, 0xFF73787E);

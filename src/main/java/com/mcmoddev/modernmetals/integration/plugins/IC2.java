@@ -29,6 +29,8 @@ public class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements
 	public void multiplyOres(RegistryEvent.Register<IRecipe> ev ) {
 	final String[] baseNames = new String[] {
 			MaterialNames.ALUMINUM,
+			MaterialNames.BERYLLIUM,
+			MaterialNames.BORON,
 			MaterialNames.CADMIUM,
 			MaterialNames.CHROMIUM,
 			MaterialNames.IRIDIUM,
@@ -37,6 +39,7 @@ public class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements
 			MaterialNames.PLUTONIUM,
 			MaterialNames.RUTILE,
 			MaterialNames.TANTALUM,
+			MaterialNames.THORIUM,
 			MaterialNames.TITANIUM,
 			MaterialNames.TUNGSTEN,
 			MaterialNames.URANIUM,

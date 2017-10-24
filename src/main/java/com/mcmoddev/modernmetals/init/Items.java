@@ -46,10 +46,12 @@ public class Items extends com.mcmoddev.lib.init.Items {
 
 		if (Options.isMaterialEnabled(MaterialNames.BERYLLIUM)) {
 			createItemsFull(MaterialNames.BERYLLIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.BERYLLIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.BORON)) {
 			createItemsFull(MaterialNames.BORON, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.BORON, ItemGroups.myTabs);
 		}
 		
 		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
@@ -107,6 +109,11 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		if (Options.isMaterialEnabled(MaterialNames.TANTALUM)) {
 			createItemsFull(MaterialNames.TANTALUM, ItemGroups.myTabs);
 			createItemsModSupport(MaterialNames.TANTALUM, ItemGroups.myTabs);
+		}
+
+		if (Options.isMaterialEnabled(MaterialNames.THORIUM)) {
+			createItemsFull(MaterialNames.THORIUM, ItemGroups.myTabs);
+			createItemsModSupport(MaterialNames.THORIUM, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {

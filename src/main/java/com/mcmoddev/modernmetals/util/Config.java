@@ -51,6 +51,7 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		Options.materialEnabled(MaterialNames.RUTILE, configuration.getBoolean("EnableRutile", MATERIALS_CAT, true, "Enable Rutile Items and Materials"));
 		Options.materialEnabled(MaterialNames.STAINLESS_STEEL, configuration.getBoolean("EnableStainlessSteel", MATERIALS_CAT, true, "Enable Stainless Steel Items and Materials"));
 		Options.materialEnabled(MaterialNames.TANTALUM, configuration.getBoolean("EnableTantalum", MATERIALS_CAT, true, "Enable Tantalum Items and Materials"));
+		Options.materialEnabled(MaterialNames.THORIUM, configuration.getBoolean("EnableThorium", MATERIALS_CAT, true, "Enable Thorium Items and Materials"));
 		Options.materialEnabled(MaterialNames.TITANIUM, configuration.getBoolean("EnableTitanium", MATERIALS_CAT, true, "Enable Titanium Items and Materials"));
 		Options.materialEnabled(MaterialNames.TUNGSTEN, configuration.getBoolean("EnableTungsten", MATERIALS_CAT, true, "Enable Tungsten Items and Materials"));
 		Options.materialEnabled(MaterialNames.URANIUM, configuration.getBoolean("EnableUranium", MATERIALS_CAT, true, "Enable Uranium Items and Materials"));

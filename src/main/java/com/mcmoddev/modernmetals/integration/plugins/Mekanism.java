@@ -25,6 +25,8 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 		final String[] baseNames = new String[] {
 			MaterialNames.ALUMINUM,
+			MaterialNames.BERYLLIUM,
+			MaterialNames.BORON,
 			MaterialNames.CADMIUM,
 			MaterialNames.CHROMIUM,
 			MaterialNames.IRIDIUM,
@@ -33,6 +35,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 			MaterialNames.PLUTONIUM,
 			MaterialNames.RUTILE,
 			MaterialNames.TANTALUM,
+			MaterialNames.THORIUM,
 			MaterialNames.TITANIUM,
 			MaterialNames.TUNGSTEN,
 			MaterialNames.URANIUM,

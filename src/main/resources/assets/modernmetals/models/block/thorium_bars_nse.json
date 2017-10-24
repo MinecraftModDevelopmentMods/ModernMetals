@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/bars_nse",
+    "textures": {
+        "particle": "modernmetals:blocks/thorium_bars",
+        "bars": "modernmetals:blocks/thorium_bars",
+        "edge": "modernmetals:blocks/thorium_bars"
+    }
+}
