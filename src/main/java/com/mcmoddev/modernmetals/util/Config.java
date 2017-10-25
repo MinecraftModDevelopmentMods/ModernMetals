@@ -37,6 +37,8 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		// METALS
 		Options.materialEnabled(MaterialNames.ALUMINUM, configuration.getBoolean("EnableAluminum", MATERIALS_CAT, true, "Enable Aluminum Items and Materials"));
 		Options.materialEnabled(MaterialNames.ALUMINUM_BRASS, configuration.getBoolean("EnableAluminumBrass", MATERIALS_CAT, true, "Enable Aluminum Brass Items and Materials"));
+		Options.materialEnabled(MaterialNames.BERYLLIUM, configuration.getBoolean("EnableBeryllium", MATERIALS_CAT, true, "Enable Beryllium Items and Materials"));
+		Options.materialEnabled(MaterialNames.BORON, configuration.getBoolean("EnableBoron", MATERIALS_CAT, true, "Enable Boron Items and Materials"));
 		Options.materialEnabled(MaterialNames.CADMIUM, configuration.getBoolean("EnableCadmium", MATERIALS_CAT, true, "Enable Cadmium Items and Materials"));
 		Options.materialEnabled(MaterialNames.CHROMIUM, configuration.getBoolean("EnableChromium", MATERIALS_CAT, true, "Enable Chromium Items and Materials"));
 		Options.materialEnabled(MaterialNames.GALVANIZED_STEEL, configuration.getBoolean("EnableGalvanizedSteel", MATERIALS_CAT, true, "Enable Galvanized Steel Items and Materials"));
@@ -49,11 +51,12 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		Options.materialEnabled(MaterialNames.RUTILE, configuration.getBoolean("EnableRutile", MATERIALS_CAT, true, "Enable Rutile Items and Materials"));
 		Options.materialEnabled(MaterialNames.STAINLESS_STEEL, configuration.getBoolean("EnableStainlessSteel", MATERIALS_CAT, true, "Enable Stainless Steel Items and Materials"));
 		Options.materialEnabled(MaterialNames.TANTALUM, configuration.getBoolean("EnableTantalum", MATERIALS_CAT, true, "Enable Tantalum Items and Materials"));
+		Options.materialEnabled(MaterialNames.THORIUM, configuration.getBoolean("EnableThorium", MATERIALS_CAT, true, "Enable Thorium Items and Materials"));
 		Options.materialEnabled(MaterialNames.TITANIUM, configuration.getBoolean("EnableTitanium", MATERIALS_CAT, true, "Enable Titanium Items and Materials"));
 		Options.materialEnabled(MaterialNames.TUNGSTEN, configuration.getBoolean("EnableTungsten", MATERIALS_CAT, true, "Enable Tungsten Items and Materials"));
 		Options.materialEnabled(MaterialNames.URANIUM, configuration.getBoolean("EnableUranium", MATERIALS_CAT, true, "Enable Uranium Items and Materials"));
 		Options.materialEnabled(MaterialNames.ZIRCONIUM, configuration.getBoolean("EnableZirconium", MATERIALS_CAT, true, "Enable Zirconium Items and Materials"));
-
+		
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}

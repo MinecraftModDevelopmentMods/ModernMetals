@@ -1,5 +1,6 @@
 package com.mcmoddev.modernmetals.proxy;
 
+import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.init.Blocks;
 import com.mcmoddev.modernmetals.init.Fluids;
@@ -15,8 +16,11 @@ import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
  * Modern Metals Client Proxy
@@ -29,11 +33,19 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		super.preInit(event);
+
+		MinecraftForge.EVENT_BUS.register(this);
+	}
+
+
+	@SubscribeEvent
+	public void fluidRendering(RegistryEvent.Register<MMDMaterial> ev) {
 		for (final String name : Fluids.getFluidBlockRegistry().keySet()) {
 			final Block block = Fluids.getFluidBlockByName(name);
 			final Item item = Item.getItemFromBlock(block);
-			if (!item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID))
+			if (!item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID)) {
 				continue;
+			}
 			final ModelResourceLocation fluidModelLocation = new ModelResourceLocation(item.getRegistryName().getResourceDomain() + ":" + name, "fluid");
 			ModelBakery.registerItemVariants(item);
 			ModelLoader.setCustomMeshDefinition(item, stack -> fluidModelLocation);

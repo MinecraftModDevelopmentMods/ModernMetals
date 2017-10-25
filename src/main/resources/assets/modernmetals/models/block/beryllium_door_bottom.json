@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "modernmetals:blocks/beryllium_door_lower",
+        "top": "modernmetals:blocks/beryllium_door_upper"
+    }
+}

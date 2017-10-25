@@ -34,6 +34,8 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		Map<String, Boolean> materials = new HashMap<>();
 		
 		materials.put(MaterialNames.ALUMINUM_BRASS, Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS));
+		materials.put(MaterialNames.BERYLLIUM, Options.isMaterialEnabled(MaterialNames.BERYLLIUM));
+		materials.put(MaterialNames.BORON, Options.isMaterialEnabled(MaterialNames.BORON));
 		materials.put(MaterialNames.CADMIUM, Options.isMaterialEnabled(MaterialNames.CADMIUM));
 		materials.put(MaterialNames.CHROMIUM, Options.isMaterialEnabled(MaterialNames.CHROMIUM));
 		materials.put(MaterialNames.GALVANIZED_STEEL, Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL));
@@ -45,6 +47,7 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		materials.put(MaterialNames.RUTILE, Options.isMaterialEnabled(MaterialNames.RUTILE));
 		materials.put(MaterialNames.STAINLESS_STEEL, Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL));
 		materials.put(MaterialNames.TANTALUM, Options.isMaterialEnabled(MaterialNames.TANTALUM));
+		materials.put(MaterialNames.THORIUM, Options.isMaterialEnabled(MaterialNames.THORIUM));
 		materials.put(MaterialNames.TITANIUM, Options.isMaterialEnabled(MaterialNames.TITANIUM));
 		materials.put(MaterialNames.TUNGSTEN, Options.isMaterialEnabled(MaterialNames.TUNGSTEN));
 		materials.put(MaterialNames.URANIUM, Options.isMaterialEnabled(MaterialNames.URANIUM));

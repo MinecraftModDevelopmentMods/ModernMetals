@@ -35,6 +35,14 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			createAlloyMaterial(MaterialNames.ALUMINUM_BRASS, MaterialType.METAL, 1, 7.5, 4.5, 0xFFEBAA56);
 		}
 
+		if (Options.isMaterialEnabled(MaterialNames.BERYLLIUM)) {
+			createMaterial(MaterialNames.BERYLLIUM, MaterialType.METAL,5.5, 2.5, 1, 0xFFD5D3D5);
+		}
+		
+		if (Options.isMaterialEnabled(MaterialNames.BORON)) {
+			createMaterial(MaterialNames.BORON, MaterialType.METAL,9.5, 8, 1, 0xFF888888);
+		}
+		
 		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
 			createRareMaterial(MaterialNames.CADMIUM, MaterialType.METAL, 2, 1, 4.5, 0xFFC9D4DA);
 		}
@@ -81,6 +89,10 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 
 		if (Options.isMaterialEnabled(MaterialNames.TANTALUM)) {
 			createMaterial(MaterialNames.TANTALUM, MaterialType.METAL, 6.5, 17.5, 4.5, 0xFFC4BEC2);
+		}
+		
+		if (Options.isMaterialEnabled(MaterialNames.THORIUM)) {
+			createMaterial(MaterialNames.THORIUM, MaterialType.METAL, 3, 1, 1, 0xFF4F5A5A);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {

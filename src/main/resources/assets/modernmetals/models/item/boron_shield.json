@@ -1,0 +1,14 @@
+{
+  "parent": "modernmetals:item/shield",
+  "textures": {
+    "shield": "modernmetals:blocks/boron_block"
+  },
+    "overrides": [
+        {
+            "predicate": {
+                "blocking": 1
+            },
+            "model": "modernmetals:item/boron_shield_blocking"
+        }
+    ]
+}
