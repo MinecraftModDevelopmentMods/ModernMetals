@@ -22,7 +22,7 @@ public class MaterialNames {
 	public static final String ZIRCONIUM = "zirconium";
 	public static final String BORON = "boron";
 	public static final String BERYLLIUM = "beryllium";
-	public static final String THORIUM = "throrium";
+	public static final String THORIUM = "thorium";
 
 	private MaterialNames() {
 		throw new IllegalAccessError("Not a instantiable class");
