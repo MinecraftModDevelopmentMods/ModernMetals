@@ -30,9 +30,9 @@
 	    {
 		"block": "modernmetals:beryllium_ore",
 		"parameters": {
-		    "size": 12,
-		    "variation": 6,
-		    "frequency": 0.50,
+		    "size": 5,
+		    "variation": 3,
+		    "frequency": 20,
 		    "minHeight": 0,
 		    "maxHeight": 128
 		},
