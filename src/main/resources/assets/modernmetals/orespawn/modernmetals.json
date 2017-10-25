@@ -2,7 +2,44 @@
   "version": 1,
   "dimensions": [
     {
-      "ores": [
+	"ores": [
+	    {
+		"block": "modernmetals:boron_ore",
+		"parameters": {
+		    "size": 8,
+		    "variation": 8,
+		    "frequency": 8.0,
+		    "minHeight": 0,
+		    "maxHeight": 32
+		},
+		"feature": "default",
+		"replace_block": "default"
+	    },
+	    {
+		"block": "modernmetals:thorium_ore",
+		"parameters": {
+		    "size": 8,
+		    "variation": 4,
+		    "frequency": 8.0,
+		    "minHeight": 0,
+		    "maxHeight": 32
+		},
+		"feature": "default",
+		"replace_block": "default"
+	    },
+	    {
+		"block": "modernmetals:beryllium_ore",
+		"parameters": {
+		    "size": 12,
+		    "variation": 6,
+		    "frequency": 0.50,
+		    "minHeight": 0,
+		    "maxHeight": 128
+		},
+		"feature": "default",
+		"replace_block": "default"
+	    },
+	    
         {
           "block": "modernmetals:aluminum_ore",
           "parameters": {
