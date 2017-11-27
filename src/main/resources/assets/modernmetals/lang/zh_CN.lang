@@ -32,7 +32,8 @@ item.modernmetals.aluminum_shears.name=铝剪刀
 item.modernmetals.aluminum_shield.name=铝盾
 item.modernmetals.aluminum_shovel.name=铝铲
 item.modernmetals.aluminum_smallblend.name=小堆铝原粉
-item.modernmetals.aluminum_smallpowder.name=小堆铝粉item.modernmetals.aluminum_sword.name=铝剑
+item.modernmetals.aluminum_smallpowder.name=小堆铝粉
+item.modernmetals.aluminum_sword.name=铝剑
 item.modernmetals.aluminum_trapdoor.name=铝活板门
 
 material.aluminumbrass.name=铝黄铜
