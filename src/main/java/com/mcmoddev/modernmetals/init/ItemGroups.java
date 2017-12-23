@@ -9,7 +9,6 @@ import com.mcmoddev.lib.util.TabContainer;
 
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 /**
  * This class initializes all item groups in Modern Metals.
@@ -47,9 +46,9 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 		Item blocksTabIconItem = Item.getItemFromBlock(Options.isMaterialEnabled(com.mcmoddev.basemetals.data.MaterialNames.STEEL) ? Materials.getMaterialByName(MaterialNames.STEEL).getBlock(Names.BLOCK) : Materials.getMaterialByName(MaterialNames.IRON).getBlock(Names.BLOCK));
 		Item itemsTabIconItem = Options.isThingEnabled("Gear") ? Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.GEAR) : Items.STICK;
 		Item toolsTabIconItem = Options.isThingEnabled("BasicTools") ? Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.SWORD) : Items.DIAMOND_SWORD;
-		
-		blocksTab.setTabIconItem(new ItemStack(blocksTabIconItem));
-		itemsTab.setTabIconItem(new ItemStack(itemsTabIconItem));
-		toolsTab.setTabIconItem(new ItemStack(toolsTabIconItem));
+
+		blocksTab.setTabIconItem(blocksTabIconItem);
+		itemsTab.setTabIconItem(itemsTabIconItem);
+		toolsTab.setTabIconItem(toolsTabIconItem);
 	}
 }

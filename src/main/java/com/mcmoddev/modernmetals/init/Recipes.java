@@ -3,7 +3,6 @@ package com.mcmoddev.modernmetals.init;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
-import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /**
  *
@@ -36,47 +35,47 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 	}
 
 	private static void initModSpecificRecipes() {
-		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.ALUMINUM);
-			addAdditionalOredicts(material, "Aluminium");
-			addAdditionalOredicts(material, "Bauxite");
+		if (Materials.hasMaterial(MaterialNames.ALUMINUM)) {
+			final MMDMaterial aluminum = Materials.getMaterialByName(MaterialNames.ALUMINUM);
+			addAdditionalOredicts(aluminum, "Aluminium");
+			addAdditionalOredicts(aluminum, "Bauxite");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS);
-			addSimpleAlloyRecipe(material, 2, MaterialNames.ALUMINUM, com.mcmoddev.basemetals.data.MaterialNames.BRASS);
-			addAdditionalOredicts(material, "AluminumBrass");
-			addAdditionalOredicts(material, "Aluminiumbrass");
-			addAdditionalOredicts(material, "AluminiumBrass");
-			addAdditionalOredicts(material, "Alubrass");
-			addAdditionalOredicts(material, "AluBrass");
+		if (Materials.hasMaterial(MaterialNames.ALUMINUM_BRASS)) {
+			final MMDMaterial aluminumBrass = Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS);
+			addSimpleAlloyRecipe(aluminumBrass, 2, MaterialNames.ALUMINUM, com.mcmoddev.basemetals.data.MaterialNames.BRASS);
+			addAdditionalOredicts(aluminumBrass, "AluminumBrass");
+			addAdditionalOredicts(aluminumBrass, "Aluminiumbrass");
+			addAdditionalOredicts(aluminumBrass, "AluminiumBrass");
+			addAdditionalOredicts(aluminumBrass, "Alubrass");
+			addAdditionalOredicts(aluminumBrass, "AluBrass");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
+		if (Materials.hasMaterial(MaterialNames.CHROMIUM)) {
 			addAdditionalOredicts(MaterialNames.CHROMIUM, "Chrome");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
-			addSimpleAlloyRecipe(material, 2, com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC);
-			addAdditionalOredicts(material, "GalvinizedSteel");
+		if (Materials.hasMaterial(MaterialNames.GALVANIZED_STEEL)) {
+			final MMDMaterial galvanizedSteel = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
+			addSimpleAlloyRecipe(galvanizedSteel, 2, com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC);
+			addAdditionalOredicts(galvanizedSteel, "GalvinizedSteel");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
+		if (Materials.hasMaterial(MaterialNames.NICHROME)) {
 			addSimpleAlloyRecipe(MaterialNames.NICHROME, 2, com.mcmoddev.basemetals.data.MaterialNames.NICKEL, MaterialNames.CHROMIUM);
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL);
-			addSimpleAlloyRecipe(material, 2, com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM);
-			addAdditionalOredicts(material, "StainlessSteel");
+		if (Materials.hasMaterial(MaterialNames.STAINLESS_STEEL)) {
+			final MMDMaterial stainlessSteel = Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL);
+			addSimpleAlloyRecipe(stainlessSteel, 2, com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM);
+			addAdditionalOredicts(stainlessSteel, "StainlessSteel");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
+		if (Materials.hasMaterial(MaterialNames.TITANIUM)) {
 			addSimpleAlloyRecipe(MaterialNames.TITANIUM, 2, MaterialNames.RUTILE, MaterialNames.MAGNESIUM);
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
+		if (Materials.hasMaterial(MaterialNames.TUNGSTEN)) {
 			addAdditionalOredicts(MaterialNames.TUNGSTEN, "Wolfram");
 		}
 	}

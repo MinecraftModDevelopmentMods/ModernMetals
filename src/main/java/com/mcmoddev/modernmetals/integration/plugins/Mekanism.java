@@ -33,8 +33,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 			MaterialNames.ZIRCONIUM
 		};
 
-		for (int i = 0; i < baseNames.length; i++) {
-			final String materialName = baseNames[i];
+		for (final String materialName : baseNames) {
 			if (Options.isMaterialEnabled(materialName)) {
 				addOreMultiplicationRecipes(materialName);
 			}

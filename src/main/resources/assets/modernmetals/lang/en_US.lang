@@ -1314,3 +1314,16 @@ tile.modernmetals.zirconium_pressure_plate.name=Zirconium Pressure Plate
 tile.modernmetals.zirconium_slab.name=Zirconium Slab
 tile.modernmetals.zirconium_stairs.name=Zirconium Stairs
 tile.modernmetals.zirconium_wall.name=Zirconium Wall
+
+item.modernmetals.aluminum_casing.name=Aluminum Casing
+item.modernmetals.cadmium_casing.name=Cadmium Casing
+item.modernmetals.chromium_casing.name=Chromium Casing
+item.modernmetals.iridium_casing.name=Iridium Casing
+item.modernmetals.magnesium_casing.name=Magnesium Casing
+item.modernmetals.manganese_casing.name=Manganese Casing
+item.modernmetals.plutonium_casing.name=Plutonium Casing
+item.modernmetals.rutile_casing.name=Rutile Casing
+item.modernmetals.tantalum_casing.name=Tantalum Casing
+item.modernmetals.titanium_casing.name=Titanium Casing
+item.modernmetals.tungsten_casing.name=Tungsten Casing
+item.modernmetals.zirconium_casing.name=Zirconium Casing

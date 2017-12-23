@@ -1,7 +1,10 @@
 package com.mcmoddev.modernmetals.init;
 
+import java.util.Arrays;
+import java.util.List;
+
+import com.mcmoddev.basemetals.init.Materials;
 import com.mcmoddev.modernmetals.data.MaterialNames;
-import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /**
  * This class initializes all fluids in Modern Metals.
@@ -25,95 +28,44 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 			return;
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM)) {
+		if (Materials.hasMaterial(MaterialNames.ALUMINUM)) {
 			addFluid(MaterialNames.ALUMINUM, 2000, 10000, 330, 10);
 			addFluidBlock(MaterialNames.ALUMINUM);
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
+		if (Materials.hasMaterial(MaterialNames.ALUMINUM_BRASS)) {
 			addFluid(MaterialNames.ALUMINUM_BRASS, 2000, 10000, 500, 10);
 			addFluidBlock(MaterialNames.ALUMINUM_BRASS);
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
+		if (Materials.hasMaterial(MaterialNames.CADMIUM)) {
 			addFluid(MaterialNames.CADMIUM, 2000, 10000, 300, 10);
 			addFluidBlock(MaterialNames.CADMIUM);
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
-			addFluid(MaterialNames.CHROMIUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.CHROMIUM);
-		}
+		List<String> standardMaterialsMap = Arrays.asList(MaterialNames.CHROMIUM,
+				MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM,
+				MaterialNames.MANGANESE,
+				MaterialNames.NICHROME,
+				MaterialNames.OSMIUM,
+				MaterialNames.PLUTONIUM,
+				MaterialNames.RUTILE,
+				MaterialNames.STAINLESS_STEEL,
+				MaterialNames.TANTALUM,
+				MaterialNames.TITANIUM,
+				MaterialNames.TUNGSTEN,
+				MaterialNames.URANIUM,
+				MaterialNames.ZIRCONIUM
+			);
 
-		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
-			addFluid(MaterialNames.GALVANIZED_STEEL, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.GALVANIZED_STEEL);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.IRIDIUM)) {
-			addFluid(MaterialNames.IRIDIUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.IRIDIUM);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.MAGNESIUM)) {
-			addFluid(MaterialNames.MAGNESIUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.MAGNESIUM);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.MANGANESE)) {
-			addFluid(MaterialNames.MANGANESE, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.MANGANESE);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
-			addFluid(MaterialNames.NICHROME, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.NICHROME);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.OSMIUM)) {
-			addFluid(MaterialNames.OSMIUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.OSMIUM);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.PLUTONIUM)) {
-			addFluid(MaterialNames.PLUTONIUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.PLUTONIUM);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.RUTILE)) {
-			addFluid(MaterialNames.RUTILE, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.RUTILE);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
-			addFluid(MaterialNames.STAINLESS_STEEL, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.STAINLESS_STEEL);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.TANTALUM)) {
-			addFluid(MaterialNames.TANTALUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.TANTALUM);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
-			addFluid(MaterialNames.TITANIUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.TITANIUM);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
-			addFluid(MaterialNames.TUNGSTEN, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.TUNGSTEN);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.URANIUM)) {
-			addFluid(MaterialNames.URANIUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.URANIUM);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.ZIRCONIUM)) {
-			addFluid(MaterialNames.ZIRCONIUM, 2000, 10000, 769, 10);
-			addFluidBlock(MaterialNames.ZIRCONIUM);
-		}
+		standardMaterialsMap.stream()
+			.filter(Materials::hasMaterial)
+			.forEach(name -> {
+				addFluid(name, 2000, 10000, 769, 10);
+				addFluidBlock(name);
+			});
 
 		initDone = true;
 	}
