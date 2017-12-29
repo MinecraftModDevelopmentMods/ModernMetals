@@ -40,7 +40,7 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
-			createBlocksFullOreless(MaterialNames.ALUMINUM_BRASS, ItemGroups.myTabs);
+			createBlocksFull(MaterialNames.ALUMINUM_BRASS, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.BERYLLIUM)) {
@@ -60,7 +60,7 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
-			createBlocksFullOreless(MaterialNames.GALVANIZED_STEEL, ItemGroups.myTabs);
+			createBlocksFull(MaterialNames.GALVANIZED_STEEL, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.IRIDIUM)) {
@@ -76,7 +76,7 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
-			createBlocksFullOreless(MaterialNames.NICHROME, ItemGroups.myTabs);
+			createBlocksFull(MaterialNames.NICHROME, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.OSMIUM)) {
@@ -92,7 +92,7 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
-			createBlocksFullOreless(MaterialNames.STAINLESS_STEEL, ItemGroups.myTabs);
+			createBlocksFull(MaterialNames.STAINLESS_STEEL, ItemGroups.myTabs);
 		}
 
 		if (Options.isMaterialEnabled(MaterialNames.TANTALUM)) {
