@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 
 import com.mcmoddev.lib.data.Names;
+import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -24,7 +25,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 	private static boolean initDone = false;
 
 	protected Items() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 
 	/**
@@ -39,6 +40,8 @@ public class Items extends com.mcmoddev.lib.init.Items {
 
 		List<String> matsModSupport = Arrays.asList(
 				MaterialNames.ALUMINUM,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
 				MaterialNames.CADMIUM,
 				MaterialNames.CHROMIUM,
 				MaterialNames.IRIDIUM,
@@ -47,6 +50,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				MaterialNames.PLUTONIUM,
 				MaterialNames.RUTILE,
 				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
 				MaterialNames.TITANIUM,
 				MaterialNames.TUNGSTEN,
 				MaterialNames.ZIRCONIUM
@@ -55,6 +59,8 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		List<String> myModMats = Arrays.asList(
 				MaterialNames.ALUMINUM,
 				MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
 				MaterialNames.CADMIUM,
 				MaterialNames.CHROMIUM,
 				MaterialNames.GALVANIZED_STEEL,
@@ -67,6 +73,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				MaterialNames.RUTILE,
 				MaterialNames.STAINLESS_STEEL,
 				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
 				MaterialNames.TITANIUM,
 				MaterialNames.TUNGSTEN,
 				MaterialNames.URANIUM,
@@ -74,60 +81,60 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				);
 
 		myModMats.stream()
-		.filter(Materials::hasMaterial)
-		.filter(name -> !Materials.getMaterialByName(name).equals(Materials.emptyMaterial))
-		.forEach(name -> {
-			final MMDMaterial material = Materials.getMaterialByName(name);
+				.filter(Materials::hasMaterial)
+				.filter(name -> !Materials.getMaterialByName(name).equals(Materials.emptyMaterial))
+				.forEach(name -> {
+					final MMDMaterial material = Materials.getMaterialByName(name);
 
-			create(Names.BLEND, material);
-			create(Names.INGOT, material);
-			create(Names.NUGGET, material);
-			create(Names.POWDER, material);
-			create(Names.SMALLBLEND, material);
-			create(Names.SMALLPOWDER, material);
+					create(Names.BLEND, material);
+					create(Names.INGOT, material);
+					create(Names.NUGGET, material);
+					create(Names.POWDER, material);
+					create(Names.SMALLBLEND, material);
+					create(Names.SMALLPOWDER, material);
 
-			create(Names.ARROW, material);
-			create(Names.AXE, material);
-			create(Names.BOLT, material);
-			create(Names.BOOTS, material);
-			create(Names.BOW, material);
-			create(Names.CHESTPLATE, material);
-			create(Names.CRACKHAMMER, material);
-			create(Names.CROSSBOW, material);
-			create(Names.DOOR, material);
-			create(Names.FISHING_ROD, material);
-			create(Names.HELMET, material);
-			create(Names.HOE, material);
-			create(Names.HORSE_ARMOR, material);
-			create(Names.LEGGINGS, material);
-			create(Names.PICKAXE, material);
-			create(Names.SHEARS, material);
-			create(Names.SHIELD, material);
-			create(Names.SHOVEL, material);
-			create(Names.SLAB, material);
-			create(Names.SWORD, material);
-			create(Names.ROD, material);
-			create(Names.GEAR, material);
-		});
+					create(Names.ARROW, material);
+					create(Names.AXE, material);
+					create(Names.BOLT, material);
+					create(Names.BOOTS, material);
+					create(Names.BOW, material);
+					create(Names.CHESTPLATE, material);
+					create(Names.CRACKHAMMER, material);
+					create(Names.CROSSBOW, material);
+					create(Names.DOOR, material);
+					create(Names.FISHING_ROD, material);
+					create(Names.HELMET, material);
+					create(Names.HOE, material);
+					create(Names.HORSE_ARMOR, material);
+					create(Names.LEGGINGS, material);
+					create(Names.PICKAXE, material);
+					create(Names.SHEARS, material);
+					create(Names.SHIELD, material);
+					create(Names.SHOVEL, material);
+					create(Names.SLAB, material);
+					create(Names.SWORD, material);
+					create(Names.ROD, material);
+					create(Names.GEAR, material);
+				});
 
 		matsModSupport.stream()
-		.filter(Materials::hasMaterial)
-		.filter(name -> !Materials.getMaterialByName(name).equals(Materials.emptyMaterial))
-		.forEach(name -> {
-			final MMDMaterial material = Materials.getMaterialByName(name);
+				.filter(Materials::hasMaterial)
+				.filter(name -> !Materials.getMaterialByName(name).equals(Materials.emptyMaterial))
+				.forEach(name -> {
+					final MMDMaterial material = Materials.getMaterialByName(name);
 
-			create(Names.CASING, material);
-			create(Names.DENSE_PLATE, material);
+					create(Names.CASING, material);
+					create(Names.DENSE_PLATE, material);
 
-			if (material.hasOre()) {
-				create(Names.CRUSHED, material);
-				create(Names.CRUSHED_PURIFIED, material);
+					if (material.hasOre()) {
+						create(Names.CRUSHED, material);
+						create(Names.CRUSHED_PURIFIED, material);
 
-				createMekCrystal(material, ItemGroups.myTabs.itemsTab);
-				create(Names.SHARD, material);
-				create(Names.CLUMP, material);
-				create(Names.POWDER_DIRTY, material);
-				create(Names.CRYSTAL, material);
+						createMekCrystal(material, ItemGroups.myTabs.itemsTab);
+						create(Names.SHARD, material);
+						create(Names.CLUMP, material);
+						create(Names.POWDER_DIRTY, material);
+						create(Names.CRYSTAL, material);
 			}
 		});
 

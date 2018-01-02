@@ -1,14 +1,15 @@
 package com.mcmoddev.modernmetals.init;
 
-import com.mcmoddev.modernmetals.data.MaterialNames;
-import com.mcmoddev.lib.util.ConfigBase.Options;
 
 import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Nonnull;
 
+import com.mcmoddev.modernmetals.data.MaterialNames;
+import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.material.MMDMaterial.MaterialType;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /**
  * This class initializes all of the materials in Modern Metals.
@@ -20,8 +21,8 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 
 	private static boolean initDone = false;
 
-	protected Materials() {
-		throw new IllegalAccessError("Not a instantiable class");
+	private Materials() {
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 
 	/**
@@ -34,12 +35,15 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 
 		List<String> modMaterials = Arrays.asList(
 				MaterialNames.ALUMINUM,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
 				MaterialNames.CHROMIUM,
 				MaterialNames.MAGNESIUM,
 				MaterialNames.MANGANESE,
 				MaterialNames.OSMIUM,
 				MaterialNames.RUTILE,
 				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
 				MaterialNames.TUNGSTEN,
 				MaterialNames.ZIRCONIUM
 			);
@@ -50,7 +54,7 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 				MaterialNames.PLUTONIUM,
 				MaterialNames.URANIUM
 			);
-		
+
 		List<String> alloyMaterials = Arrays.asList(
 				MaterialNames.ALUMINUM_BRASS,
 				MaterialNames.GALVANIZED_STEEL,
@@ -75,7 +79,7 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			createSpecialMaterial(name, MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name), getColor(name));
 		}
 
-	initDone = true;
+		initDone = true;
 	}
 
 	private static int getColor(@Nonnull final String name) {
@@ -116,6 +120,12 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 				return 0xFFA7B345;
 			case MaterialNames.ZIRCONIUM:
 				return 0xFF929793;
+			case MaterialNames.BERYLLIUM:
+				return 0xFFD5D3D5;
+			case MaterialNames.BORON:
+				return 0xFF888888;
+			case MaterialNames.THORIUM:
+				return 0xFF4F5A5A;
 			default:
 				return 0x00000000;
 		}
@@ -142,6 +152,10 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			case MaterialNames.URANIUM:
 			case MaterialNames.ZIRCONIUM:
 				return 4.5d;
+			case MaterialNames.BERYLLIUM:
+			case MaterialNames.BORON:
+			case MaterialNames.THORIUM:
+				return 1.0d;
 			default:
 				return 1.0d;
 		}
@@ -162,6 +176,8 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 				return 15.25d;
 			case MaterialNames.TUNGSTEN:
 				return 12.5d;
+			case MaterialNames.BORON:
+				return 8d;
 			case MaterialNames.ALUMINUM_BRASS:
 			case MaterialNames.PLUTONIUM:
 				return 7.5d;
@@ -176,7 +192,10 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			case MaterialNames.MANGANESE:
 			case MaterialNames.OSMIUM:
 				return 2.75d;
+			case MaterialNames.BERYLLIUM:
+				return 2.5d;
 			case MaterialNames.CADMIUM:
+			case MaterialNames.THORIUM:
 				return 1d;
 			case MaterialNames.RUTILE:
 				return 0.25d;
@@ -187,6 +206,8 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 
 	private static double getHardness(@Nonnull final String name) {
 		switch (name) {
+			case MaterialNames.BORON:
+				return 9.5d;
 			case MaterialNames.CHROMIUM:
 				return 9d;
 			case MaterialNames.TUNGSTEN:
@@ -202,6 +223,7 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			case MaterialNames.STAINLESS_STEEL:
 			case MaterialNames.URANIUM:
 				return 6d;
+			case MaterialNames.BERYLLIUM:
 			case MaterialNames.GALVANIZED_STEEL:
 				return 5.5d;
 			case MaterialNames.MANGANESE:
@@ -209,13 +231,15 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 				return 5d;
 			case MaterialNames.PLUTONIUM:
 				return 4d;
+			case MaterialNames.THORIUM:
+				return 3d;
 			case MaterialNames.ALUMINUM:
 			case MaterialNames.MAGNESIUM:
 				return 2.5d;
 			case MaterialNames.CADMIUM:
 				return 2d;
 			case MaterialNames.ALUMINUM_BRASS:
-				return 1d;
+				return 1.0d;
 			default:
 				return 1.0d;
 		}

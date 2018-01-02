@@ -3,8 +3,9 @@ package com.mcmoddev.modernmetals.init;
 import java.util.Arrays;
 import java.util.List;
 
-import com.mcmoddev.basemetals.init.Materials;
 import com.mcmoddev.modernmetals.data.MaterialNames;
+import com.mcmoddev.lib.data.SharedStrings;
+import com.mcmoddev.lib.init.Materials;
 
 /**
  * This class initializes all fluids in Modern Metals.
@@ -17,7 +18,7 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 	private static boolean initDone = false;
 
 	private Fluids() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 
 	/**
@@ -36,6 +37,16 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 		if (Materials.hasMaterial(MaterialNames.ALUMINUM_BRASS)) {
 			addFluid(MaterialNames.ALUMINUM_BRASS, 2000, 10000, 500, 10);
 			addFluidBlock(MaterialNames.ALUMINUM_BRASS);
+		}
+
+		if (Materials.hasMaterial(MaterialNames.BERYLLIUM)) {
+			addFluid(MaterialNames.BERYLLIUM, 2000, 10000, 400, 10);
+			addFluidBlock(MaterialNames.BERYLLIUM);
+		}
+
+		if (Materials.hasMaterial(MaterialNames.BORON)) {
+			addFluid(MaterialNames.BORON, 2000, 10000, 400, 10);
+			addFluidBlock(MaterialNames.BORON);
 		}
 
 		if (Materials.hasMaterial(MaterialNames.CADMIUM)) {
@@ -66,6 +77,11 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 				addFluid(name, 2000, 10000, 769, 10);
 				addFluidBlock(name);
 			});
+
+		if (Materials.hasMaterial(MaterialNames.THORIUM)) {
+			addFluid(MaterialNames.THORIUM, 2000, 10000, 514, 10);
+			addFluidBlock(MaterialNames.THORIUM);
+		}
 
 		initDone = true;
 	}

@@ -38,16 +38,16 @@ public class ModernMetals {
 	public static final String MODID = "modernmetals";
 
 	/** Display name of this Mod */
-	public static final String NAME = "Modern Metals";
+	static final String NAME = "Modern Metals";
 
 	/**
-	 * Version number, in Major.Minor.Build format. The minor number is
+	 * Version number, in Major.Minor.Patch format. The minor number is
 	 * increased whenever a change is made that has the potential to break
 	 * compatibility with other mods that depend on this one.
 	 */
 	public static final String VERSION = "2.5.0-beta3";
 
-	public static final String UPDATEJSON = "https://raw.githubusercontent.com/MinecraftModDevelopment/ModernMetals/master/update.json";
+	static final String UPDATEJSON = "https://raw.githubusercontent.com/MinecraftModDevelopmentMods/ModernMetals/master/update.json";
 
 	private static final String PROXY_BASE = "com.mcmoddev." + MODID + ".proxy.";
 

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import javax.annotation.Nonnull;
 
 import com.mcmoddev.lib.data.Names;
+import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -22,7 +23,7 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 	private static boolean initDone = false;
 
 	protected Blocks() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 
 	/**
@@ -36,8 +37,10 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		Materials.init();
 		ItemGroups.init();
 
-		String[] simpleFullBlocks = new String[] { MaterialNames.ALUMINUM,
+		String[] materials = new String[] { MaterialNames.ALUMINUM,
 				MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
 				MaterialNames.CADMIUM,
 				MaterialNames.CHROMIUM,
 				MaterialNames.GALVANIZED_STEEL,
@@ -50,32 +53,33 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 				MaterialNames.RUTILE,
 				MaterialNames.STAINLESS_STEEL,
 				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
 				MaterialNames.TITANIUM,
 				MaterialNames.TUNGSTEN,
 				MaterialNames.URANIUM,
 				MaterialNames.ZIRCONIUM
 			};
 
-		Arrays.stream(simpleFullBlocks)
-		.filter(Materials::hasMaterial)
-		.forEach(name -> {
-			final MMDMaterial material = Materials.getMaterialByName(name);
+		Arrays.stream(materials)
+				.filter(Materials::hasMaterial)
+				.forEach(name -> {
+					final MMDMaterial material = Materials.getMaterialByName(name);
 
-			create(Names.BLOCK, material);
-			create(Names.PLATE, material);
-			create(Names.ORE, material);
-			create(Names.BARS, material);
-			create(Names.DOOR, material);
-			create(Names.TRAPDOOR, material);
+					create(Names.BLOCK, material);
+					create(Names.PLATE, material);
+					create(Names.ORE, material);
+					create(Names.BARS, material);
+					create(Names.DOOR, material);
+					create(Names.TRAPDOOR, material);
 
-			create(Names.BUTTON, material);
-			create(Names.SLAB, material);
-			create(Names.DOUBLE_SLAB, material);
-			create(Names.LEVER, material);
-			create(Names.PRESSURE_PLATE, material);
-			create(Names.STAIRS, material);
-			create(Names.WALL, material);
-		});
+					create(Names.BUTTON, material);
+					create(Names.SLAB, material);
+					create(Names.DOUBLE_SLAB, material);
+					create(Names.LEVER, material);
+					create(Names.PRESSURE_PLATE, material);
+					create(Names.STAIRS, material);
+					create(Names.WALL, material);
+				});
 
 		initDone = true;
 	}

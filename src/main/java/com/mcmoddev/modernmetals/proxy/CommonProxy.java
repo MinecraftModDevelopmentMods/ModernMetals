@@ -7,6 +7,7 @@ import com.mcmoddev.modernmetals.init.*;
 import com.mcmoddev.modernmetals.util.Config;
 import com.mcmoddev.modernmetals.util.EventHandler;
 import com.mcmoddev.lib.integration.IntegrationManager;
+import com.mcmoddev.lib.oregen.FallbackGenerator;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 
 import net.minecraftforge.common.MinecraftForge;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.MissingModsException;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.common.versioning.ArtifactVersion;
 import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
 
@@ -27,14 +29,17 @@ import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
 public class CommonProxy {
 
 	public void preInit(FMLPreInitializationEvent event) {
-		ModernMetals.logger.debug("CommonProxy preInit() with event %s", event.description());
 
 		Config.init();
 
 		if ((Options.requireMMDOreSpawn()) && (!Loader.isModLoaded("orespawn"))) {
-			final HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
-			orespawnMod.add(new DefaultArtifactVersion("3.1.0"));
-			throw new MissingModsException(orespawnMod, "orespawn", "MMD Ore Spawn Mod");
+			if(Options.fallbackOrespawn()) {
+				GameRegistry.registerWorldGenerator(new FallbackGenerator(), 0);
+			} else {
+				final HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
+				orespawnMod.add(new DefaultArtifactVersion("3.2.0"));
+				throw new MissingModsException(orespawnMod, "orespawn", "MMD Ore Spawn Mod (fallback generator disabled, MMD OreSpawn enabled)");
+			}
 		}
 
 		Materials.init();
@@ -42,9 +47,10 @@ public class CommonProxy {
 		ItemGroups.init();
 		Blocks.init();
 		Items.init();
-		VillagerTrades.init();
+
 		ItemGroups.setupIcons();
-		
+		VillagerTrades.init();
+
 		IntegrationManager.INSTANCE.preInit(event);
 	}
 
@@ -62,7 +68,6 @@ public class CommonProxy {
 	}*/
 
 	public void init(FMLInitializationEvent event) {
-		ModernMetals.logger.debug("CommonProxy init() with event %s", event.description());
 		Recipes.init();
 
 		Achievements.init();
@@ -71,7 +76,6 @@ public class CommonProxy {
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
-		ModernMetals.logger.debug("CommonProxy postInit() with event %s", event.description());
 		Config.postInit();
 	}
 }

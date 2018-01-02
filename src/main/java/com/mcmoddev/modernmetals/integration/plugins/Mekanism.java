@@ -3,6 +3,7 @@ package com.mcmoddev.modernmetals.integration.plugins;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.IIntegration;
 
@@ -19,6 +20,8 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 		final String[] baseNames = new String[] {
 			MaterialNames.ALUMINUM,
+			MaterialNames.BERYLLIUM,
+			MaterialNames.BORON,
 			MaterialNames.CADMIUM,
 			MaterialNames.CHROMIUM,
 			MaterialNames.IRIDIUM,
@@ -27,6 +30,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 			MaterialNames.PLUTONIUM,
 			MaterialNames.RUTILE,
 			MaterialNames.TANTALUM,
+			MaterialNames.THORIUM,
 			MaterialNames.TITANIUM,
 			MaterialNames.TUNGSTEN,
 			MaterialNames.URANIUM,
@@ -34,7 +38,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 		};
 
 		for (final String materialName : baseNames) {
-			if (Options.isMaterialEnabled(materialName)) {
+			if (Materials.hasMaterial(materialName)) {
 				addOreMultiplicationRecipes(materialName);
 			}
 		}
