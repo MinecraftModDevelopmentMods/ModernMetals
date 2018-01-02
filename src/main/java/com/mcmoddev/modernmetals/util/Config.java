@@ -56,12 +56,12 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		Options.materialEnabled(MaterialNames.TUNGSTEN, configuration.getBoolean("EnableTungsten", MATERIALS_CAT, true, "Enable Tungsten Items and Materials"));
 		Options.materialEnabled(MaterialNames.URANIUM, configuration.getBoolean("EnableUranium", MATERIALS_CAT, true, "Enable Uranium Items and Materials"));
 		Options.materialEnabled(MaterialNames.ZIRCONIUM, configuration.getBoolean("EnableZirconium", MATERIALS_CAT, true, "Enable Zirconium Items and Materials"));
-		
+
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}
 	}
-	
+
 	public static void postInit() {
 		CrusherRecipeRegistry.getInstance().clearCache();
 	}

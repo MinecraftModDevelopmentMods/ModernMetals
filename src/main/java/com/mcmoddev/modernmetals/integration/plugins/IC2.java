@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = IC2.PLUGIN_MODID)
@@ -24,10 +25,10 @@ public class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements
 
 		initDone = true;
 	}
-	
+
 	@SubscribeEvent
-	public void multiplyOres(RegistryEvent.Register<IRecipe> ev ) {
-	final String[] baseNames = new String[] {
+	public void multiplyOres(RegistryEvent.Register<IRecipe> event) {
+		final String[] baseNames = new String[] {
 			MaterialNames.ALUMINUM,
 			MaterialNames.BERYLLIUM,
 			MaterialNames.BORON,
@@ -46,9 +47,8 @@ public class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements
 			MaterialNames.ZIRCONIUM
 		};
 
-		for (int i = 0; i < baseNames.length; i++) {
-			final String materialName = baseNames[i];
-			if (Options.isMaterialEnabled(materialName)) {
+		for (final String materialName : baseNames) {
+			if (Materials.hasMaterial(materialName)) {
 	            registerVanillaRecipes(materialName);
 	            addMaceratorRecipes(materialName);
 	            addOreWashingPlantRecipes(materialName);
@@ -58,5 +58,4 @@ public class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements
 			}
 		}
 	}
-
 }

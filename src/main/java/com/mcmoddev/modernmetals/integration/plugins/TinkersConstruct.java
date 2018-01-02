@@ -3,12 +3,12 @@ package com.mcmoddev.modernmetals.integration.plugins;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.data.TraitNames;
-import com.mcmoddev.modernmetals.init.Materials;
 
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.plugins.tinkers.TCMaterial;
 import com.mcmoddev.lib.integration.plugins.tinkers.TraitLocations;
@@ -35,69 +35,69 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			return;
 		}
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.ALUMINUM), 
+		registerMaterial(Materials.hasMaterial(MaterialNames.ALUMINUM), 
 				MaterialNames.ALUMINUM, true, false, TraitNames.LIGHTWEIGHT);
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS),
+		registerMaterial(Materials.hasMaterial(MaterialNames.ALUMINUM_BRASS),
 				MaterialNames.ALUMINUM_BRASS, true, false);
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.BERYLLIUM),
+		registerMaterial(Materials.hasMaterial(MaterialNames.BERYLLIUM),
 				MaterialNames.BERYLLIUM, true, false);
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.BORON),
+		registerMaterial(Materials.hasMaterial(MaterialNames.BORON),
 				MaterialNames.BORON, true, false);
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.CADMIUM),
+		registerMaterial(Materials.hasMaterial(MaterialNames.CADMIUM),
 				MaterialNames.CADMIUM, true, false);
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.CHROMIUM),
+		registerMaterial(Materials.hasMaterial(MaterialNames.CHROMIUM),
 				MaterialNames.CHROMIUM, true, false, TraitNames.MAGNETIC,
 				TraitLocations.HEAD, TraitNames.MAGNETIC2 );
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL),
+		registerMaterial(Materials.hasMaterial(MaterialNames.GALVANIZED_STEEL),
 				MaterialNames.GALVANIZED_STEEL, true, false,
 				TraitLocations.HEAD, TraitNames.SHARP, TraitNames.STIFF );
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.IRIDIUM), 
+		registerMaterial(Materials.hasMaterial(MaterialNames.IRIDIUM), 
 				MaterialNames.IRIDIUM, true, false, TraitNames.BRITTLE);
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.MAGNESIUM), 
+		registerMaterial(Materials.hasMaterial(MaterialNames.MAGNESIUM), 
 				MaterialNames.MAGNESIUM, true, false, TraitNames.REACTIVE);
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.MANGANESE), 
+		registerMaterial(Materials.hasMaterial(MaterialNames.MANGANESE), 
 				MaterialNames.MANGANESE, true, false, TraitNames.BRITTLE);
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.NICHROME),
+		registerMaterial(Materials.hasMaterial(MaterialNames.NICHROME),
 				MaterialNames.NICHROME, true, false );
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.OSMIUM), 
+		registerMaterial(Materials.hasMaterial(MaterialNames.OSMIUM), 
 				MaterialNames.OSMIUM, true, false, TraitNames.HEAVY, TraitNames.BRITTLE);
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.PLUTONIUM), 
+		registerMaterial(Materials.hasMaterial(MaterialNames.PLUTONIUM), 
 				MaterialNames.PLUTONIUM, true, false, TraitNames.RADIOACTIVE,
 				TraitLocations.HEAD, TraitNames.TOXIC, TraitLocations.PROJECTILE, TraitNames.TOXIC);
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.RUTILE),
+		registerMaterial(Materials.hasMaterial(MaterialNames.RUTILE),
 				MaterialNames.RUTILE, true, false );
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL),
+		registerMaterial(Materials.hasMaterial(MaterialNames.STAINLESS_STEEL),
 				MaterialNames.STAINLESS_STEEL, true, false,
 				TraitLocations.HEAD, TraitNames.SHARP, TraitNames.STIFF );
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.TANTALUM),
+		registerMaterial(Materials.hasMaterial(MaterialNames.TANTALUM),
 				MaterialNames.TANTALUM, true, false );
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.TITANIUM),
+		registerMaterial(Materials.hasMaterial(MaterialNames.TITANIUM),
 				MaterialNames.TITANIUM, true, false );
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.TUNGSTEN),
+		registerMaterial(Materials.hasMaterial(MaterialNames.TUNGSTEN),
 				MaterialNames.TUNGSTEN, true, false );
 		
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.URANIUM), 
+		registerMaterial(Materials.hasMaterial(MaterialNames.URANIUM), 
 				MaterialNames.URANIUM, true, false, TraitNames.RADIOACTIVE,
 				TraitLocations.HEAD, TraitNames.POISONOUS, TraitLocations.PROJECTILE, TraitNames.POISONOUS);
 
-		registerMaterial(Options.isMaterialEnabled(MaterialNames.ZIRCONIUM),
+		registerMaterial(Materials.hasMaterial(MaterialNames.ZIRCONIUM),
 				MaterialNames.ZIRCONIUM, true, false );
 		
 		initDone = true;
@@ -107,7 +107,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		preInitSetup();
 		setMaterialsVisible();
 	}
-	
+
 	public void initCallback() {
 		registerAlloys();
 		initSetup();
@@ -118,34 +118,34 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 	}
 
 	private void registerAlloys() {
-		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL) &&
-				Options.isMaterialEnabled(com.mcmoddev.basemetals.data.MaterialNames.STEEL) &&
-				Options.isMaterialEnabled(com.mcmoddev.basemetals.data.MaterialNames.ZINC) ) {
+		if (Materials.hasMaterial(MaterialNames.GALVANIZED_STEEL) &&
+				Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.STEEL) &&
+				Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.ZINC) ) {
 			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.GALVANIZED_STEEL, 2);
 			FluidStack steel = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1);
 			FluidStack zinc = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.ZINC, 1);
 			registry.registerAlloy(MaterialNames.GALVANIZED_STEEL, output, steel, zinc); 
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.NICHROME) &&
-				Options.isMaterialEnabled(com.mcmoddev.basemetals.data.MaterialNames.NICKEL) &&
-				Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
+		if (Materials.hasMaterial(MaterialNames.NICHROME) &&
+				Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.NICKEL) &&
+				Materials.hasMaterial(MaterialNames.CHROMIUM)) {
 			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.NICHROME, 2);
 			FluidStack nickel = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.NICKEL, 1);
 			FluidStack chrome = FluidRegistry.getFluidStack(MaterialNames.CHROMIUM, 1);
 			registry.registerAlloy(MaterialNames.NICHROME, output, nickel, chrome );
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL) &&
-			Options.isMaterialEnabled(com.mcmoddev.basemetals.data.MaterialNames.STEEL) &&
-			Options.isMaterialEnabled(MaterialNames.CHROMIUM) ) {
+		if (Materials.hasMaterial(MaterialNames.STAINLESS_STEEL) &&
+			Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.STEEL) &&
+			Materials.hasMaterial(MaterialNames.CHROMIUM) ) {
 			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.GALVANIZED_STEEL, 2);
 			FluidStack steel = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1);
 			FluidStack chrome = FluidRegistry.getFluidStack(MaterialNames.CHROMIUM, 1);
 			registry.registerAlloy(MaterialNames.STAINLESS_STEEL, output, steel, chrome);
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.TITANIUM) && Options.isMaterialEnabled(MaterialNames.RUTILE)) {
+		if (Materials.hasMaterial(MaterialNames.TITANIUM) && Materials.hasMaterial(MaterialNames.RUTILE)) {
 			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.TITANIUM, 2);
 			FluidStack rutile = FluidRegistry.getFluidStack(MaterialNames.RUTILE, 1);
 			FluidStack magnesium = FluidRegistry.getFluidStack(MaterialNames.MAGNESIUM, 1);
@@ -172,7 +172,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 	private void addTraits(TCMaterial mat, String[] traits) {
 		int i = 0;
 		while (i < traits.length) {
-			if( i == (traits.length - 1) ) {
+			if (i == (traits.length - 1)) {
 				// can only be a "general" trait
 				mat.addTrait("general", traits[i]);
 			} else {
@@ -193,26 +193,26 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 
 	private void registerMaterial(boolean enabled, String name, boolean castable, boolean craftable, String... traits) {
 		if (enabled) {
-				registerMaterial(name, castable, craftable, traits);
+			registerMaterial(name, castable, craftable, traits);
 		}
 	}
 
 	private void registerMaterial(String name, boolean castable, boolean craftable, String... traits) {
-		MMDMaterial mmdMat = Materials.getMaterialByName(name);
-		TCMaterial mat = registry.newMaterial(name, mmdMat.getTintColor());
-		
-		if( castable )
+		final MMDMaterial mmdMat = Materials.getMaterialByName(name);
+		final TCMaterial mat = registry.newMaterial(name, mmdMat.getTintColor());
+
+		if (castable)
 			mat.setCastable();
-		if( craftable )
+		if (craftable)
 			mat.setCraftable();
-		
+
 		mat.setSourceMaterial(mmdMat);
 		mat.genStatsFromSource();
-		
+
 		if (traits.length > 0) {
 			addTraits(mat, traits);
 		}
-		
+
 		mat.settle();
 	}
 }

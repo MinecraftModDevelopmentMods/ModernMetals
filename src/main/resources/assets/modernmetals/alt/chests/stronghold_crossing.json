@@ -1,1 +1,47 @@
-
+{
+    "pools": [
+        {
+            "__comment":"25% chance of a common-metal tool",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 450
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_axe",
+                    "weight": 3
+                }
+            ]
+        },
+        {
+            "__comment":"10% chance per roll of uncommon metal ingots",
+            "rolls": {
+                "min": 1,
+                "max": 2
+            },
+            "bonus_rolls":1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 162
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:gold_ingot",
+                    "weight": 3,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

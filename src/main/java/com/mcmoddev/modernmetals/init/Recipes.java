@@ -1,9 +1,9 @@
 package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.modernmetals.data.MaterialNames;
-import com.mcmoddev.modernmetals.init.Materials;
+import com.mcmoddev.lib.init.Materials;
+import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.material.MMDMaterial;
-import com.mcmoddev.lib.util.ConfigBase.Options;
 
 /**
  *
@@ -15,7 +15,7 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 	private static boolean initDone = false;
 
 	private Recipes() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 
 	/**
@@ -36,38 +36,42 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 	}
 
 	private static void initModSpecificRecipes() {
-		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.ALUMINUM);
-			addAdditionalOredicts(material, "Aluminium");
-			addAdditionalOredicts(material, "Bauxite");
+		if (Materials.hasMaterial(MaterialNames.ALUMINUM)) {
+			final MMDMaterial aluminum = Materials.getMaterialByName(MaterialNames.ALUMINUM);
+			addAdditionalOredicts(aluminum, "Aluminium");
+			addAdditionalOredicts(aluminum, "Bauxite");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS);
-			addAdditionalOredicts(material, "AluminumBrass");
-			addAdditionalOredicts(material, "Aluminiumbrass");
-			addAdditionalOredicts(material, "AluminiumBrass");
-			addAdditionalOredicts(material, "Alubrass");
-			addAdditionalOredicts(material, "AluBrass");
+		if (Materials.hasMaterial(MaterialNames.ALUMINUM_BRASS)) {
+			final MMDMaterial aluminumBrass = Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS);
+			addAdditionalOredicts(aluminumBrass, "AluminumBrass");
+			addAdditionalOredicts(aluminumBrass, "Aluminiumbrass");
+			addAdditionalOredicts(aluminumBrass, "AluminiumBrass");
+			addAdditionalOredicts(aluminumBrass, "Alubrass");
+			addAdditionalOredicts(aluminumBrass, "AluBrass");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
-			addAdditionalOredicts(material, "GalvinizedSteel");
+		if (Materials.hasMaterial(MaterialNames.CHROMIUM)) {
+			addAdditionalOredicts(MaterialNames.CHROMIUM, "Chrome");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.NICHROME);
-			addAdditionalOredicts(material, "Nichrome");
+		if (Materials.hasMaterial(MaterialNames.GALVANIZED_STEEL)) {
+			final MMDMaterial galvanizedSteel = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
+			addAdditionalOredicts(galvanizedSteel, "GalvinizedSteel");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
-			final MMDMaterial material = Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL);
-			addAdditionalOredicts(material, "StainlessSteel");
+		if (Materials.hasMaterial(MaterialNames.NICHROME)) {
+			final MMDMaterial nichrome = Materials.getMaterialByName(MaterialNames.NICHROME);
+			addAdditionalOredicts(nichrome, "Nichrome");
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
-			addAdditionalOredicts(Materials.getMaterialByName(MaterialNames.TUNGSTEN), "Wolfram");
+		if (Materials.hasMaterial(MaterialNames.STAINLESS_STEEL)) {
+			final MMDMaterial stainlessSteel = Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL);
+			addAdditionalOredicts(stainlessSteel, "StainlessSteel");
+		}
+
+		if (Materials.hasMaterial(MaterialNames.TUNGSTEN)) {
+			addAdditionalOredicts(MaterialNames.TUNGSTEN, "Wolfram");
 		}
 	}
 }

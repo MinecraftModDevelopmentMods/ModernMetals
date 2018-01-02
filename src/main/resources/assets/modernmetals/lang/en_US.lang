@@ -202,8 +202,6 @@ item.modernmetals.cadmium_gear.name=Cadmium Gear
 item.modernmetals.cadmium_helmet.name=Cadmium Helmet
 item.modernmetals.cadmium_hoe.name=Cadmium Hoe
 item.modernmetals.cadmium_horse_armor.name=Cadmium Horse Armor
-
-
 item.modernmetals.cadmium_ingot.name=Cadmium Ingot
 item.modernmetals.cadmium_leggings.name=Cadmium Leg Armor
 item.modernmetals.cadmium_nugget.name=Cadmium Nugget
@@ -1511,3 +1509,16 @@ tile.modernmetals.thorium_pressure_plate.name=Thorium Pressure Plate
 tile.modernmetals.thorium_slab.name=Thorium Slab
 tile.modernmetals.thorium_stairs.name=Thorium Stairs
 tile.modernmetals.thorium_wall.name=Thorium Wall
+
+item.modernmetals.aluminum_casing.name=Aluminum Casing
+item.modernmetals.cadmium_casing.name=Cadmium Casing
+item.modernmetals.chromium_casing.name=Chromium Casing
+item.modernmetals.iridium_casing.name=Iridium Casing
+item.modernmetals.magnesium_casing.name=Magnesium Casing
+item.modernmetals.manganese_casing.name=Manganese Casing
+item.modernmetals.plutonium_casing.name=Plutonium Casing
+item.modernmetals.rutile_casing.name=Rutile Casing
+item.modernmetals.tantalum_casing.name=Tantalum Casing
+item.modernmetals.titanium_casing.name=Titanium Casing
+item.modernmetals.tungsten_casing.name=Tungsten Casing
+item.modernmetals.zirconium_casing.name=Zirconium Casing

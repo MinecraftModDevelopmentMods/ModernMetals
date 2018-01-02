@@ -1,5 +1,7 @@
 package com.mcmoddev.modernmetals.data;
 
+import com.mcmoddev.lib.data.SharedStrings;
+
 public class TraitNames {
 
 	public static final String LIGHTWEIGHT = "lightweight";
@@ -15,6 +17,6 @@ public class TraitNames {
 	public static final String POISONOUS = "poisonous";
 
 	private TraitNames() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 }

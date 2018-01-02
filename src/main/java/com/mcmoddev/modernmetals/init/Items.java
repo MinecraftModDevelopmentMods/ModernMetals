@@ -1,14 +1,22 @@
 package com.mcmoddev.modernmetals.init;
 
+import java.util.Arrays;
+import java.util.List;
+
+import javax.annotation.Nonnull;
+
 import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.lib.data.Names;
+import com.mcmoddev.lib.data.SharedStrings;
+import com.mcmoddev.lib.init.Materials;
+import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import com.mcmoddev.lib.material.MMDMaterial;
-import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.util.Oredicts;
 
 /**
@@ -22,7 +30,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 	private static boolean initDone = false;
 
 	protected Items() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 
 	/**
@@ -35,121 +43,141 @@ public class Items extends com.mcmoddev.lib.init.Items {
 
 		Blocks.init();
 
-		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM)) {
-			createItemsFull(MaterialNames.ALUMINUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.ALUMINUM, ItemGroups.myTabs);
-		}
+		List<String> matsModSupport = Arrays.asList(
+				MaterialNames.ALUMINUM,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
+				MaterialNames.CADMIUM,
+				MaterialNames.CHROMIUM,
+				MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM,
+				MaterialNames.MANGANESE,
+				MaterialNames.PLUTONIUM,
+				MaterialNames.RUTILE,
+				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
+				MaterialNames.TITANIUM,
+				MaterialNames.TUNGSTEN,
+				MaterialNames.ZIRCONIUM
+				);
 
-		if (Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS)) {
-			createItemsFull(MaterialNames.ALUMINUM_BRASS, ItemGroups.myTabs);
-		}
+		List<String> myModMats = Arrays.asList(
+				MaterialNames.ALUMINUM,
+				MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
+				MaterialNames.CADMIUM,
+				MaterialNames.CHROMIUM,
+				MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM,
+				MaterialNames.MANGANESE,
+				MaterialNames.NICHROME,
+				MaterialNames.OSMIUM,
+				MaterialNames.PLUTONIUM,
+				MaterialNames.RUTILE,
+				MaterialNames.STAINLESS_STEEL,
+				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
+				MaterialNames.TITANIUM,
+				MaterialNames.TUNGSTEN,
+				MaterialNames.URANIUM,
+				MaterialNames.ZIRCONIUM
+				);
 
-		if (Options.isMaterialEnabled(MaterialNames.BERYLLIUM)) {
-			createItemsFull(MaterialNames.BERYLLIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.BERYLLIUM, ItemGroups.myTabs);
-		}
+		myModMats.stream()
+				.filter(Materials::hasMaterial)
+				.filter(name -> !Materials.getMaterialByName(name).equals(Materials.emptyMaterial))
+				.forEach(name -> {
+					final MMDMaterial material = Materials.getMaterialByName(name);
 
-		if (Options.isMaterialEnabled(MaterialNames.BORON)) {
-			createItemsFull(MaterialNames.BORON, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.BORON, ItemGroups.myTabs);
-		}
-		
-		if (Options.isMaterialEnabled(MaterialNames.CADMIUM)) {
-			createItemsFull(MaterialNames.CADMIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.CADMIUM, ItemGroups.myTabs);
-		}
+					create(Names.BLEND, material);
+					create(Names.INGOT, material);
+					create(Names.NUGGET, material);
+					create(Names.POWDER, material);
+					create(Names.SMALLBLEND, material);
+					create(Names.SMALLPOWDER, material);
 
-		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM)) {
-			createItemsFull(MaterialNames.CHROMIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.CHROMIUM, ItemGroups.myTabs);
-		}
+					create(Names.ARROW, material);
+					create(Names.AXE, material);
+					create(Names.BOLT, material);
+					create(Names.BOOTS, material);
+					create(Names.BOW, material);
+					create(Names.CHESTPLATE, material);
+					create(Names.CRACKHAMMER, material);
+					create(Names.CROSSBOW, material);
+					create(Names.DOOR, material);
+					create(Names.FISHING_ROD, material);
+					create(Names.HELMET, material);
+					create(Names.HOE, material);
+					create(Names.HORSE_ARMOR, material);
+					create(Names.LEGGINGS, material);
+					create(Names.PICKAXE, material);
+					create(Names.SHEARS, material);
+					create(Names.SHIELD, material);
+					create(Names.SHOVEL, material);
+					create(Names.SLAB, material);
+					create(Names.SWORD, material);
+					create(Names.ROD, material);
+					create(Names.GEAR, material);
+				});
 
-		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
-			createItemsFull(MaterialNames.GALVANIZED_STEEL, ItemGroups.myTabs);
-		}
+		matsModSupport.stream()
+				.filter(Materials::hasMaterial)
+				.filter(name -> !Materials.getMaterialByName(name).equals(Materials.emptyMaterial))
+				.forEach(name -> {
+					final MMDMaterial material = Materials.getMaterialByName(name);
 
-		if (Options.isMaterialEnabled(MaterialNames.IRIDIUM)) {
-			createItemsFull(MaterialNames.IRIDIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.IRIDIUM, ItemGroups.myTabs);
-		}
+					create(Names.CASING, material);
+					create(Names.DENSE_PLATE, material);
 
-		if (Options.isMaterialEnabled(MaterialNames.MAGNESIUM)) {
-			createItemsFull(MaterialNames.MAGNESIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.MAGNESIUM, ItemGroups.myTabs);
-		}
+					if (material.hasOre()) {
+						create(Names.CRUSHED, material);
+						create(Names.CRUSHED_PURIFIED, material);
 
-		if (Options.isMaterialEnabled(MaterialNames.MANGANESE)) {
-			createItemsFull(MaterialNames.MANGANESE, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.MANGANESE, ItemGroups.myTabs);
-		}
+						createMekCrystal(material, ItemGroups.myTabs.itemsTab);
+						create(Names.SHARD, material);
+						create(Names.CLUMP, material);
+						create(Names.POWDER_DIRTY, material);
+						create(Names.CRYSTAL, material);
+			}
+		});
 
-		if (Options.isMaterialEnabled(MaterialNames.NICHROME)) {
-			createItemsFull(MaterialNames.NICHROME, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.OSMIUM)) {
-			createItemsFull(MaterialNames.OSMIUM, ItemGroups.myTabs);
+		if (Materials.hasMaterial(MaterialNames.OSMIUM)) {
 			createItemsModIC2(MaterialNames.OSMIUM, ItemGroups.myTabs);
 		}
 
-		if (Options.isMaterialEnabled(MaterialNames.PLUTONIUM)) {
-			createItemsFull(MaterialNames.PLUTONIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.PLUTONIUM, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.RUTILE)) {
-			createItemsFull(MaterialNames.RUTILE, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.RUTILE, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
-			createItemsFull(MaterialNames.STAINLESS_STEEL, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.TANTALUM)) {
-			createItemsFull(MaterialNames.TANTALUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.TANTALUM, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.THORIUM)) {
-			createItemsFull(MaterialNames.THORIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.THORIUM, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
-			createItemsFull(MaterialNames.TITANIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.TITANIUM, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.TUNGSTEN)) {
-			createItemsFull(MaterialNames.TUNGSTEN, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.TUNGSTEN, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.URANIUM)) {
-			createItemsFull(MaterialNames.URANIUM, ItemGroups.myTabs);
+		if (Materials.hasMaterial(MaterialNames.URANIUM)) {
 			createItemsModMekanism(MaterialNames.URANIUM, ItemGroups.myTabs);
-		}
-
-		if (Options.isMaterialEnabled(MaterialNames.ZIRCONIUM)) {
-			createItemsFull(MaterialNames.ZIRCONIUM, ItemGroups.myTabs);
-			createItemsModSupport(MaterialNames.ZIRCONIUM, ItemGroups.myTabs);
 		}
 
 		initDone = true;
 	}
-	
-    @SubscribeEvent
-    public static void registerItems(RegistryEvent.Register<Item> event) {
-    	for( MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID) ) {
-    		for( Item item : mat.getItems() ) {
-    			if( item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID) ) {
-    				event.getRegistry().register(item);
-    			}
-    		}
-    	}
-    	Oredicts.registerItemOreDictionaryEntries();
-    	Oredicts.registerBlockOreDictionaryEntries();
-    }
 
+	@SubscribeEvent
+	public static void registerItems(RegistryEvent.Register<Item> event) {
+		for (MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID)) {
+			for (Item item : mat.getItems()) {
+				if (item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID)) {
+					event.getRegistry().register(item);
+				}
+			}
+		}
+		Oredicts.registerItemOreDictionaryEntries();
+		Oredicts.registerBlockOreDictionaryEntries();
+	}
+
+	protected static Item create(@Nonnull final Names name, @Nonnull final MMDMaterial material) {
+		CreativeTabs tab;
+
+		if ((name.equals(Names.DOOR)) || (name.equals(Names.SLAB))) {
+			tab = ItemGroups.myTabs.blocksTab;
+		} else if ((name.equals(Names.BLEND)) || (name.equals(Names.INGOT)) || (name.equals(Names.NUGGET)) || (name.equals(Names.POWDER)) || (name.equals(Names.SMALLBLEND)) || (name.equals(Names.SMALLPOWDER)) || (name.equals(Names.ROD)) || (name.equals(Names.GEAR))) {
+			tab = ItemGroups.myTabs.itemsTab;
+		} else {
+			tab = ItemGroups.myTabs.toolsTab;
+		}
+
+		return create(name, material, tab);
+	}
 }

@@ -1,1 +1,50 @@
-
+{
+    "pools": [
+        {
+            "__comment":"25% chance of a rare metal tool",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 540
+                },
+                {
+                    "type": "item",
+                    "name": "basemetals:invar_axe",
+                    "weight": 3,
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 20,
+                            "treasure": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "__comment":"25% chance of rare metal ingots",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 300
+                },
+                {
+                    "type": "item",
+                    "name": "basemetals:coldiron_ingot",
+                    "weight": 40,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

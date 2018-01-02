@@ -1,7 +1,9 @@
 package com.mcmoddev.modernmetals.data;
 
+import com.mcmoddev.lib.data.SharedStrings;
+
 public class MaterialNames {
-	
+
 	public static final String ALUMINUM = "aluminum";
 	public static final String ALUMINUM_BRASS = "aluminumbrass";
 	public static final String CADMIUM = "cadmium";
@@ -25,6 +27,6 @@ public class MaterialNames {
 	public static final String THORIUM = "thorium";
 
 	private MaterialNames() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 }

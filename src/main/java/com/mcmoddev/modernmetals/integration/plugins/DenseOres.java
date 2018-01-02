@@ -48,10 +48,9 @@ public class DenseOres extends com.mcmoddev.lib.integration.plugins.DenseOresBas
 				MaterialNames.ZIRCONIUM
 		};
 
-		for (int i = 0; i < baseNames.length; i++) {
-			final String materialName = baseNames[i];
+		for (final String materialName : baseNames) {
 			final MMDMaterial material = Materials.getMaterialByName(materialName);
-			if (material != null && Options.isMaterialEnabled(materialName)) {
+			if (material != null && Materials.hasMaterial(materialName)) {
 				registerOre(String.format("%s_%s", materialName, Oredicts.ORE), Oredicts.STONE, 0);
 			}
 		}

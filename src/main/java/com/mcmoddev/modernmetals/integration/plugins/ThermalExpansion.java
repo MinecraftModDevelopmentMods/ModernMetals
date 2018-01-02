@@ -5,18 +5,19 @@ import java.util.Map;
 
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
-import com.mcmoddev.modernmetals.init.Materials;
+import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.material.MMDMaterial;
 import cofh.api.util.ThermalExpansionHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@MMDPlugin( addonId = ModernMetals.MODID, pluginId = ThermalExpansion.PLUGIN_MODID )
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = ThermalExpansion.PLUGIN_MODID)
 public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.ThermalExpansionBase implements IIntegration {
 
 	private static boolean initDone = false;
@@ -28,55 +29,61 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 
 		initDone = true;
 	}
-	
-	@SubscribeEvent
-	public void regShit(RegistryEvent.Register<IRecipe> ev ) {
-		Map<String, Boolean> materials = new HashMap<>();
-		
-		materials.put(MaterialNames.ALUMINUM_BRASS, Options.isMaterialEnabled(MaterialNames.ALUMINUM_BRASS));
-		materials.put(MaterialNames.BERYLLIUM, Options.isMaterialEnabled(MaterialNames.BERYLLIUM));
-		materials.put(MaterialNames.BORON, Options.isMaterialEnabled(MaterialNames.BORON));
-		materials.put(MaterialNames.CADMIUM, Options.isMaterialEnabled(MaterialNames.CADMIUM));
-		materials.put(MaterialNames.CHROMIUM, Options.isMaterialEnabled(MaterialNames.CHROMIUM));
-		materials.put(MaterialNames.GALVANIZED_STEEL, Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL));
-		materials.put(MaterialNames.MAGNESIUM, Options.isMaterialEnabled(MaterialNames.MAGNESIUM));
-		materials.put(MaterialNames.MANGANESE, Options.isMaterialEnabled(MaterialNames.MANGANESE));
-		materials.put(MaterialNames.NICHROME, Options.isMaterialEnabled(MaterialNames.NICHROME));
-		materials.put(MaterialNames.OSMIUM, Options.isMaterialEnabled(MaterialNames.OSMIUM));
-		materials.put(MaterialNames.PLUTONIUM, Options.isMaterialEnabled(MaterialNames.PLUTONIUM));
-		materials.put(MaterialNames.RUTILE, Options.isMaterialEnabled(MaterialNames.RUTILE));
-		materials.put(MaterialNames.STAINLESS_STEEL, Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL));
-		materials.put(MaterialNames.TANTALUM, Options.isMaterialEnabled(MaterialNames.TANTALUM));
-		materials.put(MaterialNames.THORIUM, Options.isMaterialEnabled(MaterialNames.THORIUM));
-		materials.put(MaterialNames.TITANIUM, Options.isMaterialEnabled(MaterialNames.TITANIUM));
-		materials.put(MaterialNames.TUNGSTEN, Options.isMaterialEnabled(MaterialNames.TUNGSTEN));
-		materials.put(MaterialNames.URANIUM, Options.isMaterialEnabled(MaterialNames.URANIUM));
-		materials.put(MaterialNames.ZIRCONIUM, Options.isMaterialEnabled(MaterialNames.ZIRCONIUM));
 
-		for (Map.Entry<String, Boolean> e : materials.entrySet()) {
-			addFurnace(e.getValue(), e.getKey());
-			addCrucible(e.getValue(), e.getKey());
-			addPlatePress(e.getValue(), e.getKey());
-			addPressStorage(e.getValue(), e.getKey());
+	@SubscribeEvent
+	public void regShit(RegistryEvent.Register<IRecipe> event) {
+		final String[] baseNames = new String[] {
+			MaterialNames.ALUMINUM_BRASS,
+			MaterialNames.BERYLLIUM,
+			MaterialNames.BORON,
+			MaterialNames.CADMIUM,
+			MaterialNames.CHROMIUM,
+			MaterialNames.GALVANIZED_STEEL,
+			MaterialNames.MAGNESIUM,
+			MaterialNames.MANGANESE,
+			MaterialNames.NICHROME,
+			MaterialNames.OSMIUM,
+			MaterialNames.PLUTONIUM,
+			MaterialNames.RUTILE,
+			MaterialNames.STAINLESS_STEEL,
+			MaterialNames.TANTALUM,
+			MaterialNames.THORIUM,
+			MaterialNames.TITANIUM,
+			MaterialNames.TUNGSTEN,
+			MaterialNames.URANIUM,
+			MaterialNames.ZIRCONIUM
+		};
+
+		for (final String materialName : baseNames) {
+			boolean enabled = Materials.hasMaterial(materialName);
+			if (Materials.hasMaterial(materialName)) {
+				addFurnace(enabled, materialName);
+				addCrucible(enabled, materialName);
+				addPlatePress(enabled, materialName);
+				addPressStorage(enabled, materialName);
+			}
 		}
-		
-		if (Options.isMaterialEnabled(MaterialNames.PLUTONIUM)) {
+
+		if (Materials.hasMaterial(MaterialNames.PLUTONIUM)) {
 			ThermalExpansionHelper.addMagmaticFuel(Materials.getMaterialByName(MaterialNames.PLUTONIUM).getFluid().getName(), 1000000);
 		}
 		
-		if (Options.isMaterialEnabled(MaterialNames.URANIUM)) {
+		if (Materials.hasMaterial(MaterialNames.URANIUM)) {
 			ThermalExpansionHelper.addMagmaticFuel(Materials.getMaterialByName(MaterialNames.URANIUM).getFluid().getName(), 750000);
 		}
-		
-		if (Options.isMaterialEnabled(MaterialNames.CHROMIUM) && Options.isMaterialEnabled(MaterialNames.STAINLESS_STEEL)) {
-			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack(Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.STEEL).getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(MaterialNames.CHROMIUM).getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL).getItem(Names.INGOT), 2));
+
+		if ((Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.STEEL))) {
+			final MMDMaterial steel = Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.STEEL);
+			if ((Materials.hasMaterial(MaterialNames.CHROMIUM) && (Materials.hasMaterial(MaterialNames.STAINLESS_STEEL)))) {
+				ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack(steel.getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(MaterialNames.CHROMIUM).getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL).getItem(Names.INGOT), 2));
+			}
+
+			if ((Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.ZINC) && (Materials.hasMaterial(MaterialNames.GALVANIZED_STEEL)))) {
+				ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack(steel.getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.ZINC).getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL).getItem(Names.INGOT), 2));
+			}
 		}
-		
-		if (Options.isMaterialEnabled(MaterialNames.GALVANIZED_STEEL)) {
-			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack(Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.STEEL).getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.ZINC).getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL).getItem(Names.INGOT), 2));
-		}
-		
-		if (Options.isMaterialEnabled(MaterialNames.RUTILE) && Options.isMaterialEnabled(MaterialNames.MAGNESIUM) && Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
+
+		if ((Materials.hasMaterial(MaterialNames.RUTILE) && Materials.hasMaterial(MaterialNames.MAGNESIUM) && (Materials.hasMaterial(MaterialNames.TITANIUM)))) {
 			ThermalExpansionHelper.addSmelterRecipe(4000, new ItemStack(Materials.getMaterialByName(MaterialNames.RUTILE).getItem(Names.INGOT), 1), new ItemStack(Materials.getMaterialByName(MaterialNames.MAGNESIUM).getItem(Names.INGOT), 1), new ItemStack( Materials.getMaterialByName(MaterialNames.TITANIUM).getItem(Names.INGOT), 2));
 		}
 	}

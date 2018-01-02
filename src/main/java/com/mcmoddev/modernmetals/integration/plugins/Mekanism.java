@@ -9,6 +9,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.IIntegration;
 
@@ -42,9 +43,8 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 			MaterialNames.ZIRCONIUM
 		};
 
-		for (int i = 0; i < baseNames.length; i++) {
-			final String materialName = baseNames[i];
-			if (Options.isMaterialEnabled(materialName)) {
+		for (final String materialName : baseNames) {
+			if (Materials.hasMaterial(materialName)) {
 				addGassesForMaterial(materialName);
 			}
 		}
@@ -55,8 +55,8 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 	}
 	
 	@SubscribeEvent
-	public void multiplyOres(RegistryEvent.Register<IRecipe> ev ) {
-	final String[] baseNames = new String[] {
+	public void multiplyOres(RegistryEvent.Register<IRecipe> event) {
+		final String[] baseNames = new String[] {
 			MaterialNames.ALUMINUM,
 			MaterialNames.CADMIUM,
 			MaterialNames.CHROMIUM,
@@ -72,9 +72,8 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 			MaterialNames.ZIRCONIUM
 		};
 
-		for (int i = 0; i < baseNames.length; i++) {
-			final String materialName = baseNames[i];
-			if (Options.isMaterialEnabled(materialName)) {
+		for (final String materialName : baseNames) {
+			if (Materials.hasMaterial(materialName)) {
 				addOreMultiplicationRecipes(materialName);
 			}
 		}
