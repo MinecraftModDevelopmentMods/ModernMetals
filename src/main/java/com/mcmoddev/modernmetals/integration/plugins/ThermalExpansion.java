@@ -10,6 +10,7 @@ import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.material.MMDMaterial;
 import cofh.api.util.ThermalExpansionHelper;
 import net.minecraft.item.ItemStack;
 
