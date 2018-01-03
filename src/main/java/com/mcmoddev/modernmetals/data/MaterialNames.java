@@ -2,7 +2,7 @@ package com.mcmoddev.modernmetals.data;
 
 import com.mcmoddev.lib.data.SharedStrings;
 
-public class MaterialNames {
+public final class MaterialNames {
 
 	public static final String ALUMINUM = "aluminum";
 	public static final String ALUMINUM_BRASS = "aluminumbrass";
