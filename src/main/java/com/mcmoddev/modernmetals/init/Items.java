@@ -116,6 +116,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 					create(Names.SHEARS, material);
 					create(Names.SHIELD, material);
 					create(Names.SHOVEL, material);
+					create(Names.SCYTHE, material);
 					create(Names.SLAB, material);
 					create(Names.SWORD, material);
 					create(Names.ROD, material);

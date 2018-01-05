@@ -6,6 +6,7 @@ import com.mcmoddev.modernmetals.init.Blocks;
 import com.mcmoddev.modernmetals.init.Fluids;
 import com.mcmoddev.modernmetals.init.Items;
 
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -34,10 +35,8 @@ public class ClientProxy extends CommonProxy {
 		}
 	}
 
-	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
-
+	@SubscribeEvent
+	public void modelRegistry(ModelRegistryEvent ev) {
 		for (final String name : Items.getItemRegistry().keySet()) {
 			RegistrationHelper.registerItemRender(name);
 		}
@@ -45,5 +44,10 @@ public class ClientProxy extends CommonProxy {
 		for (final String name : Blocks.getBlockRegistry().keySet()) {
 			RegistrationHelper.registerBlockRender(name);
 		}
+	}
+	
+	@Override
+	public void init(FMLInitializationEvent event) {
+		super.init(event);
 	}
 }
