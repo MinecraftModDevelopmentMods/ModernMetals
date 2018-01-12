@@ -49,7 +49,8 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 				MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial)).forEach(materialName -> {
+				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
 
 					create(Names.BLOCK, material);

@@ -52,7 +52,7 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 
 		if (Materials.hasMaterial(MaterialNames.ALUMINUM)) {
 			material = Materials.getMaterialByName(MaterialNames.ALUMINUM);
-		} else	if (Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.IRON)) {
+		} else if (Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.IRON)) {
 			material = Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.IRON);
 		}
 

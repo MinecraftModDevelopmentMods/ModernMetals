@@ -56,7 +56,8 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial)).forEach(materialName -> {
+				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
 
 					create(Names.BLEND, material);
@@ -92,7 +93,8 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				});
 
 		materialsModSupport.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial)).forEach(materialName -> {
+				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
 
 					create(Names.CASING, material);
