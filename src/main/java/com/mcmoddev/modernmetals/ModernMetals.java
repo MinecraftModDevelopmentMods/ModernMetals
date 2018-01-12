@@ -25,14 +25,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author Jasmine Iwanek
  *
  */
-@Mod(
-		modid = ModernMetals.MODID,
-		name = ModernMetals.NAME,
-		version = ModernMetals.VERSION,
-		dependencies = "required-after:forge@[14.21.0.2327,);required-after:basemetals;before:buildingbricks",
-		acceptedMinecraftVersions = "[1.12,)",
-		certificateFingerprint = "@FINGERPRINT@",
-		updateJSON = ModernMetals.UPDATEJSON)
+@Mod(modid = ModernMetals.MODID, name = ModernMetals.NAME, version = ModernMetals.VERSION, dependencies = "required-after:forge@[14.21.0.2327,);required-after:basemetals;before:buildingbricks", acceptedMinecraftVersions = "[1.12,)", certificateFingerprint = "@FINGERPRINT@", updateJSON = ModernMetals.UPDATEJSON)
 public class ModernMetals {
 
 	@Instance
@@ -42,16 +35,16 @@ public class ModernMetals {
 	public static final String MODID = "modernmetals";
 
 	/** Display name of this Mod */
-	static final String NAME = "Modern Metals";
+	protected static final String NAME = "Modern Metals";
 
 	/**
 	 * Version number, in Major.Minor.Patch format. The minor number is
 	 * increased whenever a change is made that has the potential to break
 	 * compatibility with other mods that depend on this one.
 	 */
-	public static final String VERSION = "2.5.0-beta3";
+	protected static final String VERSION = "2.5.0-beta4";
 
-	static final String UPDATEJSON = "https://raw.githubusercontent.com/MinecraftModDevelopmentMods/ModernMetals/master/update.json";
+	protected static final String UPDATEJSON = "https://raw.githubusercontent.com/MinecraftModDevelopmentMods/ModernMetals/master/update.json";
 
 	private static final String PROXY_BASE = "com.mcmoddev." + MODID + ".proxy.";
 
@@ -87,7 +80,7 @@ public class ModernMetals {
 	public void onRemapBlock(RegistryEvent.MissingMappings<Block> event) {
 		proxy.onRemapBlock(event);
 	}
-	
+
 	@SubscribeEvent
 	public void onRemapItem(RegistryEvent.MissingMappings<Item> event) {
 		proxy.onRemapItem(event);

@@ -1,9 +1,9 @@
 package com.mcmoddev.modernmetals.init;
 
-import com.mcmoddev.modernmetals.data.MaterialNames;
-import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.data.SharedStrings;
+import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 
 /**
  *
@@ -38,12 +38,14 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 	private static void initModSpecificRecipes() {
 		if (Materials.hasMaterial(MaterialNames.ALUMINUM)) {
 			final MMDMaterial aluminum = Materials.getMaterialByName(MaterialNames.ALUMINUM);
+
 			addAdditionalOredicts(aluminum, "Aluminium");
 			addAdditionalOredicts(aluminum, "Bauxite");
 		}
 
 		if (Materials.hasMaterial(MaterialNames.ALUMINUM_BRASS)) {
 			final MMDMaterial aluminumBrass = Materials.getMaterialByName(MaterialNames.ALUMINUM_BRASS);
+
 			addAdditionalOredicts(aluminumBrass, "AluminumBrass");
 			addAdditionalOredicts(aluminumBrass, "Aluminiumbrass");
 			addAdditionalOredicts(aluminumBrass, "AluminiumBrass");
@@ -57,16 +59,19 @@ public class Recipes extends com.mcmoddev.lib.init.Recipes {
 
 		if (Materials.hasMaterial(MaterialNames.GALVANIZED_STEEL)) {
 			final MMDMaterial galvanizedSteel = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
+
 			addAdditionalOredicts(galvanizedSteel, "GalvinizedSteel");
 		}
 
 		if (Materials.hasMaterial(MaterialNames.NICHROME)) {
 			final MMDMaterial nichrome = Materials.getMaterialByName(MaterialNames.NICHROME);
+
 			addAdditionalOredicts(nichrome, "Nichrome");
 		}
 
 		if (Materials.hasMaterial(MaterialNames.STAINLESS_STEEL)) {
 			final MMDMaterial stainlessSteel = Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL);
+
 			addAdditionalOredicts(stainlessSteel, "StainlessSteel");
 		}
 

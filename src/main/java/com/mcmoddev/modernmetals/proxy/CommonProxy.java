@@ -2,12 +2,18 @@ package com.mcmoddev.modernmetals.proxy;
 
 import java.util.HashSet;
 
-import com.mcmoddev.modernmetals.ModernMetals;
-import com.mcmoddev.modernmetals.init.*;
-import com.mcmoddev.modernmetals.util.Config;
 import com.mcmoddev.lib.integration.IntegrationManager;
 import com.mcmoddev.lib.oregen.FallbackGenerator;
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.modernmetals.init.Blocks;
+import com.mcmoddev.modernmetals.init.Fluids;
+import com.mcmoddev.modernmetals.init.ItemGroups;
+import com.mcmoddev.modernmetals.init.Items;
+import com.mcmoddev.modernmetals.init.Materials;
+import com.mcmoddev.modernmetals.init.Recipes;
+import com.mcmoddev.modernmetals.init.VillagerTrades;
+import com.mcmoddev.modernmetals.util.Config;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -36,12 +42,13 @@ public class CommonProxy {
 		Config.init();
 
 		if ((Options.requireMMDOreSpawn()) && (!Loader.isModLoaded("orespawn"))) {
-			if(Options.fallbackOrespawn()) {
+			if (Options.fallbackOrespawn()) {
 				GameRegistry.registerWorldGenerator(new FallbackGenerator(), 0);
 			} else {
 				final HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
 				orespawnMod.add(new DefaultArtifactVersion("3.2.0"));
-				throw new MissingModsException(orespawnMod, "orespawn", "MMD Ore Spawn Mod (fallback generator disabled, MMD OreSpawn enabled)");
+				throw new MissingModsException(orespawnMod, "orespawn",
+						"MMD Ore Spawn Mod (fallback generator disabled, MMD OreSpawn enabled)");
 			}
 		}
 

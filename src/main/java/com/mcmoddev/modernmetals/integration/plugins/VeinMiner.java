@@ -1,10 +1,14 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
+import java.util.Arrays;
+import java.util.List;
+
+import com.mcmoddev.lib.init.Materials;
+import com.mcmoddev.lib.integration.IIntegration;
+import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
-import com.mcmoddev.lib.util.ConfigBase.Options;
-import com.mcmoddev.lib.integration.MMDPlugin;
-import com.mcmoddev.lib.integration.IIntegration;
 
 /**
  * VeinMiner Integration Plugin
@@ -23,32 +27,15 @@ public class VeinMiner extends com.mcmoddev.lib.integration.plugins.VeinMinerBas
 			return;
 		}
 
-		final String[] baseNames = new String[] {
-			MaterialNames.ALUMINUM,
-			MaterialNames.ALUMINUM_BRASS,
-			MaterialNames.CADMIUM,
-			MaterialNames.CHROMIUM,
-			MaterialNames.GALVANIZED_STEEL,
-			MaterialNames.IRIDIUM,
-			MaterialNames.MAGNESIUM,
-			MaterialNames.MANGANESE,
-			MaterialNames.NICHROME,
-			MaterialNames.OSMIUM,
-			MaterialNames.PLUTONIUM,
-			MaterialNames.RUTILE,
-			MaterialNames.STAINLESS_STEEL,
-			MaterialNames.TANTALUM,
-			MaterialNames.TITANIUM,
-			MaterialNames.TUNGSTEN,
-			MaterialNames.URANIUM,
-			MaterialNames.ZIRCONIUM
-		};
+		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL, MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME, MaterialNames.OSMIUM,
+				MaterialNames.PLUTONIUM, MaterialNames.RUTILE, MaterialNames.STAINLESS_STEEL, MaterialNames.TANTALUM,
+				MaterialNames.TITANIUM, MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
-		for (final String materialName : baseNames) {
-			if (Options.isMaterialEnabled(materialName)) {
-				addToolsForMaterial(materialName);
-			}
-		}
+		materials.stream().filter(Materials::hasMaterial)
+				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.forEach(materialName -> addToolsForMaterial(materialName));
 
 		initDone = true;
 	}
