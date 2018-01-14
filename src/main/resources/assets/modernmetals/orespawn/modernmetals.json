@@ -22,10 +22,12 @@
 				"minHeight": 0,
 				"maxHeight": 32
 			},
-			"block": {
-				"name": "modernmetals:boron_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:boron_ore",
+					"chance": 100
+				}
+			]
 		},
 		"thorium_ore": {
 			"retrogen": false,
@@ -48,10 +50,12 @@
 				"minHeight": 0,
 				"maxHeight": 32
 			},
-			"block": {
-				"name": "modernmetals:thorium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:thorium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"beryllium_ore": {
 			"retrogen": false,
@@ -74,10 +78,12 @@
 				"minHeight": 0,
 				"maxHeight": 128
 			},
-			"block": {
-				"name": "modernmetals:beryllium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:beryllium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"aluminum_ore": {
 			"retrogen": false,
@@ -100,10 +106,12 @@
 				"minHeight": 0,
 				"maxHeight": 96
 			},
-			"block": {
-				"name": "modernmetals:aluminum_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:aluminum_ore",
+					"chance": 100
+				}
+			]
 		},
 		"cadmium_ore": {
 			"retrogen": false,
@@ -126,10 +134,12 @@
 				"minHeight": 0,
 				"maxHeight": 96
 			},
-			"block": {
-				"name": "modernmetals:cadmium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:cadmium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"chromium_ore": {
 			"retrogen": false,
@@ -152,10 +162,12 @@
 				"minHeight": 0,
 				"maxHeight": 32
 			},
-			"block": {
-				"name": "modernmetals:chromium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:chromium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"iridium_ore": {
 			"retrogen": false,
@@ -178,10 +190,12 @@
 				"minHeight": 0,
 				"maxHeight": 64
 			},
-			"block": {
-				"name": "modernmetals:iridium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:iridium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"magnesium_ore": {
 			"retrogen": false,
@@ -204,10 +218,12 @@
 				"minHeight": 0,
 				"maxHeight": 96
 			},
-			"block": {
-				"name": "modernmetals:magnesium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:magnesium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"manganese_ore": {
 			"retrogen": false,
@@ -230,10 +246,12 @@
 				"minHeight": 0,
 				"maxHeight": 64
 			},
-			"block": {
-				"name": "modernmetals:manganese_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:manganese_ore",
+					"chance": 100
+				}
+			]
 		},
 		"osmium_ore": {
 			"retrogen": false,
@@ -256,10 +274,12 @@
 				"minHeight": 0,
 				"maxHeight": 96
 			},
-			"block": {
-				"name": "modernmetals:osmium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:osmium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"plutonium_ore": {
 			"retrogen": false,
@@ -282,10 +302,12 @@
 				"minHeight": 0,
 				"maxHeight": 32
 			},
-			"block": {
-				"name": "modernmetals:plutonium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:plutonium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"rutile_ore": {
 			"retrogen": false,
@@ -308,10 +330,12 @@
 				"minHeight": 0,
 				"maxHeight": 64
 			},
-			"block": {
-				"name": "modernmetals:rutile_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:rutile_ore",
+					"chance": 100
+				}
+			]
 		},
 		"tantalum_ore": {
 			"retrogen": false,
@@ -334,10 +358,12 @@
 				"minHeight": 0,
 				"maxHeight": 64
 			},
-			"block": {
-				"name": "modernmetals:tantalum_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:tantalum_ore",
+					"chance": 100
+				}
+			]
 		},
 		"tungsten_ore": {
 			"retrogen": false,
@@ -360,10 +386,12 @@
 				"minHeight": 0,
 				"maxHeight": 32
 			},
-			"block": {
-				"name": "modernmetals:tungsten_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:tungsten_ore",
+					"chance": 100
+				}
+			]
 		},
 		"uranium_ore": {
 			"retrogen": false,
@@ -386,10 +414,12 @@
 				"minHeight": 0,
 				"maxHeight": 32
 			},
-			"block": {
-				"name": "modernmetals:uranium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:uranium_ore",
+					"chance": 100
+				}
+			]
 		},
 		"zirconium_ore": {
 			"retrogen": false,
@@ -412,10 +442,12 @@
 				"minHeight": 0,
 				"maxHeight": 64
 			},
-			"block": {
-				"name": "modernmetals:zirconium_ore",
-				"chance": 100
-			}
+			"blocks": [
+				{
+					"name": "modernmetals:zirconium_ore",
+					"chance": 100
+				}
+			]
 		}
 	}
 }
