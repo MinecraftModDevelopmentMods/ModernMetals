@@ -9,7 +9,6 @@ import com.mcmoddev.modernmetals.init.Items;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -36,7 +35,7 @@ public class ClientProxy extends CommonProxy {
 	}
 
 	@SubscribeEvent
-	public void modelRegistry(ModelRegistryEvent ev) {
+	public void modelRegistry(ModelRegistryEvent event) {
 		for (final String name : Items.getItemRegistry().keySet()) {
 			RegistrationHelper.registerItemRender(name);
 		}
@@ -44,10 +43,5 @@ public class ClientProxy extends CommonProxy {
 		for (final String name : Blocks.getBlockRegistry().keySet()) {
 			RegistrationHelper.registerBlockRender(name);
 		}
-	}
-	
-	@Override
-	public void init(FMLInitializationEvent event) {
-		super.init(event);
 	}
 }

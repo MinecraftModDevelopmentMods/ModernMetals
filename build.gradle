@@ -117,7 +117,7 @@ if (secretFile.exists()) {
 }
 
 minecraft {
-    version = '1.12.1-14.22.1.2485'
+    version = '1.12.2-14.23.1.2555'
     runDir = 'run'
     mappings = 'snapshot_20171231'
 //  coreMod = corePlugin

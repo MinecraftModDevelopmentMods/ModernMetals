@@ -1,11 +1,14 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
+import java.util.Arrays;
+import java.util.List;
+
+import com.mcmoddev.lib.init.Materials;
+import com.mcmoddev.lib.integration.IIntegration;
+import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
-import com.mcmoddev.lib.util.ConfigBase.Options;
-import com.mcmoddev.lib.init.Materials;
-import com.mcmoddev.lib.integration.MMDPlugin;
-import com.mcmoddev.lib.integration.IIntegration;
 
 /**
  *
@@ -26,32 +29,15 @@ public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIOBase im
 			return;
 		}
 
-		final String[] baseNames = new String[] {
-				MaterialNames.ALUMINUM,
-				MaterialNames.ALUMINUM_BRASS,
-				MaterialNames.CADMIUM,
-				MaterialNames.CHROMIUM,
-				MaterialNames.GALVANIZED_STEEL,
-				MaterialNames.IRIDIUM,
-				MaterialNames.MAGNESIUM,
-				MaterialNames.MANGANESE,
-				MaterialNames.NICHROME,
-				MaterialNames.OSMIUM,
-				MaterialNames.PLUTONIUM,
-				MaterialNames.RUTILE,
-				MaterialNames.STAINLESS_STEEL,
-				MaterialNames.TANTALUM,
-				MaterialNames.TITANIUM,
-				MaterialNames.TUNGSTEN,
-				MaterialNames.URANIUM,
-				MaterialNames.ZIRCONIUM
-		};
+		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL, MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME, MaterialNames.OSMIUM,
+				MaterialNames.PLUTONIUM, MaterialNames.RUTILE, MaterialNames.STAINLESS_STEEL, MaterialNames.TANTALUM,
+				MaterialNames.TITANIUM, MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
-		for (final String materialName : baseNames) {
-			if (Materials.hasMaterial(materialName)) {
-				addSagMillRecipe(materialName, 3600);
-			}
-		}
+		materials.stream().filter(Materials::hasMaterial)
+				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.forEach(materialName -> addSagMillRecipe(materialName, 3600));
 
 		initDone = true;
 	}

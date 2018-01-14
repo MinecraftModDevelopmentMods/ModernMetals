@@ -1,7 +1,7 @@
 package com.mcmoddev.modernmetals.init;
 
-import com.mcmoddev.modernmetals.ModernMetals;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.annotation.Nonnull;
 
@@ -9,6 +9,7 @@ import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
 import net.minecraft.block.Block;
@@ -40,33 +41,17 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		Materials.init();
 		ItemGroups.init();
 
-		String[] materials = new String[] { MaterialNames.ALUMINUM,
-				MaterialNames.ALUMINUM_BRASS,
-				MaterialNames.BERYLLIUM,
-				MaterialNames.BORON,
-				MaterialNames.CADMIUM,
-				MaterialNames.CHROMIUM,
-				MaterialNames.GALVANIZED_STEEL,
-				MaterialNames.IRIDIUM,
-				MaterialNames.MAGNESIUM,
-				MaterialNames.MANGANESE,
-				MaterialNames.NICHROME,
-				MaterialNames.OSMIUM,
-				MaterialNames.PLUTONIUM,
-				MaterialNames.RUTILE,
-				MaterialNames.STAINLESS_STEEL,
-				MaterialNames.TANTALUM,
-				MaterialNames.THORIUM,
-				MaterialNames.TITANIUM,
-				MaterialNames.TUNGSTEN,
-				MaterialNames.URANIUM,
-				MaterialNames.ZIRCONIUM
-			};
+		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.BERYLLIUM, MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM,
+				MaterialNames.GALVANIZED_STEEL, MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE,
+				MaterialNames.NICHROME, MaterialNames.OSMIUM, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,
+				MaterialNames.STAINLESS_STEEL, MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM,
+				MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
-		Arrays.stream(materials)
-				.filter(Materials::hasMaterial)
-				.forEach(name -> {
-					final MMDMaterial material = Materials.getMaterialByName(name);
+		materials.stream().filter(Materials::hasMaterial)
+				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.forEach(materialName -> {
+					final MMDMaterial material = Materials.getMaterialByName(materialName);
 
 					create(Names.BLOCK, material);
 					create(Names.PLATE, material);
@@ -89,8 +74,8 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		for (MMDMaterial mat : Materials.getMaterialsByMod(ModernMetals.MODID)) {
-			for (Block block : mat.getBlocks()) {
+		for (MMDMaterial material : Materials.getMaterialsByMod(ModernMetals.MODID)) {
+			for (Block block : material.getBlocks()) {
 				if (block.getRegistryName().getResourceDomain().equals(ModernMetals.MODID)) {
 					event.getRegistry().register(block);
 				}

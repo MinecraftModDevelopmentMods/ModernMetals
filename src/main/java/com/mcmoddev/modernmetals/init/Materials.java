@@ -1,15 +1,14 @@
 package com.mcmoddev.modernmetals.init;
 
-
 import java.util.Arrays;
 import java.util.List;
 
 import javax.annotation.Nonnull;
 
-import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.material.MMDMaterial.MaterialType;
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 
 /**
  * This class initializes all of the materials in Modern Metals.
@@ -33,50 +32,30 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			return;
 		}
 
-		List<String> modMaterials = Arrays.asList(
-				MaterialNames.ALUMINUM,
-				MaterialNames.BERYLLIUM,
-				MaterialNames.BORON,
-				MaterialNames.CHROMIUM,
-				MaterialNames.MAGNESIUM,
-				MaterialNames.MANGANESE,
-				MaterialNames.OSMIUM,
-				MaterialNames.RUTILE,
-				MaterialNames.TANTALUM,
-				MaterialNames.THORIUM,
-				MaterialNames.TUNGSTEN,
-				MaterialNames.ZIRCONIUM
-			);
+		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
+				MaterialNames.BORON, MaterialNames.CHROMIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE,
+				MaterialNames.OSMIUM, MaterialNames.RUTILE, MaterialNames.TANTALUM, MaterialNames.THORIUM,
+				MaterialNames.TUNGSTEN, MaterialNames.ZIRCONIUM);
 
-		List<String> rareMaterials = Arrays.asList(
-				MaterialNames.CADMIUM,
-				MaterialNames.IRIDIUM,
-				MaterialNames.PLUTONIUM,
-				MaterialNames.URANIUM
-			);
+		final List<String> rareMaterials = Arrays.asList(MaterialNames.CADMIUM, MaterialNames.IRIDIUM,
+				MaterialNames.PLUTONIUM, MaterialNames.URANIUM);
 
-		List<String> alloyMaterials = Arrays.asList(
-				MaterialNames.ALUMINUM_BRASS,
-				MaterialNames.GALVANIZED_STEEL,
-				MaterialNames.NICHROME,
-				MaterialNames.STAINLESS_STEEL
-			);
+		final List<String> alloyMaterials = Arrays.asList(MaterialNames.ALUMINUM_BRASS, MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.NICHROME, MaterialNames.STAINLESS_STEEL);
 
-		modMaterials.stream()
-		.filter(Options::isMaterialEnabled)
-		.forEach(name -> createMaterial(name, MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name), getColor(name)));
+		materials.stream().filter(Options::isMaterialEnabled).forEach(name -> createMaterial(name, MaterialType.METAL,
+				getHardness(name), getStrength(name), getMagic(name), getColor(name)));
 
-		alloyMaterials.stream()
-		.filter(Options::isMaterialEnabled)
-		.forEach(name -> createAlloyMaterial(name, MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name), getColor(name)));
+		alloyMaterials.stream().filter(Options::isMaterialEnabled).forEach(name -> createAlloyMaterial(name,
+				MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name), getColor(name)));
 
-		rareMaterials.stream()
-		.filter(Options::isMaterialEnabled)
-		.forEach(name -> createRareMaterial(name, MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name), getColor(name)));
+		rareMaterials.stream().filter(Options::isMaterialEnabled).forEach(name -> createRareMaterial(name,
+				MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name), getColor(name)));
 
 		if (Options.isMaterialEnabled(MaterialNames.TITANIUM)) {
 			final String name = MaterialNames.TITANIUM;
-			createSpecialMaterial(name, MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name), getColor(name));
+			createSpecialMaterial(name, MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name),
+					getColor(name));
 		}
 
 		initDone = true;
