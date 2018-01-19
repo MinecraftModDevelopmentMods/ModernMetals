@@ -19,7 +19,7 @@ buildscript {
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
         classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.9'
-        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.1'
         classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.2'
     }
 }
@@ -29,7 +29,7 @@ apply plugin: 'com.matthewprenger.cursegradle'
 apply plugin: 'maven-publish'
 apply plugin: 'org.sonarqube'
 apply plugin: 'org.junit.platform.gradle.plugin'
-apply plugin: 'jacoco' 
+apply plugin: 'jacoco'
 
 repositories {
 	mavenLocal()
@@ -84,6 +84,7 @@ ext {
 }
 
 version = mc_version + '-' + short_version
+
 if (System.getenv().BUILD_NUMBER) {
     version += '.' + System.getenv().BUILD_NUMBER
 }
@@ -127,13 +128,9 @@ minecraft {
 }
 
 repositories {
-//    maven {
-//        name 'SpongePowered'
-//        url 'https://repo.spongepowered.org/maven/'
-//    }
     maven { // Mantle, TCon, JEI
         name 'DVS1 Maven FS'
-        url 'http://dvs1.progwml6.com/files/maven'
+        url 'http://dvs1.progwml6.com/files/maven/'
     }
     maven { // CCL, CCC, NEI
         name 'Chickenbones Repo'
@@ -151,25 +148,21 @@ repositories {
         name 'amadornes'
         url 'http://maven.amadornes.com/'
     }
-    maven { // Tesla
-        name 'epoxide'
-        url 'http://maven.epoxide.org'
-    }
     maven { // CraftTweaker, ZenScript
         name 'jared maven'
-        url 'http://blamejared.com/maven'
+        url 'http://blamejared.com/maven/'
     }
     maven { // IC2
         name 'industrialcraft'
-        url 'http://maven.ic2.player.to'
+        url 'http://maven.ic2.player.to/'
     }
     maven { // WAILA/HWYLA
     	name 'tehnut'
-    	url 'http://tehnut.info/maven'
+    	url 'http://tehnut.info/maven/'
     }
     maven { // CoFH
     	name 'Covers Maven'
-    	url 'http://maven.covers1624.net'
+    	url 'http://maven.covers1624.net/'
     }
 	maven {
         name = 'CurseForge'
@@ -181,7 +174,15 @@ repositories {
     }
     maven { // Mekanism, TAIGA
         name 'jitpack'
-        url 'https://jitpack.io'
+        url 'https://jitpack.io/'
+    }
+    maven { // Buildcraft
+        name 'buildcraft'
+        url 'https://mod-buildcraft.com/maven/'
+    }
+    maven { // Storage Drawers
+        name 'thiakil'
+        url 'http://maven.thiakil.com/'
     }
 }
 
@@ -219,13 +220,6 @@ jar {
     }
 }
 
-/*
-task apiJar(type: Jar) {
-    classifier = 'apiClasses'
-    from apiClasses
-}
-*/
-
 task deobfJar(type: Jar) {
     classifier = 'deobf'
     from sourceSets.main.output
@@ -257,7 +251,6 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 artifacts {
-//  archives apiJar
     archives deobfJar
     archives sourceJar
     archives javadocJar
@@ -273,11 +266,6 @@ publishing {
             artifact sourceJar {
                 classifier 'sources'
             }
-/*
-            artifact apiJar {
-                classifier 'api'
-            }
-*/
             artifact deobfJar {
                 classifier 'deobf'
             }
@@ -317,9 +305,6 @@ curseforge {
                 optionalLibrary 'additional-loot-tables'
             }
         }
-//        addArtifact(apiJar) {
-//            displayName = "$project.description $displayVersion API"
-//        }
         addArtifact(sourceJar) {
             displayName = "$project.description $displayVersion Sources"
         }
