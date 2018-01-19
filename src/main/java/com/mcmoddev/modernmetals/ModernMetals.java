@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
 import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -26,6 +27,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 		version = ModernMetals.VERSION,
 		dependencies = "required-after:Forge@[12.18.3.2185,);required-after:basemetals;before:buildingbricks",
 		acceptedMinecraftVersions = "[1.10.2,)",
+		certificateFingerprint = "@FINGERPRINT@",
 		updateJSON = ModernMetals.UPDATEJSON)
 public class ModernMetals {
 
@@ -53,6 +55,11 @@ public class ModernMetals {
 	public static CommonProxy proxy;
 
 	public static final Logger logger = LogManager.getFormatterLogger(ModernMetals.MODID);
+
+	@EventHandler
+	public void onFingerprintViolation(FMLFingerprintViolationEvent event) {
+		logger.warn("Invalid fingerprint detected!");
+	}
 
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event) {
