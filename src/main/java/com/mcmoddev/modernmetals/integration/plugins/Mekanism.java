@@ -13,7 +13,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 	@Override
 	public void init() {
-		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.modEnabled("mekanism")) {
+		if (initDone || !com.mcmoddev.basemetals.util.Config.Options.isModEnabled("mekanism")) {
 			return;
 		}
 
