@@ -19,7 +19,7 @@ buildscript {
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.9'
-        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.1'
         classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.2'
     }
 }
@@ -120,7 +120,6 @@ minecraft {
     version = '1.12.2-14.23.1.2555'
     runDir = 'run'
     mappings = 'snapshot_20171231'
-//  coreMod = corePlugin
 //  clientJvmArgs = ["-Dfml.coreMods.load=$corePlugin"]
 //  serverJvmArgs = ["-Dfml.coreMods.load=$corePlugin"]
 
@@ -353,11 +352,11 @@ String getVersion(String type, String mod_file) {
     String revision = '0'
     String patch = '0'
     File file = file(mod_file)
-	def p = ~/^(?:public|protected|private) static final String $type = ".*$/
+	def prefix = ~/^(?:public|protected|private) static final String $type = ".*$/
     file.eachLine { String s ->
     	s = s.trim()
-        if ( s ==~ p || p.matcher(s).matches() ) {
-        	String[] bits = s.split( "=" )
+        if (s ==~ prefix || prefix.matcher(s).matches()) {
+        	String[] bits = s.split("=")
         	String interesting = bits[1].trim()
         	interesting = interesting.substring(1, interesting.length() - 2)
             String[] pts = interesting.trim().split("\\.")
