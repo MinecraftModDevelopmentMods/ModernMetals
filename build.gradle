@@ -147,10 +147,6 @@ repositories {
         name 'amadornes'
         url 'http://maven.amadornes.com/'
     }
-    maven { // Tesla
-        name 'epoxide'
-        url 'http://maven.epoxide.org/'
-    }
     maven { // CraftTweaker, ZenScript
         name 'jared maven'
         url 'http://blamejared.com/maven/'
