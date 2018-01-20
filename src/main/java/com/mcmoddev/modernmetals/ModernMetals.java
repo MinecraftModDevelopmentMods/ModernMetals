@@ -25,7 +25,14 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author Jasmine Iwanek
  *
  */
-@Mod(modid = ModernMetals.MODID, name = ModernMetals.NAME, version = ModernMetals.VERSION, dependencies = "required-after:forge@[14.21.0.2327,);required-after:basemetals;before:buildingbricks", acceptedMinecraftVersions = "[1.12,)", certificateFingerprint = "@FINGERPRINT@", updateJSON = ModernMetals.UPDATEJSON)
+@Mod(
+		modid = ModernMetals.MODID,
+		name = ModernMetals.NAME,
+		version = ModernMetals.VERSION,
+		dependencies = "required-after:forge@[14.21.1.2387,);required-after:basemetals;before:buildingbricks",
+		acceptedMinecraftVersions = "[1.12,)",
+		certificateFingerprint = "@FINGERPRINT@",
+		updateJSON = ModernMetals.UPDATEJSON)
 public class ModernMetals {
 
 	@Instance
