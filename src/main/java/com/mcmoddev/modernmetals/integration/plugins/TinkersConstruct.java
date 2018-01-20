@@ -123,7 +123,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		if (Materials.hasMaterial(MaterialNames.STAINLESS_STEEL)
 				&& Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.STEEL)
 				&& Materials.hasMaterial(MaterialNames.CHROMIUM)) {
-			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.GALVANIZED_STEEL, 2);
+			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.STAINLESS_STEEL, 2);
 			FluidStack steel = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1);
 			FluidStack chrome = FluidRegistry.getFluidStack(MaterialNames.CHROMIUM, 1);
 			registry.registerAlloy(MaterialNames.STAINLESS_STEEL, output, steel, chrome);

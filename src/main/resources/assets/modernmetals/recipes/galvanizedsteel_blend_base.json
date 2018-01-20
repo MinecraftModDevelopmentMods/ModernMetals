@@ -7,7 +7,7 @@
 		},
 		{
 			"type": "forge:ore_dict",
-			"ore": "dustNickel"
+			"ore": "dustZinc"
 		}
 	],
 	"conditions": [
@@ -27,7 +27,7 @@
 				{
 					"type": "basemetals:enabled",
 					"optionName": "material",
-					"optionValue": "Nickel"
+					"optionValue": "Zinc"
 				},
 				{
 					"type": "basemetals:enabled",
