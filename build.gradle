@@ -16,9 +16,9 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
-        classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.9'
+        classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.10'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.1'
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.2'
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.3'
     }
 }
 
@@ -35,10 +35,10 @@ repositories {
 }
 
 dependencies {
-    testCompile('org.junit.jupiter:junit-jupiter-api:5.0.2')
-    testCompile('org.mockito:mockito-core:2.12.0')
-    testCompile('org.junit.platform:junit-platform-launcher:1.0.2')
-    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.0.2')
+    testCompile('org.junit.jupiter:junit-jupiter-api:5.0.+')
+    testCompile('org.junit.platform:junit-platform-launcher:1.0.+')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.0.+')
+    testCompile('org.mockito:mockito-core:2.+')
 }
 
 project.afterEvaluate {
@@ -47,7 +47,7 @@ project.afterEvaluate {
     // configure jacoco to analyze the junitPlatformTest task
     jacoco {
         // this tool version is compatible with
-        toolVersion = "0.7.6.201602180812"
+        toolVersion = "0.7.9"
         applyTo junitPlatformTestTask
     }
 
@@ -61,7 +61,7 @@ project.afterEvaluate {
 }
 
 junitPlatform {
-    platformVersion '1.0.2' // optional, defaults to plugin version
+    platformVersion '1.0.3' // optional, defaults to plugin version
     //logManager 'org.apache.logging.log4j.jul.LogManager'
     reportsDir file('build/test-results/junit-platform') // this is the default
     // enableStandardTestTask true
@@ -185,6 +185,7 @@ repositories {
 dependencies {
     compile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}:deobf"
     compile "slimeknights.mantle:Mantle:${mc_version}-${mantle_version}:deobf"
+    compile "com.mcmoddev:AdditionalLootTables:${mc_version}-${alt_version}:deobf"
     compile "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}:deobf"
     compile "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}:deobf"
     // CoFHCore for TE integration
