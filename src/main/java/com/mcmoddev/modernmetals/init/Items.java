@@ -56,7 +56,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
 
@@ -93,7 +93,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				});
 
 		materialsModSupport.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
 
@@ -120,10 +120,8 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		}
 
 		if (Materials.hasMaterial(MaterialNames.URANIUM)) {
-			createItemsModMekanism(MaterialNames.URANIUM, ItemGroups.myTabs);
 			final MMDMaterial uranium = Materials.getMaterialByName(MaterialNames.URANIUM);
 
-			createMekCrystal(uranium, ItemGroups.myTabs.itemsTab);
 			create(Names.SHARD, uranium);
 			create(Names.CLUMP, uranium);
 			create(Names.POWDER_DIRTY, uranium);

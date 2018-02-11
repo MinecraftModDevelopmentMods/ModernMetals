@@ -42,7 +42,7 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 				MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					addFurnace(materialName);
 					addCrucible(materialName);

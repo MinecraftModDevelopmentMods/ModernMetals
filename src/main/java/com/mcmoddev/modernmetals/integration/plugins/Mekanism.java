@@ -33,7 +33,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 				MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> addGassesForMaterial(materialName));
 
 		MinecraftForge.EVENT_BUS.register(this);
@@ -49,7 +49,7 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 				MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> addOreMultiplicationRecipes(materialName));
 	}
 }

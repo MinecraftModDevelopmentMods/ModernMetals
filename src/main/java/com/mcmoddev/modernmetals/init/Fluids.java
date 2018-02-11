@@ -40,7 +40,7 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 				MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.filter(Options::isFluidEnabled).forEach(materialName -> {
 					addFluid(materialName, 2000, 10000, getTemperature(materialName), 10);
 					addFluidBlock(materialName);

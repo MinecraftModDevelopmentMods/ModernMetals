@@ -34,7 +34,7 @@ public class VeinMiner extends com.mcmoddev.lib.integration.plugins.VeinMinerBas
 				MaterialNames.TITANIUM, MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> addToolsForMaterial(materialName));
 
 		initDone = true;

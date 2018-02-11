@@ -36,7 +36,7 @@ public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIOBase im
 				MaterialNames.TITANIUM, MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).equals(Materials.emptyMaterial))
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> addSagMillRecipe(materialName, 3600));
 
 		initDone = true;
