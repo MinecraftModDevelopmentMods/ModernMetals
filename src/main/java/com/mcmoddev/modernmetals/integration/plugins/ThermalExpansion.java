@@ -40,10 +40,10 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		materials.put("zirconium", Options.enableZirconium);
 
 		for( Map.Entry<String, Boolean> e : materials.entrySet()) {
-			addFurnace(e.getValue(), e.getKey());
-			addCrucible(e.getValue(), e.getKey());
-			addPlatePress(e.getValue(), e.getKey());
-			addPressStorage(e.getValue(), e.getKey());			
+			addFurnace(e.getKey());
+			addCrucible(e.getKey());
+			addPlatePress(e.getKey());
+			addPressStorage(e.getKey());			
 		}
 		
 		if( Options.enablePlutonium ) {

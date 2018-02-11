@@ -1,8 +1,16 @@
 package com.mcmoddev.modernmetals.init;
 
+import java.util.Arrays;
 
-import com.mcmoddev.lib.util.TabContainer;
-import com.mcmoddev.modernmetals.util.Config.Options;
+import javax.annotation.Nonnull;
+
+import com.mcmoddev.lib.data.Names;
+import com.mcmoddev.lib.data.SharedStrings;
+import com.mcmoddev.lib.init.Materials;
+import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.modernmetals.data.MaterialNames;
+
+import net.minecraft.block.Block;
 
 /**
  * This class initializes all blocks in Modern Metals.
@@ -13,10 +21,9 @@ import com.mcmoddev.modernmetals.util.Config.Options;
 public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
 	private static boolean initDone = false;
-	private static TabContainer myTabs = new TabContainer( ItemGroups.blocksTab, ItemGroups.itemsTab, ItemGroups.toolsTab );
 
 	protected Blocks() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 
 	/**
@@ -30,78 +37,54 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 		Materials.init();
 		ItemGroups.init();
 
-		if (Options.enableAluminum) {
-			createBlocksFull(Materials.getMaterialByName("aluminum"), myTabs);
-		}
+		String[] materials = new String[] { MaterialNames.ALUMINUM,
+				MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
+				MaterialNames.CADMIUM,
+				MaterialNames.CHROMIUM,
+				MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM,
+				MaterialNames.MANGANESE,
+				MaterialNames.NICHROME,
+				MaterialNames.OSMIUM,
+				MaterialNames.PLUTONIUM,
+				MaterialNames.RUTILE,
+				MaterialNames.STAINLESS_STEEL,
+				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
+				MaterialNames.TITANIUM,
+				MaterialNames.TUNGSTEN,
+				MaterialNames.URANIUM,
+				MaterialNames.ZIRCONIUM
+			};
 
-		if (Options.enableAluminumBrass) {
-			createBlocksFull(Materials.getMaterialByName("aluminumbrass"), myTabs);
-		}
+		Arrays.stream(materials)
+				.filter(Materials::hasMaterial)
+				.forEach(name -> {
+					final MMDMaterial material = Materials.getMaterialByName(name);
 
-		if (Options.enableCadmium) {
-			createBlocksFull(Materials.getMaterialByName("cadmium"), myTabs);
-		}
+					create(Names.BLOCK, material);
+					create(Names.PLATE, material);
+					create(Names.ORE, material);
+					create(Names.BARS, material);
+					create(Names.DOOR, material);
+					create(Names.TRAPDOOR, material);
 
-		if (Options.enableChromium) {
-			createBlocksFull(Materials.getMaterialByName("chromium"), myTabs);
-		}
-
-		if (Options.enableGalvanizedSteel) {
-			createBlocksFull(Materials.getMaterialByName("galvanizedsteel"), myTabs);
-		}
-
-		if (Options.enableIridium) {
-			createBlocksFull(Materials.getMaterialByName("iridium"), myTabs);
-		}
-
-		if (Options.enableMagnesium) {
-			createBlocksFull(Materials.getMaterialByName("magnesium"), myTabs);
-		}
-
-		if (Options.enableManganese) {
-			createBlocksFull(Materials.getMaterialByName("manganese"), myTabs);
-		}
-
-		if (Options.enableNichrome) {
-			createBlocksFull(Materials.getMaterialByName("nichrome"), myTabs);
-		}
-
-		if (Options.enableOsmium) {
-			createBlocksFull(Materials.getMaterialByName("osmium"), myTabs);
-		}
-
-		if (Options.enablePlutonium) {
-			createBlocksFull(Materials.getMaterialByName("plutonium"), myTabs);
-		}
-
-		if (Options.enableRutile) {
-			createBlocksFull(Materials.getMaterialByName("rutile"), myTabs);
-		}
-
-		if (Options.enableStainlessSteel) {
-			createBlocksFull(Materials.getMaterialByName("stainlesssteel"), myTabs);
-		}
-
-		if (Options.enableTantalum) {
-			createBlocksFull(Materials.getMaterialByName("tantalum"), myTabs);
-		}
-
-		if (Options.enableTitanium) {
-			createBlocksFull(Materials.getMaterialByName("titanium"), myTabs);
-		}
-
-		if (Options.enableTungsten) {
-			createBlocksFull(Materials.getMaterialByName("tungsten"), myTabs);
-		}
-
-		if (Options.enableUranium) {
-			createBlocksFull(Materials.getMaterialByName("uranium"), myTabs);
-		}
-
-		if (Options.enableZirconium) {
-			createBlocksFull(Materials.getMaterialByName("zirconium"), myTabs);
-		}
+					create(Names.BUTTON, material);
+					create(Names.SLAB, material);
+					create(Names.DOUBLE_SLAB, material);
+					create(Names.LEVER, material);
+					create(Names.PRESSURE_PLATE, material);
+					create(Names.STAIRS, material);
+					create(Names.WALL, material);
+				});
 
 		initDone = true;
+	}
+
+	protected static Block create(@Nonnull final Names name, @Nonnull final MMDMaterial material) {
+		return create(name, material, ItemGroups.myTabs.blocksTab);
 	}
 }

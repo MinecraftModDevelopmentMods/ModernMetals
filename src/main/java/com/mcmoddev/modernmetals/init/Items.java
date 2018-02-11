@@ -1,8 +1,18 @@
 package com.mcmoddev.modernmetals.init;
 
+import java.util.Arrays;
+import java.util.List;
 
-import com.mcmoddev.lib.util.TabContainer;
-import com.mcmoddev.modernmetals.util.Config.Options;
+import javax.annotation.Nonnull;
+
+import com.mcmoddev.lib.data.Names;
+import com.mcmoddev.lib.data.SharedStrings;
+import com.mcmoddev.lib.init.Materials;
+import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.modernmetals.data.MaterialNames;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 
 /**
  * This class initializes all items in Modern Metals.
@@ -13,10 +23,9 @@ import com.mcmoddev.modernmetals.util.Config.Options;
 public class Items extends com.mcmoddev.lib.init.Items {
 
 	private static boolean initDone = false;
-	private static TabContainer myTabs = new TabContainer( ItemGroups.blocksTab, ItemGroups.itemsTab, ItemGroups.toolsTab );
 
 	protected Items() {
-		throw new IllegalAccessError("Not a instantiable class");
+		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
 
 	/**
@@ -29,94 +38,138 @@ public class Items extends com.mcmoddev.lib.init.Items {
 
 		Blocks.init();
 
-		if (Options.enableAluminum) {
-			createItemsFull(Materials.getMaterialByName("aluminum"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("aluminum"), myTabs);
+		List<String> matsModSupport = Arrays.asList(
+				MaterialNames.ALUMINUM,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
+				MaterialNames.CADMIUM,
+				MaterialNames.CHROMIUM,
+				MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM,
+				MaterialNames.MANGANESE,
+				MaterialNames.PLUTONIUM,
+				MaterialNames.RUTILE,
+				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
+				MaterialNames.TITANIUM,
+				MaterialNames.TUNGSTEN,
+				MaterialNames.ZIRCONIUM
+				);
+
+		List<String> myModMats = Arrays.asList(
+				MaterialNames.ALUMINUM,
+				MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.BERYLLIUM,
+				MaterialNames.BORON,
+				MaterialNames.CADMIUM,
+				MaterialNames.CHROMIUM,
+				MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM,
+				MaterialNames.MANGANESE,
+				MaterialNames.NICHROME,
+				MaterialNames.OSMIUM,
+				MaterialNames.PLUTONIUM,
+				MaterialNames.RUTILE,
+				MaterialNames.STAINLESS_STEEL,
+				MaterialNames.TANTALUM,
+				MaterialNames.THORIUM,
+				MaterialNames.TITANIUM,
+				MaterialNames.TUNGSTEN,
+				MaterialNames.URANIUM,
+				MaterialNames.ZIRCONIUM
+				);
+
+		myModMats.stream()
+				.filter(Materials::hasMaterial)
+				.filter(name -> !Materials.getMaterialByName(name).isEmpty())
+				.forEach(name -> {
+					final MMDMaterial material = Materials.getMaterialByName(name);
+
+					create(Names.BLEND, material);
+					create(Names.INGOT, material);
+					create(Names.NUGGET, material);
+					create(Names.POWDER, material);
+					create(Names.SMALLBLEND, material);
+					create(Names.SMALLPOWDER, material);
+
+					create(Names.ARROW, material);
+					create(Names.AXE, material);
+					create(Names.BOLT, material);
+					create(Names.BOOTS, material);
+					create(Names.BOW, material);
+					create(Names.CHESTPLATE, material);
+					create(Names.CRACKHAMMER, material);
+					create(Names.CROSSBOW, material);
+					create(Names.DOOR, material);
+					create(Names.FISHING_ROD, material);
+					create(Names.HELMET, material);
+					create(Names.HOE, material);
+					create(Names.HORSE_ARMOR, material);
+					create(Names.LEGGINGS, material);
+					create(Names.PICKAXE, material);
+					create(Names.SHEARS, material);
+					create(Names.SHIELD, material);
+					create(Names.SHOVEL, material);
+					create(Names.SLAB, material);
+					create(Names.SWORD, material);
+					create(Names.ROD, material);
+					create(Names.GEAR, material);
+				});
+
+		matsModSupport.stream()
+				.filter(Materials::hasMaterial)
+				.filter(name -> !Materials.getMaterialByName(name).isEmpty())
+				.forEach(name -> {
+					final MMDMaterial material = Materials.getMaterialByName(name);
+
+					create(Names.CASING, material);
+					create(Names.DENSE_PLATE, material);
+
+					if (material.hasOre()) {
+						create(Names.CRUSHED, material);
+						create(Names.CRUSHED_PURIFIED, material);
+
+						createMekCrystal(material, ItemGroups.myTabs.itemsTab);
+						create(Names.SHARD, material);
+						create(Names.CLUMP, material);
+						create(Names.POWDER_DIRTY, material);
+						create(Names.CRYSTAL, material);
+			}
+		});
+
+		if (Materials.hasMaterial(MaterialNames.OSMIUM)) {
+			final MMDMaterial osmium = Materials.getMaterialByName(MaterialNames.OSMIUM);
+
+			create(Names.CRUSHED, osmium);
+			create(Names.CRUSHED_PURIFIED, osmium);
 		}
 
-		if (Options.enableAluminumBrass) {
-			createItemsFull(Materials.getMaterialByName("aluminumbrass"), myTabs);
+		if (Materials.hasMaterial(MaterialNames.URANIUM)) {
+			final MMDMaterial uranium = Materials.getMaterialByName(MaterialNames.URANIUM);
+
+			create(Names.SHARD, uranium);
+			create(Names.CLUMP, uranium);
+			create(Names.POWDER_DIRTY, uranium);
+			create(Names.CRYSTAL, uranium);
 		}
 
-		if (Options.enableCadmium) {
-			createItemsFull(Materials.getMaterialByName("cadmium"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("cadmium"), myTabs);
-		}
-
-		if (Options.enableChromium) {
-			createItemsFull(Materials.getMaterialByName("chromium"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("chromium"), myTabs);
-		}
-
-		if (Options.enableGalvanizedSteel) {
-			createItemsFull(Materials.getMaterialByName("galvanizedsteel"), myTabs);
-		}
-
-		if (Options.enableIridium) {
-			createItemsFull(Materials.getMaterialByName("iridium"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("iridium"), myTabs);
-		}
-
-		if (Options.enableMagnesium) {
-			createItemsFull(Materials.getMaterialByName("magnesium"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("magnesium"), myTabs);
-		}
-
-		if (Options.enableManganese) {
-			createItemsFull(Materials.getMaterialByName("manganese"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("manganese"), myTabs);
-		}
-
-		if (Options.enableNichrome) {
-			createItemsFull(Materials.getMaterialByName("nichrome"), myTabs);
-		}
-
-		if (Options.enableOsmium) {
-			createItemsFull(Materials.getMaterialByName("osmium"), myTabs);
-			createItemsModIC2(Materials.getMaterialByName("osmium"), myTabs);
-		}
-
-		if (Options.enablePlutonium) {
-			createItemsFull(Materials.getMaterialByName("plutonium"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("plutonium"), myTabs);
-		}
-
-		if (Options.enableRutile) {
-			createItemsFull(Materials.getMaterialByName("rutile"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("rutile"), myTabs);
-		}
-
-		if (Options.enableStainlessSteel) {
-			createItemsFull(Materials.getMaterialByName("stainlesssteel"), myTabs);
-		}
-
-		if (Options.enableTantalum) {
-			createItemsFull(Materials.getMaterialByName("tantalum"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("tantalum"), myTabs);
-		}
-
-		if (Options.enableTitanium) {
-			createItemsFull(Materials.getMaterialByName("titanium"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("titanium"), myTabs);
-		}
-
-		if (Options.enableTungsten) {
-			createItemsFull(Materials.getMaterialByName("tungsten"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("tungsten"), myTabs);
-		}
-
-		if (Options.enableUranium) {
-			createItemsFull(Materials.getMaterialByName("uranium"), myTabs);
-			createItemsModMekanism(Materials.getMaterialByName("uranium"), myTabs);
-		}
-
-		if (Options.enableZirconium) {
-			createItemsFull(Materials.getMaterialByName("zirconium"), myTabs);
-			createItemsModSupport(Materials.getMaterialByName("zirconium"), myTabs);
-		}
-
-		// addToMetList() // May not be needed, check
+		// addToMetList() // TODO: May not be needed, check
 
 		initDone = true;
+	}
+
+	protected static Item create(@Nonnull final Names name, @Nonnull final MMDMaterial material) {
+		CreativeTabs tab;
+
+		if ((name.equals(Names.DOOR)) || (name.equals(Names.SLAB))) {
+			tab = ItemGroups.myTabs.blocksTab;
+		} else if ((name.equals(Names.BLEND)) || (name.equals(Names.INGOT)) || (name.equals(Names.NUGGET)) || (name.equals(Names.POWDER)) || (name.equals(Names.SMALLBLEND)) || (name.equals(Names.SMALLPOWDER)) || (name.equals(Names.ROD)) || (name.equals(Names.GEAR))) {
+			tab = ItemGroups.myTabs.itemsTab;
+		} else {
+			tab = ItemGroups.myTabs.toolsTab;
+		}
+
+		return create(name, material, tab);
 	}
 }
