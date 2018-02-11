@@ -82,7 +82,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 
 		myModMats.stream()
 				.filter(Materials::hasMaterial)
-				.filter(name -> !Materials.getMaterialByName(name).equals(Materials.emptyMaterial))
+				.filter(name -> !Materials.getMaterialByName(name).isEmpty())
 				.forEach(name -> {
 					final MMDMaterial material = Materials.getMaterialByName(name);
 
@@ -119,7 +119,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 
 		matsModSupport.stream()
 				.filter(Materials::hasMaterial)
-				.filter(name -> !Materials.getMaterialByName(name).equals(Materials.emptyMaterial))
+				.filter(name -> !Materials.getMaterialByName(name).isEmpty())
 				.forEach(name -> {
 					final MMDMaterial material = Materials.getMaterialByName(name);
 
@@ -139,11 +139,19 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		});
 
 		if (Materials.hasMaterial(MaterialNames.OSMIUM)) {
-			createItemsModIC2(MaterialNames.OSMIUM, ItemGroups.myTabs);
+			final MMDMaterial osmium = Materials.getMaterialByName(MaterialNames.OSMIUM);
+
+			create(Names.CRUSHED, osmium);
+			create(Names.CRUSHED_PURIFIED, osmium);
 		}
 
 		if (Materials.hasMaterial(MaterialNames.URANIUM)) {
-			createItemsModMekanism(MaterialNames.URANIUM, ItemGroups.myTabs);
+			final MMDMaterial uranium = Materials.getMaterialByName(MaterialNames.URANIUM);
+
+			create(Names.SHARD, uranium);
+			create(Names.CLUMP, uranium);
+			create(Names.POWDER_DIRTY, uranium);
+			create(Names.CRYSTAL, uranium);
 		}
 
 		// addToMetList() // TODO: May not be needed, check

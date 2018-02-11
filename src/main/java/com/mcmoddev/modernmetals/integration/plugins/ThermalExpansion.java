@@ -49,10 +49,10 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		for (final String materialName : baseNames) {
 			boolean enabled = Materials.hasMaterial(materialName);
 			if (Materials.hasMaterial(materialName)) {
-				addFurnace(enabled, materialName);
-				addCrucible(enabled, materialName);
-				addPlatePress(enabled, materialName);
-				addPressStorage(enabled, materialName);
+				addFurnace(materialName);
+				addCrucible(materialName);
+				addPlatePress(materialName);
+				addPressStorage(materialName);
 			}
 		}
 
