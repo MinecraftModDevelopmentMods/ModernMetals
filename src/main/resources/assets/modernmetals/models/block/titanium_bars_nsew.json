@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_nsew",
-    "textures": {
-        "particle": "modernmetals:blocks/titanium_bars",
-        "bars": "modernmetals:blocks/titanium_bars",
-        "edge": "modernmetals:blocks/titanium_bars"
-    }
-}

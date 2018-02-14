@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_ne",
-    "textures": {
-        "particle": "modernmetals:blocks/aluminumbrass_bars",
-        "bars": "modernmetals:blocks/aluminumbrass_bars",
-        "edge": "modernmetals:blocks/aluminumbrass_bars"
-    }
-}

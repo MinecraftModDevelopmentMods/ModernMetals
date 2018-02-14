@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_n",
-    "textures": {
-        "particle": "modernmetals:blocks/zirconium_bars",
-        "bars": "modernmetals:blocks/zirconium_bars",
-        "edge": "modernmetals:blocks/zirconium_bars"
-    }
-}

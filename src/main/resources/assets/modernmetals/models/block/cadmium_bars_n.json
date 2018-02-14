@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_n",
-    "textures": {
-        "particle": "modernmetals:blocks/cadmium_bars",
-        "bars": "modernmetals:blocks/cadmium_bars",
-        "edge": "modernmetals:blocks/cadmium_bars"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_ne",
-    "textures": {
-        "particle": "modernmetals:blocks/iridium_bars",
-        "bars": "modernmetals:blocks/iridium_bars",
-        "edge": "modernmetals:blocks/iridium_bars"
-    }
-}

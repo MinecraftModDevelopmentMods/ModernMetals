@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_n",
-    "textures": {
-        "particle": "modernmetals:blocks/tungsten_bars",
-        "bars": "modernmetals:blocks/tungsten_bars",
-        "edge": "modernmetals:blocks/tungsten_bars"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_n",
-    "textures": {
-        "particle": "modernmetals:blocks/galvanizedsteel_bars",
-        "bars": "modernmetals:blocks/galvanizedsteel_bars",
-        "edge": "modernmetals:blocks/galvanizedsteel_bars"
-    }
-}

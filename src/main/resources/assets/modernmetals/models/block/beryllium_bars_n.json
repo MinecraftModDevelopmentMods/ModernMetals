@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_n",
-    "textures": {
-        "particle": "modernmetals:blocks/beryllium_bars",
-        "bars": "modernmetals:blocks/beryllium_bars",
-        "edge": "modernmetals:blocks/beryllium_bars"
-    }
-}

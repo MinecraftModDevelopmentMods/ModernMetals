@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_ns",
-    "textures": {
-        "particle": "modernmetals:blocks/uranium_bars",
-        "bars": "modernmetals:blocks/uranium_bars",
-        "edge": "modernmetals:blocks/uranium_bars"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_nse",
-    "textures": {
-        "particle": "modernmetals:blocks/tantalum_bars",
-        "bars": "modernmetals:blocks/tantalum_bars",
-        "edge": "modernmetals:blocks/tantalum_bars"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/bars_n",
-    "textures": {
-        "particle": "modernmetals:blocks/stainlesssteel_bars",
-        "bars": "modernmetals:blocks/stainlesssteel_bars",
-        "edge": "modernmetals:blocks/stainlesssteel_bars"
-    }
-}
