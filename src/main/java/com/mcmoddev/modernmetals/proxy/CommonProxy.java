@@ -2,6 +2,7 @@ package com.mcmoddev.modernmetals.proxy;
 
 import java.util.HashSet;
 
+import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.integration.IntegrationManager;
 import com.mcmoddev.lib.oregen.FallbackGenerator;
 import com.mcmoddev.lib.util.ConfigBase.Options;
@@ -42,14 +43,14 @@ public class CommonProxy {
 
 		Config.init();
 
-		if ((Options.requireMMDOreSpawn()) && (!Loader.isModLoaded("orespawn"))) {
+		if ((Options.requireMMDOreSpawn()) && (!Loader.isModLoaded(SharedStrings.ORESPAWN_MODID))) {
 			if (Options.fallbackOrespawn()) {
 				GameRegistry.registerWorldGenerator(new FallbackGenerator(), 0);
 			} else {
 				final HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
-				orespawnMod.add(new DefaultArtifactVersion("3.2.0"));
-				throw new MissingModsException(orespawnMod, "orespawn",
-						"MMD Ore Spawn Mod (fallback generator disabled, MMD OreSpawn enabled)");
+				orespawnMod.add(new DefaultArtifactVersion(SharedStrings.ORESPAWN_VERSION));
+				throw new MissingModsException(orespawnMod, SharedStrings.ORESPAWN_MODID,
+						SharedStrings.ORESPAWN_MISSING_TEXT);
 			}
 		}
 
