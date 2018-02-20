@@ -6,6 +6,7 @@ import com.mcmoddev.lib.integration.IntegrationManager;
 import com.mcmoddev.lib.oregen.FallbackGenerator;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.init.Blocks;
 import com.mcmoddev.modernmetals.init.Fluids;
 import com.mcmoddev.modernmetals.init.ItemGroups;
@@ -58,7 +59,7 @@ public class CommonProxy {
 		Blocks.init();
 		Items.init();
 
-		ItemGroups.setupIcons();
+		ItemGroups.setupIcons(MaterialNames.ALUMINUM);
 		VillagerTrades.init();
 
 		IntegrationManager.INSTANCE.preInit(event);

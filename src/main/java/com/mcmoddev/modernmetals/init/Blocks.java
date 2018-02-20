@@ -82,8 +82,4 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 			}
 		}
 	}
-
-	protected static Block create(@Nonnull final Names name, @Nonnull final MMDMaterial material) {
-		return create(name, material, ItemGroups.myTabs.blocksTab);
-	}
 }
