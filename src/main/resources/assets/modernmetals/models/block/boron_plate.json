@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/boron_plate",
+        "side": "modernmetals:blocks/boron_plate",
+        "bottom": "modernmetals:blocks/boron_plate"
+    }
+}

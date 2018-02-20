@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/thorium_bow",
+    "textures": {
+        "layer0": "modernmetals:items/thorium_bow_pulling_0"
+    }
+}

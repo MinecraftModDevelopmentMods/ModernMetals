@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/beryllium_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/beryllium_crossbow_pulling_0"
+    }
+}
