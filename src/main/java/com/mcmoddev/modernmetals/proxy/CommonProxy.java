@@ -1,6 +1,7 @@
 package com.mcmoddev.modernmetals.proxy;
 
 import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.init.*;
 import com.mcmoddev.modernmetals.util.Config;
 import com.mcmoddev.modernmetals.util.EventHandler;
@@ -33,7 +34,7 @@ public class CommonProxy {
 		Blocks.init();
 		Items.init();
 		VillagerTrades.init();
-		ItemGroups.setupIcons();
+		ItemGroups.setupIcons(MaterialNames.ALUMINUM);
 		
 		FMLInterModComms.sendFunctionMessage("orespawn", "api", "com.mcmoddev.orespawn.ModernMetalsOreSpawn");
 

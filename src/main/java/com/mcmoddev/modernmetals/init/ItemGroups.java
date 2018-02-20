@@ -1,10 +1,11 @@
 package com.mcmoddev.modernmetals.init;
 
 import com.mcmoddev.basemetals.data.MaterialNames;
-import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.data.Names;
+import com.mcmoddev.lib.data.SharedStrings;
+import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.init.MMDCreativeTab;
-import com.mcmoddev.lib.util.TabContainer;
+import com.mcmoddev.lib.material.MMDMaterial;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Items;
@@ -19,13 +20,10 @@ import net.minecraft.item.Item;
 public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 
 	private static boolean initDone = false;
-	private static final int blocksTabId  = addTab("blocks", true );;
-	private static final int itemsTabId = addTab("items", true );
-	private static final int toolsTabId = addTab("tools", true );
-	private static final MMDCreativeTab blocksTab = getTab(blocksTabId);
-	private static final MMDCreativeTab itemsTab = getTab(itemsTabId);
-	private static final MMDCreativeTab toolsTab = getTab(toolsTabId); 
-	public static final TabContainer myTabs = new TabContainer(blocksTab, itemsTab, toolsTab);
+	private static final MMDCreativeTab blocksTab = addTab(SharedStrings.TAB_BLOCKS);
+	private static final MMDCreativeTab itemsTab = addTab(SharedStrings.TAB_ITEMS);
+	private static final MMDCreativeTab toolsTab = addTab(SharedStrings.TAB_TOOLS);
+	private static final MMDCreativeTab combatTab = addTab(SharedStrings.TAB_COMBAT);
 
 	private ItemGroups() {
 		throw new IllegalAccessError("Not a instantiable class");
@@ -42,13 +40,25 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 		initDone = true;
 	}
 	
-	public static void setupIcons() {
-		Item blocksTabIconItem = Item.getItemFromBlock(Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.STEEL)?Materials.getMaterialByName(MaterialNames.STEEL).getBlock(Names.BLOCK):(Block) Materials.getMaterialByName(MaterialNames.IRON).getBlock(Names.BLOCK));
-		Item itemsTabIconItem = Materials.getMaterialByName(MaterialNames.STEEL).hasItem(Names.GEAR)?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.GEAR):Items.STICK;
-		Item toolsTabIconItem = Materials.getMaterialByName(MaterialNames.STEEL).hasItem(Names.SWORD)?Materials.getMaterialByName(MaterialNames.STEEL).getItem(Names.SWORD):Items.DIAMOND_SWORD;
-		
-		blocksTab.setTabIconItem(blocksTabIconItem);
-		itemsTab.setTabIconItem(itemsTabIconItem);
-		toolsTab.setTabIconItem(toolsTabIconItem);
+	public static void setupIcons(String materialName) {
+		if (Materials.hasMaterial(materialName)) {
+			final MMDMaterial material = Materials.getMaterialByName(materialName);
+
+			if ((blocksTab != null) && (material.hasBlock(Names.BLOCK))) {
+				blocksTab.setTabIconItem(material.getBlock(Names.BLOCK));
+			}
+
+			if ((itemsTab != null) && (material.hasItem(Names.GEAR))) {
+				itemsTab.setTabIconItem(material.getItem(Names.GEAR));
+			}
+
+			if ((toolsTab != null) && (material.hasItem(Names.PICKAXE))) {
+				toolsTab.setTabIconItem(material.getItem(Names.PICKAXE));
+			}
+
+			if ((combatTab != null) && (material.hasItem(Names.SWORD))) {
+				combatTab.setTabIconItem(material.getItem(Names.SWORD));
+			}
+		}
 	}
 }
