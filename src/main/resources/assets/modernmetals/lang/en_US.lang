@@ -1,6 +1,7 @@
-itemGroup.modernmetals.items=Modern Metals
-itemGroup.modernmetals.tools=Modern Metals
-itemGroup.modernmetals.blocks=Modern Metals
+itemGroup.modernmetals.blocks=Modern Metals Blocks
+itemGroup.modernmetals.combat=Modern Metals Combat
+itemGroup.modernmetals.items=Modern Metals Items
+itemGroup.modernmetals.tools=Modern Metals Tools
 nei.modernmetals.recipehandler.crusher.name=Crushed Blocks/Items
 
 material.aluminum.name=Aluminum
