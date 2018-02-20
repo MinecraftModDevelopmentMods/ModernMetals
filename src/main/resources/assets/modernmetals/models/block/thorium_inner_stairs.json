@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "modernmetals:blocks/thorium_block",
+        "top": "modernmetals:blocks/thorium_block",
+        "side": "modernmetals:blocks/thorium_block"
+    }
+}
