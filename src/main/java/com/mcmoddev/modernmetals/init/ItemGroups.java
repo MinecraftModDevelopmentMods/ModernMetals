@@ -6,7 +6,6 @@ import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.init.MMDCreativeTab;
 import com.mcmoddev.lib.material.MMDMaterial;
-import com.mcmoddev.lib.util.TabContainer;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -21,13 +20,10 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 
 	private static boolean initDone = false;
 
-	private static final int BLOCKS_TAB_ID = addTab("blocks", true);
-	private static final int ITEMS_TAB_ID = addTab("items", true);
-	private static final int TOOLS_TAB_ID = addTab("tools", true);
-	private static final MMDCreativeTab blocksTab = getTab(BLOCKS_TAB_ID);
-	private static final MMDCreativeTab itemsTab = getTab(ITEMS_TAB_ID);
-	private static final MMDCreativeTab toolsTab = getTab(TOOLS_TAB_ID);
-	public static final TabContainer myTabs = new TabContainer(blocksTab, itemsTab, toolsTab);
+	private static final MMDCreativeTab blocksTab = addTab(SharedStrings.TAB_BLOCKS);
+	private static final MMDCreativeTab itemsTab = addTab(SharedStrings.TAB_ITEMS);
+	private static final MMDCreativeTab toolsTab = addTab(SharedStrings.TAB_TOOLS);
+	private static final MMDCreativeTab combatTab = addTab(SharedStrings.TAB_COMBAT);
 
 	private ItemGroups() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
@@ -44,42 +40,25 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 		initDone = true;
 	}
 
-	public static void setupIcons() {
-		MMDMaterial material = Materials.EMPTY;
-		Block blocksTabIconItem;
-		Item itemsTabIconItem;
-		Item toolsTabIconItem;
+	public static void setupIcons(String materialName) {
+		if (Materials.hasMaterial(materialName)) {
+			final MMDMaterial material = Materials.getMaterialByName(materialName);
 
-		if (Materials.hasMaterial(MaterialNames.ALUMINUM)) {
-			material = Materials.getMaterialByName(MaterialNames.ALUMINUM);
-		} else	if (Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.IRON)) {
-			material = Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.IRON);
+			if ((blocksTab != null) && (material.hasBlock(Names.BLOCK))) {
+				blocksTab.setTabIconItem(material.getBlock(Names.BLOCK));
+			}
+
+			if ((itemsTab != null) && (material.hasItem(Names.GEAR))) {
+				itemsTab.setTabIconItem(material.getItem(Names.GEAR));
+			}
+
+			if ((toolsTab != null) && (material.hasItem(Names.PICKAXE))) {
+				toolsTab.setTabIconItem(material.getItem(Names.PICKAXE));
+			}
+
+			if ((combatTab != null) && (material.hasItem(Names.SWORD))) {
+				combatTab.setTabIconItem(material.getItem(Names.SWORD));
+			}
 		}
-
-		if (material.isEmpty()) {
-			return;
-		}
-
-		if (material.hasBlock(Names.BLOCK)) {
-			blocksTabIconItem = material.getBlock(Names.BLOCK);
-		} else {
-			blocksTabIconItem = net.minecraft.init.Blocks.IRON_BLOCK;
-		}
-
-		if (material.hasItem(Names.GEAR)) {
-			itemsTabIconItem = material.getItem(Names.GEAR);
-		} else {
-			itemsTabIconItem = net.minecraft.init.Items.STICK;
-		}
-
-		if (material.hasItem(Names.SWORD)) {
-			toolsTabIconItem = material.getItem(Names.SWORD);
-		} else {
-			toolsTabIconItem = net.minecraft.init.Items.DIAMOND_SWORD;
-		}
-
-		blocksTab.setTabIconItem(blocksTabIconItem);
-		itemsTab.setTabIconItem(itemsTabIconItem);
-		toolsTab.setTabIconItem(toolsTabIconItem);
 	}
 }

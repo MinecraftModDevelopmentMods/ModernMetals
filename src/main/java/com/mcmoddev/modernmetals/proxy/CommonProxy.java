@@ -3,6 +3,7 @@ package com.mcmoddev.modernmetals.proxy;
 import java.util.HashSet;
 
 import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.init.*;
 import com.mcmoddev.modernmetals.util.Config;
 import com.mcmoddev.modernmetals.util.EventHandler;
@@ -48,7 +49,7 @@ public class CommonProxy {
 		Blocks.init();
 		Items.init();
 
-		ItemGroups.setupIcons();
+		ItemGroups.setupIcons(MaterialNames.ALUMINUM);
 		VillagerTrades.init();
 
 		IntegrationManager.INSTANCE.preInit(event);
