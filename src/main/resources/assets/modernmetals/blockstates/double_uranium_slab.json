@@ -1,5 +1,5 @@
 {
     "variants": {
-        "variant=default": { "model": "modernmetals:uranium_block" }
+        "normal": { "model": "modernmetals:uranium_block" }
     }
 }

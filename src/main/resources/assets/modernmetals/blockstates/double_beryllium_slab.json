@@ -1,5 +1,5 @@
 {
     "variants": {
-        "variant=default": { "model": "modernmetals:beryllium_block" }
+        "normal": { "model": "modernmetals:beryllium_block" }
     }
 }

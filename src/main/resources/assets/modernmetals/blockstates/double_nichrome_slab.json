@@ -1,5 +1,5 @@
 {
     "variants": {
-        "variant=default": { "model": "modernmetals:nichrome_block" }
+        "normal": { "model": "modernmetals:nichrome_block" }
     }
 }

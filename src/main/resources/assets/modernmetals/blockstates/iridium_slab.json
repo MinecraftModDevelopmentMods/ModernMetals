@@ -1,6 +1,6 @@
 {
     "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_iridium" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_iridium" }
+        "half=bottom": { "model": "modernmetals:half_slab_iridium" },
+        "half=top": { "model": "modernmetals:upper_slab_iridium" }
     }
 }

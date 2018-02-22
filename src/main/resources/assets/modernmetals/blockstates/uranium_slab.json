@@ -1,6 +1,6 @@
 {
     "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_uranium" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_uranium" }
+        "half=bottom": { "model": "modernmetals:half_slab_uranium" },
+        "half=top": { "model": "modernmetals:upper_slab_uranium" }
     }
 }
