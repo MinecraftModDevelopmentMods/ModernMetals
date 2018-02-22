@@ -42,6 +42,7 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 
 		materials.stream().filter(Materials::hasMaterial)
 				.filter(Options::isFluidEnabled).forEach(materialName -> {
+					// if only this was easier...
 					addFluid(materialName, 2000, 10000, getTemperature(materialName), 10);
 					addFluidBlock(materialName);
 				});
