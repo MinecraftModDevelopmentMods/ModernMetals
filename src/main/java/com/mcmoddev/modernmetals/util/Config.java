@@ -20,7 +20,8 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 	private static Configuration configuration;
 	private static final String CONFIG_FILE = "config/ModernMetals.cfg";
 	private static final String MATERIALS_CAT = "Metals";
-
+	private static final String FLUIDS_CAT = "Fluids";
+	
 	@SubscribeEvent
 	public void onConfigChange(ConfigChangedEvent.OnConfigChangedEvent e) {
 		if (e.getModID().equals(ModernMetals.MODID)) {
@@ -78,6 +79,49 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 		Options.materialEnabled(MaterialNames.ZIRCONIUM, configuration.getBoolean("EnableZirconium", MATERIALS_CAT,
 				true, "Enable Zirconium Items and Materials"));
 
+		Options.fluidEnabled("Aluminum",
+				configuration.getBoolean("Enabled Aluminum", FLUIDS_CAT, true, "Enable the molten fluid of Aluminum"));
+		Options.fluidEnabled("Beryllium",
+				configuration.getBoolean("Enabled Beryllium", FLUIDS_CAT, true, "Enable the molten fluid of Beryllium"));
+		Options.fluidEnabled("Boron",
+				configuration.getBoolean("Enabled Boron", FLUIDS_CAT, true, "Enable the molten fluid of Boron"));
+		Options.fluidEnabled("Chromium",
+				configuration.getBoolean("Enabled Chromium", FLUIDS_CAT, true, "Enable the molten fluid of Chromium"));
+		Options.fluidEnabled("Magnesium",
+				configuration.getBoolean("Enabled Magnesium", FLUIDS_CAT, true, "Enable the molten fluid of Magnesium"));
+		Options.fluidEnabled("Manganese",
+				configuration.getBoolean("Enabled Manganese", FLUIDS_CAT, true, "Enable the molten fluid of Manganese"));
+		Options.fluidEnabled("Osmium",
+				configuration.getBoolean("Enabled Osmium", FLUIDS_CAT, true, "Enable the molten fluid of Osmium"));
+		Options.fluidEnabled("Rutile",
+				configuration.getBoolean("Enabled Rutile", FLUIDS_CAT, true, "Enable the molten fluid of Rutile"));
+		Options.fluidEnabled("Tantalum",
+				configuration.getBoolean("Enabled Tantalum", FLUIDS_CAT, true, "Enable the molten fluid of Tantalum"));
+		Options.fluidEnabled("Thorium",
+				configuration.getBoolean("Enabled Thorium", FLUIDS_CAT, true, "Enable the molten fluid of Thorium"));
+		Options.fluidEnabled("Tungsten",
+				configuration.getBoolean("Enabled Tungsten", FLUIDS_CAT, true, "Enable the molten fluid of Tungsten"));
+		Options.fluidEnabled("Zirconium",
+				configuration.getBoolean("Enabled Zirconium", FLUIDS_CAT, true, "Enable the molten fluid of Zirconium"));
+		Options.fluidEnabled("Cadmium",
+				configuration.getBoolean("Enabled Cadmium", FLUIDS_CAT, true, "Enable the molten fluid of Cadmium"));
+		Options.fluidEnabled("Iridium",
+				configuration.getBoolean("Enabled Iridium", FLUIDS_CAT, true, "Enable the molten fluid of Iridium"));
+		Options.fluidEnabled("Plutonium",
+				configuration.getBoolean("Enabled Plutonium", FLUIDS_CAT, true, "Enable the molten fluid of Plutonium"));
+		Options.fluidEnabled("Uranium",
+				configuration.getBoolean("Enabled Uranium", FLUIDS_CAT, true, "Enable the molten fluid of Uranium"));
+		Options.fluidEnabled("AluminumBrass",
+				configuration.getBoolean("Enabled Aluminum Brass", FLUIDS_CAT, true, "Enable the molten fluid of Aluminum Brass"));
+		Options.fluidEnabled("GalvanizedSteel",
+				configuration.getBoolean("Enabled Galvanized Steel", FLUIDS_CAT, true, "Enable the molten fluid of Galvanized Steel"));
+		Options.fluidEnabled("Nichrome",
+				configuration.getBoolean("Enabled Nichrome", FLUIDS_CAT, true, "Enable the molten fluid of Nichrome"));
+		Options.fluidEnabled("StainlessSteel",
+				configuration.getBoolean("Enabled Stainless Steel", FLUIDS_CAT, true, "Enable the molten fluid of Stainless Steel"));
+		Options.fluidEnabled("Titanium",
+				configuration.getBoolean("Enabled Titanium", FLUIDS_CAT, true, "Enable the molten fluid of Titanium"));
+		
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}

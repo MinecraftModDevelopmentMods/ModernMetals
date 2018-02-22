@@ -8,6 +8,7 @@ import javax.annotation.Nonnull;
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
 /**
@@ -40,7 +41,6 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 				MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
-				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.filter(Options::isFluidEnabled).forEach(materialName -> {
 					addFluid(materialName, 2000, 10000, getTemperature(materialName), 10);
 					addFluidBlock(materialName);
