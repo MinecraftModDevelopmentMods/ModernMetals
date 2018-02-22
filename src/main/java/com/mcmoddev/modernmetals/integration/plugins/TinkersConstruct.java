@@ -1,5 +1,6 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
+import com.mcmoddev.basemetals.BaseMetals;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
@@ -13,6 +14,7 @@ import com.mcmoddev.modernmetals.data.TraitNames;
 
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fml.common.Loader;
 
 /**
  *
@@ -23,11 +25,13 @@ import net.minecraftforge.fluids.FluidStack;
 public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.TinkersConstructBase
 		implements IIntegration {
 
-	private static boolean initDone = false;
+	private static Boolean preInit = false;
+	private static Boolean init = false;
+	private static Boolean postInit = false;
 
 	@Override
 	public void init() {
-		if (initDone || !Options.isModEnabled("tinkersconstruct")) {
+		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
 
@@ -84,21 +88,26 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 
 		registerMaterial(Materials.hasMaterial(MaterialNames.ZIRCONIUM), MaterialNames.ZIRCONIUM, true, false);
 
-		initDone = true;
 	}
 
 	public void preInit() {
+		if(preInit) return;
+		preInit = true;
 		preInitSetup();
-		setMaterialsVisible();
+		setMaterialsVisible(ModernMetals.MODID);
 	}
 
 	public void initCallback() {
+		if(init) return;
+		init = true;
 		registerAlloys();
-		initSetup();
+		initSetup(ModernMetals.MODID);
 	}
 
 	public void postInit() {
-		postInitSetup();
+		if(postInit) return;
+		postInit = true;
+		postInitSetup(ModernMetals.MODID);
 	}
 
 	private void registerAlloys() {
