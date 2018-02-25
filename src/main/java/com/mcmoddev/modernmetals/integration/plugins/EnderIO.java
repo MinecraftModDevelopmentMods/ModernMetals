@@ -17,15 +17,12 @@ import com.mcmoddev.modernmetals.data.MaterialNames;
  */
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = EnderIO.PLUGIN_MODID)
 public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIOBase implements IIntegration {
-
-	private static boolean initDone = false;
-
 	/**
 	 *
 	 */
 	@Override
 	public void init() {
-		if (initDone || !Options.isModEnabled(EnderIO.PLUGIN_MODID)) {
+		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
 
@@ -38,7 +35,5 @@ public class EnderIO extends com.mcmoddev.lib.integration.plugins.EnderIOBase im
 		materials.stream().filter(Materials::hasMaterial)
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> addSagMillRecipe(materialName, 3600));
-
-		initDone = true;
 	}
 }
