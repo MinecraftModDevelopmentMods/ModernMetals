@@ -3,8 +3,6 @@ package com.mcmoddev.modernmetals.init;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.annotation.Nonnull;
-
 import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
