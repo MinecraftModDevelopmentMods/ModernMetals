@@ -6,6 +6,7 @@ import java.util.List;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.integration.plugins.MekanismBase;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -16,13 +17,10 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = Mekanism.PLUGIN_MODID)
-public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase implements IIntegration {
-
-	private static boolean initDone = false;
-
+public class Mekanism extends MekanismBase implements IIntegration {
 	@Override
 	public void init() {
-		if (initDone || !Options.isModEnabled(Mekanism.PLUGIN_MODID)) {
+		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
 
@@ -34,11 +32,9 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 		materials.stream().filter(Materials::hasMaterial)
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
-				.forEach(materialName -> addGassesForMaterial(materialName));
+				.forEach(MekanismBase::addGassesForMaterial);
 
 		MinecraftForge.EVENT_BUS.register(this);
-
-		initDone = true;
 	}
 
 	@SubscribeEvent
@@ -50,6 +46,6 @@ public class Mekanism extends com.mcmoddev.lib.integration.plugins.MekanismBase 
 
 		materials.stream().filter(Materials::hasMaterial)
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
-				.forEach(materialName -> addOreMultiplicationRecipes(materialName));
+				.forEach(MekanismBase::addOreMultiplicationRecipes);
 	}
 }

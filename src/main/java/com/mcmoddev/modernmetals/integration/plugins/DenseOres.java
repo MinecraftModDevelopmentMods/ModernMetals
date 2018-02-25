@@ -15,17 +15,13 @@ import com.mcmoddev.modernmetals.data.MaterialNames;
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = DenseOres.PLUGIN_MODID)
 public class DenseOres extends com.mcmoddev.lib.integration.plugins.DenseOresBase implements IIntegration {
 
-	private static boolean initDone = false;
-
 	@Override
 	public void init() {
-		if (initDone || !Options.isModEnabled(DenseOres.PLUGIN_MODID)) {
+		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
 
 		registerOres();
-
-		initDone = true;
 	}
 
 	/**

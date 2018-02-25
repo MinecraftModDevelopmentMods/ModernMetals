@@ -1,6 +1,9 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
-import com.mcmoddev.basemetals.BaseMetals;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
@@ -14,7 +17,6 @@ import com.mcmoddev.modernmetals.data.TraitNames;
 
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
-import net.minecraftforge.fml.common.Loader;
 
 /**
  *
@@ -25,9 +27,9 @@ import net.minecraftforge.fml.common.Loader;
 public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.TinkersConstructBase
 		implements IIntegration {
 
-	private static Boolean preInit = false;
-	private static Boolean init = false;
-	private static Boolean postInit = false;
+	private boolean preInit = false;
+	private boolean init = false;
+	private boolean postInit = false;
 
 	@Override
 	public void init() {
@@ -111,39 +113,32 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 	}
 
 	private void registerAlloys() {
-		if (Materials.hasMaterial(MaterialNames.GALVANIZED_STEEL)
-				&& Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.STEEL)
-				&& Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.ZINC)) {
-			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.GALVANIZED_STEEL, 2);
-			FluidStack steel = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1);
-			FluidStack zinc = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.ZINC, 1);
-			registry.registerAlloy(MaterialNames.GALVANIZED_STEEL, output, steel, zinc);
-		}
+		registerAlloy(MaterialNames.GALVANIZED_STEEL, 2, new Object[] { com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1, com.mcmoddev.basemetals.data.MaterialNames.ZINC, 1 });
+		registerAlloy(MaterialNames.NICHROME, 2, new Object[] { com.mcmoddev.basemetals.data.MaterialNames.NICKEL, 1, MaterialNames.CHROMIUM, 1 });
+		registerAlloy(MaterialNames.STAINLESS_STEEL, 2, new Object[] { com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1, MaterialNames.CHROMIUM, 1 });
+		registerAlloy(MaterialNames.TITANIUM, 2, new Object[] { MaterialNames.RUTILE, 1, MaterialNames.MAGNESIUM, 1 });
+	}
 
-		if (Materials.hasMaterial(MaterialNames.NICHROME)
-				&& Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.NICKEL)
-				&& Materials.hasMaterial(MaterialNames.CHROMIUM)) {
-			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.NICHROME, 2);
-			FluidStack nickel = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.NICKEL, 1);
-			FluidStack chrome = FluidRegistry.getFluidStack(MaterialNames.CHROMIUM, 1);
-			registry.registerAlloy(MaterialNames.NICHROME, output, nickel, chrome);
+	private void registerAlloy(String outputMaterialName, int outputAmount, Object[] recipe) {
+		List<String> materialNames = new ArrayList<>();
+		materialNames.add(outputMaterialName);
+		Arrays.asList(recipe).stream()
+		.filter(elem -> !(elem instanceof String))
+		.forEach(elem -> materialNames.add((String)elem));
+		if( !hasMaterials(materialNames) ) return;
+		FluidStack output = FluidRegistry.getFluidStack(outputMaterialName, outputAmount);
+		FluidStack[] rest = new FluidStack[recipe.length/2];
+		for( int i = 0, j = 0; i < recipe.length; i += 2, j++ ) {
+			rest[j] = FluidRegistry.getFluidStack((String)recipe[i], (int)recipe[i+1]);
 		}
+		registry.registerAlloy(outputMaterialName, output, rest);
+	}
 
-		if (Materials.hasMaterial(MaterialNames.STAINLESS_STEEL)
-				&& Materials.hasMaterial(com.mcmoddev.basemetals.data.MaterialNames.STEEL)
-				&& Materials.hasMaterial(MaterialNames.CHROMIUM)) {
-			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.STAINLESS_STEEL, 2);
-			FluidStack steel = FluidRegistry.getFluidStack(com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1);
-			FluidStack chrome = FluidRegistry.getFluidStack(MaterialNames.CHROMIUM, 1);
-			registry.registerAlloy(MaterialNames.STAINLESS_STEEL, output, steel, chrome);
+	private boolean hasMaterials(List<String> materialNames) {
+		for( String name : materialNames ) {
+			if( !Materials.hasMaterial(name) ) return false;
 		}
-
-		if (Materials.hasMaterial(MaterialNames.TITANIUM) && Materials.hasMaterial(MaterialNames.RUTILE)) {
-			FluidStack output = FluidRegistry.getFluidStack(MaterialNames.TITANIUM, 2);
-			FluidStack rutile = FluidRegistry.getFluidStack(MaterialNames.RUTILE, 1);
-			FluidStack magnesium = FluidRegistry.getFluidStack(MaterialNames.MAGNESIUM, 1);
-			registry.registerAlloy(MaterialNames.TITANIUM, output, rutile, magnesium);
-		}
+		return true;
 	}
 
 	private boolean isTraitLoc(String loc) {
@@ -207,5 +202,5 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		}
 
 		mat.settle();
-	}
+	}	
 }

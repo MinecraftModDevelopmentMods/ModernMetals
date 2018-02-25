@@ -6,6 +6,7 @@ import java.util.List;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.integration.plugins.VeinMinerBase;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -17,13 +18,10 @@ import com.mcmoddev.modernmetals.data.MaterialNames;
  *
  */
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = VeinMiner.PLUGIN_MODID)
-public class VeinMiner extends com.mcmoddev.lib.integration.plugins.VeinMinerBase implements IIntegration {
-
-	private static boolean initDone = false;
-
+public class VeinMiner extends VeinMinerBase implements IIntegration {
 	@Override
 	public void init() {
-		if (initDone || !Options.isModEnabled(VeinMiner.PLUGIN_MODID)) {
+		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
 
@@ -35,8 +33,6 @@ public class VeinMiner extends com.mcmoddev.lib.integration.plugins.VeinMinerBas
 
 		materials.stream().filter(Materials::hasMaterial)
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
-				.forEach(materialName -> addToolsForMaterial(materialName));
-
-		initDone = true;
+				.forEach(VeinMinerBase::addToolsForMaterial);
 	}
 }
