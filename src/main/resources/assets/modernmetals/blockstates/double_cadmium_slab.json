@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "modernmetals:cadmium_block" }
+        "variant=default": { "model": "modernmetals:cadmium_block" }
     }
 }

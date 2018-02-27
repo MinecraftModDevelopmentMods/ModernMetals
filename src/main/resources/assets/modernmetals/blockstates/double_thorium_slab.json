@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "modernmetals:thorium_block" }
+        "variant=default": { "model": "modernmetals:thorium_block" }
     }
 }

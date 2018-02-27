@@ -1,6 +1,6 @@
 {
     "variants": {
-        "half=bottom": { "model": "modernmetals:half_slab_aluminum" },
-        "half=top": { "model": "modernmetals:upper_slab_aluminum" }
+        "half=bottom,variant=default": { "model": "modernmetals:half_slab_aluminum" },
+        "half=top,variant=default": { "model": "modernmetals:upper_slab_aluminum" }
     }
 }

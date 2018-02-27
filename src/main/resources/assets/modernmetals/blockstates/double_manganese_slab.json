@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "modernmetals:manganese_block" }
+        "variant=default": { "model": "modernmetals:manganese_block" }
     }
 }

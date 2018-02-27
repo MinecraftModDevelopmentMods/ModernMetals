@@ -1,6 +1,6 @@
 {
     "variants": {
-        "half=bottom": { "model": "modernmetals:half_slab_beryllium" },
-        "half=top": { "model": "modernmetals:upper_slab_beryllium" }
+        "half=bottom,variant=default": { "model": "modernmetals:half_slab_beryllium" },
+        "half=top,variant=default": { "model": "modernmetals:upper_slab_beryllium" }
     }
 }

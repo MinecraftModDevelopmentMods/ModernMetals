@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "modernmetals:plutonium_block" }
+        "variant=default": { "model": "modernmetals:plutonium_block" }
     }
 }

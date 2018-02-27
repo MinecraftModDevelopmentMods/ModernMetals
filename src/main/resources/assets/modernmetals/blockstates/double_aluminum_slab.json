@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "modernmetals:aluminum_block" }
+        "variant=default": { "model": "modernmetals:aluminum_block" }
     }
 }

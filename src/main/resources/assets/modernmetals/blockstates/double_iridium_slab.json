@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "modernmetals:iridium_block" }
+        "variant=default": { "model": "modernmetals:iridium_block" }
     }
 }

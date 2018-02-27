@@ -1,6 +1,6 @@
 {
     "variants": {
-        "half=bottom": { "model": "modernmetals:half_slab_chromium" },
-        "half=top": { "model": "modernmetals:upper_slab_chromium" }
+        "half=bottom,variant=default": { "model": "modernmetals:half_slab_chromium" },
+        "half=top,variant=default": { "model": "modernmetals:upper_slab_chromium" }
     }
 }

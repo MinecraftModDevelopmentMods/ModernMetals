@@ -1,5 +1,5 @@
 {
     "variants": {
-        "normal": { "model": "modernmetals:zirconium_block" }
+        "variant=default": { "model": "modernmetals:zirconium_block" }
     }
 }
