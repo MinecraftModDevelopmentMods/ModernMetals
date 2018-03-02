@@ -17,9 +17,6 @@ import com.mcmoddev.modernmetals.data.MaterialNames;
  *
  */
 public class Materials extends com.mcmoddev.lib.init.Materials {
-
-	private static boolean initDone = false;
-
 	private Materials() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
@@ -28,10 +25,6 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 	 *
 	 */
 	public static void init() {
-		if (initDone) {
-			return;
-		}
-
 		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
 				MaterialNames.BORON, MaterialNames.CHROMIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE,
 				MaterialNames.OSMIUM, MaterialNames.RUTILE, MaterialNames.TANTALUM, MaterialNames.THORIUM,
@@ -57,8 +50,6 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			createSpecialMaterial(name, MaterialType.METAL, getHardness(name), getStrength(name), getMagic(name),
 					getColor(name));
 		}
-
-		initDone = true;
 	}
 
 	private static int getColor(@Nonnull final String name) {
