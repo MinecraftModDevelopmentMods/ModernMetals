@@ -17,9 +17,6 @@ import com.mcmoddev.modernmetals.data.MaterialNames;
  *
  */
 public class Fluids extends com.mcmoddev.lib.init.Fluids {
-
-	private static boolean initDone = false;
-
 	private Fluids() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
@@ -28,10 +25,6 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 	 *
 	 */
 	public static void init() {
-		if (initDone) {
-			return;
-		}
-
 		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS,
 				MaterialNames.BERYLLIUM, MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
 				MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME,
@@ -45,8 +38,6 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 					addFluid(materialName, 2000, 10000, getTemperature(materialName), 10);
 					addFluidBlock(materialName);
 				});
-
-		initDone = true;
 	}
 
 	private static int getTemperature(@Nonnull final String name) {
