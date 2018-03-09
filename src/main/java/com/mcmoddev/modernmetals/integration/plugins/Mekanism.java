@@ -39,10 +39,11 @@ public class Mekanism extends MekanismBase implements IIntegration {
 
 	@SubscribeEvent
 	public void multiplyOres(RegistryEvent.Register<IRecipe> event) {
-		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.CADMIUM,
-				MaterialNames.CHROMIUM, MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE,
-				MaterialNames.PLUTONIUM, MaterialNames.RUTILE, MaterialNames.TANTALUM, MaterialNames.TITANIUM,
-				MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
+		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
+				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,
+				MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM, MaterialNames.TUNGSTEN,
+				MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
 		materials.stream().filter(Materials::hasMaterial)
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
