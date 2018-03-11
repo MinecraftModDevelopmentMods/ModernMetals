@@ -8,6 +8,7 @@ import com.mcmoddev.lib.data.SharedStrings;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.launchwrapper.Launch;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -64,7 +65,10 @@ public class ModernMetals {
 
 	@EventHandler
 	public void onFingerprintViolation(FMLFingerprintViolationEvent event) {
-		logger.warn(SharedStrings.INVALID_FINGERPRINT);
+		if (!(Boolean)Launch.blackboard.get("fml.deobfuscatedEnvironment")) {
+//			logger.warn("The mod " + MODID + " is expecting signature " + event.getExpectedFingerprint() + " for source "+ event.getSource() + ", however there is no signature matching that description")
+			logger.warn(SharedStrings.INVALID_FINGERPRINT);
+		}
 	}
 
 	@EventHandler
