@@ -6,6 +6,7 @@ import java.util.List;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -29,9 +30,10 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 
 	@SubscribeEvent
 	public void mainInteraction(final RegistryEvent.Register<IRecipe> event) {
-		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
-				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.IRIDIUM,
-				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,
+		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS, MaterialNames.BERYLLIUM,
+				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME,
+				MaterialNames.OSMIUM, MaterialNames.PLUTONIUM, MaterialNames.RUTILE, MaterialNames.STAINLESS_STEEL,
 				MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM, MaterialNames.TUNGSTEN,
 				MaterialNames.ZIRCONIUM).stream()
 				.filter(Materials::hasMaterial)
@@ -45,13 +47,23 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 					addCompressorRecipes(materialName);
 				});
 
+		if (Materials.hasMaterial(MaterialNames.URANIUM)) {
+			final MMDMaterial uranium = Materials.getMaterialByName(MaterialNames.URANIUM);
+
+					registerVanillaRecipes(uranium);
+					addMaceratorRecipes(uranium);
+					addMetalFormerRecipes(uranium);
+					addCompressorRecipes(uranium);
+		}
+
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	public void doHammerRecipes() {
-		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
-				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.IRIDIUM,
-				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,
+		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS, MaterialNames.BERYLLIUM,
+				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME,
+				MaterialNames.OSMIUM, MaterialNames.PLUTONIUM, MaterialNames.RUTILE, MaterialNames.STAINLESS_STEEL,
 				MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM, MaterialNames.TUNGSTEN,
 				MaterialNames.URANIUM, MaterialNames.ZIRCONIUM).stream()
 		.filter(Materials::hasMaterial)

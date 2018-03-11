@@ -40,6 +40,9 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				MaterialNames.STAINLESS_STEEL, MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM,
 				MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
+		final List<String> materialsIC2Support = Arrays.asList(MaterialNames.ALUMINUM_BRASS, MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.NICHROME, MaterialNames.OSMIUM, MaterialNames.STAINLESS_STEEL, MaterialNames.URANIUM);
+
 		final List<String> materialsModSupport = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
 				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.IRIDIUM,
 				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,
@@ -52,7 +55,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				Names.FISHING_ROD, Names.HELMET, Names.HOE, Names.HORSE_ARMOR, Names.LEGGINGS, Names.PICKAXE,
 				Names.SHEARS, Names.SHIELD, Names.SHOVEL, Names.SCYTHE, Names.SLAB, Names.SWORD, Names.ROD,
 				Names.GEAR);
-		
+
 		materials.stream().filter(Materials::hasMaterial)
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
@@ -72,9 +75,16 @@ public class Items extends com.mcmoddev.lib.init.Items {
 						Arrays.asList(Names.CRUSHED, Names.CRUSHED_PURIFIED, Names.SHARD, Names.CLUMP,
 								Names.POWDER_DIRTY, Names.CRYSTAL).stream()
 						.forEach(name -> create(name, material));
-						
-						createMekCrystal(material, ItemGroups.getTab(SharedStrings.TAB_ITEMS));
 					}
+				});
+
+		materialsIC2Support.stream().filter(Materials::hasMaterial)
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
+				.forEach(materialName -> {
+					final MMDMaterial material = Materials.getMaterialByName(materialName);
+
+					create(Names.CASING, material);
+					create(Names.DENSE_PLATE, material);
 				});
 
 		if (Materials.hasMaterial(MaterialNames.OSMIUM)) {
