@@ -34,7 +34,6 @@ public class CommonProxy {
 		Blocks.init();
 		Items.init();
 		VillagerTrades.init();
-		ItemGroups.setupIcons(MaterialNames.ALUMINUM);
 		
 		FMLInterModComms.sendFunctionMessage("orespawn", "api", "com.mcmoddev.orespawn.ModernMetalsOreSpawn");
 
@@ -59,6 +58,8 @@ public class CommonProxy {
 		Achievements.init();
 
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
+
+		ItemGroups.setupIcons(MaterialNames.ALUMINUM);
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
