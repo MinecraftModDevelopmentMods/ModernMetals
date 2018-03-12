@@ -49,7 +49,6 @@ public class CommonProxy {
 		Blocks.init();
 		Items.init();
 
-		ItemGroups.setupIcons(MaterialNames.ALUMINUM);
 		VillagerTrades.init();
 
 		IntegrationManager.INSTANCE.preInit(event);
@@ -74,6 +73,8 @@ public class CommonProxy {
 		Achievements.init();
 
 		MinecraftForge.EVENT_BUS.register(new EventHandler());
+
+		ItemGroups.setupIcons(MaterialNames.ALUMINUM);
 	}
 
 	public void postInit(FMLPostInitializationEvent event) {
