@@ -135,7 +135,7 @@ minecraft {
   runDir = 'run'
   mappings = project.mcp_mappings
 
-  if (project.hasProperty('coreplugin')) {
+  if (project.hasProperty('signSHA1')) {
     replace '@FINGERPRINT@', project.findProperty('signSHA1')
   } else {
     replace '@FINGERPRINT@', ''
@@ -247,8 +247,9 @@ dependencies {
   deobfCompile "com.mcmoddev:AdditionalLootTables:${mc_version}-${alt_version}"
   deobfCompile "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}"
   deobfCompile "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}"
-  deobfCompile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}"
+
   deobfCompile "slimeknights.mantle:Mantle:${mc_version}-${mantle_version}"
+  deobfCompile "slimeknights:TConstruct:${mc_version}-${tconstruct_version}"
 
   // CoFHCore for TE integration
   deobfCompile ("cofh:CoFHCore:${mc_version}-${cofhcore_version}:universal") {
@@ -278,6 +279,7 @@ jar {
       attributes 'FMLCorePluginContainsFMLMod': 'true'
       attributes 'FMLCorePlugin': project.coreplugin
     }
+//  attributes 'FMLAT' : ''
   }
 }
 
