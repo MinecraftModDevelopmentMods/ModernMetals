@@ -21,6 +21,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  *
  */
 public class Blocks extends com.mcmoddev.lib.init.Blocks {
+
 	protected Blocks() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}

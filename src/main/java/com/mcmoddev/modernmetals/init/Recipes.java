@@ -11,6 +11,7 @@ import com.mcmoddev.modernmetals.data.MaterialNames;
  *
  */
 public class Recipes extends com.mcmoddev.lib.init.Recipes {
+
 	private Recipes() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}

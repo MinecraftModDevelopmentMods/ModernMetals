@@ -31,8 +31,6 @@ public class Items extends com.mcmoddev.lib.init.Items {
 	 *
 	 */
 	public static void init() {
-		Blocks.init();
-
 		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS,
 				MaterialNames.BERYLLIUM, MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM,
 				MaterialNames.GALVANIZED_STEEL, MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE,
@@ -111,7 +109,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 	private static Item mapFunc(ItemStack itemStack) {
 		return itemStack.getItem();
 	}
-	
+
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
 		Materials.getMaterialsByMod(ModernMetals.MODID).stream()

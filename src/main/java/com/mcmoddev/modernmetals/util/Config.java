@@ -21,7 +21,7 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 	private static final String CONFIG_FILE = "config/ModernMetals.cfg";
 	private static final String MATERIALS_CAT = "Metals";
 	private static final String FLUIDS_CAT = "Fluids";
-	
+
 	@SubscribeEvent
 	public void onConfigChange(ConfigChangedEvent.OnConfigChangedEvent e) {
 		if (e.getModID().equals(ModernMetals.MODID)) {
@@ -121,7 +121,7 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 				configuration.getBoolean("Enabled Stainless Steel", FLUIDS_CAT, true, "Enable the molten fluid of Stainless Steel"));
 		Options.fluidEnabled("Titanium",
 				configuration.getBoolean("Enabled Titanium", FLUIDS_CAT, true, "Enable the molten fluid of Titanium"));
-		
+
 		if (configuration.hasChanged()) {
 			configuration.save();
 		}

@@ -97,7 +97,7 @@ public class Materials extends com.mcmoddev.lib.init.Materials {
 			case MaterialNames.THORIUM:
 				return 0xFF4F5A5A;
 			default:
-				return 0x00000000;
+				return 0xFF000000;
 		}
 	}
 
