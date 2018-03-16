@@ -44,6 +44,10 @@ public class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements
 					addMetalFormerRecipes(materialName);
 					addCompressorRecipes(materialName);
 				});
+		
+		/* Uranium Dust, Uranium Ingot should be convertable in IC2's Thermal Centrifuge to 
+		 * 1 "Tiny pile of Uranium 235" & 4 Uranium 238. */
+		
 	}
 	
 	public void doHammerRecipes() {
