@@ -22,8 +22,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  */
 public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
-	private static boolean initDone = false;
-
 	protected Blocks() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
@@ -32,13 +30,6 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 	 *
 	 */
 	public static void init() {
-		if (initDone) {
-			return;
-		}
-
-		Materials.init();
-		ItemGroups.init();
-
 		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS,
 				MaterialNames.BERYLLIUM, MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM,
 				MaterialNames.GALVANIZED_STEEL, MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE,
@@ -50,34 +41,24 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
-
-					create(Names.BLOCK, material);
-					create(Names.PLATE, material);
-					create(Names.ORE, material);
-					create(Names.BARS, material);
-					create(Names.DOOR, material);
-					create(Names.TRAPDOOR, material);
-
-					create(Names.BUTTON, material);
-					create(Names.SLAB, material);
-					create(Names.DOUBLE_SLAB, material);
-					create(Names.LEVER, material);
-					create(Names.PRESSURE_PLATE, material);
-					create(Names.STAIRS, material);
-					create(Names.WALL, material);
+					Arrays.asList(Names.BLOCK, Names.PLATE, Names.ORE, Names.BARS, Names.DOOR, Names.TRAPDOOR,
+							Names.BUTTON, Names.SLAB, Names.DOUBLE_SLAB, Names.LEVER, Names.PRESSURE_PLATE,
+							Names.STAIRS, Names.WALL).stream()
+					.forEach(name -> create( name, material));
 				});
+	}
 
-		initDone = true;
+	private static boolean filterFunc(Block block) {
+		return block.getRegistryName().getResourceDomain().equals(ModernMetals.MODID);
 	}
 
 	@SubscribeEvent
 	public static void registerBlocks(RegistryEvent.Register<Block> event) {
-		for (MMDMaterial material : Materials.getMaterialsByMod(ModernMetals.MODID)) {
-			for (Block block : material.getBlocks()) {
-				if (block.getRegistryName().getResourceDomain().equals(ModernMetals.MODID)) {
-					event.getRegistry().register(block);
-				}
-			}
-		}
+		Materials.getMaterialsByMod(ModernMetals.MODID).stream()
+		.forEach(mat -> {
+			mat.getBlocks().stream()
+			.filter(Blocks::filterFunc)
+			.forEach(event.getRegistry()::register);
+		});
 	}
 }

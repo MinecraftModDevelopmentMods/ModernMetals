@@ -6,35 +6,37 @@ import java.util.List;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.item.crafting.IRecipe;
 
-@MMDPlugin(addonId = ModernMetals.MODID, pluginId = IC2.PLUGIN_MODID, initCallback="doHammerRecipes")
-public class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements IIntegration {
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = IC2.PLUGIN_MODID, initCallback = "doHammerRecipes")
+public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements IIntegration {
 
 	@Override
 	public void init() {
 		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
+
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@SubscribeEvent
-	public void multiplyOres(RegistryEvent.Register<IRecipe> event) {
-		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
-				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.IRIDIUM,
-				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,
+	public void mainInteraction(final RegistryEvent.Register<IRecipe> event) {
+		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS, MaterialNames.BERYLLIUM,
+				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME,
+				MaterialNames.OSMIUM, MaterialNames.PLUTONIUM, MaterialNames.RUTILE, MaterialNames.STAINLESS_STEEL,
 				MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM, MaterialNames.TUNGSTEN,
-				MaterialNames.ZIRCONIUM);
-
-		materials.stream().filter(Materials::hasMaterial)
+				MaterialNames.ZIRCONIUM).stream()
+				.filter(Materials::hasMaterial)
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					registerVanillaRecipes(materialName);
@@ -45,15 +47,23 @@ public class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements
 					addCompressorRecipes(materialName);
 				});
 		
-		/* Uranium Dust, Uranium Ingot should be convertable in IC2's Thermal Centrifuge to 
-		 * 1 "Tiny pile of Uranium 235" & 4 Uranium 238. */
-		
+		if (Materials.hasMaterial(MaterialNames.URANIUM)) {
+			final MMDMaterial uranium = Materials.getMaterialByName(MaterialNames.URANIUM);
+
+					registerVanillaRecipes(uranium);
+					addMaceratorRecipes(uranium);
+					addMetalFormerRecipes(uranium);
+					addCompressorRecipes(uranium);
+		}
+
+		MinecraftForge.EVENT_BUS.register(this);
 	}
-	
+
 	public void doHammerRecipes() {
-		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
-				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.IRIDIUM,
-				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,
+		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS, MaterialNames.BERYLLIUM,
+				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME,
+				MaterialNames.OSMIUM, MaterialNames.PLUTONIUM, MaterialNames.RUTILE, MaterialNames.STAINLESS_STEEL,
 				MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM, MaterialNames.TUNGSTEN,
 				MaterialNames.URANIUM, MaterialNames.ZIRCONIUM).stream()
 		.filter(Materials::hasMaterial)

@@ -80,6 +80,8 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 
 		registerMaterial(Materials.hasMaterial(MaterialNames.TANTALUM), MaterialNames.TANTALUM, true, false);
 
+		registerMaterial(Materials.hasMaterial(MaterialNames.THORIUM), MaterialNames.THORIUM, true, false);
+
 		registerMaterial(Materials.hasMaterial(MaterialNames.TITANIUM), MaterialNames.TITANIUM, true, false);
 
 		registerMaterial(Materials.hasMaterial(MaterialNames.TUNGSTEN), MaterialNames.TUNGSTEN, true, false);

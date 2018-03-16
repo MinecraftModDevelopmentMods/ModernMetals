@@ -27,7 +27,7 @@
 	"ingredients": [
 		{
 			"type": "forge:ore_dict",
-			"ore": "powderThorium"
+			"ore": "dustThorium"
 		}
 	]
 }

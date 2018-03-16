@@ -13,9 +13,6 @@ import com.mcmoddev.lib.material.MMDMaterial;
  *
  */
 public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
-
-	private static boolean initDone = false;
-
 	private static final MMDCreativeTab blocksTab = addTab(SharedStrings.TAB_BLOCKS);
 	private static final MMDCreativeTab itemsTab = addTab(SharedStrings.TAB_ITEMS);
 	private static final MMDCreativeTab toolsTab = addTab(SharedStrings.TAB_TOOLS);
@@ -29,11 +26,6 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 	 *
 	 */
 	public static void init() {
-		if (initDone) {
-			return;
-		}
-
-		initDone = true;
 	}
 
 	public static void setupIcons(String materialName) {

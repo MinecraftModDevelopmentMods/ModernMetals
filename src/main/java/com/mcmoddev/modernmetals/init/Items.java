@@ -12,6 +12,7 @@ import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -22,9 +23,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  *
  */
 public class Items extends com.mcmoddev.lib.init.Items {
-
-	private static boolean initDone = false;
-
 	protected Items() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}
@@ -33,12 +31,6 @@ public class Items extends com.mcmoddev.lib.init.Items {
 	 *
 	 */
 	public static void init() {
-		if (initDone) {
-			return;
-		}
-
-		Blocks.init();
-
 		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS,
 				MaterialNames.BERYLLIUM, MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM,
 				MaterialNames.GALVANIZED_STEEL, MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE,
@@ -46,47 +38,27 @@ public class Items extends com.mcmoddev.lib.init.Items {
 				MaterialNames.STAINLESS_STEEL, MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM,
 				MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
 
+		final List<String> materialsIC2Support = Arrays.asList(MaterialNames.ALUMINUM_BRASS, MaterialNames.GALVANIZED_STEEL,
+				MaterialNames.NICHROME, MaterialNames.OSMIUM, MaterialNames.STAINLESS_STEEL, MaterialNames.URANIUM);
+
 		final List<String> materialsModSupport = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
 				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.IRIDIUM,
 				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,
 				MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM, MaterialNames.TUNGSTEN,
 				MaterialNames.ZIRCONIUM);
 
+		final List<Names> itemsToMake = Arrays.asList(Names.BLEND, Names.INGOT, Names.NUGGET, Names.POWDER,
+				Names.SMALLBLEND, Names.SMALLPOWDER, Names.ARROW, Names.AXE, Names.BOLT, Names.BOOTS,
+				Names.BOW, Names.CHESTPLATE, Names.CRACKHAMMER, Names.CROSSBOW, Names.DOOR,
+				Names.FISHING_ROD, Names.HELMET, Names.HOE, Names.HORSE_ARMOR, Names.LEGGINGS, Names.PICKAXE,
+				Names.SHEARS, Names.SHIELD, Names.SHOVEL, Names.SCYTHE, Names.SLAB, Names.SWORD, Names.ROD,
+				Names.GEAR);
+
 		materials.stream().filter(Materials::hasMaterial)
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
-
-					create(Names.BLEND, material);
-					create(Names.INGOT, material);
-					create(Names.NUGGET, material);
-					create(Names.POWDER, material);
-					create(Names.SMALLBLEND, material);
-					create(Names.SMALLPOWDER, material);
-
-					create(Names.ARROW, material);
-					create(Names.AXE, material);
-					create(Names.BOLT, material);
-					create(Names.BOOTS, material);
-					create(Names.BOW, material);
-					create(Names.CHESTPLATE, material);
-					create(Names.CRACKHAMMER, material);
-					create(Names.CROSSBOW, material);
-					create(Names.DOOR, material);
-					create(Names.FISHING_ROD, material);
-					create(Names.HELMET, material);
-					create(Names.HOE, material);
-					create(Names.HORSE_ARMOR, material);
-					create(Names.LEGGINGS, material);
-					create(Names.PICKAXE, material);
-					create(Names.SHEARS, material);
-					create(Names.SHIELD, material);
-					create(Names.SHOVEL, material);
-					create(Names.SCYTHE, material);
-					create(Names.SLAB, material);
-					create(Names.SWORD, material);
-					create(Names.ROD, material);
-					create(Names.GEAR, material);
+					itemsToMake.stream().forEach(name -> create(name, material));
 				});
 
 		materialsModSupport.stream().filter(Materials::hasMaterial)
@@ -98,15 +70,19 @@ public class Items extends com.mcmoddev.lib.init.Items {
 					create(Names.DENSE_PLATE, material);
 
 					if (material.hasOre()) {
-						create(Names.CRUSHED, material);
-						create(Names.CRUSHED_PURIFIED, material);
-
-						createMekCrystal(material, ItemGroups.getTab(SharedStrings.TAB_ITEMS));
-						create(Names.SHARD, material);
-						create(Names.CLUMP, material);
-						create(Names.POWDER_DIRTY, material);
-						create(Names.CRYSTAL, material);
+						Arrays.asList(Names.CRUSHED, Names.CRUSHED_PURIFIED, Names.SHARD, Names.CLUMP,
+								Names.POWDER_DIRTY, Names.CRYSTAL).stream()
+						.forEach(name -> create(name, material));
 					}
+				});
+
+		materialsIC2Support.stream().filter(Materials::hasMaterial)
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
+				.forEach(materialName -> {
+					final MMDMaterial material = Materials.getMaterialByName(materialName);
+
+					create(Names.CASING, material);
+					create(Names.DENSE_PLATE, material);
 				});
 
 		if (Materials.hasMaterial(MaterialNames.OSMIUM)) {
@@ -124,19 +100,26 @@ public class Items extends com.mcmoddev.lib.init.Items {
 			create(Names.POWDER_DIRTY, uranium);
 			create(Names.CRYSTAL, uranium);
 		}
+	}
 
-		initDone = true;
+	private static boolean filterFunc(ItemStack item) {
+		return item.getItem().getRegistryName().getResourceDomain().equals(ModernMetals.MODID);
+	}
+
+	private static Item mapFunc(ItemStack itemStack) {
+		return itemStack.getItem();
 	}
 
 	@SubscribeEvent
 	public static void registerItems(RegistryEvent.Register<Item> event) {
-		for (MMDMaterial material : Materials.getMaterialsByMod(ModernMetals.MODID)) {
-			for (Item item : material.getItems()) {
-				if (item.getRegistryName().getResourceDomain().equals(ModernMetals.MODID)) {
-					event.getRegistry().register(item);
-				}
-			}
-		}
+		Materials.getMaterialsByMod(ModernMetals.MODID).stream()
+		.forEach( mat -> {
+			mat.getItems().stream()
+			.filter(Items::filterFunc)
+			.map(Items::mapFunc)
+			.forEach(event.getRegistry()::register);
+		});
+
 		Oredicts.registerItemOreDictionaryEntries();
 		Oredicts.registerBlockOreDictionaryEntries();
 	}
