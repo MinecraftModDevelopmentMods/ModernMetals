@@ -1,7 +1,6 @@
 package com.mcmoddev.modernmetals.integration.plugins;
 
 import java.util.Arrays;
-import java.util.List;
 
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
@@ -40,9 +39,11 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					registerVanillaRecipes(materialName);
-					addMaceratorRecipes(materialName);
-					addOreWashingPlantRecipes(materialName);
-					addThermalCentrifugeRecipes(materialName);
+					if (!MaterialNames.IRIDIUM.equals(materialName)) {
+						addMaceratorRecipes(materialName);
+						addOreWashingPlantRecipes(materialName);
+						addThermalCentrifugeRecipes(materialName);
+					}
 					addMetalFormerRecipes(materialName);
 					addCompressorRecipes(materialName);
 				});
