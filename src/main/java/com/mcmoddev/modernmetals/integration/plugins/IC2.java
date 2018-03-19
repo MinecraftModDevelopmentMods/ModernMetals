@@ -12,6 +12,7 @@ import com.mcmoddev.modernmetals.data.MaterialNames;
 
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.crafting.IRecipe;
 
@@ -39,7 +40,8 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					registerVanillaRecipes(materialName);
-					if (!MaterialNames.IRIDIUM.equals(materialName)) {
+					if ((!Loader.isModLoaded("techreborn")) ||
+							(!materialName.equalsIgnoreCase(MaterialNames.IRIDIUM))) {
 						addMaceratorRecipes(materialName);
 						addOreWashingPlantRecipes(materialName);
 						addThermalCentrifugeRecipes(materialName);
