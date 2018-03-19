@@ -51,7 +51,7 @@ public class ModernMetals {
 	 * increased whenever a change is made that has the potential to break
 	 * compatibility with other mods that depend on this one.
 	 */
-	protected static final String VERSION = "2.5.0-beta4";
+	protected static final String VERSION = "2.5.0-beta5";
 
 	protected static final String UPDATEJSON = SharedStrings.UPDATE_JSON_URL + "ModernMetals/master/update.json";
 

@@ -47,7 +47,7 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 					addMetalFormerRecipes(materialName);
 					addCompressorRecipes(materialName);
 				});
-
+		
 		if (Materials.hasMaterial(MaterialNames.URANIUM)) {
 			final MMDMaterial uranium = Materials.getMaterialByName(MaterialNames.URANIUM);
 
