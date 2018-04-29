@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
+import com.mcmoddev.lib.integration.IntegrationInitEvent;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.material.MMDMaterial;
 import com.mcmoddev.lib.util.ConfigBase.Options;
@@ -16,7 +17,7 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.crafting.IRecipe;
 
-@MMDPlugin(addonId = ModernMetals.MODID, pluginId = IC2.PLUGIN_MODID, initCallback = "doHammerRecipes")
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = IC2.PLUGIN_MODID)
 public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements IIntegration {
 
 	@Override
@@ -30,6 +31,7 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 
 	@SubscribeEvent
 	public void mainInteraction(final RegistryEvent.Register<IRecipe> event) {
+		MinecraftForge.EVENT_BUS.register(this);
 		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS, MaterialNames.BERYLLIUM,
 				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
 				MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME,
@@ -62,7 +64,8 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
-	public void doHammerRecipes() {
+	@SubscribeEvent
+	public void pluginInit(IntegrationInitEvent ev) {
 		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS, MaterialNames.BERYLLIUM,
 				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
 				MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME,
