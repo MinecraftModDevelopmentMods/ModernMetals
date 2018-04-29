@@ -34,12 +34,16 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 			return;
 		}
 
-		registerMaterial(Materials.hasMaterial(MaterialNames.ALUMINUM), MaterialNames.ALUMINUM, true, false,
+/*
+ *  Strangely enough, Aluminum doesn't trigger a "this already exists" check like Lead or Copper do...
+ *  Lets make sure we exclude it and Aluminum Brass here, for safety.
+ *  
+ * 		registerMaterial(Materials.hasMaterial(MaterialNames.ALUMINUM), MaterialNames.ALUMINUM, true, false,
 				TraitNames.LIGHTWEIGHT);
 
 		registerMaterial(Materials.hasMaterial(MaterialNames.ALUMINUM_BRASS), MaterialNames.ALUMINUM_BRASS, true,
 				false);
-
+*/
 		registerMaterial(Materials.hasMaterial(MaterialNames.BERYLLIUM), MaterialNames.BERYLLIUM, true, false);
 
 		registerMaterial(Materials.hasMaterial(MaterialNames.BORON), MaterialNames.BORON, true, false);
@@ -92,12 +96,10 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 	}
 
 	private void registerMaterial( boolean active, String name, boolean castable, boolean craftable, Object...traits) {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("registerMaterial %s - %s ?", name, active);
 		if(active) this.registerMaterial(name, castable, craftable, traits);
 	}
 	
 	private void registerMaterial( boolean active, String name, boolean castable, boolean craftable) {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("registerMaterial %s - %s ?", name, active);
 		if(active) this.registerMaterial(name, castable, craftable);		
 	}
 
@@ -105,7 +107,7 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		List<String> materialNames = new ArrayList<>();
 		materialNames.add(outputMaterialName);
 		Arrays.asList(recipe).stream()
-		.filter(elem -> !(elem instanceof String))
+		.filter(elem -> elem instanceof String)
 		.forEach(elem -> materialNames.add((String)elem));
 		if( !hasMaterials(materialNames) ) return;
 		FluidStack output = FluidRegistry.getFluidStack(outputMaterialName, outputAmount);
@@ -113,7 +115,6 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		for( int i = 0, j = 0; i < recipe.length; i += 2, j++ ) {
 			rest[j] = FluidRegistry.getFluidStack((String)recipe[i], (int)recipe[i+1]);
 		}
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("registerAlloy %s", outputMaterialName);
 		this.registerAlloy(outputMaterialName, output, rest);
 	}
 
