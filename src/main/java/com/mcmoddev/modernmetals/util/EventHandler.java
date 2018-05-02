@@ -21,28 +21,24 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class EventHandler {
 	@SubscribeEvent
 	public static void mmdlibRegisterMaterials(MMDLibRegisterMaterials ev) {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("mmdlibRegisterMaterials - ModernMetals");
 		ev.setActive(ModernMetals.MODID);
 		Materials.init();
 	}
 	
 	@SubscribeEvent
 	public static void mmdlibRegisterBlocks(MMDLibRegisterBlocks ev) {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("mmdlibRegisterBlocks - ModernMetals");
 		ev.setActive(ModernMetals.MODID);
 		Blocks.init();
 	}
 
 	@SubscribeEvent
 	public static void mmdlibRegisterItems(MMDLibRegisterItems ev) {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("mmdlibRegisterItems - ModernMetals");
 		ev.setActive(ModernMetals.MODID);
 		Items.init();
 	}
 	
 	@SubscribeEvent
 	public static void mmdlibRegisterFluids(MMDLibRegisterFluids ev) {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("mmdlibRegisterFluids - ModernMetals");
 		ev.setActive(ModernMetals.MODID);
 		Fluids.init();
 	}
