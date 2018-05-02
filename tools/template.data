@@ -1,0 +1,41 @@
+{
+	"type": "basemetals:variableOutputOre",
+	"group": "misc",
+	"result": {
+		"type": "minecraft:item",
+		"item": ""
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": ""
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Gear"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": ""
+		}
+	},
+	"pattern": [
+		" x ",
+		" x "
+	],
+	"config_key": "rod"
+}
