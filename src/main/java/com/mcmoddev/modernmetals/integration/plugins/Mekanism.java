@@ -37,8 +37,12 @@ public class Mekanism extends MekanismBase implements IIntegration {
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
-	public void multiplyOres(RegistryEvent.Register<IRecipe> event) {
+	public void multiplyOres(final RegistryEvent.Register<IRecipe> event) {
 		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.BERYLLIUM,
 				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.IRIDIUM,
 				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.PLUTONIUM, MaterialNames.RUTILE,

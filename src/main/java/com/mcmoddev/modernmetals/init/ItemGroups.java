@@ -21,8 +21,13 @@ public class ItemGroups extends com.mcmoddev.lib.init.ItemGroups {
 	 *
 	 */
 	public static void init() {
+		// Unused
 	}
 
+	/**
+	 * 
+	 * @param materialName The name of the material.
+	 */
 	public static void setupIcons(final String materialName) {
 		if (Materials.hasMaterial(materialName)) {
 			final MMDMaterial material = Materials.getMaterialByName(materialName);

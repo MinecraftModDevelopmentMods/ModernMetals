@@ -20,14 +20,22 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = ThermalExpansion.PLUGIN_MODID)
 public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.ThermalExpansionBase
 		implements IIntegration {
+
+	/**
+	 * 
+	 */
 	public void init() {
 		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
-	public void regShit(RegistryEvent.Register<IRecipe> event) {
+	public void regShit(final RegistryEvent.Register<IRecipe> event) {
 
 		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM_BRASS, MaterialNames.BERYLLIUM,
 				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
@@ -45,9 +53,9 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 					addPressStorage(materialName);
 				});
 
-		maybeAddMagmaticFuels( MaterialNames.PLUTONIUM, MaterialNames.URANIUM );
+		maybeAddMagmaticFuels(MaterialNames.PLUTONIUM, MaterialNames.URANIUM);
 
-		if ( (hasMaterials(com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM, MaterialNames.STAINLESS_STEEL))
+		if ((hasMaterials(com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM, MaterialNames.STAINLESS_STEEL))
 				&& (materialsHaveItems(Arrays.asList(com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM, MaterialNames.STAINLESS_STEEL), Names.INGOT.toString()))) {
 			final MMDMaterial steel = Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.STEEL);
 			final MMDMaterial chromium = Materials.getMaterialByName(MaterialNames.CHROMIUM);
@@ -56,7 +64,7 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 					chromium.getItemStack(Names.INGOT, 1), stainlessSteel.getItemStack(Names.INGOT, 2));
 		}
 
-		if ( (hasMaterials(com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC, MaterialNames.GALVANIZED_STEEL))
+		if ((hasMaterials(com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC, MaterialNames.GALVANIZED_STEEL))
 				&& (materialsHaveItems(Arrays.asList(com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC, MaterialNames.GALVANIZED_STEEL), Names.INGOT.toString()))) {
 			final MMDMaterial steel = Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.STEEL);
 			final MMDMaterial galvanizedSteel = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
@@ -76,36 +84,44 @@ public class ThermalExpansion extends com.mcmoddev.lib.integration.plugins.Therm
 		}
 	}
 
-	private void maybeAddMagmaticFuels(String...materials) {
+	private void maybeAddMagmaticFuels(final String...materials) {
 		Arrays.asList(materials).stream().filter(Materials::hasMaterial)
 		.map(Materials::getMaterialByName)
 		.forEach(mat -> {
-			int fuelRF = getFuelRF(mat.getName());
-			if( fuelRF > 0 ) {
-				String fluidName = mat.getFluid().getName();
-				ThermalExpansionHelper.addMagmaticFuel( fluidName, fuelRF );
+			final int fuelRF = getFuelRF(mat.getName());
+			if (fuelRF > 0) {
+				final String fluidName = mat.getFluid().getName();
+				ThermalExpansionHelper.addMagmaticFuel(fluidName, fuelRF);
 			}
 		});
 	}
 
-	private int getFuelRF(String name) {
-		if (name.equals(MaterialNames.URANIUM)) return 750000;
-		if (name.equals(MaterialNames.PLUTONIUM)) return 1000000;
+	private int getFuelRF(final String name) {
+		if (name.equals(MaterialNames.URANIUM)) {
+			return 750000;
+		}
+		if (name.equals(MaterialNames.PLUTONIUM)) {
+			return 1000000;
+		}
 		return 0;
 	}
 	
-	private static boolean materialsHaveItems(List<String> materialNames, String...items) {
-		for (String item : items) {
-			for (String materialName : materialNames) {
-				if (!Materials.getMaterialByName(materialName).hasItem(item)) return false;
+	private static boolean materialsHaveItems(final List<String> materialNames, final String...items) {
+		for (final String item : items) {
+			for (final String materialName : materialNames) {
+				if (!Materials.getMaterialByName(materialName).hasItem(item)) {
+					return false;
+				}
 			}
 		}
 		return true;
 	}
 	
-	private static boolean hasMaterials(String...materials) {
-		for (String materialName : materials) {
-			if (!Materials.hasMaterial(materialName)) return false;
+	private static boolean hasMaterials(final String...materials) {
+		for (final String materialName : materials) {
+			if (!Materials.hasMaterial(materialName)) {
+				return false;
+			}
 		}
 		return true;
 	}

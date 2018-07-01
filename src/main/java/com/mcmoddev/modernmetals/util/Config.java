@@ -22,13 +22,20 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 	private static final String MATERIALS_CAT = "Metals";
 	private static final String FLUIDS_CAT = "Fluids";
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
-	public void onConfigChange(ConfigChangedEvent.OnConfigChangedEvent e) {
-		if (e.getModID().equals(ModernMetals.MODID)) {
+	public void onConfigChange(final ConfigChangedEvent.OnConfigChangedEvent event) {
+		if (event.getModID().equals(ModernMetals.MODID)) {
 			init();
 		}
 	}
 
+	/**
+	 * 
+	 */
 	public static void init() {
 		if (configuration == null) {
 			configuration = new Configuration(new File(CONFIG_FILE));

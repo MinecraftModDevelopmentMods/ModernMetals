@@ -44,21 +44,25 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 					Arrays.asList(Names.BLOCK, Names.PLATE, Names.ORE, Names.BARS, Names.DOOR, Names.TRAPDOOR,
 							Names.BUTTON, Names.SLAB, Names.DOUBLE_SLAB, Names.LEVER, Names.PRESSURE_PLATE,
 							Names.STAIRS, Names.WALL).stream()
-					.forEach(name -> create( name, material));
+					.forEach(name -> create(name, material));
 				});
 	}
 
-	private static boolean filterFunc(Block block) {
+	private static boolean filterFunc(final Block block) {
 		return block.getRegistryName().getResourceDomain().equals(ModernMetals.MODID);
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
-	public static void registerBlocks(RegistryEvent.Register<Block> event) {
+	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
 		Materials.getMaterialsByMod(ModernMetals.MODID).stream()
-		.forEach(mat -> {
+		.forEach(mat ->
 			mat.getBlocks().stream()
 			.filter(Blocks::filterFunc)
-			.forEach(event.getRegistry()::register);
-		});
+			.forEach(event.getRegistry()::register)
+		);
 	}
 }

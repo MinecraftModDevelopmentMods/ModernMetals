@@ -38,10 +38,10 @@ public class ModernMetals {
 	@Instance
 	public static ModernMetals instance;
 
-	/** ID of this Mod */
+	/** ID of this Mod. */
 	public static final String MODID = "modernmetals";
 
-	/** Display name of this Mod */
+	/** Display name of this Mod. */
 	protected static final String NAME = "Modern Metals";
 
 	/**
@@ -61,10 +61,14 @@ public class ModernMetals {
 
 	public static final Logger logger = LogManager.getFormatterLogger(ModernMetals.MODID);
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@EventHandler
 	public void onFingerprintViolation(FMLFingerprintViolationEvent event) {
 		if (!(Boolean)Launch.blackboard.get("fml.deobfuscatedEnvironment")) {
-//			logger.warn("The mod " + MODID + " is expecting signature " + event.getExpectedFingerprint() + " for source "+ event.getSource() + ", however there is no signature matching that description")
+//			logger.warn("The Mod " + MODID + " is expecting signature " + event.getExpectedFingerprint() + " for source "+ event.getSource() + ", however there is no signature matching that description")
 			logger.warn(SharedStrings.INVALID_FINGERPRINT);
 		}
 	}
@@ -74,8 +78,12 @@ public class ModernMetals {
 		Config.init();
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@EventHandler
-	public static void preInit(FMLPreInitializationEvent event) {
+	public static void preInit(final FMLPreInitializationEvent event) {
 		proxy.preInit(event);
 
 		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Items.class);
@@ -83,12 +91,12 @@ public class ModernMetals {
 	}
 
 	@EventHandler
-	public static void init(FMLInitializationEvent event) {
+	public static void init(final FMLInitializationEvent event) {
 		proxy.init(event);
 	}
 
 	@EventHandler
-	public static void postInit(FMLPostInitializationEvent event) {
+	public static void postInit(final FMLPostInitializationEvent event) {
 		proxy.postInit(event);
 	}
 }

@@ -102,23 +102,27 @@ public class Items extends com.mcmoddev.lib.init.Items {
 		}
 	}
 
-	private static boolean filterFunc(ItemStack item) {
-		return item.getItem().getRegistryName().getResourceDomain().equals(ModernMetals.MODID);
+	private static boolean filterFunc(final ItemStack itemStack) {
+		return itemStack.getItem().getRegistryName().getResourceDomain().equals(ModernMetals.MODID);
 	}
 
-	private static Item mapFunc(ItemStack itemStack) {
+	private static Item mapFunc(final ItemStack itemStack) {
 		return itemStack.getItem();
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
-	public static void registerItems(RegistryEvent.Register<Item> event) {
+	public static void registerItems(final RegistryEvent.Register<Item> event) {
 		Materials.getMaterialsByMod(ModernMetals.MODID).stream()
-		.forEach( mat -> {
+		.forEach(mat ->
 			mat.getItems().stream()
 			.filter(Items::filterFunc)
 			.map(Items::mapFunc)
-			.forEach(event.getRegistry()::register);
-		});
+			.forEach(event.getRegistry()::register)
+		);
 
 		Oredicts.registerItemOreDictionaryEntries();
 		Oredicts.registerBlockOreDictionaryEntries();

@@ -7,7 +7,9 @@ import java.util.List;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
+
 import static com.mcmoddev.lib.integration.plugins.tinkers.TinkerMaterial.TinkersTraitLocation;
+
 import com.mcmoddev.lib.util.ConfigBase.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -22,7 +24,7 @@ import net.minecraftforge.fluids.FluidStack;
  *
  */
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = TinkersConstruct.PLUGIN_MODID,
-           versions=TinkersConstruct.PLUGIN_MODID+"@[1.12.2-2.7.4.0,)")
+           versions = TinkersConstruct.PLUGIN_MODID + "@[1.12.2-2.7.4.0,)")
 
 public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.TinkersConstructBase
 		implements IIntegration {
@@ -37,13 +39,13 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 /*
  *  Strangely enough, Aluminum doesn't trigger a "this already exists" check like Lead or Copper do...
  *  Lets make sure we exclude it and Aluminum Brass here, for safety.
- *  
- * 		registerMaterial(Materials.hasMaterial(MaterialNames.ALUMINUM), MaterialNames.ALUMINUM, true, false,
-				TraitNames.LIGHTWEIGHT);
+
+		registerMaterial(Materials.hasMaterial(MaterialNames.ALUMINUM), MaterialNames.ALUMINUM, true, false,
+				TraitNames.LIGHTWEIGHT)
 
 		registerMaterial(Materials.hasMaterial(MaterialNames.ALUMINUM_BRASS), MaterialNames.ALUMINUM_BRASS, true,
-				false);
-*/
+				false)
+ */
 		registerMaterial(Materials.hasMaterial(MaterialNames.BERYLLIUM), MaterialNames.BERYLLIUM, true, false);
 
 		registerMaterial(Materials.hasMaterial(MaterialNames.BORON), MaterialNames.BORON, true, false);
@@ -95,32 +97,40 @@ public class TinkersConstruct extends com.mcmoddev.lib.integration.plugins.Tinke
 		registerAlloys();
 	}
 
-	private void registerMaterial( boolean active, String name, boolean castable, boolean craftable, Object...traits) {
-		if(active) this.registerMaterial(name, castable, craftable, traits);
+	private void registerMaterial(final boolean active, final String name, final boolean castable, final boolean craftable, final Object...traits) {
+		if (active) {
+			this.registerMaterial(name, castable, craftable, traits);
+		}
 	}
 	
-	private void registerMaterial( boolean active, String name, boolean castable, boolean craftable) {
-		if(active) this.registerMaterial(name, castable, craftable);		
+	private void registerMaterial(final boolean active, final String name, final boolean castable, final boolean craftable) {
+		if (active) {
+			this.registerMaterial(name, castable, craftable);		
+		}
 	}
 
-	private void registerAlloy(String outputMaterialName, int outputAmount, Object[] recipe) {
-		List<String> materialNames = new ArrayList<>();
+	private void registerAlloy(final String outputMaterialName, final int outputAmount, final Object[] recipe) {
+		final List<String> materialNames = new ArrayList<>();
 		materialNames.add(outputMaterialName);
 		Arrays.asList(recipe).stream()
 		.filter(elem -> elem instanceof String)
 		.forEach(elem -> materialNames.add((String)elem));
-		if( !hasMaterials(materialNames) ) return;
-		FluidStack output = FluidRegistry.getFluidStack(outputMaterialName, outputAmount);
-		FluidStack[] rest = new FluidStack[recipe.length/2];
-		for( int i = 0, j = 0; i < recipe.length; i += 2, j++ ) {
-			rest[j] = FluidRegistry.getFluidStack((String)recipe[i], (int)recipe[i+1]);
+		if (!hasMaterials(materialNames)) {
+			return;
+		}
+		final FluidStack output = FluidRegistry.getFluidStack(outputMaterialName, outputAmount);
+		final FluidStack[] rest = new FluidStack[recipe.length / 2];
+		for (int i = 0, j = 0; i < recipe.length; i += 2, j++) {
+			rest[j] = FluidRegistry.getFluidStack((String)recipe[i], (int)recipe[i + 1]);
 		}
 		this.registerAlloy(outputMaterialName, output, rest);
 	}
 
-	private boolean hasMaterials(List<String> materialNames) {
-		for( String name : materialNames ) {
-			if( !Materials.hasMaterial(name) ) return false;
+	private boolean hasMaterials(final List<String> materialNames) {
+		for (final String name : materialNames) {
+			if (!Materials.hasMaterial(name)) {
+				return false;
+			}
 		}
 		return true;
 	}

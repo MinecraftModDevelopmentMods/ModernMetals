@@ -29,6 +29,10 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
 	public void mainInteraction(final RegistryEvent.Register<IRecipe> event) {
 		MinecraftForge.EVENT_BUS.register(this);
@@ -42,8 +46,8 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					registerVanillaRecipes(materialName);
-					if ((!Loader.isModLoaded("techreborn")) ||
-							(!materialName.equalsIgnoreCase(MaterialNames.IRIDIUM))) {
+					if ((!Loader.isModLoaded("techreborn"))
+							|| (!materialName.equalsIgnoreCase(MaterialNames.IRIDIUM))) {
 						addMaceratorRecipes(materialName);
 						addOreWashingPlantRecipes(materialName);
 						addThermalCentrifugeRecipes(materialName);
@@ -64,8 +68,12 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
-	public void pluginInit(IntegrationInitEvent ev) {
+	public void pluginInit(final IntegrationInitEvent event) {
 		Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS, MaterialNames.BERYLLIUM,
 				MaterialNames.BORON, MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL,
 				MaterialNames.IRIDIUM, MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME,
@@ -73,7 +81,7 @@ public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base impl
 				MaterialNames.TANTALUM, MaterialNames.THORIUM, MaterialNames.TITANIUM, MaterialNames.TUNGSTEN,
 				MaterialNames.URANIUM, MaterialNames.ZIRCONIUM).stream()
 		.filter(Materials::hasMaterial)
-		.filter(name->!Materials.getMaterialByName(name).isEmpty())
+		.filter(name -> !Materials.getMaterialByName(name).isEmpty())
 		.forEach(this::addForgeHammerRecipe);
 	}
 }

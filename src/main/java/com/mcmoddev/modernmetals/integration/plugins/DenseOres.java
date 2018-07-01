@@ -25,7 +25,7 @@ public class DenseOres extends com.mcmoddev.lib.integration.plugins.DenseOresBas
 	}
 
 	/**
-	 * Register all ores that are currently known by the materials registry
+	 * Register all ores that are currently known by the materials registry.
 	 * 
 	 * @author Daniel Hazelton &lt;dshadowwolf@gmail.com&gt;
 	 */
@@ -39,7 +39,7 @@ public class DenseOres extends com.mcmoddev.lib.integration.plugins.DenseOresBas
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
-					if (material != null) {
+					if (material.isEmpty()) {
 						registerOre(String.format("%s_%s", materialName, Oredicts.ORE), Oredicts.STONE, 0);
 					}
 				});

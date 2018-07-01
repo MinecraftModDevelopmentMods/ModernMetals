@@ -21,14 +21,19 @@ import net.minecraftforge.fml.common.versioning.ArtifactVersion;
 import net.minecraftforge.fml.common.versioning.DefaultArtifactVersion;
 
 /**
- * Modern Metals Common Proxy
+ * Modern Metals Common Proxy.
  *
  * @author Jasmine Iwanek
  *
  */
 public class CommonProxy {
 
-	public void preInit(FMLPreInitializationEvent event) {
+	/**
+	 * 
+	 * @param event The Event.
+	 */
+	@SuppressWarnings("deprecation")
+	public void preInit(final FMLPreInitializationEvent event) {
 
 		if ((Options.requireMMDOreSpawn()) && (!Loader.isModLoaded(SharedStrings.ORESPAWN_MODID))) {
 			if (Options.fallbackOrespawn()) {
@@ -44,12 +49,20 @@ public class CommonProxy {
 		VillagerTrades.init();
 	}
 
-	public void init(FMLInitializationEvent event) {
+	/**
+	 * 
+	 * @param event The Event.
+	 */
+	public void init(final FMLInitializationEvent event) {
 		Recipes.init();
 
 		ItemGroups.setupIcons(MaterialNames.ALUMINUM);
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	public void postInit(FMLPostInitializationEvent event) {
 		Config.postInit();
 	}

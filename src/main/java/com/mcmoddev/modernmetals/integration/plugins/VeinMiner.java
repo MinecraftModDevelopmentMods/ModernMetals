@@ -12,7 +12,7 @@ import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
 /**
- * VeinMiner Integration Plugin
+ * VeinMiner Integration Plugin.
  *
  * @author Jasmine Iwanek
  *

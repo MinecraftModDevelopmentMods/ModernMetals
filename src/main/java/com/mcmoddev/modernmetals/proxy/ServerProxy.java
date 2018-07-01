@@ -1,7 +1,7 @@
 package com.mcmoddev.modernmetals.proxy;
 
 /**
- * Modern Metals Server Proxy
+ * Modern Metals Server Proxy.
  *
  * @author Jasmine Iwanek
  *

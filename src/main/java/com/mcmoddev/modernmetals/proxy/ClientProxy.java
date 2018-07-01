@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
- * Modern Metals Client Proxy
+ * Modern Metals Client Proxy.
  *
  * @author Jasmine Iwanek
  *
@@ -21,21 +21,29 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ClientProxy extends CommonProxy {
 
 	@Override
-	public void preInit(FMLPreInitializationEvent event) {
+	public void preInit(final FMLPreInitializationEvent event) {
 		super.preInit(event);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
-	public void fluidRendering(RegistryEvent.Register<MMDMaterial> event) {
+	public void fluidRendering(final RegistryEvent.Register<MMDMaterial> event) {
 		for (final String name : Fluids.getFluidBlockRegistry().keySet()) {
 			RegistrationHelper.registerFluidRender(name);
 		}
 	}
 
+	/**
+	 * 
+	 * @param event The Event.
+	 */
 	@SubscribeEvent
-	public void modelRegistry(ModelRegistryEvent event) {
+	public void modelRegistry(final ModelRegistryEvent event) {
 		for (final String name : Items.getItemRegistry().keySet()) {
 			RegistrationHelper.registerItemRender(name);
 		}
