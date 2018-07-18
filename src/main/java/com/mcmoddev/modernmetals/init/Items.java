@@ -103,7 +103,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 	}
 
 	private static boolean filterFunc(final ItemStack itemStack) {
-		return itemStack.getItem().getRegistryName().getResourceDomain().equals(ModernMetals.MODID);
+		return itemStack.getItem().getRegistryName().getNamespace().equals(ModernMetals.MODID);
 	}
 
 	private static Item mapFunc(final ItemStack itemStack) {

@@ -49,7 +49,7 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 	}
 
 	private static boolean filterFunc(final Block block) {
-		return block.getRegistryName().getResourceDomain().equals(ModernMetals.MODID);
+		return block.getRegistryName().getNamespace().equals(ModernMetals.MODID);
 	}
 
 	/**

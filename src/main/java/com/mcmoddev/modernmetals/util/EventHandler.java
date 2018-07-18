@@ -51,7 +51,7 @@ public class EventHandler {
 	@SubscribeEvent
 	public static void onRemapBlock(final RegistryEvent.MissingMappings<Block> event) {
 		for (final RegistryEvent.MissingMappings.Mapping<Block> mapping : event.getAllMappings()) {
-			if (mapping.key.getResourceDomain().equals(ModernMetals.MODID)) {
+			if (mapping.key.getNamespace().equals(ModernMetals.MODID)) {
 				// dummy
 			}
 		}
@@ -64,7 +64,7 @@ public class EventHandler {
 	@SubscribeEvent
 	public static void onRemapItem(final RegistryEvent.MissingMappings<Item> event) {
 		for (final RegistryEvent.MissingMappings.Mapping<Item> mapping : event.getAllMappings()) {
-			if (mapping.key.getResourceDomain().equals(ModernMetals.MODID)) {
+			if (mapping.key.getNamespace().equals(ModernMetals.MODID)) {
 				// dummy
 			}
 		}
