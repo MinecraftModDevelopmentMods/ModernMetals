@@ -95,6 +95,18 @@ javadoc {
   failOnError = false
 }
 
+test {
+//  useJUnitPlatform()
+/*
+    useJUnitPlatform {
+    includeTags 'fast', 'smoke & feature-a'
+    // excludeTags 'slow', 'ci'
+    includeEngines 'junit-jupiter'
+    // excludeEngines 'junit-vintage'
+  }
+*/
+}
+
 def mod_file = getModFile()
 def short_version = getVersion('VERSION', mod_file)
 version = mc_version + '-' + short_version
@@ -300,6 +312,11 @@ jar {
   }
 }
 
+task apiJar(type: Jar) {
+  classifier = 'apiClasses'
+  from apiClasses
+}
+
 task deobfJar(type: Jar) {
   classifier = 'deobf'
   from sourceSets.main.output
@@ -330,9 +347,18 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
 }
 
 artifacts {
-  archives deobfJar
-  archives sourceJar
-  archives javadocJar
+  if (project.hasProperty('doAPIJar')) {
+    archives apiJar
+  }
+  if (project.hasProperty('doDeobfJar')) {
+    archives deobfJar
+  }
+  if (project.hasProperty('doSourceJar')) {
+    archives sourceJar
+  }
+  if (project.hasProperty('doJavadocJar')) {
+    archives javadocJar
+  }
 }
 
 publishing {
@@ -342,14 +368,25 @@ publishing {
       artifactId project.archivesBaseName
       version project.version
       from components.java
-      artifact sourceJar {
-        classifier 'sources'
+      if (project.hasProperty('doSourceJar')) {
+        artifact sourceJar {
+          classifier 'sources'
+        }
       }
-      artifact deobfJar {
-        classifier 'deobf'
+      if (project.hasProperty('doAPIJar')) {
+        artifact apiJar {
+          classifier 'api'
+        }
       }
-      artifact javadocJar {
-        classifier 'javadoc'
+      if (project.hasProperty('doDeobfJar')) {
+        artifact deobfJar {
+          classifier 'deobf'
+        }
+      }
+      if (project.hasProperty('doJavadocJar')) {
+        artifact javadocJar {
+          classifier 'javadoc'
+        }
       }
     }
   }
@@ -365,12 +402,12 @@ publishing {
 }
 
 curseforge {
-  if (project.hasProperty('cf_project_id') && project.hasProperty('cf_release_type') &&
+  if (project.hasProperty('cf_project_id') && project.hasProperty('cf_release_type') && project.hasProperty('cf_changelog_filename') &&
       ((project.cf_release_type == 'alpha') || (project.cf_release_type == 'beta') || (project.cf_release_type == 'release'))) {
     apiKey = secret.curseforgeAPIKey
     project {
       id = project.cf_project_id
-      changelog = file('CHANGELOG.txt')
+      changelog = file(project.cf_changelog_filename)
       releaseType = project.cf_release_type
       addGameVersion(project.mc_version)
       mainArtifact(jar) {
@@ -381,14 +418,25 @@ curseforge {
           optionalLibrary 'additional-loot-tables'
         }
       }
-      addArtifact(sourceJar) {
-        displayName = "$project.description $display_version Sources"
+      if (project.hasProperty('doAPIJar')) {
+        addArtifact(apiJar) {
+          displayName = "$project.description $display_version API"
+        }
       }
-      addArtifact(deobfJar) {
-        displayName = "$project.description $display_version Development"
+      if (project.hasProperty('doSourceJar')) {
+        addArtifact(sourceJar) {
+          displayName = "$project.description $display_version Sources"
+        }
       }
-      addArtifact(javadocJar) {
-        displayName = "$project.description $display_version Javadoc"
+      if (project.hasProperty('doDeobfJar')) {
+        addArtifact(deobfJar) {
+          displayName = "$project.description $display_version Development"
+        }
+      }
+      if (project.hasProperty('doJavadocJar')) {
+        addArtifact(javadocJar) {
+          displayName = "$project.description $display_version Javadoc"
+        }
       }
     }
   }
@@ -399,8 +447,8 @@ sonarqube {
     property 'sonar.host.url', secret.sonarHost
     property 'sonar.organization', secret.sonarOrganization
     property 'sonar.login', secret.sonarToken
-    property 'sonar.projectName', project.archivesBaseName
-    property 'sonar.projectKey', "$project.group:$project.archivesBaseName"
+    // property 'sonar.projectName', project.archivesBaseName
+    // property 'sonar.projectKey', "$project.group:$project.archivesBaseName"
     // property 'sonar.branch.name', 'master-1.12'
     // property 'sonar.branch.target', ''
     property 'sonar.junit.reportPaths', "${project.buildDir}/test-results/junit-platform/*.xml"
