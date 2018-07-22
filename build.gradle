@@ -268,20 +268,21 @@ repositories {
 }
 
 dependencies {
-  deobfCompile "com.mcmoddev:AdditionalLootTables:${mc_version}-${alt_version}"
-  deobfCompile "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}"
-  deobfCompile "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}"
+  deobfProvided "com.mcmoddev:AdditionalLootTables:${mc_version}-${alt_version}"
+  deobfProvided "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}"
+  deobfProvided "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}"
+  runtime "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}"
 
-  deobfCompile ("slimeknights.mantle:Mantle:${mc_version}-${mantle_version}") {
+  deobfProvided ("slimeknights.mantle:Mantle:${mc_version}-${mantle_version}") {
     exclude group: 'mezz.jei'
   }
 
-  deobfCompile ("slimeknights:TConstruct:${mc_version}-${tconstruct_version}") {
+  deobfProvided ("slimeknights:TConstruct:${mc_version}-${tconstruct_version}") {
     exclude group: 'mezz.jei'
   }
 
   // CoFHCore for TE integration
-  deobfCompile ("cofh:CoFHCore:${mc_version}-${cofhcore_version}:universal") {
+  deobfProvided ("cofh:CoFHCore:${mc_version}-${cofhcore_version}:universal") {
     exclude group: 'mezz.jei'
   }
 }
