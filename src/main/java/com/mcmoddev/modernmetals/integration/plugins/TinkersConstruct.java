@@ -41,7 +41,6 @@ public class TinkersConstruct implements IIntegration {
 	
 	@Override
 	public void init() {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("ModernMetals - TiCon Interface init");
 		TinkersConstructBase.INSTANCE.init();
 		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
@@ -52,7 +51,6 @@ public class TinkersConstruct implements IIntegration {
 	
 	@SubscribeEvent
 	public void materialRegistration(MaterialRegistrationEvent ev) {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("ModernMetals - TiCon Material Registration Start");
 		ModContainer oldActive = Loader.instance().activeModContainer();
 		ModContainer newActive = Loader.instance().getIndexedModList().get(ModernMetals.MODID);
 		Loader.instance().setActiveModContainer(newActive);
@@ -115,7 +113,6 @@ public class TinkersConstruct implements IIntegration {
 
 		registerMaterial(Materials.hasMaterial(MaterialNames.ZIRCONIUM), MaterialNames.ZIRCONIUM, true, false, ev);
 		Loader.instance().setActiveModContainer(oldActive);
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("ModernMetals - TiCon Material Registration End");
 	}
 
 	private void registerMaterial(final boolean active, final String name, final boolean castable, final boolean craftable,
@@ -133,18 +130,15 @@ public class TinkersConstruct implements IIntegration {
 					loc = (TinkerTraitLocation)item;
 					trait = ((String)traits[++i]).toLowerCase(Locale.US);
 					
-					BaseMetals.logger.fatal("adding trait %s to location %s", trait, loc);
 					mat.addTrait(trait, loc);
 				} else {
 					trait = ((String)item).toLowerCase(Locale.US);
-					BaseMetals.logger.fatal("adding trait %s", trait);
 					mat.addTrait(trait);
 				}
 				i++;
 				tc++;
 			}
 			
-			BaseMetals.logger.fatal("(A) Registering material %s (%s) with %d traits", name, mat, tc);
 			ev.getRegistry().register(mat.create());
 		}
 	}
@@ -155,7 +149,6 @@ public class TinkersConstruct implements IIntegration {
 			TinkersMaterial mat = new TinkersMaterial(Materials.getMaterialByName(name))
 					.setCastable(castable).setCraftable(craftable).setToolForge(true).create();
 
-			BaseMetals.logger.fatal("(B) Registering material %s (%s)", name, mat);
 			ev.getRegistry().register(mat);
 		}
 	}
@@ -188,7 +181,6 @@ public class TinkersConstruct implements IIntegration {
 
 	@SubscribeEvent
 	public void registerMyAlloys(TinkersAlloyRecipeEvent ev) {
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("ModernMetals - TiCon Alloy Registration Start");
 		ModContainer oldActive = Loader.instance().activeModContainer();
 		ModContainer newActive = Loader.instance().getIndexedModList().get(ModernMetals.MODID);
 		Loader.instance().setActiveModContainer(newActive);
@@ -197,6 +189,5 @@ public class TinkersConstruct implements IIntegration {
 		registerAlloy(ev, MaterialNames.STAINLESS_STEEL, 2, new Object[] { com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1, MaterialNames.CHROMIUM, 1 });
 		registerAlloy(ev, MaterialNames.TITANIUM, 2, new Object[] { MaterialNames.RUTILE, 1, MaterialNames.MAGNESIUM, 1 });
 		Loader.instance().setActiveModContainer(oldActive);
-		com.mcmoddev.modernmetals.ModernMetals.logger.fatal("ModernMetals - TiCon Alloy Registration End");
 	}
 }
