@@ -5,17 +5,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-import com.mcmoddev.basemetals.BaseMetals;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
-import com.mcmoddev.lib.integration.plugins.TinkersConstructBase;
+import com.mcmoddev.lib.integration.plugins.TinkersConstruct;
 import com.mcmoddev.lib.integration.plugins.tinkers.TinkerTraitLocation;
 import com.mcmoddev.lib.integration.plugins.tinkers.TinkersMaterial;
 import com.mcmoddev.lib.integration.plugins.tinkers.events.MaterialRegistrationEvent;
 import com.mcmoddev.lib.integration.plugins.tinkers.events.TinkersAlloyRecipeEvent;
 
-import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.util.Config.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.data.TraitNames;
@@ -32,16 +31,16 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author Jasmine Iwanek
  *
  */
-@MMDPlugin(addonId = ModernMetals.MODID, pluginId = TinkersConstruct.PLUGIN_MODID,
-           versions = TinkersConstruct.PLUGIN_MODID + "@[1.12.2-2.7.4.0,)")
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = MMeTinkersConstruct.PLUGIN_MODID,
+           versions = MMeTinkersConstruct.PLUGIN_MODID + "@[1.12.2-2.7.4.0,)")
 
-public class TinkersConstruct implements IIntegration {
+public class MMeTinkersConstruct implements IIntegration {
 
-	public static final String PLUGIN_MODID = TinkersConstructBase.PLUGIN_MODID;
+	public static final String PLUGIN_MODID = TinkersConstruct.PLUGIN_MODID;
 	
 	@Override
 	public void init() {
-		TinkersConstructBase.INSTANCE.init();
+		TinkersConstruct.INSTANCE.init();
 		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
@@ -121,7 +120,6 @@ public class TinkersConstruct implements IIntegration {
 			TinkersMaterial mat = new TinkersMaterial(Materials.getMaterialByName(name))
 					.setCastable(castable).setCraftable(craftable).setToolForge(true);
 			int i = 0;
-			int tc = 0;
 			while(i < traits.length) {
 				TinkerTraitLocation loc;
 				String trait;
@@ -136,7 +134,6 @@ public class TinkersConstruct implements IIntegration {
 					mat.addTrait(trait);
 				}
 				i++;
-				tc++;
 			}
 			
 			ev.getRegistry().register(mat.create());

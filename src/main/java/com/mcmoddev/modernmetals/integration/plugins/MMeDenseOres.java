@@ -7,13 +7,13 @@ import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.material.MMDMaterial;
-import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.util.Config.Options;
 import com.mcmoddev.lib.util.Oredicts;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
-@MMDPlugin(addonId = ModernMetals.MODID, pluginId = DenseOres.PLUGIN_MODID)
-public class DenseOres extends com.mcmoddev.lib.integration.plugins.DenseOresBase implements IIntegration {
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = MMeDenseOres.PLUGIN_MODID)
+public class MMeDenseOres extends com.mcmoddev.lib.integration.plugins.DenseOres implements IIntegration {
 
 	@Override
 	public void init() {

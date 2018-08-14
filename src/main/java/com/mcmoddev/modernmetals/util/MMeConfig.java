@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author Jasmine Iwanek
  *
  */
-public class Config extends com.mcmoddev.lib.util.ConfigBase {
+public class MMeConfig extends com.mcmoddev.lib.util.Config {
 
 	private static Configuration configuration;
 	private static final String CONFIG_FILE = "config/ModernMetals.cfg";
@@ -39,7 +39,7 @@ public class Config extends com.mcmoddev.lib.util.ConfigBase {
 	public static void init() {
 		if (configuration == null) {
 			configuration = new Configuration(new File(CONFIG_FILE));
-			MinecraftForge.EVENT_BUS.register(new Config());
+			MinecraftForge.EVENT_BUS.register(new MMeConfig());
 		}
 
 		// METALS

@@ -4,12 +4,12 @@ import java.util.HashSet;
 
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.oregen.FallbackGenerator;
-import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.util.Config.Options;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 import com.mcmoddev.modernmetals.init.ItemGroups;
 import com.mcmoddev.modernmetals.init.Recipes;
 import com.mcmoddev.modernmetals.init.VillagerTrades;
-import com.mcmoddev.modernmetals.util.Config;
+import com.mcmoddev.modernmetals.util.MMeConfig;
 
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.MissingModsException;
@@ -64,6 +64,6 @@ public class CommonProxy {
 	 * @param event The Event.
 	 */
 	public void postInit(FMLPostInitializationEvent event) {
-		Config.postInit();
+		MMeConfig.postInit();
 	}
 }

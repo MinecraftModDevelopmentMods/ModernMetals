@@ -7,7 +7,7 @@ import com.mcmoddev.lib.integration.IIntegration;
 import com.mcmoddev.lib.integration.IntegrationInitEvent;
 import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.material.MMDMaterial;
-import com.mcmoddev.lib.util.ConfigBase.Options;
+import com.mcmoddev.lib.util.Config.Options;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
@@ -17,8 +17,8 @@ import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.item.crafting.IRecipe;
 
-@MMDPlugin(addonId = ModernMetals.MODID, pluginId = IC2.PLUGIN_MODID)
-public final class IC2 extends com.mcmoddev.lib.integration.plugins.IC2Base implements IIntegration {
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = MMeIC2.PLUGIN_MODID)
+public final class MMeIC2 extends com.mcmoddev.lib.integration.plugins.IC2 implements IIntegration {
 
 	@Override
 	public void init() {

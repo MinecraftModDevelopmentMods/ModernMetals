@@ -4,7 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.mcmoddev.modernmetals.proxy.CommonProxy;
-import com.mcmoddev.modernmetals.util.Config;
+import com.mcmoddev.modernmetals.util.MMeConfig;
 import com.mcmoddev.lib.data.SharedStrings;
 
 import net.minecraft.launchwrapper.Launch;
@@ -75,7 +75,7 @@ public class ModernMetals {
 
 	@EventHandler
 	public static void constructing(final FMLConstructionEvent event) {
-		Config.init();
+		MMeConfig.init();
 	}
 
 	/**
