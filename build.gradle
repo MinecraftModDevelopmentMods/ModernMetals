@@ -16,9 +16,9 @@ buildscript {
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
-        classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.10'
-        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.1'
-        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.3'
+        classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.11'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2'
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.2.0'
     }
 }
 
@@ -35,9 +35,9 @@ repositories {
 }
 
 dependencies {
-    testCompile('org.junit.jupiter:junit-jupiter-api:5.0.+')
-    testCompile('org.junit.platform:junit-platform-launcher:1.0.+')
-    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.0.+')
+    testCompile('org.junit.jupiter:junit-jupiter-api:5.2.+')
+    testCompile('org.junit.platform:junit-platform-launcher:1.2.+')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.2.+')
     testCompile('org.mockito:mockito-core:2.+')
 }
 
@@ -47,7 +47,7 @@ project.afterEvaluate {
     // configure jacoco to analyze the junitPlatformTest task
     jacoco {
         // this tool version is compatible with
-        toolVersion = "0.7.9"
+        toolVersion = "0.8.1"
         applyTo junitPlatformTestTask
     }
 
