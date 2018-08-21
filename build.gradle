@@ -10,26 +10,22 @@ buildscript {
 	}
     repositories {
 		jcenter()
-		maven {
+        maven {
+            name = 'gradle'
+            url 'https://plugins.gradle.org/m2/'
+        }
+ 		maven {
 			name = "sonatype"
 			url = 'https://oss.sonatype.org/content/groups/public'
 		}
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
-		classpath 'com.matthewprenger:CurseGradle:1.0-SNAPSHOT'
+		classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.0.11'
 	}
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.matthewprenger.cursegradle'
-
-/*
-// for people who want stable - not yet functional for MC 1.8.8 - we require the forgegradle 2.1 snapshot
-plugins {
-    id "net.minecraftforge.gradle.forge" version "2.0.2"
-    id 'com.matthewprenger.cursegradle' version '1.0.7'
-}
-*/
 
 allprojects {
     apply plugin: 'java'
@@ -48,13 +44,21 @@ minecraft {
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
+repositories {
+	jcenter()
+    maven { // Mantle, TCon, JEI
+        name 'DVS1 Maven FS'
+        url 'http://dvs1.progwml6.com/files/maven/'
+    }
+}
+
 dependencies {
     compile files(
         'libs/BaseMetals/BaseMetals_1.8.9-API-1.8.0.jar',
         'libs/PowerAdvantage/PowerAdvantage-API-1.5.5.jar',
-        'libs/Tinkers/Mantle-1.8.9-0.9.2.jar',
-        'libs/Tinkers/TConstruct-1.8.9-2.2.1.jar'
-   )
+    )
+    deobfCompile "slimeknights.mantle:Mantle:1.8.9-0.9.2.+"
+    deobfCompile "slimeknights:TConstruct:1.8.9-2.2.1.+"
 }
 
 processResources
