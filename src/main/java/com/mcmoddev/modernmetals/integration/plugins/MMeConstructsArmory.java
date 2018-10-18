@@ -6,10 +6,10 @@ import com.mcmoddev.lib.integration.plugins.ConstructsArmory;
 import com.mcmoddev.lib.integration.plugins.tinkers.events.MaterialRegistrationEvent;
 import com.mcmoddev.lib.util.Config;
 import com.mcmoddev.modernmetals.ModernMetals;
+import com.mcmoddev.modernmetals.data.MaterialNames;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import slimeknights.tconstruct.library.TinkerRegistry;
 
 @MMDPlugin(addonId = ModernMetals.MODID, pluginId = MMeConstructsArmory.PLUGIN_MODID, versions = MMeConstructsArmory.PLUGIN_MODID
         + "@[1.12.2-2.10.1.87,)")
@@ -33,34 +33,69 @@ public final class MMeConstructsArmory implements IIntegration {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void materialRegistration(MaterialRegistrationEvent ev) {
         if(Config.Options.isModEnabled(PLUGIN_MODID)){
-//            ev.getRegistry().getEntries().stream()
-//                    .map(ent -> ent.getValue())
-//                    .forEach(mat -> {
-//                        TinkerRegistry.addMaterialStats(mat.getTinkerMaterial(), mat.getCoreStats(), mat.getPlatesStats(), mat.getTrimStats());
-////                        switch (mat.getName()){
-////                            case MaterialNames.ADAMANTINE:
-////                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
-////                                break;
-////                            case MaterialNames.AQUARIUM:
-////                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.rough, ArmorTraits.aquaspeed);
-////                                break;
-////                            case MaterialNames.BRASS:
-////                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.dense);
-////                                break;
-////                            case MaterialNames.COLDIRON:
-////                                addArmorTrait(mat.getTinkerMaterial(), MMDTraitsCA.icy);
-////                                break;
-////                            case MaterialNames.MITHRIL:
-////                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.blessed);
-////                                break;
-////                            case MaterialNames.PEWTER:
-////                                addArmorTrait(mat.getTinkerMaterial(), MMDTraitsCA.malleable);
-////                                break;
-////                            case MaterialNames.STARSTEEL:
-////                                addArmorTrait(mat.getTinkerMaterial(), MMDTraits.sparkly, ArmorTraits.enderport);
-////                                break;
-////                        }
-//                    });
+            ev.getRegistry().getEntries().stream()
+                    .map(ent -> ent.getValue())
+                    .forEach(mat -> {
+                        switch (mat.getName()){
+                            case MaterialNames.BERYLLIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.BORON:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.CADMIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.CHROMIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.GALVANIZED_STEEL:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.IRIDIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.MAGNESIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.MANGANESE:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.NICHROME:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.OSMIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.PLUTONIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.RUTILE:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.STAINLESS_STEEL:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.TANTALUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.THORIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.TITANIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.TUNGSTEN:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.URANIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                            case MaterialNames.ZIRCONIUM:
+//                                addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.vengeful, ArmorTraits.prideful);
+                                break;
+                        }
+                    });
         }
     }
 }
