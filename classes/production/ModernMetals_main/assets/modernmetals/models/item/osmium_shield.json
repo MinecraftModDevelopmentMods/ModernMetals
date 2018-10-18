@@ -1,0 +1,14 @@
+{
+  "parent": "modernmetals:item/shield",
+  "textures": {
+    "shield": "modernmetals:blocks/osmium_block"
+  },
+    "overrides": [
+        {
+            "predicate": {
+                "blocking": 1
+            },
+            "model": "modernmetals:item/osmium_shield_blocking"
+        }
+    ]
+}

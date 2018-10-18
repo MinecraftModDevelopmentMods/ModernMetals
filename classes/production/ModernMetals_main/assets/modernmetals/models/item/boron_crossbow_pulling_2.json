@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/boron_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/boron_crossbow_pulling_2"
+    }
+}

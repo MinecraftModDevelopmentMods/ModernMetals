@@ -1,0 +1,48 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "weapon",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:nichrome_bolt",
+		"data": 0,
+		"count": 4
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Nichrome"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "CrossbowAndBolt"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Rod"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "rodNichrome"
+		},
+		"y": {
+			"type": "minecraft:item",
+			"item": "minecraft:feather",
+			"data": 0
+		}
+	},
+	"pattern": [
+		"x",
+		"x",
+		"y"
+	]
+}

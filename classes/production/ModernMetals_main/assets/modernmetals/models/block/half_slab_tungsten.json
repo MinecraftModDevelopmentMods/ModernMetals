@@ -1,0 +1,8 @@
+{
+    "parent": "block/half_slab",
+    "textures": {
+        "bottom": "modernmetals:blocks/tungsten_block",
+        "top": "modernmetals:blocks/tungsten_block",
+        "side": "modernmetals:blocks/tungsten_block"
+    }
+}

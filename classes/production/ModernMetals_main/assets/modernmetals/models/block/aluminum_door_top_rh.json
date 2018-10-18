@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_top_rh",
+    "textures": {
+        "bottom": "modernmetals:blocks/aluminum_door_lower",
+        "top": "modernmetals:blocks/aluminum_door_upper"
+    }
+}

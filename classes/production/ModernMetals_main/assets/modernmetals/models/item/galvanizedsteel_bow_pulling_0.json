@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/galvanizedsteel_bow",
+    "textures": {
+        "layer0": "modernmetals:items/galvanizedsteel_bow_pulling_0"
+    }
+}

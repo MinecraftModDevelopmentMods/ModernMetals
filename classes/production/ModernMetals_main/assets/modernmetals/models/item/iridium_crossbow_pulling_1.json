@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/iridium_crossbow",
+    "textures": {
+        "layer0": "modernmetals:items/iridium_crossbow_pulling_1"
+    }
+}

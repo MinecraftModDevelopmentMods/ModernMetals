@@ -1,0 +1,42 @@
+{
+   "config_key": "rod",
+   "pattern": [
+      " x ",
+      " x "
+   ],
+   "result": {
+      "type": "minecraft:item",
+      "item": "modernmetals:nichrome_rod"
+   },
+   "key": {
+      "x": {
+         "ore": "ingotNichrome",
+         "type": "forge:ore_dict"
+      }
+   },
+   "type": "basemetals:variableOutputOre",
+   "conditions": [
+      {
+         "values": [
+            {
+               "optionValue": "Nichrome",
+               "optionName": "material",
+               "type": "basemetals:enabled"
+            },
+            {
+               "type": "basemetals:enabled",
+               "optionName": "thing",
+               "optionValue": "Gear"
+            },
+            {
+               "optionName": "thing",
+               "optionValue": "Basics",
+               "type": "basemetals:enabled"
+            }
+         ],
+         "type": "forge:and"
+      }
+   ],
+   "group": "misc"
+}
+

@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "modernmetals:blocks/titanium_block",
+        "top": "modernmetals:blocks/titanium_block",
+        "side": "modernmetals:blocks/titanium_block"
+    }
+}

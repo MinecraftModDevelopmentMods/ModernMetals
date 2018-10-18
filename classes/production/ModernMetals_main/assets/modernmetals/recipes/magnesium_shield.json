@@ -1,0 +1,46 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "armor",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:magnesium_shield",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Magnesium"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Shield"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "ingotMagnesium"
+		},
+		"y": {
+			"type": "forge:ore_dict",
+			"ore": "plankWood"
+		}
+	},
+	"pattern": [
+		"xyx",
+		"xxx",
+		" x "
+	]
+}

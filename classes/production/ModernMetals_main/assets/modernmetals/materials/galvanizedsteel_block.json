@@ -1,0 +1,14 @@
+{
+	"name": "Galvanized Steel",
+	"id": "modernmetals:galvanizedsteel_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/galvanizedsteel_block",
+	"blocks": {
+		"full": "modernmetals:galvanizedsteel_block",
+		"stairs": "modernmetals:galvanizedsteel_stairs",
+		"slab": { "id": "modernmetals:galvanizedsteel_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:galvanizedsteel_wall", "meta": 0 }
+	}
+}

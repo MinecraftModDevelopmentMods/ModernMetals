@@ -1,0 +1,14 @@
+{
+	"name": "Magnesium",
+	"id": "modernmetals:magnesium_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/magnesium_block",
+	"blocks": {
+		"full": "modernmetals:magnesium_block",
+		"stairs": "modernmetals:magnesium_stairs",
+		"slab": { "id": "modernmetals:magnesium_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:magnesium_wall", "meta": 0 }
+	}
+}

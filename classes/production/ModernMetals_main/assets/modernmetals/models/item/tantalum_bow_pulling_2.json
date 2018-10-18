@@ -1,0 +1,6 @@
+{
+    "parent": "modernmetals:item/tantalum_bow",
+    "textures": {
+        "layer0": "modernmetals:items/tantalum_bow_pulling_2"
+    }
+}

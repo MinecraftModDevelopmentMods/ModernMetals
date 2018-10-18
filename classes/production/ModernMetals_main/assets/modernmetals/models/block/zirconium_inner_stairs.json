@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "modernmetals:blocks/zirconium_block",
+        "top": "modernmetals:blocks/zirconium_block",
+        "side": "modernmetals:blocks/zirconium_block"
+    }
+}

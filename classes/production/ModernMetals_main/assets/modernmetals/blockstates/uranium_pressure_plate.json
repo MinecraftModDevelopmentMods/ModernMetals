@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "powered=false": { "model": "modernmetals:uranium_pressure_plate_up" },
+        "powered=true": { "model": "modernmetals:uranium_pressure_plate_down" }
+    }
+}

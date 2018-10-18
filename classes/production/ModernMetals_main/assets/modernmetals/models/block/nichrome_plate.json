@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "modernmetals:blocks/nichrome_plate",
+        "side": "modernmetals:blocks/nichrome_plate",
+        "bottom": "modernmetals:blocks/nichrome_plate"
+    }
+}

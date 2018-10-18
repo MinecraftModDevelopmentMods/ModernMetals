@@ -1,0 +1,14 @@
+{
+  "parent": "modernmetals:item/shield",
+  "textures": {
+    "shield": "modernmetals:blocks/cadmium_block"
+  },
+    "overrides": [
+        {
+            "predicate": {
+                "blocking": 1
+            },
+            "model": "modernmetals:item/cadmium_shield_blocking"
+        }
+    ]
+}

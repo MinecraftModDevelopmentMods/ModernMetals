@@ -1,0 +1,28 @@
+{
+    "parent": "item/bow",
+    "textures": {
+        "layer0": "modernmetals:items/thorium_bow_standby"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "pulling": 1
+            },
+            "model": "modernmetals:item/thorium_bow_pulling_0"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.65
+            },
+            "model": "modernmetals:item/thorium_bow_pulling_1"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.9
+            },
+            "model": "modernmetals:item/thorium_bow_pulling_2"
+        }
+    ]
+}

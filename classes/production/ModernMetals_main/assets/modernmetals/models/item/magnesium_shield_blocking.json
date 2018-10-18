@@ -1,0 +1,6 @@
+{
+  "parent": "modernmetals:item/shield_blocking",
+  "textures": {
+    "shield": "modernmetals:blocks/magnesium_block"
+    }
+}

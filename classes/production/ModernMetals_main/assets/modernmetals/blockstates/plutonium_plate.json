@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=down":  { "model": "modernmetals:plutonium_plate", "x": 90  },
+        "facing=up":    { "model": "modernmetals:plutonium_plate", "x": 270 },
+        "facing=north": { "model": "modernmetals:plutonium_plate"           },
+        "facing=south": { "model": "modernmetals:plutonium_plate", "y": 180 },
+        "facing=west":  { "model": "modernmetals:plutonium_plate", "y": 270 },
+        "facing=east":  { "model": "modernmetals:plutonium_plate", "y": 90  }
+    }
+}

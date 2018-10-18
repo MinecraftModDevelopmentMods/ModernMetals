@@ -1,0 +1,14 @@
+{
+	"name": "Aluminum",
+	"id": "modernmetals:aluminum_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/aluminum_block",
+	"blocks": {
+		"full": "modernmetals:aluminum_block",
+		"stairs": "modernmetals:aluminum_stairs",
+		"slab": { "id": "modernmetals:aluminum_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:aluminum_wall", "meta": 0 }
+	}
+}

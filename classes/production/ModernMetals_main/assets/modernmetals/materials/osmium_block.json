@@ -1,0 +1,14 @@
+{
+	"name": "Osmium",
+	"id": "modernmetals:osmium_block",
+	"type": "metal",
+	"hardness": 0.5,
+	"resistance": 0.8333333,
+	"textures": "modernmetals:blocks/osmium_block",
+	"blocks": {
+		"full": "modernmetals:osmium_block",
+		"stairs": "modernmetals:osmium_stairs",
+		"slab": { "id": "modernmetals:osmium_slab", "meta": 0 },
+		"wall": { "id": "modernmetals:osmium_wall", "meta": 0 }
+	}
+}

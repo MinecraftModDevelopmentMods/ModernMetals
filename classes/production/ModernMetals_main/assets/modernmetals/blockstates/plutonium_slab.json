@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "half=bottom,variant=default": { "model": "modernmetals:half_slab_plutonium" },
+        "half=top,variant=default": { "model": "modernmetals:upper_slab_plutonium" }
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "pools": [
+        {
+            "__comment":"25% chance of an uncommon metal tool",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 900
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_axe",
+                    "weight": 3,
+                    "functions": [
+                        {
+                            "function": "minecraft:enchant_with_levels",
+                            "levels": 10,
+                            "treasure": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "__comment":"25% chance of rare metal ingots",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 300
+                },
+                {
+                    "type": "item",
+                    "name": "basemetals:coldiron_ingot",
+                    "weight": 40,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

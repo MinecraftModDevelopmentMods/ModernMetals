@@ -1,0 +1,42 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "armor",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:rutile_leggings",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "Rutile"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Basics"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "Armor"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "ingotRutile"
+		}
+	},
+	"pattern": [
+		"xxx",
+		"x x",
+		"x x"
+	]
+}

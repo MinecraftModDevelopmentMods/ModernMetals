@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom_rh",
+    "textures": {
+        "bottom": "modernmetals:blocks/plutonium_door_lower",
+        "top": "modernmetals:blocks/plutonium_door_upper"
+    }
+}

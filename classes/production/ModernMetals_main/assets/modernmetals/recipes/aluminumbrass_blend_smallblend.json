@@ -1,0 +1,37 @@
+{
+	"type": "forge:ore_shaped",
+	"group": "basics",
+	"result": {
+		"type": "minecraft:item",
+		"item": "modernmetals:aluminumbrass_blend",
+		"data": 0
+	},
+	"conditions": [
+		{
+			"type": "forge:and",
+			"values": [
+				{
+					"type": "basemetals:enabled",
+					"optionName": "material",
+					"optionValue": "AluminumBrass"
+				},
+				{
+					"type": "basemetals:enabled",
+					"optionName": "thing",
+					"optionValue": "SmallDust"
+				}
+			]
+		}
+	],
+	"key": {
+		"x": {
+			"type": "forge:ore_dict",
+			"ore": "smallblendAluminumbrass"
+		}
+	},
+	"pattern": [
+		"xxx",
+		"xxx",
+		"xxx"
+	]
+}
