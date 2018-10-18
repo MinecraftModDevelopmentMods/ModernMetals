@@ -2,6 +2,7 @@
 bin
 *.launch
 .settings
+.settings/*
 .metadata
 .classpath
 .project
@@ -20,8 +21,14 @@ build
 # other
 eclipse
 run
+classes
 
 /README.txt
 /forge-*-changelog.txt
 
 secret.json
+libs/*
+!/libs/README.txt
+
+.DS_Store
+bugreport.md
