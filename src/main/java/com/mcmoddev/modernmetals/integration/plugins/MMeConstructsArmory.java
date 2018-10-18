@@ -6,6 +6,7 @@ import com.mcmoddev.lib.integration.MMDPlugin;
 import com.mcmoddev.lib.integration.plugins.ConstructsArmory;
 import com.mcmoddev.lib.integration.plugins.armory.traits.MMDTraitsCA;
 import com.mcmoddev.lib.integration.plugins.tinkers.events.MaterialRegistrationEvent;
+import com.mcmoddev.lib.integration.plugins.tinkers.traits.MMDTraits;
 import com.mcmoddev.lib.util.Config;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -61,13 +62,13 @@ public final class MMeConstructsArmory implements IIntegration {
                                 addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.heavy);
                                 break;
                             case MaterialNames.PLUTONIUM:
-                                addArmorTrait(mat.getTinkerMaterial(), MMDTraitsCA.toxic, MMDTraitsCA.radioactive);
+                                addArmorTrait(mat.getTinkerMaterial(), MMDTraitsCA.toxic, MMDTraits.radioactive);
                                 break;
                             case MaterialNames.STAINLESS_STEEL:
                                 addArmorTrait(mat.getTinkerMaterial(), ArmorTraits.steady, ArmorTraits.indomitable);
                                 break;
                             case MaterialNames.URANIUM:
-                                addArmorTrait(mat.getTinkerMaterial(), MMDTraitsCA.poisonous, MMDTraitsCA.radioactive);
+                                addArmorTrait(mat.getTinkerMaterial(), MMDTraitsCA.poisonous, MMDTraits.radioactive);
                                 break;
                         }
                     });
