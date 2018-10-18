@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/iridium_bow",
-    "textures": {
-        "layer0": "modernmetals:items/iridium_bow_pulling_1"
-    }
-}

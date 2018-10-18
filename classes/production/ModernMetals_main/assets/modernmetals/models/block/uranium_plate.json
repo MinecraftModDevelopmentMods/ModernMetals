@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/uranium_plate",
-        "side": "modernmetals:blocks/uranium_plate",
-        "bottom": "modernmetals:blocks/uranium_plate"
-    }
-}

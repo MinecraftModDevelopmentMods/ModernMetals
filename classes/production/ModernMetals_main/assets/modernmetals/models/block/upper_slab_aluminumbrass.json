@@ -1,8 +1,0 @@
-{
-    "parent": "block/upper_slab",
-    "textures": {
-        "bottom": "modernmetals:blocks/aluminumbrass_block",
-        "top": "modernmetals:blocks/aluminumbrass_block",
-        "side": "modernmetals:blocks/aluminumbrass_block"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/chromium_plate",
-        "side": "modernmetals:blocks/chromium_plate",
-        "bottom": "modernmetals:blocks/chromium_plate"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/tantalum_block",
-        "top": "modernmetals:blocks/tantalum_block",
-        "side": "modernmetals:blocks/tantalum_block"
-    }
-}

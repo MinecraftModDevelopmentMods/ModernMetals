@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_bottom_rh",
-    "textures": {
-        "bottom": "modernmetals:blocks/rutile_door_lower",
-        "top": "modernmetals:blocks/rutile_door_upper"
-    }
-}

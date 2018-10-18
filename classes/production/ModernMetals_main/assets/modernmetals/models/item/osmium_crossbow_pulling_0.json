@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/osmium_crossbow",
-    "textures": {
-        "layer0": "modernmetals:items/osmium_crossbow_pulling_0"
-    }
-}

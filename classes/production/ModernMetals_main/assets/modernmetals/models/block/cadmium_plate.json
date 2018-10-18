@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/cadmium_plate",
-        "side": "modernmetals:blocks/cadmium_plate",
-        "bottom": "modernmetals:blocks/cadmium_plate"
-    }
-}

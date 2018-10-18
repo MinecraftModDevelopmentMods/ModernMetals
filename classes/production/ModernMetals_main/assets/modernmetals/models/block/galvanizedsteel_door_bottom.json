@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_bottom",
-    "textures": {
-        "bottom": "modernmetals:blocks/galvanizedsteel_door_lower",
-        "top": "modernmetals:blocks/galvanizedsteel_door_upper"
-    }
-}

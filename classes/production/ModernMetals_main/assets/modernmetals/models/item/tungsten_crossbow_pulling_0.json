@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/tungsten_crossbow",
-    "textures": {
-        "layer0": "modernmetals:items/tungsten_crossbow_pulling_0"
-    }
-}

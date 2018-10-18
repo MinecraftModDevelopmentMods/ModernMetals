@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/osmium_block",
-        "top": "modernmetals:blocks/osmium_block",
-        "side": "modernmetals:blocks/osmium_block"
-    }
-}

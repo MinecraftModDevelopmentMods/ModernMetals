@@ -1,8 +1,0 @@
-{
-    "parent": "block/inner_stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/chromium_block",
-        "top": "modernmetals:blocks/chromium_block",
-        "side": "modernmetals:blocks/chromium_block"
-    }
-}

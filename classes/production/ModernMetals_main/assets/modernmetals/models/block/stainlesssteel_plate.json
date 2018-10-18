@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/stainlesssteel_plate",
-        "side": "modernmetals:blocks/stainlesssteel_plate",
-        "bottom": "modernmetals:blocks/stainlesssteel_plate"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/tantalum_plate",
-        "side": "modernmetals:blocks/tantalum_plate",
-        "bottom": "modernmetals:blocks/tantalum_plate"
-    }
-}

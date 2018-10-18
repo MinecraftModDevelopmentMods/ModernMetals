@@ -1,8 +1,0 @@
-{
-    "parent": "block/half_slab",
-    "textures": {
-        "bottom": "modernmetals:blocks/manganese_block",
-        "top": "modernmetals:blocks/manganese_block",
-        "side": "modernmetals:blocks/manganese_block"
-    }
-}

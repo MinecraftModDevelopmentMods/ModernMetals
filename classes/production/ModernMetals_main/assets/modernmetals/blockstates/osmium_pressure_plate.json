@@ -1,6 +1,0 @@
-{
-    "variants": {
-        "powered=false": { "model": "modernmetals:osmium_pressure_plate_up" },
-        "powered=true": { "model": "modernmetals:osmium_pressure_plate_down" }
-    }
-}

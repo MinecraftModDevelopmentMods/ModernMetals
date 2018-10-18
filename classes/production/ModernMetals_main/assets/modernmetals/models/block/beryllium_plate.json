@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/beryllium_plate",
-        "side": "modernmetals:blocks/beryllium_plate",
-        "bottom": "modernmetals:blocks/beryllium_plate"
-    }
-}

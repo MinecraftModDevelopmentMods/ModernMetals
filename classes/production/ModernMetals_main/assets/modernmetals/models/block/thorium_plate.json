@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/thorium_plate",
-        "side": "modernmetals:blocks/thorium_plate",
-        "bottom": "modernmetals:blocks/thorium_plate"
-    }
-}

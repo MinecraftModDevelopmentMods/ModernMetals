@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/manganese_block",
-        "top": "modernmetals:blocks/manganese_block",
-        "side": "modernmetals:blocks/manganese_block"
-    }
-}

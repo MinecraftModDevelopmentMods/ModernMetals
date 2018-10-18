@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/rutile_plate",
-        "side": "modernmetals:blocks/rutile_plate",
-        "bottom": "modernmetals:blocks/rutile_plate"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "parent": "block/upper_slab",
-    "textures": {
-        "bottom": "modernmetals:blocks/plutonium_block",
-        "top": "modernmetals:blocks/plutonium_block",
-        "side": "modernmetals:blocks/plutonium_block"
-    }
-}

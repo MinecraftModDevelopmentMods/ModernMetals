@@ -1,8 +1,0 @@
-{
-    "parent": "basemetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/titanium_plate",
-        "side": "modernmetals:blocks/titanium_plate",
-        "bottom": "modernmetals:blocks/titanium_plate"
-    }
-}

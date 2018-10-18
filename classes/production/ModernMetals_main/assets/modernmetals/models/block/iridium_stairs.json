@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/iridium_block",
-        "top": "modernmetals:blocks/iridium_block",
-        "side": "modernmetals:blocks/iridium_block"
-    }
-}

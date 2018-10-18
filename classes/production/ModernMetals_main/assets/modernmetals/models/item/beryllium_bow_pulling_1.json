@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/beryllium_bow",
-    "textures": {
-        "layer0": "modernmetals:items/beryllium_bow_pulling_1"
-    }
-}

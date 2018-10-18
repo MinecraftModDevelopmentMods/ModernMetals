@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/magnesium_block",
-        "top": "modernmetals:blocks/magnesium_block",
-        "side": "modernmetals:blocks/magnesium_block"
-    }
-}

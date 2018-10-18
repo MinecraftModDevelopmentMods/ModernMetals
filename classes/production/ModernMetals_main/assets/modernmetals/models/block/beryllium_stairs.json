@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/beryllium_block",
-        "top": "modernmetals:blocks/beryllium_block",
-        "side": "modernmetals:blocks/beryllium_block"
-    }
-}

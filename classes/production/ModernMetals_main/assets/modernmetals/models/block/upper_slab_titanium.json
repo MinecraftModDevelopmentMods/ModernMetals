@@ -1,8 +1,0 @@
-{
-    "parent": "block/upper_slab",
-    "textures": {
-        "bottom": "modernmetals:blocks/titanium_block",
-        "top": "modernmetals:blocks/titanium_block",
-        "side": "modernmetals:blocks/titanium_block"
-    }
-}
