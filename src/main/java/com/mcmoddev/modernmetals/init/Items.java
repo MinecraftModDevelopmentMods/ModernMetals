@@ -7,13 +7,14 @@ import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
-import com.mcmoddev.lib.util.Oredicts;
+//import com.mcmoddev.lib.util.Oredicts;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
@@ -22,6 +23,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author Jasmine Iwanek
  *
  */
+@EventBusSubscriber(modid=ModernMetals.MODID)
 public class Items extends com.mcmoddev.lib.init.Items {
 	protected Items() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
@@ -116,6 +118,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 	 */
 	@SubscribeEvent
 	public static void registerItems(final RegistryEvent.Register<Item> event) {
+		ModernMetals.logger.fatal("RegistryEvent.Register<Item>");
 		Materials.getMaterialsByMod(ModernMetals.MODID).stream()
 		.forEach(mat ->
 			mat.getItems().stream()
@@ -124,7 +127,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 			.forEach(event.getRegistry()::register)
 		);
 
-		Oredicts.registerItemOreDictionaryEntries();
-		Oredicts.registerBlockOreDictionaryEntries();
+/*		Oredicts.registerItemOreDictionaryEntries();
+		Oredicts.registerBlockOreDictionaryEntries();*/
 	}
 }

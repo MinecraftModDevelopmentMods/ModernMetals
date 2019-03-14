@@ -84,19 +84,22 @@ public class ModernMetals {
 	 */
 	@EventHandler
 	public static void preInit(final FMLPreInitializationEvent event) {
+		ModernMetals.logger.fatal("FMLPreInitializationEvent");
 		proxy.preInit(event);
 
-		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Items.class);
-		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Blocks.class);
+//		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Items.class);
+		//MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Blocks.class);
 	}
 
 	@EventHandler
 	public static void init(final FMLInitializationEvent event) {
+		ModernMetals.logger.fatal("FMLInitializationEvent");
 		proxy.init(event);
 	}
 
 	@EventHandler
 	public static void postInit(final FMLPostInitializationEvent event) {
+		ModernMetals.logger.fatal("FMLPostInitializationEvent");
 		proxy.postInit(event);
 	}
 }
