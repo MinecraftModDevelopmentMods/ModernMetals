@@ -55,21 +55,21 @@ public class MMeThermalExpansion extends com.mcmoddev.lib.integration.plugins.Th
 
 		maybeAddMagmaticFuels(MaterialNames.PLUTONIUM, MaterialNames.URANIUM);
 
-		if ((hasMaterials(com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM, MaterialNames.STAINLESS_STEEL))
-				&& (materialsHaveItems(Arrays.asList(com.mcmoddev.basemetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM, MaterialNames.STAINLESS_STEEL), Names.INGOT.toString()))) {
-			final MMDMaterial steel = Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.STEEL);
+		if ((hasMaterials(com.mcmoddev.modernmetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM, MaterialNames.STAINLESS_STEEL))
+				&& (materialsHaveItems(Arrays.asList(com.mcmoddev.modernmetals.data.MaterialNames.STEEL, MaterialNames.CHROMIUM, MaterialNames.STAINLESS_STEEL), Names.INGOT.toString()))) {
+			final MMDMaterial steel = Materials.getMaterialByName(com.mcmoddev.modernmetals.data.MaterialNames.STEEL);
 			final MMDMaterial chromium = Materials.getMaterialByName(MaterialNames.CHROMIUM);
 			final MMDMaterial stainlessSteel = Materials.getMaterialByName(MaterialNames.STAINLESS_STEEL);
 			ThermalExpansionHelper.addSmelterRecipe(4000, steel.getItemStack(Names.INGOT, 1),
 					chromium.getItemStack(Names.INGOT, 1), stainlessSteel.getItemStack(Names.INGOT, 2));
 		}
 
-		if ((hasMaterials(com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC, MaterialNames.GALVANIZED_STEEL))
-				&& (materialsHaveItems(Arrays.asList(com.mcmoddev.basemetals.data.MaterialNames.STEEL, com.mcmoddev.basemetals.data.MaterialNames.ZINC, MaterialNames.GALVANIZED_STEEL), Names.INGOT.toString()))) {
-			final MMDMaterial steel = Materials.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.STEEL);
+		if ((hasMaterials(com.mcmoddev.modernmetals.data.MaterialNames.STEEL, com.mcmoddev.modernmetals.data.MaterialNames.ZINC, MaterialNames.GALVANIZED_STEEL))
+				&& (materialsHaveItems(Arrays.asList(com.mcmoddev.modernmetals.data.MaterialNames.STEEL, com.mcmoddev.modernmetals.data.MaterialNames.ZINC, MaterialNames.GALVANIZED_STEEL), Names.INGOT.toString()))) {
+			final MMDMaterial steel = Materials.getMaterialByName(com.mcmoddev.modernmetals.data.MaterialNames.STEEL);
 			final MMDMaterial galvanizedSteel = Materials.getMaterialByName(MaterialNames.GALVANIZED_STEEL);
 			final MMDMaterial zinc = Materials
-					.getMaterialByName(com.mcmoddev.basemetals.data.MaterialNames.ZINC);
+					.getMaterialByName(com.mcmoddev.modernmetals.data.MaterialNames.ZINC);
 			ThermalExpansionHelper.addSmelterRecipe(4000, steel.getItemStack(Names.INGOT, 1),
 					zinc.getItemStack(Names.INGOT, 1), galvanizedSteel.getItemStack(Names.INGOT, 2));
 		}

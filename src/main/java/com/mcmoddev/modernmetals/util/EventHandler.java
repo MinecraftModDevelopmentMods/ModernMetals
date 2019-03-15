@@ -17,30 +17,30 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@EventBusSubscriber
+@EventBusSubscriber(modid=ModernMetals.MODID)
 public class EventHandler {
 
 	@SubscribeEvent
 	public static void mmdlibRegisterMaterials(final MMDLibRegisterMaterials event) {
-		event.setActive(ModernMetals.MODID);
+		ModernMetals.logger.fatal("mmdlibRegisterMaterials");
 		Materials.init();
 	}
 	
 	@SubscribeEvent
 	public static void mmdlibRegisterBlocks(final MMDLibRegisterBlocks event) {
-		event.setActive(ModernMetals.MODID);
+		ModernMetals.logger.fatal("mmdlibRegisterBlocks");
 		Blocks.init();
 	}
 
 	@SubscribeEvent
 	public static void mmdlibRegisterItems(final MMDLibRegisterItems event) {
-		event.setActive(ModernMetals.MODID);
+		ModernMetals.logger.fatal("mmdlibRegisterItems");
 		Items.init();
 	}
 	
 	@SubscribeEvent
 	public static void mmdlibRegisterFluids(final MMDLibRegisterFluids event) {
-		event.setActive(ModernMetals.MODID);
+		ModernMetals.logger.fatal("mmdlibRegisterFluids");
 		Fluids.init();
 	}
 

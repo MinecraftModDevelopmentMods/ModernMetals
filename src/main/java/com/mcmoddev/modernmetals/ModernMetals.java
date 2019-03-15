@@ -29,7 +29,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
-		dependencies = "required-after:forge@[14.21.1.2387,);required-after:basemetals;after:tconstruct;after:conarm;before:buildingbricks",
+		dependencies = "required-after:forge@[14.21.1.2387,);required-after:mmdlib;after:tconstruct;after:conarm;before:buildingbricks",
 		acceptedMinecraftVersions = "[1.12,)",
 		certificateFingerprint = "@FINGERPRINT@",
 		updateJSON = ModernMetals.UPDATEJSON)
@@ -49,7 +49,7 @@ public class ModernMetals {
 	 * increased whenever a change is made that has the potential to break
 	 * compatibility with other mods that depend on this one.
 	 */
-	protected static final String VERSION = "2.5.0-beta7";
+	protected static final String VERSION = "2.5.0-beta8";
 
 	protected static final String UPDATEJSON = SharedStrings.UPDATE_JSON_URL + "ModernMetals/master/update.json";
 
@@ -84,19 +84,22 @@ public class ModernMetals {
 	 */
 	@EventHandler
 	public static void preInit(final FMLPreInitializationEvent event) {
+		ModernMetals.logger.fatal("FMLPreInitializationEvent");
 		proxy.preInit(event);
 
-		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Items.class);
-		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Blocks.class);
+//		MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Items.class);
+		//MinecraftForge.EVENT_BUS.register(com.mcmoddev.modernmetals.init.Blocks.class);
 	}
 
 	@EventHandler
 	public static void init(final FMLInitializationEvent event) {
+		ModernMetals.logger.fatal("FMLInitializationEvent");
 		proxy.init(event);
 	}
 
 	@EventHandler
 	public static void postInit(final FMLPostInitializationEvent event) {
+		ModernMetals.logger.fatal("FMLPostInitializationEvent");
 		proxy.postInit(event);
 	}
 }
