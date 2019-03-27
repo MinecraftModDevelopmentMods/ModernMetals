@@ -7,6 +7,7 @@ import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.lib.util.Oredicts;
 //import com.mcmoddev.lib.util.Oredicts;
 import com.mcmoddev.modernmetals.ModernMetals;
 import com.mcmoddev.modernmetals.data.MaterialNames;
@@ -127,7 +128,7 @@ public class Items extends com.mcmoddev.lib.init.Items {
 			.forEach(event.getRegistry()::register)
 		);
 
-/*		Oredicts.registerItemOreDictionaryEntries();
-		Oredicts.registerBlockOreDictionaryEntries();*/
+		Oredicts.registerItemOreDictionaryEntries();
+		Oredicts.registerBlockOreDictionaryEntries();
 	}
 }
