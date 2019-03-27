@@ -1,5 +1,5 @@
 {
-	"type": "basemetals:variableOutputOre",
+	"type": "mmdlib:variableOutputOre",
 	"group": "misc",
 	"result": {
 		"type": "minecraft:item",
@@ -11,17 +11,17 @@
 			"type": "forge:and",
 			"values": [
 				{
-					"type": "basemetals:enabled",
+					"type": "mmdlib:enabled",
 					"optionName": "material",
 					"optionValue": "Magnesium"
 				},
 				{
-					"type": "basemetals:enabled",
+					"type": "mmdlib:enabled",
 					"optionName": "thing",
 					"optionValue": "Gear"
 				},
 				{
-					"type": "basemetals:enabled",
+					"type": "mmdlib:enabled",
 					"optionName": "thing",
 					"optionValue": "Basics"
 				}
