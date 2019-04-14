@@ -369,7 +369,7 @@ curseforge {
         displayName = "$project.description $display_version"
         relations {
           requiredLibrary 'mmd-orespawn'
-          requiredLibrary 'base-metals'
+          requiredLibrary 'mmdlib'
           optionalLibrary 'additional-loot-tables'
         }
       }
