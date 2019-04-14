@@ -1,1 +1,1 @@
-Cleanups, making integrations (mostly) work, fix a typo in all the sheild recipes that had them hard-disabled because the option name was wrong in the conditions in the JSON.
+*Metals family wide cleanups and bugfixes

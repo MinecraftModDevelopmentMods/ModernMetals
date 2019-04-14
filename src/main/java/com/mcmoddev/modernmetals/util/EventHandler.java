@@ -22,25 +22,21 @@ public class EventHandler {
 
 	@SubscribeEvent
 	public static void mmdlibRegisterMaterials(final MMDLibRegisterMaterials event) {
-		ModernMetals.logger.fatal("mmdlibRegisterMaterials");
 		Materials.init();
 	}
 	
 	@SubscribeEvent
 	public static void mmdlibRegisterBlocks(final MMDLibRegisterBlocks event) {
-		ModernMetals.logger.fatal("mmdlibRegisterBlocks");
 		Blocks.init();
 	}
 
 	@SubscribeEvent
 	public static void mmdlibRegisterItems(final MMDLibRegisterItems event) {
-		ModernMetals.logger.fatal("mmdlibRegisterItems");
 		Items.init();
 	}
 	
 	@SubscribeEvent
 	public static void mmdlibRegisterFluids(final MMDLibRegisterFluids event) {
-		ModernMetals.logger.fatal("mmdlibRegisterFluids");
 		Fluids.init();
 	}
 
