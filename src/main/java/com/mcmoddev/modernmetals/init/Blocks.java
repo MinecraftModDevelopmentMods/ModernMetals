@@ -12,6 +12,7 @@ import com.mcmoddev.modernmetals.data.MaterialNames;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 /**
@@ -20,6 +21,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  * @author Jasmine Iwanek
  *
  */
+@EventBusSubscriber(modid=ModernMetals.MODID)
 public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
 	protected Blocks() {
@@ -58,6 +60,7 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 	 */
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
+		ModernMetals.logger.fatal("RegistryEvent.Register<Block>");
 		Materials.getMaterialsByMod(ModernMetals.MODID).stream()
 		.forEach(mat ->
 			mat.getBlocks().stream()

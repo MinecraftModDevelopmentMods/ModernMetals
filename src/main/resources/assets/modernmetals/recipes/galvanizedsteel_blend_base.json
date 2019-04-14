@@ -15,22 +15,22 @@
 			"type": "forge:and",
 			"values": [
 				{
-					"type": "basemetals:enabled",
+					"type": "mmdlib:enabled",
 					"optionName": "material",
 					"optionValue": "GalvanizedSteel"
 				},
 				{
-					"type": "basemetals:enabled",
+					"type": "mmdlib:enabled",
 					"optionName": "material",
 					"optionValue": "Steel"
 				},
 				{
-					"type": "basemetals:enabled",
+					"type": "mmdlib:enabled",
 					"optionName": "material",
 					"optionValue": "Zinc"
 				},
 				{
-					"type": "basemetals:enabled",
+					"type": "mmdlib:enabled",
 					"optionName": "thing",
 					"optionValue": "Basics"
 				}

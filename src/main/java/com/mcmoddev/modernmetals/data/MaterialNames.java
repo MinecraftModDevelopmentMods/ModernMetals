@@ -16,6 +16,7 @@ public final class MaterialNames {
 	public static final String OSMIUM = "osmium";
 	public static final String PLUTONIUM = "plutonium";
 	public static final String RUTILE = "rutile";
+	public static final String STEEL = "steel";
 	public static final String STAINLESS_STEEL = "stainlesssteel";
 	public static final String TANTALUM = "tantalum";
 	public static final String TITANIUM = "titanium";
@@ -25,7 +26,9 @@ public final class MaterialNames {
 	public static final String BORON = "boron";
 	public static final String BERYLLIUM = "beryllium";
 	public static final String THORIUM = "thorium";
-
+	public static final String ZINC = "zinc";
+	public static final String NICKEL = "nickel";
+	
 	private MaterialNames() {
 		throw new IllegalAccessError(SharedStrings.NOT_INSTANTIABLE);
 	}

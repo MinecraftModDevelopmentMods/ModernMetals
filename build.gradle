@@ -217,11 +217,8 @@ repositories {
 
 dependencies {
   deobfProvided "com.mcmoddev:AdditionalLootTables:${mc_version}-${alt_version}"
-//  runtime "com.mcmoddev:AdditionalLootTables:${mc_version}-${alt_version}"
   deobfProvided "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}"
-//  runtime "com.mcmoddev:OreSpawn:${mc_version}-${orespawn_version}"
-  deobfProvided "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}"
-//  runtime "com.mcmoddev:BaseMetals:${mc_version}-${bme_version}"
+  deobfProvided "com.mcmoddev:MMDLib:${mc_version}-${mmdlib_version}"
 
   deobfProvided ("slimeknights.mantle:Mantle:${mc_version}-${mantle_version}") {
     exclude group: 'mezz.jei'

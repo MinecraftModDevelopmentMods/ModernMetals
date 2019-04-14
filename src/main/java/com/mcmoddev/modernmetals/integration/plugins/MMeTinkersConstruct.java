@@ -41,6 +41,9 @@ public class MMeTinkersConstruct implements IIntegration {
 	@Override
 	public void init() {
 		TinkersConstruct.INSTANCE.init();
+        if(!slimeknights.tconstruct.TConstruct.pulseManager.isPulseLoaded("TinkerSmeltery")) {
+            return;
+        }
 		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
@@ -181,9 +184,9 @@ public class MMeTinkersConstruct implements IIntegration {
 		ModContainer oldActive = Loader.instance().activeModContainer();
 		ModContainer newActive = Loader.instance().getIndexedModList().get(ModernMetals.MODID);
 		Loader.instance().setActiveModContainer(newActive);
-		registerAlloy(ev, MaterialNames.GALVANIZED_STEEL, 2, new Object[] { com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1, com.mcmoddev.basemetals.data.MaterialNames.ZINC, 1 });
-		registerAlloy(ev, MaterialNames.NICHROME, 2, new Object[] { com.mcmoddev.basemetals.data.MaterialNames.NICKEL, 1, MaterialNames.CHROMIUM, 1 });
-		registerAlloy(ev, MaterialNames.STAINLESS_STEEL, 2, new Object[] { com.mcmoddev.basemetals.data.MaterialNames.STEEL, 1, MaterialNames.CHROMIUM, 1 });
+		registerAlloy(ev, MaterialNames.GALVANIZED_STEEL, 2, new Object[] { com.mcmoddev.modernmetals.data.MaterialNames.STEEL, 1, com.mcmoddev.modernmetals.data.MaterialNames.ZINC, 1 });
+		registerAlloy(ev, MaterialNames.NICHROME, 2, new Object[] { com.mcmoddev.modernmetals.data.MaterialNames.NICKEL, 1, MaterialNames.CHROMIUM, 1 });
+		registerAlloy(ev, MaterialNames.STAINLESS_STEEL, 2, new Object[] { com.mcmoddev.modernmetals.data.MaterialNames.STEEL, 1, MaterialNames.CHROMIUM, 1 });
 		registerAlloy(ev, MaterialNames.TITANIUM, 2, new Object[] { MaterialNames.RUTILE, 1, MaterialNames.MAGNESIUM, 1 });
 		Loader.instance().setActiveModContainer(oldActive);
 	}
