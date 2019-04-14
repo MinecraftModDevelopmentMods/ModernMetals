@@ -41,6 +41,9 @@ public class MMeTinkersConstruct implements IIntegration {
 	@Override
 	public void init() {
 		TinkersConstruct.INSTANCE.init();
+        if(!slimeknights.tconstruct.TConstruct.pulseManager.isPulseLoaded("TinkerSmeltery")) {
+            return;
+        }
 		if (!Options.isModEnabled(PLUGIN_MODID)) {
 			return;
 		}
