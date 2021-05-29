@@ -1,4 +1,9 @@
-# ModernMetals [![Build Status](https://travis-ci.org/jriwanek/ModernMetals.svg?branch=master)](https://travis-ci.org/jriwanek/ModernMetals)
+[![](https://img.shields.io/badge/Discord-MMD-green.svg?style=flat&logo=Discord)](https://discord.mcmoddev.com)
+[![](http://cf.way2muchnoise.eu/modern-metals.svg)](https://www.curseforge.com/minecraft/mc-mods/modern-metals)
+[![](http://cf.way2muchnoise.eu/versions/modern-metals.svg)](https://www.curseforge.com/minecraft/mc-mods/modern-metals)
+[![Build Status](https://travis-ci.org/jriwanek/ModernMetals.svg?branch=master)](https://travis-ci.org/jriwanek/ModernMetals)
+
+### ModernMetals
 Addon to BaseMetals supporting Modern Metals
 
 Content
