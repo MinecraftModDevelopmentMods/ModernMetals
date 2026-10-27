@@ -1,0 +1,47 @@
+// Isolated probes are never included in ordinary launches or release jars.
+sourceSets {
+    runtimeProbe {
+        java.srcDirs = ['tools/validation/legacy110/runtime-probe']
+        compileClasspath = sourceSets.main.compileClasspath + sourceSets.main.output
+    }
+}
+def probe = tasks.register('runtimeProbeJar', Jar) {
+    group = 'verification'
+    archiveFileName = 'modernmetals-probe.jar'
+    destinationDirectory = layout.buildDirectory.dir('test-mods')
+    from sourceSets.runtimeProbe.output
+}
+def packagedProbe = renamer.classes(probe) {
+    map.from minecraft.dependency.toSrgFile
+    output = layout.buildDirectory.file('test-mods/modernmetals-probe-packaged.jar')
+}
+tasks.register('packagedRuntimeProbeJar') { dependsOn packagedProbe }
+
+// The schema audit also needs this deterministic JUnit export after a cache hit.
+tasks.named('test', Test) {
+    outputs.file(layout.buildDirectory.file('reports/native-provider.json'))
+}
+
+tasks.register('verifyProjectResources', Exec) {
+    group = 'verification'
+    dependsOn tasks.named('test')
+    doFirst {
+        commandLine providers.gradleProperty('pythonExecutable').getOrElse('python3'),
+            'tools/validation/legacy110/audit_resources.py', '--mirror',
+            file(providers.gradleProperty('legacyDependencyVerificationRepository').getOrElse('.gradle/legacy-dependencies')).absolutePath
+    }
+}
+tasks.register('packagedForgeRuntimeTest', Exec) {
+    group = 'verification'
+    dependsOn 'verifyReleaseArtifacts', 'packagedRuntimeProbeJar', 'test'
+    doFirst {
+        if (!providers.gradleProperty('packagedForgeRuntimeRoot').isPresent())
+            throw new GradleException('Set packagedForgeRuntimeRoot to a disposable Forge server template.')
+        final def java8 = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(8) }.get()
+        commandLine providers.gradleProperty('pythonExecutable').getOrElse('python3'),
+            'tools/validation/legacy110/run_packaged_suite.py', '--java', java8.executablePath.asFile.absolutePath,
+            '--template', file(providers.gradleProperty('packagedForgeRuntimeRoot').get()).absolutePath,
+            '--output', file(providers.gradleProperty('packagedForgeRuntimeOutput').getOrElse('build/packaged-forge-checks')).absolutePath,
+            '--mirror', file(providers.gradleProperty('legacyDependencyVerificationRepository').getOrElse('.gradle/legacy-dependencies')).absolutePath
+    }
+}

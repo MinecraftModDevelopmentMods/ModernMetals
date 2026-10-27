@@ -25,3 +25,14 @@ run
 /forge-*-changelog.txt
 
 secret.json
+# Local context and generated verification
+/AGENTS.md
+/agent-notes/
+/.codex/
+/.verification*/
+/release-candidates/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+desktop.ini
