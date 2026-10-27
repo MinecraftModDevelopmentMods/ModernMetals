@@ -1,0 +1,58 @@
+[
+  {
+    "id": "basemetals",
+    "coordinate": "curse.maven:base-metals-240967:9280029",
+    "sha256": "8BB1823592DCD558D17C4848AE917266FE7197B754CA628297DF837CFB3D20A3",
+    "repository": "https://www.cursemaven.com",
+    "runtime": true
+  },
+  {
+    "id": "orespawn",
+    "coordinate": "curse.maven:mmd-orespawn-245586:9276430",
+    "sha256": "4D4975421FEEBF17505056306D06B0344D7A4553B6275885D7C5C5065B0348A6",
+    "repository": "https://www.cursemaven.com",
+    "runtime": true
+  },
+  {
+    "id": "mantle",
+    "coordinate": "curse.maven:mantle-74924:2380279",
+    "sha256": "1678548421B9AA5188A1A209B39782AA6FAC1247E92ACB19F0FB58401F6718C7",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "tconstruct",
+    "coordinate": "curse.maven:tinkers-construct-74072:2425964",
+    "sha256": "BF9CB4E992F02500904A828181782486F2B8DD5F891D7972403CE92622917060",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "ic2",
+    "coordinate": "net.industrial-craft:industrialcraft-2:2.6.254-ex110",
+    "sha256": "CD51FB645C26FA96C6B22704EF168D00192A135F70BD97B1DA40CD5F80FA62A2",
+    "repository": "https://maven.ic2.player.to"
+  },
+  {
+    "id": "cofh",
+    "coordinate": "cofh:CoFHCore:1.10.2-4.1.12.17:universal",
+    "sha256": "AD8924E7B142A98C03CF0C37DBD320DDBA553BA92487556C8D3D8F28D41409B3",
+    "repository": "https://maven.covers1624.net"
+  },
+  {
+    "id": "mekanism",
+    "coordinate": "curse.maven:mekanism-268560:2475800",
+    "sha256": "E46A248BDA91F683812A10D1764CC95CA25A2BBBD24D945D1D4007DE54E79876",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "veinminer",
+    "coordinate": "curse.maven:veinminer-67133:2528282",
+    "sha256": "C2F651221CFCE7049A0011426F3E712026ECE31CE61C6A47DEF68BD7C78EB10A",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "mcmultipart",
+    "coordinate": "curse.maven:mcmultipart-239431:2381408",
+    "sha256": "0B9CE34FFC98AE18B310E70C9B9AA3D1A6EF20D4F7C908C2AE2CD32A19DAF01B",
+    "repository": "https://www.cursemaven.com"
+  }
+]

@@ -1,1 +1,16 @@
-ModernMetals 2.5.0 for 1.10.2
+2.5.1.110021 for 1.10.2
+
+- Updated the build and Eclipse setup to ForgeGradle 7, keeping Java 8 support.
+- Added build checks and release workflows.
+- Requires Base Metals 2.5.1.110021 and MMD OreSpawn 4.1.2.110021.
+- Fixed material settings so enabled metals register their blocks, items and recipes.
+- Finished boron, beryllium and thorium, including molten forms, buckets and ore generation.
+- Moved ore generation to OreSpawn 4, with support for older configs and saved settings.
+- Kept titanium's rutile and magnesium recipe. Titanium ore generation is optional and off by default.
+- Added settings access from both the Forge mod list and OreSpawn's Mods list.
+- Added High and Low Fantasy settings to ModernMetals.cfg and the config screen. Changes need a restart.
+- Low Fantasy restricts unrealistic equipment, building recipes, gears, trades and Tinkers parts.
+- Fixed Modern Metals processing recipes with IC2 and Mekanism.
+- Fixed aluminum part casting when Tinkers has already registered the fluid.
+- Added the missing upper slab models for boron, beryllium and thorium.
+- Moved Java packages to zone.moddev.mc.modernmetals. Existing block and item IDs are unchanged.
