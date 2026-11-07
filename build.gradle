@@ -57,6 +57,13 @@ def normalizeText = { details ->
             eof: FixCrLfFilter.AddAsisRemove.newInstance('asis'))
 }
 
+// Preserve the tested game jar's line endings for this compatibility list.
+def legacyApiList = 'META-INF/modernmetals-legacy-api.list'
+def normalizeLegacyApi = { details ->
+    details.filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('crlf'),
+            eof: FixCrLfFilter.AddAsisRemove.newInstance('asis'))
+}
+
 def developmentOutput = layout.buildDirectory.dir('forge10-development/main')
 def prepareDevelopmentMod = tasks.register('prepareDevelopmentMod', Sync) {
     group = 'ide'
@@ -150,6 +157,7 @@ tasks.named('processResources', ProcessResources) {
     filesMatching('mcmod.info') { expand version: project.version, mcversion: project.minecraft_version }
     rename '(.+_at.cfg)', 'META-INF/$1'
     filesMatching(textPatterns, normalizeText)
+    filesMatching(legacyApiList, normalizeLegacyApi)
 }
 
 tasks.named('jar', Jar) {
@@ -165,6 +173,7 @@ tasks.named('jar', Jar) {
     tasks.named(name, Jar) {
         filteringCharset = 'UTF-8'
         filesMatching(textPatterns, normalizeText)
+        filesMatching(legacyApiList, normalizeLegacyApi)
     }
 }
 
