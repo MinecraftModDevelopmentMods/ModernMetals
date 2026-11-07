@@ -12,7 +12,8 @@ CodeQL/wrapper checks are separate. Actions use full commit hashes.
 
 Versions use `Major.Minor.Patch.110021`. Tags validate metadata/prior CI without
 publishing. The dispatcher requires `confirm_live_publication`, the upstream
-repository, matching target/tag/commit and successful hosted checks. It publishes
+repository, the full checked target commit, the verified game jar's SHA-256
+and successful hosted checks. It publishes
 the same candidate bytes to Maven, CurseForge **244357**, then GitHub. CurseForge
 requires Base Metals **240967** and MMD OreSpawn **245586**, with Additional Loot
 Tables **243157** optional. Credentials and an HTTPS Maven target are required.
@@ -21,3 +22,8 @@ The dispatcher must be installed on the repository's default branch before a
 manual release can be started. Merging the 1.10 branch does not install it on the
 1.12 default branch. Publication is a separate step and needs approval. If an
 upload times out, check its status before trying again.
+
+For the default-branch change, copy only the audited `deploy-release.yml`. It
+routes the 1.10.2 suffix to the modernized branch and builds there. After a
+release is publicly available, update the Forge 1.10.2 entries in `update.json`
+to the exact version reported by Forge.

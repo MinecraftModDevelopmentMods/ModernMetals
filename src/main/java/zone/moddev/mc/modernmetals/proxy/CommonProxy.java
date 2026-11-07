@@ -1,6 +1,7 @@
 package zone.moddev.mc.modernmetals.proxy;
 
-import zone.moddev.mc.modernmetals.ModernMetals;
+import zone.moddev.mc.modernmetals.content.ContentModeNetwork;
+import zone.moddev.mc.modernmetals.compat.LegacyRegistryMappings;
 import zone.moddev.mc.modernmetals.data.MaterialNames;
 import zone.moddev.mc.modernmetals.init.*;
 import zone.moddev.mc.modernmetals.util.Config;
@@ -11,10 +12,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
-import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent.MissingMapping;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  * Modern Metals Common Proxy
@@ -27,6 +26,7 @@ public class CommonProxy {
 	public void preInit(FMLPreInitializationEvent event) {
 
 		Config.init();
+		ContentModeNetwork.register();
 
 		Materials.init();
 		Fluids.init();
@@ -39,15 +39,7 @@ public class CommonProxy {
 	}
 
 	public void onRemap(FMLMissingMappingsEvent event) {
-		for (final MissingMapping mapping : event.get()) {
-			if (mapping.resourceLocation.getResourceDomain().equals(ModernMetals.MODID)) {
-				if (mapping.type.equals(GameRegistry.Type.BLOCK)) {
-					// Dummy
-				} else if (mapping.type.equals(GameRegistry.Type.ITEM)) {
-					// Dummy
-				}
-			}
-		}
+		LegacyRegistryMappings.remap(event);
 	}
 
 	public void init(FMLInitializationEvent event) {

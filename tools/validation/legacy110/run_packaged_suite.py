@@ -44,7 +44,7 @@ def main():
     fresh=setup('native-fresh')
     (fresh/'config').mkdir(exist_ok=True)
     (fresh/'config/BaseMetals.cfg').write_text('general {\n S:contentMode=low_fantasy\n}\n',encoding='utf-8')
-    report=check(fresh,{'ores':native['ores']},properties={'modern.lowFantasy':'false'},sample=True,saved=True)
+    report=check(fresh,{'ores':native['ores']},properties={'modern.lowFantasy':'false','modern.trades':'true'},sample=True,saved=True)
     base_profile=report['profile']
     assert len([key for key in base_profile['ores'] if key.startswith('modernmetals:')])==17
     before=fingerprint(fresh/'world')
@@ -132,7 +132,13 @@ def main():
     (low/'config').mkdir(exist_ok=True)
     (low/'config/ModernMetals.cfg').write_text('general {\n S:contentMode=low_fantasy\n}\n',encoding='utf-8')
     (low/'config/BaseMetals.cfg').write_text('general {\n S:contentMode=high_fantasy\n}\n',encoding='utf-8')
-    check(low,properties={'modern.lowFantasy':'true'},saved=True)
+    check(low,properties={'modern.lowFantasy':'true','modern.trades':'true'},saved=True)
+    for mode in ('high','low'):
+        trade_off=setup(f'{mode}-fantasy-trades-disabled')
+        config=trade_off/'config/ModernMetals.cfg'
+        config.parent.mkdir()
+        config.write_text(f'general {{\n S:contentMode={mode}_fantasy\n B:enableVillagerTrades=false\n}}\n',encoding='utf-8')
+        run(args.java,trade_off,'first',{'modern.lowFantasy':str(mode=='low').lower(),'modern.trades':'false'})
     switched=setup('high-to-low-existing-world',fresh/'world')
     (switched/'config').mkdir(exist_ok=True)
     (switched/'config/ModernMetals.cfg').write_text('general {\n S:contentMode=low_fantasy\n}\n',encoding='utf-8')
@@ -165,7 +171,7 @@ def main():
     verify(args.java,args.template,args.output,dependency(next(s for s in specs if s['id']=='basemetals'),args.mirror),
            dependency(next(s for s in specs if s['id']=='orespawn'),args.mirror),ROOT/'build/libs/ModernMetals-2.5.1.110021.jar')
     assert fingerprint(fresh/'world')==before,'A source fixture world changed'
-    write_json(args.output/'qualification.json',{'passed':True,'scenarios':16,'source_world_unchanged':True})
+    write_json(args.output/'qualification.json',{'passed':True,'scenarios':18,'source_world_unchanged':True})
     print('MODERN_METALS_PACKAGED_SUITE_PASS',flush=True)
 
 if __name__=='__main__':main()

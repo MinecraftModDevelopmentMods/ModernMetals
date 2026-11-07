@@ -1573,3 +1573,10 @@ config.modernmetals.enable_titanium=Enable Titanium
 config.modernmetals.enable_tungsten=Enable Tungsten
 config.modernmetals.enable_uranium=Enable Uranium
 config.modernmetals.enable_zirconium=Enable Zirconium
+
+# Modern Metals settings and restored content
+config.modernmetals.material.tooltip=Controls which blocks, items and recipes are available for this material. Requires a game restart.
+config.modernmetals.villager_trades=Villager Trades
+config.modernmetals.villager_trades.tooltip=Let blacksmiths trade Modern Metals ingots and equipment. Requires a game restart.
+config.modernmetals.connection.mismatch=The server uses %s, but your game uses %s. Match the Fantasy Level in Mods > Modern Metals > Config and restart.
+config.modernmetals.connection.protocol=Modern Metals could not check the Fantasy Level. Use the same Modern Metals build on the server and client.

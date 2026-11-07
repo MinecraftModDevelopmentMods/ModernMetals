@@ -9,6 +9,14 @@ on:
         description: Four-component Modern Metals version; the target branch is derived from its fourth component.
         required: true
         type: string
+      release_commit:
+        description: Full commit SHA of the checked MMD target branch.
+        required: true
+        type: string
+      tested_jar_sha256:
+        description: SHA-256 of the verified Modern Metals game jar.
+        required: true
+        type: string
       curseforge_release_level:
         description: CurseForge release level only; this does not change the GitHub Release type.
         required: true
@@ -135,6 +143,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           REQUESTED_VERSION: ${{ inputs.release_version }}
+          REQUESTED_COMMIT: ${{ inputs.release_commit }}
+          TESTED_JAR_SHA256: ${{ inputs.tested_jar_sha256 }}
         run: |
           set -euo pipefail
 
@@ -290,6 +300,14 @@ jobs:
           fi
 
           release_sha="$(git rev-parse HEAD)"
+          if [[ ! "$REQUESTED_COMMIT" =~ ^[0-9a-f]{40}$ || "$REQUESTED_COMMIT" != "$release_sha" ]]; then
+            echo 'The target branch no longer points at the checked release commit' >&2
+            exit 1
+          fi
+          if [[ ! "$TESTED_JAR_SHA256" =~ ^[0-9a-f]{64}$ ]]; then
+            echo 'Supply the lowercase SHA-256 of the verified game jar' >&2
+            exit 1
+          fi
           release_tag="$release_version"
           echo "release_sha=$release_sha" >> "$GITHUB_OUTPUT"
           echo "release_version=$release_version" >> "$GITHUB_OUTPUT"
@@ -445,6 +463,8 @@ jobs:
 
       - name: Stage the immutable release artifact
         id: artifact
+        env:
+          TESTED_JAR_SHA256: ${{ inputs.tested_jar_sha256 }}
         run: |
           set -euo pipefail
           bundle="$RUNNER_TEMP/release-bundle"
@@ -455,6 +475,7 @@ jobs:
           cp build/release/SHA256SUMS "$bundle/"
           cp CHANGELOG.txt "$bundle/"
           (cd "$bundle" && sha256sum --check SHA256SUMS)
+          printf '%s  %s\n' "$TESTED_JAR_SHA256" "$bundle/$MAIN_JAR" | sha256sum --check -
           echo "name=ModernMetals-${{ needs.preflight.outputs.minecraft_version }}-${{ needs.preflight.outputs.loader_name }}-${{ needs.preflight.outputs.release_sha }}-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
 
       - name: Upload immutable release artifact

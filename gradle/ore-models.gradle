@@ -1,0 +1,71 @@
+import groovy.json.JsonOutput
+
+// Forge 1.10 has no GatherDataEvent. Generate the equivalent model resources
+// before processResources, without launching Minecraft or writing into src.
+def assets = layout.projectDirectory.dir('src/main/resources/assets/modernmetals')
+def overlayFiles = fileTree(assets.dir('textures/blocks/ore_overlays')) { include '*_ore.png' }
+def oreStates = fileTree(assets.dir('blockstates')) { include '*_ore.json' }
+def generated = layout.buildDirectory.dir('generated/ore-models')
+
+def generateOreModels = tasks.register('generateOreModels') {
+    group = 'build'
+    description = 'Generates the Forge 1.10 ore models from KiriCattus’s overlays.'
+    inputs.files(overlayFiles, oreStates).withPathSensitivity(PathSensitivity.RELATIVE)
+    outputs.dir(generated)
+
+    doLast {
+        def names = overlayFiles.files.collect { it.name - '.png' }.sort()
+        def expected = oreStates.files.collect { it.name - '.json' }.findAll { it != 'thorium_ore' }.sort()
+        if (names != expected) {
+            throw new GradleException("Ore overlays do not match ore blockstates: missing ${expected - names}, extra ${names - expected}")
+        }
+
+        def dir = generated.get().dir('assets/modernmetals/models/block').asFile
+        dir.mkdirs()
+        def writeModel = { String name, Map model ->
+            new File(dir, "${name}.json").setText(JsonOutput.prettyPrint(JsonOutput.toJson(model)) + '\n', 'UTF-8')
+        }
+        def cube = { Number from, Number to, String texture ->
+            def faces = ['down', 'up', 'north', 'south', 'west', 'east'].collectEntries { face ->
+                [(face): [texture: texture, cullface: face, uv: [0, 0, 16, 16]]]
+            }
+            [from: [from, from, from], to: [to, to, to], faces: faces]
+        }
+        // Same two cubes and offset as Base Metals, with the legacy texture paths.
+        writeModel('ore_overlay', [
+            parent: 'minecraft:block/block',
+            elements: [cube(0, 16, '#base'), cube(-0.05, 16.05, '#overlay')]
+        ])
+        names.each { name ->
+            writeModel(name, [
+                parent: 'modernmetals:block/ore_overlay',
+                textures: [particle: 'minecraft:blocks/stone', base: 'minecraft:blocks/stone',
+                           overlay: "modernmetals:blocks/ore_overlays/${name}"]
+            ])
+        }
+        // Clean up only obsolete ore JSON files in this task's own output directory.
+        dir.listFiles().findAll { it.isFile() && it.name.endsWith('_ore.json') && !(it.name - '.json' in names) }.each {
+            if (!it.delete()) throw new GradleException("Could not remove stale generated ore model ${it.name}")
+        }
+    }
+}
+
+tasks.named('processResources', ProcessResources) {
+    dependsOn generateOreModels
+    from generated
+    duplicatesStrategy = DuplicatesStrategy.FAIL
+    doFirst {
+        // Copy tasks can leave the old flat textures behind after an incremental upgrade.
+        overlayFiles.files.each { overlay ->
+            def flat = new File(destinationDir, "assets/modernmetals/textures/blocks/${overlay.name}")
+            if (flat.isFile() && !flat.delete()) {
+                throw new GradleException("Could not remove obsolete processed texture ${flat.name}")
+            }
+        }
+    }
+}
+
+tasks.named('sourcesJar', Jar) {
+    dependsOn generateOreModels
+    from generated
+}

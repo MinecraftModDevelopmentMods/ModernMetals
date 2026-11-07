@@ -40,6 +40,9 @@ metadata is not duplicated. `verifyEclipseProductionClasspath` checks isolation.
 
 ## Verification
 
+`generateOreModels` generates the ore block models as part of the normal build.
+See [ore overlays](ORE_OVERLAYS.md) for the inputs, output and client checks.
+
 `test` covers config switches, provider conversion, titanium defaults, fantasy
 policy and namespace compatibility. `verifyProjectResources` parses resources,
 checks material assets, validates the provider against the pinned OreSpawn schema

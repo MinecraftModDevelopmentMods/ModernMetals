@@ -169,6 +169,7 @@ tasks.named('jar', Jar) {
 }
 
 ext.modernMetalsBuild = [developmentOutput: developmentOutput].asImmutable()
+apply from: 'gradle/ore-models.gradle'
 apply from: 'gradle/release/artifacts.gradle'
 apply from: 'gradle/release/publishing.gradle'
 apply from: 'gradle/verification/runtime.gradle'

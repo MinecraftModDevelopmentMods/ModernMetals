@@ -11,8 +11,11 @@ import java.lang.reflect.Method;
 import java.util.concurrent.Future;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiDisconnected;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.multiplayer.GuiConnecting;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.GameType;
@@ -39,10 +42,58 @@ import zone.moddev.mc.orespawn.api.client.WorldSettingsExtensionRegistry;
      acceptableRemoteVersions="*",dependencies="required-after:modernmetalsprobe")
 public final class ClientChecks {
     @Mod.EventHandler public void init(final FMLInitializationEvent event) {
-        if (Boolean.getBoolean("modern.client")) MinecraftForge.EVENT_BUS.register(new Checks());
+        if (!Boolean.getBoolean("modern.client")) return;
+        final String server = System.getProperty("modern.remoteServer");
+        MinecraftForge.EVENT_BUS.register(server == null ? new Checks() : new RemoteCheck(server));
     }
     private static void require(final boolean pass, final String detail) {
         if (!pass) throw new AssertionError(detail);
+    }
+
+    public static final class RemoteCheck {
+        private final String address;
+        private final long deadline = System.currentTimeMillis() + 90000;
+        private boolean connecting;
+        private boolean finished;
+
+        RemoteCheck(final String address) { this.address = address; }
+
+        @SubscribeEvent public void tick(final TickEvent.ClientTickEvent event) throws Exception {
+            if (event.phase != TickEvent.Phase.END || finished) return;
+            final Minecraft mc = Minecraft.getMinecraft();
+            if (!connecting && mc.currentScreen instanceof GuiMainMenu) {
+                mc.displayGuiScreen(new GuiConnecting(mc.currentScreen, mc, new ServerData("Disposable Forge", address, false)));
+                connecting = true;
+                return;
+            }
+            final String expectedDisconnect = System.getProperty("modern.expectedDisconnect", "");
+            final boolean expectRejection = !expectedDisconnect.isEmpty();
+            if (mc.world != null && mc.player != null) {
+                finish(mc, !expectRejection, "Dedicated server world entered");
+            } else if (connecting && mc.currentScreen instanceof GuiDisconnected) {
+                final String reason = disconnectReason((GuiDisconnected) mc.currentScreen);
+                finish(mc, expectRejection && reason.contains(expectedDisconnect), reason);
+            } else if (System.currentTimeMillis() >= deadline) {
+                finish(mc, false, "Dedicated server login timed out");
+            }
+        }
+
+        private static String disconnectReason(final GuiDisconnected screen) throws Exception {
+            for (final java.lang.reflect.Field field : GuiDisconnected.class.getDeclaredFields()) {
+                if (field.getType() == net.minecraft.util.text.ITextComponent.class) {
+                    field.setAccessible(true);
+                    return ((net.minecraft.util.text.ITextComponent) field.get(screen)).getUnformattedText();
+                }
+            }
+            throw new AssertionError("Disconnect reason field missing");
+        }
+
+        private void finish(final Minecraft mc, final boolean pass, final String detail) throws Exception {
+            Checks.screenshot(mc, "dedicated-login.png");
+            Checks.report(pass, detail);
+            finished = true;
+            mc.shutdown();
+        }
     }
     public static final class Checks {
         private long started=System.currentTimeMillis();
@@ -63,9 +114,17 @@ public final class ClientChecks {
                     screen=(GuiConfig)factory.mainConfigGuiClass().getConstructor(GuiScreen.class).newInstance(parent);
                     mc.displayGuiScreen(screen); state=1;ticks=0;
                 } else if(state==1 && ++ticks>=20) {
-                    require(screen.parentScreen==parent && screen.configElements.size()==22,"Forge config parent or fantasy/material options incorrect");
+                    require(screen.parentScreen==parent && screen.configElements.size()==23,"Forge config parent or settings incorrect");
                     require(screen.allRequireMcRestart,"Registry switches must require a restart");
                     require(!screen.title.startsWith("config."),"Untranslated config title");
+                    final String locale = System.getProperty("modern.language", "en_US");
+                    require(locale.equals(mc.gameSettings.language), "Minecraft did not load language " + locale);
+                    if (!"en_US".equals(locale)) {
+                        require(!"Fantasy Level".equals(net.minecraft.client.resources.I18n.format("config.modernmetals.content_mode")),
+                                "Fantasy selector fell back to English in " + locale);
+                        require(!"High Fantasy".equals(net.minecraft.client.resources.I18n.format("high_fantasy")),
+                                "Fantasy value fell back to English in " + locale);
+                    }
                     for(final net.minecraftforge.fml.client.config.IConfigElement element:screen.configElements)
                         require(net.minecraft.client.resources.I18n.hasKey(element.getLanguageKey()),"Untranslated material label: "+element.getName());
                     final String startupMode=Boolean.getBoolean("modern.lowFantasy")?"low_fantasy":"high_fantasy";
@@ -75,9 +134,11 @@ public final class ClientChecks {
                     mode(screen).valueButtonPressed(0);
                     final BooleanEntry entry=entry(screen,"EnableBoron");
                     entry.valueButtonPressed(0);
+                    entry(screen,"enableVillagerTrades").valueButtonPressed(0);
                     invoke(screen,"keyTyped",new Class<?>[]{char.class,int.class},'\0',1);
                     require(mc.currentScreen==parent,"Escape did not return to Forge parent");
                     require(Config.getConfiguration().get("Metals","EnableBoron",true).getBoolean(),"Escape saved a discarded switch");
+                    require(Config.getConfiguration().get("General","enableVillagerTrades",true).getBoolean(),"Escape saved discarded trade settings");
                     require(Config.getConfiguration().getCategory("General").get("contentMode").getString().equals(startupMode),"Escape saved a discarded fantasy selection");
                     final WorldSettingsExtension extension=WorldSettingsExtensionRegistry.extensions().stream()
                         .filter(e->"modernmetals".equals(e.id().getResourceDomain())).findFirst().orElse(null);
@@ -85,15 +146,18 @@ public final class ClientChecks {
                     screen=(GuiConfig)extension.createScreen(parent);
                     mc.displayGuiScreen(screen);state=2;ticks=0;
                 } else if(state==2 && ++ticks>=20) {
-                    require(screen.parentScreen==parent && screen.configElements.size()==22,"OreSpawn config parent or options incorrect");
+                    require(screen.parentScreen==parent && screen.configElements.size()==23,"OreSpawn config parent or options incorrect");
                     screenshot(mc,"orespawn-child-mods-config.png");
                     mode(screen).valueButtonPressed(0);
                     screen.entryList.scrollBy(10000);
                     require(screen.entryList.getAmountScrolled()>0,"Material list cannot scroll");
                     entry(screen,"EnableBoron").valueButtonPressed(0);
+                    entry(screen,"enableVillagerTrades").valueButtonPressed(0);
                     invoke(screen,"actionPerformed",new Class<?>[]{GuiButton.class},new GuiButton(2000,0,0,"Done"));
                     require(!Config.getConfiguration().get("Metals","EnableBoron",true).getBoolean(),"Done did not save the switch");
                     require(Config.Options.enableBoron && Materials.hasMaterial("boron"),"GUI rebuilt live registries");
+                    require(!Config.getConfiguration().get("General","enableVillagerTrades",true).getBoolean()
+                            && Config.Options.enableVillagerTrades,"Trade settings did not save for the next restart");
                     final String pendingMode=Boolean.getBoolean("modern.lowFantasy")?"high_fantasy":"low_fantasy";
                     require(Config.getConfiguration().getCategory("General").get("contentMode").getString().equals(pendingMode),"Done did not save the fantasy selection");
                     require(ContentPolicy.active().lowFantasy()==Boolean.getBoolean("modern.lowFantasy"),"GUI applied fantasy recipes without a restart");
@@ -103,11 +167,13 @@ public final class ClientChecks {
                     screen=new zone.moddev.mc.modernmetals.client.ModernMetalsConfigScreen(parent);
                     mc.displayGuiScreen(screen);
                     entry(screen,"EnableBoron").valueButtonPressed(0);
+                    entry(screen,"enableVillagerTrades").valueButtonPressed(0);
                     invoke(screen,"actionPerformed",new Class<?>[]{GuiButton.class},new GuiButton(2000,0,0,"Done"));
                     mc.displayGuiScreen(parent);
                     mc.launchIntegratedServer("modern-check","Modern Metals disposable checks",new WorldSettings(8675309L,GameType.CREATIVE,false,false,WorldType.DEFAULT));
                     state=3;
                 } else if(state==3 && mc.world!=null && mc.player!=null && check==null) {
+                    OreOverlayChecks.verify(mc);
                     for(final net.minecraft.block.Block block:net.minecraftforge.fml.common.registry.ForgeRegistries.BLOCKS.getValues()) {
                         if(!"modernmetals".equals(block.getRegistryName().getResourceDomain())) continue;
                         for(final net.minecraft.block.state.IBlockState variant:block.getBlockState().getValidStates())
@@ -136,11 +202,21 @@ public final class ClientChecks {
                         }
                     }
                     check=mc.getIntegratedServer().addScheduledTask(()->{
-                        try { ModernMetalsProbe.run(mc.getIntegratedServer()); }
+                        try {
+                            ModernMetalsProbe.run(mc.getIntegratedServer());
+                            OreOverlayChecks.placeDisplay(mc.getIntegratedServer());
+                        }
                         catch(Exception failure) {throw new RuntimeException(failure);}
                     });
-                } else if(check!=null && check.isDone()) {
-                    check.get(); screenshot(mc,"integrated-world.png"); report(true,"Forge Mods and OreSpawn config, fantasy selector save/cancel and full restart, material switches, baked models and integrated saved world");
+                } else if(state==3 && check!=null && check.isDone()) {
+                    check.get();
+                    mc.displayGuiScreen(null);
+                    mc.gameSettings.hideGUI=true;
+                    state=4;
+                    ticks=0;
+                } else if(state==4 && ++ticks>=40) {
+                    screenshot(mc,"ore-overlay-display.png");
+                    report(true,"Both config screens, fantasy restart, baked ore block/item overlays, stone host and integrated saved world");
                     finished=true;mc.shutdown();
                 }
                 if(System.currentTimeMillis()-started>240000) throw new AssertionError("Client check timed out, state="+state);
