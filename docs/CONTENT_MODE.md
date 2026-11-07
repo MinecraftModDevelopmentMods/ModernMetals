@@ -3,20 +3,27 @@
 In Minecraft 1.10.2, Modern Metals owns its fantasy setting. Open **Mods → Modern
 Metals → Config → Fantasy Level** and choose **High Fantasy** or **Low Fantasy**.
 The same selector is available through OreSpawn's child Mods list. Save with Done
-and restart the game/server to apply the recipes. Clients and servers should use
-matching settings.
+and restart the game or server to apply the recipes. Forge checks for matching
+settings before joining a multiplayer world and explains how to fix a mismatch.
+Use the same build on both sides so the check is available.
 
 The setting is stored in **`config/ModernMetals.cfg`**:
 
 ```text
 general {
     S:contentMode=low_fantasy
+    B:enableVillagerTrades=true
 }
 ```
 
 High Fantasy is the default. Missing or invalid values use High Fantasy; invalid
 file values are normalized at startup. Changes remain pending until a full restart
 and do not rewrite live registries or recipes.
+
+**Villager Trades** defaults to on. Turn it off to stop new Modern Metals
+blacksmith offers in either fantasy mode. The change applies after restart.
+Offers already stored in a villager's inventory and offers from Base Metals
+keep their existing behavior.
 
 The 1.10 version does not read or change Base Metals' fantasy setting or recipes.
 If an earlier local candidate used `BaseMetals.cfg`, move the desired value to

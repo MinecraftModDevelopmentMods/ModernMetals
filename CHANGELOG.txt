@@ -1,16 +1,14 @@
 2.5.1.110021 for 1.10.2
 
-- Updated the build and Eclipse setup to ForgeGradle 7, keeping Java 8 support.
-- Added build checks and release workflows.
-- Requires Base Metals 2.5.1.110021 and MMD OreSpawn 4.1.2.110021.
-- Fixed material settings so enabled metals register their blocks, items and recipes.
-- Finished boron, beryllium and thorium, including molten forms, buckets and ore generation.
-- Moved ore generation to OreSpawn 4, with support for older configs and saved settings.
-- Kept titanium's rutile and magnesium recipe. Titanium ore generation is optional and off by default.
-- Added settings access from both the Forge mod list and OreSpawn's Mods list.
-- Added High and Low Fantasy settings to ModernMetals.cfg and the config screen. Changes need a restart.
-- Low Fantasy restricts unrealistic equipment, building recipes, gears, trades and Tinkers parts.
-- Fixed Modern Metals processing recipes with IC2 and Mekanism.
-- Fixed aluminum part casting when Tinkers has already registered the fluid.
-- Added the missing upper slab models for boron, beryllium and thorium.
-- Moved Java packages to zone.moddev.mc.modernmetals. Existing block and item IDs are unchanged.
+This brings the 1.10.2 branch up to date. Use Java 8, Forge 12.18.3.2511 or later for 1.10.2, Base Metals 2.5.1.110021 and MMD OreSpawn 4.1.2.110021.
+
+- Restored boron, beryllium and thorium, including their ores, molten forms and recipes.
+- Kept titanium's rutile and magnesium recipe. Titanium ore generation is optional and starts off.
+- Moved ore generation to OreSpawn 4. Existing OreSpawn settings can carry forward and retrogen stays off.
+- Used KiriCattus's ore overlays so the stone in your resource pack shows through. Thorium keeps its original texture.
+- Put Modern Metals settings in both the Forge Mods menu and OreSpawn's Mods list. The screens have German, Simplified Chinese and Russian translations, with regional English files also included.
+- Added High and Low Fantasy and a switch for new villager trades. Restart after changing them. Clients need the same Fantasy Level as their server.
+- Fixed IC2 and Mekanism processing and a Tinkers casting issue when the aluminum fluid was already registered.
+- Checked all 20 ores with the Base Metals crusher registry and the baseSteam and baseElectric crusher lookups.
+- Restored old door, fishing rod, horse armor, alloy ore and molten aluminum brass IDs for 0.11.0 worlds. Back up an older world before opening it with the new jars.
+- Updated the build and Eclipse setup to ForgeGradle 7. The game still runs on Java 8.

@@ -5,6 +5,7 @@ import java.util.List;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraftforge.common.config.ConfigElement;
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.config.GuiConfig;
 import net.minecraftforge.fml.client.config.IConfigElement;
 import net.minecraftforge.fml.relauncher.Side;
@@ -23,7 +24,13 @@ public final class ModernMetalsConfigScreen extends GuiConfig {
     private static List<IConfigElement> elements() {
         final List<IConfigElement> elements = new ArrayList<>(
                 new ConfigElement(Config.getConfiguration().getCategory("General")).getChildElements());
-        elements.addAll(new ConfigElement(Config.getConfiguration().getCategory("Metals")).getChildElements());
+        for (final Property material : Config.getConfiguration().getCategory("Metals").getOrderedValues()) {
+            elements.add(new ConfigElement(material) {
+                @Override public String getComment() {
+                    return I18n.format("config.modernmetals.material.tooltip");
+                }
+            });
+        }
         return elements;
     }
 }

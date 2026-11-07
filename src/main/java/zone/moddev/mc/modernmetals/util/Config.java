@@ -40,6 +40,7 @@ public class Config {
 			MinecraftForge.EVENT_BUS.register(new Config());
 		}
 		zone.moddev.mc.modernmetals.content.ContentPolicy.initialize(contentMode(configuration));
+		Options.enableVillagerTrades = villagerTrades(configuration);
 
 		// METALS
 		Options.enableThorium = material("thorium", "EnableThorium", "Thorium");
@@ -88,6 +89,14 @@ public class Config {
         return mode;
     }
 
+    static boolean villagerTrades(final Configuration config) {
+        final net.minecraftforge.common.config.Property property = config.get("General", "enableVillagerTrades",
+                true, "Let blacksmiths trade Modern Metals ingots and equipment. Requires a game restart.");
+        property.setLanguageKey("config.modernmetals.villager_trades");
+        property.setRequiresMcRestart(true);
+        return property.getBoolean();
+    }
+
     private static boolean material(final String name, final String key, final String display) {
         final net.minecraftforge.common.config.Property property = configuration.get(MATERIALS_CAT,
                 key, true, "Enable " + display + " Items and Materials. Requires a game restart.");
@@ -100,6 +109,7 @@ public class Config {
     }
 
 	public static class Options {
+		public static boolean enableVillagerTrades = true;
 
 		// MATERIALS
 		public static boolean enableThorium = true;

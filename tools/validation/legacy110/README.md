@@ -51,8 +51,8 @@ output first. Keep the editor's `bin/main` unchanged during qualification.
 On Windows, `run_packaged_client.py` launches the installed jar against the
 unmodified obfuscated Minecraft client and Forge universal jar. Supply `--java`,
 `--cache`, `--installer`, `--template`, `--output` and `--phase first|reload`.
-It verifies the Forge installer and Minecraft client hashes, uses existing verified
-libraries/natives, and isolates the universal jar from the server jar named
+It verifies the Forge installer and Minecraft client hashes, stages verified
+Windows natives in the disposable game directory, and isolates the universal jar from the server jar named
 in its manifest. Every ordinary installed mod is copied into the disposable
 directory; no development output enters its classpath. Inspect the generated
 client reports and screenshots separately from manual acceptance.
@@ -60,6 +60,28 @@ The matching Mojang asset index and every referenced object are checksum verifie
 in a disposable asset directory. Cached matching objects are copied; missing ones
 are downloaded from Mojang. A different branch's shared Gradle asset index is not
 overwritten or assumed to match Minecraft 1.10.2.
+
+For the overlay check, run `--phase first` with vanilla textures, then run
+`--phase reload --ore-host-pack` against the same disposable world. The probe
+checks the baked block and inventory faces and records an ore display screenshot
+in each run. Copy the first screenshot before reloading to compare both.
+Use `--language de_DE`, `zh_CN` or `ru_RU` to check the actual localized
+settings and selector values.
+
+## Multiplayer and original saves
+
+`check_multiplayer_mode.py` uses the same client inputs and a loopback-only
+dedicated server. Supply `--server-jar` and `--client-jar` to test the installed
+archives. The four default scenarios cover each pair of High and Low Fantasy.
+The server log verifies that a rejected client never enters the world.
+
+`check_original_saves.py --java <java8> --template <clean Forge template>
+--public-jars <download folder> --candidate <installed jar>
+--output <new disposable directory>` verifies the SHA-256 of the original
+public jars, creates the 0.11.0 and beta4.19 fixtures, and checks separate
+upgraded copies on first load and reload. It checks placed blocks, filled
+buckets and item stacks with non-default count or damage. It stops on any Forge
+prompt to remove missing blocks or items. The source worlds are fingerprinted.
 
 ## Limits and separately owned defects
 

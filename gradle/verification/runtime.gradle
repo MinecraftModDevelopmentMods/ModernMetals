@@ -25,6 +25,7 @@ tasks.named('test', Test) {
 tasks.register('verifyProjectResources', Exec) {
     group = 'verification'
     dependsOn tasks.named('test')
+    dependsOn tasks.named('processResources')
     doFirst {
         commandLine providers.gradleProperty('pythonExecutable').getOrElse('python3'),
             'tools/validation/legacy110/audit_resources.py', '--mirror',

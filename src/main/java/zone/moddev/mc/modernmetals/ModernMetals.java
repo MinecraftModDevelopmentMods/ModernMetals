@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import zone.moddev.mc.modernmetals.proxy.CommonProxy;
+import zone.moddev.mc.modernmetals.compat.LegacyRegistryMappings;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -12,6 +13,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
+import net.minecraftforge.fml.common.event.FMLModIdMappingEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -78,6 +80,11 @@ public class ModernMetals {
 	@EventHandler
 	public static void onRemap(FMLMissingMappingsEvent event) {
 		proxy.onRemap(event);
+	}
+
+	@EventHandler
+	public static void onIdMapping(FMLModIdMappingEvent event) {
+		LegacyRegistryMappings.restoreItemAliases();
 	}
 
 	@EventHandler

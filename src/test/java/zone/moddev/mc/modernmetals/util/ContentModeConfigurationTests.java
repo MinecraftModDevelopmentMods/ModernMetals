@@ -28,4 +28,14 @@ final class ContentModeConfigurationTests {
         assertEquals("high_fantasy", Config.contentMode(config));
         assertEquals("high_fantasy", config.getCategory("General").get("contentMode").getString());
     }
+
+    @Test void tradeSwitchDefaultsToEnabledAndPreservesAnExplicitOptOut() {
+        final Configuration config = new Configuration();
+        assertTrue(Config.villagerTrades(config));
+        final Property selector = config.getCategory("General").get("enableVillagerTrades");
+        assertTrue(selector.requiresMcRestart());
+        assertEquals("config.modernmetals.villager_trades", selector.getLanguageKey());
+        selector.set(false);
+        assertFalse(Config.villagerTrades(config));
+    }
 }

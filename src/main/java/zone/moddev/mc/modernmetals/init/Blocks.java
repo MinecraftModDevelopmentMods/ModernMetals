@@ -2,12 +2,12 @@ package zone.moddev.mc.modernmetals.init;
 
 import java.util.Arrays;
 
-import javax.annotation.Nonnull;
-
 import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.lib.util.Oredicts;
+import zone.moddev.mc.modernmetals.block.OverlayOreBlock;
 import zone.moddev.mc.modernmetals.data.MaterialNames;
 
 import net.minecraft.block.Block;
@@ -67,7 +67,7 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 
 					create(Names.BLOCK, material);
 					create(Names.PLATE, material);
-					create(Names.ORE, material);
+					createOre(material);
 					create(Names.BARS, material);
 					create(Names.DOOR, material);
 					create(Names.TRAPDOOR, material);
@@ -82,5 +82,24 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 				});
 
 		initDone = true;
+	}
+
+	private static void createOre(MMDMaterial material) {
+		if (MaterialNames.THORIUM.equals(material.getName())) {
+			// Thorium still has its original opaque texture.
+			create(Names.ORE, material);
+		} else if ((material.hasOre() || hasLegacyOre(material.getName()))
+				&& !material.hasBlock(Names.ORE) && isNameEnabled(Names.ORE)) {
+			final Block ore = addBlock(new OverlayOreBlock(material), Names.ORE, material,
+					ItemGroups.getTab(SharedStrings.TAB_BLOCKS));
+			material.addNewBlock(Names.ORE.toString(), ore);
+			Oredicts.registerOre("ore" + material.getCapitalizedName(), ore);
+		}
+	}
+
+	private static boolean hasLegacyOre(final String name) {
+		// 0.11.0 saved these alloy ores. OreSpawn has no placement rules for them.
+		return MaterialNames.GALVANIZED_STEEL.equals(name) || MaterialNames.NICHROME.equals(name)
+				|| MaterialNames.STAINLESS_STEEL.equals(name);
 	}
 }

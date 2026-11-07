@@ -1,9 +1,9 @@
 {
-  "homepage": "http://minecraft.curseforge.com/projects/modern-metals",
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/modern-metals/files/all?version=1.10.2",
   "promos": {
     "1.11.2-latest": "0.0.0",
     "1.11-latest": "0.0.0",
-    "1.10.2-latest": "0.0.0",
+    "1.10.2-latest": "2.5.0-beta4",
     "1.10-latest": "0.0.0",
     "1.9.4-latest": "0.0.0",
     "1.9-latest": "0.11.0",
@@ -15,7 +15,7 @@
     "1.6.4-latest": "0.0.0",
     "1.11.2-recommended": "0.0.0",
     "1.11-recommended": "0.0.0",
-    "1.10.2-recommended": "0.0.0",
+    "1.10.2-recommended": "2.5.0-beta4",
     "1.10-recommended": "0.0.0",
     "1.9.4-recommended": "0.0.0",
     "1.9-recommended": "0.11.0",
@@ -33,7 +33,7 @@
     "0.0.0": "No Release"
   },
   "1.10.2": {
-    "0.0.0": "No Release"
+    "2.5.0-beta4": "Modern Metals 2.5.0-beta4.19 for Minecraft 1.10.2"
   },
   "1.10": {
     "0.0.0": "No Release"

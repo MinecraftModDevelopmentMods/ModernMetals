@@ -102,6 +102,16 @@ public final class ModernMetalsProbe {
             catalog.add(name, entry);
         }
         report.add("materials", catalog);
+        if (!Boolean.getBoolean("modern.baseline") && Materials.hasMaterial("aluminumbrass")
+                && !Loader.isModLoaded("tconstruct")) {
+            final net.minecraft.nbt.NBTTagCompound savedFluid = new net.minecraft.nbt.NBTTagCompound();
+            savedFluid.setString("FluidName", "alubrass");
+            savedFluid.setInteger("Amount", 1000);
+            final net.minecraftforge.fluids.FluidStack legacy = net.minecraftforge.fluids.FluidStack.loadFluidStackFromNBT(savedFluid);
+            check(legacy != null && legacy.amount == 1000
+                    && legacy.getFluid().getBlock() == Materials.getMaterialByName("aluminumbrass").getFluidBlock(),
+                    "A saved 0.11.0 aluminum brass bucket no longer resolves", failures);
+        }
         for(final String[] alias:new String[][]{{"chromium","Chrome"},{"chromium","Chromium"},{"tungsten","Wolfram"},{"tungsten","Tungsten"},{"aluminum","Aluminium"}}) {
             if(!Materials.hasMaterial(alias[0])) continue;
             boolean found=false;
@@ -125,7 +135,8 @@ public final class ModernMetalsProbe {
                     if(output!=null && output.getItem()==material.getItem(Names.PICKAXE)) recipe=true;
                 }
                 check(recipe==(!low || suitable),"Fantasy mode pickaxe recipe incorrect: "+name,failures);
-                check(material.hasItem(Names.PICKAXE) && material.hasBlock(Names.ORE)==material.hasOre(),"Fantasy mode changed registry identities: "+name,failures);
+                final boolean hasOre = material.hasOre() || name.equals("stainlesssteel") || name.equals("galvanizedsteel");
+                check(material.hasItem(Names.PICKAXE) && material.hasBlock(Names.ORE)==hasOre,"Fantasy mode changed registry identities: "+name,failures);
             }
             if(low) {
                 for(final net.minecraft.item.crafting.IRecipe recipe:CraftingManager.getInstance().getRecipeList()) {
@@ -140,6 +151,7 @@ public final class ModernMetalsProbe {
                 }
             }
         }
+        if (System.getProperty("modern.trades") != null) checkTrades(failures);
         OptionalIntegrationChecks.run(failures);
         final WorldServer world = server.worldServerForDimension(0);
         for (final String[] alloy : new String[][] {{"aluminumbrass","aluminum","brass"},
@@ -264,5 +276,39 @@ public final class ModernMetalsProbe {
         }
         world.getChunkFromBlockCoords(pos).setChunkModified();
     }
+    private static void checkTrades(final JsonArray failures) {
+        final net.minecraftforge.fml.common.registry.VillagerRegistry.VillagerProfession smith =
+                net.minecraftforge.fml.common.registry.VillagerRegistry.instance().getRegistry()
+                        .getValue(new ResourceLocation("minecraft:smith"));
+        final net.minecraft.village.MerchantRecipeList offers = new net.minecraft.village.MerchantRecipeList();
+        final java.util.Random random = new java.util.Random(8675309L);
+        for (int career = 1; career <= 3; career++) {
+            for (int level = 0; level < 8; level++) {
+                final java.util.List<net.minecraft.entity.passive.EntityVillager.ITradeList> trades =
+                        smith.getCareer(career).getTrades(level);
+                if (trades != null) trades.forEach(trade -> trade.modifyMerchantRecipeList(offers, random));
+            }
+        }
+        int modern = 0;
+        int base = 0;
+        final zone.moddev.mc.modernmetals.content.ContentPolicy policy =
+                zone.moddev.mc.modernmetals.content.ContentPolicy.active();
+        for (final net.minecraft.village.MerchantRecipe offer : offers) {
+            for (final ItemStack stack : new ItemStack[] {
+                    offer.getItemToBuy(), offer.getSecondItemToBuy(), offer.getItemToSell() }) {
+                if (stack == null || stack.getItem().getRegistryName() == null) continue;
+                final String domain = stack.getItem().getRegistryName().getResourceDomain();
+                if ("modernmetals".equals(domain)) {
+                    modern++;
+                    check(policy.allows(stack), "Fantasy mode allowed a restricted trade: " + stack, failures);
+                } else if ("basemetals".equals(domain)) {
+                    base++;
+                }
+            }
+        }
+        check((modern > 0) == Boolean.getBoolean("modern.trades"), "Modern Metals trade switch ignored", failures);
+        check(base > 0, "Modern Metals settings removed Base Metals trades", failures);
+    }
+
     private static void check(final boolean pass, final String detail, final JsonArray failures) { if (!pass) failures.add(new JsonPrimitive(detail)); }
 }

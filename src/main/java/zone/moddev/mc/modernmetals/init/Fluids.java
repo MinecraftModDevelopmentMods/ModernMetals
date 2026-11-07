@@ -1,5 +1,7 @@
 package zone.moddev.mc.modernmetals.init;
 
+import net.minecraftforge.fluids.Fluid;
+import net.minecraftforge.fluids.FluidRegistry;
 import zone.moddev.mc.modernmetals.util.Config.Options;
 
 /**
@@ -61,8 +63,18 @@ public class Fluids extends com.mcmoddev.lib.init.Fluids {
 		}
 
 		if (Options.enableAluminumBrass) {
-			addFluid(Materials.aluminumBrass, 2000, 10000, 500, 10);
+			final Fluid brass = addFluid(Materials.aluminumBrass, 2000, 10000, 500, 10);
 			addFluidBlock(Materials.aluminumBrass);
+			// Forge 1.10 saves the fluid name in buckets and tanks independently of the block ID.
+			if (FluidRegistry.getFluid("alubrass") == null) {
+				final Fluid legacy = new Fluid("alubrass", brass.getStill(), brass.getFlowing()) {
+					@Override public int getColor() { return brass.getColor(); }
+				}
+						.setUnlocalizedName("modernmetals.aluminumbrass").setDensity(brass.getDensity())
+						.setViscosity(brass.getViscosity()).setTemperature(brass.getTemperature())
+						.setLuminosity(brass.getLuminosity()).setBlock(Materials.aluminumBrass.getFluidBlock());
+				FluidRegistry.registerFluid(legacy);
+			}
 		}
 
 		if (Options.enableCadmium) {

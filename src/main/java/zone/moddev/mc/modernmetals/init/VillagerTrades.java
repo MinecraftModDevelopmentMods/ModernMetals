@@ -1,5 +1,7 @@
 package zone.moddev.mc.modernmetals.init;
 
+import zone.moddev.mc.modernmetals.util.Config;
+
 /**
  *
  * @author Jasmine Iwanek
@@ -24,8 +26,10 @@ public class VillagerTrades extends com.mcmoddev.lib.init.VillagerTrades {
 		Materials.init();
 		Items.init();
 
-		if(zone.moddev.mc.modernmetals.content.ContentPolicy.active().lowFantasy()) registerRestrictedTrades();
-		else registerCommonTrades();
+		if (Config.Options.enableVillagerTrades) {
+			if (zone.moddev.mc.modernmetals.content.ContentPolicy.active().lowFantasy()) registerRestrictedTrades();
+			else registerCommonTrades();
+		}
 
 		initDone = true;
 	}
