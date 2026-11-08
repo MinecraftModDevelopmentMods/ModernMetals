@@ -1,0 +1,58 @@
+[
+  {
+    "id": "mmdlib",
+    "coordinate": "curse.maven:mmdlib-261744:2712947",
+    "repository": "https://www.cursemaven.com",
+    "sha256": "FE2229E6755A5FD306C33CC22DCCF055378D371339133E4912C5DC9213E360AF",
+    "runtime": true
+  },
+  {
+    "id": "orespawn",
+    "coordinate": "zone.moddev.mc.orespawn:OreSpawn:4.1.3.112021",
+    "repository": "https://maven.moddev.zone/releases",
+    "sha256": "5B5929CCDEB055679FD6D7B9629BF94F06085A6ECD791FD08D0500F666C079DD",
+    "runtime": true
+  },
+  {
+    "id": "basemetals",
+    "coordinate": "zone.moddev.mc.basemetals:BaseMetals:2.6.1.112021",
+    "repository": "https://maven.moddev.zone/releases",
+    "sha256": "FBAE982E308DCC1AC4281A5372560D06C8BB3A027EE290EDA4AC6875F5680FDC",
+    "runtime": false
+  },
+  {
+    "id": "alt",
+    "coordinate": "curse.maven:additional-loot-tables-243157:2691613",
+    "repository": "https://www.cursemaven.com",
+    "sha256": "D5661DBF99859E8C9CF29704AB0FD4A132D062031A4023A0FF5E6F9D06ACE3E2",
+    "runtime": false
+  },
+  {
+    "id": "mantle",
+    "coordinate": "curse.maven:tinkers-mantle-74924:2550550",
+    "repository": "https://www.cursemaven.com",
+    "sha256": "7758817445D55B65581A34A906EE01155C4598FDDF06E7D72944C840A1105184",
+    "runtime": false
+  },
+  {
+    "id": "tconstruct",
+    "coordinate": "curse.maven:tinkers-construct-74072:2571785",
+    "repository": "https://www.cursemaven.com",
+    "sha256": "B1E21352C7BCEC95E33769308D9E70CC83E8F3A97C27FB94F4F0F55CE3CF96F2",
+    "runtime": false
+  },
+  {
+    "id": "conarm",
+    "coordinate": "curse.maven:constructs-armory-287683:2622725",
+    "repository": "https://www.cursemaven.com",
+    "sha256": "C1EB6F2BB127652D8FDEAC21FF4BF376F17804E2A5B8EDF14C7C082497AF58A1",
+    "runtime": false
+  },
+  {
+    "id": "cofhcore",
+    "coordinate": "curse.maven:cofh-core-69162:2920433",
+    "repository": "https://www.cursemaven.com",
+    "sha256": "E07B0C48DEF9CE8CFAA4CF7A7C656BF7F7D6815F74FBCC2957DD43EFA78486A9",
+    "runtime": false
+  }
+]

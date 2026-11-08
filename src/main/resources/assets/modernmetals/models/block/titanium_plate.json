@@ -1,5 +1,5 @@
 {
-    "parent": "basemetals:block/plate",
+    "parent": "modernmetals:block/plate",
     "textures": {
         "top": "modernmetals:blocks/titanium_plate",
         "side": "modernmetals:blocks/titanium_plate",

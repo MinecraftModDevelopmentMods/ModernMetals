@@ -1,5 +1,5 @@
 {
-    "parent": "basemetals:block/plate",
+    "parent": "modernmetals:block/plate",
     "textures": {
         "top": "modernmetals:blocks/tungsten_plate",
         "side": "modernmetals:blocks/tungsten_plate",

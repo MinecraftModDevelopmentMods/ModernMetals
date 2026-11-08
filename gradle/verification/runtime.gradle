@@ -1,0 +1,35 @@
+tasks.register('verifyProjectResources', Exec) {
+    group = 'verification'
+    dependsOn tasks.named('processResources')
+    commandLine providers.gradleProperty('pythonExecutable').getOrElse('python3'),
+        'tools/validation/legacy112/audit_resources.py', 'build/resources/main'
+}
+
+sourceSets {
+    runtimeProbe {
+        java.srcDirs = ['tools/validation/legacy112/runtime-probe']
+        compileClasspath = sourceSets.main.compileClasspath + sourceSets.main.output
+    }
+}
+
+def probe = tasks.register('runtimeProbeJar', Jar) {
+    archiveFileName = 'modernmetals-probe.jar'
+    destinationDirectory = layout.buildDirectory.dir('test-mods')
+    from sourceSets.runtimeProbe.output
+}
+def packagedProbe = renamer.classes(probe) {
+    map.from minecraft.dependency.toSrgFile
+    output = layout.buildDirectory.file('test-mods/modernmetals-probe-packaged.jar')
+}
+tasks.register('packagedForgeRuntimeTest', Exec) {
+    group = 'verification'
+    dependsOn 'verifyReleaseArtifacts', packagedProbe
+    doFirst {
+        def launcher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(8) }.get()
+        commandLine providers.gradleProperty('pythonExecutable').getOrElse('python3'),
+            'tools/validation/legacy112/run_packaged_suite.py', '--java', launcher.executablePath.asFile.absolutePath,
+            '--template', file(providers.gradleProperty('packagedForgeRuntimeRoot').get()).absolutePath,
+            '--output', file(providers.gradleProperty('packagedForgeRuntimeOutput').getOrElse('build/packaged-forge-checks')).absolutePath,
+            '--mirror', file(providers.gradleProperty('legacyDependencyVerificationRepository').getOrElse('.gradle/legacy-dependencies')).absolutePath
+    }
+}

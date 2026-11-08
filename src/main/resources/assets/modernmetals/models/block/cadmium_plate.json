@@ -1,5 +1,5 @@
 {
-    "parent": "basemetals:block/plate",
+    "parent": "modernmetals:block/plate",
     "textures": {
         "top": "modernmetals:blocks/cadmium_plate",
         "side": "modernmetals:blocks/cadmium_plate",

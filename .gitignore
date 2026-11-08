@@ -2,7 +2,6 @@
 bin
 *.launch
 .settings
-.settings/*
 .metadata
 .classpath
 .project
@@ -21,14 +20,19 @@ build
 # other
 eclipse
 run
-classes
 
 /README.txt
 /forge-*-changelog.txt
 
 secret.json
-libs/*
-!/libs/README.txt
-
+# Local context and generated verification
+/AGENTS.md
+/agent-notes/
+/.codex/
+/.verification*/
+/release-candidates/
+__pycache__/
+*.pyc
 .DS_Store
-bugreport.md
+Thumbs.db
+desktop.ini
