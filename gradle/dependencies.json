@@ -1,0 +1,52 @@
+[
+  {
+    "id": "basemetals",
+    "coordinate": "zone.moddev.mc.basemetals:BaseMetals:2.5.1.111021",
+    "sha256": "F56C77ACE4963991AB56A76468EB398F555E4F6D059710C41DD7483054D76B8C",
+    "repository": "https://maven.moddev.zone/releases",
+    "runtime": true
+  },
+  {
+    "id": "orespawn",
+    "coordinate": "zone.moddev.mc.orespawn:OreSpawn:4.1.5.111021",
+    "sha256": "5B200A9CE09DF96089FBD7781A026D15B6A7566A0F11B025EBBF486AB8A3655A",
+    "repository": "https://maven.moddev.zone/releases",
+    "runtime": true
+  },
+  {
+    "id": "mantle",
+    "coordinate": "curse.maven:mantle-74924:2413993",
+    "sha256": "6C1C79BD8491106D65240D4DF139E2BEA7914BA2622FAE0662ADB3047D5EDF9D",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "tconstruct",
+    "coordinate": "curse.maven:tinkers-construct-74072:2451489",
+    "sha256": "2D7F4A08EDDA2881A432CD80FF26575CCEA593FCC8A597A435652C1A53B14CB8",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "ic2",
+    "coordinate": "curse.maven:industrial-craft-242638:2457397",
+    "sha256": "ACCFA9A503A4B194CFF9528EA521AB42E00A85620F13DDE268BE14C112305B98",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "cofh",
+    "coordinate": "curse.maven:cofh-core-69162:2469613",
+    "sha256": "7C3EC573F62AE6F3F98B34361123E9D706CFDF03419AE6242293515960391C11",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "mekanism",
+    "coordinate": "curse.maven:mekanism-268560:2475809",
+    "sha256": "AF013AB6843174E4E766EC98A576D60047EAEA372CD01F6BF5460678EFE86D19",
+    "repository": "https://www.cursemaven.com"
+  },
+  {
+    "id": "veinminer",
+    "coordinate": "curse.maven:veinminer-67133:2528292",
+    "sha256": "75B37AC8778261875A692D468ABAA3B1BD8AFF61D18B4EA900C26AA2C8528AD7",
+    "repository": "https://www.cursemaven.com"
+  }
+]

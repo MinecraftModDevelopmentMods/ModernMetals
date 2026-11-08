@@ -3,7 +3,7 @@ itemGroup.modernmetals.tools=Modern Metals
 itemGroup.modernmetals.blocks=Modern Metals
 nei.modernmetals.recipehandler.crusher.name=粉碎的方块/物品
 
-material.aluminum.name=Aluminum
+material.aluminum.name=铝
 item.modernmetals.aluminum_arrow.name=铝箭
 item.modernmetals.aluminum_axe.name=铝斧
 item.modernmetals.aluminum_bars.name=铝栏杆
@@ -1513,3 +1513,46 @@ tile.modernmetals.thorium_stairs.name=钍楼梯
 tile.modernmetals.thorium_wall.name=钍墙
 
 
+
+# Modern Metals settings and restored content
+config.modernmetals.material.tooltip=控制是否启用此材料的方块、物品和配方。需要重启游戏。
+config.modernmetals.title=Modern Metals
+config.modernmetals.description=重启游戏后应用更改。请在 OreSpawn 中设置矿石生成。
+config.modernmetals.content_mode=奇幻等级
+config.modernmetals.content_mode.tooltip=高奇幻保留全部配方。低奇幻限制不符合现实的装备和建筑部件。需要重启游戏。
+high_fantasy=高奇幻
+low_fantasy=低奇幻
+config.modernmetals.villager_trades=村民交易
+config.modernmetals.villager_trades.tooltip=允许铁匠交易 Modern Metals 的金属锭和装备。需要重启游戏。
+config.modernmetals.connection.mismatch=服务器使用%s，你的游戏使用%s。请在模组 > Modern Metals > 配置中选择与服务器一致的奇幻等级，然后重启游戏。
+config.modernmetals.connection.protocol=Modern Metals 无法核对奇幻等级。请在服务器和客户端使用相同构建版本的 Modern Metals。
+itemGroup.modernmetals.combat=Modern Metals 战斗用品
+item.modernmetals.titanium_casing.name=钛外壳
+item.modernmetals.beryllium_scythe.name=铍镰刀
+item.modernmetals.boron_scythe.name=硼镰刀
+item.modernmetals.thorium_scythe.name=钍镰刀
+item.modernmetals.titanium_scythe.name=钛镰刀
+config.modernmetals.enable_thorium=启用钍
+config.modernmetals.enable_boron=启用硼
+config.modernmetals.enable_beryllium=启用铍
+config.modernmetals.enable_cadmium=启用镉
+config.modernmetals.enable_nichrome=启用镍铬合金
+config.modernmetals.enable_aluminum=启用铝
+config.modernmetals.enable_aluminumbrass=启用铝黄铜
+config.modernmetals.enable_chromium=启用铬
+config.modernmetals.enable_galvanizedsteel=启用镀锌钢
+config.modernmetals.enable_iridium=启用铱
+config.modernmetals.enable_magnesium=启用镁
+config.modernmetals.enable_manganese=启用锰
+config.modernmetals.enable_osmium=启用锇
+config.modernmetals.enable_plutonium=启用钚
+config.modernmetals.enable_rutile=启用金红石
+config.modernmetals.enable_stainlesssteel=启用不锈钢
+config.modernmetals.enable_tantalum=启用钽
+config.modernmetals.enable_titanium=启用钛
+config.modernmetals.enable_tungsten=启用钨
+config.modernmetals.enable_uranium=启用铀
+config.modernmetals.enable_zirconium=启用锆
+
+achievement.aluminum_brass_maker=铝黄铜
+achievement.aluminum_brass_maker.desc=混合铝粉和黄铜粉，并烧制铝黄铜
