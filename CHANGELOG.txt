@@ -1,15 +1,14 @@
-1) Tinkers Construct Tools
-2) Code cleanups
-3) Support Items for Mekanism
-4) Support Items for IC2
-5) Balanced metals (They now have different stats)
-6) Fixed Fishing Rod item name ($metal_fishing_rod instead of $metal_fishingrod)
-7) Added Buttons, Levers, Stairs, Pressure Plates, Walls & Slabs
-8) Building Bricks integration support
-9) Tungsten oredicted as wolfram for more mod compatibility
-10) Small Blends/small piles of powder oredicted as dustTiny instead of smalldust
-11) Fishing Rods now actually work. (Thanks to lclc98 for the assistance)
-12) Veinminer integration
-13) Ender IO Integration
-14) More Zinc Stuff
-15) Ported to 1.11.2
+2.5.1.111021 for 1.11.2
+
+This brings the 1.11.2 branch up to date. Use Java 8, Forge 13.20.1.2588 or later for 1.11.2, Base Metals 2.5.1.111021 and MMD OreSpawn 4.1.5.111021.
+
+- Kept boron, beryllium and thorium with their ores, molten forms, buckets and recipes.
+- Kept titanium's rutile and magnesium recipe. Titanium ore generation is optional and starts off.
+- Moved ore generation to OreSpawn 4. Existing OreSpawn settings can carry forward and retrogen stays off.
+- Used KiriCattus's ore overlays so the stone in your resource pack shows through. Thorium keeps its original texture.
+- Put Modern Metals settings in the Forge Mods menu and OreSpawn Mods directory. The screens have German, Simplified Chinese and Russian translations, with regional English files also included.
+- Added High and Low Fantasy and a switch for new villager trades. Restart after changing them. Clients need the same Fantasy Level as their server.
+- Fixed IC2 and Mekanism processing and a Tinkers casting issue when the aluminum fluid was already registered.
+- Use the Base Metals crusher registry for all 20 ores.
+- Restored old door, fishing rod, horse armor, alloy ore and molten aluminum brass IDs for 0.11.0 worlds. Back up an older world before opening it with the new jars.
+- Updated the build and Eclipse setup to ForgeGradle 7. The game still runs on Java 8.
