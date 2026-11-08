@@ -1,1 +1,11 @@
+2.5.1.112021 for 1.12.2
+
+- Updated the build to ForgeGradle 7 and moved Modern Metals to the ModDev Zone namespace.
+- Switched ore generation to OreSpawn 4 and added ore overlays that use the active stone texture.
+- Kept titanium ore optional. Rutile and magnesium still make titanium.
+- Added a settings screen in Forge and OreSpawn. Modern Metals follows Base Metals' Fantasy Level when installed with a compatible version.
+- Added damage from contact with molten metal and kept ore processing in MMDLib's shared crusher registry.
+- Fixed stainless steel and nichrome blend recipes while keeping the Chrome ore-dictionary alias.
+- Fixed plate and door models when Base Metals isn't installed.
+
 *Metals family wide cleanups and bugfixes

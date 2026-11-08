@@ -7,7 +7,7 @@
 		},
 		{
 			"type": "forge:ore_dict",
-			"ore": "dustChrome"
+			"ore": "dustChromium"
 		}
 	],
 	"conditions": [
@@ -27,7 +27,7 @@
 				{
 					"type": "mmdlib:enabled",
 					"optionName": "material",
-					"optionValue": "Chrome"
+					"optionValue": "Chromium"
 				},
 				{
 					"type": "mmdlib:enabled",

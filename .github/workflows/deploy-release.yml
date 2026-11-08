@@ -89,8 +89,8 @@ jobs:
             exit 1
           fi
 
-          if [[ "$target_suffix" != 110021 ]]; then
-            echo 'Only the qualified Minecraft 1.10.2 Forge target is supported by this dispatcher' >&2; exit 1
+          if [[ "$target_suffix" != 110021 && "$target_suffix" != 111021 && "$target_suffix" != 112021 ]]; then
+            echo 'Only the Minecraft 1.10.2, 1.11.2 and 1.12.2 Forge targets are supported by this dispatcher' >&2; exit 1
           fi
 
           loader_code="${target_suffix: -1}"
@@ -295,8 +295,12 @@ jobs:
           fi
 
           curseforge_dependencies+=('243157(optional)')
-          if [[ " ${curseforge_dependencies[*]} " != *' 240967(required) '* ]]; then
-            echo 'Base Metals must be a required relation for this 1.10 release' >&2; exit 1
+          if [[ "$target_suffix" == 112021 ]]; then
+            if [[ " ${curseforge_dependencies[*]} " != *' 261744(required) '* ]]; then
+              echo 'MMDLib must be a required relation for the Minecraft 1.12.2 release' >&2; exit 1
+            fi
+          elif [[ " ${curseforge_dependencies[*]} " != *' 240967(required) '* ]]; then
+            echo 'Base Metals must be a required relation for this target' >&2; exit 1
           fi
 
           release_sha="$(git rev-parse HEAD)"

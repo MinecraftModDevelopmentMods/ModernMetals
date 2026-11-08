@@ -1,0 +1,39 @@
+package zone.moddev.mc.modernmetals.integration.plugins;
+
+import java.util.Arrays;
+import java.util.List;
+
+import com.mcmoddev.lib.init.Materials;
+import com.mcmoddev.lib.integration.IIntegration;
+import com.mcmoddev.lib.integration.MMDPlugin;
+import com.mcmoddev.lib.util.Config.Options;
+import zone.moddev.mc.modernmetals.ModernMetals;
+import zone.moddev.mc.modernmetals.data.MaterialNames;
+
+/**
+ *
+ * @author Jasmine Iwanek
+ *
+ */
+@MMDPlugin(addonId = ModernMetals.MODID, pluginId = MMeEnderIO.PLUGIN_MODID)
+public class MMeEnderIO extends com.mcmoddev.lib.integration.plugins.EnderIO implements IIntegration {
+	/**
+	 *
+	 */
+	@Override
+	public void init() {
+		if (!Options.isModEnabled(PLUGIN_MODID)) {
+			return;
+		}
+
+		final List<String> materials = Arrays.asList(MaterialNames.ALUMINUM, MaterialNames.ALUMINUM_BRASS,
+				MaterialNames.CADMIUM, MaterialNames.CHROMIUM, MaterialNames.GALVANIZED_STEEL, MaterialNames.IRIDIUM,
+				MaterialNames.MAGNESIUM, MaterialNames.MANGANESE, MaterialNames.NICHROME, MaterialNames.OSMIUM,
+				MaterialNames.PLUTONIUM, MaterialNames.RUTILE, MaterialNames.STAINLESS_STEEL, MaterialNames.TANTALUM,
+				MaterialNames.TITANIUM, MaterialNames.TUNGSTEN, MaterialNames.URANIUM, MaterialNames.ZIRCONIUM);
+
+		materials.stream().filter(Materials::hasMaterial)
+				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
+				.forEach(materialName -> addSagMillRecipe(materialName, 3600));
+	}
+}
