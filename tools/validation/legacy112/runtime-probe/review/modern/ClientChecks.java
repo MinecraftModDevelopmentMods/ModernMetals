@@ -8,7 +8,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Collections;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiDisconnected;
 import net.minecraft.client.gui.GuiMainMenu;
+import net.minecraft.client.multiplayer.GuiConnecting;
+import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
@@ -24,7 +28,12 @@ import zone.moddev.mc.modernmetals.content.ContentPolicy;
 
 public final class ClientChecks {
     public static void install() {
-        MinecraftForge.EVENT_BUS.register(new ClientChecks());
+        if (Boolean.getBoolean("review.oreDisplay")) {
+            OreOverlayChecks.installDisplay();
+            return;
+        }
+        final String server = System.getProperty("review.remoteServer");
+        MinecraftForge.EVENT_BUS.register(server == null ? new ClientChecks() : new RemoteCheck(server));
     }
 
     private GuiScreen menu;
@@ -76,10 +85,56 @@ public final class ClientChecks {
                         != minecraft.getRenderItem().getItemModelMesher().getModelManager().getMissingModel(),
                         "Missing block model " + id);
             }
+            OreOverlayChecks.verify(minecraft);
             Files.write(Paths.get("modernmetals-client-pass.txt"),
                     Collections.singleton("Forge and OreSpawn screens and three baked block models passed."),
                     StandardCharsets.UTF_8);
             phase++;
+            minecraft.shutdown();
+        }
+    }
+
+    public static final class RemoteCheck {
+        private final String address;
+        private final String expectedDisconnect = System.getProperty("review.expectedDisconnect", "");
+        private final long deadline = System.currentTimeMillis() + 90000;
+        private boolean connecting;
+        private boolean finished;
+
+        RemoteCheck(final String address) {
+            this.address = address;
+        }
+
+        @SubscribeEvent
+        public void check(final TickEvent.ClientTickEvent event) throws Exception {
+            if (event.phase != TickEvent.Phase.END || finished) return;
+            final Minecraft minecraft = Minecraft.getMinecraft();
+            if (!connecting && minecraft.currentScreen instanceof GuiMainMenu) {
+                minecraft.displayGuiScreen(new GuiConnecting(minecraft.currentScreen, minecraft,
+                        new ServerData("Disposable Forge", address, false)));
+                connecting = true;
+            } else if (minecraft.world != null && minecraft.player != null) {
+                require(expectedDisconnect.isEmpty(), "Mismatched player entered the world");
+                finish(minecraft, "Joined dedicated server");
+            } else if (connecting && minecraft.currentScreen instanceof GuiDisconnected) {
+                for (final Field field : GuiDisconnected.class.getDeclaredFields()) {
+                    if (field.getType() != ITextComponent.class) continue;
+                    field.setAccessible(true);
+                    final String reason = ((ITextComponent) field.get(minecraft.currentScreen)).getUnformattedText();
+                    require(!expectedDisconnect.isEmpty() && reason.contains(expectedDisconnect), reason);
+                    finish(minecraft, reason);
+                    return;
+                }
+                throw new IllegalStateException("Missing disconnect reason");
+            } else {
+                require(System.currentTimeMillis() < deadline, "Dedicated server login timed out");
+            }
+        }
+
+        private void finish(final Minecraft minecraft, final String result) throws Exception {
+            Files.write(Paths.get("modernmetals-connection-pass.txt"),
+                    Collections.singleton(result), StandardCharsets.UTF_8);
+            finished = true;
             minecraft.shutdown();
         }
     }

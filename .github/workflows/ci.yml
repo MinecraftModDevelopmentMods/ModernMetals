@@ -172,7 +172,7 @@ jobs:
           set -euo pipefail
           bundle="$RUNNER_TEMP/release-input"
           mkdir -p "$bundle"
-          cp build/libs/ModernMetals-2.5.1.112021{,-sources,-javadoc}.jar "$bundle/"
+          cp build/libs/ModernMetals-2.5.2.112021{,-sources,-javadoc}.jar "$bundle/"
           cp build/release/SHA256SUMS CHANGELOG.txt "$bundle/"
           ./gradlew verifyPreparedReleaseArtifacts verifyMavenCoordinates \
             -PpreparedReleaseDir="$bundle" \
@@ -205,9 +205,9 @@ jobs:
           if-no-files-found: error
           retention-days: 30
           path: |
-            build/libs/ModernMetals-2.5.1.112021.jar
-            build/libs/ModernMetals-2.5.1.112021-sources.jar
-            build/libs/ModernMetals-2.5.1.112021-javadoc.jar
+            build/libs/ModernMetals-2.5.2.112021.jar
+            build/libs/ModernMetals-2.5.2.112021-sources.jar
+            build/libs/ModernMetals-2.5.2.112021-javadoc.jar
             build/release/SHA256SUMS
             CHANGELOG.txt
 

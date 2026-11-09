@@ -29,7 +29,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
-		dependencies = "required-after:forge@[14.23.5.2859,);required-after:mmdlib@[1.0.0-rc2,2.0.0);required-after:orespawn@[4.1.3.112021,5.0.0);after:basemetals;after:tconstruct;after:conarm;before:buildingbricks",
+		dependencies = "required-after:forge@[14.23.5.2859,);required-after:mmdlib@[1.0.0-rc2,2.0.0);required-after:orespawn@[4.1.6.112021,5.0.0);after:basemetals;after:tconstruct;after:conarm;before:buildingbricks",
 		acceptedMinecraftVersions = "[1.12.2]",
 		updateJSON = ModernMetals.UPDATEJSON,
 		guiFactory = "zone.moddev.mc.modernmetals.client.ModernMetalsGuiFactory")
@@ -49,7 +49,7 @@ public class ModernMetals {
 	 * increased whenever a change is made that has the potential to break
 	 * compatibility with other mods that depend on this one.
 	 */
-	protected static final String VERSION = "2.5.1.112021";
+	protected static final String VERSION = "2.5.2.112021";
 
 	protected static final String UPDATEJSON = SharedStrings.UPDATE_JSON_URL + "ModernMetals/master/update.json";
 

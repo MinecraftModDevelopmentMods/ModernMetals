@@ -7,7 +7,9 @@ import com.mcmoddev.lib.data.Names;
 import com.mcmoddev.lib.data.SharedStrings;
 import com.mcmoddev.lib.init.Materials;
 import com.mcmoddev.lib.material.MMDMaterial;
+import com.mcmoddev.lib.util.Oredicts;
 import zone.moddev.mc.modernmetals.ModernMetals;
+import zone.moddev.mc.modernmetals.block.OverlayOreBlock;
 import zone.moddev.mc.modernmetals.data.MaterialNames;
 
 import net.minecraft.block.Block;
@@ -43,11 +45,28 @@ public class Blocks extends com.mcmoddev.lib.init.Blocks {
 				.filter(materialName -> !Materials.getMaterialByName(materialName).isEmpty())
 				.forEach(materialName -> {
 					final MMDMaterial material = Materials.getMaterialByName(materialName);
-					Arrays.asList(Names.BLOCK, Names.PLATE, Names.ORE, Names.BARS, Names.DOOR, Names.TRAPDOOR,
+					create(Names.BLOCK, material);
+					create(Names.PLATE, material);
+					createOre(material);
+					Arrays.asList(Names.BARS, Names.DOOR, Names.TRAPDOOR,
 							Names.BUTTON, Names.SLAB, Names.DOUBLE_SLAB, Names.LEVER, Names.PRESSURE_PLATE,
 							Names.STAIRS, Names.WALL).stream()
 					.forEach(name -> create(name, material));
 				});
+	}
+
+	private static void createOre(final MMDMaterial material) {
+		if (MaterialNames.THORIUM.equals(material.getName())) {
+			create(Names.ORE, material);
+		} else if (material.hasOre() && !material.hasBlock(Names.ORE) && isNameEnabled(Names.ORE)) {
+			final Block ore = addBlock(new OverlayOreBlock(material), Names.ORE, material,
+					ItemGroups.getTab(SharedStrings.TAB_BLOCKS));
+			material.addNewBlock(Names.ORE, ore);
+			final String prefix = getOredictFromName(Names.ORE);
+			if (prefix != null) {
+				Oredicts.registerOre(prefix + material.getCapitalizedName(), ore);
+			}
+		}
 	}
 
 	private static boolean filterFunc(final Block block) {

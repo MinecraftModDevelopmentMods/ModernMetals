@@ -1547,3 +1547,10 @@ config.modernmetals.enable_zirconium=Включить цирконий
 config.modernmetals.content_mode.high_fantasy=Высокий уровень фэнтези
 config.modernmetals.content_mode.low_fantasy=Низкий уровень фэнтези
 config.modernmetals.inherited_mode=Уровень фэнтези задаётся в Base Metals. Перезапустите игру после изменений.
+
+itemGroup.modernmetals.combat=Modern Metals: боевое снаряжение
+item.modernmetals.titanium_casing.name=Корпус из материала «Титан»
+item.modernmetals.beryllium_scythe.name=Серп из материала «Бериллий»
+item.modernmetals.boron_scythe.name=Серп из материала «Бор»
+item.modernmetals.thorium_scythe.name=Серп из материала «Торий»
+item.modernmetals.titanium_scythe.name=Серп из материала «Титан»

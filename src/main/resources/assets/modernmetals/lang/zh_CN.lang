@@ -1547,3 +1547,10 @@ config.modernmetals.enable_zirconium=启用锆
 config.modernmetals.content_mode.high_fantasy=高奇幻
 config.modernmetals.content_mode.low_fantasy=低奇幻
 config.modernmetals.inherited_mode=幻想等级由 Base Metals 设置。更改设置后请重新启动游戏。
+
+itemGroup.modernmetals.combat=Modern Metals 战斗用品
+item.modernmetals.titanium_casing.name=钛外壳
+item.modernmetals.beryllium_scythe.name=铍镰刀
+item.modernmetals.boron_scythe.name=硼镰刀
+item.modernmetals.thorium_scythe.name=钍镰刀
+item.modernmetals.titanium_scythe.name=钛镰刀
