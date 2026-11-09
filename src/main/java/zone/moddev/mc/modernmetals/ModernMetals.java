@@ -27,7 +27,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 		modid = ModernMetals.MODID,
 		name = ModernMetals.NAME,
 		version = ModernMetals.VERSION,
-		dependencies = "required-after:forge@[13.20.1.2588,);required-after:basemetals@[2.5.1.111021,2.6.0);required-after:orespawn@[4.1.5.111021,5.0.0);after:tconstruct;after:ic2;after:cofhcore;after:thermalexpansion;after:mekanism;before:buildingbricks",
+		dependencies = "required-after:forge@[13.20.1.2588,);required-after:basemetals@[2.5.1.111021,2.6.0);required-after:orespawn@[4.1.6.111021,5.0.0);after:tconstruct;after:ic2;after:cofhcore;after:thermalexpansion;after:mekanism;before:buildingbricks",
 		acceptedMinecraftVersions = "[1.11.2]",
 		guiFactory = "zone.moddev.mc.modernmetals.client.ModernMetalsGuiFactory",
 		updateJSON = ModernMetals.UPDATEJSON)
@@ -47,7 +47,7 @@ public class ModernMetals {
 	 * increased whenever a change is made that has the potential to break
 	 * compatibility with other mods that depend on this one.
 	 */
-	public static final String VERSION = "2.5.1.111021";
+	public static final String VERSION = "2.5.2.111021";
 
 	public static final String UPDATEJSON = "https://raw.githubusercontent.com/MinecraftModDevelopmentMods/ModernMetals/master-1.11.2/update.json";
 

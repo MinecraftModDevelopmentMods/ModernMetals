@@ -1,3 +1,7 @@
+2.5.2.111021 for 1.11.2
+
+Use the published Base Metals 2.5.1.111021 and MMD OreSpawn 4.1.6.111021.
+
 2.5.1.111021 for 1.11.2
 
 This brings the 1.11.2 branch up to date. Use Java 8, Forge 13.20.1.2588 or later for 1.11.2, Base Metals 2.5.1.111021 and MMD OreSpawn 4.1.5.111021.

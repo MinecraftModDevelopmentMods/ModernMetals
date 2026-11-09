@@ -23,9 +23,9 @@ def verify(java,template,output,base,orespawn,modern):
     scenarios={
         'missing-base':([orespawn,modern],'basemetals','2.5.1.111021'),
         'old-base':([old['base'],orespawn,modern],'basemetals','2.5.1.111021'),
-        'missing-orespawn':([base,modern],'orespawn','4.1.5.111021'),
-        'old-orespawn':([base,old['os'],modern],'orespawn','4.1.5.111021'),
-        'old-orespawn4':([base,old['os4'],modern],'orespawn','4.1.5.111021')
+        'missing-orespawn':([base,modern],'orespawn','4.1.6.111021'),
+        'old-orespawn':([base,old['os'],modern],'orespawn','4.1.6.111021'),
+        'old-orespawn4':([base,old['os4'],modern],'orespawn','4.1.6.111021')
     }
     result={}
     for name,(jars,modid,version) in scenarios.items():

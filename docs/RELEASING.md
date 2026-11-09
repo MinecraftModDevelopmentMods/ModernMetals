@@ -18,17 +18,11 @@ the same candidate bytes to Maven, CurseForge **244357**, then GitHub. CurseForg
 requires Base Metals **240967** and MMD OreSpawn **245586**, with Additional Loot
 Tables **243157** optional. Credentials and an HTTPS Maven target are required.
 
-The dispatcher must be installed on the repository's default branch before a
-manual release can be started. The current dispatcher on the 1.12 default
-branch routes 1.10.2. Install the reviewed 1.11.2 routing there as part of an
-authorized release. If an upload times out, check its status before trying again.
+Start the release from the repository's default branch, `master-1.12`. Its
+dispatcher routes the version to `master-1.11.2`. If an upload times out, check
+its status before trying again. After the CurseForge download is publicly
+available and verified, update the Forge 1.11.2 entries in `update.json` to
+the exact version reported by Forge.
 
-For the default-branch change, copy only the audited `deploy-release.yml`. It
-routes each legacy suffix to its target branch and builds there. After a
-release is publicly available, update the Forge 1.11.2 entries in `update.json`
-to the exact version reported by Forge.
-
-The checksum-pinned Base Metals 1.11.2 and OreSpawn 4.1.5.111021 jars are
-staged locally. Hosted CI requires matching files at their public Maven
-coordinates. Reverify the pins if the published bytes differ from the
-locally tested artifacts.
+CI stages the public Base Metals and OreSpawn jars listed in
+`gradle/dependencies.json` and verifies their SHA-256 checksums.

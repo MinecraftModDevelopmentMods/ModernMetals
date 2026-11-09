@@ -94,7 +94,7 @@ def main():
     parser.add_argument('--remote-port',type=int,help='Connect to a disposable server on loopback.')
     parser.add_argument('--expected-disconnect',help='Expected text in a pre-world disconnect.')
     parser.add_argument('--low-fantasy',action='store_true',help='Start the remote client in Low Fantasy.')
-    parser.add_argument('--mod-jar',type=Path,default=ROOT/'build/libs/ModernMetals-2.5.1.111021.jar')
+    parser.add_argument('--mod-jar',type=Path,default=ROOT/'build/libs/ModernMetals-2.5.2.111021.jar')
     parser.add_argument('--mirror', type=Path)
     parser.add_argument('--probe-jar', type=Path, default=ROOT/'build/test-mods/modernmetals-probe-packaged.jar')
     args=parser.parse_args()

@@ -6,13 +6,8 @@ Forge is 13.20.1.2588 with stable-32 mappings. Release pins are Temurin 8u502-b0
 17.0.1+12 and 25.0.3+9-LTS. Install them or pass their homes with
 `org.gradle.java.installations.paths`. Do not launch Gradle on Java 8.
 
-Use Java 17 for `JAVA_HOME` and `PATH`. Until the pinned Base Metals and
-OreSpawn builds are published, start with the staged checksum-verified Maven
-mirror and pass its location as
-`-PlegacyDependencyVerificationRepository=<mirror>`. The mirror stores OreSpawn
-at `zone/moddev/mc/orespawn/OreSpawn/4.1.5.111021/OreSpawn-4.1.5.111021.jar`.
-The dependency audit checks its bytes against `gradle/dependencies.json`.
-Once both artifacts are available, create the mirror and build as follows.
+Use Java 17 for `JAVA_HOME` and `PATH`. Stage the pinned public Base Metals
+and OreSpawn jars before building or importing the project into Eclipse.
 
 ```powershell
 $env:GRADLE_USER_HOME='<one workspace cache shared with Eclipse>'
@@ -28,7 +23,7 @@ to select another location. Remapping and signature removal apply to development
 copies. No floating mod versions, JCenter or
 `mavenLocal()` are used. A normal build never publishes.
 
-`build/libs/ModernMetals-2.5.1.111021.jar` is the installed jar. Sources/Javadocs
+`build/libs/ModernMetals-2.5.2.111021.jar` is the installed jar. Sources/Javadocs
 are separate. Test probes are isolated from all release archives.
 
 ## Eclipse
