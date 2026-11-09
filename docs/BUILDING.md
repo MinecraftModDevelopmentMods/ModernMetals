@@ -22,7 +22,7 @@ another location. Original jars stay unchanged; development copies are remapped
 and stripped of invalid signatures. No floating mod versions, JCenter or
 `mavenLocal()` are used. A normal build never publishes.
 
-`build/libs/ModernMetals-2.5.1.110021.jar` is the installed jar. Sources/Javadocs
+`build/libs/ModernMetals-2.5.2.110021.jar` is the installed jar. Sources/Javadocs
 are separate. Test probes are isolated from all release archives.
 
 ## Eclipse

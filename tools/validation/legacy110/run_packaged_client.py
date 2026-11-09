@@ -94,7 +94,7 @@ def main():
     parser.add_argument('--remote-port',type=int,help='Connect to a disposable server on loopback.')
     parser.add_argument('--expected-disconnect',help='Expected text in a pre-world disconnect.')
     parser.add_argument('--low-fantasy',action='store_true',help='Start the remote client in Low Fantasy.')
-    parser.add_argument('--mod-jar',type=Path,default=ROOT/'build/libs/ModernMetals-2.5.1.110021.jar')
+    parser.add_argument('--mod-jar',type=Path,default=ROOT/'build/libs/ModernMetals-2.5.2.110021.jar')
     args=parser.parse_args()
     if args.phase=='first':args.output.mkdir(parents=True,exist_ok=False)
     assert hashlib.sha256(args.installer.read_bytes()).hexdigest().upper()=='664393C5A924B8F06CFB953903ABCF9FE5E99ECBE6AF8C7EA217339C766E519C'
