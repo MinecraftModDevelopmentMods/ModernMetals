@@ -77,13 +77,14 @@ The server log verifies that a rejected client never enters the world.
 --public-jars <download folder> --candidate <installed jar>
 --output <new disposable directory>` verifies the SHA-256 of the original
 public jars, creates a 1.11.2 beta4.58 fixture, and checks a separate
-upgraded copy on first load and reload. Pass `--mirror` for the staged dependencies. It checks placed blocks, filled
+upgraded copy on first load and reload. Pass `--mirror` for a different dependency mirror. It checks placed blocks, filled
 buckets and item stacks with non-default count or damage. It stops on any Forge
 prompt to remove missing blocks or items. The source worlds are fingerprinted.
 
 ## Limits and separately owned defects
 
-Base Metals 2.5.1.111021 and OreSpawn 4.1.5.111021 are staged locally.
+The runtime tests use the public Base Metals 2.5.1.111021 and OreSpawn
+4.1.6.111021 jars.
 The suite tests OS1 and OS3 import and checks that existing native overrides
 and saved world profiles survive migration.
 

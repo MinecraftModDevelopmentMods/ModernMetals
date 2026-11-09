@@ -73,7 +73,7 @@ public final class ModernMetalsProbe {
         final JsonArray failures = new JsonArray();
         final Set<String> disabled = new HashSet<>(Arrays.asList(System.getProperty("modern.disabled", "").split(",")));
         final JsonObject catalog = new JsonObject();
-        check("2.5.1.111021".equals(Loader.instance().getIndexedModList().get("modernmetals").getVersion()), "mod version", failures);
+        check("2.5.2.111021".equals(Loader.instance().getIndexedModList().get("modernmetals").getVersion()), "mod version", failures);
         for (final String name : MATERIALS) {
             final MMDMaterial material = Materials.getMaterialByName(name);
             if (disabled.contains(name)) {
