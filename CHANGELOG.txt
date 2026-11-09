@@ -1,3 +1,8 @@
+2.5.2.110021 for 1.10.2
+
+Requires Base Metals 2.6.0.110021 and OreSpawn 4.1.6.110021 or compatible updates.
+This picks up the latest Base Metals and OreSpawn fixes for 1.10.2.
+
 2.5.1.110021 for 1.10.2
 
 This brings the 1.10.2 branch up to date. Use Java 8, Forge 12.18.3.2511 or later for 1.10.2, Base Metals 2.5.1.110021 and MMD OreSpawn 4.1.2.110021.

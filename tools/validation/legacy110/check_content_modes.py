@@ -11,7 +11,7 @@ def main():
     args.output.mkdir(parents=True,exist_ok=False)
     specs=json.loads((ROOT/'gradle/dependencies.json').read_text())
     jars=[dependency(s) for s in specs if s.get('runtime')]
-    jars += [ROOT/'build/libs/ModernMetals-2.5.1.110021.jar',ROOT/'build/test-mods/modernmetals-probe-packaged.jar']
+    jars += [ROOT/'build/libs/ModernMetals-2.5.2.110021.jar',ROOT/'build/test-mods/modernmetals-probe-packaged.jar']
     cases=[('default-with-base-low',None,'low_fantasy',False),
            ('modern-low','low_fantasy','high_fantasy',True),
            ('modern-high-with-base-low','high_fantasy','low_fantasy',False),

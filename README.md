@@ -2,16 +2,16 @@
 
 Modern Metals adds industrial metals and alloys to Base Metals, with ores,
 building blocks, tools, armour and molten metals. This branch is for Minecraft
-**1.10.2**, version **2.5.1.110021**.
+**1.10.2**, version **2.5.2.110021**.
 
 ## Installation
 
 Use Java **8** and Forge **12.18.3.2511 or newer for Minecraft 1.10.2**.
 Put these three jars in `mods/` on both the client and server:
 
-- Modern Metals `2.5.1.110021`.
-- [Base Metals 2.5.1.110021](https://www.curseforge.com/minecraft/mc-mods/base-metals/files/9280029), supported range `[2.5.1.110021,2.6.0)`.
-- [MMD OreSpawn 4.1.2.110021](https://www.curseforge.com/minecraft/mc-mods/mmd-orespawn/files/9276430), supported range `[4.1.2.110021,5.0.0)`.
+- Modern Metals `2.5.2.110021`.
+- [Base Metals 2.6.0.110021](https://www.curseforge.com/minecraft/mc-mods/base-metals/files/9524447), supported range `[2.6.0.110021,2.7.0)`.
+- [MMD OreSpawn 4.1.6.110021](https://www.curseforge.com/minecraft/mc-mods/mmd-orespawn/files/9518063), supported range `[4.1.6.110021,5.0.0)`.
 
 Remove older copies first. Use the normal mod jars rather than the sources,
 Javadocs or development jars. This version uses Base Metals' shared library, so

@@ -82,7 +82,7 @@ def main():
     if 'mekanism' in selected:
         selected.add('mcmultipart')
     jars = [dependency(s,args.mirror) for s in specs if s.get('runtime') or s['id'] in selected]
-    jars += [ROOT/'build/libs/ModernMetals-2.5.1.110021.jar', ROOT/'build/test-mods/modernmetals-probe-packaged.jar']
+    jars += [ROOT/'build/libs/ModernMetals-2.5.2.110021.jar', ROOT/'build/test-mods/modernmetals-probe-packaged.jar']
     prepare(args.output, args.template, jars)
     if args.baseline:
         run(args.java,args.output,'first',{'modern.baseline':'true'},expect_failure=True)

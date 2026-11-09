@@ -22,7 +22,7 @@ def main():
     args.output.mkdir(parents=True,exist_ok=False)
     specs=json.loads((ROOT/'gradle/dependencies.json').read_text())
     jars=[dependency(s,args.mirror) for s in specs if s.get('runtime')]
-    jars += [ROOT/'build/libs/ModernMetals-2.5.1.110021.jar',ROOT/'build/test-mods/modernmetals-probe-packaged.jar']
+    jars += [ROOT/'build/libs/ModernMetals-2.5.2.110021.jar',ROOT/'build/test-mods/modernmetals-probe-packaged.jar']
     native=json.loads((ROOT/'build/reports/native-provider.json').read_text())
     stock=json.loads((ROOT/'tools/validation/legacy110/fixtures/orespawn3-modernmetals.json').read_text())
 
@@ -169,7 +169,7 @@ def main():
     check(disabled_materials_optional,properties={'modern.disabled':'boron,beryllium,thorium,titanium'})
     from dependency_requirements import verify
     verify(args.java,args.template,args.output,dependency(next(s for s in specs if s['id']=='basemetals'),args.mirror),
-           dependency(next(s for s in specs if s['id']=='orespawn'),args.mirror),ROOT/'build/libs/ModernMetals-2.5.1.110021.jar')
+           dependency(next(s for s in specs if s['id']=='orespawn'),args.mirror),ROOT/'build/libs/ModernMetals-2.5.2.110021.jar')
     assert fingerprint(fresh/'world')==before,'A source fixture world changed'
     write_json(args.output/'qualification.json',{'passed':True,'scenarios':18,'source_world_unchanged':True})
     print('MODERN_METALS_PACKAGED_SUITE_PASS',flush=True)

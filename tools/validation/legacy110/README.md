@@ -30,7 +30,7 @@ and confirms that imports/reloads do not rewrite it.
   scrolling, Escape/Done, saved restart-required switches, unchanged live registries, baked models,
   creative tabs, achievement labels and integrated-world fresh/reload checks.
 
-`packagedForgeRuntimeTest` runs 16 world scenarios plus four dependency rejection
+`packagedForgeRuntimeTest` runs 18 world scenarios plus six dependency rejection
 cases. See [BUILDING](../../../docs/BUILDING.md) for setup. The server template
 contains Forge 1.10.2-12.18.3.2511, vanilla server and libraries, without mods,
 configuration or worlds. Do not point a test at an active installation.
@@ -85,7 +85,7 @@ prompt to remove missing blocks or items. The source worlds are fingerprinted.
 
 ## Limits and separately owned defects
 
-Public Base Metals 2.5.1.110021 catches errors in its own optional IC2/Mekanism
+The previous Base Metals 2.5.1.110021 release caught errors in its own optional IC2/Mekanism
 plugins: IC2 recipe registration runs before its input factory is ready, and the
 shared Mekanism helper references the absent `sulphuricAcid` gas. Modern Metals
 registers its own processing later and uses Mekanism's direct recipe API. Passing
