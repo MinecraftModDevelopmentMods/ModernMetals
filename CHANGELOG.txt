@@ -1,3 +1,12 @@
+2.5.2.112021 for 1.12.2
+
+Use the published MMDLib 1.0.0-rc3 and MMD OreSpawn 4.1.6.112021.
+Checked alongside Base Metals 2.6.2.112021.
+Molten metal now burns on contact with the liquid surface.
+Restored missing German, Russian and Simplified Chinese translations.
+Fixed black backgrounds on ore overlays so the stone texture shows through.
+Old 1.12.2 worlds can load past obsolete crusher recipes with empty outputs.
+
 2.5.1.112021 for 1.12.2
 
 - Updated the build to ForgeGradle 7 and moved Modern Metals to the ModDev Zone namespace.

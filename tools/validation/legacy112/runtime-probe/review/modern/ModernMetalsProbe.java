@@ -2,15 +2,21 @@ package review.modern;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+import com.mojang.authlib.GameProfile;
 import com.mcmoddev.lib.registry.CrusherRecipeRegistry;
 import com.mcmoddev.lib.registry.recipe.ICrusherRecipe;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 import net.minecraft.block.Block;
-import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.MoverType;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
@@ -44,6 +50,7 @@ public final class ModernMetalsProbe {
 
     @Mod.EventHandler
     public void verify(final FMLServerStartedEvent event) throws Exception {
+        if (Boolean.getBoolean("review.oreDisplay")) return;
         final WorldServer world = FMLCommonHandler.instance().getMinecraftServerInstance().getWorld(0);
         final boolean low = Boolean.getBoolean("review.low");
         require(ContentPolicy.active().lowFantasy() == low, "Wrong active Fantasy Level");
@@ -79,13 +86,7 @@ public final class ModernMetalsProbe {
             require(!FluidUtil.getFilledBucket(new FluidStack(fluid, 1000)).isEmpty(), "Missing " + name + " bucket");
         }
 
-        final Block molten = ForgeRegistries.BLOCKS.getValue(id("titanium"));
-        final EntityPig pig = new EntityPig(world);
-        final BlockPos position = world.getSpawnPoint().up(3);
-        pig.setPosition(position.getX() + 0.5, position.getY(), position.getZ() + 0.5);
-        final float health = pig.getHealth();
-        molten.onEntityCollision(world, position, molten.getDefaultState(), pig);
-        require(pig.getHealth() < health && pig.isBurning(), "Molten metal contact did not damage the entity");
+        verifyMoltenContact(world);
 
         for (final String recipe : new String[] { "plutonium_pickaxe", "uranium_sword", "rutile_axe",
                 "plutonium_fishingrod", "plutonium_horsearmor", "plutonium_pressureplate" }) {
@@ -121,8 +122,19 @@ public final class ModernMetalsProbe {
         final Block titaniumOre = ForgeRegistries.BLOCKS.getValue(id("titanium_ore"));
         final Block rutileOre = ForgeRegistries.BLOCKS.getValue(id("rutile_ore"));
         final BlockPos.MutableBlockPos sample = new BlockPos.MutableBlockPos();
-        final int centerX = world.getSpawnPoint().getX();
-        final int centerZ = world.getSpawnPoint().getZ();
+        final boolean later = Boolean.getBoolean("review.later");
+        final int centerX = later ? 3104 : world.getSpawnPoint().getX();
+        final int centerZ = later ? -3040 : world.getSpawnPoint().getZ();
+        if (later) {
+            final int firstChunkX = (centerX - 32) >> 4;
+            final int firstChunkZ = (centerZ - 32) >> 4;
+            // Include the neighboring chunks so Forge populates the whole sample.
+            for (int x = firstChunkX - 1; x <= firstChunkX + 4; x++) {
+                for (int z = firstChunkZ - 1; z <= firstChunkZ + 4; z++) {
+                    world.getChunk(x, z);
+                }
+            }
+        }
         int titaniumBlocks = 0;
         int rutileBlocks = 0;
         for (int x = centerX - 32; x < centerX + 32; x++) {
@@ -146,6 +158,41 @@ public final class ModernMetalsProbe {
         Files.write(Paths.get("modernmetals-review.json"), new GsonBuilder().setPrettyPrinting().create()
                 .toJson(report).getBytes(StandardCharsets.UTF_8));
         world.getMinecraftServer().initiateShutdown();
+    }
+
+    private static void verifyMoltenContact(final WorldServer world) {
+        final BlockPos pos = world.getSpawnPoint().up(4);
+        final IBlockState original = world.getBlockState(pos);
+        final Block molten = ForgeRegistries.BLOCKS.getValue(id("titanium"));
+        try {
+            world.setBlockState(pos, molten.getDefaultState(), 2);
+            checkContact(world, pos, "above source", 0.90, false, false, 0.0F);
+            checkContact(world, pos, "shallow source", 0.70, false, false, 4.0F);
+            checkContact(world, pos, "deep source", 0.25, false, false, 4.0F);
+            checkContact(world, pos, "fire resistance", 0.70, true, false, 0.0F);
+            checkContact(world, pos, "creative", 0.70, false, true, 0.0F);
+            world.setBlockState(pos, molten.getStateFromMeta(1), 2);
+            checkContact(world, pos, "above flowing metal", 0.80, false, false, 0.0F);
+            checkContact(world, pos, "shallow flowing metal", 0.70, false, false, 4.0F);
+        } finally {
+            world.setBlockState(pos, original, 2);
+        }
+    }
+
+    private static void checkContact(final WorldServer world, final BlockPos pos, final String label,
+            final double height, final boolean resistant, final boolean creative, final float expectedDamage) {
+        final EntityPlayer player = new EntityPlayer(world, new GameProfile(UUID.randomUUID(), "FluidCheck")) {
+            @Override public boolean isSpectator() { return false; }
+            @Override public boolean isCreative() { return creative; }
+        };
+        player.capabilities.disableDamage = creative;
+        if (resistant) player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 200));
+        player.setPosition(pos.getX() - 0.5, pos.getY() + height, pos.getZ() + 0.5);
+        player.move(MoverType.SELF, 1.0, 0.0, 0.0);
+        player.onEntityUpdate();
+        final float damage = player.getMaxHealth() - player.getHealth();
+        require(damage == expectedDamage && (expectedDamage == 0.0F || player.isBurning()),
+                label + " expected " + expectedDamage + " molten metal damage, got " + damage + ", burning=" + player.isBurning());
     }
 
     private static Item item(final String path) {

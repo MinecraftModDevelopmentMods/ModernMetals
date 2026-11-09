@@ -36,7 +36,7 @@ def run(java, directory, phase, flags):
     console = directory / f"{phase}-console.log"
     with console.open("w", encoding="utf-8") as log:
         process = subprocess.run(
-            [str(java), "-Xmx1200M", "-Dfml.queryResult=confirm", *flags, "-jar",
+            [str(java), "-Xmx1200M", *flags, "-jar",
              "forge-1.12.2-14.23.5.2859-universal.jar", "nogui"],
             cwd=directory, stdin=subprocess.DEVNULL, stdout=log, stderr=subprocess.STDOUT,
             timeout=150, check=False,
@@ -69,7 +69,7 @@ def main():
     args.output.mkdir(parents=True)
     specs = json.loads(Path("gradle/dependencies.json").read_text(encoding="utf-8"))
     jars = {spec["id"]: dependency(spec, args.mirror) for spec in specs}
-    mod = Path("build/libs/ModernMetals-2.5.1.112021.jar")
+    mod = Path("build/libs/ModernMetals-2.5.2.112021.jar")
     probe = Path("build/test-mods/modernmetals-probe-packaged.jar")
     with ZipFile(jars["orespawn"]) as archive:
         schemas = [json.loads(archive.read(name)) for name in archive.namelist()
@@ -151,6 +151,12 @@ def main():
         else:
             assert "oreBauxite" in group["ore_dictionary_entries"]
         assert run(args.java, target, "reload", flags) == first, name
+        if name == "os3-import":
+            remote_region = target / "world/region/r.6.-6.mca"
+            assert not remote_region.exists(), remote_region
+            later = run(args.java, target, "later", [*flags, "-Dreview.later=true"])
+            assert remote_region.is_file() and later["profile"] == profile
+            print("OS3 profile preserved while generating later chunks", flush=True)
         if source_path:
             assert digest(source_path) == original, source_path
         print(f"{name} passed fresh world and reload", flush=True)

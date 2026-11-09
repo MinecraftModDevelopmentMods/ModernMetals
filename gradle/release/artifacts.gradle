@@ -38,7 +38,7 @@ tasks.register('verifyReleaseConfiguration') {
     group = 'verification'
     dependsOn tasks.named('verifyJava8Toolchain')
     doLast {
-        if (project.group != 'zone.moddev.mc.modernmetals' || project.version != '2.5.1.112021'
+        if (project.group != 'zone.moddev.mc.modernmetals' || project.version != '2.5.2.112021'
                 || project.minecraft_version != '1.12.2' || project.forge_version != '14.23.5.2859'
                 || project.mappings_channel != 'stable' || project.mappings_version != '39-1.12') {
             throw new GradleException('Modern Metals target, mappings or Maven identity changed.')
@@ -47,8 +47,8 @@ tasks.register('verifyReleaseConfiguration') {
         if (!source.contains('VERSION = "' + project.version + '"') || !source.contains('MODID = "modernmetals"')) {
             throw new GradleException('The mod identity differs from the build metadata.')
         }
-        if (project.orespawn_version != '4.1.3.112021'
-                || project.orespawn_version_range != '[4.1.3.112021,5.0.0)'
+        if (project.orespawn_version != '4.1.6.112021'
+                || project.orespawn_version_range != '[4.1.6.112021,5.0.0)'
                 || !source.contains('required-after:orespawn@' + project.orespawn_version_range)
                 || !source.contains('required-after:forge@[14.23.5.2859,)')) {
             throw new GradleException('The OreSpawn or Forge runtime requirement changed.')
