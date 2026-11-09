@@ -1,7 +1,7 @@
 {
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/modern-metals/files/all?version=1.11.2",
   "promos": {
-    "1.11.2-latest": "2.5.0-beta4",
+    "1.11.2-latest": "2.5.2.111021",
     "1.11-latest": "0.0.0",
     "1.10.2-latest": "0.0.0",
     "1.10-latest": "0.0.0",
@@ -13,7 +13,7 @@
     "1.7.10-latest": "0.0.0",
     "1.7.2-latest": "0.0.0",
     "1.6.4-latest": "0.0.0",
-    "1.11.2-recommended": "2.5.0-beta4",
+    "1.11.2-recommended": "2.5.2.111021",
     "1.11-recommended": "0.0.0",
     "1.10.2-recommended": "0.0.0",
     "1.10-recommended": "0.0.0",
@@ -27,6 +27,7 @@
     "1.6.4-recommended": "0.0.0"
   },
   "1.11.2": {
+    "2.5.2.111021": "Updates the Base Metals and OreSpawn requirements for Minecraft 1.11.2.",
     "2.5.0-beta4": "Modern Metals 2.5.0-beta4.58 for Minecraft 1.11.2"
   },
   "1.11": {
