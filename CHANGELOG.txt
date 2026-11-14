@@ -1,3 +1,26 @@
+3.0.0.113021 for 1.13.2
+
+- Use Base Metals 3.0.3 or later when installed together, with its shared processing and mining fixes.
+- Review mining levels for every metal. Galvanized steel now matches steel and iron.
+- Give tools, solid metals and rock-hosted ores separate mining levels; document the material assumptions.
+- Use the normal hammer mining speed for ores and storage blocks from other mods.
+- Use released OreSpawn 4.1.7 in normal development and game launches.
+- Fix a startup hang with other fluid-adding mods, without disabling parallel loading.
+- Support a checked local OreSpawn fix in Eclipse and Gradle development launches.
+- Allow steel blend directly in galvanized steel and stainless steel recipes, keeping the same yields.
+- Added crafting and furnace recipe discovery, including powders already held in a saved inventory.
+- Restored small-powder and small-blend smelting, storage-block crushing, recycling and plate repairs.
+- Added the standalone coal-dust block cycle. Base Metals supplies the shared coal recipes when installed.
+- Kept the five alloy formulas and restored material aliases, including Chrome ingredients in mixed-mod blends.
+- Kept earned recipe progress through resource reloads and Fantasy Level changes.
+- Fixed a startup race that could crash while reading or saving worlds with Base Metals installed.
+- Fixed crackhammer mining so coal ore drops coal dust and other ores use their crushing recipes.
+- Ported Modern Metals to Forge 25 and the native OreSpawn 4 provider.
+- Converted old block metadata to named states, including both halves of doors and double slabs.
+- Kept Modern Metals IDs and converted old filled buckets and worn equipment when loading legacy worlds.
+- Converted recipes, translations and ore models to the Minecraft 1.13.2 formats.
+- Kept the Forge and OreSpawn settings screens and Base Metals Fantasy Level inheritance.
+
 2.5.2.112021 for 1.12.2
 
 Use the published MMDLib 1.0.0-rc3 and MMD OreSpawn 4.1.6.112021.

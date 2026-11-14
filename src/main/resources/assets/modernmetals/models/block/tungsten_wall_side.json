@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_side",
-    "textures": {
-        "wall": "modernmetals:blocks/tungsten_block"
-    }
+  "parent": "block/template_wall_side",
+  "textures": {
+    "wall": "modernmetals:blocks/tungsten_block"
+  }
 }

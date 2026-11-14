@@ -1,0 +1,19 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:thorium_block"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx",
+      "xxx",
+      "xxx"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/thorium"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:zirconium_shovel"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "s",
+      "s"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/zirconium"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

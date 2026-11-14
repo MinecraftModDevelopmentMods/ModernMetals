@@ -1,0 +1,26 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:zirconium_arrow",
+      "count": 4
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "y",
+      "z"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:nuggets/zirconium"
+      },
+      "y": {
+        "tag": "forge:rods/zirconium"
+      },
+      "z": {
+        "item": "minecraft:feather"
+      }
+    }
+  }
+}

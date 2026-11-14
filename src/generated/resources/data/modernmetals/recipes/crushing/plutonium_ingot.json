@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:plutonium_ingot"
+  },
+  "result": {
+    "item": "modernmetals:plutonium_powder",
+    "count": 1
+  }
+}

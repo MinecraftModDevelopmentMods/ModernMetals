@@ -1,0 +1,18 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:rutile_bars",
+      "count": 4
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:rods/rutile"
+      }
+    }
+  }
+}

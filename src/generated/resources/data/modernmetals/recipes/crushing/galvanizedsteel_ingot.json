@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:galvanizedsteel_ingot"
+  },
+  "result": {
+    "item": "modernmetals:galvanizedsteel_powder",
+    "count": 1
+  }
+}

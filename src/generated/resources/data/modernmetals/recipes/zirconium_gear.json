@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:zirconium_gear"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " x ",
+      "xrx",
+      " x "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/zirconium"
+      },
+      "r": {
+        "tag": "forge:rods/zirconium"
+      }
+    }
+  }
+}

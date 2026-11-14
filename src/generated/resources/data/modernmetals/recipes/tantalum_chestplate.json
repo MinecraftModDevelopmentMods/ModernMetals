@@ -1,0 +1,19 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:tantalum_chestplate"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x x",
+      "xxx",
+      "xxx"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/tantalum"
+      }
+    }
+  }
+}

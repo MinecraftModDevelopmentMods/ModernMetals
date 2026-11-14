@@ -1,0 +1,19 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:uranium_bars",
+      "count": 16
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx",
+      "xxx"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/uranium"
+      }
+    }
+  }
+}

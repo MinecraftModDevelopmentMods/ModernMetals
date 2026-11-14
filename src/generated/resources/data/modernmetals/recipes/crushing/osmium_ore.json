@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:osmium_ore"
+  },
+  "result": {
+    "item": "modernmetals:osmium_powder",
+    "count": 2
+  }
+}

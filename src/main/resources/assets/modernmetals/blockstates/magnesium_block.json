@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:magnesium_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/magnesium_block"
     }
+  }
 }

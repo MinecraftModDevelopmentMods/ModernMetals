@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:rutile_gear"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " x ",
+      "xrx",
+      " x "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/rutile"
+      },
+      "r": {
+        "tag": "forge:rods/rutile"
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:osmium_ore" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/osmium_ore"
     }
+  }
 }

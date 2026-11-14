@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:zirconium_ore" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/zirconium_ore"
     }
+  }
 }

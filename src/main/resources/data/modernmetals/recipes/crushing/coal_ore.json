@@ -1,0 +1,11 @@
+{
+  "type": "modernmetals:crushing",
+  "conditions": [
+    {
+      "type": "forge:not",
+      "value": { "type": "forge:mod_loaded", "modid": "basemetals" }
+    }
+  ],
+  "ingredient": { "item": "minecraft:coal_ore" },
+  "result": { "item": "modernmetals:coal_powder", "count": 2 }
+}

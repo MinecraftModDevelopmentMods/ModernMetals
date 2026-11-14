@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:stainlesssteel_shield"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xyx",
+      "xxx",
+      " x "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/stainlesssteel"
+      },
+      "y": {
+        "tag": "minecraft:planks"
+      }
+    }
+  }
+}

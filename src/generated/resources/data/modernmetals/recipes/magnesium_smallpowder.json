@@ -1,0 +1,15 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:magnesium_smallpowder",
+      "count": 9
+    },
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "tag": "forge:dusts/magnesium"
+      }
+    ]
+  }
+}

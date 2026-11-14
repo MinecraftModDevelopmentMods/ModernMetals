@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:boron_ore"
+  },
+  "result": "modernmetals:boron_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

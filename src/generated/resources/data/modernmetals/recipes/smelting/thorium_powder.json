@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:thorium_powder"
+  },
+  "result": "modernmetals:thorium_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:chromium_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/chromium_block"
     }
+  }
 }

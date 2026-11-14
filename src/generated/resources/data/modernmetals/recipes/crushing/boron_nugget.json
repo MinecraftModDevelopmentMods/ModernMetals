@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:boron_nugget"
+  },
+  "result": {
+    "item": "modernmetals:boron_smallpowder",
+    "count": 1
+  }
+}

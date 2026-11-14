@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:tantalum_powder"
+  },
+  "result": "modernmetals:tantalum_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

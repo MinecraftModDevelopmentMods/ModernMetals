@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_tungsten" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_tungsten" }
+  "variants": {
+    "type=top": {
+      "model": "modernmetals:block/upper_slab_tungsten"
+    },
+    "type=bottom": {
+      "model": "modernmetals:block/half_slab_tungsten"
+    },
+    "type=double": {
+      "model": "modernmetals:block/tungsten_block"
     }
+  }
 }

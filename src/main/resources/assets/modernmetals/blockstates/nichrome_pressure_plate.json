@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "powered=false": { "model": "modernmetals:nichrome_pressure_plate_up" },
-        "powered=true": { "model": "modernmetals:nichrome_pressure_plate_down" }
+  "variants": {
+    "powered=false": {
+      "model": "modernmetals:block/nichrome_pressure_plate_up"
+    },
+    "powered=true": {
+      "model": "modernmetals:block/nichrome_pressure_plate_down"
     }
+  }
 }

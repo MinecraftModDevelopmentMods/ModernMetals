@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:tungsten_powder"
+  },
+  "result": "modernmetals:tungsten_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

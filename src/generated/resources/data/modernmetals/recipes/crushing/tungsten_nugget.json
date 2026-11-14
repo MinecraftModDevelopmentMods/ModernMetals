@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:tungsten_nugget"
+  },
+  "result": {
+    "item": "modernmetals:tungsten_smallpowder",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:nichrome_ingot"
+  },
+  "result": {
+    "item": "modernmetals:nichrome_powder",
+    "count": 1
+  }
+}

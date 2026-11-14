@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:uranium_nugget"
+  },
+  "result": {
+    "item": "modernmetals:uranium_smallpowder",
+    "count": 1
+  }
+}

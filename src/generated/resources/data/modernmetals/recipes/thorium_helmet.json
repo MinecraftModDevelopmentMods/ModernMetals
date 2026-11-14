@@ -1,0 +1,18 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:thorium_helmet"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx",
+      "x x"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/thorium"
+      }
+    }
+  }
+}

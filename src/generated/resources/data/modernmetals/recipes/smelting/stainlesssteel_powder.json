@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:stainlesssteel_powder"
+  },
+  "result": "modernmetals:stainlesssteel_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

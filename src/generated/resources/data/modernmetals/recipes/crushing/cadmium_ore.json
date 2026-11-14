@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:cadmium_ore"
+  },
+  "result": {
+    "item": "modernmetals:cadmium_powder",
+    "count": 2
+  }
+}

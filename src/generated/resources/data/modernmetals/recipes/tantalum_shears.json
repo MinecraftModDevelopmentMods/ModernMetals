@@ -1,0 +1,18 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:tantalum_shears"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " x",
+      "x "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/tantalum"
+      }
+    }
+  }
+}

@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "powered=false": { "model": "modernmetals:iridium_pressure_plate_up" },
-        "powered=true": { "model": "modernmetals:iridium_pressure_plate_down" }
+  "variants": {
+    "powered=false": {
+      "model": "modernmetals:block/iridium_pressure_plate_up"
+    },
+    "powered=true": {
+      "model": "modernmetals:block/iridium_pressure_plate_down"
     }
+  }
 }

@@ -1,0 +1,25 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:beryllium_crossbow"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "zxx",
+      " yx",
+      "x z"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:rods/beryllium"
+      },
+      "y": {
+        "item": "minecraft:string"
+      },
+      "z": {
+        "tag": "forge:gears/beryllium"
+      }
+    }
+  }
+}

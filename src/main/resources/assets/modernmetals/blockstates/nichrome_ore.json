@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:nichrome_ore" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/nichrome_ore"
     }
+  }
 }

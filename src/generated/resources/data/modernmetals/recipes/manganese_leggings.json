@@ -1,0 +1,19 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:manganese_leggings"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx",
+      "x x",
+      "x x"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/manganese"
+      }
+    }
+  }
+}

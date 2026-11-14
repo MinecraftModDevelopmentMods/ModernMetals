@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:stainlesssteel_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/stainlesssteel_block"
     }
+  }
 }

@@ -1,0 +1,62 @@
+package zone.moddev.mc.modernmetals.content;
+
+import java.util.Collections;
+import java.util.List;
+
+import javax.annotation.Nullable;
+
+import zone.moddev.mc.modernmetals.ModTags;
+import zone.moddev.mc.modernmetals.material.MaterialDefinition;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.World;
+
+public final class ScytheItem extends ItemTool implements MaterialBacked {
+    private static final ThreadLocal<Boolean> HARVESTING = new ThreadLocal<Boolean>() {
+        @Override protected Boolean initialValue() { return Boolean.FALSE; }
+    };
+    private final MaterialDefinition material;
+
+    public ScytheItem(MaterialDefinition material, Item.Properties properties) {
+        super(0.0F, 0.0F, new MaterialTier(material), Collections.<Block>emptySet(), properties);
+        this.material = material;
+    }
+
+    @Override public MaterialDefinition baseMetalsMaterial() { return material; }
+    @Override public float getDestroySpeed(ItemStack stack, IBlockState state) {
+        return state.isIn(ModTags.SCYTHE_HARVESTABLE) ? material.toolEfficiency() : 1.0F;
+    }
+
+    @Override
+    public boolean onBlockStartBreak(ItemStack stack, BlockPos position, EntityPlayer player) {
+        if (player.world.isRemote || !(player instanceof EntityPlayerMP) || HARVESTING.get()) return false;
+        if (!player.world.getBlockState(position).isIn(ModTags.SCYTHE_HARVESTABLE)) return false;
+        HARVESTING.set(Boolean.TRUE);
+        try {
+            EntityPlayerMP serverPlayer = (EntityPlayerMP) player;
+            for (int dx = -1; dx <= 1; dx++) {
+                for (int dz = -1; dz <= 1; dz++) {
+                    BlockPos target = position.add(dx, 0, dz);
+                    if (player.world.getBlockState(target).isIn(ModTags.SCYTHE_HARVESTABLE)) {
+                        serverPlayer.interactionManager.tryHarvestBlock(target);
+                    }
+                }
+            }
+        } finally {
+            HARVESTING.set(Boolean.FALSE);
+        }
+        return true;
+    }
+
+    @Override public void addInformation(ItemStack stack, @Nullable World world,
+            List<ITextComponent> tooltip, ITooltipFlag flag) { MaterialItems.addToolTooltip(material, tooltip); }
+}

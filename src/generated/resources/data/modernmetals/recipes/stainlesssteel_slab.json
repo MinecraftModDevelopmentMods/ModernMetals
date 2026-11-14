@@ -1,0 +1,18 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:stainlesssteel_slab",
+      "count": 6
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:storage_blocks/stainlesssteel"
+      }
+    }
+  }
+}

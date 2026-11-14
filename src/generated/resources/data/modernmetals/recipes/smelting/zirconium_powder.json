@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:zirconium_powder"
+  },
+  "result": "modernmetals:zirconium_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

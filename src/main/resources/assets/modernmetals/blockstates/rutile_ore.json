@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:rutile_ore" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/rutile_ore"
     }
+  }
 }

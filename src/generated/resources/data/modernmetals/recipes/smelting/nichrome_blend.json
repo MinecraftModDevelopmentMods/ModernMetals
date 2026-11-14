@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:nichrome_blend"
+  },
+  "result": "modernmetals:nichrome_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:beryllium_shovel"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "s",
+      "s"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/beryllium"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

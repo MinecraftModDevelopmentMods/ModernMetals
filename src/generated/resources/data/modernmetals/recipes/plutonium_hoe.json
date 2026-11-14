@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:plutonium_hoe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xx",
+      " s",
+      " s"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/plutonium"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:cadmium_axe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xx",
+      "xs",
+      " s"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/cadmium"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

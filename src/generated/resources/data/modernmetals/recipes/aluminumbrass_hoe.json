@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:aluminumbrass_hoe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xx",
+      " s",
+      " s"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/aluminumbrass"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:rutile_fishing_rod"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "  x",
+      " xy",
+      "x y"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:rods/rutile"
+      },
+      "y": {
+        "item": "minecraft:string"
+      }
+    }
+  }
+}

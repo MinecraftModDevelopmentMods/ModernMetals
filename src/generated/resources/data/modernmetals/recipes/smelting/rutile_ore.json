@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:rutile_ore"
+  },
+  "result": "modernmetals:rutile_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

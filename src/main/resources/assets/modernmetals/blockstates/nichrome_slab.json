@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_nichrome" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_nichrome" }
+  "variants": {
+    "type=top": {
+      "model": "modernmetals:block/upper_slab_nichrome"
+    },
+    "type=bottom": {
+      "model": "modernmetals:block/half_slab_nichrome"
+    },
+    "type=double": {
+      "model": "modernmetals:block/nichrome_block"
     }
+  }
 }

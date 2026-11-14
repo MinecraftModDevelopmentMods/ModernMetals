@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:tungsten_ore"
+  },
+  "result": {
+    "item": "modernmetals:tungsten_powder",
+    "count": 2
+  }
+}

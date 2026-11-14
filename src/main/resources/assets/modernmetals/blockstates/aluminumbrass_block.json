@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:aluminumbrass_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/aluminumbrass_block"
     }
+  }
 }

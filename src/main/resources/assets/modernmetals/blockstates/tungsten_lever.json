@@ -1,20 +1,76 @@
 {
-    "variants": {
-        "facing=down_z,powered=false": { "model": "modernmetals:tungsten_lever_off", "x": 180, "y": 180 },
-        "facing=down_x,powered=false": { "model": "modernmetals:tungsten_lever_off", "x": 180, "y": 90 },
-        "facing=up_z,powered=false": { "model": "modernmetals:tungsten_lever_off" },
-        "facing=up_x,powered=false": { "model": "modernmetals:tungsten_lever_off", "y": 270 },
-        "facing=east,powered=false": { "model": "modernmetals:tungsten_lever_off", "x": 90, "y": 90 },
-        "facing=west,powered=false": { "model": "modernmetals:tungsten_lever_off", "x": 90, "y": 270 },
-        "facing=south,powered=false" : { "model": "modernmetals:tungsten_lever_off", "x": 90, "y": 180 },
-        "facing=north,powered=false" : { "model": "modernmetals:tungsten_lever_off", "x": 90 },
-        "facing=down_z,powered=true" : { "model": "modernmetals:tungsten_lever", "x": 180, "y": 180 },
-        "facing=down_x,powered=true" : { "model": "modernmetals:tungsten_lever", "x": 180, "y": 90 },
-        "facing=up_z,powered=true": { "model": "modernmetals:tungsten_lever" },
-        "facing=up_x,powered=true": { "model": "modernmetals:tungsten_lever", "y": 270 },
-        "facing=east,powered=true": { "model": "modernmetals:tungsten_lever", "x": 90, "y": 90 },
-        "facing=west,powered=true": { "model": "modernmetals:tungsten_lever", "x": 90, "y": 270 },
-        "facing=south,powered=true": { "model": "modernmetals:tungsten_lever", "x": 90, "y": 180 },
-        "facing=north,powered=true": { "model": "modernmetals:tungsten_lever", "x": 90 }
+  "variants": {
+    "face=floor,facing=north,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=wall,facing=north,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=ceiling,facing=north,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=floor,facing=south,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=wall,facing=south,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=ceiling,facing=south,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=floor,facing=west,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=wall,facing=west,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=ceiling,facing=west,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=floor,facing=east,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=wall,facing=east,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=ceiling,facing=east,powered=false": {
+      "model": "modernmetals:block/tungsten_lever_off"
+    },
+    "face=floor,facing=north,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=wall,facing=north,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=ceiling,facing=north,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=floor,facing=south,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=wall,facing=south,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=ceiling,facing=south,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=floor,facing=west,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=wall,facing=west,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=ceiling,facing=west,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=floor,facing=east,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=wall,facing=east,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
+    },
+    "face=ceiling,facing=east,powered=true": {
+      "model": "modernmetals:block/tungsten_lever"
     }
+  }
 }

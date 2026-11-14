@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:titanium_ore" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/titanium_ore"
     }
+  }
 }
