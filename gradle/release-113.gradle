@@ -11,11 +11,11 @@ def expectedGroup = 'zone.moddev.mc.' + modId
 def playerJar = tasks.named('renameJar')
 def releaseNames = ['', '-sources', '-javadoc'].collect { "${archiveName}-${project.version}${it}.jar".toString() }
 def preparedDirectory = providers.gradleProperty('preparedReleaseDir')
-def textPatterns = ['cfg', 'css', 'html', 'info', 'java', 'js', 'json', 'lang', 'mcmeta', 'md', 'properties', 'txt', 'xml']
+def textPatterns = ['cfg', 'css', 'html', 'info', 'java', 'js', 'json', 'lang', 'mcmeta', 'md', 'properties', 'txt', 'xml', 'toml', 'list']
         .collect { "**/*.${it}".toString() } + ['**/package-list', '**/element-list']
 
 tasks.withType(AbstractArchiveTask).configureEach {
-    inputs.property('releaseArchiveTextFormat', 'UTF-8 LF 1')
+    inputs.property('releaseArchiveTextFormat', 'UTF-8 LF 2')
     preserveFileTimestamps = false
     reproducibleFileOrder = true
     includeEmptyDirs = false
@@ -26,6 +26,10 @@ tasks.withType(AbstractArchiveTask).configureEach {
 }
 tasks.withType(Jar).configureEach { filteringCharset = 'UTF-8' }
 tasks.withType(Javadoc).configureEach {
+    inputs.property('releaseJavadocFormat', 'UTF-8 sorted sources 1')
+    setSource(files(project.providers.provider {
+        project.sourceSets.main.allJava.files.sort { project.relativePath(it).replace('\\', '/') }
+    }))
     options.addStringOption('docencoding', 'UTF-8')
     options.addStringOption('charset', 'UTF-8')
     options.addBooleanOption('notimestamp', true)
