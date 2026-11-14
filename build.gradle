@@ -218,3 +218,5 @@ tasks.named('check') { dependsOn 'verifyReleaseDependencies' }
 apply from: 'gradle/development-orespawn.gradle'
 
 apply from: 'gradle/release-113.gradle'
+
+apply from: 'gradle/normalize-javadoc-trees.gradle'
