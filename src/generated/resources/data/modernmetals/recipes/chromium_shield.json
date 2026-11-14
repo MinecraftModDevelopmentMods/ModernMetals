@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:chromium_shield"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xyx",
+      "xxx",
+      " x "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/chromium"
+      },
+      "y": {
+        "tag": "minecraft:planks"
+      }
+    }
+  }
+}

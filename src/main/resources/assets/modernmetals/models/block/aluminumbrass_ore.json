@@ -1,0 +1,8 @@
+{
+  "parent": "modernmetals:block/ore_overlay",
+  "textures": {
+    "particle": "minecraft:block/stone",
+    "base": "minecraft:block/stone",
+    "overlay": "modernmetals:blocks/ore_overlays/aluminumbrass_ore"
+  }
+}

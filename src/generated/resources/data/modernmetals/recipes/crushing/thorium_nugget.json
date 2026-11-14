@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:thorium_nugget"
+  },
+  "result": {
+    "item": "modernmetals:thorium_smallpowder",
+    "count": 1
+  }
+}

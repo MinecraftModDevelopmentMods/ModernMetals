@@ -1,0 +1,15 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:manganese_ingot",
+      "count": 9
+    },
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "tag": "forge:storage_blocks/manganese"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:magnesium_lever"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "y"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:rods/magnesium"
+      },
+      "y": {
+        "tag": "forge:ingots/magnesium"
+      }
+    }
+  }
+}

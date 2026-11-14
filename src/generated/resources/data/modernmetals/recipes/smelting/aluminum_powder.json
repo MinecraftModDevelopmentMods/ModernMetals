@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:aluminum_powder"
+  },
+  "result": "modernmetals:aluminum_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:iridium_ingot"
+  },
+  "result": {
+    "item": "modernmetals:iridium_powder",
+    "count": 1
+  }
+}

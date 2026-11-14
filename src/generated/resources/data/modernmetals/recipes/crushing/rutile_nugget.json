@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:rutile_nugget"
+  },
+  "result": {
+    "item": "modernmetals:rutile_smallpowder",
+    "count": 1
+  }
+}

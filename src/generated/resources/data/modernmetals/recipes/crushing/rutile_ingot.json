@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:rutile_ingot"
+  },
+  "result": {
+    "item": "modernmetals:rutile_powder",
+    "count": 1
+  }
+}

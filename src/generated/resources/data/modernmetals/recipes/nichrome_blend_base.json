@@ -1,0 +1,25 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:nichrome_blend",
+      "count": 2
+    },
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "tag": "forge:dusts/nickel"
+      },
+      [
+        { "tag": "forge:dusts/chromium" },
+        { "tag": "forge:dusts/chrome" }
+      ]
+    ]
+  },
+  "conditions": [
+    {
+      "type": "modernmetals:non_empty_tag",
+      "tag": "forge:dusts/nickel"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:titanium_blend"
+  },
+  "result": "modernmetals:titanium_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

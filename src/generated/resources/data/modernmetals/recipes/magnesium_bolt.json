@@ -1,0 +1,23 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:magnesium_bolt",
+      "count": 4
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "x",
+      "y"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:rods/magnesium"
+      },
+      "y": {
+        "item": "minecraft:feather"
+      }
+    }
+  }
+}

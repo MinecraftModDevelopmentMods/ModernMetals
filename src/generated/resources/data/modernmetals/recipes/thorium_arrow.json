@@ -1,0 +1,26 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:thorium_arrow",
+      "count": 4
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "y",
+      "z"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:nuggets/thorium"
+      },
+      "y": {
+        "tag": "forge:rods/thorium"
+      },
+      "z": {
+        "item": "minecraft:feather"
+      }
+    }
+  }
+}

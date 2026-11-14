@@ -1,0 +1,26 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:stainlesssteel_arrow",
+      "count": 4
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "y",
+      "z"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:nuggets/stainlesssteel"
+      },
+      "y": {
+        "tag": "forge:rods/stainlesssteel"
+      },
+      "z": {
+        "item": "minecraft:feather"
+      }
+    }
+  }
+}

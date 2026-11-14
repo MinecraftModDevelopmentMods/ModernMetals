@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:magnesium_ingot"
+  },
+  "result": {
+    "item": "modernmetals:magnesium_powder",
+    "count": 1
+  }
+}

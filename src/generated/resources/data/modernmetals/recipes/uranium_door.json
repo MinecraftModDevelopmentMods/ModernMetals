@@ -1,0 +1,20 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:uranium_door",
+      "count": 3
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xx",
+      "xx",
+      "xx"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/uranium"
+      }
+    }
+  }
+}

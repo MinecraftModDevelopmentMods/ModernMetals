@@ -1,0 +1,19 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:galvanizedsteel_blend"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx",
+      "xxx",
+      "xxx"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:small_blends/galvanizedsteel"
+      }
+    }
+  }
+}

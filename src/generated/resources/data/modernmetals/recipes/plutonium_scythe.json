@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:plutonium_scythe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ii ",
+      "  i",
+      " s "
+    ],
+    "key": {
+      "i": {
+        "tag": "forge:ingots/plutonium"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

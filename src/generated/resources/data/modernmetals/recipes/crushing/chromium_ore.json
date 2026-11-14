@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:chromium_ore"
+  },
+  "result": {
+    "item": "modernmetals:chromium_powder",
+    "count": 2
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:plutonium_ore"
+  },
+  "result": "modernmetals:plutonium_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

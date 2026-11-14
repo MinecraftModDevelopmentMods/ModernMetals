@@ -1,0 +1,32 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:galvanizedsteel_blend",
+      "count": 2
+    },
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      [
+        { "tag": "forge:dusts/steel" },
+        { "tag": "forge:blends/steel" }
+      ],
+      {
+        "tag": "forge:dusts/zinc"
+      }
+    ]
+  },
+  "conditions": [
+    {
+      "type": "forge:or",
+      "values": [
+        { "type": "modernmetals:non_empty_tag", "tag": "forge:dusts/steel" },
+        { "type": "modernmetals:non_empty_tag", "tag": "forge:blends/steel" }
+      ]
+    },
+    {
+      "type": "modernmetals:non_empty_tag",
+      "tag": "forge:dusts/zinc"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:boron_ore"
+  },
+  "result": {
+    "item": "modernmetals:boron_powder",
+    "count": 2
+  }
+}

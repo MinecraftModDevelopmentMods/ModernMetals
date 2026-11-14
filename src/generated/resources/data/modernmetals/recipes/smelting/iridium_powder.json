@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:iridium_powder"
+  },
+  "result": "modernmetals:iridium_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

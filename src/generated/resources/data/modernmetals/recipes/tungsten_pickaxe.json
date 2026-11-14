@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:tungsten_pickaxe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx",
+      " s ",
+      " s "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/tungsten"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

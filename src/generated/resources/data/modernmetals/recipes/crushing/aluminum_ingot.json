@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:aluminum_ingot"
+  },
+  "result": {
+    "item": "modernmetals:aluminum_powder",
+    "count": 1
+  }
+}

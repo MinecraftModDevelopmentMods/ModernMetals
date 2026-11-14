@@ -1,0 +1,19 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:thorium_powder"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx",
+      "xxx",
+      "xxx"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:tiny_dusts/thorium"
+      }
+    }
+  }
+}

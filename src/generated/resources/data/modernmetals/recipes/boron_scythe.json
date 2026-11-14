@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:boron_scythe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ii ",
+      "  i",
+      " s "
+    ],
+    "key": {
+      "i": {
+        "tag": "forge:ingots/boron"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

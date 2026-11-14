@@ -1,0 +1,17 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:titanium_blend"
+    },
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "tag": "forge:dusts/rutile"
+      },
+      {
+        "tag": "forge:dusts/magnesium"
+      }
+    ]
+  }
+}

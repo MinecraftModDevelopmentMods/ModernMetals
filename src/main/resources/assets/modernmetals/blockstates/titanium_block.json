@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:titanium_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/titanium_block"
     }
+  }
 }

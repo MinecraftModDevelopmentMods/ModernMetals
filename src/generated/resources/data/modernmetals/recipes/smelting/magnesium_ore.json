@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:magnesium_ore"
+  },
+  "result": "modernmetals:magnesium_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

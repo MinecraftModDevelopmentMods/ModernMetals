@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:aluminum_scythe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "ii ",
+      "  i",
+      " s "
+    ],
+    "key": {
+      "i": {
+        "tag": "forge:ingots/aluminum"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

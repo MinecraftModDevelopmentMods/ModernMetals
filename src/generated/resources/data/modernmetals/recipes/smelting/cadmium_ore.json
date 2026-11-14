@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:cadmium_ore"
+  },
+  "result": "modernmetals:cadmium_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

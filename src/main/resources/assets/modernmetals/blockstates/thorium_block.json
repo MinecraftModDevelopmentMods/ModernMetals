@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:thorium_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/thorium_block"
     }
+  }
 }

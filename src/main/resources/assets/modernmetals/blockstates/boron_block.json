@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:boron_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/boron_block"
     }
+  }
 }

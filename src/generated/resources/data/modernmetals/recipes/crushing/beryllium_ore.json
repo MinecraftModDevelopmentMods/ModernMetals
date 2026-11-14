@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:beryllium_ore"
+  },
+  "result": {
+    "item": "modernmetals:beryllium_powder",
+    "count": 2
+  }
+}

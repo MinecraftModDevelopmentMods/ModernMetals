@@ -1,0 +1,15 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:rutile_nugget",
+      "count": 9
+    },
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "tag": "forge:ingots/rutile"
+      }
+    ]
+  }
+}

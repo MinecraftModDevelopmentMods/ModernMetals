@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:tantalum_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/tantalum_block"
     }
+  }
 }

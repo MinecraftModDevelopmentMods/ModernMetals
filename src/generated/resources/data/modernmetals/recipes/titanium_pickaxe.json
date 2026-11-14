@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:titanium_pickaxe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xxx",
+      " s ",
+      " s "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/titanium"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

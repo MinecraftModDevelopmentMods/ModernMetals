@@ -1,0 +1,26 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:boron_arrow",
+      "count": 4
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "y",
+      "z"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:nuggets/boron"
+      },
+      "y": {
+        "tag": "forge:rods/boron"
+      },
+      "z": {
+        "item": "minecraft:feather"
+      }
+    }
+  }
+}

@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:stainlesssteel_ore" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/stainlesssteel_ore"
     }
+  }
 }

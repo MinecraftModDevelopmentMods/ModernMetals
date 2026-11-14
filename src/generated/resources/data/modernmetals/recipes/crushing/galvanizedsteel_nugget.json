@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:galvanizedsteel_nugget"
+  },
+  "result": {
+    "item": "modernmetals:galvanizedsteel_smallpowder",
+    "count": 1
+  }
+}

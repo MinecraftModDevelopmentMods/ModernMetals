@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "modernmetals:beryllium_powder"
+  },
+  "result": "modernmetals:beryllium_ingot",
+  "experience": 0.45,
+  "cookingtime": 200
+}

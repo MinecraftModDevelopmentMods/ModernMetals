@@ -1,0 +1,26 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:iridium_arrow",
+      "count": 4
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "y",
+      "z"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:nuggets/iridium"
+      },
+      "y": {
+        "tag": "forge:rods/iridium"
+      },
+      "z": {
+        "item": "minecraft:feather"
+      }
+    }
+  }
+}

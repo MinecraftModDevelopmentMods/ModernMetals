@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:tungsten_axe"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "xx",
+      "xs",
+      " s"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/tungsten"
+      },
+      "s": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

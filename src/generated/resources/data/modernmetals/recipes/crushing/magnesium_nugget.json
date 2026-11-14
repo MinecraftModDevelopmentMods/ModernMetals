@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:magnesium_nugget"
+  },
+  "result": {
+    "item": "modernmetals:magnesium_smallpowder",
+    "count": 1
+  }
+}

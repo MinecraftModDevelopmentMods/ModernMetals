@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:rutile_bow"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " xs",
+      "x s",
+      " xs"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:rods/rutile"
+      },
+      "s": {
+        "item": "minecraft:string"
+      }
+    }
+  }
+}

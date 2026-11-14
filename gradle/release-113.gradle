@@ -1,0 +1,186 @@
+import org.apache.tools.ant.filters.FixCrLfFilter
+import java.security.MessageDigest
+import java.util.jar.Manifest
+import java.util.zip.ZipFile
+import groovy.xml.XmlSlurper
+
+// Publish the same audited files that were built and tested by merged-source CI.
+def archiveName = 'ModernMetals'
+def modId = 'modernmetals'
+def expectedGroup = 'zone.moddev.mc.' + modId
+def playerJar = tasks.named('renameJar')
+def releaseNames = ['', '-sources', '-javadoc'].collect { "${archiveName}-${project.version}${it}.jar".toString() }
+def preparedDirectory = providers.gradleProperty('preparedReleaseDir')
+def textPatterns = ['cfg', 'css', 'html', 'info', 'java', 'js', 'json', 'lang', 'mcmeta', 'md', 'properties', 'txt', 'xml']
+        .collect { "**/*.${it}".toString() } + ['**/package-list', '**/element-list']
+
+tasks.withType(AbstractArchiveTask).configureEach {
+    inputs.property('releaseArchiveTextFormat', 'UTF-8 LF 1')
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+    includeEmptyDirs = false
+    exclude '**/desktop.ini', '**/Thumbs.db', '**/.DS_Store'
+    filesMatching(textPatterns) {
+        filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('lf'))
+    }
+}
+tasks.withType(Jar).configureEach { filteringCharset = 'UTF-8' }
+tasks.withType(Javadoc).configureEach {
+    options.addStringOption('docencoding', 'UTF-8')
+    options.addStringOption('charset', 'UTF-8')
+    options.addBooleanOption('notimestamp', true)
+}
+tasks.named('jar', Jar) {
+    manifest.attributes('Implementation-Title': archiveName, 'Implementation-Version': project.version,
+            'Maven-Artifact': "${expectedGroup}:${archiveName}:${project.version}".toString(),
+            'Build-Target': 'minecraft-1.13.2-forge-25.0.223-java-8')
+}
+tasks.named('assemble') { dependsOn playerJar, tasks.named('sourcesJar'), tasks.named('javadocJar') }
+
+def sha256 = { File file -> MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
+def audit = { File directory ->
+    if (project.group.toString() != expectedGroup || !(project.version.toString() ==~ /\d+\.\d+\.\d+\.113021/)) {
+        throw new GradleException('Wrong Maven or Minecraft release identity')
+    }
+    if (directory.listFiles().findAll { it.name.endsWith('.jar') }.collect { it.name }.sort() != releaseNames.sort(false)) {
+        throw new GradleException('The release directory must contain exactly the three current jars')
+    }
+    releaseNames.each { name ->
+        File file = new File(directory, name)
+        if (!file.isFile() || file.length() == 0) throw new GradleException("Missing ${name}")
+        new ZipFile(file).withCloseable { zip ->
+            zip.entries().each { entry ->
+                String path = entry.name.toLowerCase(Locale.ROOT)
+                if (path.contains('agent-notes') || path.contains('agents.md') || path.contains('.codex')
+                        || path.startsWith('tools/') || path.startsWith('reference/') || path.contains('/testmod/')
+                        || path.startsWith('com/mcmoddev/lib/') || path.startsWith('zone/moddev/mc/mmdlib/')
+                        || path.startsWith('zone/moddev/mc/basemetals/') || path.startsWith('com/mcmoddev/orespawn/')
+                        || path.startsWith('net/minecraft/') || path.startsWith('org/junit/')) {
+                    throw new GradleException("Non-production entry in ${name}: ${entry.name}")
+                }
+                if (entry.name.endsWith('.class')) {
+                    byte[] bytes = zip.getInputStream(entry).bytes
+                    int major = ((bytes[6] & 255) << 8) | (bytes[7] & 255)
+                    if (major != 52) throw new GradleException("Non-Java-8 class: ${entry.name}")
+                }
+            }
+            if (name == releaseNames[0]) {
+                def manifest = new Manifest(zip.getInputStream(zip.getEntry('META-INF/MANIFEST.MF'))).mainAttributes
+                if (manifest.getValue('Maven-Artifact') != "${expectedGroup}:${archiveName}:${project.version}") {
+                    throw new GradleException('Wrong release manifest')
+                }
+                String metadata = zip.getInputStream(zip.getEntry('META-INF/mods.toml')).getText('UTF-8')
+                if (metadata.contains('${') || !metadata.contains('modId="' + modId + '"')
+                        || !metadata.contains('version="' + project.version + '"')
+                        || !metadata.contains('versionRange="[1.13.2]"')
+                        || !metadata.contains('versionRange="[4.1.7.113021,5.0.0)"')) {
+                    throw new GradleException('Wrong or unresolved release mod metadata')
+                }
+            }
+        }
+    }
+}
+
+tasks.register('verify113ReleaseArtifacts') {
+    group = 'verification'
+    dependsOn tasks.named('assemble'), tasks.named('check')
+    doLast { audit(layout.buildDirectory.dir('libs').get().asFile) }
+}
+tasks.register('write113ReleaseChecksums') {
+    group = 'verification'
+    dependsOn tasks.named('verify113ReleaseArtifacts')
+    doLast {
+        File output = layout.buildDirectory.file('release/SHA256SUMS').get().asFile
+        output.parentFile.mkdirs()
+        output.setText(releaseNames.sort(false).collect { name ->
+            sha256(layout.buildDirectory.file('libs/' + name).get().asFile) + '  ' + name
+        }.join('\n') + '\n', 'UTF-8')
+    }
+}
+tasks.register('verify113PreparedReleaseArtifacts') {
+    group = 'verification'
+    doLast {
+        if (!preparedDirectory.isPresent()) throw new GradleException('preparedReleaseDir is required')
+        File directory = file(preparedDirectory.get())
+        if (directory.listFiles().collect { it.name }.sort() != (releaseNames + ['SHA256SUMS', 'CHANGELOG.txt']).sort(false)) {
+            throw new GradleException('Unexpected prepared bundle contents')
+        }
+        audit(directory)
+        Map<String, String> checksums = [:]
+        new File(directory, 'SHA256SUMS').readLines('UTF-8').each { line ->
+            def match = line =~ /^([0-9a-f]{64})  (.+)$/
+            if (!match.matches()) throw new GradleException('Invalid prepared checksum entry')
+            if (checksums.containsKey(match[0][2])) throw new GradleException('Duplicate prepared checksum entry')
+            checksums[match[0][2]] = match[0][1]
+        }
+        if (checksums.keySet().sort() != releaseNames.sort(false)) throw new GradleException('Wrong prepared jar inventory')
+        checksums.each { name, hash ->
+            if (sha256(new File(directory, name)) != hash) throw new GradleException("Checksum mismatch: ${name}")
+        }
+        if (!new File(directory, 'CHANGELOG.txt').readLines('UTF-8')[0].contains(project.version.toString())) {
+            throw new GradleException('Prepared changelog belongs to another release')
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = expectedGroup
+            artifactId = archiveName
+            version = project.version.toString()
+            setArtifacts([])
+            if (preparedDirectory.isPresent()) {
+                artifact new File(preparedDirectory.get(), releaseNames[0])
+                artifact(new File(preparedDirectory.get(), releaseNames[1])) { classifier = 'sources' }
+                artifact(new File(preparedDirectory.get(), releaseNames[2])) { classifier = 'javadoc' }
+            } else {
+                artifact playerJar
+                artifact tasks.named('sourcesJar')
+                artifact tasks.named('javadocJar')
+            }
+            pom {
+                name = 'Modern Metals'
+                description = 'Modern Metals for Minecraft 1.13.2, using Forge 25 and OreSpawn 4.'
+                url = 'https://github.com/MinecraftModDevelopmentMods/ModernMetals'
+                licenses {
+                    license {
+                        name = 'GNU Lesser General Public License, Version 2.1'
+                        url = 'https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = 'release'
+            url = uri(providers.environmentVariable('MAVEN_UPLOAD_URL').getOrElse('https://invalid.invalid/missing-upload-url'))
+            credentials {
+                username = providers.environmentVariable('MAVEN_UPLOAD_USERNAME').getOrElse('')
+                password = providers.environmentVariable('MAVEN_UPLOAD_PASSWORD').getOrElse('')
+            }
+        }
+    }
+}
+tasks.register('verify113MavenCoordinates') {
+    dependsOn 'generatePomFileForMavenJavaPublication'
+    doLast {
+        def pom = new XmlSlurper(false, false).parse(layout.buildDirectory.file('publications/mavenJava/pom-default.xml').get().asFile)
+        if ([pom.groupId.text(), pom.artifactId.text(), pom.version.text()] != [expectedGroup, archiveName, project.version.toString()]) {
+            throw new GradleException('Wrong Maven publication coordinates')
+        }
+    }
+}
+tasks.withType(PublishToMavenRepository).configureEach {
+    dependsOn 'verify113MavenCoordinates'
+    dependsOn preparedDirectory.isPresent() ? 'verify113PreparedReleaseArtifacts' : 'verify113ReleaseArtifacts'
+    doFirst {
+        def url = providers.environmentVariable('MAVEN_UPLOAD_URL').getOrElse('')
+        if (!url.startsWith('https://') || url.startsWith('https://invalid.invalid')
+                || !providers.environmentVariable('MAVEN_UPLOAD_USERNAME').getOrElse('').trim()
+                || !providers.environmentVariable('MAVEN_UPLOAD_PASSWORD').getOrElse('').trim()) {
+            throw new GradleException('Configure the HTTPS Maven upload URL, username and password')
+        }
+    }
+}

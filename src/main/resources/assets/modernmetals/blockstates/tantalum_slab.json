@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_tantalum" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_tantalum" }
+  "variants": {
+    "type=top": {
+      "model": "modernmetals:block/upper_slab_tantalum"
+    },
+    "type=bottom": {
+      "model": "modernmetals:block/half_slab_tantalum"
+    },
+    "type=double": {
+      "model": "modernmetals:block/tantalum_block"
     }
+  }
 }

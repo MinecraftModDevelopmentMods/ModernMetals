@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:plutonium_gear"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " x ",
+      "xrx",
+      " x "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/plutonium"
+      },
+      "r": {
+        "tag": "forge:rods/plutonium"
+      }
+    }
+  }
+}

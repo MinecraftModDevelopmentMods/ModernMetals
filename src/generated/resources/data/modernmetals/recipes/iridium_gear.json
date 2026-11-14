@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:iridium_gear"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " x ",
+      "xrx",
+      " x "
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:ingots/iridium"
+      },
+      "r": {
+        "tag": "forge:rods/iridium"
+      }
+    }
+  }
+}

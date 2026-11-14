@@ -1,174 +1,220 @@
-import org.apache.tools.ant.filters.FixCrLfFilter
+import groovy.xml.XmlParser
+import groovy.xml.XmlUtil
 
 plugins {
     id 'java'
-    id 'eclipse'
-    id 'idea'
     id 'maven-publish'
+    id 'eclipse'
     id 'net.minecraftforge.renamer' version '1.1.5'
     id 'net.minecraftforge.gradle' version '7.0.34'
 }
 
-group = project.mod_group
-version = project.mod_version
+group = mod_group
+version = mod_version
 base.archivesName = 'ModernMetals'
 
-if (!(project.version ==~ /\d+\.\d+\.\d+\.112021/)) {
-    throw new GradleException('Use Major.Minor.Patch.112021 for Minecraft 1.12.2 on Forge.')
-}
-
-// Gradle and Mavenizer use modern JDKs; the mod and game still use Java 8.
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(8)
     withSourcesJar()
     withJavadocJar()
 }
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
-    sourceCompatibility = targetCompatibility = '1.8'
-    options.compilerArgs.addAll(['-Xmaxerrs', '1000'])
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+
+def compileMiningLevelChecks = tasks.register('compileMiningLevelChecks', JavaCompile) {
+    dependsOn 'classes'
+    source fileTree('tools/validation/port113/mining-levels') { include '*.java' }
+    classpath = sourceSets.main.output + sourceSets.main.compileClasspath
+    destinationDirectory = layout.buildDirectory.dir('classes/mining-level-checks')
+    javaCompiler = javaToolchains.compilerFor { languageVersion = JavaLanguageVersion.of(8) }
 }
-tasks.named('compileTestJava', JavaCompile) { options.compilerArgs.add('-proc:none') }
-tasks.withType(Test).configureEach { useJUnitPlatform() }
+tasks.register('verifyMiningLevels', JavaExec) {
+    dependsOn compileMiningLevelChecks
+    classpath = files(compileMiningLevelChecks.flatMap { it.destinationDirectory }) + sourceSets.main.runtimeClasspath
+    mainClass = 'validation.MiningLevelChecks'
+    javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(8) }
+}
+tasks.named('check') { dependsOn 'verifyMiningLevels' }
 tasks.withType(Javadoc).configureEach {
-    failOnError = false
     options.encoding = 'UTF-8'
     options.addStringOption('Xdoclint:none', '-quiet')
-    options.addStringOption('docencoding', 'UTF-8')
-    options.addStringOption('charset', 'UTF-8')
     options.addBooleanOption('notimestamp', true)
 }
 tasks.withType(AbstractArchiveTask).configureEach {
     preserveFileTimestamps = false
     reproducibleFileOrder = true
-    includeEmptyDirs = false
-    exclude '**/desktop.ini', '**/Thumbs.db', '**/.DS_Store'
-}
-// Mapped dependency bytes no longer match their original signatures. Keep the
-// verified downloads intact and strip signatures only from renamed copies.
-tasks.withType(net.minecraftforge.renamer.gradle.RenameJar).configureEach {
-    additionalArgs.addAll('--strip-sigs', 'ALL', '--disable-abstract-param')
 }
 
-def textPatterns = ['cfg', 'css', 'html', 'info', 'java', 'js', 'json', 'lang', 'mcmeta', 'md', 'properties', 'txt', 'xml']
-        .collect { "**/*.${it}".toString() }
-def normalizeText = { details ->
-    details.filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('lf'),
-            eof: FixCrLfFilter.AddAsisRemove.newInstance('asis'))
-}
-
-// Preserve the tested game jar's line endings for this compatibility list.
-def legacyApiList = 'META-INF/modernmetals-legacy-api.list'
-def normalizeLegacyApi = { details ->
-    details.filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('crlf'),
-            eof: FixCrLfFilter.AddAsisRemove.newInstance('asis'))
-}
-
-def developmentOutput = layout.buildDirectory.dir('forge12-development/main')
-def prepareDevelopmentMod = tasks.register('prepareDevelopmentMod', Sync) {
-    group = 'ide'
-    description = 'Merges production classes and processed resources for Forge 1.12 launches.'
+def runClasses = layout.buildDirectory.dir('forge-run-mod-classes/main')
+def prepareRunClasses = tasks.register('prepareForgeRunModClasses', Sync) {
     dependsOn tasks.named('classes')
-    from tasks.named('compileJava', JavaCompile).flatMap { it.destinationDirectory }
-    from sourceSets.main.output.resourcesDir
-    into developmentOutput
+    from sourceSets.main.output
+    into runClasses
 }
 
 minecraft {
-    mappings channel: project.mappings_channel, version: project.mappings_version
-    if (gradle.startParameter.offline) mavenizerArguments.add('--offline')
+    mappings channel: mapping_channel, version: mapping_version
     runs {
         configureEach {
-            workingDir.convention layout.projectDirectory.dir(
-                    providers.gradleProperty('modernMetalsRunDirectory').getOrElse('run'))
-            environment 'MC_VERSION', project.minecraft_version
-            environment 'MOD_CLASSES', developmentOutput.get().asFile.absolutePath
-            systemProperty 'fml.coreMods.load', project.coreplugin
-            systemProperty 'log4j.skipJansi', 'true'
-            systemProperty 'forge.logging.console.level', 'info'
-            systemProperty 'log4j.configurationFile', file('gradle/ide/log4j2.xml').toURI().toString()
-            if (providers.gradleProperty('modernMetalsLaunchProbePhase').isPresent()) {
-                systemProperty 'launch.phase', providers.gradleProperty('modernMetalsLaunchProbePhase').get()
-            }
+            mainClass = 'net.minecraftforge.userdev.LaunchTesting'
+            workingDir.convention layout.projectDirectory.dir('run')
+            mods { modernmetals { source sourceSets.main } }
+            environment 'target', 'fmluserdev' + name
+            environment 'MCP_MAPPINGS', "${mapping_channel}_${mapping_version}"
+            environment 'MCP_VERSION', mcp_version
+            environment 'FORGE_VERSION', forge_version
+            environment 'FORGE_GROUP', 'net.minecraftforge'
+            environment 'MC_VERSION', minecraft_version
+            def output = runClasses.get().asFile.absolutePath
+            environment 'MOD_CLASSES', "modernmetals%%${output}${File.pathSeparator}modernmetals%%${output}"
         }
         register('client')
-        register('server') { args 'nogui' }
+        register('server') { args '--nogui' }
     }
 }
 
-tasks.matching { it.name in ['runClient', 'runServer'] }.configureEach {
-    dependsOn prepareDevelopmentMod
-    dependsOn 'prepareJava8Launcher'
-    doFirst {
-        Set<File> splitOutputs = sourceSets.main.output.files.collect { it.canonicalFile } as Set<File>
-        classpath = files(developmentOutput, tasks.named('prepareJava8Launcher'), classpath.filter {
-            !splitOutputs.contains(it.canonicalFile) && it.name != 'slime-launcher-0.2.2.jar'
-        })
-        environment 'MC_VERSION', project.minecraft_version
-        environment 'MOD_CLASSES', developmentOutput.get().asFile.absolutePath
+tasks.withType(JavaExec).configureEach {
+    if (name in ['runClient', 'runServer']) {
+        dependsOn prepareRunClasses
+        javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(8) }
+        doFirst { new File(workingDir, 'mods').mkdirs() }
     }
 }
 
-def legacyMirror = file(providers.gradleProperty('legacyDependencyVerificationRepository')
-        .orElse(providers.gradleProperty('legacyDependencyRepository'))
-        .getOrElse('.gradle/legacy-dependencies'))
-def legacyRepository = { String remote -> legacyMirror.isDirectory() ? legacyMirror.toURI() : uri(remote) }
+// ForgeGradle writes Slime Launcher's paths as bare Eclipse program arguments.
+def eclipseLauncherPath = ~/(--(?:cache|metadata|to-srg|to-obf) )("[^"]*"|.+?)(?= (?:--metadata |--to-srg |--to-obf |--(?: |$)))/
+tasks.matching { it.name.startsWith('genEclipseRun') && it.name.endsWith('ForForge') }.configureEach {
+    dependsOn prepareRunClasses
+    String launchName = name.replaceFirst('^genEclipseRun', 'run').replaceFirst('ForForge$', '') + '.launch'
+    File launch = layout.projectDirectory.file(launchName).asFile
+    doLast {
+        Node configuration = new XmlParser().parse(launch)
+        Node programArguments = configuration.stringAttribute.find {
+            it.attribute('key') == 'org.eclipse.jdt.launching.PROGRAM_ARGUMENTS'
+        }
+        String arguments = programArguments.attribute('value')
+        String quoted = arguments.replaceAll(eclipseLauncherPath) { match, option, path ->
+            path.startsWith('"') ? match : option + '"' + path + '"'
+        }
+        if (quoted != arguments) {
+            programArguments.attributes().put('value', quoted)
+            launch.setText(XmlUtil.serialize(configuration), 'UTF-8')
+        }
+    }
+}
 
+eclipse {
+    synchronizationTasks 'genEclipseRuns'
+}
+
+tasks.named('eclipse') { dependsOn 'genEclipseRuns' }
+
+apply from: 'gradle/eclipse-compatibility.gradle'
+
+def oreSpawnModule = 'mmd-orespawn-245586'
+def oreSpawnCoordinate = "curse.maven:${oreSpawnModule}:${orespawn_curse_file}"
+def dependencyMirror = providers.gradleProperty('dependencyMirror').orElse('https://www.cursemaven.com')
 repositories {
     minecraft.mavenizer(it)
     maven fg.forgeMaven
     maven fg.minecraftLibsMaven
-    maven {
-        name = 'VerifiedLegacyMirror'
-        url = legacyMirror.toURI()
-        metadataSources { artifact() }
-    }
-    exclusiveContent {
-        forRepository { maven { url = legacyRepository('https://www.cursemaven.com'); metadataSources { artifact() } } }
-        filter { includeGroup 'curse.maven' }
-    }
-    exclusiveContent {
-        forRepository { maven { url = legacyRepository('https://maven.moddev.zone/releases'); metadataSources { artifact() } } }
-        filter { includeGroup 'zone.moddev.mc.basemetals'; includeGroup 'zone.moddev.mc.orespawn' }
-    }
     mavenCentral()
+    maven { url = 'https://libraries.minecraft.net/' }
+    exclusiveContent {
+        forRepository { maven { url = 'https://repo.spongepowered.org/repository/maven-public' } }
+        filter { includeGroupAndSubgroups('org.spongepowered') }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                url = uri(dependencyMirror.get())
+                metadataSources { artifact() }
+            }
+        }
+        filter { includeModule('curse.maven', oreSpawnModule) }
+    }
 }
 
-apply from: 'gradle/dependencies.gradle'
+configurations {
+    oreSpawnRelease
+}
+
+dependencies {
+    implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
+    implementation renamer.dependency(oreSpawnCoordinate)
+    oreSpawnRelease oreSpawnCoordinate
+}
+
 renamer.mappings.from minecraft.dependency.toSrgFile
 
-tasks.named('processResources', ProcessResources) {
-    filteringCharset = 'UTF-8'
-    exclude '**/desktop.ini', '**/Thumbs.db', '**/.DS_Store'
-    inputs.property 'version', project.version
-    inputs.property 'mcversion', project.minecraft_version
-    filesMatching('mcmod.info') { expand version: project.version, mcversion: project.minecraft_version }
-    rename '(.+_at.cfg)', 'META-INF/$1'
-    filesMatching('**/*.lang') { details -> details.name = details.name.toLowerCase(Locale.ROOT) }
-    filesMatching(textPatterns, normalizeText)
-    filesMatching(legacyApiList, normalizeLegacyApi)
+tasks.register('verifyReleaseDependencies') {
+    inputs.files(configurations.oreSpawnRelease)
+    inputs.property('orespawnSha256', orespawn_sha256)
+    doLast {
+        def digest = java.security.MessageDigest.getInstance('SHA-256')
+        configurations.oreSpawnRelease.singleFile.withInputStream { input ->
+            byte[] buffer = new byte[8192]
+            for (int count = input.read(buffer); count != -1; count = input.read(buffer)) {
+                digest.update(buffer, 0, count)
+            }
+        }
+        if (digest.digest().encodeHex().toString() != orespawn_sha256) {
+            throw new GradleException('OreSpawn 1.13.2 release checksum mismatch')
+        }
+    }
+}
+
+sourceSets.main.resources.srcDir('src/generated/resources')
+
+def recipeData = layout.buildDirectory.dir('generated/recipe-data')
+def generateRecipeData = tasks.register('generateRecipeData', Exec) {
+    group = 'data generation'
+    inputs.file 'tools/generate_113_recipe_data.js'
+    inputs.file 'src/main/java/zone/moddev/mc/modernmetals/material/MaterialCatalogue.java'
+    inputs.files(fileTree('src/main/resources/data'), fileTree('src/generated/resources/data'))
+    outputs.dir recipeData
+    commandLine 'node', 'tools/generate_113_recipe_data.js'
+}
+sourceSets.main.resources.srcDir(recipeData)
+tasks.named('processResources') { dependsOn generateRecipeData }
+tasks.named('sourcesJar') { dependsOn generateRecipeData }
+
+def verifyFluidRegistration = tasks.register('verifyFluidRegistration', Exec) {
+    group = 'verification'
+    description = 'Checks that shared fluid registries are only written during sequential registration.'
+    commandLine 'node', '--test', 'tools/test_fluid_registration.js'
+}
+tasks.named('check') { dependsOn verifyFluidRegistration }
+
+def verifyRecipeData = tasks.register('verifyRecipeData', Exec) {
+    group = 'verification'
+    dependsOn generateRecipeData
+    commandLine 'node', '--test', 'tools/test_113_recipe_data.js'
+}
+tasks.named('check') { dependsOn verifyRecipeData }
+
+tasks.named('processResources') {
+    inputs.property('modVersion', mod_version)
+    filesMatching('META-INF/mods.toml') { expand mod_version: mod_version }
+    exclude 'mcmod.info', 'assets/modernmetals/recipes/**', 'assets/modernmetals/alt/**',
+            'assets/modernmetals/materials/**', 'assets/modernmetals/lang/*.lang',
+            'META-INF/modernmetals-legacy-api.list'
 }
 
 tasks.named('jar', Jar) {
     archiveClassifier = 'deobf'
     destinationDirectory = layout.buildDirectory.dir('libs-dev')
-    manifest.attributes(
-            'Implementation-Title': 'ModernMetals', 'Implementation-Version': project.version,
-            'Maven-Artifact': "${project.group}:ModernMetals:${project.version}",
-            'Built-On-Java': '8', 'Built-On': "${project.minecraft_version}-${project.forge_version}",
-            'FMLCorePluginContainsFMLMod': 'true', 'FMLCorePlugin': project.coreplugin)
-}
-['sourcesJar', 'javadocJar'].each { name ->
-    tasks.named(name, Jar) {
-        filteringCharset = 'UTF-8'
-        filesMatching(textPatterns, normalizeText)
-        filesMatching(legacyApiList, normalizeLegacyApi)
-    }
 }
 
-ext.modernMetalsBuild = [developmentOutput: developmentOutput].asImmutable()
-apply from: 'gradle/ore-models.gradle'
-apply from: 'gradle/release/artifacts.gradle'
-apply from: 'gradle/release/publishing.gradle'
-apply from: 'gradle/verification/runtime.gradle'
-apply from: 'gradle/ide/eclipse.gradle'
+def releaseJar = renamer.classes(tasks.named('jar', Jar)) {
+    map.from minecraft.dependency.toSrgFile
+    archiveClassifier = null
+    output = layout.buildDirectory.file("libs/ModernMetals-${project.version}.jar")
+}
+
+tasks.named('assemble') { dependsOn releaseJar }
+tasks.named('check') { dependsOn 'verifyReleaseDependencies' }
+
+apply from: 'gradle/development-orespawn.gradle'
+
+apply from: 'gradle/release-113.gradle'

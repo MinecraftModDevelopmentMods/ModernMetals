@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:zirconium_ore"
+  },
+  "result": {
+    "item": "modernmetals:zirconium_powder",
+    "count": 2
+  }
+}

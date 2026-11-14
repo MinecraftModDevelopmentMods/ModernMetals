@@ -1,0 +1,10 @@
+{
+  "type": "modernmetals:crushing",
+  "ingredient": {
+    "item": "modernmetals:manganese_ingot"
+  },
+  "result": {
+    "item": "modernmetals:manganese_powder",
+    "count": 1
+  }
+}

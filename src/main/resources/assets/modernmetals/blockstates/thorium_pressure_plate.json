@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "powered=false": { "model": "modernmetals:thorium_pressure_plate_up" },
-        "powered=true": { "model": "modernmetals:thorium_pressure_plate_down" }
+  "variants": {
+    "powered=false": {
+      "model": "modernmetals:block/thorium_pressure_plate_up"
+    },
+    "powered=true": {
+      "model": "modernmetals:block/thorium_pressure_plate_down"
     }
+  }
 }

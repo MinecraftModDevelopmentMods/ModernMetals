@@ -1,0 +1,53 @@
+import groovy.xml.XmlParser
+import groovy.xml.XmlUtil
+
+def compatibilityJars = layout.projectDirectory.dir('run/compatibility-jars').asFile
+def profiles = [
+    'Standalone': [],
+    'Base Metals': ['basemetals'],
+    'Base Gems': ['basegems'],
+    'Base Minerals': ['baseminerals'],
+    'Base Metals + Base Gems': ['basemetals', 'basegems'],
+    'Base Metals + Base Minerals': ['basemetals', 'baseminerals'],
+    'Base Gems + Base Minerals': ['basegems', 'baseminerals'],
+    'All Add-ons': ['basemetals', 'basegems', 'baseminerals']
+]
+
+def prepareLaunches = tasks.register('prepareCompatibilityLaunches') {
+    group = 'ide'
+    description = 'Stages local add-on development jars and generates isolated Eclipse clients.'
+    dependsOn 'genEclipseRunClientForForge'
+    doLast {
+        def jars = profiles.values().flatten().unique().collectEntries { mod ->
+            File jar = new File(compatibilityJars, "${mod}-dev.jar")
+            if (!jar.isFile()) throw new GradleException("Missing ${jar}. Stage the add-on's deobf jar as described in README.md.")
+            [(mod): jar]
+        }
+        File client = layout.projectDirectory.file('runClient.launch').asFile
+        profiles.each { label, mods ->
+            String folder = mods ? mods.join('-') : 'standalone'
+            File gameDir = layout.projectDirectory.dir("run/compatibility/${folder}").asFile
+            File modsDir = new File(gameDir, 'mods')
+            if (!modsDir.isDirectory() && !modsDir.mkdirs()) {
+                throw new GradleException("Could not create ${modsDir}")
+            }
+            mods.each { mod ->
+                File jar = jars[mod]
+                java.nio.file.Files.copy(jar.toPath(), new File(modsDir, jar.name).toPath(),
+                        java.nio.file.StandardCopyOption.REPLACE_EXISTING)
+            }
+
+            Node launch = new XmlParser().parse(client)
+            Node workingDirectory = launch.stringAttribute.find {
+                it.attribute('key') == 'org.eclipse.jdt.launching.WORKING_DIRECTORY'
+            }
+            workingDirectory.attributes().put('value', gameDir.absolutePath)
+            layout.projectDirectory.file("Modern Metals - ${label}.launch").asFile
+                    .setText(XmlUtil.serialize(launch), 'UTF-8')
+        }
+    }
+}
+
+if (compatibilityJars.isDirectory()) {
+    tasks.named('genEclipseRuns') { dependsOn prepareLaunches }
+}

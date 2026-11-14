@@ -1,0 +1,22 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:uranium_crackhammer"
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "y",
+      "y"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:storage_blocks/uranium"
+      },
+      "y": {
+        "item": "minecraft:stick"
+      }
+    }
+  }
+}

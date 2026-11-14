@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_cadmium" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_cadmium" }
+  "variants": {
+    "type=top": {
+      "model": "modernmetals:block/upper_slab_cadmium"
+    },
+    "type=bottom": {
+      "model": "modernmetals:block/half_slab_cadmium"
+    },
+    "type=double": {
+      "model": "modernmetals:block/cadmium_block"
     }
+  }
 }

@@ -1,0 +1,26 @@
+{
+  "type": "modernmetals:content_crafting",
+  "recipe": {
+    "result": {
+      "item": "modernmetals:osmium_arrow",
+      "count": 4
+    },
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "x",
+      "y",
+      "z"
+    ],
+    "key": {
+      "x": {
+        "tag": "forge:nuggets/osmium"
+      },
+      "y": {
+        "tag": "forge:rods/osmium"
+      },
+      "z": {
+        "item": "minecraft:feather"
+      }
+    }
+  }
+}
