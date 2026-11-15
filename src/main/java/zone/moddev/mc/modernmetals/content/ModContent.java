@@ -33,6 +33,7 @@ public final class ModContent {
 
     public static void register(IEventBus bus) {
         registrar = new RuntimeContentRegistrar(ModernMetals.MOD_ID, MaterialExtensions.GLOBAL, bus);
+        CompatibilityContent.register(bus);
         // MMDLib loads definitions in deferred construction work; registries open after that.
         bus.addListener(NewRegistryEvent.class, event -> queueMaterials());
     }
@@ -47,6 +48,7 @@ public final class ModContent {
         if (MATERIALS.isEmpty()) {
             throw new IllegalStateException("MMDLib did not load any Modern Metals material definitions");
         }
+        CompatibilityContent.queue();
     }
 
     public static RuntimeContentRegistrar registrar() {

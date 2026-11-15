@@ -3,6 +3,9 @@ loaderVersion="${loader_version_range}"
 license="${mod_license}"
 issueTrackerURL="${issue_url}"
 
+[[mixins]]
+config="modernmetals.mixins.json"
+
 [[mods]]
 modId="${mod_id}"
 version="${mod_version}"

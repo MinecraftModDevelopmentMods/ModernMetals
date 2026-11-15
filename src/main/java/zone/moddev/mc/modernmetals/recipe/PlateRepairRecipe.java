@@ -1,0 +1,102 @@
+package zone.moddev.mc.modernmetals.recipe;
+
+import com.mojang.serialization.MapCodec;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.NonNullList;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.item.crafting.CustomRecipe;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.Level;
+
+/**
+ * A matching plate fully repairs one damaged armor piece or shield without changing its item data.
+ */
+public final class PlateRepairRecipe extends CustomRecipe {
+    private final Item target;
+    private final Ingredient plate;
+
+    public PlateRepairRecipe(Item target, Ingredient plate) {
+        super(net.minecraft.world.item.crafting.CraftingBookCategory.MISC);
+        this.target = target;
+        this.plate = plate;
+    }
+
+    @Override
+    public boolean matches(CraftingInput container, Level level) {
+        if (!zone.moddev.mc.modernmetals.config.ContentPolicy.active().allows(BuiltInRegistries.ITEM.getKey(target))) return false;
+        ItemStack foundTarget = ItemStack.EMPTY;
+        boolean foundPlate = false;
+        for (int slot = 0; slot < container.size(); slot++) {
+            ItemStack stack = container.getItem(slot);
+            if (stack.isEmpty()) continue;
+            if (stack.is(target) && stack.isDamaged() && foundTarget.isEmpty()) {
+                foundTarget = stack;
+            } else if (plate.test(stack) && !foundPlate) {
+                foundPlate = true;
+            } else {
+                return false;
+            }
+        }
+        return !foundTarget.isEmpty() && foundPlate;
+    }
+
+    @Override
+    public ItemStack assemble(CraftingInput container, HolderLookup.Provider registries) {
+        if (!matches(container, null)) return ItemStack.EMPTY;
+        for (int slot = 0; slot < container.size(); slot++) {
+            ItemStack stack = container.getItem(slot);
+            if (stack.is(target) && stack.isDamaged()) {
+                ItemStack repaired = stack.copy();
+                repaired.setCount(1);
+                repaired.setDamageValue(0);
+                return repaired;
+            }
+        }
+        return ItemStack.EMPTY;
+    }
+
+    @Override
+    public boolean canCraftInDimensions(int width, int height) {
+        return width * height >= 2;
+    }
+
+    @Override
+    public ItemStack getResultItem(HolderLookup.Provider registries) {
+        return target.getDefaultInstance();
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return NonNullList.of(Ingredient.EMPTY, Ingredient.of(target), plate);
+    }
+
+    @Override
+    public RecipeSerializer<?> getSerializer() {
+        return ModRecipes.PLATE_REPAIR_SERIALIZER.get();
+    }
+
+    public static final class Serializer implements RecipeSerializer<PlateRepairRecipe> {
+        private static final MapCodec<PlateRepairRecipe> CODEC = RecordCodecBuilder.mapCodec(instance ->
+                instance.group(
+                        BuiltInRegistries.ITEM.byNameCodec().fieldOf("target").forGetter(recipe -> recipe.target),
+                        Ingredient.CODEC_NONEMPTY.fieldOf("plate").forGetter(recipe -> recipe.plate)
+                ).apply(instance, PlateRepairRecipe::new));
+        private static final StreamCodec<RegistryFriendlyByteBuf, PlateRepairRecipe> STREAM_CODEC =
+                StreamCodec.composite(
+                        ByteBufCodecs.registry(Registries.ITEM), recipe -> recipe.target,
+                        Ingredient.CONTENTS_STREAM_CODEC, recipe -> recipe.plate,
+                        PlateRepairRecipe::new);
+
+        @Override public MapCodec<PlateRepairRecipe> codec() { return CODEC; }
+        @Override public StreamCodec<RegistryFriendlyByteBuf, PlateRepairRecipe> streamCodec() { return STREAM_CODEC; }
+    }
+}

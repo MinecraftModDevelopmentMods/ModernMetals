@@ -1,0 +1,128 @@
+{
+  "aluminum": {
+    "kind": "ORE",
+    "tool": 0,
+    "solid": 0,
+    "ore": 1
+  },
+  "aluminumbrass": {
+    "kind": "ALLOY",
+    "tool": 1,
+    "solid": 1,
+    "ore": 1
+  },
+  "beryllium": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 1,
+    "ore": 1
+  },
+  "boron": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 2,
+    "ore": 1
+  },
+  "cadmium": {
+    "kind": "RARE_ORE",
+    "tool": 0,
+    "solid": 0,
+    "ore": 1
+  },
+  "chromium": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 2,
+    "ore": 1
+  },
+  "galvanizedsteel": {
+    "kind": "ALLOY",
+    "tool": 2,
+    "solid": 2,
+    "ore": 1
+  },
+  "iridium": {
+    "kind": "RARE_ORE",
+    "tool": 1,
+    "solid": 2,
+    "ore": 1
+  },
+  "magnesium": {
+    "kind": "ORE",
+    "tool": 0,
+    "solid": 0,
+    "ore": 1
+  },
+  "manganese": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 1,
+    "ore": 1
+  },
+  "nichrome": {
+    "kind": "ALLOY",
+    "tool": 2,
+    "solid": 2,
+    "ore": 1
+  },
+  "osmium": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 2,
+    "ore": 1
+  },
+  "plutonium": {
+    "kind": "RARE_ORE",
+    "tool": 1,
+    "solid": 1,
+    "ore": 1
+  },
+  "rutile": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 2,
+    "ore": 1
+  },
+  "stainlesssteel": {
+    "kind": "ALLOY",
+    "tool": 2,
+    "solid": 2,
+    "ore": 1
+  },
+  "tantalum": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 1,
+    "ore": 1
+  },
+  "thorium": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 1,
+    "ore": 1
+  },
+  "titanium": {
+    "kind": "SPECIAL",
+    "tool": 2,
+    "solid": 2,
+    "ore": 1
+  },
+  "tungsten": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 2,
+    "ore": 1
+  },
+  "uranium": {
+    "kind": "RARE_ORE",
+    "tool": 1,
+    "solid": 1,
+    "ore": 1
+  },
+  "zirconium": {
+    "kind": "ORE",
+    "tool": 1,
+    "solid": 1,
+    "ore": 1
+  }
+}

@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "provider_modid": "modernmetals",
-  "provider_revision": 1,
+  "provider_revision": 2,
   "ores": {
-    "modernmetals:ore/boron": {
+    "modernmetals:legacy/boron_ore": {
       "block": "modernmetals:boron_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -36,7 +36,7 @@
         }
       }
     },
-    "modernmetals:ore/thorium": {
+    "modernmetals:legacy/thorium_ore": {
       "block": "modernmetals:thorium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -69,7 +69,7 @@
         }
       }
     },
-    "modernmetals:ore/beryllium": {
+    "modernmetals:legacy/beryllium_ore": {
       "block": "modernmetals:beryllium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -102,7 +102,7 @@
         }
       }
     },
-    "modernmetals:ore/aluminum": {
+    "modernmetals:legacy/aluminum_ore": {
       "block": "modernmetals:aluminum_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -135,7 +135,7 @@
         }
       }
     },
-    "modernmetals:ore/cadmium": {
+    "modernmetals:legacy/cadmium_ore": {
       "block": "modernmetals:cadmium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -168,7 +168,7 @@
         }
       }
     },
-    "modernmetals:ore/chromium": {
+    "modernmetals:legacy/chromium_ore": {
       "block": "modernmetals:chromium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -201,7 +201,7 @@
         }
       }
     },
-    "modernmetals:ore/iridium": {
+    "modernmetals:legacy/iridium_ore": {
       "block": "modernmetals:iridium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -234,7 +234,7 @@
         }
       }
     },
-    "modernmetals:ore/magnesium": {
+    "modernmetals:legacy/magnesium_ore": {
       "block": "modernmetals:magnesium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -267,7 +267,7 @@
         }
       }
     },
-    "modernmetals:ore/manganese": {
+    "modernmetals:legacy/manganese_ore": {
       "block": "modernmetals:manganese_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -300,7 +300,7 @@
         }
       }
     },
-    "modernmetals:ore/osmium": {
+    "modernmetals:legacy/osmium_ore": {
       "block": "modernmetals:osmium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -333,7 +333,7 @@
         }
       }
     },
-    "modernmetals:ore/plutonium": {
+    "modernmetals:legacy/plutonium_ore": {
       "block": "modernmetals:plutonium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -366,7 +366,7 @@
         }
       }
     },
-    "modernmetals:ore/rutile": {
+    "modernmetals:legacy/rutile_ore": {
       "block": "modernmetals:rutile_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -399,7 +399,7 @@
         }
       }
     },
-    "modernmetals:ore/tantalum": {
+    "modernmetals:legacy/tantalum_ore": {
       "block": "modernmetals:tantalum_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -432,7 +432,7 @@
         }
       }
     },
-    "modernmetals:ore/tungsten": {
+    "modernmetals:legacy/tungsten_ore": {
       "block": "modernmetals:tungsten_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -465,7 +465,7 @@
         }
       }
     },
-    "modernmetals:ore/uranium": {
+    "modernmetals:legacy/uranium_ore": {
       "block": "modernmetals:uranium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -498,7 +498,7 @@
         }
       }
     },
-    "modernmetals:ore/zirconium": {
+    "modernmetals:legacy/zirconium_ore": {
       "block": "modernmetals:zirconium_ore",
       "enabled": true,
       "source_mod": "modernmetals",
@@ -531,7 +531,7 @@
         }
       }
     },
-    "modernmetals:ore/titanium": {
+    "modernmetals:legacy/titanium_ore": {
       "block": "modernmetals:titanium_ore",
       "enabled": false,
       "source_mod": "modernmetals",
