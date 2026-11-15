@@ -50,16 +50,17 @@ jobs:
             "-Dorg.gradle.java.installations.paths=$JAVA_HOME,$JAVA_HOME_8_X64,$JAVA_HOME_25_X64" \
             -Dorg.gradle.java.installations.auto-detect=false \
             -Dorg.gradle.java.installations.auto-download=false
+      - name: Stage the flat release bundle
+        run: |
+          mkdir -p build/release-bundle
+          cp build/libs/*.jar build/release/SHA256SUMS CHANGELOG.txt build/release-bundle/
       - name: Upload audited release candidate
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: ModernMetals-1.13.2-${{ github.sha }}
           if-no-files-found: error
           retention-days: 30
-          path: |
-            build/libs/*.jar
-            build/release/SHA256SUMS
-            CHANGELOG.txt
+          path: build/release-bundle/
       - name: Retain failure diagnostics
         if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
