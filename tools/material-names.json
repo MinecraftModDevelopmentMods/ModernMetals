@@ -1,0 +1,25 @@
+{
+  "de_de": {
+    "aluminum": "Aluminium", "aluminumbrass": "Aluminiummessing", "beryllium": "Beryllium",
+    "boron": "Bor", "cadmium": "Cadmium", "chromium": "Chrom", "galvanizedsteel": "Verzinkter Stahl",
+    "iridium": "Iridium", "magnesium": "Magnesium", "manganese": "Mangan", "nichrome": "Nichrom",
+    "osmium": "Osmium", "plutonium": "Plutonium", "rutile": "Rutil", "stainlesssteel": "Edelstahl",
+    "tantalum": "Tantal", "thorium": "Thorium", "titanium": "Titan", "tungsten": "Wolfram",
+    "uranium": "Uran", "zirconium": "Zirkonium"
+  },
+  "ru_ru": {
+    "aluminum": "алюминий", "aluminumbrass": "алюминиевая латунь", "beryllium": "бериллий",
+    "boron": "бор", "cadmium": "кадмий", "chromium": "хром", "galvanizedsteel": "оцинкованная сталь",
+    "iridium": "иридий", "magnesium": "магний", "manganese": "марганец", "nichrome": "нихром",
+    "osmium": "осмий", "plutonium": "плутоний", "rutile": "рутил", "stainlesssteel": "нержавеющая сталь",
+    "tantalum": "тантал", "thorium": "торий", "titanium": "титан", "tungsten": "вольфрам",
+    "uranium": "уран", "zirconium": "цирконий"
+  },
+  "zh_cn": {
+    "aluminum": "铝", "aluminumbrass": "铝黄铜", "beryllium": "铍", "boron": "硼", "cadmium": "镉",
+    "chromium": "铬", "galvanizedsteel": "镀锌钢", "iridium": "铱", "magnesium": "镁",
+    "manganese": "锰", "nichrome": "镍铬合金", "osmium": "锇", "plutonium": "钚",
+    "rutile": "金红石", "stainlesssteel": "不锈钢", "tantalum": "钽", "thorium": "钍",
+    "titanium": "钛", "tungsten": "钨", "uranium": "铀", "zirconium": "锆"
+  }
+}

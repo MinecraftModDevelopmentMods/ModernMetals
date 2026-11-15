@@ -1,0 +1,12 @@
+{
+  "factory": "mmdlib:block",
+  "material_defaults": true,
+  "template": {
+    "properties": {
+      "sound": "stone",
+      "map_color": "metal",
+      "requires_correct_tool": true
+    },
+    "has_item": true
+  }
+}

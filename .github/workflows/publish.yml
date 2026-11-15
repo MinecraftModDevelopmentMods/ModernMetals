@@ -43,6 +43,11 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v6
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+
       - name: Read gradle.properties
         run: |
           # Keeps the CurseForge ID defined in one place.

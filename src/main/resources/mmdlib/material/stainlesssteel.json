@@ -27,7 +27,6 @@
     "tinted": false
   },
   "harvest_tags": [
-    "minecraft:mineable/pickaxe",
-    "minecraft:needs_stone_tool"
+    "minecraft:mineable/pickaxe"
   ]
 }

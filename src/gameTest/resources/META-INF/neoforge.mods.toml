@@ -1,0 +1,13 @@
+modLoader="javafml"
+loaderVersion="[3,)"
+license="LGPL-2.1-only"
+[[mods]]
+modId="modernmetals_tests"
+version="1.0"
+displayName="Modern Metals test fixtures"
+[[dependencies.modernmetals_tests]]
+modId="modernmetals"
+type="required"
+versionRange="[4.0.0,)"
+ordering="AFTER"
+side="BOTH"

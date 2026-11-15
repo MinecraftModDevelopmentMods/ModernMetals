@@ -5,8 +5,8 @@
   "strength": 3.0,
   "magic": 4.5,
   "damage": 1.6,
-  "items": "ingot nugget modernmetals:powder smallpowder pickaxe axe shovel hoe sword crackhammer scythe shears fishing_rod bow crossbow shield arrow bolt rod gear horse_armor helmet chestplate leggings boots modernmetals:casing modernmetals:dense_plate modernmetals:crushed modernmetals:crushed_purified crystal shard clump powder_dirty",
-  "blocks": "block plate bars door trapdoor button slab lever pressure_plate stairs wall ore",
+  "items": "ingot nugget modernmetals:powder smallpowder pickaxe axe shovel hoe sword crackhammer scythe shears fishing_rod bow crossbow shield arrow bolt rod gear horse_armor helmet chestplate leggings boots modernmetals:casing modernmetals:dense_plate modernmetals:crushed modernmetals:crushed_purified crystal shard clump powder_dirty modernmetals:raw",
+  "blocks": "block plate bars door trapdoor button slab lever pressure_plate stairs wall ore modernmetals:raw_block",
   "entities": "arrow bolt",
   "has_fluid": true,
   "special": {
@@ -19,7 +19,7 @@
   "runtime": {
     "repair_item": "modernmetals:iridium_ingot",
     "base_block": "modernmetals:iridium_block",
-    "incorrect_blocks": "minecraft:incorrect_for_iron_tool",
+    "incorrect_blocks": "minecraft:incorrect_for_stone_tool",
     "armor_texture": "modernmetals:iridium",
     "block_set_type": "minecraft:iron",
     "block_sound": "metal",
@@ -27,7 +27,6 @@
     "tinted": false
   },
   "harvest_tags": [
-    "minecraft:mineable/pickaxe",
-    "minecraft:needs_stone_tool"
+    "minecraft:mineable/pickaxe"
   ]
 }

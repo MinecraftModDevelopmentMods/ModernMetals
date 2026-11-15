@@ -14,6 +14,8 @@ import zone.moddev.mc.modernmetals.config.ModernMetalsConfig;
 import zone.moddev.mc.modernmetals.content.ModContent;
 import zone.moddev.mc.modernmetals.content.MoltenMetalHeat;
 import zone.moddev.mc.modernmetals.recipe.ContentAllowedCondition;
+import zone.moddev.mc.modernmetals.recipe.ModRecipes;
+import zone.moddev.mc.modernmetals.recipe.RecipeDiscovery;
 import zone.moddev.mc.modernmetals.trade.ModernMetalsTrades;
 
 /**
@@ -34,8 +36,13 @@ public final class ModernMetals {
         container.registerConfig(ModConfig.Type.COMMON, ModernMetalsConfig.SPEC);
         ModContent.register(modBus);
         ContentAllowedCondition.register(modBus);
+        ModRecipes.register(modBus);
 
         NeoForge.EVENT_BUS.addListener(MoltenMetalHeat::onEntityTick);
         NeoForge.EVENT_BUS.addListener(ModernMetalsTrades::onVillagerTrades);
+        NeoForge.EVENT_BUS.addListener(RecipeDiscovery::login);
+        NeoForge.EVENT_BUS.addListener(RecipeDiscovery::reload);
+        NeoForge.EVENT_BUS.addListener(RecipeDiscovery::tick);
+        NeoForge.EVENT_BUS.addListener(RecipeDiscovery::earned);
     }
 }

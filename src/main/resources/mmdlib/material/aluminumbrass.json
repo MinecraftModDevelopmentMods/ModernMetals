@@ -19,7 +19,7 @@
   "runtime": {
     "repair_item": "modernmetals:aluminumbrass_ingot",
     "base_block": "modernmetals:aluminumbrass_block",
-    "incorrect_blocks": "minecraft:incorrect_for_wooden_tool",
+    "incorrect_blocks": "minecraft:incorrect_for_stone_tool",
     "armor_texture": "modernmetals:aluminumbrass",
     "block_set_type": "minecraft:iron",
     "block_sound": "metal",

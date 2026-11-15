@@ -20,15 +20,18 @@ public final class ModernMetalsConfig {
     static {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
         CONTENT_MODE = builder
+                .translation("modernmetals.configuration.contentMode")
                 .comment("HIGH_FANTASY keeps every recipe.",
                         "LOW_FANTASY restricts implausible equipment and structures. Existing items remain usable.",
                         "When Base Metals is installed, its Fantasy Level is used instead.")
                 .worldRestart()
                 .defineEnum("contentMode", ContentMode.HIGH_FANTASY);
         VILLAGER_TRADES = builder
+                .translation("modernmetals.configuration.villagerTrades")
                 .comment("Let blacksmiths trade Modern Metals ingots and equipment.")
                 .define("villagerTrades", true);
         MOLTEN_METAL_BURNS = builder
+                .translation("modernmetals.configuration.moltenMetalBurns")
                 .comment("Molten metal sets creatures alight and burns them, as lava does.")
                 .define("moltenMetalBurns", true);
         SPEC = builder.build();

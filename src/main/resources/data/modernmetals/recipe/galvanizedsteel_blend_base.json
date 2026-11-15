@@ -5,11 +5,23 @@
       "item": "modernmetals:galvanizedsteel_blend"
     },
     {
-      "type": "neoforge:not",
-      "value": {
-        "type": "neoforge:tag_empty",
-        "tag": "c:dusts/steel"
-      }
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:dusts/steel"
+          }
+        },
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:blends/steel"
+          }
+        }
+      ]
     },
     {
       "type": "neoforge:not",
@@ -22,9 +34,14 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "c:dusts/steel"
-    },
+    [
+      {
+        "tag": "c:dusts/steel"
+      },
+      {
+        "tag": "c:blends/steel"
+      }
+    ],
     {
       "tag": "c:dusts/zinc"
     }

@@ -35,7 +35,13 @@ neoForge {
         }
         client {
             client()
+            gameDirectory = file('run/standalone')
         }
+        clientWithBase {
+            client()
+            gameDirectory = file('run/with-base-metals')
+        }
+        clientSmokeWithBase { client() }
         server {
             server()
             programArgument '--nogui'
@@ -57,15 +63,206 @@ repositories {
         content {
             includeGroup 'zone.moddev.mc.lib'
             includeGroup 'zone.moddev.mc.orespawn'
+            includeGroup 'zone.moddev.mc.basemetals'
         }
     }
 }
 
+def publishedBaseJar = layout.projectDirectory.file("libs/development/basemetals-${base_metals_test_version}.jar")
+def baseTestSha256 = 'b4bb1cbcd54dfcf2ec8465ace82715edccc5bf1e5c15e14c627ae7cc58e8fed1'
+def downloadTestBase = tasks.register('downloadTestBaseMetals') {
+    outputs.file publishedBaseJar
+    doLast {
+        def destination = publishedBaseJar.asFile
+        destination.parentFile.mkdirs()
+        def encodedVersion = base_metals_test_version.replace('+', '%2B')
+        def connection = new URI("https://github.com/MinecraftModDevelopmentMods/BaseMetals/releases/download/${encodedVersion}/basemetals-${encodedVersion}.jar").toURL().openConnection()
+        connection.setRequestProperty('User-Agent', 'ModernMetals-local-tests')
+        connection.connectTimeout = 30000
+        connection.readTimeout = 60000
+        def bytes = connection.inputStream.withCloseable { it.bytes }
+        def hash = java.security.MessageDigest.getInstance('SHA-256').digest(bytes).encodeHex().toString()
+        if (hash != baseTestSha256) throw new GradleException("Published Base Metals checksum mismatch: ${hash}")
+        destination.bytes = bytes
+    }
+}
+def baseTestFiles = files(publishedBaseJar).builtBy(downloadTestBase)
+
 dependencies {
     implementation "zone.moddev.mc.lib:mmdlib:${mmdlib_version}"
-    // Modern Metals only ships OreSpawn data; the mod itself is needed at runtime.
-    runtimeOnly "zone.moddev.mc.orespawn:OreSpawn:${orespawn_version}"
+    implementation "zone.moddev.mc.orespawn:OreSpawn:${orespawn_version}"
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.11.4'
+    testImplementation "net.neoforged:testframework:${neoforge_version}"
 }
+if (providers.gradleProperty('withBaseMetals').orElse('false').get().toBoolean()) {
+    dependencies { runtimeOnly baseTestFiles }
+}
+
+neoForge.unitTest {
+    enable()
+    testedMod = neoForge.mods.modernmetals
+}
+tasks.named('test', Test) {
+    useJUnitPlatform()
+    maxHeapSize = '3G'
+    systemProperty 'modernmetals.test.contributors', providers.gradleProperty('withContributors').orElse('false').get()
+    testLogging { events 'passed', 'skipped', 'failed'; exceptionFormat 'full' }
+}
+if (providers.gradleProperty('withContributors').orElse('false').get().toBoolean()) {
+    sourceSets.test.resources.srcDir 'src/contributorTest/resources'
+}
+
+sourceSets {
+    gameTest {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+configurations.gameTestImplementation.extendsFrom(configurations.implementation)
+configurations.gameTestRuntimeOnly.extendsFrom(configurations.runtimeOnly)
+neoForge {
+    addModdingDependenciesTo sourceSets.gameTest
+    mods {
+        modernmetals_tests { sourceSet sourceSets.gameTest }
+    }
+    runs {
+        client { loadedMods = [mods.modernmetals] }
+        clientWithBase { loadedMods = [mods.modernmetals] }
+        server { loadedMods = [mods.modernmetals] }
+        gameTest {
+            type = 'gameTestServer'
+            sourceSet = sourceSets.gameTest
+            loadedMods = [mods.modernmetals, mods.modernmetals_tests]
+            gameDirectory = file('run/game-tests')
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'modernmetals_tests'
+        }
+        gameTestLow {
+            type = 'gameTestServer'
+            sourceSet = sourceSets.gameTest
+            loadedMods = [mods.modernmetals, mods.modernmetals_tests]
+            gameDirectory = file('run/game-tests-low')
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'modernmetals_tests'
+        }
+        clientSmoke {
+            client()
+            sourceSet = sourceSets.gameTest
+            loadedMods = [mods.modernmetals, mods.modernmetals_tests]
+            gameDirectory = file('run/client-smoke')
+            systemProperty 'modernmetals.clientSmoke', 'true'
+        }
+        clientSmokeWithBase {
+            client()
+            sourceSet = sourceSets.gameTest
+            loadedMods = [mods.modernmetals, mods.modernmetals_tests]
+            gameDirectory = file('run/client-smoke-base')
+            systemProperty 'modernmetals.clientSmoke', 'true'
+            systemProperty 'modernmetals.expectedBase', 'true'
+        }
+        serverSmoke {
+            server()
+            sourceSet = sourceSets.gameTest
+            loadedMods = [mods.modernmetals, mods.modernmetals_tests]
+            gameDirectory = file(providers.gradleProperty('smokeDirectory').orElse('run/server-smoke').get())
+            systemProperty 'modernmetals.serverSmoke', 'true'
+            programArgument '--nogui'
+        }
+    }
+}
+tasks.register('prepareLowFantasyTest') {
+    doLast {
+        def config = file('run/game-tests-low/config')
+        config.mkdirs()
+        def withBase = providers.gradleProperty('withBaseMetals').orElse('false').get().toBoolean()
+        new File(config, 'modernmetals-common.toml').text = 'contentMode = "' + (withBase ? 'HIGH_FANTASY' : 'LOW_FANTASY') + '"\n'
+        new File(config, 'basemetals-common.toml').text = 'contentMode = "low_fantasy"\n'
+    }
+}
+tasks.named('runGameTestLow') { dependsOn 'prepareLowFantasyTest' }
+
+def generatedModernization = layout.buildDirectory.dir('generated/modernization')
+tasks.register('generateProcessingData', Exec) {
+    inputs.file 'tools/generate_processing_data.js'
+    inputs.file 'tools/material-policy.json'
+    inputs.file 'tools/material-names.json'
+    inputs.dir 'src/main/resources'
+    outputs.dir generatedModernization
+    commandLine 'node', 'tools/generate_processing_data.js'
+}
+// Merge once so Eclipse cannot overwrite generated loot, tags and languages with older copies.
+def mergedMainResources = layout.buildDirectory.dir('generated/merged-resources')
+tasks.register('mergeProcessingResources', Sync) {
+    dependsOn 'generateProcessingData'
+    from generatedModernization
+    from 'src/main/resources'
+    into mergedMainResources
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+sourceSets.main.resources.setSrcDirs([mergedMainResources])
+tasks.named('processResources') {
+    dependsOn 'mergeProcessingResources'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+tasks.named('sourcesJar') {
+    dependsOn 'mergeProcessingResources'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+tasks.register('verifyProcessingData', Exec) {
+    dependsOn 'generateProcessingData'
+    commandLine 'node', '--test', 'tools/test_processing_data.js'
+}
+tasks.named('check') { dependsOn 'verifyProcessingData' }
+
+tasks.register('prepareBaseProfiles') {
+    dependsOn downloadTestBase
+    doLast {
+        def bytes = publishedBaseJar.asFile.bytes
+        def actual = java.security.MessageDigest.getInstance('SHA-256').digest(bytes).encodeHex().toString()
+        if (actual != baseTestSha256) throw new GradleException("Base Metals test jar changed: ${actual}")
+        for (String directory : ['run/with-base-metals/mods', 'run/client-smoke-base/mods']) {
+            def folder = file(directory)
+            folder.mkdirs()
+            new File(folder, publishedBaseJar.asFile.name).bytes = bytes
+        }
+    }
+}
+neoForge {
+    ideSyncTask tasks.named('mergeProcessingResources')
+    runs {
+        clientWithBase { taskBefore tasks.named('prepareBaseProfiles') }
+        clientSmokeWithBase { taskBefore tasks.named('prepareBaseProfiles') }
+        [gameTest, gameTestLow, clientSmoke, clientSmokeWithBase, serverSmoke].each { it.disableIdeRun() }
+    }
+}
+tasks.named('createLaunchScripts') { dependsOn 'prepareBaseProfiles' }
+
+tasks.register('createManualEclipseProfiles') {
+    dependsOn 'mergeProcessingResources', 'prepareBaseProfiles'
+    doLast {
+        def destination = file('.eclipse/configurations')
+        destination.mkdirs()
+        for (def entry : ['Standalone':'runClient', 'With Base Metals':'runClientWithBase']) {
+            def output = new StringWriter()
+            def xml = new groovy.xml.MarkupBuilder(output)
+            xml.mkp.xmlDeclaration(version:'1.0', encoding:'UTF-8')
+            xml.launchConfiguration(type:'org.eclipse.buildship.core.launch.runconfiguration') {
+                listAttribute(key:'tasks') { listEntry(value:entry.value) }
+                stringAttribute(key:'working_dir', value:'${workspace_loc:ModernMetals}')
+                stringAttribute(key:'gradle_distribution', value:'GRADLE_DISTRIBUTION(WRAPPER)')
+                booleanAttribute(key:'offline_mode', value:'false')
+                booleanAttribute(key:'show_console_view', value:'true')
+                booleanAttribute(key:'show_execution_view', value:'true')
+                booleanAttribute(key:'override_workspace_settings', value:'false')
+            }
+            new File(destination, "ModernMetals - ${entry.key}.launch").setText(output.toString(), 'UTF-8')
+        }
+        def prefs = file('.settings/org.eclipse.buildship.core.prefs')
+        prefs.parentFile.mkdirs()
+        def escape = { String value -> value.replace('\\', '/').replace(':', '\\:') }
+        prefs.text = "eclipse.preferences.version=1\nconnection.gradle.distribution=GRADLE_DISTRIBUTION(WRAPPER)\nconnection.project.dir=\ngradle.user.home=${escape(gradle.gradleUserHomeDir.path)}\njava.home=${escape(env.JAVA_HOME ?: System.getProperty('java.home'))}\noverride.workspace.settings=true\n"
+    }
+}
+tasks.named('eclipse') { dependsOn 'createManualEclipseProfiles' }
 
 tasks.named('processResources', ProcessResources) {
     def properties = [
@@ -95,6 +292,10 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     // Report any use of deprecated Minecraft, NeoForge or MMDLib API.
     options.compilerArgs.addAll(['-Xlint:deprecation', '-Xlint:removal'])
+}
+tasks.withType(AbstractArchiveTask).configureEach {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
 }
 
 publishing {

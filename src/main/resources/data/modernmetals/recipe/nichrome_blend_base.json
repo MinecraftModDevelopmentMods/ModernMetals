@@ -18,9 +18,14 @@
     {
       "tag": "c:dusts/nickel"
     },
-    {
-      "tag": "c:dusts/chromium"
-    }
+    [
+      {
+        "tag": "c:dusts/chromium"
+      },
+      {
+        "tag": "c:dusts/chrome"
+      }
+    ]
   ],
   "result": {
     "id": "modernmetals:nichrome_blend",
