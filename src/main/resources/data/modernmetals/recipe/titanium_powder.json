@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:titanium_powder"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "item": "modernmetals:titanium_smallpowder"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:titanium_powder"
+  },
+  "group": "modernmetals:titanium_powder"
+}

@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:plutonium_crackhammer"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/plutonium"
+    },
+    "y": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:plutonium_crackhammer"
+  },
+  "group": "modernmetals:plutonium_crackhammer"
+}

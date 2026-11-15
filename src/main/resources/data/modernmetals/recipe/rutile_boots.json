@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:rutile_boots"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/rutile"
+    }
+  },
+  "pattern": [
+    "x x",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:rutile_boots"
+  },
+  "group": "modernmetals:rutile_boots"
+}

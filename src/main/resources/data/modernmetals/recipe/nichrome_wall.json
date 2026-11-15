@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_wall"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/nichrome"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:nichrome_wall",
+    "count": 6
+  },
+  "group": "modernmetals:nichrome_wall"
+}

@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tungsten_scythe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "i": {
+      "tag": "c:ingots/tungsten"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "ii ",
+    "  i",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:tungsten_scythe"
+  },
+  "group": "modernmetals:tungsten_scythe"
+}

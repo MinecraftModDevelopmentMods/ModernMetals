@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "modernmetals:items/osmium_shears"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "modernmetals:item/osmium_shears"
+  }
 }

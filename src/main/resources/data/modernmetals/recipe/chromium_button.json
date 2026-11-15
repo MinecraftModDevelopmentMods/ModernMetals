@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:chromium_button"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/chromium"
+    }
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "result": {
+    "id": "modernmetals:chromium_button"
+  },
+  "group": "modernmetals:chromium_button"
+}

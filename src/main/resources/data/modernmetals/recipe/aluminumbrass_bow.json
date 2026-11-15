@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_bow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/aluminumbrass"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " xs",
+    "x s",
+    " xs"
+  ],
+  "result": {
+    "id": "modernmetals:aluminumbrass_bow"
+  },
+  "group": "modernmetals:aluminumbrass_bow"
+}

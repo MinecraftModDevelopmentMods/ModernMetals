@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_osmium" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_osmium" }
+  "variants": {
+    "type=bottom": {
+      "model": "modernmetals:block/osmium_slab"
+    },
+    "type=double": {
+      "model": "modernmetals:block/osmium_block"
+    },
+    "type=top": {
+      "model": "modernmetals:block/osmium_slab_top"
     }
+  }
 }

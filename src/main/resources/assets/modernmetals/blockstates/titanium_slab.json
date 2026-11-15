@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_titanium" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_titanium" }
+  "variants": {
+    "type=bottom": {
+      "model": "modernmetals:block/titanium_slab"
+    },
+    "type=double": {
+      "model": "modernmetals:block/titanium_block"
+    },
+    "type=top": {
+      "model": "modernmetals:block/titanium_slab_top"
     }
+  }
 }

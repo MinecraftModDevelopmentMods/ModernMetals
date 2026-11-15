@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:storage_blocks/cadmium"
+  },
+  "result": {
+    "id": "modernmetals:cadmium_powder",
+    "count": 9
+  }
+}

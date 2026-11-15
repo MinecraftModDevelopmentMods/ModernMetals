@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/boron"
+  },
+  "result": {
+    "id": "modernmetals:boron_powder",
+    "count": 1
+  }
+}

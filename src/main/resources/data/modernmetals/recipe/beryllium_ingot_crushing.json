@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/beryllium"
+  },
+  "result": {
+    "id": "modernmetals:beryllium_powder",
+    "count": 1
+  }
+}

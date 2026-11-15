@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "#c:dusts/aluminum",
+    "#c:dusts/aluminumbrass",
+    "#c:dusts/beryllium",
+    "#c:dusts/boron",
+    "#c:dusts/cadmium",
+    "#c:dusts/chromium",
+    "#c:dusts/galvanizedsteel",
+    "#c:dusts/iridium",
+    "#c:dusts/magnesium",
+    "#c:dusts/manganese",
+    "#c:dusts/nichrome",
+    "#c:dusts/osmium",
+    "#c:dusts/plutonium",
+    "#c:dusts/rutile",
+    "#c:dusts/stainlesssteel",
+    "#c:dusts/tantalum",
+    "#c:dusts/thorium",
+    "#c:dusts/titanium",
+    "#c:dusts/tungsten",
+    "#c:dusts/uranium",
+    "#c:dusts/zirconium"
+  ]
+}

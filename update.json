@@ -1,6 +1,8 @@
 {
-  "homepage": "http://minecraft.curseforge.com/projects/modern-metals",
+  "homepage": "https://www.curseforge.com/minecraft/mc-mods/modern-metals",
   "promos": {
+    "1.21.1-latest": "4.0.0.121012",
+    "1.21.1-recommended": "4.0.0.121012",
     "1.12.2-latest": "2.5.2.112021",
     "1.12.2-recommended": "2.5.2.112021",
     "1.11.2-latest": "0.0.0",
@@ -27,6 +29,9 @@
     "1.7.10-recommended": "0.0.0",
     "1.7.2-recommended": "0.0.0",
     "1.6.4-recommended": "0.0.0"
+  },
+  "1.21.1": {
+    "4.0.0.121012": "Port to Minecraft 1.21.1 on NeoForge, built on MMDLib 2.0.2."
   },
   "1.12.2": {
     "2.5.2.112021": "Fixes black ore backgrounds and updates MMDLib and OreSpawn for Minecraft 1.12.2."

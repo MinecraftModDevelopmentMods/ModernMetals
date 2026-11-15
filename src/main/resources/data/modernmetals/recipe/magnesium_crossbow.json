@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_crossbow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/magnesium"
+    },
+    "y": {
+      "item": "minecraft:string"
+    },
+    "z": {
+      "tag": "c:gears/magnesium"
+    }
+  },
+  "pattern": [
+    "zxx",
+    " yx",
+    "x z"
+  ],
+  "result": {
+    "id": "modernmetals:magnesium_crossbow"
+  },
+  "group": "modernmetals:magnesium_crossbow"
+}

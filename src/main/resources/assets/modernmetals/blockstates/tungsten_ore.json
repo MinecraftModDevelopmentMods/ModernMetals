@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:tungsten_ore" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/tungsten_ore"
     }
+  }
 }

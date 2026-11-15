@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tantalum_crossbow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/tantalum"
+    },
+    "y": {
+      "item": "minecraft:string"
+    },
+    "z": {
+      "tag": "c:gears/tantalum"
+    }
+  },
+  "pattern": [
+    "zxx",
+    " yx",
+    "x z"
+  ],
+  "result": {
+    "id": "modernmetals:tantalum_crossbow"
+  },
+  "group": "modernmetals:tantalum_crossbow"
+}

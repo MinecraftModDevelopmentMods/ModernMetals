@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_lever"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/nichrome"
+    },
+    "y": {
+      "tag": "c:ingots/nichrome"
+    }
+  },
+  "pattern": [
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:nichrome_lever"
+  },
+  "group": "modernmetals:nichrome_lever"
+}

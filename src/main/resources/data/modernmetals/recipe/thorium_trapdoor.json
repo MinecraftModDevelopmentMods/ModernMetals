@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_trapdoor"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/thorium"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:thorium_trapdoor"
+  },
+  "group": "modernmetals:thorium_trapdoor"
+}

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_chestplate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/osmium"
+    }
+  },
+  "pattern": [
+    "x x",
+    "xxx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:osmium_chestplate"
+  },
+  "group": "modernmetals:osmium_chestplate"
+}

@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_helmet"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/thorium"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:thorium_helmet"
+  },
+  "group": "modernmetals:thorium_helmet"
+}

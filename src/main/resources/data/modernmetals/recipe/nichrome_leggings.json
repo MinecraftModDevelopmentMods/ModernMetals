@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_leggings"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/nichrome"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "x x",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:nichrome_leggings"
+  },
+  "group": "modernmetals:nichrome_leggings"
+}

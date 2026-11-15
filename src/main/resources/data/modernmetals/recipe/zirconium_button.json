@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:zirconium_button"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/zirconium"
+    }
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "result": {
+    "id": "modernmetals:zirconium_button"
+  },
+  "group": "modernmetals:zirconium_button"
+}

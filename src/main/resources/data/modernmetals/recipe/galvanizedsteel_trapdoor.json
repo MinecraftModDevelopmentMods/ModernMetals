@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_trapdoor"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/galvanizedsteel"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_trapdoor"
+  },
+  "group": "modernmetals:galvanizedsteel_trapdoor"
+}

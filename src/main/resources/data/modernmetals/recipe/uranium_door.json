@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:uranium_door"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/uranium"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:uranium_door",
+    "count": 3
+  },
+  "group": "modernmetals:uranium_door"
+}

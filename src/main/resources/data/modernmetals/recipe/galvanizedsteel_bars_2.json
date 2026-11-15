@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_bars"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/galvanizedsteel"
+    }
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_bars",
+    "count": 4
+  },
+  "group": "modernmetals:galvanizedsteel_bars"
+}

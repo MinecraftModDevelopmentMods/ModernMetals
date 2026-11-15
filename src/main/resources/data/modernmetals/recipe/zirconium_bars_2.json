@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:zirconium_bars"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/zirconium"
+    }
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:zirconium_bars",
+    "count": 4
+  },
+  "group": "modernmetals:zirconium_bars"
+}

@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:chromium_stairs"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/chromium"
+    }
+  },
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:chromium_stairs",
+    "count": 4
+  },
+  "group": "modernmetals:chromium_stairs"
+}

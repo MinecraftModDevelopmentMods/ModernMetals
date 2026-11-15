@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:storage_blocks/aluminum"
+  },
+  "result": {
+    "id": "modernmetals:aluminum_powder",
+    "count": 9
+  }
+}

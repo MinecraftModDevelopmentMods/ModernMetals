@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:iridium_fishing_rod"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/iridium"
+    },
+    "y": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "  x",
+    " xy",
+    "x y"
+  ],
+  "result": {
+    "id": "modernmetals:iridium_fishing_rod"
+  },
+  "group": "modernmetals:iridium_fishing_rod"
+}

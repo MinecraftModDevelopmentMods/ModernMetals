@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:boron_ingot"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:boron_ingot",
+  "ingredient": {
+    "item": "modernmetals:boron_crushed"
+  },
+  "result": {
+    "id": "modernmetals:boron_ingot"
+  },
+  "experience": 0.1,
+  "cookingtime": 100
+}

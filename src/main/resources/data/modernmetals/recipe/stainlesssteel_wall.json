@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_wall"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/stainlesssteel"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_wall",
+    "count": 6
+  },
+  "group": "modernmetals:stainlesssteel_wall"
+}

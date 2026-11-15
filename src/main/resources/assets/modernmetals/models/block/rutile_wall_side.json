@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_side",
-    "textures": {
-        "wall": "modernmetals:blocks/rutile_block"
-    }
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "modernmetals:block/rutile_block"
+  }
 }

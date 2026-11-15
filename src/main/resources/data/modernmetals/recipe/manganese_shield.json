@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:manganese_shield"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/manganese"
+    },
+    "y": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "xyx",
+    "xxx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:manganese_shield"
+  },
+  "group": "modernmetals:manganese_shield"
+}

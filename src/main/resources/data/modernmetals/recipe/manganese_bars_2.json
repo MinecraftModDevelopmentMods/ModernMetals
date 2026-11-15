@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:manganese_bars"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/manganese"
+    }
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:manganese_bars",
+    "count": 4
+  },
+  "group": "modernmetals:manganese_bars"
+}

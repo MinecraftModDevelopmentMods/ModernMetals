@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_crossbow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/aluminumbrass"
+    },
+    "y": {
+      "item": "minecraft:string"
+    },
+    "z": {
+      "tag": "c:gears/aluminumbrass"
+    }
+  },
+  "pattern": [
+    "zxx",
+    " yx",
+    "x z"
+  ],
+  "result": {
+    "id": "modernmetals:aluminumbrass_crossbow"
+  },
+  "group": "modernmetals:aluminumbrass_crossbow"
+}

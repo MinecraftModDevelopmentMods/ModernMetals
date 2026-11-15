@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "#c:ores/aluminum",
+    "#c:ores/beryllium",
+    "#c:ores/boron",
+    "#c:ores/cadmium",
+    "#c:ores/chromium",
+    "#c:ores/iridium",
+    "#c:ores/magnesium",
+    "#c:ores/manganese",
+    "#c:ores/osmium",
+    "#c:ores/plutonium",
+    "#c:ores/rutile",
+    "#c:ores/tantalum",
+    "#c:ores/thorium",
+    "#c:ores/titanium",
+    "#c:ores/tungsten",
+    "#c:ores/uranium",
+    "#c:ores/zirconium"
+  ]
+}

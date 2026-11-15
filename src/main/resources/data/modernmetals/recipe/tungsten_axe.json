@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tungsten_axe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/tungsten"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xs",
+    " s"
+  ],
+  "result": {
+    "id": "modernmetals:tungsten_axe"
+  },
+  "group": "modernmetals:tungsten_axe"
+}

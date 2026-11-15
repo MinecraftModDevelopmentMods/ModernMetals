@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/manganese"
+  },
+  "result": {
+    "id": "modernmetals:manganese_smallpowder",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "modernmetals:block/plutonium_block",
+    "top": "modernmetals:block/plutonium_block",
+    "side": "modernmetals:block/plutonium_block"
+  }
+}

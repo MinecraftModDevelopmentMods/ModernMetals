@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:chromium_helmet"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/chromium"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:chromium_helmet"
+  },
+  "group": "modernmetals:chromium_helmet"
+}

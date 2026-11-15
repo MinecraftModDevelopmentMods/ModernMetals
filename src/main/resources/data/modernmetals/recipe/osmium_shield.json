@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_shield"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/osmium"
+    },
+    "y": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "xyx",
+    "xxx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:osmium_shield"
+  },
+  "group": "modernmetals:osmium_shield"
+}

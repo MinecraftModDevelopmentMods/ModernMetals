@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/uranium"
+  },
+  "result": {
+    "id": "modernmetals:uranium_powder",
+    "count": 2
+  }
+}

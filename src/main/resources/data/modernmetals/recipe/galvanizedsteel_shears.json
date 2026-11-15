@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_shears"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/galvanizedsteel"
+    }
+  },
+  "pattern": [
+    " x",
+    "x "
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_shears"
+  },
+  "group": "modernmetals:galvanizedsteel_shears"
+}

@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/stainlesssteel"
+    }
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_plate",
+    "count": 3
+  },
+  "group": "modernmetals:stainlesssteel_plate"
+}

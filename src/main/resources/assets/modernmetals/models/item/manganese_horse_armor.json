@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-    "textures": {
-        "layer0": "modernmetals:items/manganese_horse_armor"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "modernmetals:item/manganese_horse_armor"
+  }
 }

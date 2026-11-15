@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_pickaxe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/galvanizedsteel"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "xxx",
+    " s ",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_pickaxe"
+  },
+  "group": "modernmetals:galvanizedsteel_pickaxe"
+}

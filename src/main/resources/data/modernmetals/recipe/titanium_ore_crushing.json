@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/titanium"
+  },
+  "result": {
+    "id": "modernmetals:titanium_powder",
+    "count": 2
+  }
+}

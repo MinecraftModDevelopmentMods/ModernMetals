@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:plutonium_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:plutonium_ingot",
+  "ingredient": {
+    "item": "modernmetals:plutonium_crushed"
+  },
+  "result": {
+    "id": "modernmetals:plutonium_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_boron" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_boron" }
+  "variants": {
+    "type=bottom": {
+      "model": "modernmetals:block/boron_slab"
+    },
+    "type=double": {
+      "model": "modernmetals:block/boron_block"
+    },
+    "type=top": {
+      "model": "modernmetals:block/boron_slab_top"
     }
+  }
 }

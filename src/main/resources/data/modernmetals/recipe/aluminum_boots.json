@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminum_boots"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/aluminum"
+    }
+  },
+  "pattern": [
+    "x x",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:aluminum_boots"
+  },
+  "group": "modernmetals:aluminum_boots"
+}

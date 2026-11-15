@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:titanium_lever"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/titanium"
+    },
+    "y": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "pattern": [
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:titanium_lever"
+  },
+  "group": "modernmetals:titanium_lever"
+}

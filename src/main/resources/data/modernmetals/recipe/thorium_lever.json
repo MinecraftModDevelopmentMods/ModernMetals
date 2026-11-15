@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_lever"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/thorium"
+    },
+    "y": {
+      "tag": "c:ingots/thorium"
+    }
+  },
+  "pattern": [
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:thorium_lever"
+  },
+  "group": "modernmetals:thorium_lever"
+}

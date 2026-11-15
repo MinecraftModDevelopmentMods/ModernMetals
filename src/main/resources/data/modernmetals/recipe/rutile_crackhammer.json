@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:rutile_crackhammer"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/rutile"
+    },
+    "y": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:rutile_crackhammer"
+  },
+  "group": "modernmetals:rutile_crackhammer"
+}

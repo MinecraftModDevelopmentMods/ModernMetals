@@ -1,3 +1,13 @@
+4.0.0.121012 for 1.21.1
+
+Ported to Minecraft 1.21.1 on NeoForge 21.1, built on MMDLib 2.0.2 and OreSpawn 4.
+Materials are MMDLib definitions in mmdlib/material/; MMDLib registers their items, blocks, arrows, armor and molten fluids.
+Recipes use common (c:) tags instead of the ore dictionary. Low Fantasy now removes restricted recipes when a world loads.
+Fantasy Level, villager trades and molten metal burning are set in config/modernmetals-common.toml or the in-game settings screen.
+Ores generate between Y -64 and their 1.12 maximum height. Titanium ore stays optional in OreSpawn.
+Integrations with mods that have no 1.21.1 release (Tinkers' Construct, Construct's Armory, IC2, Thermal Expansion, Ender IO, Thaumcraft, Dense Ores and Vein Miner) were removed. Mekanism processing forms appear when Mekanism is installed.
+1.12.2 worlds cannot be upgraded to this version.
+
 2.5.2.112021 for 1.12.2
 
 Use the published MMDLib 1.0.0-rc3 and MMD OreSpawn 4.1.6.112021.

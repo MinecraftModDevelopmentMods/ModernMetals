@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tungsten_crossbow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/tungsten"
+    },
+    "y": {
+      "item": "minecraft:string"
+    },
+    "z": {
+      "tag": "c:gears/tungsten"
+    }
+  },
+  "pattern": [
+    "zxx",
+    " yx",
+    "x z"
+  ],
+  "result": {
+    "id": "modernmetals:tungsten_crossbow"
+  },
+  "group": "modernmetals:tungsten_crossbow"
+}

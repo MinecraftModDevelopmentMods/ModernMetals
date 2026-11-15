@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:uranium_helmet"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/uranium"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:uranium_helmet"
+  },
+  "group": "modernmetals:uranium_helmet"
+}

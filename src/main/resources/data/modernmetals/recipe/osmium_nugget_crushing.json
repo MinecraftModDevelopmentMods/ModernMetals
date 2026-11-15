@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/osmium"
+  },
+  "result": {
+    "id": "modernmetals:osmium_smallpowder",
+    "count": 1
+  }
+}

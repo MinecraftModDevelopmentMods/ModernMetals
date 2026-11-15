@@ -1,6 +1,6 @@
 {
-    "parent": "modernmetals:item/tantalum_crossbow",
-    "textures": {
-        "layer0": "modernmetals:items/tantalum_crossbow_pulling_2"
-    }
+  "parent": "modernmetals:item/tantalum_crossbow",
+  "textures": {
+    "layer0": "modernmetals:item/tantalum_crossbow_pulling_2"
+  }
 }

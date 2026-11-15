@@ -2,9 +2,12 @@
 bin
 *.launch
 .settings
+.settings/*
 .metadata
 .classpath
 .project
+/.eclipse/
+/.factorypath
 
 # idea
 out
@@ -13,6 +16,12 @@ out
 *.iml
 .idea
 
+# vscode
+/.vscode/
+/.vscode
+.vscode/*
+.vscode/
+
 # gradle
 build
 .gradle
@@ -20,19 +29,65 @@ build
 # other
 eclipse
 run
+run-data
+run-upgrade
+/run-*/
+logs
+classes
+/crash-reports/
+/screenshots/
+/mcmodsrepo/
+/run.*
+/*.log
+/*.jfr
+/*.hprof
+/hs_err_pid*.log
+/replay_pid*.log
+
+# local regression, benchmark, and profiling evidence
+/benchmark-*/
+/preferred-seed-*/
+/validation/
+/regression-*/
+/evidence/
+/evidence-*/
+/*-evidence/
 
 /README.txt
 /forge-*-changelog.txt
 
-secret.json
-# Local context and generated verification
-/AGENTS.md
-/agent-notes/
-/.codex/
-/.verification*/
-/release-candidates/
-__pycache__/
-*.pyc
+/secret.json
+/libs/*
+!/libs/README.txt
+
 .DS_Store
 Thumbs.db
-desktop.ini
+Desktop.ini
+
+# python
+__pycache__/
+*.py[cod]
+
+/bugreport.md
+
+# machine-specific agent context (public project notes belong under /docs)
+AGENT.md
+AGENTS.md
+agent-notes/
+.agent/
+.agents/
+.codex/
+CLAUDE.md
+.claude/
+GEMINI.md
+.gemini/
+agent-*.md
+codex-*.md
+
+# local validation/audit reports
+**/VALIDATION.md
+**/validation.md
+**/DEVELOPMENT.md
+**/development.md
+**/REGISTRY_AUDIT.md
+**/registry_audit.md

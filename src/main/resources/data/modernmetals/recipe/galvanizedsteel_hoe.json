@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_hoe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/galvanizedsteel"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "xx",
+    " s",
+    " s"
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_hoe"
+  },
+  "group": "modernmetals:galvanizedsteel_hoe"
+}

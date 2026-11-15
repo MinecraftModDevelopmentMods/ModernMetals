@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_chestplate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/aluminumbrass"
+    }
+  },
+  "pattern": [
+    "x x",
+    "xxx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:aluminumbrass_chestplate"
+  },
+  "group": "modernmetals:aluminumbrass_chestplate"
+}

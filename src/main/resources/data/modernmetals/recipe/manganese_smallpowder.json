@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:manganese_smallpowder"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dusts/manganese"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:manganese_smallpowder",
+    "count": 9
+  },
+  "group": "modernmetals:manganese_smallpowder"
+}

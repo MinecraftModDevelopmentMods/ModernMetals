@@ -1,6 +1,6 @@
 {
-  "parent": "item/handheld",
-    "textures": {
-        "layer0": "modernmetals:items/boron_shovel"
-    }
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "modernmetals:item/boron_shovel"
+  }
 }

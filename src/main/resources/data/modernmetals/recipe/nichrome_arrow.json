@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_arrow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/nichrome"
+    },
+    "y": {
+      "tag": "c:rods/nichrome"
+    },
+    "z": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "z"
+  ],
+  "result": {
+    "id": "modernmetals:nichrome_arrow",
+    "count": 4
+  },
+  "group": "modernmetals:nichrome_arrow"
+}

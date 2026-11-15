@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_crackhammer"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/nichrome"
+    },
+    "y": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:nichrome_crackhammer"
+  },
+  "group": "modernmetals:nichrome_crackhammer"
+}

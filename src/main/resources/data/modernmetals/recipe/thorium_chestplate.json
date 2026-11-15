@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_chestplate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/thorium"
+    }
+  },
+  "pattern": [
+    "x x",
+    "xxx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:thorium_chestplate"
+  },
+  "group": "modernmetals:thorium_chestplate"
+}

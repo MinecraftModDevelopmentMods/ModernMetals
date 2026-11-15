@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:chromium_leggings"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/chromium"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "x x",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:chromium_leggings"
+  },
+  "group": "modernmetals:chromium_leggings"
+}

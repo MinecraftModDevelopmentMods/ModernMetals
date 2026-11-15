@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:manganese_arrow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/manganese"
+    },
+    "y": {
+      "tag": "c:rods/manganese"
+    },
+    "z": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "z"
+  ],
+  "result": {
+    "id": "modernmetals:manganese_arrow",
+    "count": 4
+  },
+  "group": "modernmetals:manganese_arrow"
+}

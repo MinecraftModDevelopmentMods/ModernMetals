@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_slab",
+    "modernmetals:aluminumbrass_slab",
+    "modernmetals:beryllium_slab",
+    "modernmetals:boron_slab",
+    "modernmetals:cadmium_slab",
+    "modernmetals:chromium_slab",
+    "modernmetals:galvanizedsteel_slab",
+    "modernmetals:iridium_slab",
+    "modernmetals:magnesium_slab",
+    "modernmetals:manganese_slab",
+    "modernmetals:nichrome_slab",
+    "modernmetals:osmium_slab",
+    "modernmetals:plutonium_slab",
+    "modernmetals:rutile_slab",
+    "modernmetals:stainlesssteel_slab",
+    "modernmetals:tantalum_slab",
+    "modernmetals:thorium_slab",
+    "modernmetals:titanium_slab",
+    "modernmetals:tungsten_slab",
+    "modernmetals:uranium_slab",
+    "modernmetals:zirconium_slab"
+  ]
+}

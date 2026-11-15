@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_scythe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "i": {
+      "tag": "c:ingots/galvanizedsteel"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "ii ",
+    "  i",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_scythe"
+  },
+  "group": "modernmetals:galvanizedsteel_scythe"
+}

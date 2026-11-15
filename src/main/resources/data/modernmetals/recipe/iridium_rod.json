@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:iridium_rod"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "tag": "c:ingots/iridium"
+    }
+  },
+  "pattern": [
+    " x ",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:iridium_rod",
+    "count": 4
+  },
+  "group": "modernmetals:iridium_rod"
+}

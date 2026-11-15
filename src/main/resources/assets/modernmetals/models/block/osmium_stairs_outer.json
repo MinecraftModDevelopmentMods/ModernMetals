@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "modernmetals:block/osmium_block",
+    "top": "modernmetals:block/osmium_block",
+    "side": "modernmetals:block/osmium_block"
+  }
+}

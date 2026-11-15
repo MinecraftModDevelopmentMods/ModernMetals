@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-    "textures": {
-        "layer0": "modernmetals:items/uranium_gear"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "modernmetals:item/uranium_gear"
+  }
 }

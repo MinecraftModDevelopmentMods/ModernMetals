@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_chestplate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/stainlesssteel"
+    }
+  },
+  "pattern": [
+    "x x",
+    "xxx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_chestplate"
+  },
+  "group": "modernmetals:stainlesssteel_chestplate"
+}

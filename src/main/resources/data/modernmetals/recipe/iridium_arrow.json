@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:iridium_arrow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/iridium"
+    },
+    "y": {
+      "tag": "c:rods/iridium"
+    },
+    "z": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "z"
+  ],
+  "result": {
+    "id": "modernmetals:iridium_arrow",
+    "count": 4
+  },
+  "group": "modernmetals:iridium_arrow"
+}

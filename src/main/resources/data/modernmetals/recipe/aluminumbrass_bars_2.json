@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_bars"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/aluminumbrass"
+    }
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:aluminumbrass_bars",
+    "count": 4
+  },
+  "group": "modernmetals:aluminumbrass_bars"
+}

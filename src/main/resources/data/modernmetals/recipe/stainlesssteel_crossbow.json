@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_crossbow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/stainlesssteel"
+    },
+    "y": {
+      "item": "minecraft:string"
+    },
+    "z": {
+      "tag": "c:gears/stainlesssteel"
+    }
+  },
+  "pattern": [
+    "zxx",
+    " yx",
+    "x z"
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_crossbow"
+  },
+  "group": "modernmetals:stainlesssteel_crossbow"
+}

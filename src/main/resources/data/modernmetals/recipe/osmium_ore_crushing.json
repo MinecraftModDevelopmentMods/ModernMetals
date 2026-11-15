@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/osmium"
+  },
+  "result": {
+    "id": "modernmetals:osmium_powder",
+    "count": 2
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:titanium_boots"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "pattern": [
+    "x x",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:titanium_boots"
+  },
+  "group": "modernmetals:titanium_boots"
+}

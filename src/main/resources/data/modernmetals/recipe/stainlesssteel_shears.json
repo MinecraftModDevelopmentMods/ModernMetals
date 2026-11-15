@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_shears"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/stainlesssteel"
+    }
+  },
+  "pattern": [
+    " x",
+    "x "
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_shears"
+  },
+  "group": "modernmetals:stainlesssteel_shears"
+}

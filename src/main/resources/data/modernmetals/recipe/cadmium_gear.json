@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:cadmium_gear"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "tag": "c:ingots/cadmium"
+    },
+    "r": {
+      "tag": "c:rods/cadmium"
+    }
+  },
+  "pattern": [
+    " x ",
+    "xrx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:cadmium_gear",
+    "count": 4
+  },
+  "group": "modernmetals:cadmium_gear"
+}

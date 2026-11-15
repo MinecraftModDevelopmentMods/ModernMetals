@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/lever_on",
+  "textures": {
+    "particle": "modernmetals:block/rutile_block",
+    "base": "modernmetals:block/rutile_block"
+  }
+}

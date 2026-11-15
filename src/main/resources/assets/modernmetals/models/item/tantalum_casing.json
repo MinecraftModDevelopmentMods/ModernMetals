@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-    "textures": {
-        "layer0": "modernmetals:items/tantalum_casing"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "modernmetals:item/tantalum_casing"
+  }
 }

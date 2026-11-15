@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:plutonium_button"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/plutonium"
+    }
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "result": {
+    "id": "modernmetals:plutonium_button"
+  },
+  "group": "modernmetals:plutonium_button"
+}

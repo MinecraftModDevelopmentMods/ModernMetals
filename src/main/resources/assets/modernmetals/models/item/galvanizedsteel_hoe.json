@@ -1,6 +1,6 @@
 {
-  "parent": "item/handheld",
-    "textures": {
-        "layer0": "modernmetals:items/galvanizedsteel_hoe"
-    }
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "modernmetals:item/galvanizedsteel_hoe"
+  }
 }

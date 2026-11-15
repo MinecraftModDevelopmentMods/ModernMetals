@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_pressure_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/osmium"
+    }
+  },
+  "pattern": [
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:osmium_pressure_plate"
+  },
+  "group": "modernmetals:osmium_pressure_plate"
+}

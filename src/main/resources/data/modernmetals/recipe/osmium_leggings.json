@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_leggings"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/osmium"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "x x",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:osmium_leggings"
+  },
+  "group": "modernmetals:osmium_leggings"
+}

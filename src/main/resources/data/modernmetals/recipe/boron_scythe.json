@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:boron_scythe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "i": {
+      "tag": "c:ingots/boron"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "ii ",
+    "  i",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:boron_scythe"
+  },
+  "group": "modernmetals:boron_scythe"
+}

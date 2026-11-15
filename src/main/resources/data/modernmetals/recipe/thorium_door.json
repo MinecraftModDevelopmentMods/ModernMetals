@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_door"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/thorium"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:thorium_door",
+    "count": 3
+  },
+  "group": "modernmetals:thorium_door"
+}

@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_stairs"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/galvanizedsteel"
+    }
+  },
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_stairs",
+    "count": 4
+  },
+  "group": "modernmetals:galvanizedsteel_stairs"
+}

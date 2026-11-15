@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "#c:storage_blocks/aluminum",
+    "#c:storage_blocks/aluminumbrass",
+    "#c:storage_blocks/beryllium",
+    "#c:storage_blocks/boron",
+    "#c:storage_blocks/cadmium",
+    "#c:storage_blocks/chromium",
+    "#c:storage_blocks/galvanizedsteel",
+    "#c:storage_blocks/iridium",
+    "#c:storage_blocks/magnesium",
+    "#c:storage_blocks/manganese",
+    "#c:storage_blocks/nichrome",
+    "#c:storage_blocks/osmium",
+    "#c:storage_blocks/plutonium",
+    "#c:storage_blocks/rutile",
+    "#c:storage_blocks/stainlesssteel",
+    "#c:storage_blocks/tantalum",
+    "#c:storage_blocks/thorium",
+    "#c:storage_blocks/titanium",
+    "#c:storage_blocks/tungsten",
+    "#c:storage_blocks/uranium",
+    "#c:storage_blocks/zirconium"
+  ]
+}

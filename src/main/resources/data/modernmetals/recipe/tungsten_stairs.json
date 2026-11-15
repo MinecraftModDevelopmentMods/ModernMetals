@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tungsten_stairs"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/tungsten"
+    }
+  },
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:tungsten_stairs",
+    "count": 4
+  },
+  "group": "modernmetals:tungsten_stairs"
+}

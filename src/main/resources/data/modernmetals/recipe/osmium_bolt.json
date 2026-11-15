@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_bolt"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/osmium"
+    },
+    "y": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:osmium_bolt",
+    "count": 4
+  },
+  "group": "modernmetals:osmium_bolt"
+}

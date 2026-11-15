@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:plutonium_ore" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/plutonium_ore"
     }
+  }
 }

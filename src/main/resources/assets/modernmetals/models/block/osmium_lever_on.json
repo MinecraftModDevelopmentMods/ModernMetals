@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/lever_on",
+  "textures": {
+    "particle": "modernmetals:block/osmium_block",
+    "base": "modernmetals:block/osmium_block"
+  }
+}

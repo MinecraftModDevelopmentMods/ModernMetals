@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_aluminumbrass" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_aluminumbrass" }
+  "variants": {
+    "type=bottom": {
+      "model": "modernmetals:block/aluminumbrass_slab"
+    },
+    "type=double": {
+      "model": "modernmetals:block/aluminumbrass_block"
+    },
+    "type=top": {
+      "model": "modernmetals:block/aluminumbrass_slab_top"
     }
+  }
 }

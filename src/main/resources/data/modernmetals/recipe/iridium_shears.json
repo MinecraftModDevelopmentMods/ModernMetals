@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:iridium_shears"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/iridium"
+    }
+  },
+  "pattern": [
+    " x",
+    "x "
+  ],
+  "result": {
+    "id": "modernmetals:iridium_shears"
+  },
+  "group": "modernmetals:iridium_shears"
+}

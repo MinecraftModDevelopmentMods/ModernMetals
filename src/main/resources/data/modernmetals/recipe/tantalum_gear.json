@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tantalum_gear"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "tag": "c:ingots/tantalum"
+    },
+    "r": {
+      "tag": "c:rods/tantalum"
+    }
+  },
+  "pattern": [
+    " x ",
+    "xrx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:tantalum_gear",
+    "count": 4
+  },
+  "group": "modernmetals:tantalum_gear"
+}

@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:zirconium_leggings"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/zirconium"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "x x",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:zirconium_leggings"
+  },
+  "group": "modernmetals:zirconium_leggings"
+}

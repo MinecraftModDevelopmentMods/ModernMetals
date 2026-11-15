@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_gear"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "tag": "c:ingots/osmium"
+    },
+    "r": {
+      "tag": "c:rods/osmium"
+    }
+  },
+  "pattern": [
+    " x ",
+    "xrx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:osmium_gear",
+    "count": 4
+  },
+  "group": "modernmetals:osmium_gear"
+}

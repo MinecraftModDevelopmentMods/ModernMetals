@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_rutile" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_rutile" }
+  "variants": {
+    "type=bottom": {
+      "model": "modernmetals:block/rutile_slab"
+    },
+    "type=double": {
+      "model": "modernmetals:block/rutile_block"
+    },
+    "type=top": {
+      "model": "modernmetals:block/rutile_slab_top"
     }
+  }
 }

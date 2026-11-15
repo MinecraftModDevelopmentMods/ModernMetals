@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:cadmium_pressure_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/cadmium"
+    }
+  },
+  "pattern": [
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:cadmium_pressure_plate"
+  },
+  "group": "modernmetals:cadmium_pressure_plate"
+}

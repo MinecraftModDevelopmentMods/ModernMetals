@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_arrow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/magnesium"
+    },
+    "y": {
+      "tag": "c:rods/magnesium"
+    },
+    "z": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "z"
+  ],
+  "result": {
+    "id": "modernmetals:magnesium_arrow",
+    "count": 4
+  },
+  "group": "modernmetals:magnesium_arrow"
+}

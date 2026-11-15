@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:iridium_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:iridium_ingot",
+  "ingredient": {
+    "item": "modernmetals:iridium_ore"
+  },
+  "result": {
+    "id": "modernmetals:iridium_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

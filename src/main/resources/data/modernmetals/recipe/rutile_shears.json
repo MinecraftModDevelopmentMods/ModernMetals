@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:rutile_shears"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/rutile"
+    }
+  },
+  "pattern": [
+    " x",
+    "x "
+  ],
+  "result": {
+    "id": "modernmetals:rutile_shears"
+  },
+  "group": "modernmetals:rutile_shears"
+}

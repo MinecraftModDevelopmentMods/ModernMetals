@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:manganese_pressure_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/manganese"
+    }
+  },
+  "pattern": [
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:manganese_pressure_plate"
+  },
+  "group": "modernmetals:manganese_pressure_plate"
+}

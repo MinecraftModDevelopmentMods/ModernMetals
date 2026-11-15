@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_pickaxe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/magnesium"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "xxx",
+    " s ",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:magnesium_pickaxe"
+  },
+  "group": "modernmetals:magnesium_pickaxe"
+}

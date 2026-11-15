@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_rod"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "tag": "c:ingots/thorium"
+    }
+  },
+  "pattern": [
+    " x ",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:thorium_rod",
+    "count": 4
+  },
+  "group": "modernmetals:thorium_rod"
+}

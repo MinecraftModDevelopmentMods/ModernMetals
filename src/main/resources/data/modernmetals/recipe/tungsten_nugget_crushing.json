@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/tungsten"
+  },
+  "result": {
+    "id": "modernmetals:tungsten_smallpowder",
+    "count": 1
+  }
+}

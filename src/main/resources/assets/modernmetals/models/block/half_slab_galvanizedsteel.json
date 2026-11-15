@@ -1,8 +1,0 @@
-{
-    "parent": "block/half_slab",
-    "textures": {
-        "bottom": "modernmetals:blocks/galvanizedsteel_block",
-        "top": "modernmetals:blocks/galvanizedsteel_block",
-        "side": "modernmetals:blocks/galvanizedsteel_block"
-    }
-}

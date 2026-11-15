@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_helmet"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/magnesium"
+    }
+  },
+  "pattern": [
+    "xxx",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:magnesium_helmet"
+  },
+  "group": "modernmetals:magnesium_helmet"
+}

@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_fishing_rod"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/aluminumbrass"
+    },
+    "y": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "  x",
+    " xy",
+    "x y"
+  ],
+  "result": {
+    "id": "modernmetals:aluminumbrass_fishing_rod"
+  },
+  "group": "modernmetals:aluminumbrass_fishing_rod"
+}

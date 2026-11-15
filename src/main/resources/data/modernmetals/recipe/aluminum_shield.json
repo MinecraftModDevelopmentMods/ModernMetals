@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminum_shield"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/aluminum"
+    },
+    "y": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "xyx",
+    "xxx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:aluminum_shield"
+  },
+  "group": "modernmetals:aluminum_shield"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:storage_blocks/tungsten"
+  },
+  "result": {
+    "id": "modernmetals:tungsten_powder",
+    "count": 9
+  }
+}

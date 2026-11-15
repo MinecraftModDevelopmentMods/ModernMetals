@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_inventory",
-    "textures": {
-        "wall": "modernmetals:blocks/aluminum_block"
-    }
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "modernmetals:block/aluminum_block"
+  }
 }

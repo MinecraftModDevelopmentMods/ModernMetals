@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:boron_gear"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "tag": "c:ingots/boron"
+    },
+    "r": {
+      "tag": "c:rods/boron"
+    }
+  },
+  "pattern": [
+    " x ",
+    "xrx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:boron_gear",
+    "count": 4
+  },
+  "group": "modernmetals:boron_gear"
+}

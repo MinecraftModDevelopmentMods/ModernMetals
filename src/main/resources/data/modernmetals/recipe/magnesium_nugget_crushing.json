@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/magnesium"
+  },
+  "result": {
+    "id": "modernmetals:magnesium_smallpowder",
+    "count": 1
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:iridium_bolt"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/iridium"
+    },
+    "y": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:iridium_bolt",
+    "count": 4
+  },
+  "group": "modernmetals:iridium_bolt"
+}

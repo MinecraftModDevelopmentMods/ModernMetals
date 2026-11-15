@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:manganese_pickaxe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/manganese"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "xxx",
+    " s ",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:manganese_pickaxe"
+  },
+  "group": "modernmetals:manganese_pickaxe"
+}

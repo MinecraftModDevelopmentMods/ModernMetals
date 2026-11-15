@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_boots"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/osmium"
+    }
+  },
+  "pattern": [
+    "x x",
+    "x x"
+  ],
+  "result": {
+    "id": "modernmetals:osmium_boots"
+  },
+  "group": "modernmetals:osmium_boots"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/zirconium"
+  },
+  "result": {
+    "id": "modernmetals:zirconium_powder",
+    "count": 1
+  }
+}

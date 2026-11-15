@@ -1,6 +1,6 @@
 {
-    "parent": "block/button_inventory",
-    "textures": {
-        "texture": "modernmetals:blocks/chromium_block"
-    }
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "modernmetals:block/chromium_block"
+  }
 }

@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-    "textures": {
-        "layer0": "modernmetals:items/beryllium_horse_armor"
-    }
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "modernmetals:item/beryllium_horse_armor"
+  }
 }

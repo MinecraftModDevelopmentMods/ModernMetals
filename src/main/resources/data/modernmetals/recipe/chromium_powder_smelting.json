@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:chromium_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:chromium_ingot",
+  "ingredient": {
+    "item": "modernmetals:chromium_powder"
+  },
+  "result": {
+    "id": "modernmetals:chromium_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:uranium_nugget"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:uranium_nugget",
+  "ingredient": {
+    "item": "modernmetals:uranium_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:uranium_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

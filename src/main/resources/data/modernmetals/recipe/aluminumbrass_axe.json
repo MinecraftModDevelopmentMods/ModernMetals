@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_axe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/aluminumbrass"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xs",
+    " s"
+  ],
+  "result": {
+    "id": "modernmetals:aluminumbrass_axe"
+  },
+  "group": "modernmetals:aluminumbrass_axe"
+}

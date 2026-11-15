@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/plutonium"
+  },
+  "result": {
+    "id": "modernmetals:plutonium_powder",
+    "count": 2
+  }
+}

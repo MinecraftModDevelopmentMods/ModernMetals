@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:zirconium_pickaxe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/zirconium"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "xxx",
+    " s ",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:zirconium_pickaxe"
+  },
+  "group": "modernmetals:zirconium_pickaxe"
+}

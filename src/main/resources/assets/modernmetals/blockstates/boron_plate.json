@@ -1,10 +1,27 @@
 {
-    "variants": {
-        "facing=down":  { "model": "modernmetals:boron_plate", "x": 90  },
-        "facing=up":    { "model": "modernmetals:boron_plate", "x": 270 },
-        "facing=north": { "model": "modernmetals:boron_plate"           },
-        "facing=south": { "model": "modernmetals:boron_plate", "y": 180 },
-        "facing=west":  { "model": "modernmetals:boron_plate", "y": 270 },
-        "facing=east":  { "model": "modernmetals:boron_plate", "y": 90  }
+  "variants": {
+    "facing=north": {
+      "model": "modernmetals:block/boron_plate"
+    },
+    "facing=east": {
+      "model": "modernmetals:block/boron_plate",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "modernmetals:block/boron_plate",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "modernmetals:block/boron_plate",
+      "y": 270
+    },
+    "facing=down": {
+      "model": "modernmetals:block/boron_plate",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "modernmetals:block/boron_plate",
+      "x": 270
     }
+  }
 }

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_ingot"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:magnesium_ingot",
+  "ingredient": {
+    "item": "modernmetals:magnesium_crushed"
+  },
+  "result": {
+    "id": "modernmetals:magnesium_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

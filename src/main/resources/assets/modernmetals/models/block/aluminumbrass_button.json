@@ -1,6 +1,6 @@
 {
-    "parent": "block/button",
-    "textures": {
-        "texture": "modernmetals:blocks/aluminumbrass_block"
-    }
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "modernmetals:block/aluminumbrass_block"
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "modernmetals:blocks/galvanizedsteel_block"
-    }
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "modernmetals:block/galvanizedsteel_block"
+  }
 }

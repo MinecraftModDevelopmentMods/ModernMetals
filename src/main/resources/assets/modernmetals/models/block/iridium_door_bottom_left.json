@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "top": "modernmetals:block/iridium_door_upper",
+    "bottom": "modernmetals:block/iridium_door_lower"
+  }
+}

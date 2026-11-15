@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_pressure_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/galvanizedsteel"
+    }
+  },
+  "pattern": [
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_pressure_plate"
+  },
+  "group": "modernmetals:galvanizedsteel_pressure_plate"
+}

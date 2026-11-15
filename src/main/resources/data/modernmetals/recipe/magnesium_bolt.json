@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_bolt"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/magnesium"
+    },
+    "y": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:magnesium_bolt",
+    "count": 4
+  },
+  "group": "modernmetals:magnesium_bolt"
+}

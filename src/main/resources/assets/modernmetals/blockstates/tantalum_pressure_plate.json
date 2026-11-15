@@ -1,6 +1,10 @@
 {
-    "variants": {
-        "powered=false": { "model": "modernmetals:tantalum_pressure_plate_up" },
-        "powered=true": { "model": "modernmetals:tantalum_pressure_plate_down" }
+  "variants": {
+    "powered=false": {
+      "model": "modernmetals:block/tantalum_pressure_plate"
+    },
+    "powered=true": {
+      "model": "modernmetals:block/tantalum_pressure_plate_down"
     }
+  }
 }

@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_stainlesssteel" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_stainlesssteel" }
+  "variants": {
+    "type=bottom": {
+      "model": "modernmetals:block/stainlesssteel_slab"
+    },
+    "type=double": {
+      "model": "modernmetals:block/stainlesssteel_block"
+    },
+    "type=top": {
+      "model": "modernmetals:block/stainlesssteel_slab_top"
     }
+  }
 }

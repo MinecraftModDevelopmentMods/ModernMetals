@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/aluminumbrass"
+  },
+  "result": {
+    "id": "modernmetals:aluminumbrass_powder",
+    "count": 1
+  }
+}

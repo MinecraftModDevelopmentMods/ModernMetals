@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "modernmetals:block/manganese_block",
+    "top": "modernmetals:block/manganese_block",
+    "side": "modernmetals:block/manganese_block"
+  }
+}

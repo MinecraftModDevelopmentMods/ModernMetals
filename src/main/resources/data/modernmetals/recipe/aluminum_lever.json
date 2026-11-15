@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminum_lever"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/aluminum"
+    },
+    "y": {
+      "tag": "c:ingots/aluminum"
+    }
+  },
+  "pattern": [
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:aluminum_lever"
+  },
+  "group": "modernmetals:aluminum_lever"
+}

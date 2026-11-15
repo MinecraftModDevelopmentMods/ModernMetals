@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_galvanizedsteel" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_galvanizedsteel" }
+  "variants": {
+    "type=bottom": {
+      "model": "modernmetals:block/galvanizedsteel_slab"
+    },
+    "type=double": {
+      "model": "modernmetals:block/galvanizedsteel_block"
+    },
+    "type=top": {
+      "model": "modernmetals:block/galvanizedsteel_slab_top"
     }
+  }
 }

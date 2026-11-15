@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:chromium_pressure_plate"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/chromium"
+    }
+  },
+  "pattern": [
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:chromium_pressure_plate"
+  },
+  "group": "modernmetals:chromium_pressure_plate"
+}

@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_lever"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:rods/magnesium"
+    },
+    "y": {
+      "tag": "c:ingots/magnesium"
+    }
+  },
+  "pattern": [
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:magnesium_lever"
+  },
+  "group": "modernmetals:magnesium_lever"
+}

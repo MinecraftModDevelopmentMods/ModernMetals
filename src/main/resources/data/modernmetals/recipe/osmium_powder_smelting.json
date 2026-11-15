@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:osmium_ingot",
+  "ingredient": {
+    "item": "modernmetals:osmium_powder"
+  },
+  "result": {
+    "id": "modernmetals:osmium_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

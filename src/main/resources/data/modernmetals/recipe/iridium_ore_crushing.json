@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/iridium"
+  },
+  "result": {
+    "id": "modernmetals:iridium_powder",
+    "count": 2
+  }
+}

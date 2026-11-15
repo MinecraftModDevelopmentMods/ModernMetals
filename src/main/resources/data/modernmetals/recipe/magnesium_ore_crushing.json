@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/magnesium"
+  },
+  "result": {
+    "id": "modernmetals:magnesium_powder",
+    "count": 2
+  }
+}

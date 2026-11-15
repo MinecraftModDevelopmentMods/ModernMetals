@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:cadmium_arrow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/cadmium"
+    },
+    "y": {
+      "tag": "c:rods/cadmium"
+    },
+    "z": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "z"
+  ],
+  "result": {
+    "id": "modernmetals:cadmium_arrow",
+    "count": 4
+  },
+  "group": "modernmetals:cadmium_arrow"
+}

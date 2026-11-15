@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_gear"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "x": {
+      "tag": "c:ingots/galvanizedsteel"
+    },
+    "r": {
+      "tag": "c:rods/galvanizedsteel"
+    }
+  },
+  "pattern": [
+    " x ",
+    "xrx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_gear",
+    "count": 4
+  },
+  "group": "modernmetals:galvanizedsteel_gear"
+}

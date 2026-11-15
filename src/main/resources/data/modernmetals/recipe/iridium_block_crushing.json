@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:storage_blocks/iridium"
+  },
+  "result": {
+    "id": "modernmetals:iridium_powder",
+    "count": 9
+  }
+}

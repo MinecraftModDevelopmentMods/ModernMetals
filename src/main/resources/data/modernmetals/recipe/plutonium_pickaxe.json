@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:plutonium_pickaxe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/plutonium"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "xxx",
+    " s ",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:plutonium_pickaxe"
+  },
+  "group": "modernmetals:plutonium_pickaxe"
+}

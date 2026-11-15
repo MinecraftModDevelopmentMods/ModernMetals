@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_bow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/magnesium"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " xs",
+    "x s",
+    " xs"
+  ],
+  "result": {
+    "id": "modernmetals:magnesium_bow"
+  },
+  "group": "modernmetals:magnesium_bow"
+}

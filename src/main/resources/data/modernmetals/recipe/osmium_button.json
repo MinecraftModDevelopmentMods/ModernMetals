@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_button"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:nuggets/osmium"
+    }
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "result": {
+    "id": "modernmetals:osmium_button"
+  },
+  "group": "modernmetals:osmium_button"
+}

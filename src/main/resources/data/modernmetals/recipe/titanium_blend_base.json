@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:titanium_blend"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dusts/rutile"
+    },
+    {
+      "tag": "c:dusts/magnesium"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:titanium_blend"
+  },
+  "group": "modernmetals:titanium_blend"
+}

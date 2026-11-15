@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_ore",
+    "modernmetals:beryllium_ore",
+    "modernmetals:boron_ore",
+    "modernmetals:cadmium_ore",
+    "modernmetals:chromium_ore",
+    "modernmetals:iridium_ore",
+    "modernmetals:magnesium_ore",
+    "modernmetals:manganese_ore",
+    "modernmetals:osmium_ore",
+    "modernmetals:plutonium_ore",
+    "modernmetals:rutile_ore",
+    "modernmetals:tantalum_ore",
+    "modernmetals:thorium_ore",
+    "modernmetals:titanium_ore",
+    "modernmetals:tungsten_ore",
+    "modernmetals:uranium_ore",
+    "modernmetals:zirconium_ore"
+  ]
+}

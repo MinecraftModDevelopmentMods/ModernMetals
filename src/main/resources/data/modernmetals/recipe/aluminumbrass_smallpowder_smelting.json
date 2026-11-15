@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_nugget"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:aluminumbrass_nugget",
+  "ingredient": {
+    "item": "modernmetals:aluminumbrass_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:aluminumbrass_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

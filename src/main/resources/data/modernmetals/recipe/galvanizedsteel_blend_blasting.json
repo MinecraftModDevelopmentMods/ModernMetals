@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_ingot"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:galvanizedsteel_ingot",
+  "ingredient": {
+    "item": "modernmetals:galvanizedsteel_blend"
+  },
+  "result": {
+    "id": "modernmetals:galvanizedsteel_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

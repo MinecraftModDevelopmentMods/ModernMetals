@@ -1,0 +1,32 @@
+{
+  "type": "alloy",
+  "color": -1332650,
+  "hardness": 1.0,
+  "strength": 7.5,
+  "magic": 4.5,
+  "damage": 0.2,
+  "items": "ingot nugget modernmetals:powder smallpowder blend smallblend pickaxe axe shovel hoe sword crackhammer scythe shears fishing_rod bow crossbow shield arrow bolt rod gear horse_armor helmet chestplate leggings boots modernmetals:casing modernmetals:dense_plate",
+  "blocks": "block plate bars door trapdoor button slab lever pressure_plate stairs wall",
+  "entities": "arrow bolt",
+  "has_fluid": true,
+  "special": {
+    "block_hardness": 2.0,
+    "blast_resistance": 18.75,
+    "temperature": 500,
+    "density": 2000,
+    "viscosity": 10000
+  },
+  "runtime": {
+    "repair_item": "modernmetals:aluminumbrass_ingot",
+    "base_block": "modernmetals:aluminumbrass_block",
+    "incorrect_blocks": "minecraft:incorrect_for_wooden_tool",
+    "armor_texture": "modernmetals:aluminumbrass",
+    "block_set_type": "minecraft:iron",
+    "block_sound": "metal",
+    "map_color": "metal",
+    "tinted": false
+  },
+  "harvest_tags": [
+    "minecraft:mineable/pickaxe"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_bolt"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/thorium"
+    },
+    "y": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:thorium_bolt",
+    "count": 4
+  },
+  "group": "modernmetals:thorium_bolt"
+}

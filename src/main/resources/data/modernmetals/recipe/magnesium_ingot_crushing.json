@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/magnesium"
+  },
+  "result": {
+    "id": "modernmetals:magnesium_powder",
+    "count": 1
+  }
+}

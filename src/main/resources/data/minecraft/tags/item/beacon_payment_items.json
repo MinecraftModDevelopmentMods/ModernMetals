@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_ingot",
+    "modernmetals:aluminumbrass_ingot",
+    "modernmetals:beryllium_ingot",
+    "modernmetals:boron_ingot",
+    "modernmetals:cadmium_ingot",
+    "modernmetals:chromium_ingot",
+    "modernmetals:galvanizedsteel_ingot",
+    "modernmetals:iridium_ingot",
+    "modernmetals:magnesium_ingot",
+    "modernmetals:manganese_ingot",
+    "modernmetals:nichrome_ingot",
+    "modernmetals:osmium_ingot",
+    "modernmetals:plutonium_ingot",
+    "modernmetals:rutile_ingot",
+    "modernmetals:stainlesssteel_ingot",
+    "modernmetals:tantalum_ingot",
+    "modernmetals:thorium_ingot",
+    "modernmetals:titanium_ingot",
+    "modernmetals:tungsten_ingot",
+    "modernmetals:uranium_ingot",
+    "modernmetals:zirconium_ingot"
+  ]
+}

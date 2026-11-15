@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "modernmetals:block/iridium_block",
+    "top": "modernmetals:block/iridium_block",
+    "side": "modernmetals:block/iridium_block"
+  }
+}

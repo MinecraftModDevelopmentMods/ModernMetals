@@ -1,174 +1,131 @@
-import org.apache.tools.ant.filters.FixCrLfFilter
-
 plugins {
-    id 'java'
+    id 'java-library'
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.minecraftforge.renamer' version '1.1.5'
-    id 'net.minecraftforge.gradle' version '7.0.34'
+    id 'net.neoforged.moddev' version '2.0.148'
 }
 
-group = project.mod_group
-version = project.mod_version
-base.archivesName = 'ModernMetals'
+def env = System.getenv()
+def tag = providers.environmentVariable('TAG')
+version = tag.orElse("${mod_version}-development").get()
+group = mod_group
 
-if (!(project.version ==~ /\d+\.\d+\.\d+\.112021/)) {
-    throw new GradleException('Use Major.Minor.Patch.112021 for Minecraft 1.12.2 on Forge.')
+base {
+    archivesName = mod_archive_name
 }
 
-// Gradle and Mavenizer use modern JDKs; the mod and game still use Java 8.
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(8)
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
     withSourcesJar()
     withJavadocJar()
 }
-tasks.withType(JavaCompile).configureEach {
-    options.encoding = 'UTF-8'
-    sourceCompatibility = targetCompatibility = '1.8'
-    options.compilerArgs.addAll(['-Xmaxerrs', '1000'])
-}
-tasks.named('compileTestJava', JavaCompile) { options.compilerArgs.add('-proc:none') }
-tasks.withType(Test).configureEach { useJUnitPlatform() }
-tasks.withType(Javadoc).configureEach {
-    failOnError = false
-    options.encoding = 'UTF-8'
-    options.addStringOption('Xdoclint:none', '-quiet')
-    options.addStringOption('docencoding', 'UTF-8')
-    options.addStringOption('charset', 'UTF-8')
-    options.addBooleanOption('notimestamp', true)
-}
-tasks.withType(AbstractArchiveTask).configureEach {
-    preserveFileTimestamps = false
-    reproducibleFileOrder = true
-    includeEmptyDirs = false
-    exclude '**/desktop.ini', '**/Thumbs.db', '**/.DS_Store'
-}
-// Mapped dependency bytes no longer match their original signatures. Keep the
-// verified downloads intact and strip signatures only from renamed copies.
-tasks.withType(net.minecraftforge.renamer.gradle.RenameJar).configureEach {
-    additionalArgs.addAll('--strip-sigs', 'ALL', '--disable-abstract-param')
-}
 
-def textPatterns = ['cfg', 'css', 'html', 'info', 'java', 'js', 'json', 'lang', 'mcmeta', 'md', 'properties', 'txt', 'xml']
-        .collect { "**/*.${it}".toString() }
-def normalizeText = { details ->
-    details.filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('lf'),
-            eof: FixCrLfFilter.AddAsisRemove.newInstance('asis'))
-}
+neoForge {
+    version = neoforge_version
 
-// Preserve the tested game jar's line endings for this compatibility list.
-def legacyApiList = 'META-INF/modernmetals-legacy-api.list'
-def normalizeLegacyApi = { details ->
-    details.filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('crlf'),
-            eof: FixCrLfFilter.AddAsisRemove.newInstance('asis'))
-}
+    parchment {
+        minecraftVersion = parchment_minecraft_version
+        mappingsVersion = parchment_mappings_version
+    }
 
-def developmentOutput = layout.buildDirectory.dir('forge12-development/main')
-def prepareDevelopmentMod = tasks.register('prepareDevelopmentMod', Sync) {
-    group = 'ide'
-    description = 'Merges production classes and processed resources for Forge 1.12 launches.'
-    dependsOn tasks.named('classes')
-    from tasks.named('compileJava', JavaCompile).flatMap { it.destinationDirectory }
-    from sourceSets.main.output.resourcesDir
-    into developmentOutput
-}
-
-minecraft {
-    mappings channel: project.mappings_channel, version: project.mappings_version
-    if (gradle.startParameter.offline) mavenizerArguments.add('--offline')
     runs {
         configureEach {
-            workingDir.convention layout.projectDirectory.dir(
-                    providers.gradleProperty('modernMetalsRunDirectory').getOrElse('run'))
-            environment 'MC_VERSION', project.minecraft_version
-            environment 'MOD_CLASSES', developmentOutput.get().asFile.absolutePath
-            systemProperty 'fml.coreMods.load', project.coreplugin
-            systemProperty 'log4j.skipJansi', 'true'
-            systemProperty 'forge.logging.console.level', 'info'
-            systemProperty 'log4j.configurationFile', file('gradle/ide/log4j2.xml').toURI().toString()
-            if (providers.gradleProperty('modernMetalsLaunchProbePhase').isPresent()) {
-                systemProperty 'launch.phase', providers.gradleProperty('modernMetalsLaunchProbePhase').get()
-            }
+            gameDirectory = file('run')
         }
-        register('client')
-        register('server') { args 'nogui' }
+        client {
+            client()
+        }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
     }
 }
-
-tasks.matching { it.name in ['runClient', 'runServer'] }.configureEach {
-    dependsOn prepareDevelopmentMod
-    dependsOn 'prepareJava8Launcher'
-    doFirst {
-        Set<File> splitOutputs = sourceSets.main.output.files.collect { it.canonicalFile } as Set<File>
-        classpath = files(developmentOutput, tasks.named('prepareJava8Launcher'), classpath.filter {
-            !splitOutputs.contains(it.canonicalFile) && it.name != 'slime-launcher-0.2.2.jar'
-        })
-        environment 'MC_VERSION', project.minecraft_version
-        environment 'MOD_CLASSES', developmentOutput.get().asFile.absolutePath
-    }
-}
-
-def legacyMirror = file(providers.gradleProperty('legacyDependencyVerificationRepository')
-        .orElse(providers.gradleProperty('legacyDependencyRepository'))
-        .getOrElse('.gradle/legacy-dependencies'))
-def legacyRepository = { String remote -> legacyMirror.isDirectory() ? legacyMirror.toURI() : uri(remote) }
 
 repositories {
-    minecraft.mavenizer(it)
-    maven fg.forgeMaven
-    maven fg.minecraftLibsMaven
-    maven {
-        name = 'VerifiedLegacyMirror'
-        url = legacyMirror.toURI()
-        metadataSources { artifact() }
-    }
-    exclusiveContent {
-        forRepository { maven { url = legacyRepository('https://www.cursemaven.com'); metadataSources { artifact() } } }
-        filter { includeGroup 'curse.maven' }
-    }
-    exclusiveContent {
-        forRepository { maven { url = legacyRepository('https://maven.moddev.zone/releases'); metadataSources { artifact() } } }
-        filter { includeGroup 'zone.moddev.mc.basemetals'; includeGroup 'zone.moddev.mc.orespawn' }
-    }
     mavenCentral()
+    maven {
+        name = 'ModDevZone'
+        url = uri('https://maven.moddev.zone/releases')
+        content {
+            includeGroup 'zone.moddev.mc.lib'
+            includeGroup 'zone.moddev.mc.orespawn'
+        }
+    }
 }
 
-apply from: 'gradle/dependencies.gradle'
-renamer.mappings.from minecraft.dependency.toSrgFile
+dependencies {
+    implementation "zone.moddev.mc.lib:mmdlib:${mmdlib_version}"
+    // Modern Metals only ships OreSpawn data; the mod itself is needed at runtime.
+    runtimeOnly "zone.moddev.mc.orespawn:OreSpawn:${orespawn_version}"
+}
 
 tasks.named('processResources', ProcessResources) {
-    filteringCharset = 'UTF-8'
-    exclude '**/desktop.ini', '**/Thumbs.db', '**/.DS_Store'
-    inputs.property 'version', project.version
-    inputs.property 'mcversion', project.minecraft_version
-    filesMatching('mcmod.info') { expand version: project.version, mcversion: project.minecraft_version }
-    rename '(.+_at.cfg)', 'META-INF/$1'
-    filesMatching('**/*.lang') { details -> details.name = details.name.toLowerCase(Locale.ROOT) }
-    filesMatching(textPatterns, normalizeText)
-    filesMatching(legacyApiList, normalizeLegacyApi)
-}
-
-tasks.named('jar', Jar) {
-    archiveClassifier = 'deobf'
-    destinationDirectory = layout.buildDirectory.dir('libs-dev')
-    manifest.attributes(
-            'Implementation-Title': 'ModernMetals', 'Implementation-Version': project.version,
-            'Maven-Artifact': "${project.group}:ModernMetals:${project.version}",
-            'Built-On-Java': '8', 'Built-On': "${project.minecraft_version}-${project.forge_version}",
-            'FMLCorePluginContainsFMLMod': 'true', 'FMLCorePlugin': project.coreplugin)
-}
-['sourcesJar', 'javadocJar'].each { name ->
-    tasks.named(name, Jar) {
-        filteringCharset = 'UTF-8'
-        filesMatching(textPatterns, normalizeText)
-        filesMatching(legacyApiList, normalizeLegacyApi)
+    def properties = [
+            minecraft_version_range: minecraft_version_range,
+            neoforge_version_range: neoforge_version_range,
+            loader_version_range: loader_version_range,
+            mmdlib_version_range: mmdlib_version_range,
+            orespawn_version_range: orespawn_version_range,
+            mod_id: mod_id,
+            mod_name: mod_name,
+            mod_license: mod_license,
+            mod_version: project.version,
+            mod_authors: mod_authors,
+            mod_credits: mod_credits,
+            mod_description: mod_description,
+            curseforge_url: "https://www.curseforge.com/minecraft/mc-mods/modern-metals",
+            issue_url: issue_url,
+            update_url: update_url
+    ]
+    inputs.properties properties
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand properties
     }
 }
 
-ext.modernMetalsBuild = [developmentOutput: developmentOutput].asImmutable()
-apply from: 'gradle/ore-models.gradle'
-apply from: 'gradle/release/artifacts.gradle'
-apply from: 'gradle/release/publishing.gradle'
-apply from: 'gradle/verification/runtime.gradle'
-apply from: 'gradle/ide/eclipse.gradle'
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    // Report any use of deprecated Minecraft, NeoForge or MMDLib API.
+    options.compilerArgs.addAll(['-Xlint:deprecation', '-Xlint:removal'])
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = mod_archive_name
+            from components.java
+        }
+    }
+    repositories {
+        if (env.MAVEN_UPLOAD_URL) {
+            maven {
+                url = uri(env.MAVEN_UPLOAD_URL)
+                credentials {
+                    username = env.MAVEN_UPLOAD_USERNAME
+                    password = env.MAVEN_UPLOAD_PASSWORD
+                }
+            }
+        }
+    }
+}
+
+idea {
+    module {
+        downloadSources = true
+    }
+}
+
+eclipse {
+    classpath {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}

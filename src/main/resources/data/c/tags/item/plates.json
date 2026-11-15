@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "#c:plates/aluminum",
+    "#c:plates/aluminumbrass",
+    "#c:plates/beryllium",
+    "#c:plates/boron",
+    "#c:plates/cadmium",
+    "#c:plates/chromium",
+    "#c:plates/galvanizedsteel",
+    "#c:plates/iridium",
+    "#c:plates/magnesium",
+    "#c:plates/manganese",
+    "#c:plates/nichrome",
+    "#c:plates/osmium",
+    "#c:plates/plutonium",
+    "#c:plates/rutile",
+    "#c:plates/stainlesssteel",
+    "#c:plates/tantalum",
+    "#c:plates/thorium",
+    "#c:plates/titanium",
+    "#c:plates/tungsten",
+    "#c:plates/uranium",
+    "#c:plates/zirconium"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_crackhammer"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/aluminumbrass"
+    },
+    "y": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:aluminumbrass_crackhammer"
+  },
+  "group": "modernmetals:aluminumbrass_crackhammer"
+}

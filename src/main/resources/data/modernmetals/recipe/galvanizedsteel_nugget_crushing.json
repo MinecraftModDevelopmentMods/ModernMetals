@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/galvanizedsteel"
+  },
+  "result": {
+    "id": "modernmetals:galvanizedsteel_smallpowder",
+    "count": 1
+  }
+}

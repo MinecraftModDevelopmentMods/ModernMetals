@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_door"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/magnesium"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:magnesium_door",
+    "count": 3
+  },
+  "group": "modernmetals:magnesium_door"
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:titanium_nugget"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:titanium_nugget",
+  "ingredient": {
+    "item": "modernmetals:titanium_smallblend"
+  },
+  "result": {
+    "id": "modernmetals:titanium_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_blend"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/nickel"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dusts/nickel"
+    },
+    {
+      "tag": "c:dusts/chromium"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:nichrome_blend",
+    "count": 2
+  },
+  "group": "modernmetals:nichrome_blend"
+}

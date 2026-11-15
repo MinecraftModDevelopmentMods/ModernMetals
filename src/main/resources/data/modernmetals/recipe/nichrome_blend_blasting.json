@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_ingot"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:nichrome_ingot",
+  "ingredient": {
+    "item": "modernmetals:nichrome_blend"
+  },
+  "result": {
+    "id": "modernmetals:nichrome_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

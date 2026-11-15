@@ -1,6 +1,6 @@
 {
-  "parent": "item/handheld",
-    "textures": {
-        "layer0": "modernmetals:items/tungsten_shovel"
-    }
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "modernmetals:item/tungsten_shovel"
+  }
 }

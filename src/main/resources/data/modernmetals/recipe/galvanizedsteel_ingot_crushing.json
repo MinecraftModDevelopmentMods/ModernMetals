@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/galvanizedsteel"
+  },
+  "result": {
+    "id": "modernmetals:galvanizedsteel_powder",
+    "count": 1
+  }
+}

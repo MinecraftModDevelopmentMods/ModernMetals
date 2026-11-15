@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "modernmetals:block/stainlesssteel_block",
+    "top": "modernmetals:block/stainlesssteel_block",
+    "side": "modernmetals:block/stainlesssteel_block"
+  }
+}

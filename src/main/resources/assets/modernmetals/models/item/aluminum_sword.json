@@ -1,6 +1,6 @@
 {
-  "parent": "item/handheld",
-    "textures": {
-        "layer0": "modernmetals:items/aluminum_sword"
-    }
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "modernmetals:item/aluminum_sword"
+  }
 }

@@ -1,6 +1,6 @@
 {
-  "parent": "item/handheld",
-    "textures": {
-        "layer0": "modernmetals:items/rutile_shovel"
-    }
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "modernmetals:item/rutile_shovel"
+  }
 }

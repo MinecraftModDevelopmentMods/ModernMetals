@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "modernmetals:blocks/magnesium_block"
-    }
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "modernmetals:block/magnesium_block"
+  }
 }

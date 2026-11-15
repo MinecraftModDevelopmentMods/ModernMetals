@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/chromium"
+  },
+  "result": {
+    "id": "modernmetals:chromium_powder",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/nichrome"
+  },
+  "result": {
+    "id": "modernmetals:nichrome_powder",
+    "count": 1
+  }
+}

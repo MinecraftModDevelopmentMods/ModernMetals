@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:beryllium_crackhammer"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:storage_blocks/beryllium"
+    },
+    "y": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "x",
+    "y",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:beryllium_crackhammer"
+  },
+  "group": "modernmetals:beryllium_crackhammer"
+}

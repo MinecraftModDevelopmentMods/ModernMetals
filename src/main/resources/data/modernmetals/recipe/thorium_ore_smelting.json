@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:thorium_ingot",
+  "ingredient": {
+    "item": "modernmetals:thorium_ore"
+  },
+  "result": {
+    "id": "modernmetals:thorium_ingot"
+  },
+  "experience": 0.1,
+  "cookingtime": 200
+}

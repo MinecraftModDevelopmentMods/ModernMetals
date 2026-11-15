@@ -1,6 +1,6 @@
 {
-    "parent": "block/button",
-    "textures": {
-        "texture": "modernmetals:blocks/iridium_block"
-    }
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "modernmetals:block/iridium_block"
+  }
 }

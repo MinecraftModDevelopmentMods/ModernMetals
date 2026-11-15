@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/iridium"
+  },
+  "result": {
+    "id": "modernmetals:iridium_smallpowder",
+    "count": 1
+  }
+}

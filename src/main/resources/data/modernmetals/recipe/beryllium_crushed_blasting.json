@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:beryllium_ingot"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:beryllium_ingot",
+  "ingredient": {
+    "item": "modernmetals:beryllium_crushed"
+  },
+  "result": {
+    "id": "modernmetals:beryllium_ingot"
+  },
+  "experience": 0.1,
+  "cookingtime": 100
+}

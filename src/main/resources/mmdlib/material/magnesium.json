@@ -1,0 +1,32 @@
+{
+  "type": "ore",
+  "color": -8421513,
+  "hardness": 2.5,
+  "strength": 3.5,
+  "magic": 4.5,
+  "damage": 0.6,
+  "items": "ingot nugget modernmetals:powder smallpowder pickaxe axe shovel hoe sword crackhammer scythe shears fishing_rod bow crossbow shield arrow bolt rod gear horse_armor helmet chestplate leggings boots modernmetals:casing modernmetals:dense_plate modernmetals:crushed modernmetals:crushed_purified crystal shard clump powder_dirty",
+  "blocks": "block plate bars door trapdoor button slab lever pressure_plate stairs wall ore",
+  "entities": "arrow bolt",
+  "has_fluid": true,
+  "special": {
+    "block_hardness": 5.0,
+    "blast_resistance": 8.75,
+    "temperature": 769,
+    "density": 2000,
+    "viscosity": 10000
+  },
+  "runtime": {
+    "repair_item": "modernmetals:magnesium_ingot",
+    "base_block": "modernmetals:magnesium_block",
+    "incorrect_blocks": "minecraft:incorrect_for_wooden_tool",
+    "armor_texture": "modernmetals:magnesium",
+    "block_set_type": "minecraft:iron",
+    "block_sound": "metal",
+    "map_color": "metal",
+    "tinted": false
+  },
+  "harvest_tags": [
+    "minecraft:mineable/pickaxe"
+  ]
+}

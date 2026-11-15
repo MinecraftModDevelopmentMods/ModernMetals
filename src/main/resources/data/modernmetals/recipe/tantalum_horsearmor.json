@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tantalum_horse_armor"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/tantalum"
+    },
+    "y": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "  x",
+    "xyx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:tantalum_horse_armor"
+  },
+  "group": "modernmetals:tantalum_horse_armor"
+}

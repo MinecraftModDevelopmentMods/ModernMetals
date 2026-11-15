@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/aluminum"
+  },
+  "result": {
+    "id": "modernmetals:aluminum_powder",
+    "count": 2
+  }
+}

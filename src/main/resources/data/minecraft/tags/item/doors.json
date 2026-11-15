@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_door",
+    "modernmetals:aluminumbrass_door",
+    "modernmetals:beryllium_door",
+    "modernmetals:boron_door",
+    "modernmetals:cadmium_door",
+    "modernmetals:chromium_door",
+    "modernmetals:galvanizedsteel_door",
+    "modernmetals:iridium_door",
+    "modernmetals:magnesium_door",
+    "modernmetals:manganese_door",
+    "modernmetals:nichrome_door",
+    "modernmetals:osmium_door",
+    "modernmetals:plutonium_door",
+    "modernmetals:rutile_door",
+    "modernmetals:stainlesssteel_door",
+    "modernmetals:tantalum_door",
+    "modernmetals:thorium_door",
+    "modernmetals:titanium_door",
+    "modernmetals:tungsten_door",
+    "modernmetals:uranium_door",
+    "modernmetals:zirconium_door"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_nugget"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:nichrome_nugget",
+  "ingredient": {
+    "item": "modernmetals:nichrome_smallblend"
+  },
+  "result": {
+    "id": "modernmetals:nichrome_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

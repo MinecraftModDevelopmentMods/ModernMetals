@@ -1,6 +1,6 @@
 {
-    "parent": "block/trapdoor_top",
-    "textures": {
-        "texture": "modernmetals:blocks/tantalum_trapdoor"
-    }
+  "parent": "minecraft:block/template_trapdoor_top",
+  "textures": {
+    "texture": "modernmetals:block/tantalum_trapdoor"
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "modernmetals:item/manganese_crossbow",
-    "textures": {
-        "layer0": "modernmetals:items/manganese_crossbow_pulling_2"
-    }
+  "parent": "modernmetals:item/manganese_crossbow",
+  "textures": {
+    "layer0": "modernmetals:item/manganese_crossbow_pulling_2"
+  }
 }

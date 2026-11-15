@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminum_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:aluminum_ingot",
+  "ingredient": {
+    "item": "modernmetals:aluminum_powder"
+  },
+  "result": {
+    "id": "modernmetals:aluminum_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

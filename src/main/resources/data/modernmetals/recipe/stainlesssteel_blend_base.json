@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_blend"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/steel"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dusts/steel"
+    },
+    {
+      "tag": "c:dusts/chromium"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_blend",
+    "count": 2
+  },
+  "group": "modernmetals:stainlesssteel_blend"
+}

@@ -1,6 +1,6 @@
 {
-    "parent": "block/button_pressed",
-    "textures": {
-        "texture": "modernmetals:blocks/nichrome_block"
-    }
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "modernmetals:block/nichrome_block"
+  }
 }

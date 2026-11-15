@@ -1,6 +1,6 @@
 {
-    "parent": "block/trapdoor_open",
-    "textures": {
-        "texture": "modernmetals:blocks/iridium_trapdoor"
-    }
+  "parent": "minecraft:block/template_trapdoor_open",
+  "textures": {
+    "texture": "modernmetals:block/iridium_trapdoor"
+  }
 }

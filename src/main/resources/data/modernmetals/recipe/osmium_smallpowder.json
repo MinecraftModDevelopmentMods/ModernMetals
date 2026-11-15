@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:osmium_smallpowder"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dusts/osmium"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:osmium_smallpowder",
+    "count": 9
+  },
+  "group": "modernmetals:osmium_smallpowder"
+}

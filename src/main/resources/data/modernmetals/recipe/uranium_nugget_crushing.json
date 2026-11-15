@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/uranium"
+  },
+  "result": {
+    "id": "modernmetals:uranium_smallpowder",
+    "count": 1
+  }
+}

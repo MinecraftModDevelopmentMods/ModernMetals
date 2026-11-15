@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:manganese_bolt"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/manganese"
+    },
+    "y": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "x",
+    "x",
+    "y"
+  ],
+  "result": {
+    "id": "modernmetals:manganese_bolt",
+    "count": 4
+  },
+  "group": "modernmetals:manganese_bolt"
+}

@@ -1,8 +1,8 @@
 {
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/tantalum_block",
-        "top": "modernmetals:blocks/tantalum_block",
-        "side": "modernmetals:blocks/tantalum_block"
-    }
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "modernmetals:block/tantalum_block",
+    "top": "modernmetals:block/tantalum_block",
+    "side": "modernmetals:block/tantalum_block"
+  }
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "item/fishing_rod",
-    "textures": {
-        "layer0": "modernmetals:items/thorium_fishing_rod_cast"
-    }
+  "parent": "minecraft:item/fishing_rod",
+  "textures": {
+    "layer0": "modernmetals:item/thorium_fishing_rod_cast"
+  }
 }

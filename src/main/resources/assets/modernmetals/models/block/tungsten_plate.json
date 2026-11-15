@@ -1,8 +1,8 @@
 {
-    "parent": "modernmetals:block/plate",
-    "textures": {
-        "top": "modernmetals:blocks/tungsten_plate",
-        "side": "modernmetals:blocks/tungsten_plate",
-        "bottom": "modernmetals:blocks/tungsten_plate"
-    }
+  "parent": "modernmetals:block/plate",
+  "textures": {
+    "top": "modernmetals:block/tungsten_plate",
+    "side": "modernmetals:block/tungsten_plate",
+    "bottom": "modernmetals:block/tungsten_plate"
+  }
 }

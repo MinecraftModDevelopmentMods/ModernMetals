@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/manganese"
+  },
+  "result": {
+    "id": "modernmetals:manganese_powder",
+    "count": 2
+  }
+}

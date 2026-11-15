@@ -1,14 +1,14 @@
 {
   "parent": "modernmetals:item/shield",
   "textures": {
-    "shield": "modernmetals:blocks/thorium_block"
+    "shield": "modernmetals:block/thorium_block"
   },
-    "overrides": [
-        {
-            "predicate": {
-                "blocking": 1
-            },
-            "model": "modernmetals:item/thorium_shield_blocking"
-        }
-    ]
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "modernmetals:item/thorium_shield_blocking"
+    }
+  ]
 }

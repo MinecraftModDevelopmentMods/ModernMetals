@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_molten_bucket",
+    "modernmetals:aluminumbrass_molten_bucket",
+    "modernmetals:beryllium_molten_bucket",
+    "modernmetals:boron_molten_bucket",
+    "modernmetals:cadmium_molten_bucket",
+    "modernmetals:chromium_molten_bucket",
+    "modernmetals:galvanizedsteel_molten_bucket",
+    "modernmetals:iridium_molten_bucket",
+    "modernmetals:magnesium_molten_bucket",
+    "modernmetals:manganese_molten_bucket",
+    "modernmetals:nichrome_molten_bucket",
+    "modernmetals:osmium_molten_bucket",
+    "modernmetals:plutonium_molten_bucket",
+    "modernmetals:rutile_molten_bucket",
+    "modernmetals:stainlesssteel_molten_bucket",
+    "modernmetals:tantalum_molten_bucket",
+    "modernmetals:thorium_molten_bucket",
+    "modernmetals:titanium_molten_bucket",
+    "modernmetals:tungsten_molten_bucket",
+    "modernmetals:uranium_molten_bucket",
+    "modernmetals:zirconium_molten_bucket"
+  ]
+}

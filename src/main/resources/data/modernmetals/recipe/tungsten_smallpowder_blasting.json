@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tungsten_nugget"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:tungsten_nugget",
+  "ingredient": {
+    "item": "modernmetals:tungsten_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:tungsten_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

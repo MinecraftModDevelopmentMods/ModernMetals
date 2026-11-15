@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_bow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/stainlesssteel"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " xs",
+    "x s",
+    " xs"
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_bow"
+  },
+  "group": "modernmetals:stainlesssteel_bow"
+}

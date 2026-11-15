@@ -1,6 +1,6 @@
 {
-    "parent": "block/trapdoor_bottom",
-    "textures": {
-        "texture": "modernmetals:blocks/chromium_trapdoor"
-    }
+  "parent": "minecraft:block/template_trapdoor_bottom",
+  "textures": {
+    "texture": "modernmetals:block/chromium_trapdoor"
+  }
 }

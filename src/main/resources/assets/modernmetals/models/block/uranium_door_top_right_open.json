@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "top": "modernmetals:block/uranium_door_upper",
+    "bottom": "modernmetals:block/uranium_door_lower"
+  }
+}

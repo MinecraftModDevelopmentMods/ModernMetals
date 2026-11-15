@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:tungsten_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/tungsten_block"
     }
+  }
 }

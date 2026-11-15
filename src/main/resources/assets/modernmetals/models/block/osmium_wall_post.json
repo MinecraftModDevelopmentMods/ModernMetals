@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_post",
-    "textures": {
-        "wall": "modernmetals:blocks/osmium_block"
-    }
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "modernmetals:block/osmium_block"
+  }
 }

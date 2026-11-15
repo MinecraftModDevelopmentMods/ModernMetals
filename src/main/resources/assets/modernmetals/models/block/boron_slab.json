@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "modernmetals:block/boron_block",
+    "top": "modernmetals:block/boron_block",
+    "side": "modernmetals:block/boron_block"
+  }
+}

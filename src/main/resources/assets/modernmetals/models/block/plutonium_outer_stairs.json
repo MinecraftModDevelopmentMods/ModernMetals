@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "modernmetals:blocks/plutonium_block",
-        "top": "modernmetals:blocks/plutonium_block",
-        "side": "modernmetals:blocks/plutonium_block"
-    }
-}

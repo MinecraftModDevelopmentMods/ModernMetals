@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_shield"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/thorium"
+    },
+    "y": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "xyx",
+    "xxx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:thorium_shield"
+  },
+  "group": "modernmetals:thorium_shield"
+}

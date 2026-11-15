@@ -1,6 +1,6 @@
 {
-    "parent": "block/pressure_plate_down",
-    "textures": {
-        "texture": "modernmetals:blocks/galvanizedsteel_block"
-    }
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "modernmetals:block/galvanizedsteel_block"
+  }
 }

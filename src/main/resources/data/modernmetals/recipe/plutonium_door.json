@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:plutonium_door"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/plutonium"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:plutonium_door",
+    "count": 3
+  },
+  "group": "modernmetals:plutonium_door"
+}

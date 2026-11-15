@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:storage_blocks/manganese"
+  },
+  "result": {
+    "id": "modernmetals:manganese_powder",
+    "count": 9
+  }
+}

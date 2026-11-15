@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tantalum_door"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "x": {
+      "tag": "c:ingots/tantalum"
+    }
+  },
+  "pattern": [
+    "xx",
+    "xx",
+    "xx"
+  ],
+  "result": {
+    "id": "modernmetals:tantalum_door",
+    "count": 3
+  },
+  "group": "modernmetals:tantalum_door"
+}

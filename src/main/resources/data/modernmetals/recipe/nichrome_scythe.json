@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:nichrome_scythe"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "i": {
+      "tag": "c:ingots/nichrome"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "ii ",
+    "  i",
+    " s "
+  ],
+  "result": {
+    "id": "modernmetals:nichrome_scythe"
+  },
+  "group": "modernmetals:nichrome_scythe"
+}

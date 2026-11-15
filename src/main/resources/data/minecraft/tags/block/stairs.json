@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_stairs",
+    "modernmetals:aluminumbrass_stairs",
+    "modernmetals:beryllium_stairs",
+    "modernmetals:boron_stairs",
+    "modernmetals:cadmium_stairs",
+    "modernmetals:chromium_stairs",
+    "modernmetals:galvanizedsteel_stairs",
+    "modernmetals:iridium_stairs",
+    "modernmetals:magnesium_stairs",
+    "modernmetals:manganese_stairs",
+    "modernmetals:nichrome_stairs",
+    "modernmetals:osmium_stairs",
+    "modernmetals:plutonium_stairs",
+    "modernmetals:rutile_stairs",
+    "modernmetals:stainlesssteel_stairs",
+    "modernmetals:tantalum_stairs",
+    "modernmetals:thorium_stairs",
+    "modernmetals:titanium_stairs",
+    "modernmetals:tungsten_stairs",
+    "modernmetals:uranium_stairs",
+    "modernmetals:zirconium_stairs"
+  ]
+}

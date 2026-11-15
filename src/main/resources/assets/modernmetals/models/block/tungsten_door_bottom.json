@@ -1,7 +1,0 @@
-{
-    "parent": "block/door_bottom",
-    "textures": {
-        "bottom": "modernmetals:blocks/tungsten_door_lower",
-        "top": "modernmetals:blocks/tungsten_door_upper"
-    }
-}

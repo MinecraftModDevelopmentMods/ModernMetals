@@ -1,7 +1,7 @@
 {
-    "parent": "modernmetals:item/door_item",
-    "textures": {
-        "bottom": "modernmetals:blocks/beryllium_door_lower",
-        "top": "modernmetals:blocks/beryllium_door_upper"
-    }
+  "parent": "modernmetals:item/door_item",
+  "textures": {
+    "bottom": "modernmetals:block/beryllium_door_lower",
+    "top": "modernmetals:block/beryllium_door_upper"
+  }
 }

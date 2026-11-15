@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tantalum_nugget"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:tantalum_nugget",
+  "ingredient": {
+    "item": "modernmetals:tantalum_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:tantalum_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

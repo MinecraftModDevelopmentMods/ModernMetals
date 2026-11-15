@@ -1,6 +1,6 @@
 {
-    "parent": "modernmetals:item/galvanizedsteel_crossbow",
-    "textures": {
-        "layer0": "modernmetals:items/galvanizedsteel_crossbow_pulling_2"
-    }
+  "parent": "modernmetals:item/galvanizedsteel_crossbow",
+  "textures": {
+    "layer0": "modernmetals:item/galvanizedsteel_crossbow_pulling_2"
+  }
 }

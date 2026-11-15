@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ingots/thorium"
+  },
+  "result": {
+    "id": "modernmetals:thorium_powder",
+    "count": 1
+  }
+}

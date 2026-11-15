@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:magnesium_nugget"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:magnesium_nugget",
+  "ingredient": {
+    "item": "modernmetals:magnesium_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:magnesium_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

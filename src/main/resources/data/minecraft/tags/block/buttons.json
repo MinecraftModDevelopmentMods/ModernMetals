@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_button",
+    "modernmetals:aluminumbrass_button",
+    "modernmetals:beryllium_button",
+    "modernmetals:boron_button",
+    "modernmetals:cadmium_button",
+    "modernmetals:chromium_button",
+    "modernmetals:galvanizedsteel_button",
+    "modernmetals:iridium_button",
+    "modernmetals:magnesium_button",
+    "modernmetals:manganese_button",
+    "modernmetals:nichrome_button",
+    "modernmetals:osmium_button",
+    "modernmetals:plutonium_button",
+    "modernmetals:rutile_button",
+    "modernmetals:stainlesssteel_button",
+    "modernmetals:tantalum_button",
+    "modernmetals:thorium_button",
+    "modernmetals:titanium_button",
+    "modernmetals:tungsten_button",
+    "modernmetals:uranium_button",
+    "modernmetals:zirconium_button"
+  ]
+}

@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_side",
-    "textures": {
-        "wall": "modernmetals:blocks/aluminumbrass_block"
-    }
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "modernmetals:block/aluminumbrass_block"
+  }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/lever_on",
+  "textures": {
+    "particle": "modernmetals:block/plutonium_block",
+    "base": "modernmetals:block/plutonium_block"
+  }
+}

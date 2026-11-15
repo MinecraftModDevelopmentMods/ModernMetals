@@ -1,6 +1,6 @@
 {
-    "parent": "modernmetals:item/cadmium_crossbow",
-    "textures": {
-        "layer0": "modernmetals:items/cadmium_crossbow_pulling_2"
-    }
+  "parent": "modernmetals:item/cadmium_crossbow",
+  "textures": {
+    "layer0": "modernmetals:item/cadmium_crossbow_pulling_2"
+  }
 }

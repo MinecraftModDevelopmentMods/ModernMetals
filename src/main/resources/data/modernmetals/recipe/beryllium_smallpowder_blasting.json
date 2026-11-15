@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:beryllium_nugget"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:beryllium_nugget",
+  "ingredient": {
+    "item": "modernmetals:beryllium_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:beryllium_nugget"
+  },
+  "experience": 0.1,
+  "cookingtime": 100
+}

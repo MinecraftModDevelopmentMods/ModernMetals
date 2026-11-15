@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:beryllium_bow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/beryllium"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " xs",
+    "x s",
+    " xs"
+  ],
+  "result": {
+    "id": "modernmetals:beryllium_bow"
+  },
+  "group": "modernmetals:beryllium_bow"
+}

@@ -1,0 +1,36 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminumbrass_blend"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/copper"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dusts/aluminum"
+    },
+    {
+      "tag": "c:dusts/aluminum"
+    },
+    {
+      "tag": "c:dusts/aluminum"
+    },
+    {
+      "tag": "c:dusts/copper"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:aluminumbrass_blend",
+    "count": 4
+  },
+  "group": "modernmetals:aluminumbrass_blend"
+}

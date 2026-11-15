@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_trapdoor",
+    "modernmetals:aluminumbrass_trapdoor",
+    "modernmetals:beryllium_trapdoor",
+    "modernmetals:boron_trapdoor",
+    "modernmetals:cadmium_trapdoor",
+    "modernmetals:chromium_trapdoor",
+    "modernmetals:galvanizedsteel_trapdoor",
+    "modernmetals:iridium_trapdoor",
+    "modernmetals:magnesium_trapdoor",
+    "modernmetals:manganese_trapdoor",
+    "modernmetals:nichrome_trapdoor",
+    "modernmetals:osmium_trapdoor",
+    "modernmetals:plutonium_trapdoor",
+    "modernmetals:rutile_trapdoor",
+    "modernmetals:stainlesssteel_trapdoor",
+    "modernmetals:tantalum_trapdoor",
+    "modernmetals:thorium_trapdoor",
+    "modernmetals:titanium_trapdoor",
+    "modernmetals:tungsten_trapdoor",
+    "modernmetals:uranium_trapdoor",
+    "modernmetals:zirconium_trapdoor"
+  ]
+}

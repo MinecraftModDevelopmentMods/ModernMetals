@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right",
+  "textures": {
+    "top": "modernmetals:block/boron_door_upper",
+    "bottom": "modernmetals:block/boron_door_lower"
+  }
+}

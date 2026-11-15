@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_fishing_rod"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/thorium"
+    },
+    "y": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "  x",
+    " xy",
+    "x y"
+  ],
+  "result": {
+    "id": "modernmetals:thorium_fishing_rod"
+  },
+  "group": "modernmetals:thorium_fishing_rod"
+}

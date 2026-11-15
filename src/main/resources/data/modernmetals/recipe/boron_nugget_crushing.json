@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/boron"
+  },
+  "result": {
+    "id": "modernmetals:boron_smallpowder",
+    "count": 1
+  }
+}

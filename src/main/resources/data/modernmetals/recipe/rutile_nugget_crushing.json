@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/rutile"
+  },
+  "result": {
+    "id": "modernmetals:rutile_smallpowder",
+    "count": 1
+  }
+}

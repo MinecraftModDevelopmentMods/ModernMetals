@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_nugget"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:ingots/thorium"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:thorium_nugget",
+    "count": 9
+  },
+  "group": "modernmetals:thorium_nugget"
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:zirconium_ingot"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:zirconium_ingot",
+  "ingredient": {
+    "item": "modernmetals:zirconium_crushed_purified"
+  },
+  "result": {
+    "id": "modernmetals:zirconium_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

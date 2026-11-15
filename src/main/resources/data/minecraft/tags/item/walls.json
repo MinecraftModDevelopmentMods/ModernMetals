@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_wall",
+    "modernmetals:aluminumbrass_wall",
+    "modernmetals:beryllium_wall",
+    "modernmetals:boron_wall",
+    "modernmetals:cadmium_wall",
+    "modernmetals:chromium_wall",
+    "modernmetals:galvanizedsteel_wall",
+    "modernmetals:iridium_wall",
+    "modernmetals:magnesium_wall",
+    "modernmetals:manganese_wall",
+    "modernmetals:nichrome_wall",
+    "modernmetals:osmium_wall",
+    "modernmetals:plutonium_wall",
+    "modernmetals:rutile_wall",
+    "modernmetals:stainlesssteel_wall",
+    "modernmetals:tantalum_wall",
+    "modernmetals:thorium_wall",
+    "modernmetals:titanium_wall",
+    "modernmetals:tungsten_wall",
+    "modernmetals:uranium_wall",
+    "modernmetals:zirconium_wall"
+  ]
+}

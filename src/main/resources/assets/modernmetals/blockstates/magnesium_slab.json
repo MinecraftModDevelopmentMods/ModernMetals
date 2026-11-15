@@ -1,6 +1,13 @@
 {
-    "variants": {
-        "half=bottom,variant=default": { "model": "modernmetals:half_slab_magnesium" },
-        "half=top,variant=default": { "model": "modernmetals:upper_slab_magnesium" }
+  "variants": {
+    "type=bottom": {
+      "model": "modernmetals:block/magnesium_slab"
+    },
+    "type=double": {
+      "model": "modernmetals:block/magnesium_block"
+    },
+    "type=top": {
+      "model": "modernmetals:block/magnesium_slab_top"
     }
+  }
 }

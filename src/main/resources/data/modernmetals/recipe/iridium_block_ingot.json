@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:iridium_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/iridium"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:iridium_ingot",
+    "count": 9
+  },
+  "group": "modernmetals:iridium_ingot"
+}

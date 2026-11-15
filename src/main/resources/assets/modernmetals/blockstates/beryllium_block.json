@@ -1,5 +1,7 @@
 {
-    "variants": {
-        "normal": { "model": "modernmetals:beryllium_block" }
+  "variants": {
+    "": {
+      "model": "modernmetals:block/beryllium_block"
     }
+  }
 }

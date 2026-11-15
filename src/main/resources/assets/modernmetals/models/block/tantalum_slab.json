@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "modernmetals:block/tantalum_block",
+    "top": "modernmetals:block/tantalum_block",
+    "side": "modernmetals:block/tantalum_block"
+  }
+}

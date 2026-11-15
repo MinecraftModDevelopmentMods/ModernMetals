@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:rutile_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:rutile_ingot",
+  "ingredient": {
+    "item": "modernmetals:rutile_crushed_purified"
+  },
+  "result": {
+    "id": "modernmetals:rutile_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

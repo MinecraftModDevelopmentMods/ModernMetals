@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:aluminum_nugget"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:aluminum_nugget",
+  "ingredient": {
+    "item": "modernmetals:aluminum_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:aluminum_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:cadmium_smallpowder"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:dusts/cadmium"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:cadmium_smallpowder",
+    "count": 9
+  },
+  "group": "modernmetals:cadmium_smallpowder"
+}

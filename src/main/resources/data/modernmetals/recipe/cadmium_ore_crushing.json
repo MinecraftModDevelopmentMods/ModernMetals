@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/cadmium"
+  },
+  "result": {
+    "id": "modernmetals:cadmium_powder",
+    "count": 2
+  }
+}

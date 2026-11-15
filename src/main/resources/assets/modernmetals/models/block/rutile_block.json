@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "modernmetals:blocks/rutile_block"
-    }
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "modernmetals:block/rutile_block"
+  }
 }

@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_sword"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/galvanizedsteel"
+    },
+    "s": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "x",
+    "x",
+    "s"
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_sword"
+  },
+  "group": "modernmetals:galvanizedsteel_sword"
+}

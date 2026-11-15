@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:zirconium_bow"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/zirconium"
+    },
+    "s": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " xs",
+    "x s",
+    " xs"
+  ],
+  "result": {
+    "id": "modernmetals:zirconium_bow"
+  },
+  "group": "modernmetals:zirconium_bow"
+}

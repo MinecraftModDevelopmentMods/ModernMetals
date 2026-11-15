@@ -1,6 +1,0 @@
-{
-    "parent": "modernmetals:item/silicon_crossbow",
-    "textures": {
-        "layer0": "modernmetals:items/silicon_crossbow_pulling_1"
-    }
-}

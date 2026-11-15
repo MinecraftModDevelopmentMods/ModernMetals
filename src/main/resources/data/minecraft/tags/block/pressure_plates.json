@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "modernmetals:aluminum_pressure_plate",
+    "modernmetals:aluminumbrass_pressure_plate",
+    "modernmetals:beryllium_pressure_plate",
+    "modernmetals:boron_pressure_plate",
+    "modernmetals:cadmium_pressure_plate",
+    "modernmetals:chromium_pressure_plate",
+    "modernmetals:galvanizedsteel_pressure_plate",
+    "modernmetals:iridium_pressure_plate",
+    "modernmetals:magnesium_pressure_plate",
+    "modernmetals:manganese_pressure_plate",
+    "modernmetals:nichrome_pressure_plate",
+    "modernmetals:osmium_pressure_plate",
+    "modernmetals:plutonium_pressure_plate",
+    "modernmetals:rutile_pressure_plate",
+    "modernmetals:stainlesssteel_pressure_plate",
+    "modernmetals:tantalum_pressure_plate",
+    "modernmetals:thorium_pressure_plate",
+    "modernmetals:titanium_pressure_plate",
+    "modernmetals:tungsten_pressure_plate",
+    "modernmetals:uranium_pressure_plate",
+    "modernmetals:zirconium_pressure_plate"
+  ]
+}

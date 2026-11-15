@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:manganese_nugget"
+    }
+  ],
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "group": "modernmetals:manganese_nugget",
+  "ingredient": {
+    "item": "modernmetals:manganese_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:manganese_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 100
+}

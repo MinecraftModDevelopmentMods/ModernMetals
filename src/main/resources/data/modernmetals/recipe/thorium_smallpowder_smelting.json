@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:thorium_nugget"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:thorium_nugget",
+  "ingredient": {
+    "item": "modernmetals:thorium_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:thorium_nugget"
+  },
+  "experience": 0.1,
+  "cookingtime": 200
+}

@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/cadmium"
+  },
+  "result": {
+    "id": "modernmetals:cadmium_smallpowder",
+    "count": 1
+  }
+}

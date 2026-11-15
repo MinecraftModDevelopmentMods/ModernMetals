@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/beryllium"
+  },
+  "result": {
+    "id": "modernmetals:beryllium_smallpowder",
+    "count": 1
+  }
+}

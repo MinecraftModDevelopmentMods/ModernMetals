@@ -1,6 +1,6 @@
 {
-    "parent": "block/wall_inventory",
-    "textures": {
-        "wall": "modernmetals:blocks/magnesium_block"
-    }
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "modernmetals:block/magnesium_block"
+  }
 }

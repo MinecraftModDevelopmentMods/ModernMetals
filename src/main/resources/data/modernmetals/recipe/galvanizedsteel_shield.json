@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:galvanizedsteel_shield"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/galvanizedsteel"
+    },
+    "y": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "pattern": [
+    "xyx",
+    "xxx",
+    " x "
+  ],
+  "result": {
+    "id": "modernmetals:galvanizedsteel_shield"
+  },
+  "group": "modernmetals:galvanizedsteel_shield"
+}

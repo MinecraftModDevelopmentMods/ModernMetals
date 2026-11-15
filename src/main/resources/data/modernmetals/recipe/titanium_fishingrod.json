@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:titanium_fishing_rod"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/titanium"
+    },
+    "y": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "  x",
+    " xy",
+    "x y"
+  ],
+  "result": {
+    "id": "modernmetals:titanium_fishing_rod"
+  },
+  "group": "modernmetals:titanium_fishing_rod"
+}

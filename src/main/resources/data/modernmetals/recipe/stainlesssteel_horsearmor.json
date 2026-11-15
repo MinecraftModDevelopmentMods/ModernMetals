@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_horse_armor"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:ingots/stainlesssteel"
+    },
+    "y": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "  x",
+    "xyx",
+    "xxx"
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_horse_armor"
+  },
+  "group": "modernmetals:stainlesssteel_horse_armor"
+}

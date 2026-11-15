@@ -1,6 +1,6 @@
 {
   "parent": "modernmetals:item/shield_blocking",
   "textures": {
-    "shield": "modernmetals:blocks/rutile_block"
-    }
+    "shield": "modernmetals:block/rutile_block"
+  }
 }

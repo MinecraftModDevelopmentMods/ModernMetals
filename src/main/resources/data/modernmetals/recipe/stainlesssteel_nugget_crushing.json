@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/stainlesssteel"
+  },
+  "result": {
+    "id": "modernmetals:stainlesssteel_smallpowder",
+    "count": 1
+  }
+}

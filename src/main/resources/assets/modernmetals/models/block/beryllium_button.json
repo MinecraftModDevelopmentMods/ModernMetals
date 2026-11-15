@@ -1,6 +1,6 @@
 {
-    "parent": "block/button",
-    "textures": {
-        "texture": "modernmetals:blocks/beryllium_block"
-    }
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "modernmetals:block/beryllium_block"
+  }
 }

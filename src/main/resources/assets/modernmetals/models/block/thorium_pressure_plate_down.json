@@ -1,6 +1,6 @@
 {
-    "parent": "block/pressure_plate_down",
-    "textures": {
-        "texture": "modernmetals:blocks/thorium_block"
-    }
+  "parent": "minecraft:block/pressure_plate_down",
+  "textures": {
+    "texture": "modernmetals:block/thorium_block"
+  }
 }

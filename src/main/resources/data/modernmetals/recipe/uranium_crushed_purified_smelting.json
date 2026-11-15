@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:uranium_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:uranium_ingot",
+  "ingredient": {
+    "item": "modernmetals:uranium_crushed_purified"
+  },
+  "result": {
+    "id": "modernmetals:uranium_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

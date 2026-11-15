@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/titanium"
+  },
+  "result": {
+    "id": "modernmetals:titanium_smallpowder",
+    "count": 1
+  }
+}

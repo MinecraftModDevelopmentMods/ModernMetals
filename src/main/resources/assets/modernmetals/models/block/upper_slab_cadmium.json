@@ -1,8 +1,0 @@
-{
-    "parent": "block/upper_slab",
-    "textures": {
-        "bottom": "modernmetals:blocks/cadmium_block",
-        "top": "modernmetals:blocks/cadmium_block",
-        "side": "modernmetals:blocks/cadmium_block"
-    }
-}

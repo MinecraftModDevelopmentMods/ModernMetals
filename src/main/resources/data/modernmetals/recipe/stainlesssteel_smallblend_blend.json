@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_smallblend"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "modernmetals:stainlesssteel_blend"
+    }
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_smallblend",
+    "count": 9
+  },
+  "group": "modernmetals:stainlesssteel_smallblend"
+}

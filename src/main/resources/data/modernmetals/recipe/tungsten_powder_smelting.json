@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:tungsten_ingot"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:tungsten_ingot",
+  "ingredient": {
+    "item": "modernmetals:tungsten_powder"
+  },
+  "result": {
+    "id": "modernmetals:tungsten_ingot"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

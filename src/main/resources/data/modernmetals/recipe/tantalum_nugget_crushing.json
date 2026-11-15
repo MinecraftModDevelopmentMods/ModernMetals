@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:nuggets/tantalum"
+  },
+  "result": {
+    "id": "modernmetals:tantalum_smallpowder",
+    "count": 1
+  }
+}

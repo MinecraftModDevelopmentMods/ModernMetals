@@ -1,0 +1,573 @@
+{
+  "schema_version": 3,
+  "provider_modid": "modernmetals",
+  "provider_revision": 1,
+  "ores": {
+    "modernmetals:ore/boron": {
+      "block": "modernmetals:boron_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 32,
+          "frequency": 8,
+          "min_quantity": 1,
+          "max_quantity": 15,
+          "pattern": "vein",
+          "height_distribution": "bottom_triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/thorium": {
+      "block": "modernmetals:thorium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 32,
+          "frequency": 8,
+          "min_quantity": 4,
+          "max_quantity": 11,
+          "pattern": "vein",
+          "height_distribution": "bottom_triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/beryllium": {
+      "block": "modernmetals:beryllium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 128,
+          "frequency": 20,
+          "min_quantity": 2,
+          "max_quantity": 7,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/aluminum": {
+      "block": "modernmetals:aluminum_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 96,
+          "frequency": 8,
+          "min_quantity": 2,
+          "max_quantity": 17,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/cadmium": {
+      "block": "modernmetals:cadmium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 96,
+          "frequency": 8,
+          "min_quantity": 1,
+          "max_quantity": 11,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/chromium": {
+      "block": "modernmetals:chromium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 32,
+          "frequency": 3,
+          "min_quantity": 1,
+          "max_quantity": 5,
+          "pattern": "vein",
+          "height_distribution": "bottom_triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/iridium": {
+      "block": "modernmetals:iridium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 64,
+          "frequency": 5,
+          "min_quantity": 2,
+          "max_quantity": 9,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/magnesium": {
+      "block": "modernmetals:magnesium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 96,
+          "frequency": 8,
+          "min_quantity": 2,
+          "max_quantity": 9,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/manganese": {
+      "block": "modernmetals:manganese_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 64,
+          "frequency": 6,
+          "min_quantity": 2,
+          "max_quantity": 9,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/osmium": {
+      "block": "modernmetals:osmium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 96,
+          "frequency": 8,
+          "min_quantity": 6,
+          "max_quantity": 13,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/plutonium": {
+      "block": "modernmetals:plutonium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 32,
+          "frequency": 4,
+          "min_quantity": 1,
+          "max_quantity": 5,
+          "pattern": "vein",
+          "height_distribution": "bottom_triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/rutile": {
+      "block": "modernmetals:rutile_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 64,
+          "frequency": 6,
+          "min_quantity": 2,
+          "max_quantity": 9,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/tantalum": {
+      "block": "modernmetals:tantalum_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 64,
+          "frequency": 6,
+          "min_quantity": 2,
+          "max_quantity": 9,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/tungsten": {
+      "block": "modernmetals:tungsten_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 32,
+          "frequency": 6,
+          "min_quantity": 1,
+          "max_quantity": 7,
+          "pattern": "vein",
+          "height_distribution": "bottom_triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/uranium": {
+      "block": "modernmetals:uranium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 32,
+          "frequency": 6,
+          "min_quantity": 1,
+          "max_quantity": 5,
+          "pattern": "vein",
+          "height_distribution": "bottom_triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/zirconium": {
+      "block": "modernmetals:zirconium_ore",
+      "enabled": true,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": true,
+          "min_y": -64,
+          "max_y": 64,
+          "frequency": 6,
+          "min_quantity": 4,
+          "max_quantity": 11,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    },
+    "modernmetals:ore/titanium": {
+      "block": "modernmetals:titanium_ore",
+      "enabled": false,
+      "source_mod": "modernmetals",
+      "retrogen": false,
+      "dimension_selectors": {
+        "orespawn:all_except_nether_end": {
+          "enabled": false,
+          "min_y": -64,
+          "max_y": 64,
+          "frequency": 6,
+          "min_quantity": 2,
+          "max_quantity": 9,
+          "pattern": "vein",
+          "height_distribution": "triangle",
+          "discard_chance_on_air_exposure": 0,
+          "spread": 8,
+          "vertical_spread": 4,
+          "node_size": 4,
+          "length": 16,
+          "host_families": [
+            "sedimentary",
+            "metamorphic",
+            "igneous_intrusive",
+            "igneous_volcanic"
+          ],
+          "host_tags": [
+            "minecraft:stone_ore_replaceables",
+            "minecraft:deepslate_ore_replaceables"
+          ]
+        }
+      }
+    }
+  },
+  "rocks": {},
+  "geomes": {},
+  "biome_rules": {},
+  "terrain_dimensions": {},
+  "fluid_deposits": {}
+}

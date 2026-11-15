@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:rutile_nugget"
+    }
+  ],
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "modernmetals:rutile_nugget",
+  "ingredient": {
+    "item": "modernmetals:rutile_smallpowder"
+  },
+  "result": {
+    "id": "modernmetals:rutile_nugget"
+  },
+  "experience": 0.45,
+  "cookingtime": 200
+}

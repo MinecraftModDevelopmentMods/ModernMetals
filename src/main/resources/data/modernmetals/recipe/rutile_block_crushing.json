@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:storage_blocks/rutile"
+  },
+  "result": {
+    "id": "modernmetals:rutile_powder",
+    "count": 9
+  }
+}

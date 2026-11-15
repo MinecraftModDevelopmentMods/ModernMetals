@@ -1,0 +1,10 @@
+{
+  "type": "mmdlib:crushing",
+  "ingredient": {
+    "tag": "c:ores/tungsten"
+  },
+  "result": {
+    "id": "modernmetals:tungsten_powder",
+    "count": 2
+  }
+}

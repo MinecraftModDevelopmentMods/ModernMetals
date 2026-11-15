@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "modernmetals:content_allowed",
+      "item": "modernmetals:stainlesssteel_fishing_rod"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "x": {
+      "tag": "c:rods/stainlesssteel"
+    },
+    "y": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    "  x",
+    " xy",
+    "x y"
+  ],
+  "result": {
+    "id": "modernmetals:stainlesssteel_fishing_rod"
+  },
+  "group": "modernmetals:stainlesssteel_fishing_rod"
+}
