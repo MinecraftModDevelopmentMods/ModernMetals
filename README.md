@@ -4,7 +4,7 @@ Modern Metals adds industrial metals and alloys, including aluminum, chromium,
 osmium and titanium. It adds their ores and molten forms, equipment, building
 blocks and Crack Hammer processing.
 
-For Modern Metals 4.0.0.121012, install NeoForge 21.1.265 or later,
+For Modern Metals 4.0.1.121012, install NeoForge 21.1.265 or later,
 [MMDLib 2.0.2][mmdlib] or later and [OreSpawn 4.1.1][orespawn]. Modern Metals also
 works alongside [Base Metals][basemetals], which supplies the copper, nickel,
 steel and zinc dusts used in some alloy blends.

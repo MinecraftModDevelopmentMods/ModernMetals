@@ -1,4 +1,4 @@
-4.0.0.121012 for 1.21.1
+4.0.1.121012 for 1.21.1
 
 Added raw drops and storage blocks for all seventeen ores, with Fortune and Silk Touch support. Raw pieces smelt or blast into ingots, or crush into dust. Crack Hammers still crush a whole ore into two dust without a Fortune bonus.
 Restored crafting, furnace and blast-furnace recipe discovery, including dust already held when joining. Earned recipes survive Fantasy Level changes and data reloads.
@@ -8,7 +8,10 @@ Galvanized steel and stainless steel blends accept whole steel blend as well as 
 Carried over the audited mining tiers from 1.13, including iron-tier galvanized steel and separate ore and solid-metal requirements.
 Added the OreSpawn configuration entry, completed material names across all nine languages and fixed overlay UV bounds.
 Retained flattened 1.13 bucket, fluid, legacy alloy ore and projectile identities, converted old wall connections and kept the saved OreSpawn rule IDs. Retrogen stays off.
+Numeric 1.10–1.12 saves must be upgraded through the released 1.13.2 version first. Always use a backup.
 Checked against published MMDLib 2.0.2, OreSpawn 4.1.1 and optional Base Metals 4.0.1, and checked in Eclipse. Publication is still pending.
+
+4.0.0.121012 for 1.21.1
 
 Ported to Minecraft 1.21.1 on NeoForge 21.1, built on MMDLib 2.0.2 and OreSpawn 4.
 Materials are MMDLib definitions in mmdlib/material/; MMDLib registers their items, blocks, arrows, armor and molten fluids.
@@ -16,7 +19,7 @@ Recipes use common (c:) tags instead of the ore dictionary. Low Fantasy now remo
 Fantasy Level, villager trades and molten metal burning are set in config/modernmetals-common.toml or the in-game settings screen.
 Ores generate between Y -64 and their 1.12 maximum height. Titanium ore stays optional in OreSpawn.
 Integrations with mods that have no 1.21.1 release (Tinkers' Construct, Construct's Armory, IC2, Thermal Expansion, Ender IO, Thaumcraft, Dense Ores and Vein Miner) were removed. Mekanism processing forms appear when Mekanism is installed.
-Numeric 1.10–1.12 saves must be upgraded through the released 1.13.2 version first. Always use a backup.
+1.12.2 worlds cannot be upgraded to this version.
 
 2.5.2.112021 for 1.12.2
 

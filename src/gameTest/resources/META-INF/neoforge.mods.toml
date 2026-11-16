@@ -8,6 +8,6 @@ displayName="Modern Metals test fixtures"
 [[dependencies.modernmetals_tests]]
 modId="modernmetals"
 type="required"
-versionRange="[4.0.0,)"
+versionRange="[4.0.1,)"
 ordering="AFTER"
 side="BOTH"
