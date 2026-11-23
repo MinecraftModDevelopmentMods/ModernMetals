@@ -2,7 +2,8 @@
   "type": "modernmetals:content_crafting",
   "recipe": {
     "result": {
-      "item": "modernmetals:chromium_plate"
+      "item": "modernmetals:chromium_plate",
+      "count": 3
     },
     "type": "minecraft:crafting_shaped",
     "pattern": [

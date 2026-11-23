@@ -2,7 +2,8 @@
   "type": "modernmetals:content_crafting",
   "recipe": {
     "result": {
-      "item": "modernmetals:galvanizedsteel_gear"
+      "item": "modernmetals:galvanizedsteel_gear",
+      "count": 4
     },
     "type": "minecraft:crafting_shaped",
     "pattern": [

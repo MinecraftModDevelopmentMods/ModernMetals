@@ -2,7 +2,8 @@
   "type": "modernmetals:content_crafting",
   "recipe": {
     "result": {
-      "item": "modernmetals:cadmium_plate"
+      "item": "modernmetals:cadmium_plate",
+      "count": 3
     },
     "type": "minecraft:crafting_shaped",
     "pattern": [

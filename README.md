@@ -1,4 +1,4 @@
-# Modern Metals for Minecraft 1.13.2
+# Modern Metals for Minecraft 1.14.4
 
 Modern Metals adds 21 metals and alloys, including boron, beryllium, thorium
 and titanium. Crush and smelt ores, blend alloys, or make tools, armour and
@@ -6,107 +6,125 @@ building blocks.
 
 ## Installation
 
-Use Java 8 and Forge **25.0.223** for Minecraft **1.13.2**. Install Modern
-Metals and [OreSpawn 4.1.7.113021](https://www.curseforge.com/minecraft/mc-mods/mmd-orespawn/files/9611746)
-on both the client and server. [Base Metals 3.0.3.113021](https://github.com/MinecraftModDevelopmentMods/BaseMetals/releases/tag/3.0.3.113021)
-is optional for new worlds. Its powders supply the ingredients for several
-alloys, and its crusher recipes work alongside Modern Metals recipes.
+Use Java 8 and Forge **28.2.26** for Minecraft **1.14.4**. Install Modern
+Metals and [OreSpawn 4.1.7.114041](https://github.com/MinecraftModDevelopmentMods/OreSpawn/releases/tag/4.1.7.114041)
+on both the client and server. [Base Metals 3.0.2.114041](https://github.com/MinecraftModDevelopmentMods/BaseMetals/releases/tag/3.0.2.114041)
+is optional. Its copper, steel, zinc and nickel powders supply ingredients
+for several alloys. Modern Metals contributes its crushing recipes to Base
+Metals when both are installed.
 
-Use Base Metals 3.0.3.113021 or a later compatible 1.13.2 build when installing
-the two together. That release includes the shared processing and mining fixes.
-
-OreSpawn places the ores. Titanium ore is off by default. You can still make
-titanium from rutile and magnesium. Existing chunks keep their ores.
+OreSpawn places the ores. Titanium ore is off by default; rutile and magnesium
+still make titanium. Retrogen is off. This version follows vanilla 1.14
+mining: pickaxes drop ore blocks, and crackhammers produce powders.
 
 Open **Mods → Modern Metals → Config**, or choose Modern Metals from the
 OreSpawn settings screen. High Fantasy allows the full set of recipes. Low
 Fantasy restricts equipment and decorative recipes by material. Modern
-Metals uses Base Metals' setting when Base Metals is installed. Restart the
-game or server after changing Fantasy Level, and use the same mode on both
-ends of a multiplayer connection.
+Metals uses Base Metals' setting when Base Metals is installed. Restart after
+changing Fantasy Level and use the same mode on the client and server.
 
-## Processing and recipe discovery
+## Processing and discovery
 
 Pick up a material to discover its crafting recipes. Powders, small powders
-and blends reveal their processing recipes, including entries in the furnace
-book. Existing inventories are checked when joining a world and after a data
-pack reload.
+and blends also reveal their furnace and blast-furnace recipes. Existing
+inventories are checked on login and after a data pack reload.
 
-Nine coal dust make a vanilla coal block, which you can craft back into nine
-coal. Crackhammers also crush coal and coal blocks. Base Metals supplies those
-shared recipes when installed.
+Nine coal dust make a vanilla coal block, which crafts back into nine coal.
+Crackhammers also crush coal and coal blocks. Base Metals owns these shared
+recipes when installed.
 
-Galvanized steel and stainless steel accept steel blend directly in place of
-steel dust. One whole blend replaces one dust, keeping the usual output.
+Galvanized steel and stainless steel accept steel blend directly in place
+of steel dust. One whole blend replaces one dust, keeping the usual output.
+The five alloy formulas and their yields are unchanged.
 
-Small powders and small blends smelt into nuggets. Metal blocks crush into
-nine powders. You can recycle equipment and components in a furnace, and
-repair armour and shields with a matching plate. Named and enchanted equipment
-keeps its saved data when repaired.
+Component recipes give four rods, four gears or three plates. Recycling
+follows those crafting quantities, rounding down where a fraction cannot be
+returned. Small powders and small blends smelt into nuggets; metal blocks
+crush into nine powders. Armour and shields can be repaired with a matching
+plate while keeping names, enchantments and other saved data.
 
-See [processing and alloy recipes](docs/PROCESSING.md) for the five blend
-formulas and the forms retained for optional integrations.
+See [processing and alloy recipes](docs/PROCESSING.md) and the
+[material mining audit](docs/MINING_LEVELS.md). Galvanized steel, stainless
+steel and titanium keep iron-level mining. Molten metal burns on contact.
 
 ## Crushing recipes for add-ons
 
-Crackhammers need the same mining level as a pickaxe. Galvanized steel,
-stainless steel and titanium have iron-level mining and can mine Base Gems'
-jasper. Ores and storage blocks in the shared Forge block tags
-use the normal hammer mining speed when the hammer is strong enough.
+Add a recipe under `data/<namespace>/recipes/` with type
+`modernmetals:crushing`, a Minecraft `ingredient`, and a `result` object
+containing `item` and `count`. If Modern Metals is optional, use a
+`forge:mod_loaded` condition.
 
-[The material audit](docs/MINING_LEVELS.md) lists the reviewed tool, solid-metal
-and ore requirements for every metal. Tool capability accounts for material
-type rather than treating one hardness score as a complete tool specification.
-New smith offers also follow the reviewed tiers through the existing pricing formula.
+Read loaded recipes from the world's recipe manager. Standalone recipes use
+`CrushingRecipe.TYPE`. With Base Metals installed, they keep their IDs and
+use `basemetals:crushing`, so its tools and machines can find them too.
 
-On 1.13.2, a mod or data pack can add a recipe under its own
-`data/<namespace>/recipes/` directory with type `modernmetals:crushing`.
-Use a Minecraft `ingredient` and a `result` object with the output `item`
-and `count`, just as with `basemetals:crushing`. If Modern Metals is optional,
-use a `forge:mod_loaded` condition for `modernmetals`.
+## Existing worlds
 
-Read the recipes from the world's recipe manager. With Modern Metals alone
-they use `CrushingRecipe.TYPE`. With Base Metals installed they keep their
-recipe IDs and use the Base Metals type, so Base Metals tools and crushers
-can find them too.
+Open a complete copy of the world and keep the original outside the test
+instance. Install compatible versions of every mod that supplied saved
+blocks or items. Do not remove an old world's Forge registry snapshot.
+See [world migration](docs/MIGRATION.md) for the legacy numeric conversion
+and the [1.14 port notes](docs/PORTING_114.md) for the port's checks.
 
-## Upgrading a world
+## Building and Eclipse
 
-Keep the original world intact and open a separate copy in 1.13.2. Keep the
-original Forge registry data in `level.dat`. Minecraft 1.13.2 uses block
-states and named item IDs, so the migration needs the old world’s saved
-numeric IDs to find the right blocks. Install compatible 1.13.2 versions of
-the other mods that supplied blocks or items to the world.
-[World migration](docs/MIGRATION.md)
+Gradle uses Java 17, Mavenizer uses Java 25, and compilation and Minecraft use
+Java 8. Node.js runs the data generators and resource checks.
 
-## Building
+Run `gradlew build verify114ReleaseArtifacts genEclipseRuns eclipse`.
+The build verifies the published OreSpawn jar's SHA-256. Eclipse's compatibility
+profiles also verify the sibling jars before staging their mapped versions.
 
-Gradle uses Java 17, Mavenizer uses Java 25, and the mod compiles and runs
-on Java 8. Run `gradlew build genEclipseRuns eclipse` from this checkout.
-The build checks the OreSpawn jar against the published SHA-256. To stage a
-local copy, run `bash gradle/stage-orespawn-release.sh <directory>` and pass
-`-PdependencyMirror=<directory>` to Gradle.
+Import this inner project into its own Eclipse workspace, then use
+**Gradle → Refresh Gradle Project**. With the local sibling pins set up below,
+Run Configurations lists eight clients under **Modern Metals - …**:
 
-In Eclipse, use **Gradle → Refresh Gradle Project** to rebuild the
-development output and regenerate the launches. Run `runClient.launch`
-from the project.
+- Standalone
+- Base Metals
+- Base Gems
+- Base Minerals
+- Base Metals + Base Gems
+- Base Metals + Base Minerals
+- Base Gems + Base Minerals
+- All Add-ons
 
-To test add-ons from Eclipse, stage their 1.13.2 `*-deobf.jar` files from
-`build/libs-dev` in `run/compatibility-jars` as `basemetals-dev.jar`,
-`basegems-dev.jar` and `baseminerals-dev.jar`. Run
-`gradlew prepareCompatibilityLaunches` or refresh the Gradle project once
-the jars are staged. In **Run → Run Configurations → Java Application**,
-choose a **Modern Metals - …** launch. Each combination has its own saves,
-config and mods in `run/compatibility`.
+Each includes Modern Metals and the published OreSpawn dependency. The label
+lists the additional mods. Each combination has its own saves and config.
+Standalone keeps the existing `run` folder; Base Metals keeps
+`run/with-basemetals`. The other six use separate folders under
+`run/compatibility`. The older `runClient.launch` and
+`runClientWithBaseMetals.launch` names still work.
 
-For a local OreSpawn fix, stage its published-format jar as
-`run/compatibility-jars/orespawn-development.jar` and put its SHA-256 in
-`orespawn-development.sha256` alongside it. Enable `-PuseDevelopmentOreSpawn=true`
-when generating the client, server and combination launches. The development engine must
-keep the pinned version and public API. Compilation and release dependency
-checks use the published jar. Normal launches use the published runtime even
-if the old local files are still present.
+Automated probe launches use disposable saves and exit when finished. They
+are separate from the manual profiles and are excluded from the player,
+source and Javadoc jars.
 
-The [changelog](CHANGELOG.txt) and [migration checks](docs/MIGRATION.md)
-cover the differences from 1.12.2. The port uses artwork and code from
-Modern Metals and the Forge 25 Base Metals port. See [artwork credits](LICENSE-ART.txt).
+See the
+[changelog](CHANGELOG.txt) and [artwork credits](LICENSE-ART.txt).
+
+## Testing a local Base Metals candidate
+
+Build the sibling Base Metals 1.14 checkout, then run
+`gradlew pinLocalBaseMetals` here, followed by `gradlew eclipse`. The ignored
+`local-basemetals.json` records the exact player and mapped jar hashes.
+`runClientWithBaseMetals.launch` then uses that candidate; the standalone
+profile still runs without Base Metals. A Gradle refresh keeps the local pin.
+
+After rebuilding Base Metals, run the pin task again. A stale hash stops the
+profile refresh. Use `-PuseLocalBaseMetals=false` to test the published jar.
+Release builds use published dependencies.
+
+For Base Gems and Base Minerals, build their sibling 1.14 checkouts first, then
+run `gradlew pinLocalSiblingMods` here. Run `gradlew eclipse` as a separate
+command afterwards. The ignored `local-sibling-mods.json` records both jars'
+paths and hashes for each mod. Regenerate these pins after rebuilding either
+sibling; a stale hash stops the refresh. Without local sibling pins, a clean
+checkout generates the original standalone and Base Metals profiles.
+
+Profile refreshes check the exact sibling selection and preserve saves,
+config and unrelated mods. Replaced sibling jars are retained under
+`.gradle/retired-compatibility-jars`. `gradlew verifyCompatibilityLaunches`
+checks the generated profiles and staged hashes.
+
+Bars now use vanilla connection geometry for all materials. The ore overlays
+keep the 0.05 pixel separation used by the later fixes.

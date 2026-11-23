@@ -1,15 +1,15 @@
-name: Release Modern Metals 1.13.2
+name: Release Modern Metals 1.14.4
 run-name: Modern Metals ${{ inputs.release_version }} (${{ inputs.confirm_live_publication && 'publish' || 'verify' }})
 
 on:
   workflow_dispatch:
     inputs:
       release_version:
-        description: Four-part version for Minecraft 1.13.2
+        description: Four-part version for Minecraft 1.14.4
         required: true
         type: string
       release_commit:
-        description: Full SHA of the checked MMD master-1.13.2 commit
+        description: Full SHA of the checked MMD master-1.14.4 commit
         required: true
         type: string
       tested_jar_sha256:
@@ -33,13 +33,13 @@ permissions:
   contents: read
 
 concurrency:
-  group: modernmetals-release-113
+  group: modernmetals-release-114
   cancel-in-progress: false
 
 jobs:
   qualify:
     name: Verify merged CI candidate
-    if: github.repository == 'MinecraftModDevelopmentMods/ModernMetals' && github.ref == 'refs/heads/master-1.13.2'
+    if: github.repository == 'MinecraftModDevelopmentMods/ModernMetals' && github.ref == 'refs/heads/master-1.14.4'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -61,21 +61,21 @@ jobs:
           TESTED_SHA: ${{ inputs.tested_jar_sha256 }}
         run: |
           set -euo pipefail
-          [[ "$RELEASE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.113021$ ]]
+          [[ "$RELEASE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+\.114041$ ]]
           [[ "$RELEASE_SHA" =~ ^[[:xdigit:]]{40}$ ]]
           [[ "$TESTED_SHA" =~ ^[[:xdigit:]]{64}$ ]]
           test "$(git rev-parse HEAD)" = "$RELEASE_SHA"
-          test "$(gh api "repos/$GITHUB_REPOSITORY/branches/master-1.13.2" --jq .commit.sha)" = "$RELEASE_SHA"
+          test "$(gh api "repos/$GITHUB_REPOSITORY/branches/master-1.14.4" --jq .commit.sha)" = "$RELEASE_SHA"
           grep -Fxq "mod_version=$RELEASE_VERSION" gradle.properties
-          grep -Fxq 'minecraft_version=1.13.2' gradle.properties
+          grep -Fxq 'minecraft_version=1.14.4' gradle.properties
           ci_run="$(gh api --method GET "repos/$GITHUB_REPOSITORY/actions/workflows/ci.yml/runs" \
-            -f branch=master-1.13.2 -f head_sha="$RELEASE_SHA" -f event=push -f status=success \
+            -f branch=master-1.14.4 -f head_sha="$RELEASE_SHA" -f event=push -f status=success \
             --jq '.workflow_runs[0].id // empty')"
           test -n "$ci_run"
           echo "ci_run=$ci_run" >> "$GITHUB_OUTPUT"
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
-          name: ModernMetals-1.13.2-${{ inputs.release_commit }}
+          name: ModernMetals-1.14.4-${{ inputs.release_commit }}
           run-id: ${{ steps.candidate.outputs.ci_run }}
           github-token: ${{ github.token }}
           path: ${{ runner.temp }}/release-input
@@ -152,12 +152,12 @@ jobs:
       - uses: gradle/actions/setup-gradle@9c971963bec38e04b3d30dcc455b5382be2fdbfb # v6
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
-          name: ModernMetals-1.13.2-${{ inputs.release_commit }}
+          name: ModernMetals-1.14.4-${{ inputs.release_commit }}
           run-id: ${{ needs.qualify.outputs.ci_run }}
           github-token: ${{ github.token }}
           path: ${{ runner.temp }}/release-input
       - name: Stage checksum-verified published dependencies
-        run: bash gradle/stage-orespawn-release.sh .gradle/release-dependencies
+        run: bash gradle/stage-release-dependencies.sh .gradle/release-dependencies
       - name: Publish the sealed Maven jars
         env:
           MAVEN_UPLOAD_URL: ${{ secrets.MAVEN_UPLOAD_URL }}
@@ -179,7 +179,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
-          name: ModernMetals-1.13.2-${{ inputs.release_commit }}
+          name: ModernMetals-1.14.4-${{ inputs.release_commit }}
           run-id: ${{ needs.qualify.outputs.ci_run }}
           github-token: ${{ github.token }}
           path: ${{ runner.temp }}/release-input
@@ -187,16 +187,17 @@ jobs:
         working-directory: ${{ runner.temp }}/release-input
         run: sha256sum --check --strict SHA256SUMS
       - name: Publish Modern Metals
+        id: curseforge
         uses: Kira-NT/mc-publish@52307b03863581dec6b652b83e597aec02ebb075 # v3.3.1
         with:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
           curseforge-id: '244357'
-          name: Modern Metals ${{ inputs.release_version }} for Minecraft 1.13.2 (Forge)
+          name: Modern Metals ${{ inputs.release_version }} for Minecraft 1.14.4 (Forge)
           version: ${{ inputs.release_version }}
           version-type: ${{ inputs.curseforge_release_level }}
           changelog-file: ${{ runner.temp }}/release-input/CHANGELOG.txt
           loaders: forge
-          game-versions: '1.13.2'
+          game-versions: '1.14.4'
           game-version-filter: none
           environment: client | server
           java: Java 8
@@ -208,6 +209,16 @@ jobs:
             ${{ runner.temp }}/release-input/ModernMetals-${{ inputs.release_version }}.jar
             ${{ runner.temp }}/release-input/ModernMetals-${{ inputs.release_version }}-sources.jar
             ${{ runner.temp }}/release-input/ModernMetals-${{ inputs.release_version }}-javadoc.jar
+
+      - name: Record the accepted CurseForge files
+        env:
+          CURSEFORGE_URL: ${{ steps.curseforge.outputs.curseforge-url }}
+          CURSEFORGE_FILES: ${{ steps.curseforge.outputs.curseforge-files }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          print(json.dumps({'url': os.environ['CURSEFORGE_URL'], 'files': os.environ['CURSEFORGE_FILES']}))
+          PY
 
   publish_github:
     name: Publish GitHub Release
@@ -221,7 +232,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
         with:
-          name: ModernMetals-1.13.2-${{ inputs.release_commit }}
+          name: ModernMetals-1.14.4-${{ inputs.release_commit }}
           run-id: ${{ needs.qualify.outputs.ci_run }}
           github-token: ${{ github.token }}
           path: ${{ runner.temp }}/release-input
@@ -234,5 +245,5 @@ jobs:
           set -euo pipefail
           sha256sum --check --strict SHA256SUMS
           gh release create "$RELEASE_VERSION" --repo "$GITHUB_REPOSITORY" --verify-tag \
-            --title "Modern Metals $RELEASE_VERSION for Minecraft 1.13.2 (Forge)" \
+            --title "Modern Metals $RELEASE_VERSION for Minecraft 1.14.4 (Forge)" \
             --notes-file CHANGELOG.txt "ModernMetals-$RELEASE_VERSION"{,-sources,-javadoc}.jar SHA256SUMS

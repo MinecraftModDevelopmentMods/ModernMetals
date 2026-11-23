@@ -1,0 +1,13 @@
+modLoader="javafml"
+loaderVersion="[28,)"
+license="LGPL-2.1"
+[[mods]]
+modId="modernmetalsclientprobe"
+version="1"
+displayName="Modern Metals Test Probe"
+[[dependencies.modernmetalsclientprobe]]
+modId="modernmetals"
+mandatory=true
+versionRange="[3.0.0.114041]"
+ordering="AFTER"
+side="BOTH"

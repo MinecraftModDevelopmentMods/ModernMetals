@@ -2,32 +2,26 @@ package zone.moddev.mc.modernmetals.recipe;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
-import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
-import net.minecraft.item.crafting.RecipeSerializers;
+import net.minecraft.item.crafting.RecipeManager;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.item.crafting.ShapedRecipe;
 import net.minecraft.item.crafting.ShapelessRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraft.util.JsonUtils;
+import net.minecraft.util.JSONUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import zone.moddev.mc.modernmetals.config.ContentPolicy;
 
 /** Keeps recipe IDs stable between modes, including IDs stored in an old recipe book. */
 public final class ContentCraftingRecipe {
-    public static final IRecipeSerializer<IRecipe> SERIALIZER = new Serializer();
+    public static final IRecipeSerializer<IRecipe<?>> SERIALIZER = new Serializer();
     private ContentCraftingRecipe() {}
-
-    static void registerConditions() {
-        CraftingHelper.register(new ResourceLocation("modernmetals", "non_empty_tag"), json -> {
-            ResourceLocation id = new ResourceLocation(JsonUtils.getString(json, "tag"));
-            return () -> !ItemTags.getCollection().getOrCreate(id).getAllElements().isEmpty();
-        });
-    }
 
     private static boolean allowed(IRecipe recipe) {
         return ContentPolicy.active().allows(recipe.getRecipeOutput().getItem().getRegistryName().toString());
@@ -50,12 +44,12 @@ public final class ContentCraftingRecipe {
         }
 
         @Override
-        public boolean matches(IInventory inventory, World world) {
+        public boolean matches(CraftingInventory inventory, World world) {
             return allowed(this) && super.matches(inventory, world);
         }
 
         @Override
-        public ItemStack getCraftingResult(IInventory inventory) {
+        public ItemStack getCraftingResult(CraftingInventory inventory) {
             return allowed(this) ? super.getCraftingResult(inventory) : ItemStack.EMPTY;
         }
 
@@ -79,12 +73,12 @@ public final class ContentCraftingRecipe {
         }
 
         @Override
-        public boolean matches(IInventory inventory, World world) {
+        public boolean matches(CraftingInventory inventory, World world) {
             return allowed(this) && super.matches(inventory, world);
         }
 
         @Override
-        public ItemStack getCraftingResult(IInventory inventory) {
+        public ItemStack getCraftingResult(CraftingInventory inventory) {
             return allowed(this) ? super.getCraftingResult(inventory) : ItemStack.EMPTY;
         }
 
@@ -99,23 +93,30 @@ public final class ContentCraftingRecipe {
         }
     }
 
-    private static final class Serializer implements IRecipeSerializer<IRecipe> {
-        private static final ResourceLocation NAME = new ResourceLocation("modernmetals", "content_crafting");
+    private static final class Serializer extends net.minecraftforge.registries.ForgeRegistryEntry<IRecipeSerializer<?>>
+            implements IRecipeSerializer<IRecipe<?>> {
+        private Serializer() { setRegistryName("modernmetals", "content_crafting"); }
 
         @Override
         public IRecipe read(ResourceLocation id, JsonObject json) {
-            JsonObject nested = JsonUtils.getJsonObject(json, "recipe");
-            String type = JsonUtils.getString(nested, "type");
+            JsonObject nested = JSONUtils.getJsonObject(json, "recipe");
+            String type = JSONUtils.getString(nested, "type");
             if (!"minecraft:crafting_shaped".equals(type) && !"minecraft:crafting_shapeless".equals(type)) {
                 throw new JsonSyntaxException("Content-mode crafting requires an ordinary shaped or shapeless recipe");
             }
 
-            return wrap(RecipeSerializers.deserialize(id, nested));
+            return wrap(RecipeManager.deserializeRecipe(id, nested));
         }
 
         @Override
         public IRecipe read(ResourceLocation id, PacketBuffer buffer) {
-            IRecipe nested = RecipeSerializers.read(buffer);
+            ResourceLocation serializerId = buffer.readResourceLocation();
+            ResourceLocation recipeId = buffer.readResourceLocation();
+            IRecipeSerializer<?> serializer = ForgeRegistries.RECIPE_SERIALIZERS.getValue(serializerId);
+            if (serializer == null || serializer == SERIALIZER) {
+                throw new IllegalArgumentException("Invalid nested recipe serializer " + serializerId);
+            }
+            IRecipe<?> nested = serializer.read(recipeId, buffer);
             if (!nested.getId().equals(id) || nested.getSerializer() == SERIALIZER) {
                 throw new IllegalArgumentException("Invalid nested content-mode recipe " + id);
             }
@@ -125,12 +126,14 @@ public final class ContentCraftingRecipe {
         @Override
         public void write(PacketBuffer buffer, IRecipe value) {
             IRecipe plain = value instanceof Shaped ? ((Shaped) value).plain : ((Shapeless) value).plain;
-            RecipeSerializers.write(plain, buffer);
+            buffer.writeResourceLocation(plain.getSerializer().getRegistryName());
+            buffer.writeResourceLocation(plain.getId());
+            writePlain(buffer, plain);
         }
 
-        @Override
-        public ResourceLocation getName() {
-            return NAME;
+        @SuppressWarnings({"rawtypes", "unchecked"})
+        private static void writePlain(PacketBuffer buffer, IRecipe plain) {
+            ((IRecipeSerializer) plain.getSerializer()).write(buffer, plain);
         }
     }
 }

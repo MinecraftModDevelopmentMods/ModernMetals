@@ -1,0 +1,174 @@
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+import groovy.xml.XmlParser
+import groovy.xml.XmlUtil
+import java.nio.file.Files
+import java.nio.file.StandardCopyOption
+import java.security.MessageDigest
+import java.util.zip.ZipFile
+
+// These local candidates are optional development inputs, never release dependencies.
+def pinFile = file('local-sibling-mods.json')
+def release = providers.gradleProperty('releaseBuild').map { it.toBoolean() }.orElse(false).get()
+def enabled = pinFile.isFile() && !release
+ext.siblingCompatibilityEnabled = enabled
+Map pins = enabled ? new JsonSlurper().parse(pinFile) : [:]
+def definitions = [
+    basegems: [name: 'BaseGems', checkout: '../../Base Gems 114/BaseGems', property: 'baseGemsCheckout'],
+    baseminerals: [name: 'BaseMinerals', checkout: '../../Base Minerals 114/BaseMinerals', property: 'baseMineralsCheckout']
+]
+def digest = { File jar -> MessageDigest.getInstance('SHA-256').digest(jar.bytes).encodeHex().toString() }
+def siblingJar = { File f ->
+    if (!f.name.toLowerCase(Locale.ROOT).endsWith('.jar')) return false
+    if (f.name ==~ /(?i)(?:BaseMetals-|BaseGems-|BaseMinerals-|base-metals-240967-).+\.jar/) return true
+    new ZipFile(f).withCloseable { zip ->
+        def metadata = zip.getEntry('META-INF/mods.toml')
+        metadata != null && (zip.getInputStream(metadata).getText('UTF-8') =~ /modId\s*=\s*"(?:basemetals|basegems|baseminerals)"/).find()
+    }
+}
+def profiles = [
+    'Standalone': [], 'Base Metals': ['basemetals'], 'Base Gems': ['basegems'],
+    'Base Minerals': ['baseminerals'], 'Base Metals + Base Gems': ['basemetals', 'basegems'],
+    'Base Metals + Base Minerals': ['basemetals', 'baseminerals'],
+    'Base Gems + Base Minerals': ['basegems', 'baseminerals'],
+    'All Add-ons': ['basemetals', 'basegems', 'baseminerals']
+]
+ext.siblingCompatibilityProfiles = profiles
+
+tasks.register('pinLocalSiblingMods') {
+    group = 'development'
+    description = 'Pins the already-built 1.14 Base Gems and Base Minerals player/mapped jars.'
+    doLast {
+        Map next = [:]
+        definitions.each { id, definition ->
+            File checkout = file(providers.gradleProperty(definition.property).orElse(definition.checkout).get()).canonicalFile
+            Properties properties = new Properties()
+            new File(checkout, 'gradle.properties').withInputStream { properties.load(it) }
+            String version = properties.getProperty('mod_version')
+            if (!version?.endsWith('.114041')) throw new GradleException("Not a Forge 1.14.4 candidate: ${checkout}")
+            Map entry = [version: version]
+            [player: "build/libs/${definition.name}-${version}.jar", mapped: "build/libs-dev/${definition.name}-${version}-deobf.jar"].each { kind, relative ->
+                File jar = new File(checkout, relative)
+                if (!jar.isFile()) throw new GradleException("Build ${definition.name} first: ${jar}")
+                entry[kind + 'Jar'] = jar.canonicalPath
+                entry[kind + 'Sha256'] = digest(jar)
+            }
+            next[id] = entry
+        }
+        pinFile.setText(JsonOutput.prettyPrint(JsonOutput.toJson(next)) + '\n', 'UTF-8')
+    }
+}
+def verifyPins = tasks.register('verifyLocalSiblingMods') {
+    group = 'verification'
+    doLast {
+        if (!enabled) return
+        definitions.each { id, definition ->
+            Map pin = pins[id]
+            if (!pin || !pin.version?.endsWith('.114041')) throw new GradleException("Missing 1.14 ${definition.name} pin; run pinLocalSiblingMods")
+            ['player', 'mapped'].each { kind ->
+                File jar = file(pin[kind + 'Jar'])
+                if (!jar.isFile() || digest(jar) != pin[kind + 'Sha256']) throw new GradleException("Local ${definition.name} changed. Run pinLocalSiblingMods, then regenerate Eclipse launches: ${jar}")
+            }
+        }
+    }
+}
+
+def profileDirectory = { label, mods ->
+    label == 'Standalone' ? file('run') : label == 'Base Metals' ? file('run/with-basemetals') : file('run/compatibility/' + mods.join('-'))
+}
+def expectedFiles = { mods ->
+    Map result = [:]
+    mods.each { id ->
+        if (id == 'basemetals') {
+            Map base = compatibilityBaseFiles()
+            result["BaseMetals-${base.version}-mapped.jar".toString()] = base.mapped
+        } else {
+            result["${definitions[id].name}-${pins[id].version}-mapped.jar".toString()] = file(pins[id].mappedJar)
+        }
+    }
+    result
+}
+// Explicit production-only entries avoid inheriting optional runtime mods from a
+// Buildship container configured with -PwithBaseMetals=true.
+def isolatedLaunch = { File directory ->
+    Node launch = new XmlParser().parse(file('runClient.launch'))
+    launch.stringAttribute.find { it.attribute('key') == 'org.eclipse.jdt.launching.WORKING_DIRECTORY' }.attributes().put('value', directory.absolutePath)
+    Node cp = launch.listAttribute.find { it.attribute('key') == 'org.eclipse.jdt.launching.CLASSPATH' }
+    List<Node> jre = cp.listEntry.findAll { it.attribute('value').contains('org.eclipse.jdt.launching.JRE_CONTAINER') }.toList()
+    List<File> launchers = cp.listEntry.collect { new XmlParser().parseText(it.attribute('value')) }.findAll {
+        it.attribute('externalArchive')?.contains('slime-launcher-')
+    }.collect { file(it.attribute('externalArchive')) }
+    cp.children().clear()
+    (sourceSets.main.runtimeClasspath.files + launchers).findAll { !siblingJar(it) }.unique().each { File f ->
+        Node entry = new Node(null, 'runtimeClasspathEntry', [externalArchive: f.absolutePath, type: '2', path: '5'])
+        new Node(cp, 'listEntry', [value: XmlUtil.serialize(entry)])
+    }
+    jre.each { cp.append(it) }
+    launch
+}
+def generate = tasks.register('prepareCompatibilityLaunches') {
+    group = 'ide'
+    description = 'Stages exact sibling candidates and generates all eight isolated Eclipse clients.'
+    dependsOn 'genEclipseRuns', 'prepareBaseMetalsProfile', verifyPins
+    doLast {
+        if (!enabled) return
+        profiles.each { label, mods ->
+            File directory = profileDirectory(label, mods).canonicalFile
+            File modsDir = new File(directory, 'mods')
+            if (!directory.toPath().startsWith(file('run').canonicalFile.toPath())) throw new GradleException('Unsafe profile directory')
+            modsDir.mkdirs()
+            Map selected = expectedFiles(mods)
+            // Retain stale managed copies, preserving worlds, config and unrelated mods.
+            modsDir.listFiles().findAll { it.isFile() && siblingJar(it) && (!selected.containsKey(it.name) || digest(it) != digest(selected[it.name])) }.each { obsolete ->
+                File retained = file('.gradle/retired-compatibility-jars/' + label.replace(' ', '_') + '/' + digest(obsolete) + '-' + obsolete.name).canonicalFile
+                if (!retained.toPath().startsWith(file('.gradle/retired-compatibility-jars').canonicalFile.toPath())) throw new GradleException('Unsafe retention path')
+                retained.parentFile.mkdirs()
+                Files.copy(obsolete.toPath(), retained.toPath(), StandardCopyOption.REPLACE_EXISTING)
+                if (digest(retained) != digest(obsolete)) throw new GradleException('Retained jar differs')
+                Files.delete(obsolete.toPath())
+            }
+            selected.each { name, source ->
+                File target = new File(modsDir, name)
+                if (!target.isFile() || digest(target) != digest(source)) Files.copy(source.toPath(), target.toPath(), StandardCopyOption.REPLACE_EXISTING)
+                if (digest(target) != digest(source)) throw new GradleException("Profile jar differs: ${target}")
+            }
+            Node launch = isolatedLaunch(directory)
+            file("Modern Metals - ${label}.launch").setText(XmlUtil.serialize(launch), 'UTF-8')
+            if (label == 'Base Metals') file('runClientWithBaseMetals.launch').setText(XmlUtil.serialize(launch), 'UTF-8')
+        }
+    }
+}
+// The existing entry point remains the Gradle-refresh hook and compatibility alias.
+tasks.named('generateCompatibilityRuns') { dependsOn generate }
+
+tasks.register('verifyCompatibilityLaunches') {
+    group = 'verification'
+    dependsOn 'generateCompatibilityRuns'
+    doLast {
+        if (!enabled) return
+        Map receipt = [:]
+        profiles.each { label, mods ->
+            File directory = profileDirectory(label, mods).canonicalFile
+            Map expected = expectedFiles(mods)
+            def actual = new File(directory, 'mods').listFiles().findAll { it.isFile() && siblingJar(it) }
+            if (actual.collect { it.name }.sort() != expected.keySet().toList().sort()) throw new GradleException("Wrong siblings in ${label}")
+            actual.each { if (digest(it) != digest(expected[it.name])) throw new GradleException("Wrong jar in ${label}: ${it}") }
+            Node launch = new XmlParser().parse(file("Modern Metals - ${label}.launch"))
+            String working = launch.stringAttribute.find { it.attribute('key') == 'org.eclipse.jdt.launching.WORKING_DIRECTORY' }.attribute('value')
+            if (file(working).canonicalFile != directory) throw new GradleException("Wrong working directory: ${label}")
+            if (!launch.booleanAttribute.any { it.attribute('key') == 'org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE' && it.attribute('value') == 'true' }) throw new GradleException("Test code exposed: ${label}")
+            launch.listAttribute.find { it.attribute('key') == 'org.eclipse.jdt.launching.CLASSPATH' }.listEntry.each {
+                Node entry = new XmlParser().parseText(it.attribute('value'))
+                String archive = entry.attribute('externalArchive')
+                if (archive && (!file(archive).exists() || siblingJar(file(archive)) || archive.contains('probe') || archive.contains('integrationTest'))) throw new GradleException("Unsafe classpath entry in ${label}: ${archive}")
+                if (it.attribute('value').contains('org.eclipse.buildship.core.gradleclasspathcontainer')) throw new GradleException("Optional classpath container exposed: ${label}")
+            }
+            receipt[label] = [directory: directory.absolutePath, mods: mods, sha256: actual.collectEntries { [(it.name): digest(it)] }]
+        }
+        File report = file('build/reports/compatibility-profiles.json')
+        report.parentFile.mkdirs()
+        report.setText(JsonOutput.prettyPrint(JsonOutput.toJson(receipt)) + '\n', 'UTF-8')
+    }
+}
+tasks.named('eclipse') { dependsOn 'verifyCompatibilityLaunches' }
+tasks.named('check') { dependsOn verifyPins }
