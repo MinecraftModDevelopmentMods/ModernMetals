@@ -81,3 +81,11 @@ setting when it is installed.
 
 Crushing and plate repairs use their normal gameplay entry points. The
 recipe books display crafting and furnace recipes.
+
+## Minecraft 1.14.4
+
+The blast furnace accepts native ores, powders, small powders, blends and
+small blends at twice the furnace speed, with the same output. Recycling
+stays in the ordinary furnace. Four rods cost two ingots; four gears cost
+four ingots and one rod; three plates cost three ingots. Recycling rounds
+down and never returns more metal than the cheapest native crafting route.

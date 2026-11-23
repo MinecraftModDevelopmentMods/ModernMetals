@@ -25,6 +25,8 @@ run
 /forge-*-changelog.txt
 
 secret.json
+/local-basemetals.json
+/local-sibling-mods.json
 # Local context and generated verification
 /AGENTS.md
 /agent-notes/

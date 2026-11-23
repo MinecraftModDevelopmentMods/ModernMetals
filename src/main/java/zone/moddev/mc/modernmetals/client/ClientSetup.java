@@ -18,9 +18,8 @@ public final class ClientSetup {
         ModLoadingContext.get().registerExtensionPoint(ExtensionPoint.CONFIGGUIFACTORY,
                 () -> (minecraft, parent) -> new ModernMetalsConfigScreen(parent));
         WorldSettingsExtensionRegistry.registerConfigScreen("modernmetals", ModernMetalsConfigScreen::new);
-        ClientMoltenMetalRenderer.register();
-        MinecraftForge.EVENT_BUS.addListener(ClientSetup::registerBucketColours);
-        MinecraftForge.EVENT_BUS.addListener(ModsListConfigButton::onDraw);
+        net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get().getModEventBus()
+                .addListener(ClientSetup::registerBucketColours);
         RenderingRegistry.registerEntityRenderingHandler(MaterialProjectile.class,
                 manager -> new MaterialProjectileRenderer(manager));
     }

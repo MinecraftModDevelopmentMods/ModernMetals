@@ -1,5 +1,6 @@
 import groovy.xml.XmlParser
 import groovy.xml.XmlUtil
+import org.apache.tools.ant.filters.FixCrLfFilter
 
 plugins {
     id 'java'
@@ -17,6 +18,35 @@ java {
     toolchain.languageVersion = JavaLanguageVersion.of(8)
     withSourcesJar()
     withJavadocJar()
+}
+
+sourceSets {
+    clientIntegrationTest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+    integrationTest {
+        compileClasspath += sourceSets.main.output + sourceSets.main.compileClasspath
+        runtimeClasspath += sourceSets.main.output + sourceSets.main.runtimeClasspath
+    }
+}
+configurations {
+    clientIntegrationTestImplementation.extendsFrom implementation
+    clientIntegrationTestRuntimeOnly.extendsFrom runtimeOnly
+    integrationTestImplementation.extendsFrom implementation
+    integrationTestRuntimeOnly.extendsFrom runtimeOnly
+}
+def probeClasses = layout.buildDirectory.dir('forge-run-mod-classes/probe')
+def clientProbeClasses = layout.buildDirectory.dir('forge-run-mod-classes/client-probe')
+def prepareClientProbeClasses = tasks.register('prepareClientProbeClasses', Sync) {
+    dependsOn 'clientIntegrationTestClasses'
+    from sourceSets.clientIntegrationTest.output
+    into clientProbeClasses
+}
+def prepareProbeClasses = tasks.register('prepareProbeClasses', Sync) {
+    dependsOn 'integrationTestClasses'
+    from sourceSets.integrationTest.output
+    into probeClasses
 }
 
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
@@ -43,6 +73,10 @@ tasks.withType(Javadoc).configureEach {
 tasks.withType(AbstractArchiveTask).configureEach {
     preserveFileTimestamps = false
     reproducibleFileOrder = true
+    filteringCharset = 'UTF-8'
+    filesMatching(['**/*.java', '**/*.json', '**/*.toml', '**/*.mcmeta', '**/*.md', '**/*.txt']) {
+        filter(FixCrLfFilter, eol: FixCrLfFilter.CrLf.newInstance('lf'))
+    }
 }
 
 def runClasses = layout.buildDirectory.dir('forge-run-mod-classes/main')
@@ -59,7 +93,7 @@ minecraft {
             mainClass = 'net.minecraftforge.userdev.LaunchTesting'
             workingDir.convention layout.projectDirectory.dir('run')
             mods { modernmetals { source sourceSets.main } }
-            environment 'target', 'fmluserdev' + name
+            environment 'target', name.toLowerCase().contains('client') ? 'fmluserdevclient' : 'fmluserdevserver'
             environment 'MCP_MAPPINGS', "${mapping_channel}_${mapping_version}"
             environment 'MCP_VERSION', mcp_version
             environment 'FORGE_VERSION', forge_version
@@ -70,14 +104,79 @@ minecraft {
         }
         register('client')
         register('server') { args '--nogui' }
+        register('probeClient') {
+            workingDir.convention layout.projectDirectory.dir(providers.gradleProperty('probeClientDirectory').orElse('run/verification/client').get())
+            mods { modernmetalsclientprobe { source sourceSets.clientIntegrationTest } }
+            systemProperty 'modernmetalsclientprobe.expectBase', providers.gradleProperty('probeExpectBaseMetals')
+                    .orElse(providers.gradleProperty('withBaseMetals').orElse('false')).get()
+            def mainOutput = runClasses.get().asFile.absolutePath
+            def probeOutput = clientProbeClasses.get().asFile.absolutePath
+            environment 'MOD_CLASSES', "modernmetals%%${mainOutput}${File.pathSeparator}modernmetals%%${mainOutput}${File.pathSeparator}modernmetalsclientprobe%%${probeOutput}${File.pathSeparator}modernmetalsclientprobe%%${probeOutput}"
+        }
+        register('runtimeProbeServer') {
+            workingDir.convention layout.projectDirectory.dir(providers.gradleProperty('probeDirectory').orElse('run/verification/standalone-high').get())
+            mods { modernmetalsprobe { source sourceSets.integrationTest } }
+            def mainOutput = runClasses.get().asFile.absolutePath
+            def probeOutput = probeClasses.get().asFile.absolutePath
+            environment 'MOD_CLASSES', "modernmetals%%${mainOutput}${File.pathSeparator}modernmetals%%${mainOutput}${File.pathSeparator}modernmetalsprobe%%${probeOutput}${File.pathSeparator}modernmetalsprobe%%${probeOutput}"
+            args '--nogui'
+            systemProperty 'modernmetalsprobe.titanium', providers.gradleProperty('probeTitanium').orElse('false').get()
+            if (providers.gradleProperty('probeWorldUpgrade').orElse('false').get().toBoolean()) {
+                systemProperty 'modernmetalsprobe.upgrade', 'true'
+                args '--forceUpgrade'
+            }
+        }
     }
 }
 
 tasks.withType(JavaExec).configureEach {
-    if (name in ['runClient', 'runServer']) {
+    if (name in ['runClient', 'runServer', 'runRuntimeProbeServer', 'runProbeClient']) {
         dependsOn prepareRunClasses
         javaLauncher = javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(8) }
         doFirst { new File(workingDir, 'mods').mkdirs() }
+    }
+    if (name == 'runRuntimeProbeServer') dependsOn prepareProbeClasses
+    if (name == 'runProbeClient') dependsOn prepareClientProbeClasses
+    if (name in ['runRuntimeProbeServer', 'runProbeClient']) {
+        String receiptName = name == 'runProbeClient' ? 'client-probe.json' : 'modernmetals-probe.json'
+        doFirst {
+            // ForgeGradle sets JavaExec's workingDir in its own later action.
+            // Validate and prepare the declared run directory before that happens.
+            boolean clientProbe = name == 'runProbeClient'
+            File runDirectory = file(providers.gradleProperty(clientProbe ? 'probeClientDirectory' : 'probeDirectory')
+                    .orElse(clientProbe ? 'run/verification/client' : 'run/verification/standalone-high').get()).canonicalFile
+            if (!runDirectory.toPath().startsWith(file('run/verification').canonicalFile.toPath())
+                    && !runDirectory.toPath().startsWith(layout.buildDirectory.get().asFile.canonicalFile.toPath())
+                    && !new File(runDirectory, '.modernmetals-disposable-test').isFile())
+                throw new GradleException("Probe runs require a disposable test directory: ${runDirectory}; expected under ${file('run/verification').canonicalFile}")
+            runDirectory.mkdirs()
+            workingDir runDirectory
+            if (name == 'runRuntimeProbeServer') {
+                File eula = new File(runDirectory, 'eula.txt')
+                if (!eula.exists()) eula.text = 'eula=true\n'
+                File settings = new File(runDirectory, 'server.properties')
+                if (!settings.exists()) settings.text = 'online-mode=false\nserver-port=0\nview-distance=2\nspawn-protection=0\nmax-tick-time=0\nlevel-seed=14162026\n'
+            }
+            File receipt = new File(workingDir, receiptName)
+            if (receipt.exists()) {
+                java.nio.file.Files.move(receipt.toPath(), new File(workingDir,
+                        receiptName + '.' + System.currentTimeMillis() + '.previous').toPath())
+            }
+        }
+        doLast {
+            File receipt = new File(workingDir, receiptName)
+            if (!receipt.isFile() || new groovy.json.JsonSlurper().parse(receipt).status != 'passed') {
+                throw new GradleException("Native test failed; see ${receipt}")
+            }
+            if (name == 'runProbeClient') {
+                def errors = new File(workingDir, 'logs/latest.log').readLines('UTF-8').findAll { line ->
+                    (line.contains('/ERROR]') || line.contains('/FATAL]')) &&
+                            !(line.contains('IndexedMessageCodec') && line.contains('Received empty payload on channel fml:handshake')) &&
+                            !(line.contains('ForgeConfig/CORE') && line.contains('Forge config just got changed on the file system!'))
+                }
+                if (!errors.isEmpty()) throw new GradleException("Unexpected client errors: ${errors.take(3)}")
+            }
+        }
     }
 }
 
@@ -85,10 +184,15 @@ tasks.withType(JavaExec).configureEach {
 def eclipseLauncherPath = ~/(--(?:cache|metadata|to-srg|to-obf) )("[^"]*"|.+?)(?= (?:--metadata |--to-srg |--to-obf |--(?: |$)))/
 tasks.matching { it.name.startsWith('genEclipseRun') && it.name.endsWith('ForForge') }.configureEach {
     dependsOn prepareRunClasses
+    dependsOn { configurations.baseMetalsDevelopment }
     String launchName = name.replaceFirst('^genEclipseRun', 'run').replaceFirst('ForForge$', '') + '.launch'
     File launch = layout.projectDirectory.file(launchName).asFile
     doLast {
         Node configuration = new XmlParser().parse(launch)
+        if (launchName in ['runClient.launch', 'runServer.launch']) {
+            new Node(configuration, 'booleanAttribute',
+                    [key: 'org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE', value: 'true'])
+        }
         Node programArguments = configuration.stringAttribute.find {
             it.attribute('key') == 'org.eclipse.jdt.launching.PROGRAM_ARGUMENTS'
         }
@@ -105,20 +209,51 @@ tasks.matching { it.name.startsWith('genEclipseRun') && it.name.endsWith('ForFor
 
 eclipse {
     synchronizationTasks 'genEclipseRuns'
+    classpath.file.whenMerged { classpath ->
+        classpath.entries.findAll { entry ->
+            entry.path?.startsWith('src/integrationTest/') || entry.path?.startsWith('src/clientIntegrationTest/')
+        }.each { entry -> entry.entryAttributes['test'] = 'true' }
+    }
 }
+
+tasks.register('configureEclipseBuildship') {
+    doLast {
+        File target = file('.settings/org.eclipse.buildship.core.prefs')
+        target.parentFile.mkdirs()
+        Properties preferences = new Properties()
+        ['eclipse.preferences.version': '1', 'connection.gradle.distribution': 'GRADLE_DISTRIBUTION(WRAPPER)',
+         'connection.gradle.user.home': gradle.gradleUserHomeDir.canonicalPath,
+         'connection.project.dir': '', 'gradle.user.home': gradle.gradleUserHomeDir.canonicalPath,
+         'java.home': new File(System.getProperty('java.home')).canonicalPath,
+         'override.workspace.settings': 'true'].each { key, value -> preferences.setProperty(key, value) }
+        target.withOutputStream { preferences.store(it, 'Generated Modern Metals Buildship settings') }
+    }
+}
+tasks.named('genEclipseRuns') { dependsOn 'configureEclipseBuildship' }
 
 tasks.named('eclipse') { dependsOn 'genEclipseRuns' }
 
-apply from: 'gradle/eclipse-compatibility.gradle'
+// Compatibility profiles are generated for available 1.14 add-ons only.
 
-def oreSpawnModule = 'mmd-orespawn-245586'
-def oreSpawnCoordinate = "curse.maven:${oreSpawnModule}:${orespawn_curse_file}"
-def dependencyMirror = providers.gradleProperty('dependencyMirror').orElse('https://www.cursemaven.com')
+def baseMetalsModule = 'BaseMetals'
+def baseMetalsCoordinate = "zone.moddev.mc.basemetals:${baseMetalsModule}:${basemetals_version}"
+def withBaseMetals = providers.gradleProperty('withBaseMetals').map { it.toBoolean() }.orElse(false)
+def localBasePinFile = file('local-basemetals.json')
+def releaseBuild = providers.gradleProperty('releaseBuild').map { it.toBoolean() }.orElse(false).get()
+def useLocalBaseMetals = providers.gradleProperty('useLocalBaseMetals')
+        .map { it.toBoolean() }.orElse(localBasePinFile.isFile() && !releaseBuild).get()
+if (useLocalBaseMetals && releaseBuild) throw new GradleException('Release builds must use published Base Metals')
+def localBasePin = useLocalBaseMetals && localBasePinFile.isFile()
+        ? new groovy.json.JsonSlurper().parse(localBasePinFile) : [:]
+if (useLocalBaseMetals && localBasePin.isEmpty()) throw new GradleException('Run pinLocalBaseMetals first')
+def oreSpawnCoordinate = "zone.moddev.mc.orespawn:OreSpawn:${orespawn_version}"
+def dependencyMirror = providers.gradleProperty('dependencyMirror').orElse('https://maven.moddev.zone/releases')
 repositories {
     minecraft.mavenizer(it)
     maven fg.forgeMaven
     maven fg.minecraftLibsMaven
     mavenCentral()
+    maven { url = uri("https://maven.moddev.zone/releases") }
     maven { url = 'https://libraries.minecraft.net/' }
     exclusiveContent {
         forRepository { maven { url = 'https://repo.spongepowered.org/repository/maven-public' } }
@@ -131,18 +266,24 @@ repositories {
                 metadataSources { artifact() }
             }
         }
-        filter { includeModule('curse.maven', oreSpawnModule) }
+        filter { includeModule('zone.moddev.mc.basemetals', baseMetalsModule) }
     }
 }
 
 configurations {
     oreSpawnRelease
+    baseMetalsRelease
+    baseMetalsDevelopment
 }
 
+def mappedBaseMetals = useLocalBaseMetals ? files(file(localBasePin.mappedJar)) : renamer.dependency(baseMetalsCoordinate)
 dependencies {
     implementation minecraft.dependency("net.minecraftforge:forge:${minecraft_version}-${forge_version}")
     implementation renamer.dependency(oreSpawnCoordinate)
     oreSpawnRelease oreSpawnCoordinate
+    baseMetalsRelease baseMetalsCoordinate
+    baseMetalsDevelopment mappedBaseMetals
+    if (withBaseMetals.get()) runtimeOnly mappedBaseMetals
 }
 
 renamer.mappings.from minecraft.dependency.toSrgFile
@@ -159,19 +300,139 @@ tasks.register('verifyReleaseDependencies') {
             }
         }
         if (digest.digest().encodeHex().toString() != orespawn_sha256) {
-            throw new GradleException('OreSpawn 1.13.2 release checksum mismatch')
+            throw new GradleException('OreSpawn 1.14.4 release checksum mismatch')
         }
+    }
+}
+
+def baseJarHash = { File jar -> java.security.MessageDigest.getInstance('SHA-256').digest(jar.bytes).encodeHex().toString() }
+tasks.register('pinLocalBaseMetals') {
+    group = 'development'
+    description = 'Pins already-built sibling Base Metals jars for local testing.'
+    doLast {
+        File checkout = file(providers.gradleProperty('baseMetalsCheckout').orElse('../../BaseMetals 114/BaseMetals').get()).canonicalFile
+        def pins = [version: basemetals_version.toString()]
+        ['publishedJar': "build/libs/BaseMetals-${basemetals_version}.jar",
+         'mappedJar': "build/libs-dev/BaseMetals-${basemetals_version}-deobf.jar"].each { key, path ->
+            File jar = new File(checkout, path)
+            if (!jar.isFile()) throw new GradleException("Build Base Metals first: ${jar}")
+            pins[key] = jar.canonicalPath
+            pins[key + 'Sha256'] = baseJarHash(jar)
+        }
+        localBasePinFile.setText(groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(pins)) + '\n', 'UTF-8')
+    }
+}
+def verifyLocalBase = tasks.register('verifyLocalBaseMetals') {
+    group = 'verification'
+    doLast {
+        if (!useLocalBaseMetals) return
+        if (localBasePin.version != basemetals_version.toString()) throw new GradleException('Local Base Metals version mismatch')
+        ['publishedJar', 'mappedJar'].each { key ->
+            File jar = file(localBasePin[key])
+            if (!jar.isFile() || baseJarHash(jar) != localBasePin[key + 'Sha256'])
+                throw new GradleException("Local Base Metals changed. Rebuild, then run pinLocalBaseMetals: ${jar}")
+        }
+    }
+}
+tasks.withType(JavaExec).configureEach {
+    if (name in ['runClient', 'runServer', 'runProbeClient', 'runRuntimeProbeServer'] && withBaseMetals.get())
+        dependsOn verifyLocalBase
+}
+tasks.register('prepareBaseMetalsProfile', Copy) {
+    dependsOn verifyLocalBase
+    from configurations.baseMetalsDevelopment
+    into layout.projectDirectory.dir('run/with-basemetals/mods')
+    rename { "BaseMetals-${basemetals_version}-mapped.jar" }
+    doFirst {
+        if (useLocalBaseMetals) return
+        def hash = java.security.MessageDigest.getInstance('SHA-256')
+                .digest(configurations.baseMetalsRelease.singleFile.bytes).encodeHex().toString()
+        if (hash != basemetals_sha256) throw new GradleException('Published Base Metals checksum mismatch')
+    }
+    doLast {
+        File target = file("run/with-basemetals/mods/BaseMetals-${basemetals_version}-mapped.jar")
+        if (baseJarHash(target) != baseJarHash(configurations.baseMetalsDevelopment.singleFile))
+            throw new GradleException('Combined profile Base Metals jar does not match the selected candidate')
+    }
+}
+
+tasks.register('generateCompatibilityRuns') {
+    dependsOn 'genEclipseRuns', 'prepareBaseMetalsProfile'
+    doLast {
+        if (project.ext.has('siblingCompatibilityEnabled') && siblingCompatibilityEnabled) return
+        File original = file('runClient.launch')
+        Node launch = new XmlParser().parse(original)
+        launch.stringAttribute.find { it.attribute('key') == 'org.eclipse.jdt.launching.WORKING_DIRECTORY' }
+                .attributes().put('value', file('run/with-basemetals').absolutePath)
+        file('runClientWithBaseMetals.launch').setText(XmlUtil.serialize(launch), 'UTF-8')
+    }
+}
+tasks.named('eclipse') { dependsOn 'generateCompatibilityRuns' }
+eclipse.synchronizationTasks 'generateCompatibilityRuns'
+
+ext.compatibilityBaseFiles = { [mapped: configurations.baseMetalsDevelopment.singleFile,
+        version: basemetals_version.toString()] }
+apply from: 'gradle/eclipse-compatibility-114.gradle'
+
+tasks.register('verifyEclipseProductionClasspath') {
+    group = 'verification'
+    dependsOn 'eclipse'
+    doLast {
+        ['runClient.launch', 'runServer.launch', 'runClientWithBaseMetals.launch'].each { name ->
+            Node launch = new XmlParser().parse(file(name))
+            if (!launch.booleanAttribute.any { it.attribute('key') == 'org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE' && it.attribute('value') == 'true' })
+                throw new GradleException("${name} must exclude test code")
+            String modClasses = launch.mapAttribute.mapEntry.find { it.attribute('key') == 'MOD_CLASSES' }.attribute('value')
+            if (modClasses.contains('probe') || !modClasses.contains(runClasses.get().asFile.absolutePath))
+                throw new GradleException("${name} leaks test classes")
+            String arguments = launch.stringAttribute.find { it.attribute('key') == 'org.eclipse.jdt.launching.PROGRAM_ARGUMENTS' }.attribute('value')
+            def paths = arguments =~ /--(?:cache|metadata|to-srg|to-obf) "([^"]+)"/
+            int count = 0
+            paths.each { match ->
+                if (!new File(match[1]).exists()) throw new GradleException("${name} has a missing launcher input")
+                count++
+            }
+            if (count != 4) throw new GradleException("${name} needs four quoted launcher paths")
+        }
+        Properties prefs = new Properties()
+        file('.settings/org.eclipse.buildship.core.prefs').withInputStream { prefs.load(it) }
+        if (prefs.getProperty('gradle.user.home') != gradle.gradleUserHomeDir.canonicalPath)
+            throw new GradleException('Buildship uses a different physical Gradle cache')
     }
 }
 
 sourceSets.main.resources.srcDir('src/generated/resources')
 
+def generateBarModels = tasks.register('generateBarModels', Exec) {
+    group = 'data generation'
+    commandLine 'node', 'tools/generate_bar_models.js'
+}
+tasks.named('processResources') { dependsOn generateBarModels }
+tasks.named('sourcesJar') { dependsOn generateBarModels }
+tasks.register('verifyBarModels', Exec) {
+    dependsOn generateBarModels
+    commandLine 'node', '--test', 'tools/test_bar_models.js'
+}
+tasks.named('check') { dependsOn 'verifyBarModels' }
+
+def portData = layout.buildDirectory.dir('generated/port-data')
+def generatePortData = tasks.register('generatePortData', Exec) {
+    inputs.file 'tools/generate_114_data.js'
+    inputs.file 'src/main/java/zone/moddev/mc/modernmetals/material/MaterialCatalogue.java'
+    inputs.files(fileTree('src/main/resources/data'), fileTree('src/generated/resources/data'))
+    outputs.dir portData
+    commandLine 'node', 'tools/generate_114_data.js'
+}
+sourceSets.main.resources.srcDir(portData)
+
 def recipeData = layout.buildDirectory.dir('generated/recipe-data')
 def generateRecipeData = tasks.register('generateRecipeData', Exec) {
+    dependsOn generatePortData
     group = 'data generation'
     inputs.file 'tools/generate_113_recipe_data.js'
     inputs.file 'src/main/java/zone/moddev/mc/modernmetals/material/MaterialCatalogue.java'
     inputs.files(fileTree('src/main/resources/data'), fileTree('src/generated/resources/data'))
+    inputs.dir portData
     outputs.dir recipeData
     commandLine 'node', 'tools/generate_113_recipe_data.js'
 }
@@ -192,6 +453,13 @@ def verifyRecipeData = tasks.register('verifyRecipeData', Exec) {
     commandLine 'node', '--test', 'tools/test_113_recipe_data.js'
 }
 tasks.named('check') { dependsOn verifyRecipeData }
+
+tasks.register('verifyPortData', Exec) {
+    dependsOn generatePortData
+    commandLine 'node', '--test', 'tools/test_114_port.js'
+}
+tasks.named('check') { dependsOn 'verifyPortData' }
+tasks.named('check') { dependsOn 'integrationTestClasses', 'clientIntegrationTestClasses' }
 
 tasks.named('processResources') {
     inputs.property('modVersion', mod_version)
@@ -215,8 +483,59 @@ def releaseJar = renamer.classes(tasks.named('jar', Jar)) {
 tasks.named('assemble') { dependsOn releaseJar }
 tasks.named('check') { dependsOn 'verifyReleaseDependencies' }
 
-apply from: 'gradle/development-orespawn.gradle'
+def probeJar = tasks.register('packagedProbeDeobfJar', Jar) {
+    dependsOn 'integrationTestClasses'
+    from sourceSets.integrationTest.output
+    archiveFileName = 'modernmetalsprobe-deobf.jar'
+    destinationDirectory = layout.buildDirectory.dir('packaged-probes')
+}
+def packagedProbeJar = renamer.classes(probeJar) {
+    map.from minecraft.dependency.toSrgFile
+    output = layout.buildDirectory.file('packaged-probes/modernmetalsprobe.jar')
+}
+tasks.register('runPackagedProbeServer', Exec) {
+    group = 'verification'
+    dependsOn releaseJar, packagedProbeJar, 'verifyReleaseDependencies'
+    dependsOn verifyLocalBase
+    timeout = java.time.Duration.ofMinutes(5)
+    doFirst {
+        File directory = file(providers.gradleProperty('probeDirectory').orElse('build/packaged-probe-server').get()).canonicalFile
+        if (!directory.toPath().startsWith(layout.buildDirectory.get().asFile.canonicalFile.toPath())
+                && !new File(directory, '.modernmetals-disposable-test').isFile()) {
+            throw new GradleException('Packaged probe requires a build directory or an explicitly marked disposable copy')
+        }
+        directory.mkdirs()
+        File mods = new File(directory, 'mods')
+        copy {
+            from releaseJar, packagedProbeJar, configurations.oreSpawnRelease
+            if (withBaseMetals.get()) from(useLocalBaseMetals ? files(file(localBasePin.publishedJar)) : configurations.baseMetalsRelease)
+            into mods
+        }
+        if (!new File(directory, 'eula.txt').exists()) new File(directory, 'eula.txt').text = 'eula=true\n'
+        if (!new File(directory, 'server.properties').exists()) new File(directory, 'server.properties').text =
+                'online-mode=false\nserver-port=0\nview-distance=2\nspawn-protection=0\nmax-tick-time=0\nlevel-seed=14162026\n'
+        File receipt = new File(directory, 'modernmetals-probe.json')
+        if (receipt.exists()) java.nio.file.Files.move(receipt.toPath(),new File(directory,
+                'modernmetals-probe.' + System.currentTimeMillis() + '.previous.json').toPath())
+        def runtime = providers.gradleProperty('packagedForgeServerRuntime').get()
+        File launcher = new File(runtime, "forge-${minecraft_version}-${forge_version}.jar")
+        if (!launcher.isFile()) throw new GradleException('Official Forge server runtime is incomplete')
+        workingDir directory
+        commandLine javaToolchains.launcherFor { languageVersion = JavaLanguageVersion.of(8) }.get().executablePath.asFile,
+                '-Xmx2g', '-Dmodernmetalsprobe.upgrade=' + providers.gradleProperty('probeWorldUpgrade').orElse('false').get(),
+                '-Dmodernmetalsprobe.titanium=' + providers.gradleProperty('probeTitanium').orElse('false').get(),
+                '-jar', launcher.absolutePath, 'nogui'
+        if (providers.gradleProperty('probeWorldUpgrade').orElse('false').get().toBoolean()) args '--forceUpgrade'
+    }
+    doLast {
+        File receipt = new File(workingDir, 'modernmetals-probe.json')
+        if (!receipt.isFile() || new groovy.json.JsonSlurper().parse(receipt).status != 'passed')
+            throw new GradleException("Packaged test failed; see ${receipt}")
+    }
+}
 
-apply from: 'gradle/release-113.gradle'
+// Uses the published OreSpawn release directly.
+
+apply from: 'gradle/release-114.gradle'
 
 apply from: 'gradle/normalize-javadoc-trees.gradle'

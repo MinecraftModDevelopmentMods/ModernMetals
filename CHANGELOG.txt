@@ -1,3 +1,20 @@
+3.0.0.114041 for Minecraft 1.14.4
+
+- Fixed overlapping bars for every material, including titanium.
+- Added a hash-pinned local Base Metals option for combined Eclipse testing.
+- Added all eight Eclipse test combinations with Base Metals, Base Gems and Base Minerals, each with its own saves and config.
+- Check the exact sibling jars in each profile so a Gradle refresh cannot quietly mix local builds or load an unwanted companion.
+
+
+- Ported Modern Metals to Forge 28 and pinned the published OreSpawn 4.1.7.114041 release.
+- Kept all 21 materials, the reviewed mining levels, alloy formulas and recipe discovery from 1.13.2.
+- Added native block loot and blast-furnace processing, including small powders and small blends.
+- Rods now craft in fours, gears in fours and plates in threes. Recycling follows the actual material cost.
+- Moved molten metal to Forge's fluid attributes and kept contact damage, animated textures and coloured buckets.
+- Updated smith trades for the new villager professions.
+- Kept both config entry points, Fantasy Level inheritance and the Base Metals crushing handoff.
+- Kept legacy world conversion and saved registry IDs. Always test upgrades on a copy.
+
 3.0.0.113021 for 1.13.2
 
 - Use Base Metals 3.0.3 or later when installed together, with its shared processing and mining fixes.

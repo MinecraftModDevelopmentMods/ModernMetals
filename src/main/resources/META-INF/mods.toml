@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[25,)"
+loaderVersion="[28,)"
 license="LGPL-2.1"
 issueTrackerURL="https://github.com/MinecraftModDevelopmentMods/ModernMetals/issues"
 
@@ -14,27 +14,27 @@ description="Adds modern metals, alloys, tools and armour."
 [[dependencies.modernmetals]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.13.2]"
+versionRange="[1.14.4]"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.modernmetals]]
 modId="forge"
 mandatory=true
-versionRange="[25,)"
+versionRange="[28,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.modernmetals]]
 modId="orespawn"
 mandatory=true
-versionRange="[4.1.7.113021,5.0.0)"
+versionRange="[4.1.7.114041,5.0.0)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.modernmetals]]
 modId="basemetals"
 mandatory=false
-versionRange="[3.0.3.113021,4.0.0)"
+versionRange="[3.0.2.114041,4.0.0)"
 ordering="AFTER"
 side="BOTH"

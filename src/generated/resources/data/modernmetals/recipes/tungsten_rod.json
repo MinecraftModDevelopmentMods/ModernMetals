@@ -2,7 +2,8 @@
   "type": "modernmetals:content_crafting",
   "recipe": {
     "result": {
-      "item": "modernmetals:tungsten_rod"
+      "item": "modernmetals:tungsten_rod",
+      "count": 4
     },
     "type": "minecraft:crafting_shaped",
     "pattern": [

@@ -91,10 +91,12 @@ test('steel blends can be used directly in downstream alloys without changing th
 });
 
 test('native recycling and repair quantities follow the registered crafting costs', () => {
-  for (const [form, count] of [['rod', 2], ['plate', 3], ['gear', 6], ['door', 2]]) {
+  for (const [form, count] of [['plate', 1], ['gear', 1], ['door', 2]]) {
     const value = recipe('smelting/beryllium_' + form + '_recycling');
     assert.deepEqual(value.result, { item: 'modernmetals:beryllium_ingot', count });
   }
+  assert.deepEqual(recipe('smelting/beryllium_rod_recycling').result,
+    { item: 'modernmetals:beryllium_nugget', count: 4 });
   assert.deepEqual(recipe('beryllium_shield_plate_repair').plate, { tag: 'forge:plates/beryllium' });
   assert.deepEqual(resource('data/forge/tags/items/plates/beryllium.json').values, ['modernmetals:beryllium_plate']);
   assert.equal(fs.existsSync(path.join(generated,

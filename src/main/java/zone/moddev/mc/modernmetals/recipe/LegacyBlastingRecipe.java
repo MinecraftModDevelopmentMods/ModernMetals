@@ -1,0 +1,67 @@
+package zone.moddev.mc.modernmetals.recipe;
+
+import com.google.gson.JsonObject;
+
+import zone.moddev.mc.modernmetals.ModernMetals;
+import zone.moddev.mc.modernmetals.config.ContentPolicy;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.world.World;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.BlastingRecipe;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.JSONUtils;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.crafting.CraftingHelper;
+
+/** Blast-furnace recipes that can produce more than one item. */
+public final class LegacyBlastingRecipe extends BlastingRecipe {
+    public LegacyBlastingRecipe(ResourceLocation id, String group, Ingredient ingredient,
+            ItemStack result, float experience, int cookingTime) {
+        super(id, group, ingredient, result, experience, cookingTime);
+    }
+
+    @Override public IRecipeSerializer<?> getSerializer() {
+        return CrushingRecipe.LEGACY_BLASTING_SERIALIZER;
+    }
+
+    @Override public boolean matches(IInventory inventory, World world) {
+        return allowed() && super.matches(inventory, world);
+    }
+
+    @Override public ItemStack getCraftingResult(IInventory inventory) {
+        return allowed() ? super.getCraftingResult(inventory) : ItemStack.EMPTY;
+    }
+
+    @Override public boolean isDynamic() { return !allowed(); }
+
+    private boolean allowed() {
+        return ContentPolicy.active().allows(getRecipeOutput().getItem().getRegistryName().toString());
+    }
+
+    public static final class Serializer extends net.minecraftforge.registries.ForgeRegistryEntry<IRecipeSerializer<?>>
+            implements IRecipeSerializer<LegacyBlastingRecipe> {
+        public Serializer() { setRegistryName(ModernMetals.MOD_ID, "legacy_blasting"); }
+        @Override public LegacyBlastingRecipe read(ResourceLocation id, JsonObject json) {
+            String group = JSONUtils.getString(json, "group", "");
+            Ingredient ingredient = Ingredient.deserialize(json.get("ingredient"));
+            ItemStack result = CraftingHelper.getItemStack(JSONUtils.getJsonObject(json, "result"), true);
+            return new LegacyBlastingRecipe(id, group, ingredient, result,
+                    JSONUtils.getFloat(json, "experience", 0.0F),
+                    JSONUtils.getInt(json, "cookingtime", 200));
+        }
+        @Override public LegacyBlastingRecipe read(ResourceLocation id, PacketBuffer buffer) {
+            return new LegacyBlastingRecipe(id, buffer.readString(32767), Ingredient.read(buffer),
+                    buffer.readItemStack(), buffer.readFloat(), buffer.readVarInt());
+        }
+        @Override public void write(PacketBuffer buffer, LegacyBlastingRecipe recipe) {
+            buffer.writeString(recipe.getGroup());
+            recipe.getIngredients().get(0).write(buffer);
+            buffer.writeItemStack(recipe.getRecipeOutput());
+            buffer.writeFloat(recipe.getExperience());
+            buffer.writeVarInt(recipe.getCookTime());
+        }
+    }
+}

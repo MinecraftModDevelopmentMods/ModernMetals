@@ -3,11 +3,11 @@ name: CodeQL
 on:
   push:
     branches:
-      - master-1.13.2
+      - master-1.14.4
       - 'feature/**'
   pull_request:
     branches:
-      - master-1.13.2
+      - master-1.14.4
   schedule:
     - cron: '47 7 * * 4'
 
@@ -58,7 +58,7 @@ jobs:
         run: |
           set -euo pipefail
           mirror="$RUNNER_TEMP/legacy-dependency-mirror"
-          bash gradle/stage-orespawn-release.sh "$mirror"
+          bash gradle/stage-release-dependencies.sh "$mirror"
           echo "repository=$mirror" >> "$GITHUB_OUTPUT"
 
       - name: Compile production code

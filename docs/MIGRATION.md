@@ -1,8 +1,11 @@
-# Upgrading a Modern Metals world to Minecraft 1.13.2
+# Upgrading a Modern Metals world to Minecraft 1.14.4
+
+Released 1.13.2 saves already have named block states and use vanilla data fixing.
+The legacy numeric conversion below is retained for older saves.
 
 Make a complete copy of the world. Keep the source outside the test instance.
-Install Forge 25.0.223, Modern Metals 3.0.0.113021 and OreSpawn 4.1.7.113021.
-Install the Forge 25 Base Metals version when upgrading a world that used
+Install Forge 28.2.26, Modern Metals 3.0.0.114041 and OreSpawn 4.1.7.114041.
+Install the Forge 28 Base Metals version when upgrading a world that used
 Base Metals or placed MMDLib's vanilla-extension blocks. Other add-ons need
 their own compatible versions and migration support.
 

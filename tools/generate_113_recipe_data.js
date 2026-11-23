@@ -22,7 +22,7 @@ function write(relative, value) {
 }
 
 const recipes = new Map();
-for (const directory of ['src/main/resources', 'src/generated/resources']) {
+for (const directory of ['src/main/resources', 'src/generated/resources', 'build/generated/port-data']) {
   const base = path.join(root, directory, 'data', 'modernmetals', 'recipes');
   for (const file of files(base)) {
     recipes.set(path.relative(base, file).replace(/\\/g, '/').slice(0, -5),
@@ -55,7 +55,7 @@ for (const category of ['ores', 'storage_blocks']) {
       entries.add('#forge:' + id);
     }
   }
-  for (const directory of ['src/main/resources', 'src/generated/resources']) {
+  for (const directory of ['src/main/resources', 'src/generated/resources', 'build/generated/port-data']) {
     const base = path.join(root, directory, 'data/forge/tags/blocks', category);
     for (const file of files(base)) {
       entries.add('#forge:' + category + '/' + path.relative(base, file).replace(/\\/g, '/').slice(0, -5));
@@ -163,7 +163,7 @@ add('coal_block_dust', { type: 'modernmetals:content_crafting', conditions: stan
 // Optional alloy ingredients need valid, empty tags in a standalone installation.
 for (const name of ['copper', 'steel', 'zinc', 'nickel']) {
   const relative = 'data/forge/tags/items/dusts/' + name + '.json';
-  if (!['src/main/resources', 'src/generated/resources'].some(directory =>
+  if (!['src/main/resources', 'src/generated/resources', 'build/generated/port-data'].some(directory =>
     fs.existsSync(path.join(root, directory, relative)))) {
     write(relative, { replace: false, values: [] });
   }
@@ -190,7 +190,7 @@ let unlocks = 0;
 for (const [name, outer] of recipes) {
   const recipe = outer.recipe || outer;
   const crafting = recipe.type.startsWith('minecraft:crafting_');
-  const smelting = ['minecraft:smelting', 'modernmetals:legacy_smelting'].includes(recipe.type);
+  const smelting = ['minecraft:smelting', 'modernmetals:legacy_smelting', 'modernmetals:legacy_blasting'].includes(recipe.type);
   if (!crafting && !smelting) continue;
   const criteria = { has_recipe: { trigger: 'minecraft:recipe_unlocked',
     conditions: { recipe: 'modernmetals:' + name } } };

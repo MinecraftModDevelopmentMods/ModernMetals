@@ -2,7 +2,8 @@
   "type": "modernmetals:content_crafting",
   "recipe": {
     "result": {
-      "item": "modernmetals:iridium_gear"
+      "item": "modernmetals:iridium_gear",
+      "count": 4
     },
     "type": "minecraft:crafting_shaped",
     "pattern": [

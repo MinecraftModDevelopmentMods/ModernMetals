@@ -3,14 +3,14 @@ package zone.moddev.mc.modernmetals.recipe;
 import java.util.Collections;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent;
 import zone.moddev.mc.modernmetals.ModernMetals;
 
@@ -22,15 +22,15 @@ public final class RecipeDiscovery {
 
     @SubscribeEvent
     public static void onLogin(PlayerEvent.PlayerLoggedInEvent event) {
-        if (!(event.getPlayer() instanceof EntityPlayerMP)) return;
-        EntityPlayerMP player = (EntityPlayerMP) event.getPlayer();
-        player.getServer().addScheduledTask(() -> discover(player));
+        if (!(event.getPlayer() instanceof ServerPlayerEntity)) return;
+        ServerPlayerEntity player = (ServerPlayerEntity) event.getPlayer();
+        player.getServer().execute(() -> discover(player));
     }
 
     @SubscribeEvent
     public static void onServerStarting(FMLServerAboutToStartEvent event) {
         MinecraftServer server = event.getServer();
-        server.getResourceManager().addReloadListener(resources -> pendingReload = server);
+        server.getResourceManager().addReloadListener((net.minecraft.resources.IResourceManagerReloadListener) resources -> pendingReload = server);
     }
 
     @SubscribeEvent
@@ -42,7 +42,7 @@ public final class RecipeDiscovery {
         server.getPlayerList().getPlayers().forEach(RecipeDiscovery::discover);
     }
 
-    public static void discover(EntityPlayerMP player) {
+    public static void discover(ServerPlayerEntity player) {
         CriteriaTriggers.INVENTORY_CHANGED.trigger(player, player.inventory);
         for (IRecipe recipe : player.getServer().getRecipeManager().getRecipes()) {
             if (!ModernMetals.MOD_ID.equals(recipe.getId().getNamespace()) || recipe.isDynamic()

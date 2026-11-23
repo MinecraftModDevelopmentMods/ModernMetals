@@ -15,6 +15,8 @@ import zone.moddev.mc.modernmetals.client.ClientSetup;
 import zone.moddev.mc.modernmetals.entity.ModEntities;
 import zone.moddev.mc.modernmetals.migration.LegacyWorldDataHook;
 import zone.moddev.mc.modernmetals.recipe.CrushingRecipe;
+import zone.moddev.mc.modernmetals.recipe.NonEmptyTagCondition;
+import zone.moddev.mc.modernmetals.content.ModContent;
 import zone.moddev.mc.modernmetals.network.ContentModeNetwork;
 
 @Mod(ModernMetals.MOD_ID)
@@ -31,10 +33,7 @@ public final class ModernMetals {
     }
 
     private void setup(FMLCommonSetupEvent event) {
-        // Creating a channel grows Forge 25's shared listener tables.
         DeferredWorkQueue.runLater(ContentModeNetwork::register);
-        // Forge's world-save hook list is shared and is not thread-safe.
         DeferredWorkQueue.runLater(LegacyWorldDataHook::register);
-        DeferredWorkQueue.runLater(CrushingRecipe::register);
     }
 }

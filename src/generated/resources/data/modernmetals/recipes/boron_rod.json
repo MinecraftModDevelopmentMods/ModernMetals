@@ -2,7 +2,8 @@
   "type": "modernmetals:content_crafting",
   "recipe": {
     "result": {
-      "item": "modernmetals:boron_rod"
+      "item": "modernmetals:boron_rod",
+      "count": 4
     },
     "type": "minecraft:crafting_shaped",
     "pattern": [
