@@ -1,3 +1,18 @@
+3.0.0.115021 for Minecraft 1.15.2
+
+Doors, trapdoors and bars no longer hide the terrain behind their gaps. Their
+placement and collision behaviour stay the same.
+
+This brings the released 1.14 build across to Forge 31.2.57, using OreSpawn
+4.1.7.115021. The 21 materials, saved IDs, alloy yields, recipe discovery and
+shared crushing behaviour stay the same. Rendering uses the native 1.15 layers
+and projectile registrations; molten metal keeps its contact damage.
+
+The bars retain vanilla connection geometry and ore overlays keep their 0.05
+spacing and bounded UVs. Eight isolated Eclipse combinations cover Base Metals,
+Base Gems and Base Minerals. Local sibling pins select the corrected candidates;
+the optional Base Metals dependency uses the published 3.0.3.115021 build.
+
 3.0.0.114041 for Minecraft 1.14.4
 
 - Fixed overlapping bars for every material, including titanium.

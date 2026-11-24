@@ -67,8 +67,9 @@ public final class ModernMetalsProbe {
             recipes(server,world);
             furnace(world);
             discovery(server,world);
-            checks+=Native114Checks.run(server);
+            checks+=Native115Checks.run(server);
             checks+=ProcessingChecks.run(server,world);
+            checks+=StackChecks.run(server,world);
             checks+=RangedChecks.run(server);
             checks+=OrePlacementChecks.run(server);
             }

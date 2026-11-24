@@ -31,7 +31,7 @@ public final class ModernMetalsClientProbe {
         Minecraft mc=Minecraft.getInstance();
         try{
             if(ticks%200==0)System.out.println("MODERN_CLIENT_STAGE "+state+" screen="+(mc.currentScreen==null?"null":mc.currentScreen.getClass().getName()));
-            if(mc.currentScreen instanceof net.minecraftforge.fml.client.gui.LoadingErrorScreen){
+            if(mc.currentScreen instanceof net.minecraftforge.fml.client.gui.screen.LoadingErrorScreen){
                 StringBuilder details=new StringBuilder();
                 for(java.lang.reflect.Field f:mc.currentScreen.getClass().getDeclaredFields())if(java.util.List.class.isAssignableFrom(f.getType())){
                     f.setAccessible(true);for(Object message:(java.util.List<?>)f.get(mc.currentScreen)){
@@ -47,11 +47,11 @@ public final class ModernMetalsClientProbe {
                 if(Boolean.getBoolean("modernmetalsclientprobe.menuOnly")){
                     Files.write(Paths.get("client-probe.json"),("{\"status\":\"passed\",\"menuOnly\":true,\"expectedSiblings\":\""+System.getProperty("modernmetalsclientprobe.expectedSiblings","")+"\"}").getBytes(java.nio.charset.StandardCharsets.UTF_8));state=5;mc.shutdown();return;
                 }
-                mc.launchIntegratedServer("modernmetals-smoke","Modern Metals 1.14 smoke",new WorldSettings(14162026L,GameType.CREATIVE,false,false,WorldType.DEFAULT));state=1;ticks=0;
+                mc.launchIntegratedServer("modernmetals-smoke","Modern Metals 1.15 smoke",new WorldSettings(14162026L,GameType.CREATIVE,false,false,WorldType.DEFAULT));state=1;ticks=0;
             }else if(state==1&&mc.world!=null&&mc.player!=null&&++loaded>80){
                 stopping=mc.getIntegratedServer();mc.world.sendQuittingDisconnectingPacket();mc.loadWorld(null);mc.displayGuiScreen(new MainMenuScreen());state=2;ticks=0;loaded=0;
             }else if(state==2&&mc.currentScreen instanceof MainMenuScreen&&!stopping.getExecutionThread().isAlive()){
-                mc.launchIntegratedServer("modernmetals-smoke","Modern Metals 1.14 smoke",null);state=3;ticks=0;
+                mc.launchIntegratedServer("modernmetals-smoke","Modern Metals 1.15 smoke",null);state=3;ticks=0;
             }else if(state==3&&mc.world!=null&&mc.player!=null&&++loaded>80){
                 stopping=mc.getIntegratedServer();mc.world.sendQuittingDisconnectingPacket();mc.loadWorld(null);mc.displayGuiScreen(new MainMenuScreen());state=4;ticks=0;
             }else if(state==4&&!stopping.getExecutionThread().isAlive()){
@@ -62,6 +62,7 @@ public final class ModernMetalsClientProbe {
         }
     }
     private static void validate(Minecraft mc){
+        try { CutoutOcclusionChecks.run(); } catch (Exception e) { throw new IllegalStateException(e); }
         require(ModList.get().isLoaded("basemetals")==Boolean.getBoolean("modernmetalsclientprobe.expectBase"),"Expected Base Metals installation");
         String siblings=System.getProperty("modernmetalsclientprobe.expectedSiblings");
         if(siblings!=null){
@@ -79,6 +80,24 @@ public final class ModernMetalsClientProbe {
         Screen child=WorldSettingsExtensionRegistry.extensions().stream().filter(e->"modernmetals:configuration".equals(e.id().toString())).findFirst().get().createScreen(parent);
         require(child instanceof ModernMetalsConfigScreen,"OreSpawn child config");mc.displayGuiScreen(child);child.onClose();require(mc.currentScreen==parent,"Child closes to parent");
         BarModelChecks.run(mc,"modernmetals");
+        if(ModList.get().isLoaded("basegems"))BarModelChecks.run(mc,"basegems");
+        for(String namespace:new String[]{"basegems","baseminerals"}){
+            if(!ModList.get().isLoaded(namespace))continue;
+            int siblingOres=0;
+            for(Block block:net.minecraftforge.registries.ForgeRegistries.BLOCKS.getValues()){
+                if(!namespace.equals(block.getRegistryName().getNamespace())||!block.getRegistryName().getPath().endsWith("_ore"))continue;
+                String name=block.getRegistryName().getPath();
+                require(net.minecraft.client.renderer.RenderTypeLookup.canRenderInLayer(block.getDefaultState(),
+                        net.minecraft.client.renderer.RenderType.getCutoutMipped()),"Sibling ore layer "+block.getRegistryName());
+                validateOreModel(mc.getBlockRendererDispatcher().getModelForState(block.getDefaultState()),block,name,
+                        "minecraft:block/stone",namespace+":blocks/ore_overlays/"+name);
+                validateOreModel(mc.getItemRenderer().getItemModelWithOverrides(new ItemStack(block),null,null),null,name,
+                        "minecraft:block/stone",namespace+":blocks/ore_overlays/"+name);
+                siblingOres++;
+            }
+            require(siblingOres==(namespace.equals("basegems")?33:7),"Complete sibling ore models "+namespace);
+            System.out.println("SIBLING_ORE_MODELS PASS mod="+namespace+" ores="+siblingOres);
+        }
         if(ModList.get().isLoaded("basemetals")){
             BarModelChecks.run(mc,"basemetals");
             int baseOres=0;
@@ -94,9 +113,9 @@ public final class ModernMetalsClientProbe {
         for(Map.Entry<String,RegistryHandle<net.minecraft.block.Block>> e:ModContent.blocksById().entrySet())if(e.getKey().endsWith("_ore")){
             ores++;net.minecraft.block.Block block=e.getValue().get();String name=e.getKey();
             if(Arrays.asList("thorium_ore","galvanizedsteel_ore","nichrome_ore","stainlesssteel_ore").contains(name)){
-                require(block.getRenderLayer()==BlockRenderLayer.SOLID,"Historic solid ore "+name);continue;
+                require(net.minecraft.client.renderer.RenderTypeLookup.canRenderInLayer(block.getDefaultState(),net.minecraft.client.renderer.RenderType.getSolid()),"Historic solid ore "+name);continue;
             }
-            require(block.getRenderLayer()==BlockRenderLayer.CUTOUT_MIPPED,"Ore cutout "+name);
+            require(net.minecraft.client.renderer.RenderTypeLookup.canRenderInLayer(block.getDefaultState(),net.minecraft.client.renderer.RenderType.getCutoutMipped()),"Ore cutout "+name);
             validateOreModel(mc.getBlockRendererDispatcher().getModelForState(block.getDefaultState()),block,name,"minecraft:block/stone","modernmetals:blocks/ore_overlays/"+name);
             validateOreModel(mc.getItemRenderer().getItemModelWithOverrides(new ItemStack(block),null,null),null,name,"minecraft:block/stone","modernmetals:blocks/ore_overlays/"+name);
         }
@@ -105,7 +124,16 @@ public final class ModernMetalsClientProbe {
             ItemStack item=new ItemStack(ModContent.item(name).get());IBakedModel model=mc.getItemRenderer().getItemModelWithOverrides(item,null,null);
             require(model!=mc.getModelManager().getMissingModel(),"Item model "+name);require(!item.getDisplayName().getString().startsWith("item.modernmetals."),"Item translation "+name);
         }
-        for(String name:ModContent.fluids().keySet())validateBucketModel(mc,name+"_bucket");
+        for(String name:ModContent.fluids().keySet()){
+            validateBucketModel(mc,name+"_bucket");
+            FluidContent fluid=ModContent.fluids().get(name);
+            require(net.minecraft.client.renderer.RenderTypeLookup.canRenderInLayer(fluid.source().get().getDefaultState(),
+                    net.minecraft.client.renderer.RenderType.getTranslucent()),"Molten source layer "+name);
+            require(net.minecraft.client.renderer.RenderTypeLookup.canRenderInLayer(fluid.flowing().get().getDefaultState(),
+                    net.minecraft.client.renderer.RenderType.getTranslucent()),"Molten flowing layer "+name);
+            require(net.minecraft.client.renderer.RenderTypeLookup.canRenderInLayer(fluid.block().get().getDefaultState(),
+                    net.minecraft.client.renderer.RenderType.getTranslucent()),"Molten block layer "+name);
+        }
     }
     private static void validateOreModel(IBakedModel model, Block block, String name, String host, String overlay) {
         require(host.equals(model.getParticleTexture().getName().toString()), name + " particle host");
@@ -119,18 +147,18 @@ public final class ModernMetalsClientProbe {
             boolean hasBase = false;
             boolean hasOverlay = false;
             for (BakedQuad quad : quads) {
-                String texture = quad.getSprite().getName().toString();
+                String texture = quad.func_187508_a().getName().toString();
                 hasBase |= host.equals(texture);
                 hasOverlay |= overlay.equals(texture);
-                require(!"missingno".equals(quad.getSprite().getName().getPath()), name + " missing texture");
+                require(!"missingno".equals(quad.func_187508_a().getName().getPath()), name + " missing texture");
                 validateOreVertices(quad, overlay.equals(texture), name);
                 if (overlay.equals(texture)) {
                     boolean transparent = false;
                     boolean visible = false;
 
-                    for (int y = 0; y < quad.getSprite().getHeight(); y++) {
-                        for (int x = 0; x < quad.getSprite().getWidth(); x++) {
-                            if (quad.getSprite().isPixelTransparent(0, x, y)) transparent = true;
+                    for (int y = 0; y < quad.func_187508_a().getHeight(); y++) {
+                        for (int x = 0; x < quad.func_187508_a().getWidth(); x++) {
+                            if (quad.func_187508_a().isPixelTransparent(0, x, y)) transparent = true;
                             else visible = true;
                         }
                     }
@@ -150,13 +178,13 @@ public final class ModernMetalsClientProbe {
         float high = overlay ? 16.05F / 16 : 1;
 
         for (int vertex = 0; vertex < 4; vertex++) {
-            float u = quad.getSprite().getUnInterpolatedU(Float.intBitsToFloat(vertices[vertex * stride + 4]));
-            float v = quad.getSprite().getUnInterpolatedV(Float.intBitsToFloat(vertices[vertex * stride + 5]));
+            float u = (Float.intBitsToFloat(vertices[vertex * stride + 4]) - quad.func_187508_a().getMinU()) * 16 / (quad.func_187508_a().getMaxU() - quad.func_187508_a().getMinU());
+            float v = (Float.intBitsToFloat(vertices[vertex * stride + 5]) - quad.func_187508_a().getMinV()) * 16 / (quad.func_187508_a().getMaxV() - quad.func_187508_a().getMinV());
             require(u >= -0.01F && u <= 16.01F && v >= -0.01F && v <= 16.01F, name + " samples outside its texture sprite");
             for (int axis = 0; axis < 3; axis++) {
                 float coordinate = Float.intBitsToFloat(vertices[vertex * stride + axis]);
                 require(Math.min(Math.abs(coordinate - low), Math.abs(coordinate - high)) < 0.000001F,
-                        name + " incorrect " + (overlay ? "overlay" : "base") + " vertex " + coordinate + " sprite=" + quad.getSprite().getName());
+                        name + " incorrect " + (overlay ? "overlay" : "base") + " vertex " + coordinate + " sprite=" + quad.func_187508_a().getName());
             }
         }
     }
@@ -172,7 +200,7 @@ public final class ModernMetalsClientProbe {
         require(!quads.isEmpty(), name + " has no rendered quads");
         boolean hasTintedFluidLayer = false;
         for (BakedQuad quad : quads) {
-            require(!"missingno".equals(quad.getSprite().getName().getPath()),
+            require(!"missingno".equals(quad.func_187508_a().getName().getPath()),
                     name + " uses the missing-texture sprite");
             if (quad.hasTintIndex() && quad.getTintIndex() == 1) hasTintedFluidLayer = true;
         }

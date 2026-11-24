@@ -1,7 +1,7 @@
-name: Validate Modern Metals 1.14.4 tag
+name: Validate Modern Metals 1.15.2 tag
 on:
   push:
-    tags: ['*.*.*.114041']
+    tags: ['*.*.*.115021']
 permissions:
   contents: read
   actions: read
@@ -16,5 +16,5 @@ jobs:
         run: |
           set -euo pipefail
           test "$GITHUB_REF_NAME" = "$(sed -n 's/^mod_version=//p' gradle.properties)"
-          grep -Fxq 'minecraft_version=1.14.4' gradle.properties
+          grep -Fxq 'minecraft_version=1.15.2' gradle.properties
           echo 'Tag validated. Publication uses deploy-release.yml with explicit confirmation.' >> "$GITHUB_STEP_SUMMARY"

@@ -15,6 +15,9 @@ final class BarModelChecks {
         for(Block block:ForgeRegistries.BLOCKS.getValues()){
             if(!block.getRegistryName().getNamespace().equals(namespace)||!block.getRegistryName().getPath().endsWith("_bars"))continue;
             materials++;
+            if(!net.minecraft.client.renderer.RenderTypeLookup.canRenderInLayer(block.getDefaultState(),
+                    net.minecraft.client.renderer.RenderType.getCutoutMipped()))
+                throw new IllegalStateException("Bars are not in the cutout layer: "+block.getRegistryName());
             for(BlockState state:block.getStateContainer().getValidStates()){
                 BlockState vanilla=Blocks.IRON_BARS.getDefaultState();
                 for(IProperty property:vanilla.getProperties()){
@@ -37,7 +40,7 @@ final class BarModelChecks {
         for(Direction side:Direction.values())quads.addAll(model.getQuads(state,side,new Random(42)));
         Map<String,Integer> result=new TreeMap<>();
         for(BakedQuad quad:quads){
-            if(quad.getSprite().getName().getPath().equals("missingno"))throw new IllegalStateException("Missing bars sprite "+state);
+            if(quad.func_187508_a().getName().getPath().equals("missingno"))throw new IllegalStateException("Missing bars sprite "+state);
             int[] data=quad.getVertexData();int stride=data.length/4;List<String> vertices=new ArrayList<>();
             for(int v=0;v<4;v++)vertices.add(Math.round(Float.intBitsToFloat(data[v*stride])*1000000)+","+Math.round(Float.intBitsToFloat(data[v*stride+1])*1000000)+","+Math.round(Float.intBitsToFloat(data[v*stride+2])*1000000));
             Collections.sort(vertices);String key=quad.getFace()+vertices.toString();result.merge(key,1,Integer::sum);

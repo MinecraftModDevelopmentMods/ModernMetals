@@ -1,4 +1,4 @@
-// Forge 28 moved block drops into data. Keep the established 1.13 item IDs and yields.
+// Retain native block loot and furnace processing from the 1.14 port.
 const fs=require('fs');
 const path=require('path');
 const root=path.resolve(__dirname,'..'),output=path.join(root,'build/generated/port-data');

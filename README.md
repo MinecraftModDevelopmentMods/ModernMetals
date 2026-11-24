@@ -1,4 +1,4 @@
-# Modern Metals for Minecraft 1.14.4
+# Modern Metals for Minecraft 1.15.2
 
 Modern Metals adds 21 metals and alloys, including boron, beryllium, thorium
 and titanium. Crush and smelt ores, blend alloys, or make tools, armour and
@@ -6,15 +6,15 @@ building blocks.
 
 ## Installation
 
-Use Java 8 and Forge **28.2.26** for Minecraft **1.14.4**. Install Modern
-Metals and [OreSpawn 4.1.7.114041](https://github.com/MinecraftModDevelopmentMods/OreSpawn/releases/tag/4.1.7.114041)
-on both the client and server. [Base Metals 3.0.2.114041](https://github.com/MinecraftModDevelopmentMods/BaseMetals/releases/tag/3.0.2.114041)
+Use Java 8 and Forge **31.2.57** for Minecraft **1.15.2**. Install Modern
+Metals and [OreSpawn 4.1.7.115021](https://github.com/MinecraftModDevelopmentMods/OreSpawn/releases/tag/4.1.7.115021)
+on both the client and server. [Base Metals 3.0.3.115021](https://github.com/MinecraftModDevelopmentMods/BaseMetals/releases/tag/3.0.3.115021)
 is optional. Its copper, steel, zinc and nickel powders supply ingredients
 for several alloys. Modern Metals contributes its crushing recipes to Base
 Metals when both are installed.
 
 OreSpawn places the ores. Titanium ore is off by default; rutile and magnesium
-still make titanium. Retrogen is off. This version follows vanilla 1.14
+still make titanium. Retrogen is off. This version follows vanilla 1.15
 mining: pickaxes drop ore blocks, and crackhammers produce powders.
 
 Open **Mods → Modern Metals → Config**, or choose Modern Metals from the
@@ -64,14 +64,14 @@ Open a complete copy of the world and keep the original outside the test
 instance. Install compatible versions of every mod that supplied saved
 blocks or items. Do not remove an old world's Forge registry snapshot.
 See [world migration](docs/MIGRATION.md) for the legacy numeric conversion
-and the [1.14 port notes](docs/PORTING_114.md) for the port's checks.
+and the [1.15 port notes](docs/PORTING_115.md) for the port's checks.
 
 ## Building and Eclipse
 
 Gradle uses Java 17, Mavenizer uses Java 25, and compilation and Minecraft use
 Java 8. Node.js runs the data generators and resource checks.
 
-Run `gradlew build verify114ReleaseArtifacts genEclipseRuns eclipse`.
+Run `gradlew build verify115ReleaseArtifacts genEclipseRuns eclipse`.
 The build verifies the published OreSpawn jar's SHA-256. Eclipse's compatibility
 profiles also verify the sibling jars before staging their mapped versions.
 
@@ -114,7 +114,7 @@ After rebuilding Base Metals, run the pin task again. A stale hash stops the
 profile refresh. Use `-PuseLocalBaseMetals=false` to test the published jar.
 Release builds use published dependencies.
 
-For Base Gems and Base Minerals, build their sibling 1.14 checkouts first, then
+For Base Gems and Base Minerals, build their sibling 1.15 checkouts first, then
 run `gradlew pinLocalSiblingMods` here. Run `gradlew eclipse` as a separate
 command afterwards. The ignored `local-sibling-mods.json` records both jars'
 paths and hashes for each mod. Regenerate these pins after rebuilding either

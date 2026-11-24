@@ -37,13 +37,13 @@ tasks.withType(Javadoc).configureEach {
 tasks.named('jar', Jar) {
     manifest.attributes('Implementation-Title': archiveName, 'Implementation-Version': project.version,
             'Maven-Artifact': "${expectedGroup}:${archiveName}:${project.version}".toString(),
-            'Build-Target': 'minecraft-1.14.4-forge-28.2.26-java-8')
+            'Build-Target': 'minecraft-1.15.2-forge-31.2.57-java-8')
 }
 tasks.named('assemble') { dependsOn playerJar, tasks.named('sourcesJar'), tasks.named('javadocJar') }
 
 def sha256 = { File file -> MessageDigest.getInstance('SHA-256').digest(file.bytes).encodeHex().toString() }
 def audit = { File directory ->
-    if (project.group.toString() != expectedGroup || !(project.version.toString() ==~ /\d+\.\d+\.\d+\.114041/)) {
+    if (project.group.toString() != expectedGroup || !(project.version.toString() ==~ /\d+\.\d+\.\d+\.115021/)) {
         throw new GradleException('Wrong Maven or Minecraft release identity')
     }
     if (directory.listFiles().findAll { it.name.endsWith('.jar') }.collect { it.name }.sort() != releaseNames.sort(false)) {
@@ -76,8 +76,8 @@ def audit = { File directory ->
                 String metadata = zip.getInputStream(zip.getEntry('META-INF/mods.toml')).getText('UTF-8')
                 if (metadata.contains('${') || !metadata.contains('modId="' + modId + '"')
                         || !metadata.contains('version="' + project.version + '"')
-                        || !metadata.contains('versionRange="[1.14.4]"')
-                        || !metadata.contains('versionRange="[4.1.7.114041,5.0.0)"')
+                        || !metadata.contains('versionRange="[1.15.2]"')
+                        || !metadata.contains('versionRange="[4.1.7.115021,5.0.0)"')
                         || !metadata.contains('versionRange="[' + project.basemetals_version + ',4.0.0)"')) {
                     throw new GradleException('Wrong or unresolved release mod metadata')
                 }
@@ -86,14 +86,14 @@ def audit = { File directory ->
     }
 }
 
-tasks.register('verify114ReleaseArtifacts') {
+tasks.register('verify115ReleaseArtifacts') {
     group = 'verification'
     dependsOn tasks.named('assemble'), tasks.named('check')
     doLast { audit(layout.buildDirectory.dir('libs').get().asFile) }
 }
-tasks.register('write114ReleaseChecksums') {
+tasks.register('write115ReleaseChecksums') {
     group = 'verification'
-    dependsOn tasks.named('verify114ReleaseArtifacts')
+    dependsOn tasks.named('verify115ReleaseArtifacts')
     doLast {
         File output = layout.buildDirectory.file('release/SHA256SUMS').get().asFile
         output.parentFile.mkdirs()
@@ -102,7 +102,7 @@ tasks.register('write114ReleaseChecksums') {
         }.join('\n') + '\n', 'UTF-8')
     }
 }
-tasks.register('verify114PreparedReleaseArtifacts') {
+tasks.register('verify115PreparedReleaseArtifacts') {
     group = 'verification'
     doLast {
         if (!preparedDirectory.isPresent()) throw new GradleException('preparedReleaseDir is required')
@@ -146,7 +146,7 @@ publishing {
             }
             pom {
                 name = 'Modern Metals'
-                description = 'Modern Metals for Minecraft 1.14.4, using Forge 28 and OreSpawn 4.'
+                description = 'Modern Metals for Minecraft 1.15.2, using Forge 31 and OreSpawn 4.'
                 url = 'https://github.com/MinecraftModDevelopmentMods/ModernMetals'
                 licenses {
                     license {
@@ -175,7 +175,7 @@ publishing {
         }
     }
 }
-tasks.register('verify114MavenCoordinates') {
+tasks.register('verify115MavenCoordinates') {
     dependsOn 'generatePomFileForMavenJavaPublication'
     doLast {
         def pom = new XmlSlurper(false, false).parse(layout.buildDirectory.file('publications/mavenJava/pom-default.xml').get().asFile)
@@ -190,10 +190,10 @@ tasks.register('verify114MavenCoordinates') {
     }
 }
 
-tasks.named('check') { dependsOn 'verify114MavenCoordinates' }
+tasks.named('check') { dependsOn 'verify115MavenCoordinates' }
 tasks.withType(PublishToMavenRepository).configureEach {
-    dependsOn 'verify114MavenCoordinates'
-    dependsOn preparedDirectory.isPresent() ? 'verify114PreparedReleaseArtifacts' : 'verify114ReleaseArtifacts'
+    dependsOn 'verify115MavenCoordinates'
+    dependsOn preparedDirectory.isPresent() ? 'verify115PreparedReleaseArtifacts' : 'verify115ReleaseArtifacts'
     doFirst {
         def url = providers.environmentVariable('MAVEN_UPLOAD_URL').getOrElse('')
         if (!url.startsWith('https://') || url.startsWith('https://invalid.invalid')

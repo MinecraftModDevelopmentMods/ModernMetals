@@ -14,8 +14,8 @@ def enabled = pinFile.isFile() && !release
 ext.siblingCompatibilityEnabled = enabled
 Map pins = enabled ? new JsonSlurper().parse(pinFile) : [:]
 def definitions = [
-    basegems: [name: 'BaseGems', checkout: '../../Base Gems 114/BaseGems', property: 'baseGemsCheckout'],
-    baseminerals: [name: 'BaseMinerals', checkout: '../../Base Minerals 114/BaseMinerals', property: 'baseMineralsCheckout']
+    basegems: [name: 'BaseGems', checkout: '../../Base Gems 115/BaseGems', property: 'baseGemsCheckout'],
+    baseminerals: [name: 'BaseMinerals', checkout: '../../Base Minerals 115/BaseMinerals', property: 'baseMineralsCheckout']
 ]
 def digest = { File jar -> MessageDigest.getInstance('SHA-256').digest(jar.bytes).encodeHex().toString() }
 def siblingJar = { File f ->
@@ -37,7 +37,7 @@ ext.siblingCompatibilityProfiles = profiles
 
 tasks.register('pinLocalSiblingMods') {
     group = 'development'
-    description = 'Pins the already-built 1.14 Base Gems and Base Minerals player/mapped jars.'
+    description = 'Pins the already-built 1.15 Base Gems and Base Minerals player/mapped jars.'
     doLast {
         Map next = [:]
         definitions.each { id, definition ->
@@ -45,7 +45,7 @@ tasks.register('pinLocalSiblingMods') {
             Properties properties = new Properties()
             new File(checkout, 'gradle.properties').withInputStream { properties.load(it) }
             String version = properties.getProperty('mod_version')
-            if (!version?.endsWith('.114041')) throw new GradleException("Not a Forge 1.14.4 candidate: ${checkout}")
+            if (!version?.endsWith('.115021')) throw new GradleException("Not a Forge 1.15.2 candidate: ${checkout}")
             Map entry = [version: version]
             [player: "build/libs/${definition.name}-${version}.jar", mapped: "build/libs-dev/${definition.name}-${version}-deobf.jar"].each { kind, relative ->
                 File jar = new File(checkout, relative)
@@ -64,7 +64,7 @@ def verifyPins = tasks.register('verifyLocalSiblingMods') {
         if (!enabled) return
         definitions.each { id, definition ->
             Map pin = pins[id]
-            if (!pin || !pin.version?.endsWith('.114041')) throw new GradleException("Missing 1.14 ${definition.name} pin; run pinLocalSiblingMods")
+            if (!pin || !pin.version?.endsWith('.115021')) throw new GradleException("Missing 1.15 ${definition.name} pin; run pinLocalSiblingMods")
             ['player', 'mapped'].each { kind ->
                 File jar = file(pin[kind + 'Jar'])
                 if (!jar.isFile() || digest(jar) != pin[kind + 'Sha256']) throw new GradleException("Local ${definition.name} changed. Run pinLocalSiblingMods, then regenerate Eclipse launches: ${jar}")

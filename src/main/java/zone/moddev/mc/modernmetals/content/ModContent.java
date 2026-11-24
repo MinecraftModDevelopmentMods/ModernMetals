@@ -37,7 +37,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraftforge.common.ToolType;
@@ -130,6 +129,10 @@ public final class ModContent {
         }
     }
 
+    public static boolean usesOreOverlay(Block block) {
+        return block instanceof HarvestOre && ((HarvestOre) block).overlay;
+    }
+
     public static Map<String, MaterialContent> materials() { return Collections.unmodifiableMap(MATERIALS); }
     public static Map<String, RegistryHandle<Block>> blocksById() { return Collections.unmodifiableMap(BLOCKS_BY_ID); }
     public static Map<String, RegistryHandle<Item>> itemsById() { return Collections.unmodifiableMap(ITEMS_BY_ID); }
@@ -211,11 +214,11 @@ public final class ModContent {
         if ("plate".equals(form)) {
             factory = new Supplier<Block>() { @Override public Block get() { return new PlateBlock(properties.get(), material.requiredHarvestLevel()); } };
         } else if ("bars".equals(form)) {
-            factory = new Supplier<Block>() { @Override public Block get() { return new HarvestPane(properties.get().variableOpacity(), material.requiredHarvestLevel()); } };
+            factory = new Supplier<Block>() { @Override public Block get() { return new HarvestPane(properties.get().variableOpacity().notSolid(), material.requiredHarvestLevel()); } };
         } else if ("door".equals(form)) {
-            factory = new Supplier<Block>() { @Override public Block get() { return new HarvestDoor(properties.get().variableOpacity(), material.requiredHarvestLevel()); } };
+            factory = new Supplier<Block>() { @Override public Block get() { return new HarvestDoor(properties.get().variableOpacity().notSolid(), material.requiredHarvestLevel()); } };
         } else if ("trapdoor".equals(form)) {
-            factory = new Supplier<Block>() { @Override public Block get() { return new HarvestTrapDoor(properties.get().variableOpacity(), material.requiredHarvestLevel()); } };
+            factory = new Supplier<Block>() { @Override public Block get() { return new HarvestTrapDoor(properties.get().variableOpacity().notSolid(), material.requiredHarvestLevel()); } };
         } else if ("button".equals(form)) {
             factory = new Supplier<Block>() { @Override public Block get() { return new HarvestButton(properties.get().doesNotBlockMovement(), material.requiredHarvestLevel()); } };
         } else if ("slab".equals(form)) {
@@ -368,8 +371,6 @@ public final class ModContent {
             this.overlay = overlay;
         }
 
-        // Cutout rendering leaves the transparent parts of the ore overlay clear.
-        @Override public BlockRenderLayer getRenderLayer() { return overlay ? BlockRenderLayer.CUTOUT_MIPPED : BlockRenderLayer.SOLID; }
     }
     private static class HarvestPane extends PaneBlock {
         private final int level;

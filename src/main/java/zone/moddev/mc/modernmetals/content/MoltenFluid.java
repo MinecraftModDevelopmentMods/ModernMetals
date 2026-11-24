@@ -7,7 +7,6 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.fluid.IFluidState;
 import net.minecraft.item.Item;
 import net.minecraft.state.StateContainer;
-import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorld;
@@ -37,8 +36,6 @@ public abstract class MoltenFluid extends FlowingFluid {
     @Override public Fluid getStillFluid() { return content().source().get(); }
     @Override public Item getFilledBucket() { return content().bucket().get(); }
 
-    @Override @OnlyIn(Dist.CLIENT)
-    public BlockRenderLayer getRenderLayer() { return BlockRenderLayer.TRANSLUCENT; }
     @Override protected boolean canSourcesMultiply() { return false; }
     @Override protected void beforeReplacingBlock(IWorld world, BlockPos pos, BlockState state) {
         net.minecraft.block.Block.spawnDrops(state, world.getWorld(), pos);
@@ -50,7 +47,7 @@ public abstract class MoltenFluid extends FlowingFluid {
     @Override public boolean isEquivalentTo(Fluid fluid) {
         return fluid == content().source().get() || fluid == content().flowing().get();
     }
-    @Override protected boolean func_215665_a(IFluidState state, net.minecraft.world.IBlockReader world,
+    @Override protected boolean canDisplace(IFluidState state, net.minecraft.world.IBlockReader world,
             BlockPos pos, Fluid fluid, Direction direction) {
         return direction == Direction.DOWN && !fluid.isEquivalentTo(this);
     }
