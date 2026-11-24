@@ -1,16 +1,16 @@
-name: Modern Metals 1.14.4 CI
+name: Modern Metals 1.15.2 CI
 
 on:
   push:
-    branches: [master-1.14.4, 'feature/**']
+    branches: [master-1.15.2, 'feature/**']
   pull_request:
-    branches: [master-1.14.4]
+    branches: [master-1.15.2]
 
 permissions:
   contents: read
 
 concurrency:
-  group: modernmetals-114-${{ github.workflow }}-${{ github.ref }}
+  group: modernmetals-115-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -44,7 +44,7 @@ jobs:
         run: bash gradle/stage-release-dependencies.sh .gradle/release-dependencies
       - name: Build, audit and generate Eclipse launches
         run: |
-          bash ./gradlew clean check build javadoc verify114ReleaseArtifacts write114ReleaseChecksums genEclipseRuns eclipse \
+          bash ./gradlew clean check build javadoc verify115ReleaseArtifacts write115ReleaseChecksums genEclipseRuns eclipse \
             -PreleaseBuild=true -PdependencyMirror="$PWD/.gradle/release-dependencies" \
             --no-daemon --stacktrace --max-workers=2 \
             "-Dorg.gradle.java.installations.paths=$JAVA_HOME,$JAVA_HOME_8_X64,$JAVA_HOME_25_X64" \
@@ -57,7 +57,7 @@ jobs:
       - name: Upload audited release candidate
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
-          name: ModernMetals-1.14.4-${{ github.sha }}
+          name: ModernMetals-1.15.2-${{ github.sha }}
           if-no-files-found: error
           retention-days: 30
           path: build/release-bundle/
@@ -65,7 +65,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
-          name: ModernMetals-1.14.4-diagnostics-${{ github.sha }}
+          name: ModernMetals-1.15.2-diagnostics-${{ github.sha }}
           if-no-files-found: ignore
           retention-days: 14
           path: |

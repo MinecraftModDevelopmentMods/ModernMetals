@@ -233,7 +233,7 @@ tasks.named('genEclipseRuns') { dependsOn 'configureEclipseBuildship' }
 
 tasks.named('eclipse') { dependsOn 'genEclipseRuns' }
 
-// Compatibility profiles are generated for available 1.14 add-ons only.
+// Compatibility profiles are generated for available 1.15 add-ons only.
 
 def baseMetalsModule = 'BaseMetals'
 def baseMetalsCoordinate = "zone.moddev.mc.basemetals:${baseMetalsModule}:${basemetals_version}"
@@ -266,7 +266,10 @@ repositories {
                 metadataSources { artifact() }
             }
         }
-        filter { includeModule('zone.moddev.mc.basemetals', baseMetalsModule) }
+        filter {
+            includeModule('zone.moddev.mc.basemetals', baseMetalsModule)
+            includeModule('zone.moddev.mc.orespawn', 'OreSpawn')
+        }
     }
 }
 
@@ -300,7 +303,7 @@ tasks.register('verifyReleaseDependencies') {
             }
         }
         if (digest.digest().encodeHex().toString() != orespawn_sha256) {
-            throw new GradleException('OreSpawn 1.14.4 release checksum mismatch')
+            throw new GradleException('OreSpawn 1.15.2 release checksum mismatch')
         }
     }
 }
@@ -310,7 +313,7 @@ tasks.register('pinLocalBaseMetals') {
     group = 'development'
     description = 'Pins already-built sibling Base Metals jars for local testing.'
     doLast {
-        File checkout = file(providers.gradleProperty('baseMetalsCheckout').orElse('../../BaseMetals 114/BaseMetals').get()).canonicalFile
+        File checkout = file(providers.gradleProperty('baseMetalsCheckout').orElse('../../BaseMetals 115/BaseMetals').get()).canonicalFile
         def pins = [version: basemetals_version.toString()]
         ['publishedJar': "build/libs/BaseMetals-${basemetals_version}.jar",
          'mappedJar': "build/libs-dev/BaseMetals-${basemetals_version}-deobf.jar"].each { key, path ->
@@ -372,7 +375,7 @@ eclipse.synchronizationTasks 'generateCompatibilityRuns'
 
 ext.compatibilityBaseFiles = { [mapped: configurations.baseMetalsDevelopment.singleFile,
         version: basemetals_version.toString()] }
-apply from: 'gradle/eclipse-compatibility-114.gradle'
+apply from: 'gradle/eclipse-compatibility-115.gradle'
 
 tasks.register('verifyEclipseProductionClasspath') {
     group = 'verification'
@@ -417,11 +420,11 @@ tasks.named('check') { dependsOn 'verifyBarModels' }
 
 def portData = layout.buildDirectory.dir('generated/port-data')
 def generatePortData = tasks.register('generatePortData', Exec) {
-    inputs.file 'tools/generate_114_data.js'
+    inputs.file 'tools/generate_115_data.js'
     inputs.file 'src/main/java/zone/moddev/mc/modernmetals/material/MaterialCatalogue.java'
     inputs.files(fileTree('src/main/resources/data'), fileTree('src/generated/resources/data'))
     outputs.dir portData
-    commandLine 'node', 'tools/generate_114_data.js'
+    commandLine 'node', 'tools/generate_115_data.js'
 }
 sourceSets.main.resources.srcDir(portData)
 
@@ -456,7 +459,7 @@ tasks.named('check') { dependsOn verifyRecipeData }
 
 tasks.register('verifyPortData', Exec) {
     dependsOn generatePortData
-    commandLine 'node', '--test', 'tools/test_114_port.js'
+    commandLine 'node', '--test', 'tools/test_115_port.js'
 }
 tasks.named('check') { dependsOn 'verifyPortData' }
 tasks.named('check') { dependsOn 'integrationTestClasses', 'clientIntegrationTestClasses' }
@@ -536,6 +539,6 @@ tasks.register('runPackagedProbeServer', Exec) {
 
 // Uses the published OreSpawn release directly.
 
-apply from: 'gradle/release-114.gradle'
+apply from: 'gradle/release-115.gradle'
 
 apply from: 'gradle/normalize-javadoc-trees.gradle'

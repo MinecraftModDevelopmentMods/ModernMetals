@@ -27,9 +27,9 @@ import zone.moddev.mc.modernmetals.content.FluidContent;
 import zone.moddev.mc.modernmetals.content.ModContent;
 import zone.moddev.mc.modernmetals.content.RegistryHandle;
 
-/** Covers the game systems that changed between Minecraft 1.13 and 1.14. */
-final class Native114Checks {
-    private Native114Checks() {}
+/** Covers the game systems that changed between Minecraft 1.14 and 1.15. */
+final class Native115Checks {
+    private Native115Checks() {}
 
     static int run(MinecraftServer server) {
         ServerWorld world = server.getWorld(DimensionType.OVERWORLD);
@@ -70,17 +70,17 @@ final class Native114Checks {
         for (VillagerProfession profession : new VillagerProfession[] {
                 VillagerProfession.ARMORER, VillagerProfession.TOOLSMITH, VillagerProfession.WEAPONSMITH}) {
             int baseMetalsOffers = 0;
-            for (Map.Entry<Integer, VillagerTrades.ITrade[]> level : VillagerTrades.field_221239_a.get(profession).entrySet()) {
+            for (Map.Entry<Integer, VillagerTrades.ITrade[]> level : VillagerTrades.VILLAGER_DEFAULT_TRADES.get(profession).entrySet()) {
                 for (VillagerTrades.ITrade factory : level.getValue()) {
                     if (!factory.getClass().getName().startsWith("zone.moddev.mc.modernmetals.")) continue;
                     MerchantOffer offer = factory.getOffer(null, new Random(1));
                     if (offer == null) continue;
                     baseMetalsOffers++;
-                    require(offer.func_222218_a().getItem() == Items.EMERALD
-                            || offer.func_222206_f().getItem() == Items.EMERALD, "smith price currency");
-                    require(ContentPolicy.active().allows(offer.func_222206_f().getItem().getRegistryName().toString()),
+                    require(offer.getBuyingStackFirst().getItem() == Items.EMERALD
+                            || offer.getSellingStack().getItem() == Items.EMERALD, "smith price currency");
+                    require(ContentPolicy.active().allows(offer.getSellingStack().getItem().getRegistryName().toString()),
                             "smith bypasses content policy");
-                    require(offer.func_222214_i() == 12 && offer.func_222210_n() > 0, "smith restocking/experience");
+                    require(offer.func_222214_i() == 12 && offer.getGivenExp() > 0, "smith restocking/experience");
                     checks += 3;
                 }
             }
@@ -104,6 +104,6 @@ final class Native114Checks {
     }
 
     private static void require(boolean condition, String message) {
-        if (!condition) throw new IllegalStateException("Native 1.14 check failed: " + message);
+        if (!condition) throw new IllegalStateException("Native 1.15 check failed: " + message);
     }
 }
